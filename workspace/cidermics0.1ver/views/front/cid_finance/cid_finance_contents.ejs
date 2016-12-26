@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<!-- 네이버 -->
+<meta name="naver-site-verification" content="083657cb98aa9a4a9c62dedeffddfb2490545da0"/>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>금융콘텐츠 - 사이다경제 | 재무</title>
+<!--link href="/css/bootstrap.min.css" rel="stylesheet"-->
+<link href="/css/cid_finance.css" rel="stylesheet">
+<link href="/css/swiper.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/css/component.css" />
+<script src="/js/modernizr.custom.js"></script>
+
+<script src="/js/gotoup.js"></script>
+
+
+<meta property="og:title" content="사이다재무 오픈!" />	
+<meta property="og:site_name" content="사이다재무 오픈!">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://www.cidermics.com/finance/" />
+
+
+</head>
+<body>
+<!--위로가기 버튼-->
+<div id="but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></div>
+<% include ../top %>
+
+<div class="line"></div>
+
+<% include cid_finance_menu %>
+
+
+<!--콘텐츠 들어갈 자리-->
+<div class="contents-finance container">
+			<ul class="grid effect-2" id="grid">
+			
+				<% for(var i=0; i<contents.length; i++) { %>
+				<li>
+				<div>
+					
+					<a href="/contents/detail/<%= contents[i].con_no %>">
+					<div class="con-img" align="center"><img class="img-responsive" src="<%= contents[i].con_photo %>"></div></a>
+					
+					
+					<p><a href="/contents/detail/<%= contents[i].con_no %>">
+						<%= contents[i].con_title %></a></p>
+				</div>
+			</li>
+			<% } %>
+			</ul>
+</div>
+
+<div class="icon-plus_con" align="center" onclick="addMore()"><img class="img-responsive" src="/page_imgs/fixed_img/icon_plus_con.svg"></div>
+
+		<script src="/js/contents_js/masonry.pkgd.min.js"></script>
+		<script src="/js/contents_js/imagesloaded.js"></script>
+		<script src="/js/contents_js/classie.js"></script>
+		<script src="/js/contents_js/AnimOnScroll.js"></script>
+		<script>
+			new AnimOnScroll( document.getElementById( 'grid' ), {
+				minDuration : 0.4,
+				maxDuration : 0.7,
+				viewportFactor : 0.2
+			} );
+		</script>
+
+
+<script>
+		var idx = 2;
+		var p=2;
+		
+		
+		function addMore (){
+			var contents = '';
+			$.ajax({
+				url : '/addMore2/'+idx+"/"+2,
+				method : 'get',
+				success : function(data){
+					if (data.contents.length == 0){
+						alert('마지막 콘텐츠입니다.');
+						return;
+					}
+					idx ++;
+					$.each(data.contents, function (index, value){
+						contents += '<li> ' +
+							 			'<div class="con-border bg-w"> ' + 
+												'<a href="/contents/detail/'+value.con_no+'"> ' +
+													'<div class="con-img" align="center"> ' +
+														'<img src="'+value.con_photo+'"/> ' + 
+													'</div> ' +
+												'</a> ' +
+							 					'<a href="/contents/detail/'+value.con_no+'"> ' +
+							 						'<div class="con-title"><span><center>' + value.con_title +'</center></span></div>' +
+							 					'</a> '+
+							 			'</div> '+
+							 		'</li> ';
+							
+					});
+					$('#grid').append(contents);
+					new AnimOnScroll( document.getElementById( 'grid' ), {
+						minDuration : 0.4,
+						maxDuration : 0.7,
+						viewportFactor : 0.2
+					} );
+				}
+			});
+		}
+		
+	</script>
+
+<% include ../bottom %>
+</body>
+</html>
+

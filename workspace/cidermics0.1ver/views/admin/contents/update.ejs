@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1"-->
+     
+    <title>Cidermics Admin</title>
+    <link rel='stylesheet' href='/css/materialize.css' />
+    <link rel='stylesheet' href='/css/style.css' />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+   <script src="/js/materialize.js"></script>
+    <script type="text/javascript" src="/smart_editor/js/HuskyEZCreator.js" charset="utf-8"></script>
+    
+    <link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+<link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+    <style>
+div#fixed {
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+}
+</style>
+    
+  </head>
+  <body>
+     <% var data= CP; %>
+    <% include ../include/nav.ejs %>
+    
+    <div class="container">
+      <div class="row">
+         <h5>콘텐츠 수정하기</h5>
+         <form action="/adm/contents/insert/upload" method="post" enctype="multipart/form-data">
+             <!-- <input type="file" name="file" />
+             <input type="submit" /> -->
+            <div class="file-field input-field">
+                <div class="btn">
+                  <span>이미지 등록</span>
+                   <input type="file" name="file" multiple>
+                </div>
+                  <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                  </div>
+             </div>
+             <input type="submit" class="btn waves-effect waves-light" value="업로드" />
+         </form>
+         <form class="col s12" id="cform">
+            <div class="row" style="margin-top:  2em;">
+               <input type="hidden" value="<%= contents[0].con_no %>" name="no"> 
+               <div class="input-field col s12">
+                  <select name="category">
+                     <option value="" disabled>카테고리를 정해주세요</option>
+                     <% for(var i=0; i < cate.length; i++) {  %> 
+                         <option value="<%=cate[i].cate_no%>" <% if( contents[0].con_category == cate[i].cate_no){ %> selected<% } %>> <%=cate[i].cate_name%></option>
+                     <% } %>
+                   </select>
+                   <label>카테고리</label>
+               </div>
+                
+                
+               <div class="input-field col l12">
+                   
+                  <input id="title" type="text" class="validate" value="<%= contents[0].con_title %>">
+                  <label for="제목">제목</label>
+                  
+                  <!-- Modal Trigger -->
+                   <a class="waves-effect waves-light btn modal-trigger1" href="#modal1">이미지 설정</a>
+                   
+                  
+                   <!-- Modal Structure -->
+                   <div id="modal1" class="modal">
+                      <div class="navbar-fixed">
+                         <nav>
+                              <div class="nav-wrapper">
+                             <a class="brand-logo"><h5>이미지 등록</h5></a>
+                             <ul class="right hide-on-med-and-down">
+                                  <li><a href="#!" class="btn-thumb modal-action waves-effect waves-green btn-flat">썸네일 설정</a></li>
+                                  <li><a href="#!" class="btn-contents modal-action waves-effect waves-green btn-flat">본문 이미지 설정</a></li>
+                             </ul>
+                              </div>
+                         </nav>
+                       </div>
+                       
+                      <ul class="pagination"></ul>
+                      <!--div class="modal-footer">
+                        <a href="#!" class="btn-thumb modal-action waves-effect waves-green btn-flat">썸네일 설정</a>
+                        <a href="#!" class="btn-contents modal-action waves-effect waves-green btn-flat">본문 이미지 설정</a>
+                      </div-->
+                   
+                   
+               
+                      <div class="modal-content">
+                        <div class="images">
+                        </div>
+                      </div>
+                      
+                   </div>
+                   
+                  <div class="preview row" style="display:block;">
+                     <p>대표 이미지</p>
+                     <img src="<%= contents[0].con_photo %>" class="img-responsive col l4" />
+                     <input type="hidden" name="photo" value="<%= contents[0].con_photo %>">
+                  </div>
+                  
+                  <textarea id="content"><%- contents[0].con_content %></textarea>
+                  
+                  <script type="text/javascript">
+                     $(document).ready(function() {
+                         $('select').material_select();
+                        
+                     });
+                     
+                        
+                     
+                     
+                  </script>
+                  
+                  <% if (contents[0].con_content) { %>
+                     <script>
+                     $(document).ready(function() {
+                        var oEditors = [];
+                     nhn.husky.EZCreator.createInIFrame ({
+                        
+                        oAppRef : oEditors,
+                                                
+                        elPlaceHolder : "content",
+                        
+                        sSkinURI : "/smart_editor/SmartEditor2Skin.html",
+                        
+                        fCreator : "createSEditor2"
+                     });
+                     });
+                        
+                     </script>   
+                  <% } %>
+                                    
+               </div>
+                     
+            </div>
+            
+            
+            <div class="input-field col s12">
+                    <select id="user" onchange="valueChanged(this.value)">
+                        <option value="">에디터를 정해주세요</option>
+                        <% for(var i=0; i < user.length; i++) {  %>
+                         <option value="<%=user[i].user_no%>/<%=user[i].user_name%>" data-icon="<%= user[i].profile_img %>" <% if( contents[0].user_no == user[i].user_no){ %> selected <%}%> > <%=user[i].user_name%> </option>
+                        <% } %>
+                    </select>
+                    <label>에디터</label>
+                    
+                    <script>
+                	$("#user").change(function(){
+                		  //alert($(this).val());
+                		 // if(this.val('경제/금융을 사이다처럼 시원하게 풀어드리겠습니다 :')){
+                		 	var chk=$(this).val();
+                		 	var res="";
+                		 	if(chk=="1/사이다경제")
+                		  	{
+                		  		res="경제/금융을 사이다처럼 시원하게 풀어드리겠습니다 :)";
+                		  	}
+                		  	if(chk=="3/조석민")
+                		  	{
+                		  		res="진인사대천명";
+                		  	}
+                		  	if(chk=="4/황원지")
+                		  	{
+                		  		res="정치, 국제 이슈를 쉽게 경제로 풀어드리는 황원지 입니다:)";
+                		  	}
+                		  	if(chk=="5/강준구")
+                		  	{
+                		  		res="Busy getting stronger";
+                		  	}
+                		  	if(chk=="7/이동규")
+                		  	{
+                		  		res="함께 공부하는 경제이야기!";
+                		  	}
+                		  	if(chk=="8/이윤범")
+                		  	{
+                		  		res="바르게 바라보고, 바르게 쓰겠습니다.";
+                		  	}
+                		  	if(chk=="9/유토미")
+                		  	{
+                		  		res="일상 속 경제이슈를 쉽고 재밌게 알려드립니다!";
+                		  	}
+                		  	if(chk=="10/최효선")
+                		  	{
+                		  		res="좋은 글을 쓰도록 하겠습니다.";
+                		  	}
+                		  	if(chk=="13/연두")
+                		  	{
+                		  		res="투자에 관심이 많고, 실제로 직접투자를 계속 해오고 있습니다.";
+                		  	}
+                		  	if(chk=="15/김이오")
+                		  	{
+                		  		res="육감적으로";
+                		  	}
+                		  	if(chk=="16/이영돈")
+                		  	{
+                		  		res="시노자키 아이를 좋아합니다.";
+                		  	}
+                		  	if(chk=="17/오혜미")
+                		  	{
+                		  		res="사이다경제 SNS소통지기를 맡고 있습니다. '좋아요' 많이 눌러주시면 좋아요!";
+                		  	}
+                		  	
+                		  
+                		  //$("#userText").val($(this).val());
+                		  $("#userText").val(res);
+    
+});
+                </script>
+                    
+                </div>
+                <div class="input-field col s12">
+                    <textarea name="userText" id="userText" class="materialize-textarea"><%- contents[0].user_comment %></textarea>
+                    <label>에디터 한마디</label></div>
+                    
+             <div class="input-field col s12">
+            <label for="제목">보여지는 일자변경(예:201601011300)</label>
+            <input id="rdate" name="rdate" type="text" class="validate" maxlength="12" value="<%- contents[0].con_release %>">
+            </div>
+            
+             
+            <input type="hidden" name="contents">         
+            <input type="hidden" name="title">       
+            <input type="hidden" name="userNo">
+            <input type="hidden" name="writer">
+         </form>
+         <div class="center-align">
+            <button class="btn waves-effect waves-light" id="update">수정하기
+               <i class="material-icons right">send</i>
+            </button>
+         </div>
+      </div>
+    </div>
+  </body>
+  <script src="/js/custom.js"></script>
+  
+  </html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cidermics admin</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel='stylesheet' href='/css/materialize.css' />
+    <link rel='stylesheet' href='/css/style.css' />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="/js/materialize.js"></script>
+    
+    <link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+<link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+<style>
+input[type=submit] {
+    padding:5px 15px; 
+    color:#FFFFFF;
+    background:#2F8ECD; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+.acss{
+	padding:5px 15px; 
+    color:#FFFFFF;
+    background:#CCCCCC; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px; 
+}
+</style>
+
+  </head>
+  <body>
+  	<% var data= CP; %>
+    <% include ../include/nav.ejs %>
+    
+    <!--div class="container">
+    	<div class="button-area">
+	    	<a href="/adm/contents/insert" class="waves-effect waves-light btn">강의 등록</a>
+	    	<!--a href="/adm/contents/delete" class="waves-effect waves-light btn">삭제</a-->
+	    	<!--a href="/adm/contents/insert2" class="waves-effect waves-light btn">더미만들기</a>  
+    	</div-->
+    	
+      <table class="bordered">
+        <thead>
+          <tr>
+          	  <th data-field="fi_app_no">접수번호</th>
+              <th data-field="fi_app_name">사용자이름</th>
+              <th data-field="fi_app_phone">전화번호</th>
+              <th data-field="date">등록날짜</th>
+              <th data-field=""></th>
+          </tr>
+        </thead>
+        <tbody>
+        <form action="/adm/finance/update" method="post">
+		<% for(var i = 0; i<finance.length; i++) { %>
+			<tr>
+				<input type="hidden" name="fi_app_no" value="<%= finance[i].fi_app_no %>" />
+				<td><%= finance[i].fi_app_no %></td>
+				<td><a href="/adm/finance/detail/<%= finance[i].fi_app_no %>"><%= finance[i].fi_app_name %></td>
+				<td><%= finance[i].fi_app_phone %></td>
+				<td><%= finance[i].fi_app_upDate %></td>
+				<td><p class="acss"><a href="/adm/finance/delete/<%= finance[i].fi_app_no %>">삭제</a></p></td>
+			</tr>
+		<% } %>
+		</form>
+        </tbody>
+      </table>
+    </div>
+    
+    
+      
+      
+  </body>
+</html>

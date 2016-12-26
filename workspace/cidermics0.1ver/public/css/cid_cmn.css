@@ -1,0 +1,12 @@
+body{font-family: 'Nanum Gothic', serif;}
+.mob-main-banner{display:none;}
+.commnication{color:#1b87c9; margin-bottom:50px;}
+.commnication .title{margin-top:30px; font-size:26px;}
+.commnication .title span{font-size:22px; border-bottom:2px solid #d8027c; font-weight:900; padding-bottom:5px;  color:#1b87c9;}
+
+@media all and (max-width:1024px) {
+.main-menu{display:none;}
+.web-main-banner{display:none;}
+.mob-main-banner{display:block;}
+.commnication{margin-top:30px;}
+}

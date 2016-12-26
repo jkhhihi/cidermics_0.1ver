@@ -1,0 +1,207 @@
+@charset "utf-8";
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);/*font-family: 'Nanum Gothic', serif;*/
+@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);/*font-family: 'Nanum Pen Script', cursive;*/
+@import url("/font/font-BMDOHYEON-wallel.css");/* font-family: "BMD", sans-serif;*/
+
+/*
+@import url("/font/NotoSansMonoCJKkr-Bold.otf");
+@font-face{font-family:"Noto-Bold";
+		   src: local("/font/NotoSansMonoCJKkr-Bold.otf");
+		   font-weight:bold;}
+@font-face{font-family:"Noto-Regular";
+		   src: local("/font/NotoSansMonoCJKkr-Regular.otf");
+		   font-weight:normal;}
+*/	   
+
+/* CSS Document */
+body{font-family: 'Nanum Gothic', serif;}
+#menu{display:none;}
+a{color:#333; text-decoration:none;}
+.mob-header{display:none;}
+.header{height:70px; font-family: 'Nanum Gothic', serif; color:#1b87c9; margin:0;
+width: 100%;
+position: fixed;
+background-color: white;
+z-index: 999;
+box-shadow: 0px -5px 20px #222;
+top:0;}
+header div{float:left;}
+header .menu{font-size:16px; font-weight:600;}
+header .login{padding-right:10px; font-size:14px; padding-top:15px; font-weight:600;}
+header .search{padding-top:19px; padding-right:0;}
+/*.menu ul li{float:left; list-style:none; padding:25px;}*/
+.web-footer{display:block;}
+.menu ul li a{color:#1b87c9;}
+.login a{color:#1b87c9;}
+.search a{color:#1b87c9;}
+.mob-header .input input{display:none;}
+.login input{display:none;}
+.web-search-box-img{display:none; margin-left:10px;}
+.mob-search-box-img{display:none; margin-left:10px;}
+.login input{
+	height:40px;
+	width:50%;
+	border-radius:20px;
+	border: solid 1px #1b87c9;
+}
+.mob-footer{display:none;}
+.web-footer{width:100%; height:auto; background-color:#ececec; padding:30px 0; color:#82878b; line-height:1.5em;}
+.web-footer .about p{font-family: "BMD", sans-serif; font-size:20px; color:#1b87c9;}
+.web-footer .about p a{color:#9fa4a8;}
+.web-footer .line-about{width:auto; height:3px; background-color:#1b87c9; margin:-8px 0 10px 0;}
+.web-footer .about-con p{font-family:"BMD", sans-serif; font-size:18px; color:#82878b;}
+.web-footer .ourworks p{font-family: "BMD", sans-serif; font-size:20px; color:#1b87c9;}
+.web-footer .ourworks p a{color:#9fa4a8;}
+.web-footer .ourworks-con p{font-family:"BMD", sans-serif; font-size:18px; color:#82878b;}
+.web-footer .line-1px{width:auto; height:1px; background-color:#1b87c9;}
+.web-footer .company-con{font-size:12px; margin-top:10px;}
+
+
+@media all and (max-width:1024px) {
+body{font-family: 'Nanum Gothic', serif;}
+
+.tab-menu-select{background-color:#fff; color:#1b87c9;}
+.contents_sub_menu{margin-left:58px; color:#FFFFFF; font-size:16px; }
+.contents_sub_menu ul li{margin-bottom:20px;}
+#tab-menu1-contents{margin-left:30px;}
+#tab-menu1-contents ul li img{width:40px; margin-right:30px;}
+#tab-menu2-contents{margin-top:30px;}
+#tab-menu2-contents ul a li{border:5px solid #fff; padding:30px 0; width:80%;}
+#tab-menu2-contents ul a li span:hover{border-bottom:2px solid #fff;}
+
+#menu ul{padding:0; margin:0;}
+#menu ul li{color:#FFFFFF; font-size:18px; margin-top:20px;}
+#menu ul li a{color:#fff;}
+
+#menu .scrollBlind{
+   width:100%;
+   height:100%;
+   overflow-y:scroll;
+   padding-bottom:50px;
+}
+
+#menu .scrollBlind .tab-menu{font-size:16px; color:#fff; border:2px solid #fff; font-size:18px; font-weight:900;}
+#menu .scrollBlind .tab-menu div{padding:10px 0;}
+
+.view{
+    width:100%;
+    height:100%;
+    position: absolute;
+    overflow: hidden;
+}
+.view .link{width:100%; height:50px; background-color:#fff; color:#1b87c9; position:absolute; bottom:0; padding-top:18px;}
+.view .link a{color:#1b87c9; font-weight:900;}
+html.open {
+    overflow: hidden;
+}
+.page_cover.open {
+	display: block;
+}
+
+.page_cover {
+	width: 10%;
+	height: 100%;
+	position: fixed;
+    top: 0px;
+    right: 0px;
+	background-color: rgba(0,0,0,0.6);
+	z-index: 4;
+	display: none;
+}
+.close {
+  width : 50px;
+  height : 50px;
+  position : absolute;
+  right : 0px;
+  top : 0px;
+  z-index : 1;
+  background-image:url(http://i.imgur.com/6a6RL9G.png);
+  background-size : 50%;
+  background-repeat : no-repeat;
+  background-position : center;
+  cursor : pointer;
+}
+#menu {
+  font-weight:bold;
+  display:block;
+  width : 90%;
+  height : 100%;
+  position : fixed;
+  top : 0;
+  left :-90%;
+  z-index : 10;
+  background-color : #1b87c9;
+  opacity:0.97;
+  text-align : center;
+  transition: All 0.2s ease; 
+  	-webkit-transition: All 0.2s ease; 
+  	-moz-transition: All 0.2s ease; 
+  	-o-transition: All 0.2s ease; 
+}
+#menu.open {
+  left : 0px;
+  z-index :999;
+  box-shadow:5px 5px 20px #333;
+}
+
+.header{display:none;}
+.login input{display:none;}
+.mob-header header{position:relative;}
+.mob-header .input input{display:none;}
+.mob-header .input input{
+	position: fixed;
+	top:7px;
+	right:85px;
+	height:40px;
+	width:60%;
+	border-radius:20px;
+	border: solid 1px #1b87c9;
+	background-color:#fff;
+}
+.mob-header .input a{
+	position: fixed;
+	right:50px;
+	top:20px;
+	color:#fff;
+}
+.web-footer{display:none;}
+.mob-footer{display:block;}
+.mob-header{position:fixed; width:100%;display:block; height:55px; background-color:#1b87c9; margin-top:0px; z-index:999;
+box-shadow: 0px -5px 20px #222; top:0;}
+.mob-header .mob-menu{width:20%;}
+.mob-header .mob-logo{width:60%;}
+.mob-header .mob-search{width:20%;}
+.mob-header .mob-menu img{height:23px; margin:15px 0 0 10px;}
+.mob-header .mob-logo img{height:46px; margin:4px;}
+.mob-header .mob-search img{margin:16px;}
+.mob-footer{width:100%; height:auto; background-color:#ececec; padding:30px 0;}
+.mob-footer .logo img{height:50px; margin-bottom:20px;}
+.mob-footer p{font-family: 'Nanum Gothic', serif; text-align:center; line-height:1.8em; color:#82878b;}
+.nav ul li{list-style:none;}
+	}
+.btn{padding: 23px 20px;}
+.btn span{color: #212121;
+    font-weight: 600;}
+.btn-default
+{border:0px; font-size:16px;}
+.btn-default:hover
+{background-color:#FFFFFF; border:0px;}
+.open>.dropdown-toggle.btn-default
+{   background-color: #1b87c9;
+    color: #fff;
+    border: none;
+    border-radius: inherit;}
+.dropdown-menu
+{left:15px; border:0.5px;}
+.gototop {
+padding:5px;
+ display: block;
+ z-index: 2;
+ position: fixed;
+ bottom: 55px;
+ right: 3%;
+ height: 50px;
+ width: 45px;
+ border-radius: 0.25em;
+ background: rgba(255, 255, 255, 0.9);
+}
