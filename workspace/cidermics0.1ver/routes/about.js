@@ -20,5 +20,4 @@ router.get('/our_team', function(req, res, next) {
 
 });
 
-
 module.exports = router;
