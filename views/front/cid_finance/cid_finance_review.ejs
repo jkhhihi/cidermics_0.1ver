@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<!-- 네이버 -->
+<meta name="naver-site-verification" content="083657cb98aa9a4a9c62dedeffddfb2490545da0"/>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>상담 후기 - 사이다경제 | 재무</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/cid_finance.css" rel="stylesheet">
+<link href="/css/swiper.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/css/component.css" />
+<script src="/js/modernizr.custom.js"></script>
+
+<script src="/js/gotoup.js"></script>
+
+<link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+<link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+
+<meta property="og:title" content="사이다재무 오픈!" />	
+<meta property="og:site_name" content="사이다재무 오픈!">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://www.cidermics.com/finance/" />
+
+<style>
+	.modal-lg{width:95%}
+.modal-body{padding:2px !important;}
+.modal-body input{width:220px;}
+.main-apply{margin-top:55px;}
+.main-apply .deposit-account{padding:0 10px 0 10px; font-size:22px;}
+.main-apply .price{font-size:30px; font-weight:bold; color:#FF0000;}
+.modal-title{color:#1b87c9;}
+.modal-body{margin-top:20px;}
+.modal-body input{border:#1b87c9 2px solid; height:400px; width:80%; border-top:none; border-left:none; border-right:none;}
+.modal-body button{background-color:#1b87c9; width:55px; height:38px; border-radius:2px; color:#fff; font-weight:bold; font-size:16px; border:#1b87c9 1px solid; margin-left:10px;}
+.modal-body .modal-paper{padding: 5px 0px 10px 0px; width:80%;}
+.modal-lg{max-width:500px;}
+body { padding-right: 0px !important }
+</style>
+</head>
+<body>
+<!--위로가기 버튼-->
+<div id="but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></div>
+<% include ../top %>
+
+<div class="line"></div>
+<!--div class="mob-banner">
+<img class="img-responsive" src="/page_imgs/finance_img/mob_banner_finance.jpg">
+</div-->
+
+<% include cid_finance_menu %>
+<% for(var i=0; i<rev.length; i++) { %>
+				<div id="coupon-modal<%=rev[i].rev_no%>" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" align="center" style="">
+       			 <div class="modal-dialog modal-lg">
+           		  <div class="modal-content">
+                	 <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                     <h4 class="modal-title"><b>생생 후기</b></h4><h6 align="left" style="margin-bottom: 0px;">상담 날짜 : <%=rev[i].rev_regDate%></h6>
+                	 </div>
+                	 
+                	 <div class="modal-body">
+                   		<img class="img-responsive" src="<%= rev[i].rev_img %>">
+                   		<img class="img-responsive" src="/page_imgs/finance_img/review/Q1.png">
+                   		<div class="modal-paper" style="color:#000; margin-top:10px;" align="left"><%-rev[i].rev_QA1%></div>
+                   		<img class="img-responsive" src="/page_imgs/finance_img/review/Q2.png">
+                   		<div class="modal-paper" style="color:#000; margin-top:10px;" align="left"><%-rev[i].rev_QA2%></div>
+                   		<h5 class="modal-title" style="color:#000; margin-top:10px;"><%=rev[i].rev_title%></h5>
+                   		<a href="#" data-dismiss="modal"><p style="color:#000; margin:30px 0 20px 0; width:120px; height:auto; border-radius:15px; background-color:#e0e0e0; padding:10px;">닫기</p></a>
+                 	 </div>
+           		  </div>
+        		 </div>
+    		    </div>
+<% } %>
+    		   
+<!--콘텐츠 들어갈 자리-->
+<div class="contents-finance container">
+	
+			<ul class="grid effect-2" id="grid">
+				<% for(var i=0; i<rev.length; i++) { %>
+				<li>
+				<div align="center">
+					
+					<img class="img-responsive" src="<%= rev[i].rev_img %>" data-toggle="modal" data-target="#coupon-modal<%=rev[i].rev_no%>" data-backdrop="static" >
+					
+				</div>
+				
+				<div class="con row">	
+					<p><a href="#"><%=rev[i].rev_title%></a></p>	
+					<!--div class="date col-xs-12 col-lg-6" align="left"><p>신청기간 : ~ 2016.11.17</p></div>
+					<div class="money col-xs-12 col-lg-6" align="right" ><p align="center" style = "height:33px;">무료</p><h6>* 선착순</h6></div-->
+				</div>
+				</li>
+				<% } %>
+			</ul>
+</div>
+
+				
+
+		<script src="/js/contents_js/masonry.pkgd.min.js"></script>
+		<script src="/js/contents_js/imagesloaded.js"></script>
+		<script src="/js/contents_js/classie.js"></script>
+		<script src="/js/contents_js/AnimOnScroll.js"></script>
+		<script>
+			new AnimOnScroll( document.getElementById( 'grid' ), {
+				minDuration : 0.4,
+				maxDuration : 0.7,
+				viewportFactor : 0.2
+			} );
+		</script>
+
+
+<% include ../bottom %>
+</body>
+</html>
+

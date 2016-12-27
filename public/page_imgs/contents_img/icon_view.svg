@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="206.747px" height="122px" viewBox="0 0 206.747 122" enable-background="new 0 0 206.747 122" xml:space="preserve">
+<g id="Layer_1" display="none">
+	
+		<circle display="inline" fill="none" stroke="#FFFFFF" stroke-width="20" stroke-miterlimit="10" cx="81.414" cy="459.861" r="414.368"/>
+	<rect x="-502" y="-52" display="inline" fill="#878787" width="1165" height="1030"/>
+</g>
+<g id="Layer_3" display="none">
+	
+		<circle display="inline" fill="none" stroke="#FFFFFF" stroke-width="15" stroke-miterlimit="10" cx="88.212" cy="456.196" r="393.678"/>
+</g>
+<g id="경제" display="none">
+	<path display="inline" fill="none" stroke="#FFFFFF" stroke-width="15" stroke-miterlimit="10" d="M319.5,528.5
+		c0,6.627-5.373,12-12,12h-435c-6.627,0-12-5.373-12-12v-273c0-6.627,5.373-12,12-12h435c6.627,0,12,5.373,12,12V528.5z"/>
+	<path display="inline" fill="none" stroke="#FFFFFF" stroke-width="15" stroke-miterlimit="10" d="M252.5,713.939
+		c0,5.279-5.373,9.561-12,9.561h-301c-6.627,0-12-4.281-12-9.561v-78.879c0-5.279,5.373-9.561,12-9.561h301
+		c6.627,0,12,4.281,12,9.561V713.939z"/>
+	<path display="inline" fill="#FFFFFF" d="M165.5,615.992c0,6.475-5.373,12.008-12,12.008h-125c-6.627,0-12-5.533-12-12.008
+		l-7.167-66.523c0-6.475,12.539-6.469,19.167-6.469h125c6.627,0,20.5-0.006,20.5,6.469L165.5,615.992z"/>
+	<path display="inline" fill="#FFFFFF" d="M260,470c0,6.627-5.373,12-12,12h-23c-6.627,0-12-5.373-12-12V328c0-6.627,5.373-12,12-12
+		h23c6.627,0,12,5.373,12,12V470z"/>
+	<path display="inline" fill="#FFFFFF" d="M202,472c0,6.627-5.373,12-12,12h-23c-6.627,0-12-5.373-12-12v-99c0-6.627,5.373-12,12-12
+		h23c6.627,0,12,5.373,12,12V472z"/>
+	<path display="inline" fill="#FFFFFF" d="M143,472c0,6.627-5.373,12-12,12h-23c-6.627,0-12-5.373-12-12v-64c0-6.627,5.373-12,12-12
+		h23c6.627,0,12,5.373,12,12V472z"/>
+	<text transform="matrix(1 0 0 1 -81.3335 457.667)" display="inline" fill="#FFFFFF" font-family="'BMJUA'" font-size="220">$</text>
+</g>
+<g id="금융" display="none">
+	
+		<circle display="inline" fill="none" stroke="#FFFFFF" stroke-width="15" stroke-miterlimit="10" cx="85.857" cy="458.385" r="157.512"/>
+	<path display="inline" fill="none" stroke="#FFFFFF" stroke-width="15" stroke-miterlimit="10" d="M395.334,458
+		c0,2.384-2.114,5.184-3.404,7.112C345.979,533.853,252.634,618,90.481,618c-164.663,0-254.755-96-300.399-155.259
+		c-0.624-0.811-4.082-4.479-4.082-5.531c0-2.317,1.5-4.485,3.016-6.126C-152.027,387.284-71.796,298,90.481,298
+		c162.405,0,242.509,89.679,301.48,153.286C393.436,452.875,395.334,455.751,395.334,458z"/>
+	<text transform="matrix(1 0 0 1 -21 524)" display="inline" fill="#FFFFFF" font-family="'BMJUA'" font-size="220">\</text>
+</g>
+<g id="금융_copy">
+	<circle fill="none" stroke="#FFFFFF" stroke-width="15" stroke-miterlimit="10" cx="85.857" cy="458.385" r="157.512"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="15" stroke-miterlimit="10" d="M395.334,458c0,2.384-2.114,5.184-3.404,7.112
+		C345.979,533.853,252.634,618,90.481,618c-164.663,0-254.755-96-300.399-155.259c-0.624-0.811-4.082-4.479-4.082-5.531
+		c0-2.317,1.5-4.485,3.016-6.126C-152.027,387.284-71.796,298,90.481,298c162.405,0,242.509,89.679,301.48,153.286
+		C393.436,452.875,395.334,455.751,395.334,458z"/>
+	<circle fill="#FFFFFF" cx="59.333" cy="484.666" r="123.333"/>
+	<circle fill="#FFFFFF" cx="174" cy="385.333" r="41.667"/>
+	<path fill="none" stroke="#222222" stroke-width="8" stroke-miterlimit="10" d="M197.875,60c0,0.745-0.66,1.62-1.063,2.223
+		C182.452,83.704,153.281,110,102.609,110c-51.458,0-79.611-30-93.875-48.519c-0.195-0.253-1.276-1.399-1.276-1.729
+		c0-0.724,0.469-1.401,0.942-1.914C26.825,37.901,51.897,10,102.609,10c50.751,0,75.783,28.025,94.212,47.902
+		C197.282,58.398,197.875,59.297,197.875,60z"/>
+	<path fill="#222222" d="M101.164,6.231c-29.763,0-53.89,24.127-53.89,53.89c0,29.762,24.127,53.889,53.89,53.889
+		c29.762,0,53.89-24.127,53.89-53.889C155.054,30.358,130.926,6.231,101.164,6.231z M125.785,91.393l-23.177-10.795L80.573,93.57
+		l3.106-25.38L64.533,51.244l25.098-4.889l10.2-23.446l12.404,22.358l25.452,2.456L120.257,66.43L125.785,91.393z"/>
+</g>
+<g id="기업" display="none">
+	<path display="inline" fill="none" stroke="#FFFFFF" stroke-width="15" stroke-miterlimit="10" d="M77.5,699.5
+		c0,6.627-5.373,12-12,12h-183c-6.627,0-12-5.373-12-12v-459c0-6.627,5.373-12,12-12h183c6.627,0,12,5.373,12,12V699.5z"/>
+	<path display="inline" fill="none" stroke="#FFFFFF" stroke-width="15" stroke-miterlimit="10" d="M313.5,698.5
+		c0,6.627-5.373,12-12,12h-183c-6.627,0-12-5.373-12-12v-379c0-6.627,5.373-12,12-12h183c6.627,0,12,5.373,12,12V698.5z"/>
+	<rect x="-98" y="264" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="-60" y="264" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="-20" y="264" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="18" y="264" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="-98" y="312" display="inline" fill="#FFFFFF" width="68" height="31"/>
+	<rect x="-20" y="312" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="18" y="312" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="-98" y="359" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="-60" y="359" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="-20" y="359" display="inline" fill="#FFFFFF" width="68" height="31"/>
+	<rect x="-98" y="404" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="-60" y="404" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="-20" y="404" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="18" y="404" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="-98" y="452" display="inline" fill="#FFFFFF" width="108" height="31"/>
+	<rect x="18" y="452" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="-98" y="499" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="-60" y="499" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="-20" y="499" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="18" y="499" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="-98" y="545" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="-60" y="545" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="-20" y="545" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="18" y="545" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="-98" y="592" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="-60" y="592" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="-20" y="592" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="18" y="592" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="137" y="521" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="175" y="521" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="215" y="521" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="253" y="521" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="137" y="567" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="175" y="567" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="215" y="567" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="253" y="567" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="137" y="614" display="inline" fill="#FFFFFF" width="146" height="31"/>
+	<rect x="137" y="658" display="inline" fill="#FFFFFF" width="145" height="31"/>
+	<rect x="137" y="383" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="175" y="383" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="215" y="383" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="253" y="383" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="137" y="338" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="175" y="338" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="215" y="338" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="253" y="338" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="137" y="429" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="175" y="429" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="215" y="429" display="inline" fill="#FFFFFF" width="68" height="31"/>
+	<rect x="137" y="476" display="inline" fill="#FFFFFF" width="68" height="31"/>
+	<rect x="215" y="476" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="253" y="476" display="inline" fill="#FFFFFF" width="30" height="31"/>
+	<rect x="-98" y="638" display="inline" fill="#FFFFFF" width="146" height="52"/>
+</g>
+<g id="주식_1_" display="none">
+	<path display="inline" fill="#FFFFFF" d="M-123,189c0-2.761-3.531-5-7.5-5l0,0c-3.969,0-7.5,2.239-7.5,5v544c0,2.762,3.531,5,7.5,5
+		l0,0c3.969,0,7.5-2.238,7.5-5V189z"/>
+	<path display="inline" fill="#FFFFFF" d="M69.927,421.692c2.224-1.638,1.932-5.808-0.423-9.004l0,0
+		c-2.354-3.195-6.252-4.71-8.475-3.072l-193.957,143.691c-2.223,1.639-1.931,5.809,0.423,9.004l0,0
+		c2.354,3.196,6.251,4.711,8.475,3.072L69.927,421.692z"/>
+	<path display="inline" fill="#FFFFFF" d="M349.04,284.276c1.931-1.975,0.97-6.043-1.87-8.818l0,0
+		c-2.839-2.773-6.931-3.639-8.859-1.664l-185.352,188.93c-1.93,1.977-0.968,6.044,1.871,8.817l0,0
+		c2.839,2.775,6.928,3.642,8.858,1.666L349.04,284.276z"/>
+	<path display="inline" fill="#FFFFFF" d="M156.853,472.424c2.465,1.247,6.056-0.894,7.847-4.436l0,0
+		c1.791-3.543,1.386-7.705-1.078-8.95l-97.473-50.463c-2.465-1.246-6.056,0.895-7.847,4.437l0,0
+		c-1.792,3.542-1.387,7.704,1.078,8.95L156.853,472.424z"/>
+	<path display="inline" fill="#FFFFFF" d="M343.5,738c2.762,0,5-4,5-7l0,0c0-4-2.238-8-5-8h-476c-2.762,0-5,3.531-5,7.5l0,0
+		c0,3.969,2.238,7.5,5,7.5H343.5z"/>
+	<path display="inline" fill="#FFFFFF" d="M359,324.532c-1,5.135-2.113,12.894-8.924,8.758l-60.662-60.555
+		c-5.839-6.386,3.419-7.568,8.675-8.735l70.82-17c8.515-1,9.091,3.875,9.091,8.712L359,324.532z"/>
+	<path display="inline" fill="#FFFFFF" d="M104,723c0,6.627-5.373,12-12,12H35c-6.627,0-12-5.373-12-12V470c0-6.627,5.373-12,12-12
+		h57c6.627,0,12,5.373,12,12V723z"/>
+	<path display="inline" fill="#FFFFFF" d="M-8,723c0,6.627-5.373,12-12,12h-57c-6.627,0-12-5.373-12-12V566c0-6.627,5.373-12,12-12
+		h57c6.627,0,12,5.373,12,12V723z"/>
+	<path display="inline" fill="#FFFFFF" d="M214,723c0,6.627-5.373,12-12,12h-57c-6.627,0-12-5.373-12-12V510c0-6.627,5.373-12,12-12
+		h57c6.627,0,12,5.373,12,12V723z"/>
+	<path display="inline" fill="#FFFFFF" d="M323,723c0,6.627-5.373,12-12,12h-57c-6.627,0-12-5.373-12-12V409c0-6.627,5.373-12,12-12
+		h57c6.627,0,12,5.373,12,12V723z"/>
+</g>
+<g id="재무" display="none">
+	<g display="inline">
+		<path fill="#FFFFFF" d="M257,242c0-2.761-4-5-8-5l0,0c-3,0-7,2.239-7,5v157c0,2.762,3.531,5,7.5,5l0,0c3.969,0,7.5-2.238,7.5-5
+			V242z"/>
+		<path fill="#FFFFFF" d="M252,250c2.762,0,5-4,5-8l0,0c0-3-2.238-7-5-7H95c-2.762,0-5,3.531-5,7.5l0,0c0,3.969,2.238,7.5,5,7.5H252
+			z"/>
+		<path fill="#FFFFFF" d="M224.717,400.604c-1.656-2.455-4.316-6.008,0.066-7.078l48.528-0.043c4.894,0.219,1.66,4.398,0.023,6.97
+			l-21.547,35.158c-3.009,3.809-5.19,2.088-7.127,0.151L224.717,400.604z"/>
+	</g>
+	<g display="inline">
+		<path fill="#FFFFFF" d="M-93,676.224c0,2.766,4,5.007,7.999,5.007l0,0c3.001,0,7.001-2.241,7.001-5.007V519.007
+			c0-2.765-3.531-5.007-7.5-5.007l0,0c-3.969,0-7.5,2.242-7.5,5.007V676.224z"/>
+		<path fill="#FFFFFF" d="M-88.094,668c-2.762,0-5,3.994-5,8.002l0,0c0,3.004,2.238,6.998,5,6.998h157c2.762,0,5-3.525,5-7.5l0,0
+			c0-3.975-2.238-7.5-5-7.5H-88.094z"/>
+		<path fill="#FFFFFF" d="M-61.168,516.724c1.656,2.455,4.315,6.008-0.066,7.078l-48.528,0.043c-4.895-0.219-1.66-4.398-0.023-6.97
+			l21.547-35.158c3.008-3.809,5.19-2.088,7.127-0.151L-61.168,516.724z"/>
+	</g>
+	<g display="inline">
+		<circle fill="#FFFFFF" cx="-70.854" cy="233.511" r="58.82"/>
+		<g>
+			<path fill="#FFFFFF" d="M-85.327,285.79c0,0-41.387-1.094-77.213,54.696c0,0-27.075,43.757,8.204,68.37
+				c0,0,64.542,41.295,160.533,7.384c0,0,39.108-16.409,33.365-45.124c0,0-2.735-65.316-92.437-86.101c0,0,1.107,1.405,0.866,6.062
+				c-0.182,3.51-6.53,13.896-11.21,18.505L-50,389.063v0.359l-0.296,0.389l-17.309,21.475l-0.242,0.151l-0.298-0.113l-18.901-20.654
+				l-0.314-0.649l0.048-0.667l13.928-79.771c0,0-9.647-9.806-11.942-17.047C-86.781,287.943-85.145,285.608-85.327,285.79z"/>
+			<path fill="#FFFFFF" d="M-54.515,297.55c0,0,3.738-7.111-1.276-7.202l9.754-3.464L-54.515,297.55z"/>
+			<path fill="#FFFFFF" d="M-83.048,297.55c0,0-4.466-7.292,0.912-6.199l-13.127-4.193L-83.048,297.55z"/>
+		</g>
+	</g>
+	<g display="inline">
+		<circle fill="#FFFFFF" cx="246.676" cy="537.621" r="58.82"/>
+		<g>
+			<path fill="#FFFFFF" d="M232.204,589.9c0,0-41.388-1.094-77.214,54.696c0,0-27.074,43.757,8.205,68.37
+				c0,0,64.541,41.295,160.532,7.384c0,0,39.108-16.409,33.365-45.124c0,0-2.735-65.316-92.437-86.101c0,0,1.106,1.404,0.865,6.063
+				c-0.182,3.509-6.794,13.896-11.476,18.505L267,693.174v0.358l-0.031,0.389l-17.176,21.475l-0.176,0.152l-0.266-0.113
+				l-18.885-20.654l-0.306-0.649l0.053-0.667l13.931-79.771c0,0-9.647-9.807-11.941-17.047
+				C230.748,592.053,232.386,589.719,232.204,589.9z"/>
+			<path fill="#FFFFFF" d="M263.016,601.66c0,0,3.737-7.11-1.276-7.202l9.754-3.464L263.016,601.66z"/>
+			<path fill="#FFFFFF" d="M234.481,601.66c0,0-4.466-7.292,0.912-6.198l-13.127-4.194L234.481,601.66z"/>
+		</g>
+	</g>
+</g>
+<g id="인기" display="none">
+	<g display="inline">
+		<path fill="none" stroke="#FFFFFF" stroke-width="15" stroke-miterlimit="10" d="M88.361,201.744
+			c3.651-7.398,9.626-7.398,13.277,0l71.301,144.472c3.651,7.398,13.318,14.422,21.482,15.608l159.435,23.167
+			c8.164,1.187,10.01,6.869,4.103,12.627L242.591,510.074c-5.907,5.758-9.601,17.123-8.205,25.254l27.234,158.79
+			c1.396,8.132-3.438,11.644-10.741,7.804l-142.602-74.97c-7.303-3.84-19.252-3.84-26.555,0l-142.602,74.97
+			c-7.302,3.84-12.136,0.328-10.741-7.804l27.235-158.79c1.395-8.131-2.298-19.496-8.206-25.254l-115.368-112.457
+			c-5.908-5.759-4.062-11.441,4.103-12.627l159.434-23.167c8.165-1.186,17.832-8.21,21.483-15.608L88.361,201.744z"/>
+	</g>
+	<g display="inline">
+		<path fill="#FFFFFF" d="M88.361,311.043c3.651-7.398,9.626-7.398,13.277,0L141,390.798c3.651,7.398,13.318,14.422,21.482,15.608
+			l88.017,12.79c8.164,1.186,10.01,6.868,4.103,12.627l-63.689,62.081c-5.907,5.758-9.601,17.123-8.205,25.254l15.034,87.66
+			c1.396,8.131-3.438,11.644-10.741,7.804l-78.723-41.387c-7.303-3.84-19.252-3.84-26.555,0L3,614.622
+			c-7.302,3.84-12.136,0.327-10.741-7.804l15.035-87.66c1.395-8.131-2.298-19.496-8.206-25.254l-63.689-62.081
+			c-5.908-5.759-4.062-11.441,4.103-12.627l88.016-12.79c8.165-1.186,17.832-8.21,21.483-15.608L88.361,311.043z"/>
+	</g>
+</g>
+<g id="검색" display="none">
+	
+		<circle display="inline" fill="none" stroke="#1B87C9" stroke-width="30" stroke-miterlimit="10" cx="-787.769" cy="587.227" r="108.744"/>
+	<g display="inline">
+		
+			<line fill="none" stroke="#1B87C9" stroke-width="30" stroke-miterlimit="10" x1="-701.023" y1="653.965" x2="-611.027" y2="713.961"/>
+	</g>
+</g>
+<g id="신청" display="none">
+	<path display="inline" fill="#FFFFFF" d="M485.475,785.167l-140.5-204.818c0,0,26.838-31.788,60.354,14.841
+		c0,0,79.161,86.084,84.106,94.989c0,0,13.357,15.706,10.882-1.979L407,396c0,0-19.604-43.725,20.098-52.134
+		c0,0,23.084-2.403,39.902,41.134l65.969,196.337c0,0,10.888,15.834,12.864-3.957l-12.614-74.459c0,0-2.227-35.62,27.828-37.476
+		c0,0,22.633,0,27.829,26.345l14.099,75.322c0,0,13.357,18.924,16.326-4.081l-11.131-64.563c0,0,0.742-27.087,22.263-28.57
+		c0,0,23.376-4.824,31.54,17.067l13.728,71.612c0,0,13.357,14.472,12.616-4.452l-8.163-56.399c0,0,0.37-17.068,18.182-23.005
+		c0,0,22.262-4.081,29.683,16.697c0,0,59.739,160.663,13.73,292.756c0,0-95.731,0.369-127.642,0.493
+		C581.948,784.792,485.475,785.167,485.475,785.167z"/>
+	
+		<rect x="-104.5" y="232.5" display="inline" fill="none" stroke="#FFFFFF" stroke-width="15" stroke-miterlimit="10" width="259" height="259"/>
+	<polyline display="inline" fill="none" stroke="#FFFFFF" stroke-width="30.7088" stroke-miterlimit="10" points="-54,274.985 
+		35.494,430.284 175,176.716 	"/>
+</g>
+<g id="정보" display="none">
+	<path display="inline" fill="#FFFFFF" d="M147,585.323c0,9.03-4.873,17.677-11.5,17.677H5.5C-1.127,603-7,594.354-7,585.323
+		v-19.069C-7,557.228-1.127,551,5.5,551h130c6.627,0,11.5,6.228,11.5,15.254V585.323z"/>
+	<path display="inline" fill="none" stroke="#FFFFFF" stroke-width="15" stroke-miterlimit="10" d="M303.5,545.5
+		c0,6.627-5.373,12-12,12h-442c-6.627,0-12-5.373-12-12v-274c0-6.627,5.373-12,12-12h442c6.627,0,12,5.373,12,12V545.5z"/>
+	<path display="inline" fill="#FFFFFF" stroke="#FFFFFF" stroke-miterlimit="10" d="M240.651,629.262
+		c1.395,6.445-5.616,13.238-12.542,13.238H-85.449c-6.927,0-14.632-6.445-12.542-13.238l9.407-28.742
+		c2.614-7.316,5.616-12.02,12.542-12.02h293.7c6.927,0,10.626,4.703,12.542,12.02L240.651,629.262z"/>
+	<g display="inline">
+		<rect x="-17" y="294" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-miterlimit="10" width="160" height="214"/>
+		<line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="40" y1="318" x2="85" y2="318"/>
+		<g>
+			<line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="15" y1="330" x2="110" y2="330"/>
+			<line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="15" y1="338" x2="110" y2="338"/>
+			<line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="15" y1="345" x2="110" y2="345"/>
+			<line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="15" y1="353" x2="110" y2="353"/>
+		</g>
+		<line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="15" y1="370" x2="92" y2="370"/>
+		<line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="15" y1="378" x2="92" y2="378"/>
+		<line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="15" y1="385" x2="110" y2="385"/>
+		<line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="15" y1="392" x2="110" y2="392"/>
+		<line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="15" y1="410" x2="96" y2="410"/>
+		<line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="15" y1="419" x2="84" y2="419"/>
+		<line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="15" y1="426" x2="106" y2="426"/>
+		<line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="15" y1="433" x2="110" y2="433"/>
+		<g>
+			<line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="15" y1="449" x2="110" y2="449"/>
+			<line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="15" y1="458" x2="110" y2="458"/>
+			<line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="15" y1="465" x2="110" y2="465"/>
+			<line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="15" y1="472" x2="110" y2="472"/>
+		</g>
+		<rect x="144" y="329" fill="#FFFFFF" width="19" height="182"/>
+		<rect x="5" y="507" fill="#FFFFFF" width="158" height="19"/>
+	</g>
+</g>
+<g id="프로필" display="none">
+	
+		<rect x="-200" y="147" display="inline" fill="none" stroke="#FFFFFF" stroke-width="14" stroke-miterlimit="10" width="275" height="368"/>
+	<g display="inline">
+		<line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="-51" y1="200" x2="38" y2="200"/>
+		<line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="-51" y1="214" x2="38" y2="214"/>
+		<line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="-51" y1="226" x2="38" y2="226"/>
+		<line fill="none" stroke="#FFFFFF" stroke-width="2" stroke-miterlimit="10" x1="-51" y1="240" x2="38" y2="240"/>
+	</g>
+	
+		<line display="inline" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="-145" y1="346.5" x2="-5" y2="346.5"/>
+	
+		<line display="inline" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="-145" y1="362.5" x2="-26" y2="362.5"/>
+	
+		<line display="inline" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="-145" y1="374.5" x2="12" y2="374.5"/>
+	
+		<line display="inline" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="-145" y1="386.5" x2="19" y2="386.5"/>
+	<g display="inline">
+		<line fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="-145" y1="413.5" x2="19" y2="413.5"/>
+		<line fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="-145" y1="429.5" x2="19" y2="429.5"/>
+		<line fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="-145" y1="441.5" x2="19" y2="441.5"/>
+		<line fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" x1="-145" y1="453.5" x2="19" y2="453.5"/>
+	</g>
+	<rect x="77" y="207" display="inline" fill="#FFFFFF" width="33" height="314"/>
+	<rect x="-162" y="514" display="inline" fill="#FFFFFF" width="272" height="32"/>
+	<g display="inline">
+		<circle fill="#FFFFFF" cx="-97.018" cy="218.369" r="29.9"/>
+		<g>
+			<path fill="#FFFFFF" d="M-104.375,244.944c0,0-21.039-0.557-39.25,27.804c0,0-13.764,22.243,4.17,34.755
+				c0,0,32.809,20.992,81.605,3.753c0,0,19.88-8.341,16.961-22.938c0,0-1.391-33.203-46.989-43.768c0,0,0.563,0.714,0.44,3.082
+				c-0.092,1.784-3.611,7.064-5.99,9.407L-87,297.442v0.182l0.141,0.198l-8.652,10.917l-0.05,0.077l-0.116-0.058l-9.59-10.499
+				l-0.15-0.331l0.029-0.339l7.083-40.55c0,0-4.903-4.985-6.07-8.666C-105.115,246.038-104.282,244.852-104.375,244.944z"/>
+			<path fill="#FFFFFF" d="M-88.712,250.922c0,0,1.9-3.614-0.649-3.661l4.958-1.761L-88.712,250.922z"/>
+			<path fill="#FFFFFF" d="M-103.217,250.922c0,0-2.27-3.707,0.464-3.151l-6.673-2.132L-103.217,250.922z"/>
+		</g>
+	</g>
+</g>
+<g id="콘텐츠" display="none">
+	<path display="inline" fill="none" stroke="#FFFFFF" stroke-width="15" stroke-miterlimit="10" d="M383.5,410.5
+		c0,6.627-5.373,12-12,12h-42.166L287.667,481L242,422.5H81.5c-6.627,0-12-5.373-12-12v-231c0-6.627,5.373-12,12-12h290
+		c6.627,0,12,5.373,12,12V410.5z"/>
+	<path display="inline" fill="#FFFFFF" d="M76,386c0,6.627-4.643,12-10.371,12H39.704C33.976,398,29,392.627,29,386V158
+		c0-6.627,4.976-12,10.704-12h25.926C71.357,146,76,151.373,76,158V386z"/>
+	<path display="inline" fill="#FFFFFF" d="M366,162c0,6.627-5.373,12-12,12H41c-6.627,0-12-5.373-12-12v-21c0-6.627,5.373-12,12-12
+		h313c6.627,0,12,5.373,12,12V162z"/>
+	
+		<line display="inline" fill="none" stroke="#FFFFFF" stroke-width="15" stroke-miterlimit="10" x1="129" y1="230.5" x2="232" y2="230.5"/>
+	
+		<line display="inline" fill="none" stroke="#FFFFFF" stroke-width="15" stroke-miterlimit="10" x1="129" y1="263.5" x2="330" y2="263.5"/>
+	
+		<line display="inline" fill="none" stroke="#FFFFFF" stroke-width="15" stroke-miterlimit="10" x1="129" y1="294.5" x2="330" y2="294.5"/>
+	
+		<line display="inline" fill="none" stroke="#FFFFFF" stroke-width="15" stroke-miterlimit="10" x1="129" y1="326.5" x2="330" y2="326.5"/>
+	
+		<line display="inline" fill="none" stroke="#FFFFFF" stroke-width="15" stroke-miterlimit="10" x1="129" y1="358.5" x2="330" y2="358.5"/>
+</g>
+</svg>
