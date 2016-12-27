@@ -7,7 +7,7 @@ body{font-family: 'Nanum Gothic', serif;}
 .team .title{margin-top:20px; font-size:26px;  margin-top:70px;}
 .team .title span{font-size:22px; border-bottom:2px solid #ff574a; font-weight:900; padding-bottom:5px;}
 .team .title p{font-size:18px; font-weight:bold; text-align:center; margin:50px 0 100px 0;}
-.team .title p span{color:#d8027c; font-size:20px; border:none;}
+.team .title p span{color:#ff574a; font-size:20px; border:none;}
 .team .editor-intro{margin-bottom:100px;}
 .team .editor-intro img.img-center {margin: 0 auto;}
 .team .editor-intro .row div{margin-bottom:50px;}
@@ -39,7 +39,7 @@ body{font-family: 'Nanum Gothic', serif;}
 .team{text-align:center;}
 .team .title {margin-top:0;}
 .team .title p{font-size:14px; font-weight:bold; text-align:center; margin:50px 0 100px 0; line-height:1.5em;}
-.team .title p span{color:#d8027c; font-size:16px; border:none;}
+.team .title p span{font-size:16px; border:none;}
 
 .company{text-align:center; padding-left:5px !important; padding-right:5px;}
 .company .title{margin-top:0;}
