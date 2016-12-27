@@ -16,7 +16,6 @@ var passport = require('passport')
 var mysql = require("./routes/model/mysql");
 var flash = require('req-flash');
 
-
 var app = express();
 
 // route add
