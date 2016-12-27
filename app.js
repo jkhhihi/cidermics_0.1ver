@@ -102,7 +102,6 @@ passport.use('local', new LocalStrategy({
 }
 ,
 
-
 function(req, email, pw, done) {
 	
 	mysql.select('select * from cider.cid_user where user_email ="'+email+'" and user_password = "'+pw+'"', function (err, data){
