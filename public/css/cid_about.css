@@ -5,7 +5,7 @@ body{font-family: 'Nanum Gothic', serif;}
 .mob-main-banner{display:none;}
 .team{color:#1b87c9;}
 .team .title{margin-top:20px; font-size:26px;  margin-top:70px;}
-.team .title span{font-size:22px; border-bottom:2px solid #d8027c; font-weight:900; padding-bottom:5px;}
+.team .title span{font-size:22px; border-bottom:2px solid #ff574a; font-weight:900; padding-bottom:5px;}
 .team .title p{font-size:18px; font-weight:bold; text-align:center; margin:50px 0 100px 0;}
 .team .title p span{color:#d8027c; font-size:20px; border:none;}
 .team .editor-intro{margin-bottom:100px;}
@@ -14,14 +14,14 @@ body{font-family: 'Nanum Gothic', serif;}
 
 .company{color:#1b87c9; padding-left:120px !important;}
 .company .title{margin-top:20px; font-size:26px; margin-top:70px;}
-.company .title span{font-size:22px; border-bottom:2px solid #d8027c; font-weight:900; padding-bottom:5px;}
+.company .title span{font-size:22px; border-bottom:2px solid #ff574a; font-weight:900; padding-bottom:5px;}
 .company .logo{margin:20px 0 20px 0;}
 .company .contents{font-size:16px; font-weight:bold; line-height:2.0em; margin-bottom:250px;}
 .company .contents span{font-size:18px; color:#1b87c9;}
 
 .contact{color:#333;}
 .contact .title{margin-top:20px; color:#2f8ecd; font-size:26px;  margin-top:70px;}
-.contact .title span{font-size:22px; border-bottom:2px solid #c02e88; font-weight:900; padding-bottom:5px;}
+.contact .title span{font-size:22px; border-bottom:2px solid #ff574a; font-weight:900; padding-bottom:5px;}
 /*.contact .map #googleMap{margin:20px 0 20px 0;}*/
 .contact .contents{font-size:16px; font-weight:900; line-height:3.0em; color:#2f8ecd; width:60%; margin-bottom:100px;}
 .contact .contents .title{font-size:22px;}
