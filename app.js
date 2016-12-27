@@ -100,7 +100,6 @@ passport.use('local', new LocalStrategy({
     passwordField : 'pw',
     passReqToCallback : true
 }
-
 ,
 
 
