@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>사이다경제 | 회원가입</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/cid_join.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+<link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+<link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+
+<script type="text/javascript">
+	
+	$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').focus()
+})
+
+
+
+function mem_join_next(){
+	 if(document.mem_join.mem_email_id.value==""){
+	 alert("이메일 아이디를 입력해 주세요.");
+	document.mem_join.mem_email_id.focus();
+	  return;
+	}
+	if(document.mem_join.mem_email_add.value==""){
+	 alert("이메일를 입력해 주세요.");
+	document.mem_join.mem_email_add.focus();
+	  return;
+	}
+	if(document.mem_join.mem_pw.value!= document.mem_join.mem_pw2.value){
+	  alert("비밀번호가 일치하지 않습니다.");
+	 document.mem_join.mem_pw.focus();
+	 return;
+	 }
+	 if(document.mem_join.mem_name.value==""){
+	 alert("이름을 입력해 주세요.");
+	document.mem_join.mem_name.focus();
+	  return;
+	}
+	
+	if(document.mem_join.mem_pw.value.length<=7){
+	 alert("비밀번호는 8자리 이상 입력해 주세요.");
+	document.mem_join.mem_pw.focus();
+	return;
+	 }
+	 
+	if(document.mem_join.mem_year.value.length<=3){
+	 alert("생년월일은 4자리를 입력해 주세요. 예) 1989");
+	document.mem_join.mem_year.focus();
+	  return;
+	}
+	
+	for (i=0; i<document.mem_join.mem_email_id.value.length; i++)
+        {
+         var ch = document.mem_join.mem_email_id.value.charAt(i);//문자를 반환(정수형), 범위 검사 가능
+	if ( ( ch < "a" || ch > "z") && (ch < "A" || ch > "Z") && (ch < "0" || ch > "9" ) )
+    	{
+            alert("아이디는 영문 소문자로만 입력 가능 합니다!");
+            document.mem_join.mem_email_id.focus();
+            return;
+         }
+		}
+	
+	
+	for (i=0; i<document.mem_join.mem_year.value.length; i++)
+     {
+     	 var ch = document.mem_join.mem_year.value.charAt(i);//문자를 반환(정수형), 범위 검사 가능
+		if ( ch < "0" || ch > "9" )
+    	 {
+            alert("번호는 숫자로만 입력 가능 합니다!");
+            document.mem_join.mem_year.focus();
+            return;
+         }
+      }
+	
+	 
+	 	document.mem_join.submit();
+}
+
+function checkPwd(){
+  var f1 = document.forms[0];
+  var pw1 = document.mem_join.mem_pw.value;
+  var pw2 = document.mem_join.mem_pw2.value;
+  if(pw1!=pw2){
+   document.getElementById('checkPwd').style.color = "black";
+   document.getElementById('checkPwd').innerHTML = "  *패스워드가 다릅니다."; 
+  }else{
+   document.getElementById('checkPwd').style.color = "blue";
+   document.getElementById('checkPwd').innerHTML = "  *패스워드가 확인 되었습니다.";   
+  }  
+ }
+
+
+
+</script>
+</head>
+<body>
+<% include ../top %>
+
+
+<div class="row" style="margin:0; padding:0">
+		<div class="col-xs-12 main-join" align="center">
+				<div class="bg">
+						<div class="row join">
+								<div class="col-xs-12 join-step" align="right" style="padding:0;"><img src="/page_imgs/member_img/join_1.png">
+									<img src="/page_imgs/member_img/ch_join_2.png">
+									<img src="/page_imgs/member_img/join_3.png"></div>
+								<div class="row step2" align="left">
+									
+									<form name="mem_join" action="/join_step_3" method="get" >
+										
+										
+										<div class="col-xs-12 title">
+												<p>회원가입</p>
+										</div>
+										<div class="col-xs-12 id">
+												<p><span>아이디(이메일)</span><span class="star">*</span></p>
+												<input name='mem_email_id' class="email1" type="text" style="IME-MODE: disabled" size="11">
+												@
+												<input name='mem_email_add' class="email2" type="text" style="IME-MODE: disabled" size="11">
+												<div class="email-check">중복확인</div>
+										</div>
+										<div class="col-xs-12 nicname">
+												<p><span>이름</span><span class="star">*</span></p>
+												<input name='mem_name' class="nicname1" type="text" style="IME-MODE: disabled" size="12">
+										</div>
+										<div class="col-xs-12 nicname">
+												<p><span>비밀번호</span><span class="star">*</span></p>
+												<input name='mem_pw' class="nicname1" type="password" style="IME-MODE: disabled" size="12" minlength="8" maxlength="20"  onKeyUp="checkPwd()" >
+										</div>
+										<div class="col-xs-12 nicname">	
+												<p><span>비밀번호 확인</span><span class="star">*</span></p>
+												<input name='mem_pw2' class="nicname1" type="password" style="IME-MODE: disabled" size="12" minlength="8"  maxlength="20" onKeyUp="checkPwd()" />
+												<div id="checkPwd"></div>
+										</div>
+										<div class="col-xs-12 birth">
+												<p><span>생년월일</span><span class="star">*</span></p>
+												<input name="mem_year" class="year" type="text" maxlength="4" value="1900">
+												년
+												<select name="mem_month" class="month" id="month">
+													<option>1</option>
+													<option>2</option>
+													<option>3</option>
+													<option>4</option>
+													<option>5</option>
+													<option>6</option>
+													<option>7</option>
+													<option>8</option>
+													<option>9</option>
+													<option>10</option>
+													<option>11</option>
+													<option>12</option>
+													</select>
+												월
+												<select name="mem_day" class="day" id="month">
+													<option>1</option>
+													<option>2</option>
+													<option>3</option>
+													<option>4</option>
+													<option>5</option>
+													<option>6</option>
+													<option>7</option>
+													<option>8</option>
+													<option>9</option>
+													<option>10</option>
+													<option>11</option>
+													<option>12</option>
+													<option>13</option>
+													<option>14</option>
+													<option>15</option>
+													<option>16</option>
+													<option>17</option>
+													<option>18</option>
+													<option>19</option>
+													<option>20</option>
+													<option>21</option>
+													<option>22</option>
+													<option>23</option>
+													<option>24</option>
+													<option>25</option>
+													<option>26</option>
+													<option>27</option>
+													<option>28</option>
+													<option>29</option>
+													<option>30</option>
+													<option>31</option>
+													</select>
+												일 </div>
+										<div class="col-xs-12 sex">
+											
+												<p><span>성별</span><span class="star">*</span></p>
+												<div class="form-group">
+    												<div class="btn-group" data-toggle="buttons">
+			
+														<label class="btn btn-default active">
+															<span class="glyphicon glyphicon-ok"></span>
+																<input type="radio" name="male" id="option2" autocomplete="off" chacked>남
+																<img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-man-64.png" width=20 height=20 alt="">
+														</label>
+		
+														<label class="btn btn-info">
+															<span class="glyphicon glyphicon-ok"></span>
+																<input type="radio" name="female" id="option1" autocomplete="off">여
+																<img src="https://cdn1.iconfinder.com/data/icons/iconbeast-lite/30/woman-figure.png" width=20 height=20 alt="">
+														</label>
+
+		
+													</div>
+												</div>
+										</div>
+										<div class="row step2-btn">
+												<div class="col-xs-6 cancle" align="left"><img src="/page_imgs/member_img/btn-cancle.jpg"></div>
+												<div class="col-xs-6 next" align="right"><a onClick="mem_join_next()" style="cursor:pointer"><img src="/page_imgs/member_img/btn-next.jpg"></a></div>
+
+										</div>
+										
+										</form>
+								</div>
+								
+								
+						</div>
+				</div>
+		</div>
+</div>
+<% include ../bottom %>
+
+</body>
+</html>
