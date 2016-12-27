@@ -9,8 +9,14 @@ body{font-family: 'Nanum Gothic', serif;}
 
 /*검색 부분*/
 .contents .con-search{margin:120px 0; font-size:16px; font-weight:bold;}
-.contents .con-search .line1{width:auto; height:4px; background-color:#d8027c; margin:0 20px;}
-.contents .con-search h4{font-size:18px; color:#a51082; font-weight:600;}
+.contents .con-search .search-title p{
+	padding: 10px 0;
+    margin: 30px 0 20px 0;
+    font-size: 16px;
+    color: #ff574a;
+    font-family: "BMD";
+    border-bottom: 2px solid #ff574a;
+    font-weight: normal}
 
 /*인기*/
 .bg-blue{background-color:#1b87c9;}
@@ -89,7 +95,8 @@ color:#ff574a; font-family:"BMD"; border-bottom:2px solid #ff574a; font-weight:n
 .menu{margin-top:0;}	
 	
 /*검색 부분*/
-.contents .con-search{margin:70px 0 50px 0;}	
+.contents .con-search{margin:30px 0 50px 0;}
+.contents .con-search .search-title p{width:95%;}
 
 /*인기*/
 .bg-blue{margin-top:0 !important; height:100%;}	

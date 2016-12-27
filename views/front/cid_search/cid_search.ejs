@@ -30,9 +30,7 @@
 
 <div class="contents container">
 		<div class="con-search row" align="center">
-			<div class="line1"></div>
-			<div><h4>총 "<%= contents.length%>"개의 검색 결과</h4></div>
-			<div class="line1"></div>
+			<div class="search-title"><p>총 "<%= contents.length%>"개의 검색 결과</p></div>
 			<ul class="grid effect-2" id="grid">
 				<% for(var i=0; i<contents.length; i++) { %>
 				<li>
@@ -49,7 +47,6 @@
 			<% } %>
 			</ul>
 		</div>
-		
 </div>
 
 </div>
