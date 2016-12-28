@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>사이다경제 | 회원가입</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/cid_join.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+<link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+
+<script type="text/javascript">
+
+function test(){
+	 if(document.f1.c1.value=="1"){
+	 alert("true");
+	 document.f1.c1.focus();
+	  return;
+	}
+	
+	else{
+		alert("아이디를 입력해 주세요.");
+	document.f1.c1.focus();
+	  return;
+		
+	}
+		document.f1.submit(); 	
+}
+
+
+function agreeSendit() 
+{ 
+        var form = document.mem_join; 
+        if(!form.checkbox1.checked){ 
+                alert("서비스 이용약관에 동의하셔야 회원가입이 가능합니다."); 
+         
+        }else if (form.checkbox1.checked){ 
+        	if(!form.checkbox2.checked){ 
+                alert("개인정보 수집 및 이용 동의하셔야 회원가입이 가능합니다."); 
+               }
+               else if (form.checkbox2.checked){
+               	location.href="/join_step_2"; 
+               }
+        
+
+        } else { 
+         
+        alert("관리자 에게 연락"); 
+        } 
+} 
+</script>
+
+
+</head>
+<body>
+<% include ../top %>
+
+
+<div class="row"style="margin:0; padding:0">
+	<div class="col-xs-12 main-join" align="center">
+		<!-- Trigger the modal with a button -->
+ 		<!--button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Small Modal</button-->
+		<div class="bg">
+			<div class="row join">
+				<form name="mem_join" action="/join_step_2">
+					<div class="col-xs-12 join-step" align="right" style="padding:0;">
+						<img src="/page_imgs/member_img/ch_join_1.png">
+						<img src="/page_imgs/member_img/join_2.png">
+						<img src="/page_imgs/member_img/join_3.png"></div>
+							<div class="row step1">
+								<div class="col-xs-12 service" align="left">
+									<p style="float: left;display: inline-block">서비스 이용약관 동의 (필수)</p>
+										<div style="float:right; display:inline-block; margin:20px 0 10px 0;" class="btn-group" data-toggle="buttons">
+											<input type="checkbox" name="checkbox1">
+											<!--label class="btn btn-primary">
+											<input type="checkbox" name="checkbox1" autocomplete="off" value="1">
+											<span class="glyphicon glyphicon-ok"></span>
+											</label-->					
+										</div>
+									<textarea style="resize: none;"></textarea>
+								</div>
+								<div class="col-xs-12 privacy" align="left">
+									<p style="float: left;display: inline-block">개인정보 수집 및 이용 동의 (필수)</p>
+										<div style="float:right; display:inline-block; margin:20px 0 10px 0;" class="btn-group" data-toggle="buttons">
+											<input type="checkbox" name="checkbox2">
+											<!--label class="btn btn-primary">
+											<input type="checkbox" name="checkbox2" autocomplete="off" value="2">
+											<span class="glyphicon glyphicon-ok"></span>
+											</label-->					
+										</div>
+									<textarea style="resize: none;"></textarea>
+								</div>
+								<div class="row step1-btn">
+									<div class="col-xs-6 cancle" align="left"><img src="/page_imgs/member_img/btn-cancle.jpg"></div>
+									<div class="col-xs-6 next" align="right"><a href="javascript:agreeSendit();" style="cursor:pointer"><img src="/page_imgs/member_img/btn-next.jpg"></a></div>
+								</div>
+						</div>
+					</div>
+				</form>	
+			</div>
+		</div>
+	</div>
+</div>
+
+<% include ../bottom %>
+
+</body>
+</html>
