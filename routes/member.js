@@ -32,7 +32,7 @@ router.get('/login', function(req, res, next) {
 
 });
 
-router.get('/pseach', function(req, res, next) {
+router.get('/psearch', function(req, res, next) {
 
 	res.render('front/cid_member/password_search', { });
 
