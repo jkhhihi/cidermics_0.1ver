@@ -31,4 +31,10 @@ router.get('/login', function(req, res, next) {
 	res.render('front/cid_member/cid_login', { });
 
 });
+
+router.get('/pseach', function(req, res, next) {
+
+	res.render('front/cid_member/password_search', { });
+
+});
 module.exports = router;
