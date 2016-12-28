@@ -178,9 +178,7 @@ function active(currentPage, i){
 }
 
 function addQuestion(no){
-	
 	var contents = "";
-	
 	contents += '<div class=""> ' + 
 		            '<div class="input-field col l12"> ' +
 						'<input id="q'+no+'" name="q'+no+'" type="text" class="validate"> ' +
@@ -236,7 +234,6 @@ $(document).ready(function(){
 		var arr = userinfo.split("/");
 		var userNo = arr[0];
 		var writer = arr[1];
-		
 		
 		if(cate == null) {
 			alert('카테고리를 지정해주세요');

@@ -185,7 +185,6 @@ router.get('/addMore/:idx', function(req, res, next) {
    //var end = idx * 12;
    var end = 12;
    
-   console.log(start, end);
     qry="select con_no, con_photo, con_title  from cider.cid_contents where con_release <= '"+_tot+"' order by con_no desc limit "+ start +", "+ end +"";
    console.log(qry);
    mysql.select(qry, function (err, data){
