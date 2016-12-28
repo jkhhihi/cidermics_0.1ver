@@ -22,7 +22,7 @@ body{font-family: 'Nanum Gothic', serif;}
 /*회원가입 스텝2*/
 .step2 .title p{ font-size:22px; color:212121; font-weight:bold; margin:30px 0 30px 0;}
 .step2 .star{color:#c02e88;}
-.step2 .id{color:#1b87c9; margin-bottom:40px; float:left;}
+.step2 .id{color:#1b87c9; margin-top:40px; margin-bottom:40px; float:left;}
 .step2 .id input{width:100px;}
 .step2 .nicname{color:#1b87c9; margin-bottom:40px; float:left;}
 .step2 .nicname input{width:120px;}
