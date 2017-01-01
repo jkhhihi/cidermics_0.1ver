@@ -230,7 +230,7 @@ router.post('/contents/insert', ensureAuthenticated, function(req, res, next) {
 	var userText = req.body.userText;
 	var date = getWorldTime(+9);
 	
-	var sets = {con_category : category, con_title : title, con_content : contents, con_photo : photo, con_viewCount : 0, con_regDate : date, con_upDate : date, con_writer : writer, user_no : userNo, user_comment : userText, con_release : '201612311730'};
+	var sets = {con_category : category, con_title : title, con_content : contents, con_photo : photo, con_viewCount : 0, con_regDate : date, con_upDate : date, con_writer : writer, user_no : userNo, user_comment : userText, con_release : '201701311730'};
 	
 	mysql.insert('insert into cider.cid_contents set ?', sets,  function (err, data){
 

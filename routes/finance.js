@@ -76,7 +76,7 @@ router.get('/ftest/checkcode', function(req, res, next) {
 
 router.get('/finance/profile', function(req, res, next) {
 	var finance;
-	mysql.select("SELECT COUNT(*) AS appno FROM cider.cid_fi_applyform where fi_app_cate='201612';", function (err, data){
+	mysql.select("SELECT COUNT(*) AS appno FROM cider.cid_fi_applyform where fi_app_cate='201701';", function (err, data){
 		
 	res.render('front/cid_finance/cid_finance_profile', {finance : data});
 	});
@@ -90,7 +90,7 @@ router.get('/finance/done', function(req, res, next) {
 
 router.get('/finance', function(req, res, next) {
 	var finance;
-	mysql.select("SELECT COUNT(*) AS appno FROM cider.cid_fi_applyform where fi_app_cate='201612';", function (err, data){
+	mysql.select("SELECT COUNT(*) AS appno FROM cider.cid_fi_applyform where fi_app_cate='201701';", function (err, data){
 		
 	res.render('front/cid_finance/cid_finance', {finance : data});
 	});
@@ -146,7 +146,7 @@ router.get('/finance/contents', function(req, res, next) {
 		 
 		 row = data;
 		 
-			mysql.select("SELECT COUNT(*) AS appno FROM cider.cid_fi_applyform where fi_app_cate='201612';", function (err, data){
+			mysql.select("SELECT COUNT(*) AS appno FROM cider.cid_fi_applyform where fi_app_cate='201701';", function (err, data){
 				
 			
 
@@ -179,7 +179,7 @@ router.post('/finance/apply/insert', function(req, res, next) {
 	var date = getWorldTime(+9);
 	
 	var row;
-	var sets = {fi_app_cate : 201612, fi_app_name : fi_app_name, fi_app_phone : fi_app_phone, fi_app_email : fi_app_email, fi_app_job : fi_app_job, fi_app_path : fi_app_path, fi_app_comment : fi_app_comment, fi_app_regDate : date, fi_app_upDate : date, fi_app_age:fi_app_age, fi_app_place:fi_app_place};
+	var sets = {fi_app_cate : 201701, fi_app_name : fi_app_name, fi_app_phone : fi_app_phone, fi_app_email : fi_app_email, fi_app_job : fi_app_job, fi_app_path : fi_app_path, fi_app_comment : fi_app_comment, fi_app_regDate : date, fi_app_upDate : date, fi_app_age:fi_app_age, fi_app_place:fi_app_place};
 	
 	pool.insert('insert into cider.cid_fi_applyform set ?', sets, function (err, data){
 		if(err){
@@ -263,9 +263,9 @@ router.get('/finance/review', function(req, res, next) {
 
 	var finance;
 	var rev;
-	mysql.select("SELECT COUNT(*) AS appno FROM cider.cid_fi_applyform where fi_app_cate='201612';", function (err, data){
+	mysql.select("SELECT COUNT(*) AS appno FROM cider.cid_fi_applyform where fi_app_cate='201701';", function (err, data){
 		
-		mysql.select('SELECT * FROM cider.cid_fi_review;', function (err, data2){
+		mysql.select('SELECT * FROM cider.cid_fi_review order by rev_no desc;', function (err, data2){
 		
 	res.render('front/cid_finance/cid_finance_review', {finance : data, rev:data2});
 	});
@@ -275,7 +275,7 @@ router.get('/finance/review', function(req, res, next) {
 router.get('/finance/process', function(req, res, next) {
 
 	var finance;
-	mysql.select("SELECT COUNT(*) AS appno FROM cider.cid_fi_applyform where fi_app_cate='201612';", function (err, data){
+	mysql.select("SELECT COUNT(*) AS appno FROM cider.cid_fi_applyform where fi_app_cate='201701';", function (err, data){
 		
 	res.render('front/cid_finance/cid_finance_process', {finance : data});
 	});
@@ -284,7 +284,7 @@ router.get('/finance/process', function(req, res, next) {
 router.get('/finance/necessary', function(req, res, next) {
 
 	var finance;
-	mysql.select("SELECT COUNT(*) AS appno FROM cider.cid_fi_applyform where fi_app_cate='201612';", function (err, data){
+	mysql.select("SELECT COUNT(*) AS appno FROM cider.cid_fi_applyform where fi_app_cate='201701';", function (err, data){
 		
 	res.render('front/cid_finance/cid_finance_necessary', {finance : data});
 	});
@@ -293,7 +293,7 @@ router.get('/finance/necessary', function(req, res, next) {
 router.get('/finance/menu', function(req, res, next) {
 
 	var finance;
-	mysql.select("SELECT COUNT(*) AS appno FROM cider.cid_fi_applyform where fi_app_cate='201612';", function (err, data){
+	mysql.select("SELECT COUNT(*) AS appno FROM cider.cid_fi_applyform where fi_app_cate='201701';", function (err, data){
 		
 	res.render('front/cid_finance/cid_finance_menu', {finance : data});
 	});

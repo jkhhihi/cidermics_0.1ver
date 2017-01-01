@@ -38,6 +38,8 @@
 </style>
 
 <!--script src="/js/bootstrap.min.js"></script-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" type="text/css" href="/css/component.css" />
 <script src="/js/modernizr.custom.js"></script>
@@ -70,10 +72,131 @@ if (todayAtMidn.getTime() == specificDate.getTime())
 }
 </script>
 
+<style>
+	
+#info-wrap {
+	color:#fff;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.55);
+	z-index: 999999;
+}
 
+.info-close {
+	border: 2px solid #fff;
+	color: #fff;
+	background: none;
+	text-transform: uppercase;
+	font-weight: bold;
+	padding: 0.5em 0.5em;
+	letter-spacing: 1px;
+	margin: 1em 0 0 0;
+}
+
+@media screen and (max-width: 70em) {
+	.mockup-width--forth {
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 60em) {
+	.mockup-width--third {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 50em) {
+	.customizer {
+		top: 0;
+		width: 100%;
+		height: auto;
+		padding: 30px 0;
+		-webkit-transform: none;
+		transform: none;
+		border-radius: 0;
+	}
+	.color-tool {
+		-webkit-flex-direction: row;
+		flex-direction: row;
+		-webkit-justify-content: center;
+		justify-content: center;
+	}
+	.color-tool li {
+		margin: 3px;
+	}
+	.content {
+		padding: 1em 0;
+	}
+	.mockup-section {
+		padding: 40px 0;
+	}
+	.mockup-content {
+		padding: 0 10px;
+	}
+	.mockup-width--forth,
+	.mockup-width--half {
+		width: 100%;
+	}
+	.mockup-logo,
+	.mockup-nav {
+		width: 100%;
+		text-align: center;
+	}
+	.mockup-nav {
+		line-height: 1.5;
+		padding: 20px 0 0;
+	}
+	.mockup-heading--large {
+		font-size: 2.25em;
+	}
+	.mockup-blockquote {
+		font-size: 1.5em;
+	}
+}
+
+
+</style>
+
+<style type="text/css">
+  #pop{
+  width: 90%;
+  height:100%;
+	max-width: 500px;
+	max-height: 580px;
+	background: #fff;
+	padding: 1em 1em;
+	font-size: 15px;
+	line-height: 1.5;
+	text-align: center;
+	box-shadow: 0 0 30px rgba(0,0,0,0.2);
+	left:50%;
+   }
+ .close1 div{float:left; text-align:right; }
+ #check{font-size:12px; font-family:'돋움'; padding-left:70px;}
+ #close{font-size:13px; padding:5px; font-weight:bold;}
+ #pdtop{padding-top:10px;}
+
+@media(max-width: 760px){
+ #pop{
+  height:75%;
+	max-height: 450px;
+   }
+   
+}
+
+</style>
 
 </head>
-<body onload="javascript:popupOpen();">
+<body>
 <!--위로가기 버튼-->
 <div id="but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></div>
 <% include top %>
@@ -102,28 +225,122 @@ if (todayAtMidn.getTime() == specificDate.getTime())
 		</div>
 </div>
 </div>
-<!-- Large modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      ...
-    </div>
-  </div>
+
+ <script type="text/javascript">
+     function setCookie( name, value, expiredays ) { 
+   var todayDate = new Date(); 
+    todayDate.setDate( todayDate.getDate() + expiredays ); 
+    document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";" 
+   }
+  function closePop() { 
+   if ( document.pop_form.chkbox.checked ){ 
+    setCookie( "maindiv", "done" , 1 ); 
+   } 
+   document.all['pop'].style.visibility = "hidden";
+   document.all['info-wrap'].style.visibility = "hidden";
+  }
+  
+  $(function () {
+    $('.button-checkbox').each(function () {
+
+        // Settings
+        var $widget = $(this),
+            $button = $widget.find('button'),
+            $checkbox = $widget.find('input:checkbox'),
+            color = $button.data('color'),
+            settings = {
+                on: {
+                    icon: 'glyphicon glyphicon-check'
+                },
+                off: {
+                    icon: 'glyphicon glyphicon-unchecked'
+                }
+            };
+
+        // Event Handlers
+        $button.on('click', function () {
+            $checkbox.prop('checked', !$checkbox.is(':checked'));
+            $checkbox.triggerHandler('change');
+            updateDisplay();
+        });
+        $checkbox.on('change', function () {
+            updateDisplay();
+        });
+
+        // Actions
+        function updateDisplay() {
+            var isChecked = $checkbox.is(':checked');
+
+            // Set the button's state
+            $button.data('state', (isChecked) ? "on" : "off");
+
+            // Set the button's icon
+            $button.find('.state-icon')
+                .removeClass()
+                .addClass('state-icon ' + settings[$button.data('state')].icon);
+
+            // Update the button's color
+            if (isChecked) {
+                $button
+                    .removeClass('btn-default')
+                    .addClass('btn-' + color + ' active');
+            }
+            else {
+                $button
+                    .removeClass('btn-' + color + ' active')
+                    .addClass('btn-default');
+            }
+        }
+
+        // Initialization
+        function init() {
+
+            updateDisplay();
+
+            // Inject the icon if applicable
+            if ($button.find('.state-icon').length == 0) {
+                $button.prepend('<i class="state-icon ' + settings[$button.data('state')].icon + '"></i> ');
+            }
+        }
+        init();
+    });
+});
+  
+ </script>
+
+<div id="info-wrap">
+		<div id="pop">
+			 <div>
+  				<a href="/finance/necessary"><img class="img-responsive" src="http://i.imgur.com/aj1T0KV.jpg"></a>
+ 			 </div>
+ 			 
+			<div class="close1" style="opacity:.98;">
+  				<form name="pop_form" id="pdtop">
+  					<span class="button-checkbox">
+        				<button type="button" class="btn" data-color="primary">하루동안 보지 않기</button>
+        				<input type="checkbox" name="chkbox" value="checkbox" class="hidden" checked />
+    				</span>
+    				<span>
+        				<button type="button" class="btn" data-color="black"><a href="javascript:closePop();">닫기</a></button>
+    				</span>
+  					<!--div id="close" style="margin:auto;"><a href="javascript:closePop();">CLOSE</a></div-->
+  				</form>
+ 			</div>
+			
+		</div>
 </div>
-
-<script type="text/javascript">
-<!--
-function popupOpen(){
-	var popUrl = "/finance/necessary";	//팝업창에 출력될 페이지 URL
-	var popOption = "width=370, height=360, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
-		window.open(popUrl,"",popOption);
-	}
-//-->
+ 
+<script language="Javascript">
+  cookiedata = document.cookie;    
+  if ( cookiedata.indexOf("maindiv=done") < 0 ){      
+   document.all['pop'].style.visibility = "visible";
+   
+   } 
+   else {
+    document.all['pop'].style.visibility = "hidden";
+    document.all['info-wrap'].style.visibility = "hidden";
+  }
 </script>
-
-<a href="javascript:popupOpen();" > 열려라 팝업창! </a>
-
 
 <!--배너뿌림-->
 <div class="main-banner container">
@@ -131,7 +348,7 @@ function popupOpen(){
 				<!-- Swiper -->
 				<div class="swiper-container">
 						<div class="swiper-wrapper">
-								<div class="swiper-slide"><a href="/finance"><img class="img-responsive" src="http://i.imgur.com/BkeG6zc.jpg"></a></div>
+								<div class="swiper-slide"><a href="/finance/necessary"><img class="img-responsive" src="http://i.imgur.com/BkeG6zc.jpg"></a></div>
 								<div class="swiper-slide">
 								<div class="appbanner-bg">
 									<div style="opacity:0; width:100%;"><a href="/appdown"><img src="http://i.imgur.com/5mXAWvJ.jpg" alt="" style="width:100%;"></a></div>
