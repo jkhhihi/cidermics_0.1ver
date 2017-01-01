@@ -42,6 +42,20 @@ router.get('/', function(req, res, next) {
 	 
 });
 
+
+router.post('/selectDate', function(req, res, next) {
+	var sd = req.body.startDate;
+   var qry="";
+   //where con_regDate like \'%"+x+"\'
+    qry="select con_no, con_photo, con_title from cider.cid_contents where con_regDate like \'%"+sd+"%\' order by con_no desc";
+   mysql.select(qry, function (err, data){
+
+       if (err) throw err;
+       res.render('front/cid_main', { contents : data});
+   });
+});
+
+
 router.get('/complete', function(req, res, next) {
 
 	res.render('front/complete', { });
@@ -64,6 +78,8 @@ router.get('/appdown', function(req, res, next) {
 /*인서트 테스트 코드*/
 router.get('/test', function(req, res, next) {
 	var row;
+	var year = req.body.year;
+	console.log(year);
 	var now = new Date();
 	 var _year=  now.getFullYear();
  var _mon =   now.getMonth()+1;

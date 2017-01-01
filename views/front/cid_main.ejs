@@ -27,7 +27,16 @@
 <!--link href="/css/bootstrap.min.css" rel="stylesheet"-->
 <link href="/css/cid_main.css" rel="stylesheet">
 <link href="/css/swiper.css" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<!-- 콘텐츠 JQUERY
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script-->
+
+<style>
+	.ui-datepicker-calendar {
+    display: none;
+    }
+</style>
+
 <!--script src="/js/bootstrap.min.js"></script-->
 
 <link rel="stylesheet" type="text/css" href="/css/component.css" />
@@ -62,11 +71,13 @@ if (todayAtMidn.getTime() == specificDate.getTime())
 </script>
 
 
+
 </head>
-<body>
+<body onload="javascript:popupOpen();">
 <!--위로가기 버튼-->
 <div id="but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></div>
 <% include top %>
+
 <div class="contents_detail-mob_menu"><img src="http://i.imgur.com/iW4DMcC.png" height="50"></div>
 
 <div class="row" style="margin:0; padding:0">
@@ -91,6 +102,29 @@ if (todayAtMidn.getTime() == specificDate.getTime())
 		</div>
 </div>
 </div>
+<!-- Large modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      ...
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+<!--
+function popupOpen(){
+	var popUrl = "/finance/necessary";	//팝업창에 출력될 페이지 URL
+	var popOption = "width=370, height=360, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
+		window.open(popUrl,"",popOption);
+	}
+//-->
+</script>
+
+<a href="javascript:popupOpen();" > 열려라 팝업창! </a>
+
+
 <!--배너뿌림-->
 <div class="main-banner container">
 		<p>사이다 소식</p>
@@ -139,41 +173,76 @@ if (todayAtMidn.getTime() == specificDate.getTime())
         autoplayDisableOnInteraction: false
     });
 </script>
+<script type="text/javascript">
+$(function() {
+     $('.date-picker').datepicker(
+    {
+    monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+    showMonthAfterYear: true,
+    changeMonth: true,
+    changeYear: true,
+    showButtonPanel: true,
+    dateFormat: 'yy-mm',
+    //yearSuffix: '년',
+    yearRange: '2016:2017',
+    onClose: function(dateText, inst) {
+	function isDonePressed(){
+     return ($('#ui-datepicker-div').html().indexOf('ui-datepicker-close ui-state-default ui-priority-primary ui-corner-all ui-state-hover') > -1);
+    }
+	if (isDonePressed()){
+      var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
+	  //month = parseInt(month) + 1;
+      var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
+      
+      $(this).datepicker('setDate', new Date(year, month, 1)).trigger('change');
+      $('.date-picker').focusout()//Added to remove focus from datepicker input box on selecting date
+      		
+      		document.doneform.submit();
+      	
+     }
+    },
+     beforeShow : function(input, inst) {
+		inst.dpDiv.addClass('month_year_datepicker')
+			if ((datestr = $(this).val()).length > 0) {
+              year = datestr.substring(datestr.length-4, datestr.length);
+              month = datestr.substring(0, 2);
+              $(this).datepicker('option', 'defaultDate', new Date(year, month-1, 1));
+              $(this).datepicker('setDate', new Date(year, month-1, 1));
+              $(".ui-datepicker-calendar").hide();
+              
+              
+            }
+          }
+      })
+});
+</script>
+
+<!--datePicker and contents JQUERY-->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 
-<!--콘텐츠뿌림-->
-<div class="contents container">
-		<ul class="grid effect-2" id="grid">
-			<% for(var i=0; i<contents.length; i++) { %>
-				<li>
-				<div>
-					<a href="/contents/detail/<%= contents[i].con_no %>">
-					<div class="con-img">
-					<img class="img-responsive" style="width:50px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="<%= contents[i].chkDat%>">    <!--새로 업데이트된거 표시-->
-					<img class="img-responsive con-thumbnail-img" style="position:relative; z-index:1" align="center" src="<%= contents[i].con_photo %>">
-					</div>
-					</a>
-					<p align="center"><a href="/contents/detail/<%= contents[i].con_no %>">
-						<%= contents[i].con_title %></a></p>
-				</div>
-				</li>
-			<% } %>
-		</ul>
+<!--form name="doneform" method="post" action="/selectDate">
+<div>
+    <label for="startDate">Date :</label>
+    <input name="startDate" id="startDate" class="date-picker" />
 </div>
-
-<div class="icon-plus_con" align="center" onclick="addMore()"><img class="img-responsive" src="/page_imgs/fixed_img/icon_plus_con.svg"></div>
-
-		<script src="/js/contents_js/masonry.pkgd.min.js"></script>
-		<script src="/js/contents_js/imagesloaded.js"></script>
-		<script src="/js/contents_js/classie.js"></script>
-		<script src="/js/contents_js/AnimOnScroll.js"></script>
-		<script>
-			new AnimOnScroll( document.getElementById( 'grid' ), {
-				minDuration : 0.4,
-				maxDuration : 0.7,
-				viewportFactor : 0.2
-			} );
-		</script>
+</form-->
+<!--script> 
+jQuery.datepicker._hideDatepicker = function() {
+	alert(month);
+  		/*$.ajax({
+    		url : '',
+    		data : '{year : year, month : month}',
+    		method : 'post',
+    		success : function (data){
+    			 alert("통신데이터 값 : " + data);
+            	}
+			});*/
+		};
+</script-->
+<% include cid_contents/cid_contents_include %>
 
 <% include bottom %>
 
