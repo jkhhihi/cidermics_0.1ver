@@ -246,51 +246,5 @@ router.get('/addMore2/:idx/:p', function(req, res, next) {
    
 });
 
-/*
-router.get('/addMore/:idx', function(req, res, next) {
-	
-	var idx = req.params.idx;
-	
-	
-	console.log(idx+"=================");
-	var lang = req.params.lang;
-	var start = (idx - 1) * 12;
-	var end = 12;
-	
-	console.log(start, end);
-	mysql.select('select con_no, con_photo, con_title  from cider.cid_contents  order by con_no desc limit '+ start +', '+ end +'', function (err, data){
-
-		 if (err) throw err;
-		 console.log("data");
-		 console.log(data);
-		 res.send({ contents : data });
-	});
-	
-});
-
-
-router.get('/addMore2/:idx/:p', function(req, res, next) {
-	
-	var idx = req.params.idx;
-	var p=req.params.p;
-	
-	console.log(idx+"=================");
-	var lang = req.params.lang;
-	var start = (idx - 1) * 12;
-	var end = 12;
-	var qry='';
-	console.log(start, end);
-			qry='select con_no, con_photo, con_title  from cider.cid_contents where con_category = "'+ p +'" order by con_no desc limit '+ start +', '+ end +''
-	console.log(qry);
-	mysql.select(qry, function (err, data){
-		 if (err) throw err;
-		 console.log("data");
-		 console.log(data);
-		 console.log('select con_no, con_photo, con_title  from cider.cid_contents  order by con_no desc limit '+ start +', '+ end +'');
-		 res.send({ contents : data });
-	});
-	
-});
-*/
 
 module.exports = router;
