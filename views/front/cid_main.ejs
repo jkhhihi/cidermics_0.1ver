@@ -39,7 +39,6 @@
 
 <!--script src="/js/bootstrap.min.js"></script-->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" type="text/css" href="/css/component.css" />
 <script src="/js/modernizr.custom.js"></script>
@@ -181,8 +180,6 @@ if (todayAtMidn.getTime() == specificDate.getTime())
 	left:50%;
    }
  .close1 div{float:left; text-align:right; }
- #check{font-size:12px; font-family:'돋움'; padding-left:70px;}
- #close{font-size:13px; padding:5px; font-weight:bold;}
  #pdtop{padding-top:10px;}
 
 @media(max-width: 760px){
@@ -321,9 +318,8 @@ if (todayAtMidn.getTime() == specificDate.getTime())
         				<input type="checkbox" name="chkbox" value="checkbox" class="hidden" checked />
     				</span>
     				<span>
-        				<button type="button" class="btn" data-color="black"><a href="javascript:closePop();">닫기</a></button>
+        				<button type="button" class="btn" onclick="closePop();" style="color:#255177;">닫기</button>
     				</span>
-  					<!--div id="close" style="margin:auto;"><a href="javascript:closePop();">CLOSE</a></div-->
   				</form>
  			</div>
 			
