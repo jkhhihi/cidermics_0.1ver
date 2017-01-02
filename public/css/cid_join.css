@@ -1,96 +1,176 @@
 body{font-family: 'Nanum Gothic', serif;}
 .main-join{background:url(/page_imgs/fixed_img/mainimg.jpg); background-size: cover;
     background-position: center; width:100% !important; height:auto; padding-top:150px; padding-bottom:80px;}
-.main-join .bg{background-color: rgba( 255, 255, 255, 0.7 ); width:600px; height:auto; border-radius:10px; padding-top:20px; padding-bottom:20px;}
+.main-join .bg{background-color: rgba( 255, 255, 255, 0.8); width:600px; height:auto; border-radius:10px; padding:20px;}
 .main-join .bg .col-xs-12{float:none !important;}
-.main-join .bg .title{font-size:24px; font-weight:bold; border-bottom:solid 5px #ff574a; width:50%; margin-top:40px;}
-.main-join .bg .title p{padding-bottom:5px;}
-.main-join .bg .btn-join{width:70%; height:70px; background-color:#1b87c9; color:#FFFFFF; font-size:24px; margin:30px 0 30px 0; padding-top:20px;}
-.main-join .bg .btn-facejoin{width:70%; height:70px; background-color:#546c9b; color:#FFFFFF; font-size:24px; margin-bottom:30px; padding-top:20px;}
-.main-join .bg .btn-kakaojoin{width:70%; height:70px; background-color:#c7b100; color:#FFFFFF; font-size:24px; padding-top:20px; margin-bottom:40px;}
-.main-join .bg .join{width:90%; padding-top:30px; padding-bottom:30px;}
+.main-join .bg .title{font-size:18px; font-weight:bold; border-bottom:solid 3px #ff574a; width:60%; margin-top:20px;}
+.main-join .bg .btn-join{width:60%; height:50px; background-color:#1b87c9; color:#FFFFFF; font-size:16px; margin:30px 0 30px 0; padding-top:15px; border-radius:3px;}
+.main-join .bg .btn-facejoin{width:60%; height:50px; background-color:#546c9b; color:#FFFFFF; font-size:16px; margin-bottom:30px; padding-top:15px; border-radius:3px;}
+.main-join .bg .btn-facejoin img{height:20px; margin-right:10px;}
+.main-join .bg .btn-kakaojoin{width:60%; height:50px; background-color:#c7b100; color:#FFFFFF; font-size:16px; margin-bottom:20px; padding-top:15px; border-radius:3px;}
+.main-join .bg .btn-kakaojoin img{height:20px; margin-right:10px;}
+.main-join .bg .join{width:90%; padding-top:20px; padding-bottom:20px;}
+.main-join .bg .text2{font-size:16px; margin-bottom:20px;}
+.main-join .bg .text2 b{text-decoration:underline;}
 
 /*회원가입 스텝1*/
 .join .join-step img{margin-left:20px; width:85px;}
-.join .step1 .service p{font-size:22px; color:212121; font-weight:bold; margin:25px 0 10px 0;}
-.join .step1 .service textarea{width:100%; height:150px;}
-.join .step1 .privacy p{font-size:22px; color:212121; font-weight:bold; margin:25px 0 10px 0;}
-.join .step1 .privacy textarea{width:100%; height:150px;}
+.join .step1 .service, .privacy{margin:25px 0 10px 0;}
+.join .step1 .service p{font-size:16px; color:212121; font-weight:bold;}
+.join .step1 .service textarea{width:100%; height:150px; border-radius:3px;}
+.join .step1 .privacy p{font-size:16px; color:212121; font-weight:bold;}
+.join .step1 .privacy textarea{width:100%; height:150px; border-radius:3px;}
 .join .step1 .step1-btn{width:100%;}
-.join .step1 .step1-btn div img{margin-top:20px;}
+.join .step1 .step1-btn div img{margin-top:10px; height:40px; border-radius:3px;}
+.join .step1 .service input[id="cb1"] + label {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #b6b6b6;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius:3px;
+  cursor: pointer;
+}
+.join .step1 .service input[id="cb1"] {
+  display: none;
+}
+.join .step1 .service input[id="cb1"]:checked + label:before {
+  content: '\2714';  /* 체크표시 유니코드 사용 */
+  color: #1b87c9;
+  border-color: #999;
+  padding-right:3px;
+  width:20px;
+  height:20px;
+}
+
+.join .step1 .privacy input[id="cb2"] + label {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #b6b6b6;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius:3px;
+  cursor: pointer;
+}
+.join .step1 .privacy input[id="cb2"] {
+  display: none;
+}
+.join .step1 .privacy input[id="cb2"]:checked + label:before {
+  content: '\2714';  /* 체크표시 유니코드 사용 */
+  color: #1b87c9;
+  border-color: #999;
+  padding-right:3px;
+  width:20px;
+  height:20px;
+}
 
 /*회원가입 스텝2*/
-.step2 .title p{ font-size:22px; color:212121; font-weight:bold; margin:30px 0 30px 0;}
-.step2 .star{color:#c02e88;}
-.step2 .id{color:#1b87c9; margin-top:40px; margin-bottom:40px; float:left;}
-.step2 .id input{width:100px;}
-.step2 .nicname{color:#1b87c9; margin-bottom:40px; float:left;}
-.step2 .nicname input{width:120px;}
-.step2 .birth{color:#1b87c9; margin-bottom:40px; float:left;}
-.step2 .birth input.year{width:65px;}
-.step2 .birth input.month ,.day{width:45px;}
-.step2 .sex{color:#1b87c9; margin-bottom:22px; float:left;}
-.step2 .nicname1-check{width:80px; height:30px; background-color:#1b87c9; color:#FFFFFF; font-size:16px; padding-top:5px; display:inline-block; margin-left:20px; text-align:center;}
-.step2 .email-check{width:80px; height:30px; background-color:#1b87c9; color:#FFFFFF; font-size:16px; padding-top:5px; display:inline-block; margin-left:20px; text-align:center;}
-.step2 .sex .man{margin-right:10px;}
-.step2 .sex .man, .woman{width:30px; height:26px; font-size:16px; padding-top:5px; text-align:center;}
-.step2 .id p, .nicname p, .birth p, .sex p{display:inline-block; float:left; margin-right:10px; width:100px; text-align:center;}
+.width-80{width:80px; display:inline-block;}
+.step2{color:#212121; font-size:12px; font-weight:bold;}
+.step2 .star{color:#ff0000;}
+.step2 .id{margin:30px 0; float:left;}
+.step2 .id input{width:100px; height:30px; border-radius:3px; padding:0 5px;}
+.step2 .name{margin-bottom:30px; float:left;}
+.step2 .name input{width:100px; height:30px; border-radius:3px; padding:0 5px;}
+.step2 .password{margin-bottom:30px; float:left;}
+.step2 .password input{width:100px; height:30px; border-radius:3px; padding:0 5px;}
+.step2 .ch_password{margin-bottom:30px; float:left;}
+.step2 .ch_password input{width:100px; height:30px; border-radius:3px; padding:0 5px;}
+.step2 .birth{margin-bottom:30px; float:left;}
+.step2 .birth input.year{width:55px; height:30px; border-radius:3px; padding:0 5px;}
+.step2 .birth select.month{width:55px; height:30px; border-radius:3px; padding:0 5px;}
+.step2 .birth select.day{width:55px; height:30px; border-radius:3px; padding:0 5px;}
+.step2 .sex{margin-bottom:20px; float:left;}
+.step2 .email-check{width:80px; height:30px; background-color:#1b87c9; color:#FFFFFF; font-size:12px; padding-top:8px; display:inline-block; margin-left:10px; text-align:center; border-radius:3px;}
 .join .step2 .step2-btn{width:100%; margin:0;}
-.join .step2 .step2-btn div img{margin-top:10px; height:30px;}
+.join .step2 .step2-btn div img{margin-top:10px; height:40px; border-radius:3px;}
 
 /*회원가입 스텝3*/
 .step3 .img{margin:70px 0 40px 0;}
-.step3 .text{font-size:36px; margin-bottom:60px;}
+.step3 .img img{height:100px;}
+.step3 .text{font-size:24px; font-weight:bold; margin-bottom:60px;}
+.step3 .ok img{height:40px; border-radius:3px;}
 
 /*로그인*/
 .main-login{background:url(/page_imgs/fixed_img/mainimg.jpg); background-size: cover;
     background-position: center; width:100% !important; height:auto; padding-top:150px; padding-bottom:80px;}
-.main-login .bg{background-color: rgba( 255, 255, 255, 0.7 ); width:600px; height:auto; border-radius:10px; padding-top:20px; padding-bottom:20px;}
+.main-login .bg{background-color: rgba( 255, 255, 255, 0.8); width:600px; height:auto; border-radius:10px; padding:20px; }
 .main-login .bg .col-xs-12{float:none !important;}
-.main-login .bg .title{font-size:24px; font-weight:bold; border-bottom:solid 5px #ff574a; width:50%; margin-top:40px;}
-.main-login .bg .title p{padding-bottom:5px;}
-.main-login .bg .email input{background-color: rgba( 255, 255, 255, 0.7 ); width:78%; border-bottom:solid 2px #1b87c9; border-top:0; border-left:0; border-right:0; margin:30px 0 10px 0; box-shadow: 2px 1px 2px 0px;}
-.main-login .bg .password input{background-color: rgba( 255, 255, 255, 0.7 ); width:78%; border-bottom:solid 2px #1b87c9;  border-top:0; border-left:0; border-right:0; box-shadow: 2px 1px 2px 0px;}
-.main-login .bg .btn-login{width:75%; height:70px; background-color:#1b87c9; color:#FFFFFF; font-size:24px; margin:20px 0 20px 0; padding-top:20px;}
-.main-login .bg .text{width:75%; color:#1b87c9; font-size:18px; font-weight:300; margin-bottom:50px; text-align:left; padding:0;}
-.main-login .bg .btn-facelogin{width:75%; height:70px; background-color:#546c9b; color:#FFFFFF; font-size:24px; margin-bottom:20px; padding-top:20px;}
-.main-login .bg .btn-kakaologin{width:75%; height:70px; background-color:#c7b100; color:#FFFFFF; font-size:24px; padding-top:20px; margin-bottom:30px;}
+.main-login .bg .title{font-size:18px; font-weight:bold; border-bottom:solid 3px #ff574a; width:60%; margin-top:20px;}
+.main-login .bg .email input{background-color: rgba( 255, 255, 255, 0.7 ); width:60%; height:40px; border-radius:3px; border-bottom:solid 2px #1b87c9; border-top:0; border-left:0; border-right:0; margin:30px 0 10px 0; box-shadow: 2px 1px 2px 0px;}
+.main-login .bg .password input{background-color: rgba( 255, 255, 255, 0.7 ); width:60%; height:40px; border-radius:3px; border-bottom:solid 2px #1b87c9;  border-top:0; border-left:0; border-right:0; box-shadow: 2px 1px 2px 0px;}
+.main-login .bg .btn-login{width:60%; height:50px; background-color:#1b87c9; color:#FFFFFF; font-size:16px; margin:20px 0 20px 0; padding-top:15px; border-radius:3px;}
+.main-login .bg .text{width:60%; color:#1b87c9; font-size:16px; font-weight:300; margin-bottom:30px; text-align:left; padding:0;}
+.main-login .bg .btn-facelogin{width:60%; height:50px; background-color:#546c9b; color:#FFFFFF; font-size:16px; margin-bottom:20px; padding-top:15px; border-radius:3px;}
+.main-login .bg .btn-facelogin img{height:20px; margin-right:10px;}
+.main-login .bg .btn-kakaologin{width:60%; height:50px; background-color:#c7b100; color:#FFFFFF; font-size:16px; margin-bottom:20px; padding-top:15px; border-radius:3px;}
+.main-login .bg .btn-kakaologin img{height:20px; margin-right:10px;}
+.main-login .bg .text2{font-size:16px; margin-bottom:20px;}
+.main-login .bg .text2 b{text-decoration:underline;}
+
+/*아이디|비밀번호 찾기*/
+.main-psearch{background:url(/page_imgs/fixed_img/mainimg.jpg); background-size: cover;
+    background-position: center; width:100% !important; height:auto; padding-top:150px; padding-bottom:80px;}
+.main-psearch .bg{background-color: rgba( 255, 255, 255, 0.8); width:600px; height:auto; border-radius:10px; padding:20px; }
+.main-psearch .bg .col-xs-12{float:none !important;}
 
 
 @media all and (max-width:1024px) {
 .main-join {display: block !important; height:auto; padding-top:50px; padding-bottom:20px;}
-.main-join .bg{width:95%; height:auto; margin:40px 0 20px 0; padding-top:0; padding-bottom:0;}
-.main-join .bg .btn-join{width:80%; height:50px; padding-top:16px; font-size:16px; margin:30px 0 20px 0;}
-.main-join .bg .btn-facejoin{width:80%; height:50px; padding-top:16px; font-size:16px; margin-bottom:20px;}
-.main-join .bg .btn-kakaojoin{ width:80%; height:50px; padding-top:16px; font-size:16px; margin-bottom:30px;}
-.main-join .bg .join{width:90%; padding-top:25px;}
+.main-join .bg{width:98%; height:auto; margin:40px 0 20px 0; padding:0;}
+.main-join .bg .title{font-size:16px; width:80%; border-bottom:solid 2px #ff574a;}
+.main-join .bg .btn-join{width:80%; height:40px; padding-top:12px; font-size:14px; margin:20px 0 20px 0;}
+.main-join .bg .btn-facejoin{width:80%; height:40px; padding-top:12px; font-size:14px; margin-bottom:20px;}
+.main-join .bg .btn-kakaojoin{ width:80%; height:40px; padding-top:12px; font-size:14px; margin-bottom:20px;}
+.main-join .bg .join{width:95%; padding-top:25px;}
+.main-join .bg .text2{font-size:12px;}
 
 /*회원가입 스텝1*/
 .join .join-step img{margin-left:10px; width:60px;}
-.join .step1 .service p{font-size:16px;}
+.join .step1 .service p{font-size:14px;}
 .join .step1 .service textarea{height:120px;}
-.join .step1 .privacy p{font-size:16px;}
+.join .step1 .privacy p{font-size:14px;}
 .join .step1 .privacy textarea{height:120px;}
 .join .step1 .step1-btn{width:100%;}
-.join .step1 .step1-btn div img{margin-top:20px; height:30px;}
+.join .step1 .step1-btn div img{margin-top:10px; height:30px;}
 
 /*회원가입 스텝2*/
+.step2 .id{margin:20px 0;}
+.step2 .id input{width:66px; height:20px; padding:0 0;}
+.step2 .name{margin-bottom:20px;}
+.step2 .name input{width:100px; height:20px; padding:0 0;}
+.step2 .password{margin-bottom:20px;}
+.step2 .password input{width:100px; height:20px; padding:0 0;}
+.step2 .ch_password{margin-bottom:20px;}
+.step2 .ch_password input{width:100px; height:20px; padding:0 0;}
+.step2 .birth{margin-bottom:20px;}
+.step2 .birth input.year{width:50px; height:20px; padding:0 0;}
+.step2 .birth select.month{width:50px; height:20px; padding:0 0;}
+.step2 .birth select.day{width:50px; height:20px; padding:0 0;}
+.step2 .sex{margin-bottom:20px;}
+.step2 .email-check{width:60px; height:20px; font-size:10px; padding-top:4px; margin-left:2px;}
+.join .step2 .step2-btn div img{height:30px;}
 
 /*회원가입 스텝3*/
 .step3 .img{margin:40px 0 40px 0;}
-.step3 .img img{width:60px;}
+.step3 .img img{height:70px;}
 .step3 .text{font-size:16px; margin-bottom:40px;}
-.step3 .ok img{width:80px;}
+.step3 .ok img{height:30px;}
 
 /*로그인*/
 .main-login {display: block !important; height:auto; padding-top:50px; padding-bottom:20px;}
-.main-login .bg{width:95%; height:auto; margin-top:20px; padding-top:20px; padding-bottom:20px;}
-.main-login .bg .email input{width:88%; font-size:14px;}
-.main-login .bg .password input{width:88%; font-size:14px;}
-.main-login .bg .btn-login{width:80%; height:50px; padding-top:16px; font-size:16px;}
-.main-login .bg .text{font-size:16px;}
-.main-login .bg .btn-facelogin{width:80%; height:50px; padding-top:16px; font-size:16px;}
-.main-login .bg .btn-kakaologin{width:80%; height:50px; padding-top:16px; font-size:16px; margin-bottom:30px;}
+.main-login .bg{width:95%; height:auto; margin-top:20px; padding:0;}
+.main-login .bg .title{font-size:16px; width:80%; margin-top:20px; border-bottom:solid 2px #ff574a;}
+.main-login .bg .email input{width:80%; font-size:12px; height:34px; margin:20px 0 10px 0;}
+.main-login .bg .password input{width:80%; font-size:12px; height:34px;}
+.main-login .bg .btn-login{width:80%; height:40px; padding-top:12px; font-size:14px; margin:10px 0 10px 0;}
+.main-login .bg .text{width:80%; font-size:12px; margin-bottom:25px;}
+.main-login .bg .btn-facelogin{width:80%; height:40px; padding-top:12px; font-size:14px;}
+.main-login .bg .btn-kakaologin{width:80%; height:40px; padding-top:12px; font-size:14px;}
+.main-login .bg .text2{font-size:12px; margin-bottom:20px;}
+
+/*아이디|비밀번호 찾기*/
+.main-psearch {display: block !important; height:auto; padding-top:50px; padding-bottom:20px;}
+.main-psearch .bg{width:95%; height:auto; margin-top:20px; padding:0;}
+
 
 
 }
