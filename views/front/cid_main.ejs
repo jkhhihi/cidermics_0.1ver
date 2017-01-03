@@ -72,7 +72,6 @@ if (todayAtMidn.getTime() == specificDate.getTime())
 </script>
 
 <style>
-	
 #info-wrap {
 	color:#fff;
 	position: fixed;
@@ -89,7 +88,6 @@ if (todayAtMidn.getTime() == specificDate.getTime())
 	background: rgba(0, 0, 0, 0.55);
 	z-index: 999999;
 }
-
 .info-close {
 	border: 2px solid #fff;
 	color: #fff;
@@ -166,30 +164,32 @@ if (todayAtMidn.getTime() == specificDate.getTime())
 </style>
 
 <style type="text/css">
-  #pop{
-  width: 90%;
-  height:100%;
+.button-checkbox .btn{height:45px; padding:0 10px; background-color:#025F96; color:#fff; font-size:14px; border-radius:2px;}
+.button-checkbox .btn:focus, .btn:hover{background-color:#025F96; color:#fff;}
+.button-close .btn{height:45px; padding:0 10px; background-color:#ececec; color:#025F96; font-size:14px; border-radius:2px;}
+#pop{
+  	width: 90%;
+ 	height:auto;
 	max-width: 500px;
 	max-height: 580px;
 	background: #fff;
 	padding: 1em 1em;
-	font-size: 15px;
 	line-height: 1.5;
 	text-align: center;
 	box-shadow: 0 0 30px rgba(0,0,0,0.2);
 	left:50%;
-   }
- .close1 div{float:left; text-align:right; }
- #pdtop{padding-top:10px;}
+	padding:10px 10px;
+}
+.close1 div{float:left; text-align:right; }
+#pdtop{padding-top:10px;}
 
 @media(max-width: 760px){
- #pop{
-  height:75%;
-	max-height: 450px;
-   }
-   
+#pop{
+  	height:auto;
+	max-height: 580px;
+	padding:10px 10px;
+}  
 }
-
 </style>
 
 </head>
@@ -314,11 +314,11 @@ if (todayAtMidn.getTime() == specificDate.getTime())
 			<div class="close1" style="opacity:.98;">
   				<form name="pop_form" id="pdtop">
   					<span class="button-checkbox">
-        				<button type="button" class="btn" data-color="primary">하루동안 보지 않기</button>
+        				<button type="button" class="btn">하루동안 보지 않기</button>
         				<input type="checkbox" name="chkbox" value="checkbox" class="hidden" checked />
     				</span>
-    				<span>
-        				<button type="button" class="btn" onclick="closePop();" style="color:#255177;">닫기</button>
+    				<span class="button-close">
+        				<button type="button" class="btn" onclick="closePop();">닫기</button>
     				</span>
   				</form>
  			</div>
@@ -455,6 +455,7 @@ jQuery.datepicker._hideDatepicker = function() {
 			});*/
 		};
 </script-->
+
 <% include cid_contents/cid_contents_include %>
 
 <% include bottom %>
