@@ -95,8 +95,10 @@ body{font-family: 'Nanum Gothic', serif;}
 .main-login .bg{background-color: rgba( 255, 255, 255, 0.8); width:600px; height:auto; border-radius:10px; padding:20px; }
 .main-login .bg .col-xs-12{float:none !important;}
 .main-login .bg .title{font-size:18px; font-weight:bold; border-bottom:solid 3px #ff574a; width:60%; margin-top:20px;}
-.main-login .bg .email input{background-color: rgba( 255, 255, 255, 0.7 ); width:60%; height:40px; border-radius:3px; border-bottom:solid 2px #1b87c9; border-top:0; border-left:0; border-right:0; margin:30px 0 10px 0; box-shadow: 2px 1px 2px 0px;}
-.main-login .bg .password input{background-color: rgba( 255, 255, 255, 0.7 ); width:60%; height:40px; border-radius:3px; border-bottom:solid 2px #1b87c9;  border-top:0; border-left:0; border-right:0; box-shadow: 2px 1px 2px 0px;}
+.main-login .bg .email input{background-color: rgba( 255, 255, 255, 0.7 ); width:60%; height:40px; border-radius:3px; border-bottom:solid 2px #1b87c9; border-top:0; border-left:0; border-right:0; margin:30px 0 5px 0; box-shadow: 2px 1px 2px 0px;}
+.main-login .bg .email #idcheck{width:60%; margin-left:2px; margin-bottom:10px;}
+.main-login .bg .password input{background-color: rgba( 255, 255, 255, 0.7 ); width:60%; height:40px; border-radius:3px; border-bottom:solid 2px #1b87c9;  border-top:0; border-left:0; border-right:0; margin-bottom:5px; box-shadow: 2px 1px 2px 0px;}
+.main-login .bg .password #pwdcheck{width:60%; margin-left:2px; margin-bottom:10px;}
 .main-login .bg .btn-login{width:60%; height:50px; background-color:#1b87c9; color:#FFFFFF; font-size:16px; margin:20px 0 20px 0; padding-top:15px; border-radius:3px;}
 .main-login .bg .text{width:60%; color:#1b87c9; font-size:16px; font-weight:300; margin-bottom:30px; text-align:left; padding:0;}
 .main-login .bg .btn-facelogin{width:60%; height:50px; background-color:#546c9b; color:#FFFFFF; font-size:16px; margin-bottom:20px; padding-top:15px; border-radius:3px;}
@@ -159,8 +161,10 @@ body{font-family: 'Nanum Gothic', serif;}
 .main-login {display: block !important; height:auto; padding-top:50px; padding-bottom:20px;}
 .main-login .bg{width:95%; height:auto; margin-top:20px; padding:0;}
 .main-login .bg .title{font-size:16px; width:80%; margin-top:20px; border-bottom:solid 2px #ff574a;}
-.main-login .bg .email input{width:80%; font-size:12px; height:34px; margin:20px 0 10px 0;}
+.main-login .bg .email input{width:80%; font-size:12px; height:34px; margin:20px 0 5px 0;}
+.main-login .bg .email #idcheck{width:80%;}
 .main-login .bg .password input{width:80%; font-size:12px; height:34px;}
+.main-login .bg .password #pwdcheck{width:60%;}
 .main-login .bg .btn-login{width:80%; height:40px; padding-top:12px; font-size:14px; margin:10px 0 10px 0;}
 .main-login .bg .text{width:80%; font-size:12px; margin-bottom:25px;}
 .main-login .bg .btn-facelogin{width:80%; height:40px; padding-top:12px; font-size:14px;}

@@ -87,7 +87,7 @@ function checkPwd(){
   var pw1 = document.mem_join.mem_pw.value;
   var pw2 = document.mem_join.mem_pw2.value;
   if(pw1!=pw2){
-   document.getElementById('checkPwd').style.color = "black";
+   document.getElementById('checkPwd').style.color = "red";
    document.getElementById('checkPwd').innerHTML = "  *패스워드가 다릅니다."; 
   }else{
    document.getElementById('checkPwd').style.color = "blue";
@@ -126,12 +126,12 @@ function checkPwd(){
 							</div>
 							<div class="col-xs-12 password padding-lr-0">
 								<span class="width-80 password_title">비밀번호<span class="star">*</span></span>
-								<input name='mem_pw' class="nicname1" type="password" style="IME-MODE: disabled" size="12" minlength="8" maxlength="20"  onKeyUp="checkPwd()" >
+								<input name='mem_pw' class="nicname1" type="password" style="IME-MODE: disabled" size="12" minlength="8" maxlength="20"  onKeyUp="checkPwd()" />
 							</div>
 							<div class="col-xs-12 ch_password padding-lr-0">	
 								<span class="width-80 ch_password_title">비밀번호 확인<span class="star">*</span></span>
 								<input name='mem_pw2' class="nicname1" type="password" style="IME-MODE: disabled" size="12" minlength="8"  maxlength="20" onKeyUp="checkPwd()" />
-								<div id="checkPwd"></div>
+								<div id="checkPwd" style="margin-left:80px; margin-top:5px;"></div>
 							</div>
 							<div class="col-xs-12 birth padding-lr-0">
 								<span class="width-80 birth_title">생년월일<span class="star">*</span></span>
