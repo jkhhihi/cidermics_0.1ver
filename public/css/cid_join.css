@@ -108,12 +108,38 @@ body{font-family: 'Nanum Gothic', serif;}
 .main-login .bg .text2{font-size:16px; margin-bottom:20px;}
 .main-login .bg .text2 b{text-decoration:underline;}
 
-/*아이디|비밀번호 찾기*/
+/*비밀번호 찾기*/
 .main-psearch{background:url(/page_imgs/fixed_img/mainimg.jpg); background-size: cover;
     background-position: center; width:100% !important; height:auto; padding-top:150px; padding-bottom:80px;}
 .main-psearch .bg{background-color: rgba( 255, 255, 255, 0.8); width:600px; height:auto; border-radius:10px; padding:20px; }
 .main-psearch .bg .col-xs-12{float:none !important;}
-
+.main-psearch .bg .title{font-size:18px; font-weight:bold; border-bottom:solid 3px #ff574a; width:60%; margin-top:20px;}
+.main-psearch .step-title{font-size:14px; margin:40px 0 20px 0; font-family:dotum,'돋움',arial,sans-serif,Helvetica,sans-serif; color:#1b87c9;}
+.main-psearch .psearch-btn div img{margin-top:10px; margin-bottom:20px; height:40px; border-radius:3px;}
+.main-psearch .id input{
+	width:150px;
+	height:30px;
+	background-color: rgba( 255, 255, 255, 0.7 );
+    border-radius: 3px;
+    border-bottom: solid 2px #1b87c9;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    margin: 0 0 30px 0;
+    box-shadow: 2px 1px 2px 0px;
+}
+.main-psearch .code input{
+	width:200px;
+	height:30px;
+}
+.main-psearch .new-pwd input{
+	width:200px;
+	height:30px;
+}
+.main-psearch .new-pwd-ch input{
+	width:200px;
+	height:30px;
+}
 
 @media all and (max-width:1024px) {
 .main-join {display: block !important; height:auto; padding-top:50px; padding-bottom:20px;}
@@ -149,6 +175,7 @@ body{font-family: 'Nanum Gothic', serif;}
 .step2 .birth select.day{width:50px; height:20px; padding:0 0;}
 .step2 .sex{margin-bottom:20px;}
 .step2 .email-check{width:60px; height:20px; font-size:10px; padding-top:4px; margin-left:2px;}
+.step2 .step2-btn div img{height:30px;}
 .join .step2 .step2-btn div img{height:30px;}
 
 /*회원가입 스텝3*/
@@ -164,16 +191,31 @@ body{font-family: 'Nanum Gothic', serif;}
 .main-login .bg .email input{width:80%; font-size:12px; height:34px; margin:20px 0 5px 0;}
 .main-login .bg .email #idcheck{width:80%;}
 .main-login .bg .password input{width:80%; font-size:12px; height:34px;}
-.main-login .bg .password #pwdcheck{width:60%;}
+.main-login .bg .password #pwdcheck{width:80%;}
 .main-login .bg .btn-login{width:80%; height:40px; padding-top:12px; font-size:14px; margin:10px 0 10px 0;}
 .main-login .bg .text{width:80%; font-size:12px; margin-bottom:25px;}
 .main-login .bg .btn-facelogin{width:80%; height:40px; padding-top:12px; font-size:14px;}
 .main-login .bg .btn-kakaologin{width:80%; height:40px; padding-top:12px; font-size:14px;}
 .main-login .bg .text2{font-size:12px; margin-bottom:20px;}
 
-/*아이디|비밀번호 찾기*/
+/*비밀번호 찾기*/
 .main-psearch {display: block !important; height:auto; padding-top:50px; padding-bottom:20px;}
-.main-psearch .bg{width:95%; height:auto; margin-top:20px; padding:0;}
+.main-psearch .bg{width:98%; height:auto; margin-top:20px; padding:0;}
+.main-psearch .psearch-btn div img{height:30px;}
+.main-psearch .step-title{font-size:12px;}
+.main-psearch .psearch-btn div img{height:30px;}
+.main-psearch .id input{
+	width:120px;
+}
+.main-psearch .code input{
+	width:280px;
+}
+.main-psearch .new-pwd input{
+	width:280px;
+}
+.main-psearch .new-pwd-ch input{
+	width:280px;
+}
 
 
 
