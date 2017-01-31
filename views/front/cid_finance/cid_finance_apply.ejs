@@ -138,14 +138,14 @@ function Today(year,mon,day){
      this_day=today.getDate();
      if(this_day<10) this_day="0" + this_day;     
  }
- else{  
+ else{
      var this_year = eval(year);
      var this_month = eval(mon); 
      var this_day = eval(day);
      }
  
   montharray=new Array(31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31); 
-  maxdays = montharray[this_month-1]; 
+  maxdays = montharray[this_month-1];
 //아래는 윤달을 구하는 것
   if (this_month==2) { 
       if ((this_year/4)!=parseInt(this_year/4)) maxdays=28; 
@@ -165,12 +165,12 @@ function Today(year,mon,day){
          if(i<10){
              if(i==this_month) document.writeln("<OPTION VALUE=0" +i+ " selected >0"+i); 
              else document.writeln("<OPTION VALUE=0" +i+ ">0"+i);
-         }         
+         }
          else{
              if(i==this_month) document.writeln("<OPTION VALUE=" +i+ " selected >" +i);  
              else document.writeln("<OPTION VALUE=" +i+ ">" +i);  
-         }                     
-    }         
+         }
+    }
  document.writeln("</select>월");
  
  document.writeln("<select class='day' name='day' size=1>");
@@ -183,10 +183,9 @@ function Today(year,mon,day){
          else{
              if(i==this_day) document.writeln("<OPTION VALUE=" +i+ " selected } >"+i); 
              else document.writeln("<OPTION VALUE=" +i+ ">" +i);  
-         }                     
-    }         
+         }
+    }
  document.writeln("</select>일"); 
-   
 }
 </script>
 

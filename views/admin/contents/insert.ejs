@@ -179,7 +179,7 @@ $( document ).ready(function(){
                 		  	}
                 		  	if(chk=="15")
                 		  	{
-                		  		res="육감적으로";
+                		  		res="인생은 고오통";
                 		  	}
                 		  	if(chk=="16")
                 		  	{
@@ -195,17 +195,54 @@ $( document ).ready(function(){
     
 });
                 </script>
-                
-				<div class="input-field col s12">
-				    <textarea name="userText" id="userText" class="materialize-textarea"> </textarea>
-                    <label>에디터 한마디</label>
-				</div>
-				<input type="hidden" name="contents">
-				<input type="hidden" name="writer">			
-				<input type="hidden" name="userNo">
-				<input type="hidden" name="title">
-			
-		
+       				<div class="input-field col s12">
+						<textarea name="userText" id="userText" class="materialize-textarea"> </textarea>
+						<label>에디터 한마디</label>
+					</div>
+
+					<div class="input-field col s12">
+						<label for="제목">보여지는 일자변경(예:201601011300)</label>
+						<input id="rdate" name="rdate" type="text" class="validate" maxlength="12">
+					</div>
+					
+<script>
+var now = new Date();
+	var _year=  now.getFullYear();
+	 var _mon =  now.getMonth()+1;
+	 _mon=""+_mon;
+	 if (_mon.length < 2 )
+	 {
+	    _mon="0"+_mon;
+	 }
+	 var _date=now.getDate ();
+	 _date =""+_date;
+    if (_date.length < 2 )
+	 {
+	    _date="0"+_date;
+	 }
+	 var _hor = now.getHours  ();
+	 _hor =""+_hor;
+	 if (_hor.length < 2 )
+	 {
+	    _hor="0"+_hor;
+	 }
+	 var _min=now.getMinutes();
+	  _min =""+_min;
+	 if (_min.length < 2 )
+	 {
+	    _min="0"+_min;
+	 }
+	 
+	var _tot=_year+""+_mon+""+_date+""+_hor+""+ _min;
+document.getElementById("rdate").value = _tot;
+</script>
+
+					<input type="hidden" name="contents">
+					<input type="hidden" name="writer">
+					<input type="hidden" name="userNo">
+					<input type="hidden" name="title">
+
+
                 
  <!-- 연관 게시글 선택 지웠음 -->
  
