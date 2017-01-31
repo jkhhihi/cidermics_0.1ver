@@ -32,9 +32,21 @@ router.get('/login', function(req, res, next) {
 
 });
 
-router.get('/psearch', function(req, res, next) {
+router.get('/psearch1', function(req, res, next) {
 
-	res.render('front/cid_member/password_search', { });
+	res.render('front/cid_member/password_search1', { });
+
+});
+
+router.get('/psearch2', function(req, res, next) {
+
+	res.render('front/cid_member/password_search2', { });
+
+});
+
+router.get('/psearch3', function(req, res, next) {
+
+	res.render('front/cid_member/password_search3', { });
 
 });
 module.exports = router;

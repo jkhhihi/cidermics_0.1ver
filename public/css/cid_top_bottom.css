@@ -15,8 +15,11 @@
 
 /* CSS Document */
 body{font-family: 'Nanum Gothic', serif;}
+.padding-0{padding:0;}
+.padding-lr-0{padding-left:0; padding-right:0;}
 #menu{display:none;}
 a{color:#333; text-decoration:none;}
+.a-white{color:#fff;}
 .mob-header{display:none;}
 .header{height:70px; font-family: 'Nanum Gothic', serif; color:#1b87c9; margin:0;
 width: 100%;
@@ -185,7 +188,7 @@ box-shadow: 0px -5px 20px #222; top:0;}
 .btn-default
 {border:0px; font-size:16px;}
 .btn-default:hover
-{background-color:#FFFFFF; border:0px;}
+{background-color:#fff; border:0px;}
 .open>.dropdown-toggle.btn-default
 {   background-color: #1b87c9;
     color: #fff;

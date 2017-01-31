@@ -4,80 +4,16 @@ var mysql = require("./model/mysql");
 
 router.get('/contents', function(req, res, next) {
 	
-	var no = req.params.no;
-	console.log(no);
-	var conno = req.params.conno;
-	console.log(conno);
-	
-	var now = new Date();
-	 var _year=  now.getFullYear();
-	 var _mon =  now.getMonth()+1;
-	 _mon=""+_mon;
-	 if (_mon.length < 2 )
-	 {
-	    _mon="0"+_mon;
-	 }
-	 var _date=now.getDate ();
-	 _date =""+_date;
-    if (_date.length < 2 )
-	 {
-	    _date="0"+_date;
-	 }
-	 var _hor = now.getHours  ();
-	 _hor =""+_hor;
-	 if (_hor.length < 2 )
-	 {
-	    _hor="0"+_hor;
-	 }
-	 var _min=now.getMinutes();
-	  _min =""+_min;
-	 if (_min.length < 2 )
-	 {
-	    _min="0"+_min;
-	 }
-	 
-	var _tot=_year+""+_mon+""+_date+""+_hor+""+ _min;
-	
-	var sets = {con_no : no};
-	var next = {};
-	var pre = {};
-	
-	var qry="";
 	var row;
-	
-	
-			mysql.select('select c.con_no, c.con_category, c.con_writer, c.con_title, c.con_content, c.con_photo, c.con_viewCount,c.con_regDate, c.con_upDate, c.con_likeCnt, c.comment_no, c.user_no, c.user_comment, c.con_release,  u.user_email, u.user_name, u.user_profile_img, u.user_sns_url, u.user_sns_icon, cate.cate_no, cate.cate_name from cider.cid_contents c left join cider.cid_user u on u.user_no = c.user_no left join cider.cid_con_cate cate on c.con_category = cate.cate_no and u.user_level = "2" where 1=1 limit 0,30', function (err, data){
-				if(err) throw err;
+	mysql.select('select con_no, con_photo, con_title from cider.cid_contents order by con_viewCount desc limit 0,30', function (err, data){
+		 if (err) throw err;
 		 
-				row = data;
-				
-				mysql.update('update cider.cid_contents set con_viewCount = con_viewCount + 1 where con_no = ?', [no] ,function (err, data){
-					if(err){
-						res.redirect('back');
-					}
-				
-				qry="select con_no, con_photo, con_title from cider.cid_contents where con_release <= '"+_tot+"' ORDER BY RAND() LIMIT 0,15";
-				   mysql.select(qry, function (err, data1){
-					if(err){
-					res.redirect('back');
-					}
-		 
-		 res.render('front/cid_contents/cid_contents_popular', {contents : row, cont : data1});
-		});
-	  });
+		 row = data;
+		 res.render('front/cid_contents/cid_contents_popular', { contents : row});
 	});
+
 });
 
-
-router.get('/viewup', function(req, res, next) {
-	var conno = req.params.conno;
-	console.log(conno);
-	var viewCount=req.params.viewCount;
-	console.log(viewCount);
-	//var no = req.params.viewno;
-	res.render('front/cid_contents/cid_contents_popular', {});
-});
-	
 
 
 router.get('/contents/:no', function(req, res, next) {

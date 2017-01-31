@@ -5,122 +5,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>사이다경제</title>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <!--script src="/js/bootstrap.min.js"></script-->
 
 <link rel="stylesheet" type="text/css" href="/css/component.css" />
 <script src="/js/modernizr.custom.js"></script>
 
-<meta property="og:url"           content="http://www.your-domain.com/your-page.html" />
-	<meta property="og:type"          content="website" />
-	<meta property="og:title"         content="Your Website Title" />
-	<meta property="og:description"   content="Your description" />
-	<meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" />
-
 </head>
 <body>
-	<% include ../top %>
-	
 <!--위로가기 버튼-->
 <form method="post" action="/insert">
 <input type="text" name="in1">
 <input type="submit">
 </form>
-<br>
-<br><br>
-<!--div id="fb-root"></div>
-
-<script>
-
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '116627908812749',
-      xfbml      : true,
-      version    : 'v2.8'
-    });
-    FB.AppEvents.logPageView();
-  };
-
-
-
-(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.8&appId=116627908812749";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-</script-->
-
-
-
-<!--div class="fb-share-button" data-href="http://www.cidermics.com/test/" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">공유하기</a></div-->
-
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.8";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<div class="fb-like" data-href="http://www.cidermics.com/test/" data-layout="box_count" data-action="like" data-size="large" data-show-faces="false" data-share="false"></div>
-
-<a href="http://www.facebook.com/v2.8/plugins/like.php?action=like&app_id=&channel=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2FqXiJsurHCex.js%3Fversion%3D42%23cb%3Df11f8f6ad56e29%26domain%3Dwww.cidermics.com%26origin%3Dhttp%253A%252F%252Fwww.cidermics.com%252Ff12c095dc5f6de8%26relation%3Dparent.parent&container_width=554&href=http%3A%2F%2Fwww.cidermics.com%2Ftest%2F&layout=box_count&locale=ko_KR&sdk=joey&share=false&show_faces=false&size=large">테스ㅡ트트트 </a>
-
-<a href="http://www.facebook.com/share.php?u=http://www.cidermics.com/test/">테스ㅡ트트트 </a>
-
-
-<div class="page-header">
-  <h1>Share Dialog</h1>
-</div>
-
-<p>Click the button below to trigger a Share Dialog</p>
-
-<div id="shareBtn" class="btn btn-success clearfix">Share</div>
-
-<p style="margin-top: 50px">
-  <hr />
-  <a class="btn btn-small"  href="http://developers.facebook.com/docs/sharing/reference/share-dialog">Share Dialog Documentation</a>
-</p>
-
-<script>
-document.getElementById('shareBtn').onclick = function() {
-  FB.ui({
-    method: 'share',
-    mobile_iframe: true,
-    href: 'http://developers.facebook.com/docs/',
-  }, function(response){});
-}
-</script>
-
-<a href="http://www.fbrell.com/saved/809b6c409f3c8dd307023cd78cdb6111">dddd</a>
-
-
-<a id="twitter-link-btn"
-  href="http://twitter.com/intent/tweet?text=Hello%20world"
-  data-size="large">
-Tweet</a>
-
-<script>
-$('#twitter-link-btn').bind('click',function(){
-	twitterWrite(title1+"정보 공유.".thisPageUrl1);
-});
-
-function twitterWrite(title,pageUrl){
-	var encodingTitle = encodeURI(title);
-	var encodingPageUrl = encodeURI(pageUrl);
-
-	var url="http://twitter.com/share?"+
-	"text="+encodingTitle +
-	"&url="+encodingPageUrl;
-	window.open(url);
-
-}
-</script>
-
 
 <form method="post" action="/test2">
 <select id="dateSelect" name="dateSelect">
@@ -130,16 +27,6 @@ function twitterWrite(title,pageUrl){
 </select>
 <input type="submit">
 </form>
-<!-- Large modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
-
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      121313123
-    </div>
-  </div>
-</div>
 <!--콘텐츠뿌림-->
 <div class="contents container">
 		<ul class="grid effect-2" id="grid">

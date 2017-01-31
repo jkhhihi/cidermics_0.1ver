@@ -61,7 +61,7 @@ function agreeSendit()
 
 
 <div class="row"style="margin:0; padding:0">
-	<div class="col-xs-12 main-join" align="center">
+	<div class="col-xs-12 main-join" style="padding-left:0; padding-right:0;" align="center">
 		<!-- Trigger the modal with a button -->
  		<!--button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Small Modal</button-->
 		<div class="bg">
@@ -73,25 +73,27 @@ function agreeSendit()
 						<img src="/page_imgs/member_img/join_3.png"></div>
 							<div class="row step1">
 								<div class="col-xs-12 service" align="left">
-									<p style="float: left;display: inline-block">서비스 이용약관 동의 (필수)</p>
-										<div style="float:right; display:inline-block; margin:20px 0 10px 0;" class="btn-group" data-toggle="buttons">
-											<input type="checkbox" name="checkbox1">
-											<!--label class="btn btn-primary">
-											<input type="checkbox" name="checkbox1" autocomplete="off" value="1">
-											<span class="glyphicon glyphicon-ok"></span>
-											</label-->					
-										</div>
-									<textarea style="resize: none;"></textarea>
+									 <div class="row">
+									 	<div class="col-xs-10 padding-lr-0" align="left">
+									 		<p>서비스 이용약관 동의 (필수)</p>
+										 </div>
+									 	<div class="col-xs-2 padding-lr-0" align="right">
+									 		<input type="checkbox" id="cb1" name="checkbox1">
+   									 		<label for="cb1"></label>
+									 	</div>
+									 </div>
+									 <textarea style="resize: none;"></textarea>
 								</div>
 								<div class="col-xs-12 privacy" align="left">
-									<p style="float: left;display: inline-block">개인정보 수집 및 이용 동의 (필수)</p>
-										<div style="float:right; display:inline-block; margin:20px 0 10px 0;" class="btn-group" data-toggle="buttons">
-											<input type="checkbox" name="checkbox2">
-											<!--label class="btn btn-primary">
-											<input type="checkbox" name="checkbox2" autocomplete="off" value="2">
-											<span class="glyphicon glyphicon-ok"></span>
-											</label-->					
-										</div>
+									 <div class="row">
+									 	<div class="col-xs-10 padding-lr-0" align="left">
+									 		<p>개인정보 수집 및 이용 동의 (필수)</p>
+										 </div>
+									 	<div class="col-xs-2 padding-lr-0" align="right">
+									 		<input type="checkbox" id="cb2" name="checkbox2">
+   									 		<label for="cb2"></label>
+									 	</div>
+									 </div>
 									<textarea style="resize: none;"></textarea>
 								</div>
 								<div class="row step1-btn">

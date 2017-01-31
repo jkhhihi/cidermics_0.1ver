@@ -87,7 +87,7 @@ function checkPwd(){
   var pw1 = document.mem_join.mem_pw.value;
   var pw2 = document.mem_join.mem_pw2.value;
   if(pw1!=pw2){
-   document.getElementById('checkPwd').style.color = "black";
+   document.getElementById('checkPwd').style.color = "red";
    document.getElementById('checkPwd').innerHTML = "  *패스워드가 다릅니다."; 
   }else{
    document.getElementById('checkPwd').style.color = "blue";
@@ -104,124 +104,110 @@ function checkPwd(){
 
 
 <div class="row" style="margin:0; padding:0">
-		<div class="col-xs-12 main-join" align="center">
-				<div class="bg">
-						<div class="row join">
-								<div class="col-xs-12 join-step" align="right" style="padding:0;"><img src="/page_imgs/member_img/join_1.png">
-									<img src="/page_imgs/member_img/ch_join_2.png">
-									<img src="/page_imgs/member_img/join_3.png"></div>
-								<div class="row step2" align="left">
-									
-									<form name="mem_join" action="/join_step_3" method="get" >
-										
-										<div class="col-xs-12 id">
-												<p><span>아이디(이메일)</span><span class="star">*</span></p>
-												<input name='mem_email_id' class="email1" type="text" style="IME-MODE: disabled" size="11">
-												@
-												<input name='mem_email_add' class="email2" type="text" style="IME-MODE: disabled" size="11">
-												<div class="email-check">중복확인</div>
-										</div>
-										<div class="col-xs-12 nicname">
-												<p><span>이름</span><span class="star">*</span></p>
-												<input name='mem_name' class="nicname1" type="text" style="IME-MODE: disabled" size="12">
-										</div>
-										<div class="col-xs-12 nicname">
-												<p><span>비밀번호</span><span class="star">*</span></p>
-												<input name='mem_pw' class="nicname1" type="password" style="IME-MODE: disabled" size="12" minlength="8" maxlength="20"  onKeyUp="checkPwd()" >
-										</div>
-										<div class="col-xs-12 nicname">	
-												<p><span>비밀번호 확인</span><span class="star">*</span></p>
-												<input name='mem_pw2' class="nicname1" type="password" style="IME-MODE: disabled" size="12" minlength="8"  maxlength="20" onKeyUp="checkPwd()" />
-												<div id="checkPwd"></div>
-										</div>
-										<div class="col-xs-12 birth">
-												<p><span>생년월일</span><span class="star">*</span></p>
-												<input name="mem_year" class="year" type="text" maxlength="4" value="1900">
-												년
-												<select name="mem_month" class="month" id="month">
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
-													<option>6</option>
-													<option>7</option>
-													<option>8</option>
-													<option>9</option>
-													<option>10</option>
-													<option>11</option>
-													<option>12</option>
-													</select>
-												월
-												<select name="mem_day" class="day" id="month">
-													<option>1</option>
-													<option>2</option>
-													<option>3</option>
-													<option>4</option>
-													<option>5</option>
-													<option>6</option>
-													<option>7</option>
-													<option>8</option>
-													<option>9</option>
-													<option>10</option>
-													<option>11</option>
-													<option>12</option>
-													<option>13</option>
-													<option>14</option>
-													<option>15</option>
-													<option>16</option>
-													<option>17</option>
-													<option>18</option>
-													<option>19</option>
-													<option>20</option>
-													<option>21</option>
-													<option>22</option>
-													<option>23</option>
-													<option>24</option>
-													<option>25</option>
-													<option>26</option>
-													<option>27</option>
-													<option>28</option>
-													<option>29</option>
-													<option>30</option>
-													<option>31</option>
-													</select>
-												일 </div>
-										<div class="col-xs-12 sex">
-											
-												<p><span>성별</span><span class="star">*</span></p>
-												<div class="form-group">
-    												<div class="btn-group" data-toggle="buttons">
-			
-														<label class="btn btn-default active">
-															<span class="glyphicon glyphicon-ok"></span>
-																<input type="radio" name="male" id="option2" autocomplete="off" chacked>남
-																<img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-man-64.png" width=20 height=20 alt="">
-														</label>
-		
-														<label class="btn btn-info">
-															<span class="glyphicon glyphicon-ok"></span>
-																<input type="radio" name="female" id="option1" autocomplete="off">여
-																<img src="https://cdn1.iconfinder.com/data/icons/iconbeast-lite/30/woman-figure.png" width=20 height=20 alt="">
-														</label>
-
-		
-													</div>
-												</div>
-										</div>
-										<div class="row step2-btn">
-												<div class="col-xs-6 cancle" align="left"><img src="/page_imgs/member_img/btn-cancle.jpg"></div>
-												<div class="col-xs-6 next" align="right"><a onClick="mem_join_next()" style="cursor:pointer"><img src="/page_imgs/member_img/btn-next.jpg"></a></div>
-
-										</div>
-										
-										</form>
-								</div>
-								
-								
-						</div>
+	<div class="col-xs-12 main-join" style="padding-left:0; padding-right:0;" align="center">
+		<div class="bg">
+			<div class="row join">
+				<div class="col-xs-12 join-step" align="right" style="padding:0;"><img src="/page_imgs/member_img/join_1.png">
+					<img src="/page_imgs/member_img/ch_join_2.png">
+					<img src="/page_imgs/member_img/join_3.png">
 				</div>
+					<div class="row step2" align="left" style="margin-top:20px;">
+						<form name="mem_join" action="/join_step_3" method="get" >
+							<div class="col-xs-12 star padding-lr-0">*항목은 필수로 작성해주세요.</div>
+							<div class="col-xs-12 id padding-lr-0">
+								<span class="width-80 id_title">아이디<span class="star">*</span></span>
+								<input name='mem_email_id' class="email1" type="text" style="IME-MODE: disabled" size="11"> @
+								<input name='mem_email_add' class="email2" type="text" style="IME-MODE: disabled" size="11">
+								<div class="email-check">중복확인</div>
+							</div>
+							<div class="col-xs-12 name padding-lr-0">
+								<span class="width-80 name_title">이름<span class="star">*</span></span>
+								<input name='mem_name' class="nicname1" type="text" style="IME-MODE: disabled" size="12">
+							</div>
+							<div class="col-xs-12 password padding-lr-0">
+								<span class="width-80 password_title">비밀번호<span class="star">*</span></span>
+								<input name='mem_pw' class="nicname1" type="password" style="IME-MODE: disabled" size="12" minlength="8" maxlength="20"  onKeyUp="checkPwd()" />
+							</div>
+							<div class="col-xs-12 ch_password padding-lr-0">	
+								<span class="width-80 ch_password_title">비밀번호 확인<span class="star">*</span></span>
+								<input name='mem_pw2' class="nicname1" type="password" style="IME-MODE: disabled" size="12" minlength="8"  maxlength="20" onKeyUp="checkPwd()" />
+								<div id="checkPwd" style="margin-left:80px; margin-top:5px;"></div>
+							</div>
+							<div class="col-xs-12 birth padding-lr-0">
+								<span class="width-80 birth_title">생년월일<span class="star">*</span></span>
+								<input name="mem_year" class="year" type="text" maxlength="4" value="1900">년 
+								<select name="mem_month" class="month" id="month">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option>
+									<option>9</option>
+									<option>10</option>
+									<option>11</option>
+									<option>12</option>
+								</select>월 
+								<select name="mem_day" class="day" id="month">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option>
+									<option>9</option>
+									<option>10</option>
+									<option>11</option>
+									<option>12</option>
+									<option>13</option>
+									<option>14</option>
+									<option>15</option>
+									<option>16</option>
+									<option>17</option>
+									<option>18</option>
+									<option>19</option>
+									<option>20</option>
+									<option>21</option>
+									<option>22</option>
+									<option>23</option>
+									<option>24</option>
+									<option>25</option>
+									<option>26</option>
+									<option>27</option>
+									<option>28</option>
+									<option>29</option>
+									<option>30</option>
+									<option>31</option>
+								</select>일 
+							</div>
+							<div class="col-xs-12 sex padding-lr-0">
+								<span class="width-80 sex_title">성별<span class="star">*</span></span>
+									<div class="form-group" style="display:inline;">
+    								<div class="btn-group" data-toggle="buttons">
+										<label class="btn btn-info1 active" style="padding:5px 20px;">
+											<input type="radio" name="male" id="option2" autocomplete="off" chacked>남
+											<!--img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-man-64.png" width=20 height=20 alt=""-->
+										</label>
+										<label class="btn btn-info" style="padding:5px 20px;">
+											<input type="radio" name="female" id="option1" autocomplete="off">여
+											<!--img src="https://cdn1.iconfinder.com/data/icons/iconbeast-lite/30/woman-figure.png" width=20 height=20 alt=""-->
+										</label>
+									</div>
+									</div>
+							</div>
+							<div class="row step2-btn">
+								<div class="col-xs-6 cancle padding-lr-0" align="left"><img src="/page_imgs/member_img/btn-cancle.jpg"></div>
+								<div class="col-xs-6 next padding-lr-0" align="right"><a onClick="mem_join_next()" style="cursor:pointer"><img src="/page_imgs/member_img/btn-next.jpg"></a></div>
+							</div>
+						</form>
+					</div>		
+			</div>
 		</div>
+	</div>
 </div>
 <% include ../bottom %>
 
