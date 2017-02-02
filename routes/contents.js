@@ -5,15 +5,60 @@ var mysql = require("./model/mysql");
 router.get('/contents', function(req, res, next) {
 	
 	var row;
+	var no = req.params.no;
+	
+	 var now = new Date();
+	 var _year=  now.getFullYear();
+	 var _mon =   now.getMonth()+1;
+	 _mon=""+_mon;
+	 if (_mon.length < 2 )
+	 {
+	    _mon="0"+_mon;
+	 }
+	 var _date=now.getDate ();
+	 _date =""+_date;
+     if (_date.length < 2 )
+	 {
+	    _date="0"+_date;
+	 }
+	 var _hor = now.getHours  ();
+	 _hor =""+_hor;
+	 if (_hor.length < 2 )
+	 {
+	    _hor="0"+_hor;
+	 }
+	 var _min=now.getMinutes();
+	  _min =""+_min;
+	 if (_min.length < 2 )
+	 {
+	    _min="0"+_min;
+	 }
+	 
+	var _tot=_year+""+_mon+""+_date+""+_hor+""+ _min;
+
+	var qry="";
+	
+	var sets = {con_no : no};
+	var next = {};
+	var pre = {};
+	
+	
 	mysql.select('select con_no, con_photo, con_title from cider.cid_contents order by con_viewCount desc limit 0,30', function (err, data){
 		 if (err) throw err;
 		 
 		 row = data;
-		 res.render('front/cid_contents/cid_contents_popular', { contents : row});
+		 
+		 qry="select con_no, con_photo, con_title from cider.cid_contents where con_release <= '"+_tot+"' ORDER BY RAND() LIMIT 0,24";
+		   mysql.select(qry, function (err, data1){
+			if(err){
+			res.redirect('back');
+			}
+			
+			
+		 res.render('front/cid_contents/cid_contents_popular', { contents : row, cont: data1});
 	});
-
+  });
 });
-
 
 
 router.get('/contents/:no', function(req, res, next) {
@@ -56,7 +101,6 @@ router.get('/contents/:no', function(req, res, next) {
 	
 	qry="select con_no, con_photo, con_title from cider.cid_contents where con_category = '"+no+"' and con_release <= '"+_tot+"' order by con_no desc limit 0,12";
 
-	
 	//mysql.select('select con_no, con_photo, con_title from cider.cid_contents where con_category = '+no+' order by con_no desc limit 0,12', function (err, data){
 	mysql.select(qry,
 			 function (err, data){	 
