@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"-->
+    
+    <title>Cidermics Admin</title>
+    <link rel='stylesheet' href='/css/materialize.css' />
+    <link rel='stylesheet' href='/css/style.css' />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="/js/materialize.js"></script>
+    <script type="text/javascript" src="/smart_editor/js/HuskyEZCreator.js" charset="utf-8"></script>
+<script>
+$( document ).ready(function(){
+    $(".button-collapse").sideNav();
+})
+</script>
+<style>
+    select {
+  display: none;
+}
+</style>
+  </head>
+  <body>
+    <% var data= CP; %>
+    <% include ../include/nav.ejs %>
+    
+    <div class="container">
+        <div class="row">           
+            <h5>콘텐츠 등록하기</h5>
+            <form action="/adm/contents/insert/upload" method="post" enctype="multipart/form-data">
+                <!-- <input type="file" name="file" />
+                <input type="submit" /> -->
+                <div class="file-field input-field">
+                    <div class="btn">
+                        <span>이미지 등록</span>
+                        <input type="file" name="file" multiple>
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
+                </div>
+                <input type="submit" class="btn waves-effect waves-light" value="업로드" />
+            </form>
+            <form class="col s12" id="cform">
+                <div class="row" style="margin-top:  2em;">
+                    
+                    
+                    <div class="input-field col l12">
+                        
+                        <input id="title" type="text" class="validate">
+                        <label for="제목">제목</label>
+                        
+                        <!-- Modal Trigger -->
+                        <a class="waves-effect waves-light btn modal-trigger2" href="#modal1">이미지 설정</a>
+                        
+                                    
+                        <!-- Modal Structure -->
+
+                        <div id="modal1" class="modal">
+                            <div class="navbar-fixed">
+                                <nav>
+                                    <div class="nav-wrapper">
+                                    <a class="brand-logo"><h5>이미지 등록</h5></a>
+                                    <ul class="right hide-on-med-and-down">
+                                        <li><a href="#!" class="btn-thumb modal-action waves-effect waves-green btn-flat">썸네일 설정</a></li>
+                                        <!--li><a href="#!" class="btn-contents modal-action waves-effect waves-green btn-flat">본문 이미지 설정</a></li-->
+                                    </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                            
+                            <ul class="pagination"></ul>
+                            <div class="modal-content">
+                              <div class="images">
+                              </div>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="preview row" style="display:none;">
+                            <p>대표 이미지</p>
+                            <img src="" class="img-responsive col l4" />
+                            <input type="hidden" name="photo">
+                        </div>
+                        
+                        <!--textarea id="content"></textarea-->
+                        
+                    </div>
+                </div>
+                
+                <div class="input-field col s12">
+                    <textarea name="userText" id="userText" class="materialize-textarea"> </textarea>
+                    <label>에디터 한마디</label>
+                </div>
+                <input type="hidden" name="contents">
+                <input type="hidden" name="writer">         
+                <input type="hidden" name="userNo">
+                <input type="hidden" name="title">
+            
+        
+                
+ <!-- 연관 게시글 선택 지웠음 -->
+ 
+ 
+            </form>
+            <div class="center-align">
+                <button class="btn waves-effect waves-light" id="insert">등록하기
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </div>
+    </div>
+  </body>
+  <script src="/js/custom.js"></script>
+  
+
+  </html>

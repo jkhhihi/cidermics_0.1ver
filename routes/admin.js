@@ -317,7 +317,7 @@ router.get('/contents/detail/:no', ensureAuthenticated, function(req, res, next)
 
 router.get('/lecture', ensureAuthenticated, function(req, res, next) {
 	var CP = 2;
-			 res.render('admin/lecture/lecture_index', { CP : CP });	    	
+			 res.render('admin/lecture/lecture_index', { CP : CP });
 		});
 
 router.get('/lecture/insert', ensureAuthenticated, function(req, res, next) {
@@ -509,12 +509,13 @@ router.get('/finance/delete/:fi_app_no', function(req, res, next) {
 
 //2016년 8월 25일 기능추가
 //관리자 입력 오류 부분 때문에 임시로 만든 부분
+//더미 자동생성 버튼
 router.get('/contents/insert2', ensureAuthenticated, function(req, res, next) {
 
 var CP = 1;
 var now = new Date();
- var _year=  now.getFullYear();
-  var _mon =   now.getMonth()+2;
+var _year= now.getFullYear();
+var _mon = now.getMonth()+2;
   console.log(_mon);
  _mon=""+_mon;
  if (_mon.length < 2 )
@@ -542,7 +543,7 @@ var now = new Date();
     _min="0"+_min;
  }
  
- var _tot=_year+""+_mon+""+_date+""+_hor+""+ _min;
+var _tot=_year+""+_mon+""+_date+""+_hor+""+ _min;
 var title = "더미";
 var contents = " ";
 var category = "1";
@@ -555,11 +556,77 @@ var cdate = _tot;
 var sets = {con_category : category, con_title : title, con_content : contents, con_photo : photo, con_viewCount : 0, con_regDate : date, con_upDate : date, con_writer : writer, user_no : userNo, user_comment : userText,con_release : cdate};
 
 mysql.insert('insert into cider.cid_contents set ?', sets,  function (err, data){
-   
     res.redirect('/adm/contents');
     
  });
 });
+
+
+//토론
+
+router.get('/discuss', ensureAuthenticated, function(req, res, next) {
+	var CP = 4;
+			 res.render('admin/discuss/discuss_index', { CP : CP });
+});
+
+router.get('/discuss/insert', ensureAuthenticated, function(req, res, next) {
+	var CP = 4;
+			 res.render('admin/discuss/discuss_insert', { CP : CP });
+});
+
+router.post("/discuss/insert", upload.any(), function(req, res, next) {
+	var table = {}
+	var keys = Object.keys(req.files);
+	keys.forEach(function(key) {
+		var file = req.files[key];
+		table[file.fieldname] = "/discuss_imgs/"+file.originalname;
+	});
+});
+
+
+router.get('/discuss/files/:page', ensureAuthenticated, function(req, res, next){
+	var page;
+	if (typeof req.params.page == 'undefined'){
+		page = 1;
+	}
+	page = req.params.page;
+	var obj = [];
+	var start = (page - 1) * 12;
+	var end = page * 12 -1;
+	
+	var dir = __dirname + "/../public/discuss_imgs/";
+	console.log(dir);
+	var files = fs.readdirSync(dir)
+	    .map(function(v) {
+	        return { name:v,
+	                 time:fs.statSync(dir + v).mtime.getTime()
+	               }; 
+	     })
+	     .sort(function(a, b) { return a.time - b.time; })
+	     .map(function(v) { return v.name; });
+	
+	files.reverse();
+	for (var i = start; i < end+1; i++){
+		obj.push(files[i]);
+	}
+	var pagination = [];
+	var totalPage = Math.ceil(files.length / 12);
+	var startPage;
+	var lastPage;
+	if(page % 5 != 0){ startPage = Math.floor(page/5) * 5 + 1; lastPage = Math.ceil(page/5) * 5; }
+	else{ startPage = (page/5) * 5 - 4; lastPage = parseInt(page) };
+	
+	var next = true;
+	
+	if (lastPage >= totalPage){
+		lastPage = totalPage;
+		next = false;
+	}
+	pagination.push(totalPage, startPage, lastPage, next, parseInt(page));
+	res.send({'pagination' : pagination, 'files': obj});
+});
+
+
 
 
 router.get('/consulting', ensureAuthenticated, function(req, res, next) {

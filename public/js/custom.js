@@ -13,9 +13,10 @@ $(document).ready(function (){
 		$("#q_count").val(no-1);
 	});
 	
+	
 	//contents file 관리
 	
-	//이미지 박스 클릭
+	//이미지 박스 클릭 (콘텐츠 이미지 설정)
 	
 	$('.modal-trigger1').leanModal({
 		dismissible: true, // Modal can be dismissed by clicking outside of the modal
@@ -25,15 +26,28 @@ $(document).ready(function (){
 		ready: function() { 
 			fileList('thumb', 1); 
 		}, // Callback for Modal open
-		complete: function() { 
-			
+		complete: function() {
 		} // Callback for Modal close
 	});
-	
+
+//토론 이미지 설정 버튼
+	$('.modal-trigger2').leanModal({
+		dismissible: true, // Modal can be dismissed by clicking outside of the modal
+		opacity: .5, // Opacity of modal background
+		in_duration: 300, // Transition in duration
+		out_duration: 200, // Transition out duration
+		ready: function() { 
+			fileList1('thumb', 1); 
+		}, // Callback for Modal open
+		complete: function() {
+		} // Callback for Modal close
+	});
+
+
 	//썸네일 이미지 등록
 	$('.btn-thumb').click(function(){
 		if($('.img-selected').length > 1){
-			alert('하나만 선탣해주세요~');
+			alert('하나만 선택해주세요~');
 			return;
 		}
 		var src = $('.img-selected').find('img').attr('src');
@@ -105,7 +119,8 @@ $(document).ready(function (){
 	});
 });
 
-function fileList(type, page){
+//콘텐츠 이미지 설정 버튼 스크립트
+function fileList(type, page){5
 	var pages = '';
 	$.ajax({
 		url : '/adm/contents/files/'+ page,
@@ -157,8 +172,67 @@ function fileList(type, page){
 	});
 }
 
+//토론 이미지 설정 버튼
+function fileList1(type, page){5
+	var pages = '';
+	$.ajax({
+		url : '/adm/discuss/files/'+ page,
+		method : 'GET',
+		success : function(data){
+			
+			var totalPage = data.pagination[0];
+			var startPage = data.pagination[1];
+			var lastPage = data.pagination[2];
+			var next = data.pagination[3];
+			var currentPage = data.pagination[4];
+			
+//			console.log(totalPage, startPage, lastPage, next, currentPage);
+			var img = '<div class="row"> ';
+			$.each(data.files, function(idx, val){
+				if (idx % 3 == 0) {
+					img += '</div>';
+					img += '<div class="row"> ';
+				}
+				img += '<div class="col m4 center-align img-select"> ' +
+							'<img class="responsive-img" src="/discuss_imgs/'+val+'"/> ' +
+							'<div class="fileName"> '+val+'</div>' + 
+					   '</div>';
+				if (idx == 8){
+					img += '</div>';
+				}	
+			});
+			
+			$('.images').html(img);
+			var paging = '<li ' +disabled(currentPage)+'><a class="pageGo" href="javascript:pageGo1('+ (currentPage - 1)+')"><i class="material-icons">chevron_left</i></a></li> ';
+			for (var i = startPage; i < lastPage + 1; i++){
+				paging += '<li '+ active(currentPage, i) +'><a class="pageGo" href="javascript:pageGo1('+i+')">'+i+'</a></li>';
+			}
+			if(next){
+				paging += '<li class="waves-effect"><a class="pageGo" href="javascript:pageGo1('+ (currentPage+1) +')"><i class="material-icons">chevron_right</i></a></li>';					
+			}
+			$('.pagination').html(paging);
+			
+			$('.img-select').click(function(){
+				var hasClass = $(this).hasClass('img-selected');
+				if(hasClass){
+					$(this).removeClass('img-selected');
+				}else{
+					$(this).addClass('img-selected');
+				}
+				var img = $(this).find('img').attr('src');
+			});
+		}
+	});
+}
+
+//콘텐츠 이미지 설정 버튼 
 function pageGo(page) {
 	fileList(1,page);
+}
+
+//토론 이미지 설정 버튼 페이지
+function pageGo1(page) {
+	fileList1(1,page);
 }
 
 function disabled (currentPage){
@@ -375,6 +449,79 @@ $(document).ready(function(){
 			}
 			if(name == "") {
 				alert('회사명을 작성해주세요');
+				return;
+			}
+			if(photo == ""){
+				alert('썸네일 설정해주세요');
+				return;
+			}
+			
+			$('[name=name]').val(name);
+			$('[name=contents]').val(contents);
+			$('[name=url]').val(url);
+			
+			$('#csform').attr('action', '/adm/consulting/update');
+			$('#csform').attr('method', 'post');
+			$('#csform').submit();
+			
+		});
+	});
+
+	$(document).ready(function(){
+		
+		/*$('.btn-contents').click(function(){
+			var src = $('.img-selected').find('img');
+			/*var F_body = $('iframe').contents().find('#se2_iframe').contents().find('.se2_inputarea');
+			$.each(src, function(idx, val){
+				F_body.append(val);
+			});
+			
+			//$('#modal1').closeModal();
+		});*/
+		
+		$('#discuss_insert').click(function(e){
+			var F_body = $('iframe').contents().find('#se2_iframe').contents().find('.se2_inputarea');
+			var contents = F_body.html();
+			var name = $('#name').val();
+			var url = $('#url').val();
+			var photo = $('[name=photo]').val();
+			
+			if(url == null) {
+				alert('사이트URL를 지정해주세요');
+				return;
+			}
+			if(name == "") {
+				alert('회사명1을 작성해주세요');
+				return;
+			}
+			if(photo == ""){
+				alert('썸네일 설정해주세요');
+				return;
+			}
+			
+			$('[name=name]').val(name);
+			$('[name=contents]').val(contents);
+			$('[name=url]').val(url);
+			
+			$('#csform').attr('action', '/adm/consulting/insert');
+			$('#csform').attr('method', 'post');
+			$('#csform').submit();
+			
+		});
+		
+		$('#discuss_update').click(function(e){
+			var F_body = $('iframe').contents().find('#se2_iframe').contents().find('.se2_inputarea');
+			var contents = F_body.html();
+			var name = $('#name').val();
+			var url = $('#url').val();
+			var photo = $('[name=photo]').val();
+			
+			if(url == null) {
+				alert('사이트URL를 지정해주세요');
+				return;
+			}
+			if(name == "") {
+				alert('회사명1을 작성해주세요');
 				return;
 			}
 			if(photo == ""){
