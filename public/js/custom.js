@@ -483,15 +483,15 @@ $(document).ready(function(){
 			var F_body = $('iframe').contents().find('#se2_iframe').contents().find('.se2_inputarea');
 			var contents = F_body.html();
 			var name = $('#name').val();
-			var url = $('#url').val();
+			var cate = $('[name=category]').val();
 			var photo = $('[name=photo]').val();
 			
-			if(url == null) {
-				alert('사이트URL를 지정해주세요');
-				return;
-			}
 			if(name == "") {
 				alert('회사명1을 작성해주세요');
+				return;
+			}
+			if(cate == "") {
+				alert('카테고리를 선택해주세요.');
 				return;
 			}
 			if(photo == ""){
@@ -500,10 +500,8 @@ $(document).ready(function(){
 			}
 			
 			$('[name=name]').val(name);
-			$('[name=contents]').val(contents);
-			$('[name=url]').val(url);
 			
-			$('#csform').attr('action', '/adm/consulting/insert');
+			$('#csform').attr('action', '/adm/discuss/insert');
 			$('#csform').attr('method', 'post');
 			$('#csform').submit();
 			

@@ -20,6 +20,8 @@ $( document ).ready(function(){
   </head>
   <body>
     <% var data= CP; %>
+    <% var dis_title = dis_title %>
+    <% console.log(dis_title)%>
     <% include ../include/nav.ejs %>
     
     <div class="container">
@@ -41,7 +43,7 @@ $( document ).ready(function(){
             </form>
             <form class="col s12" id="cform">
                 <div class="row" style="margin-top:  2em;">
-                    <div class="input-field col s12">
+                   <div class="input-field col s12">
                         <select name="category">
                             <option value="">카테고리를 정해주세요</option>
                           <% for(var i=0; i < cate.length; i++) {  %> 
@@ -54,11 +56,12 @@ $( document ).ready(function(){
                     
                     
                     <div class="input-field col l12">
-                        <input id="title" type="text" class="validate">
-                        <label for="제목">제목</label>
+                        
+                        <input id="title" type="text" class="validate" value="<%=dis_title%>">
+                        <label for="제목"></label>
                         
                         <!-- Modal Trigger -->
-                        <a class="waves-effect waves-light btn modal-trigger2" href="#modal1">썸네일 이미지 설정</a>
+                        <a class="waves-effect waves-light btn modal-trigger2" href="#modal1">이미지 설정</a>
                         
                                     
                         <!-- Modal Structure -->
@@ -67,7 +70,7 @@ $( document ).ready(function(){
                             <div class="navbar-fixed">
                                 <nav>
                                     <div class="nav-wrapper">
-                                    <a class="brand-logo"><h5>썸네일 이미지 등록</h5></a>
+                                    <a class="brand-logo"><h5>이미지 등록</h5></a>
                                     <ul class="right hide-on-med-and-down">
                                         <li><a href="#!" class="btn-thumb modal-action waves-effect waves-green btn-flat">썸네일 설정</a></li>
                                         <!--li><a href="#!" class="btn-contents modal-action waves-effect waves-green btn-flat">본문 이미지 설정</a></li-->
@@ -92,7 +95,7 @@ $( document ).ready(function(){
                         
                         <div class="input-field col s12">
                             <input id="writer" type="text" class="validate">
-                            <label for="작성자">글 작성자</label>
+                            <label for="작성자">토론 등록자</label>
                         </div>
 
 
@@ -126,7 +129,9 @@ $( document ).ready(function(){
                     </div>
                 </div>
                 
-                <input type="hidden" name="writer">
+                <input type="hidden" name="contents">
+                <input type="hidden" name="writer">         
+                <input type="hidden" name="userNo">
                 <input type="hidden" name="title">
             
         

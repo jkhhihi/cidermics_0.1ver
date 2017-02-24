@@ -105,9 +105,6 @@ router.get('/contents/insert', function(req, res, next) {
 	var CP = 1;
 	var cate;
 	var user;
-	
-	console.log(cate);
-	console.log(user);
 	mysql.select('select * from cider.cid_con_cate', function (err, data){
 		if(err){
 			res.redirect('back');
@@ -184,6 +181,8 @@ router.get('/contents/files/:page', ensureAuthenticated, function(req, res, next
 	res.send({'pagination' : pagination, 'files': obj});
 });
 
+
+//콘텐츠 이미지 업로드 등록
 router.post('/contents/insert/upload', ensureAuthenticated, function(req, res, next) {
 	
 	var form = new formidable.IncomingForm();
@@ -216,6 +215,33 @@ router.post('/contents/insert/upload', ensureAuthenticated, function(req, res, n
 		});
 
 });
+
+router.post('/discuss/insert/upload', ensureAuthenticated, function(req, res, next) {
+	
+	var form = new formidable.IncomingForm();
+	
+	form.parse(req);
+    form.on("file", function (name, file){
+        fs.readFile(file.path, function(error, data){
+        	var filePath = __dirname + '/../public/discuss_imgs/' + file.name;
+			
+        	
+        	fs.writeFile(filePath, data, function(error){
+        		if(error){
+        		}else {
+        		}
+        	});
+
+        });
+    });
+    
+    form.on("end", function() {
+		  res.redirect('back');
+		});
+
+});
+
+
 
 router.post('/contents/insert', ensureAuthenticated, function(req, res, next) {
 	
@@ -571,7 +597,33 @@ router.get('/discuss', ensureAuthenticated, function(req, res, next) {
 
 router.get('/discuss/insert', ensureAuthenticated, function(req, res, next) {
 	var CP = 4;
-			 res.render('admin/discuss/discuss_insert', { CP : CP });
+	var cate;
+	mysql.select('select * from cider.cid_dis_cate', function (err, data){
+		if(err){
+			res.redirect('back');
+		}
+
+		res.render('admin/discuss/discuss_insert',  {cate : data, CP : CP});
+	});
+});
+
+
+
+
+
+
+router.post('/discuss/insert_2', ensureAuthenticated, function(req, res, next) {
+
+	var dis_title = req.body.dis_title;
+	var CP = 4;
+	var cate;
+	mysql.select('select * from cider.cid_dis_cate', function (err, data){
+		if(err){
+			res.redirect('back');
+		}
+
+		res.render('admin/discuss/discuss_insert2',  {cate : data, CP : CP, dis_title:dis_title});
+	});
 });
 
 router.post("/discuss/insert", upload.any(), function(req, res, next) {
@@ -582,6 +634,8 @@ router.post("/discuss/insert", upload.any(), function(req, res, next) {
 		table[file.fieldname] = "/discuss_imgs/"+file.originalname;
 	});
 });
+
+
 
 
 router.get('/discuss/files/:page', ensureAuthenticated, function(req, res, next){

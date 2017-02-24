@@ -18,6 +18,7 @@
   </head>
   <body>
   	<% var data= CP; %>
+    <% var dis_title = dis_title; %>
     <% include ../include/nav.ejs %>
     
     <div class="container">
@@ -29,18 +30,21 @@
     </div>
 
 <!-- 요청 Modal Structure -->
+<form name="discuss_submit" action="/adm/discuss/insert_2" method="post">
 <div id="modal2" class="modal bottom-sheet">
   <div class="modal-content">
   <ul class="collection">
     <li class="collection-item avatar">
       <i class="material-icons circle green">perm_identity</i>
       <span class="title">Title</span>
-      <p>First Line <br>
+      <input type=text name="dis_title" value="abcd">
+      <br>
+      <p>
          Second Line
       </p>
-      <a href="/adm/discuss/insert" class="waves-effect waves-circle waves-light btn-floating secondary-content">
+      <button class="waves-effect waves-circle waves-light btn-floating secondary-content"  type="submit">
         <i class="material-icons">mode_edit</i>
-      </a>
+      </button>
     </li>
     <li class="collection-item avatar">
       <i class="material-icons circle">folder</i>
@@ -89,6 +93,7 @@
       <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">닫기</a>
     </div>
 </div>
+</form>
 
 <!-- 신고 Modal Structure -->
 <div id="modal3" class="modal bottom-sheet">
