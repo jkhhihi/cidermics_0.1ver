@@ -196,6 +196,10 @@ div#fixed {
                 		  	{
                 		  		res="투자에 관심이 많고, 실제로 직접투자를 계속 해오고 있습니다.";
                 		  	}
+                        if(chk=="14/안세하")
+                        {
+                          res="돈은 주머니에 휴지는 휴지통에";
+                        }
                 		  	if(chk=="15/김이오")
                 		  	{
                 		  		res="육감적으로";
@@ -225,9 +229,9 @@ div#fixed {
                     <textarea name="userText" id="userText" class="materialize-textarea"><%- contents[0].user_comment %></textarea>
                     <label>에디터 한마디</label></div>
                     
-             <div class="input-field col s12">
-            <label for="제목">보여지는 일자변경(예:201601011300)</label>
-            <input id="rdate" name="rdate" type="text" class="validate" maxlength="12" value="<%- contents[0].con_release %>">
+            <div class="input-field col s12">
+              <label for="제목">게시 일자 설정 (예 : 2017년 9월 1일 14시 30분 일시 -> 201709011430)</label>
+              <input id="rdate" name="rdate" type="text" class="validate" maxlength="12" value="<%- contents[0].con_release %>">
             </div>
             
              

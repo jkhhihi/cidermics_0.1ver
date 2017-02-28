@@ -32,6 +32,7 @@ var search = require('./routes/search');
 var finance = require('./routes/finance');
 var lecture = require('./routes/lecture');
 var quiz = require('./routes/quiz');
+var discuss = require('./routes/discuss');
 
 // all environments
 app.set('port', process.env.PORT || 80);
@@ -67,6 +68,7 @@ app.use('/cid_search', express.static(__dirname + '/views/cid_search'));
 app.use('/cid_finance', express.static(__dirname + '/views/cid_finance'));
 app.use('/cid_lecture', express.static(__dirname + '/views/cid_lecture'));
 app.use('/cid_quiz', express.static(__dirname + '/views/cid_quiz'));
+app.use('/cid_discuss',express.static(__dirname+'/views/cid_discuss'));
 app.use(flash());
 
 app.use(bodyParser.json({limit: '1000mb'}));
@@ -92,6 +94,7 @@ app.use('/',search);
 app.use('/',finance);
 app.use('/',lecture);
 app.use('/',quiz);
+app.use('/',discuss);
 
 
 passport.use('local', new LocalStrategy({

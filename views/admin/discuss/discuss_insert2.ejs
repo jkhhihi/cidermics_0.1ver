@@ -98,7 +98,6 @@ $( document ).ready(function(){
                             <label for="작성자">토론 등록자</label>
                         </div>
 
-
                         <div class="row">
                             <form class="col s12">
                               <div class="row">
@@ -112,18 +111,54 @@ $( document ).ready(function(){
                                   <input id="icon_telephone" type="tel" class="validate">
                                   <label for="icon_telephone">두번째 문항(예:반대한다)</label>
                                 </div>
-                                <div class="input-field col s6">
-                                  <i class="material-icons prefix">album</i>
-                                  <input id="icon_telephone" type="tel" class="validate">
-                                  <label for="icon_telephone">세번째 문항(예:기타)</label>
-                                </div>
-                                <div class="input-field col s6">
-                                  <i class="material-icons prefix">album</i>
-                                  <input id="icon_telephone" type="tel" class="validate">
-                                  <label for="icon_telephone">네번째 문항(예:잘모르겠다)</label>
-                                </div>
                               </div>
                             </form>
+                        </div>
+
+                        <script type="text/javascript">
+                        function rdate() {
+                            var _tot;
+                            var now = new Date();
+                            var _year= now.getFullYear();
+                            var _mon = now.getMonth()+2;
+                              console.log(_mon);
+                             _mon=""+_mon;
+                             if (_mon.length < 2 )
+                             {
+                                _mon="0"+_mon;
+                             }
+                              var _date=now.getDate();
+                              console.log(_date);
+                              _date =""+_date;
+                              if (_date.length < 2 )
+                                 {
+                                    _date="0"+_date;
+                                 }
+                              var _hor = now.getHours() +1;
+                              console.log(_hor);
+                             _hor =""+_hor;
+                             if (_hor.length < 2 )
+                             {
+                                _hor="0"+_hor;
+                             }
+                             var _min=now.getMinutes();
+                              _min =""+_min;
+                             if (_min.length < 2 )
+                             {
+                                _min="0"+_min;
+                             }
+                             _tot=_year+""+_mon+""+_date+""+_hor+""+ _min;
+
+                             //return _tot;
+
+                              //document.getElementById("demo").innerHTML = _tot(value);
+                              document.getElementById("rdate").value=_tot;
+
+                        }
+                        </script>
+                        <div class="input-field col s12">
+                          <label for="제목">게시 일자 설정 (예 : 2017년 9월 1일 14시 30분 일시 -> 201709011430)</label>
+                          <input id="rdate" name="rdate" type="text"  class="validate" maxlength="12" value="_tot">
                         </div>
                         
                     </div>

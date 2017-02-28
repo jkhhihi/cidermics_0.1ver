@@ -206,7 +206,6 @@ router.post('/contents/insert/upload', ensureAuthenticated, function(req, res, n
         				//});
         		}
         	});
-
         });
     });
     
@@ -238,7 +237,6 @@ router.post('/discuss/insert/upload', ensureAuthenticated, function(req, res, ne
     form.on("end", function() {
 		  res.redirect('back');
 		});
-
 });
 
 
@@ -255,8 +253,9 @@ router.post('/contents/insert', ensureAuthenticated, function(req, res, next) {
 	var writer = req.body.writer;
 	var userText = req.body.userText;
 	var date = getWorldTime(+9);
+	var rdate = req.body.rdate;
 	
-	var sets = {con_category : category, con_title : title, con_content : contents, con_photo : photo, con_viewCount : 0, con_regDate : date, con_upDate : date, con_writer : writer, user_no : userNo, user_comment : userText, con_release : '201701311730'};
+	var sets = {con_category : category, con_title : title, con_content : contents, con_photo : photo, con_viewCount : 0, con_regDate : date, con_upDate : date, con_writer : writer, user_no : userNo, user_comment : userText, con_release : rdate};
 	
 	mysql.insert('insert into cider.cid_contents set ?', sets,  function (err, data){
 
@@ -282,8 +281,6 @@ router.post('/contents/update', ensureAuthenticated, function(req, res, next) {
 	var writer = req.body.writer;
 	var userText = req.body.userText;
 	var rdate   = req.body.rdate;
-	
-	console.log(rdate);
 	var date = getWorldTime(+9);
 	
 	var sets = {con_no : no, con_category : category, con_title : title, con_content : contents, con_photo : photo, con_upDate : date, user_no : userNo, user_comment : userText, con_writer : writer,con_release : rdate   };
@@ -555,7 +552,7 @@ var _mon = now.getMonth()+2;
 	 {
 	    _date="0"+_date;
 	 }
-  var _hor = now.getHours() +1;
+  var _hor = now.getHours() +2;
   console.log(_hor);
  _hor =""+_hor;
  if (_hor.length < 2 )
@@ -608,7 +605,55 @@ router.get('/discuss/insert', ensureAuthenticated, function(req, res, next) {
 });
 
 
+/* 정체를 알 수 없는 코드... 내가 이걸 어케 한거지;;
+router.post("/discuss/insert/upload", upload.any(), function(req, res, next) {
+	var table = {}
+	var keys = Object.keys(req.files);
+	keys.forEach(function(key) {
+		var file = req.files[key];
+		table[file.fieldname] = "/discuss_imgs/"+file.originalname;
+	});
+});
+*/
+router.post('/discuss/insert', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 4;
 
+	var title = req.body.title;
+	var category = req.body.category;
+	var photo = req.body.photo;
+	var writer = req.body.writer;
+
+});
+
+
+
+router.post('/contents/insert', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 1;
+	
+	var title = req.body.title;
+	var contents = req.body.contents;
+	var category = req.body.category;
+	var photo = req.body.photo;
+	var userNo = req.body.userNo;
+	var writer = req.body.writer;
+	var userText = req.body.userText;
+	var date = getWorldTime(+9);
+	var rdate = req.body.rdate;
+	
+	var sets = {con_category : category, con_title : title, con_content : contents, con_photo : photo, con_viewCount : 0, con_regDate : date, con_upDate : date, con_writer : writer, user_no : userNo, user_comment : userText, con_release : rdate};
+	
+	mysql.insert('insert into cider.cid_contents set ?', sets,  function (err, data){
+
+		console.log(writer);
+		console.log(err);
+		console.log(data);
+		
+    	res.redirect('/adm/contents');
+    	
+    });
+});
 
 
 
@@ -625,16 +670,6 @@ router.post('/discuss/insert_2', ensureAuthenticated, function(req, res, next) {
 		res.render('admin/discuss/discuss_insert2',  {cate : data, CP : CP, dis_title:dis_title});
 	});
 });
-
-router.post("/discuss/insert", upload.any(), function(req, res, next) {
-	var table = {}
-	var keys = Object.keys(req.files);
-	keys.forEach(function(key) {
-		var file = req.files[key];
-		table[file.fieldname] = "/discuss_imgs/"+file.originalname;
-	});
-});
-
 
 
 
