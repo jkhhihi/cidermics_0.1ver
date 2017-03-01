@@ -589,7 +589,10 @@ mysql.insert('insert into cider.cid_contents set ?', sets,  function (err, data)
 
 router.get('/discuss', ensureAuthenticated, function(req, res, next) {
 	var CP = 4;
-			 res.render('admin/discuss/discuss_index', { CP : CP });
+	mysql.select('SELECT * from cider.cid_dis_reg order by dis_no desc;', function (err, data){
+			console.log(CP);
+			 res.render('admin/discuss/discuss_index', { CP : CP, discuss : data });	    	
+		});
 });
 
 router.get('/discuss/insert', ensureAuthenticated, function(req, res, next) {
@@ -623,7 +626,15 @@ router.post('/discuss/insert', ensureAuthenticated, function(req, res, next) {
 	var category = req.body.category;
 	var photo = req.body.photo;
 	var writer = req.body.writer;
+	var comt_1 = req.body.comt_1;
+	var comt_2 = req.body.comt_2;
+	var date = getWorldTime(+9);
+	var rdate = req.body.rdate;
 
+	var sets = {dis_cate : category, dis_writer : writer, dis_title:title, dis_thum:photo,dis_comt_1:comt_1, dis_comt_2:comt_2, dis_comt_3:"기타",dis_regdate:date, dis_update:date,dis_view:0,dis_release:rdate};
+	mysql.insert('insert into cider.cid_dis_reg set ?', sets,  function (err, data){
+	res.redirect('/adm/discuss');
+    });
 });
 
 

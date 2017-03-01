@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<!-- 네이버 -->
+<meta name="naver-site-verification" content="083657cb98aa9a4a9c62dedeffddfb2490545da0"/>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>사이다토론 - 사이다경제 | 토론</title>
+<link href="/css/cid_finance.css" rel="stylesheet">
+<link href="/css/swiper.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script src="/js/gotoup.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/css/component.css" />
+<script src="/js/modernizr.custom.js"></script>
+
+<!--link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/-->
+<link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+
+<meta property="fb:app_id" content="116627908812749">
+<meta property="og:title" content="사이다토론" />
+<meta property="og:site_name" content="사이다토론">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://www.cidermics.com/discuss/" />
+<!--meta property="og:description" content="현재 무료로 운영하고 있으니 많이 신청해주세요 :)" />
+<meta property="og:image" content="http://cidermics.com/page_imgs/finance_img/finance_thum.png" /-->
+</head>
+
+<body>
+<!--위로가기 버튼-->
+<div id="but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></div>	
+<% include ../top %>
+
+<div class="web-banner" align="center">
+	<div class="border-box container">
+		<p class="title">자유 토론 포럼</p>
+		<div class="line3"></div>
+	</div>
+</div>
+
+<!-- modal 구동 버튼 (trigger) -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+주제 요청하기</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">주제 요청하기</h4>
+      </div>
+      <div class="modal-body">
+        Modal 내용
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--콘텐츠뿌림-->
+<div class="contents container" style="margin-bottom:50px;">
+		<ul class="grid effect-2" id="grid">
+			<% for(var i=0; i<row.length; i++) { %>
+			<li>
+				<div class="img_back" align="center">
+					<a href="/discuss/detail/<%= row[i].dis_no %>">
+					<div class="con-img" align="center"><img class="img-responsive" src="<%= row[i].dis_thum %>"></div></a>
+					<p><a href="/discuss/detail/<%= row[i].dis_no %>">
+						<%= row[i].dis_title %></a></p>
+				</div>
+			</li>
+			<% } %>
+		</ul>
+</div>
+
+
+		<script src="/js/contents_js/masonry.pkgd.min.js"></script>
+		<script src="/js/contents_js/imagesloaded.js"></script>
+		<script src="/js/contents_js/classie.js"></script>
+		<script src="/js/contents_js/AnimOnScroll.js"></script>
+		<script>
+			new AnimOnScroll( document.getElementById( 'grid' ), {
+				minDuration : 0.4,
+				maxDuration : 0.7,
+				viewportFactor : 0.2
+			} );
+		</script>
+
+
+
+
+
+<% include ../bottom %>
+</body>
+</html>

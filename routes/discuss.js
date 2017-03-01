@@ -48,17 +48,16 @@ function leadingZeros(n, digits) {
 	  return zero + n;
 	}
 
-router.get('/ftest', function(req, res, next) {
-	var consult_name = req.body.consult_name;
+router.get('/discuss', function(req, res, next) {
 	var row;
 	var CP = 1;
-	mysql.select('select * from cider.cid_finance', function (err, data){
-		//res.render('front/cid_finance/cid_finance', {contents : data});	    	
-	//});});
+	mysql.select('select * from cider.cid_dis_reg', function (err, data){
 
-	res.render('front/cid_finance/cid_finance_test', {row : data});
+	res.render('front/cid_discuss/cid_discuss', {row : data});
 	});
 });
+
+
 
 router.post('/ftest', function(req, res, next) {
 	var consult_name = req.body.consult_name;

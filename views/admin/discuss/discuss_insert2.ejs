@@ -18,7 +18,7 @@ $( document ).ready(function(){
 })
 </script>
   </head>
-  <body>
+  <body onload="rdate()">
     <% var data= CP; %>
     <% var dis_title = dis_title %>
     <% console.log(dis_title)%>
@@ -41,7 +41,7 @@ $( document ).ready(function(){
                 </div>
                 <input type="submit" class="btn waves-effect waves-light" value="업로드" />
             </form>
-            <form class="col s12" id="cform">
+            <form class="col s12" id="discussform">
                 <div class="row" style="margin-top:  2em;">
                    <div class="input-field col s12">
                         <select name="category">
@@ -57,7 +57,7 @@ $( document ).ready(function(){
                     
                     <div class="input-field col l12">
                         
-                        <input id="title" type="text" class="validate" value="<%=dis_title%>">
+                        <input id="title" type="text" class="validate" value="<%=dis_title%>" name="title">
                         <label for="제목"></label>
                         
                         <!-- Modal Trigger -->
@@ -94,7 +94,7 @@ $( document ).ready(function(){
                         </div>
                         
                         <div class="input-field col s12">
-                            <input id="writer" type="text" class="validate">
+                            <input id="writer" type="text" class="validate" name="writer">
                             <label for="작성자">토론 등록자</label>
                         </div>
 
@@ -103,12 +103,12 @@ $( document ).ready(function(){
                               <div class="row">
                                 <div class="input-field col s6">
                                   <i class="material-icons prefix">album</i>
-                                  <input id="icon_prefix" type="text" class="validate">
+                                  <input id="icon_prefix" type="text" class="validate" name="comt_1">
                                   <label for="icon_prefix">첫번째 문항(예:찬성한다)</label>
                                 </div>
                                 <div class="input-field col s6">
                                   <i class="material-icons prefix">album</i>
-                                  <input id="icon_telephone" type="tel" class="validate">
+                                  <input id="icon_telephone" type="tel" class="validate" name="comt_2">
                                   <label for="icon_telephone">두번째 문항(예:반대한다)</label>
                                 </div>
                               </div>
@@ -163,11 +163,6 @@ $( document ).ready(function(){
                         
                     </div>
                 </div>
-                
-                <input type="hidden" name="contents">
-                <input type="hidden" name="writer">         
-                <input type="hidden" name="userNo">
-                <input type="hidden" name="title">
             
         
                 
@@ -176,7 +171,7 @@ $( document ).ready(function(){
  
             </form>
             <div class="center-align">
-                <button class="btn waves-effect waves-light" id="insert">등록하기
+                <button class="btn waves-effect waves-light" id="discuss_insert">등록하기
                     <i class="material-icons right">send</i>
                 </button>
             </div>

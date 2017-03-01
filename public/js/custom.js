@@ -469,25 +469,28 @@ $(document).ready(function(){
 
 	$(document).ready(function(){
 		
-		/*$('.btn-contents').click(function(){
+		$('.btn-contents').click(function(){
 			var src = $('.img-selected').find('img');
-			/*var F_body = $('iframe').contents().find('#se2_iframe').contents().find('.se2_inputarea');
+			var F_body = $('iframe').contents().find('#se2_iframe').contents().find('.se2_inputarea');
 			$.each(src, function(idx, val){
 				F_body.append(val);
 			});
 			
-			//$('#modal1').closeModal();
-		});*/
+			$('#modal1').closeModal();
+		});
 		
 		$('#discuss_insert').click(function(e){
 			var F_body = $('iframe').contents().find('#se2_iframe').contents().find('.se2_inputarea');
 			var contents = F_body.html();
-			var name = $('#name').val();
+			var title = $('#title').val();
 			var cate = $('[name=category]').val();
 			var photo = $('[name=photo]').val();
-			
-			if(name == "") {
-				alert('회사명1을 작성해주세요');
+			var writer = $('#writer').val();
+			var comt_1 = $('#icon_prefix').val();
+			var comt_2 = $('#icon_telephone').val();
+
+			if(title == "") {
+				alert('제목을 작성해주세요');
 				return;
 			}
 			if(cate == "") {
@@ -498,12 +501,24 @@ $(document).ready(function(){
 				alert('썸네일 설정해주세요');
 				return;
 			}
+			if(writer == ""){
+				alert('등록자 설정해주세요');
+				return;
+			}
+			if(comt_1 == ""){
+				alert('문항을 설정해주세요');
+				return;
+			}
+			if(comt_2 == ""){
+				alert('문항을 설정해주세요');
+				return;
+			}
 			
 			$('[name=name]').val(name);
 			
-			$('#csform').attr('action', '/adm/discuss/insert');
-			$('#csform').attr('method', 'post');
-			$('#csform').submit();
+			$('#discussform').attr('action', '/adm/discuss/insert');
+			$('#discussform').attr('method', 'post');
+			$('#discussform').submit();
 			
 		});
 		

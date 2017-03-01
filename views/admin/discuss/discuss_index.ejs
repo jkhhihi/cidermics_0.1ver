@@ -29,6 +29,30 @@
       </div>
     </div>
 
+    <table class="bordered">
+        <thead>
+          <tr>
+              <th data-field="no">번호</th>
+              <th data-field="title">제목</th>
+              <th data-field="date">날짜</th>
+              <th data-field="viewCount">조회수</th>
+              <th data-field=""></th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <% for(var i = 0; i<discuss.length; i++) { %>
+            <tr>
+              <td><%= discuss[i].dis_no %></td>
+              <td><a href="/adm/discuss/detail/<%= discuss[i].dis_no %>"><%= discuss[i].dis_title %></a></td>
+              <td><%= discuss[i].dis_update %></td>
+              <td><%= discuss[i].dis_view %></td>
+              <td><a href="/adm/discuss/delete/<%= discuss[i].dis_no %>">삭제</a></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+
 <!-- 요청 Modal Structure -->
 <form name="discuss_submit" action="/adm/discuss/insert_2" method="post">
 <div id="modal2" class="modal bottom-sheet">
