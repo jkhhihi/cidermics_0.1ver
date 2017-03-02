@@ -45,6 +45,7 @@ body { padding-right: 0px !important }
 	</div>
 </div>
 
+
 <!-- modal 구동 버튼 (trigger) -->
 <div class="but-area">
 	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
@@ -58,27 +59,27 @@ body { padding-right: 0px !important }
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">주제 요청하기</h4>
       </div>
-      <form>
+      <!--form action="/discuss/ask" method="post"-->
+      <form id='formMeg'>
       <div class="modal-body">
-	      <select class="form-control"  name="category">
-			<option value="">카테고리를 정해주세요</option>
-			<option value="0">경제</option>
-			<option value="1">3</option>
-			<option value="2">4</option>
-			<option value="3">5</option>
-			<option value="4">5</option>
-		   </select>
+	       <select class="form-control" name="a_cate">
+				<option value="">카테고리를 정해주세요</option>
+					 <% for(var i=0; i < cate.length; i++) {  %>   
+                <option value="<%=cate[i].disCate_no%>"> <%=cate[i].disCate_name%> </option>
+                              
+                      <% } %>
+			</select>
           <div class="form-group">
             <label for="writer-name" class="control-label">작성자:</label>
-            <input type="text" class="form-control" id="writer-name">
+            <input type="text" class="form-control" id="writer-name" name="a_writer">
           </div>
           <div class="form-group">
-            <label for="contents" class="control-label">제목:</label>
-            <input type="text" class="form-control" id="contents">
+            <label for="title" class="control-label">제목:</label>
+            <input type="text" class="form-control" id="title" name="a_title">
           </div>
           <div class="form-group">
-            <label for="message-text" class="control-label">내용:</label>
-            <textarea class="form-control" id="message-text"></textarea>
+            <label for="messageText" class="control-label">내용:</label>
+            <textarea class="form-control" id="messageText" name="a_text"></textarea>
           </div>
       </div>
 
@@ -91,6 +92,29 @@ body { padding-right: 0px !important }
     </div>
   </div>
 </div>
+<script type="text/javascript">
+
+//AJAX로 서브밋한 후에 메세지 넘기기 
+
+  $(function () {
+
+   $('#formMeg').on('submit', function (e) {
+
+   	e.preventDefault();
+
+	$.ajax({
+ 	url: 'discuss/ask/',
+ 	type: "POST",
+	//data: JSON.stringify(data),
+	data: $('#formMeg').serialize(),
+	success: function(response){
+  	alert('주제 요청 등록이 완료되었습니다. 소중한 의견 감사합니다.');
+  	window.location.href="/discuss";
+ 	}
+	});
+   });
+  });
+</script>
 
 <!--콘텐츠뿌림-->
 <div class="contents container" style="margin-bottom:50px;">
@@ -120,8 +144,6 @@ body { padding-right: 0px !important }
 				viewportFactor : 0.2
 			} );
 		</script>
-
-
 
 
 

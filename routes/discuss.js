@@ -50,14 +50,44 @@ function leadingZeros(n, digits) {
 
 router.get('/discuss', function(req, res, next) {
 	var row;
-	var CP = 1;
-	mysql.select('select * from cider.cid_dis_reg', function (err, data){
+	var cate;
 
-	res.render('front/cid_discuss/cid_discuss', {row : data});
+		mysql.select('select * from cider.cid_dis_reg', function (err, data2){
+
+		row=data2;
+
+		mysql.select('select * from cider.cid_dis_cate', function (err, data){
+		if(err){
+			res.redirect('back');
+		}
+		
+		cate = data;
+
+	res.render('front/cid_discuss/cid_discuss', {row : row, cate:cate});
+	});
+  });
+});
+
+router.post('/discuss/ask', function(req,res,next){
+	var a_cate = req.body.a_cate;
+	var a_writer = req.body.a_writer;
+	var a_title = req.body.a_title;
+	var a_text = req.body.a_text;
+	var date = getWorldTime(+9);
+
+	var sets = {disAsk_cate: a_cate, disAsk_writer: a_writer, disAsk_title: a_title, disAsk_text: a_text, disAsk_regdate:date, disAsk_update:date};
+
+	pool.insert('insert into cider.cid_dis_ask set ?', sets, function(err,data){
+		if(err){
+			res.redirect('back');
+		}
+		res.redirect('/discuss');
 	});
 });
 
-
+router.get('/discuss/alert', function(req,res,next){
+	res.send('<script>alert("요청이 접수 되었습니다."+<br>+"검토 후 게시하겠습니다^^");window.location.href="/discuss";</script>');
+});
 
 router.post('/ftest', function(req, res, next) {
 	var consult_name = req.body.consult_name;

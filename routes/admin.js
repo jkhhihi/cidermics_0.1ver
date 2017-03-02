@@ -258,10 +258,6 @@ router.post('/contents/insert', ensureAuthenticated, function(req, res, next) {
 	var sets = {con_category : category, con_title : title, con_content : contents, con_photo : photo, con_viewCount : 0, con_regDate : date, con_upDate : date, con_writer : writer, user_no : userNo, user_comment : userText, con_release : rdate};
 	
 	mysql.insert('insert into cider.cid_contents set ?', sets,  function (err, data){
-
-		console.log(writer);
-		console.log(err);
-		console.log(data);
 		
     	res.redirect('/adm/contents');
     	
@@ -284,7 +280,6 @@ router.post('/contents/update', ensureAuthenticated, function(req, res, next) {
 	var date = getWorldTime(+9);
 	
 	var sets = {con_no : no, con_category : category, con_title : title, con_content : contents, con_photo : photo, con_upDate : date, user_no : userNo, user_comment : userText, con_writer : writer,con_release : rdate   };
-	console.log(sets);
 	mysql.update('update cider.cid_contents set con_category = ?,  con_title = ?, con_content = ?, con_photo = ?,  con_upDate = ?, user_no = ?, user_comment = ?, con_writer = ? ,con_release= ?  where con_no = ?', [category,title,contents,photo,date,userNo,userText,writer,rdate,no], function (err, data){
 		
     	res.redirect('/adm/contents');
@@ -589,10 +584,16 @@ mysql.insert('insert into cider.cid_contents set ?', sets,  function (err, data)
 
 router.get('/discuss', ensureAuthenticated, function(req, res, next) {
 	var CP = 4;
+	var askval;
 	mysql.select('SELECT * from cider.cid_dis_reg order by dis_no desc;', function (err, data){
-			console.log(CP);
-			 res.render('admin/discuss/discuss_index', { CP : CP, discuss : data });	    	
-		});
+
+		mysql.select('select * from cider.cid_dis_ask order by disAsk_no desc;', function(err,data2){
+
+			askval = data2;
+
+	res.render('admin/discuss/discuss_index', { CP : CP, discuss : data, askval : askval });
+	});    	
+  });
 });
 
 router.get('/discuss/insert', ensureAuthenticated, function(req, res, next) {
@@ -602,7 +603,6 @@ router.get('/discuss/insert', ensureAuthenticated, function(req, res, next) {
 		if(err){
 			res.redirect('back');
 		}
-
 		res.render('admin/discuss/discuss_insert',  {cate : data, CP : CP});
 	});
 });
@@ -636,6 +636,9 @@ router.post('/discuss/insert', ensureAuthenticated, function(req, res, next) {
 	res.redirect('/adm/discuss');
     });
 });
+
+
+
 
 
 
