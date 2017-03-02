@@ -25,7 +25,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>사이다경제</title>
 <!--link href="/css/bootstrap.min.css" rel="stylesheet"-->
-<link href="/css/cid_main.css" rel="stylesheet">
+<link href="/css/cid_main_temp.css" rel="stylesheet">
 <link href="/css/swiper.css" rel="stylesheet">
 
 
@@ -43,12 +43,15 @@
 
 <!--script src="/js/bootstrap.min.js"></script-->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
 <link rel="stylesheet" type="text/css" href="/css/component.css" />
 <script src="/js/modernizr.custom.js"></script>
-
-
 <script src="/js/gotoup.js"></script>
+
+<script>
+$(document).ready(function(){
+    $('.parallax').parallax();
+  });
+</script>
 
 <script language="javascript" type="text/javascript">
 
@@ -204,29 +207,6 @@ if (todayAtMidn.getTime() == specificDate.getTime())
 
 <div class="contents_detail-mob_menu"><img src="http://i.imgur.com/iW4DMcC.png" height="50"></div>
 
-<div class="row" style="margin:0; padding:0">
-<div class="col-xs-12 main-menu">
-		<div class="mainlogoimg" align="center"><img width="145" class="img-responsive" src="/page_imgs/fixed_img/logo.svg" style="width:180px;"></div>
-		<p>경제의 첫걸음, <span>사이다경제</span>와 함께!</p>
-		<div class="container" align="center">
-				<div class="menu row">
-						<div class="col-sm-3" style="padding-left:100px;"><a href="/contents/1"><img class="img-responsive" src="http://i.imgur.com/dlwHp7g.png"></a>
-								<p><a href="/contents/1">경제</a></p>
-						</div>
-						<div class="col-sm-3" style="padding-left:50px;"><a href="/contents/2"><img class="img-responsive" src="http://i.imgur.com/6VKqOwj.png"></a>
-								<p><a href="/contents/2">금융</a></p>
-						</div>
-						<div class="col-sm-3" style="padding-right:50px;"><a href="/contents/3"><img class="img-responsive" src="http://i.imgur.com/RoBBKee.png"></a>
-								<p><a href="/contents/3">기업</a></p>
-						</div>
-						<div class="col-sm-3" style="padding-right:100px;"><a href="/contents/4"><img class="img-responsive" src="http://i.imgur.com/5QGWW4f.png"></a>
-								<p><a href="/contents/4">주식</a></p>
-						</div>
-				</div>
-		</div>
-</div>
-</div>
-
  <script type="text/javascript">
      function setCookie( name, value, expiredays ) { 
    var todayDate = new Date(); 
@@ -344,6 +324,11 @@ if (todayAtMidn.getTime() == specificDate.getTime())
   }
 </script>
 
+<div class="parallax-container">
+	<div class="parallax"><img src="http://i.imgur.com/9jD6LU4.jpg"></div>
+</div>
+
+
 <!--배너뿌림-->
 <div class="main-banner container">
 		<p>사이다 소식</p>
@@ -373,6 +358,10 @@ if (todayAtMidn.getTime() == specificDate.getTime())
 						<!-- Add Pagination -->
 						<div class="swiper-pagination"></div>
 				</div>
+</div>
+
+<div class="parallax-container">
+	<div class="parallax"><img src="http://i.imgur.com/9jD6LU4.jpg"></div>
 </div>
 
 <!--div class="appbanner container">
