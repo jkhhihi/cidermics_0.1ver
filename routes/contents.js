@@ -2,6 +2,9 @@ var express = require('express');
 var router = express.Router();
 var mysql = require("./model/mysql");
 
+
+
+
 router.get('/contents', function(req, res, next) {
 	
 	var row;
@@ -165,7 +168,7 @@ router.get('/contents/detail/:no', function(req, res, next) {
 			} 
 			
 			var lang = data[0].con_category;
-			contents = data;
+			var contents = data;
 			
 			mysql.select('(SELECT con_no, con_title, con_photo FROM cider.cid_contents WHERE con_no > '+ no +' and con_category = "'+ lang +'" and con_release <= "'+_tot+'"  LIMIT 1) UNION ( SELECT con_no, con_title ,con_photo FROM cider.cid_contents WHERE con_no < '+ no +' and con_category = "'+ lang +'" and con_release <= "'+_tot+'" ORDER BY con_no DESC LIMIT 1 ) order by con_no desc' , function (err, data){	
 				if(err){
@@ -184,7 +187,6 @@ router.get('/contents/detail/:no', function(req, res, next) {
 		  });
 		  
 		});
-
 	});
 });
 

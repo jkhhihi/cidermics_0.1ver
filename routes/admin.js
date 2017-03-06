@@ -630,29 +630,42 @@ router.post('/discuss/insert', ensureAuthenticated, function(req, res, next) {
 	var comt_2 = req.body.comt_2;
 	var date = getWorldTime(+9);
 	var rdate = req.body.rdate;
+	var no = req.body.no;
 
 	var sets = {dis_cate : category, dis_writer : writer, dis_title:title, dis_thum:photo,dis_comt_1:comt_1, dis_comt_2:comt_2, dis_comt_3:"기타",dis_regdate:date, dis_update:date,dis_view:0,dis_release:rdate};
 	mysql.insert('insert into cider.cid_dis_reg set ?', sets,  function (err, data){
-	res.redirect('/adm/discuss');
-    });
+		if(no == null){
+			res.redirect('/adm/discuss');
+		}
+		else{
+		mysql.del('delete from cider.cid_dis_ask where disAsk_no = '+ no +'', function (err, data){
+
+		res.redirect('/adm/discuss');
+		});
+		}
+	});
 });
 
 
 
-router.get('/discuss/insert_2/:no', ensureAuthenticated, function(req, res, next) {
-	var no = req.params.no;
 
-	var dis_title = req.body.dis_title;
-	console.log(dis_title);
+router.get('/discuss/insert_2/:disAsk_no', ensureAuthenticated, function(req, res, next) {
 	var CP = 4;
-	var cate;
+	var no = req.params.disAsk_no;
+
 	mysql.select('select * from cider.cid_dis_cate', function (err, data){
 		if(err){
 			res.redirect('back');
 		}
 
-		res.render('admin/discuss/discuss_insert2',  {cate : data, CP : CP, dis_title:dis_title});
+		mysql.select('select * from cider.cid_dis_ask where disAsk_no = '+ no +'', function (err, data2){
+			if(err){
+				res.redirect('back');
+			}
+
+		res.render('admin/discuss/discuss_insert2',  {cate : data, CP : CP, askval:data2});
 	});
+  });
 });
 
 
@@ -698,6 +711,97 @@ router.get('/discuss/files/:page', ensureAuthenticated, function(req, res, next)
 	pagination.push(totalPage, startPage, lastPage, next, parseInt(page));
 	res.send({'pagination' : pagination, 'files': obj});
 });
+
+router.get('/discuss/detail/:dis_no', ensureAuthenticated, function(req, res, next) {
+	var CP= 4;
+	var no = req.params.dis_no;
+	console.log(no);
+	mysql.select('select * from cider.cid_dis_cate', function (err, data2){
+		if(err){
+			res.redirect('back');
+		}
+
+		mysql.select('select * from cider.cid_dis_reg where dis_no ='+no+'', function(err,data){
+			if(err){
+				res.redirect('back');
+			}
+			console.log(data);
+		res.render('admin/discuss/discuss_update',{ CP:CP, discuss:data, cate:data2});
+	});
+  });
+});
+
+router.get('/finance/detail/:fi_app_no', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 3;
+	var fi_app_no = req.params.fi_app_no;
+	
+	mysql.select('select * from cider.cid_fi_applyform', function (err, data2){
+		if(err){
+			res.redirect('back');
+		}
+		user = data2;
+		mysql.select('select * from cider.cid_fi_applyform where fi_app_no = '+ fi_app_no +'', function (err, data){
+			if(err){
+				res.redirect('back');
+			}
+			res.render('admin/finance/finance_detail', {CP : CP, finance : data});
+		});
+    });
+});
+
+router.post('/contents/update', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 1;
+	
+	var no = req.body.no;
+	var title = req.body.title;
+	var contents = req.body.contents;
+	var category = req.body.category;
+	var photo = req.body.photo;
+	var userNo = req.body.userNo;
+	var writer = req.body.writer;
+	var userText = req.body.userText;
+	var rdate   = req.body.rdate;
+	var date = getWorldTime(+9);
+	
+	var sets = {con_no : no, con_category : category, con_title : title, con_content : contents, con_photo : photo, con_upDate : date, user_no : userNo, user_comment : userText, con_writer : writer,con_release : rdate   };
+	mysql.update('update cider.cid_contents set con_category = ?,  con_title = ?, con_content = ?, con_photo = ?,  con_upDate = ?, user_no = ?, user_comment = ?, con_writer = ? ,con_release= ?  where con_no = ?', [category,title,contents,photo,date,userNo,userText,writer,rdate,no], function (err, data){
+		
+    	res.redirect('/adm/contents');
+    	
+    });
+});
+
+
+router.get('/discuss/delete/:no', function(req, res, next) {
+	
+	var CP = 3;
+	var no = req.params.no;
+	
+	mysql.del('delete from cider.cid_dis_reg where dis_no = '+ no +'', function (err, data){
+		if(err){
+			res.redirect('/adm/discuss');
+		}else{
+			res.redirect('/adm/discuss');
+		}
+    });
+});
+
+router.get('/discuss/askdelete/:no', function(req, res, next) {
+	
+	var CP = 3;
+	var no = req.params.no;
+	
+	mysql.del('delete from cider.cid_dis_ask where disAsk_no = '+ no +'', function (err, data){
+		if(err){
+			res.redirect('/adm/discuss');
+		}else{
+			res.redirect('/adm/discuss');
+		}
+    });
+});
+
 
 
 

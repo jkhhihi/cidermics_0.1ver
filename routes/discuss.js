@@ -37,6 +37,40 @@ function rdate() {
 	return _tot;
 }
 
+function releaseTime(){
+	 var now = new Date();
+	 var _year=  now.getFullYear();
+	 var _mon =   now.getMonth()+1;
+	 _mon=""+_mon;
+	 if (_mon.length < 2 )
+	 {
+	    _mon="0"+_mon;
+	 }
+	 var _date=now.getDate ();
+	 _date =""+_date;
+     if (_date.length < 2 )
+	 {
+	    _date="0"+_date;
+	 }
+	 var _hor = now.getHours  ();
+	 _hor =""+_hor;
+	 if (_hor.length < 2 )
+	 {
+	    _hor="0"+_hor;
+	 }
+	 var _min=now.getMinutes();
+	  _min =""+_min;
+	 if (_min.length < 2 )
+	 {
+	    _min="0"+_min;
+	 }
+	 
+	var _tot=_year+""+_mon+""+_date+""+_hor+""+ _min;
+
+	return _tot;
+
+}
+
 function leadingZeros(n, digits) {
 	  var zero = '';
 	  n = n.toString();
@@ -83,6 +117,52 @@ router.post('/discuss/ask', function(req,res,next){
 		}
 		res.redirect('/discuss');
 	});
+});
+
+
+
+router.get('/discuss/detail/:no', function(req, res, next) {
+	
+
+	var no = req.params.no;
+	var _tot = releaseTime();
+	var qry="";
+	var row;
+	var sets = {dis_no : no};
+	var next = {};
+	var pre = {};
+
+	mysql.update('update cider.cid_dis_reg set dis_view = dis_view + 1 where dis_no = ?', [no] ,function (err, data){
+		if(err){
+			res.redirect('back');
+		}
+		
+		//mysql.select('SELECT * FROM cider.cid_dis_reg r left join cider.cid_dis_comt c on c.dis_no = r.dis_no where dis_no = '+no+'', function (err, data){
+			mysql.select('SELECT * FROM cider.cid_dis_reg where dis_no = '+no+'', function (err, data){
+			if(err){
+				res.redirect('back');
+			}
+			row = data;
+				res.render('front/cid_discuss/cid_discuss_detail', {discuss:row});
+			});
+		  });  
+		});
+
+router.post('/discuss/comtPush', function(req,res,next){
+	var options = req.body.options;
+	var comt_writer = req.body.comt_writer;
+	var comt_pw = req.body.comt_pw;
+	var comt_text = req.body.comt_text;
+	var dis_no = req.body.dis_no;
+	var date = getWorldTime(+9);
+	console.log(options,comt_writer,comt_pw,comt_text,dis_no,date);
+
+	var sets = {dis_no:dis_no, comt_opt:options,comt_writer:comt_writer, comt_pw:comt_pw, comt_text:comt_text,comt_regdate:date,comt_update:date};
+
+	mysql.insert('insert into cider.cid_dis_comt set ?', sets,  function (err, data){
+		dis_no;
+    res.redirect('/discuss/detail/'+dis_no+'');
+  });
 });
 
 router.post('/ftest', function(req, res, next) {

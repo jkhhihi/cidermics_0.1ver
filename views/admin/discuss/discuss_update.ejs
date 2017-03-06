@@ -42,13 +42,12 @@ $( document ).ready(function(){
             <form class="col s12" id="discussform">
                 <div class="row" style="margin-top:  2em;">
                    <div class="input-field col s12">
-                   <input type="hidden" value="<%= askval[0].disAsk_no %>" name="no"> 
+                   <input type="hidden" value="<%= discuss[0].dis_no %>" name="dis_no"> 
                         <select name="category">
                           <option value="" disabled>카테고리를 정해주세요</option>
                      
                            <% for(var i=0; i < cate.length; i++) {  %> 
-                               <option value="<%=cate[i].disCate_no%>" <% if( askval[0].disAsk_cate == cate[i].disCate_no){ %> selected <% } %> > <%=cate[i].disCate_name%> </option>
-                               
+                               <option value="<%=cate[i].disCate_no%>" <% if( discuss[0].dis_cate == cate[i].disCate_no){ %> selected <% } %> > <%=cate[i].disCate_name%> </option>
                            <% } %>
                         </select>
                    </div>
@@ -56,7 +55,7 @@ $( document ).ready(function(){
                     
                     <div class="input-field col l12">
                         
-                        <input id="title" type="text" class="validate" value="<%=askval[0].disAsk_title%>" name="title">
+                        <input id="title" type="text" class="validate" value="<%= discuss[0].dis_title %>" name="title">
                         <label for="제목"></label>
                         
                         <!-- Modal Trigger -->
@@ -86,14 +85,14 @@ $( document ).ready(function(){
                             
                         </div>
                         
-                        <div class="preview row" style="display:none;">
+                        <div class="preview row" style="display:block;">
                             <p>대표 이미지</p>
-                            <img src="" class="img-responsive col l4" />
-                            <input type="hidden" name="photo">
+                            <img src="<%= discuss[0].dis_thum %>" class="img-responsive col l4" />
+                            <input type="hidden" name="photo" value="<%= discuss[0].dis_thum %>">
                         </div>
                         
                         <div class="input-field col s12">
-                            <input id="writer" type="text" class="validate" name="writer">
+                            <input id="writer" type="text" class="validate" name="writer" value="<%=discuss[0].dis_writer%>">
                             <label for="작성자">토론 등록자</label>
                         </div>
 
@@ -102,12 +101,12 @@ $( document ).ready(function(){
                               <div class="row">
                                 <div class="input-field col s6">
                                   <i class="material-icons prefix">album</i>
-                                  <input id="icon_prefix" type="text" class="validate" name="comt_1">
+                                  <input id="icon_prefix" type="text" class="validate" name="comt_1" value="<%=discuss[0].dis_comt_1%>">
                                   <label for="icon_prefix">첫번째 문항(예:찬성한다)</label>
                                 </div>
                                 <div class="input-field col s6">
                                   <i class="material-icons prefix">album</i>
-                                  <input id="icon_telephone" type="tel" class="validate" name="comt_2">
+                                  <input id="icon_telephone" type="tel" class="validate" name="comt_2" value="<%=discuss[0].dis_comt_2%>">
                                   <label for="icon_telephone">두번째 문항(예:반대한다)</label>
                                 </div>
                               </div>
