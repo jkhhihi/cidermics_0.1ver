@@ -1,4 +1,24 @@
 body{font-family: 'Nanum Gothic', serif;}
+.parallax {
+    /* The image used */
+    background-image: url("/page_imgs/fixed_img/mainimg.jpg");
+
+    /* Set a specific height */
+    min-height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parallax img{padding-top:100px;}
+#main {
+  margin-top:450px;
+  position:relative;
+  background:#fff;
+}
+
 .appbanner{display:none;}
 .appbanner-bg{position:relative; background-image:url(http://i.imgur.com/5mXAWvJ.jpg); background-repeat:no-repeat; background-size:100%; width:100%; height:auto; max-width:2000px; max-height:700px;}
 .appbanner-bg .ul-place{width:100%; height:auto; position:absolute; z-index:100; right:12%; bottom:6%;}
