@@ -85,10 +85,6 @@ router.post('/discuss/ask', function(req,res,next){
 	});
 });
 
-router.get('/discuss/alert', function(req,res,next){
-	res.send('<script>alert("요청이 접수 되었습니다."+<br>+"검토 후 게시하겠습니다^^");window.location.href="/discuss";</script>');
-});
-
 router.post('/ftest', function(req, res, next) {
 	var consult_name = req.body.consult_name;
 	var consult_test = req.body.consult_test;

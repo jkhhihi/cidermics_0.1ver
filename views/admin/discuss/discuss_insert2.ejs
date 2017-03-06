@@ -44,20 +44,24 @@ $( document ).ready(function(){
             <form class="col s12" id="discussform">
                 <div class="row" style="margin-top:  2em;">
                    <div class="input-field col s12">
+                   <input type="hidden" value="<%= askval[0].disAsk_no %>" name="no"> 
                         <select name="category">
-                            <option value="">카테고리를 정해주세요</option>
-                          <% for(var i=0; i < cate.length; i++) {  %> 
-                              
-                              <option value="<%=cate[i].disCate_no%>"> <%=cate[i].disCate_name%> </option>
-                              
-                          <% } %>
+                          <option value="" disabled>카테고리를 정해주세요</option>
+                     
+                           <% for(var i=0; i < cate.length; i++) {  %> 
+                               <option value="<%=askval[i].cate_no%>" <% if( contents[0].con_category == cate[i].cate_no){ %> selected <% } %> > <%=cate[i].cate_name%> </option>
+                               
+                           <% } %>
+                           
+                         </select>
+                         <label>카테고리</label>
                         </select>
                    </div>
                     
                     
                     <div class="input-field col l12">
                         
-                        <input id="title" type="text" class="validate" value="<%=dis_title%>" name="title">
+                        <input id="title" type="text" class="validate" value="<%=askval[0].dis_title%>" name="title">
                         <label for="제목"></label>
                         
                         <!-- Modal Trigger -->

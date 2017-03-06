@@ -54,7 +54,7 @@
       </table>
 
 <!-- 요청 Modal Structure -->
-<form name="discuss_submit" action="/adm/discuss/insert_2" method="post">
+<!--form name="discuss_submit" action="/adm/discuss/insert_2" method="post"-->
 <div id="modal2" class="modal bottom-sheet">
   <div class="modal-content">
   <ul class="collection">
@@ -64,14 +64,18 @@
       <i class="material-icons circle green">perm_identity</i>
       <span class="disAsk_cate"><%=askval[i].disAsk_cate%></span>
       <span class="disAsk_writer"><%=askval[i].disAsk_writer%></span>
-      <!--input type=text name="dis_title" value="abcd"-->
+      <span class="disAsk_writer"><%=askval[i].disAsk_title%></span>
+      <input type=text name="dis_title" value="<%=askval[i].disAsk_title%>">
       <br>
       <p>
          Second Line
       </p>
-      <button class="waves-effect waves-circle waves-light btn-floating secondary-content"  type="submit">
+      <!--button class="waves-effect waves-circle waves-light btn-floating secondary-content"  type="submit">
         <i class="material-icons">mode_edit</i>
-      </button>
+      </button-->
+      <a href="/adm/discuss/insert_2/<%= askval[i].disAsk_no %>" class="waves-effect waves-circle waves-light btn-floating secondary-content">
+        <i class="material-icons">mode_edit</i>
+      </a>
     </li>
     <% } %>
   </ul>
@@ -81,7 +85,7 @@
       <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">닫기</a>
     </div>
 </div>
-</form>
+<!--/form-->
 
 <!-- 신고 Modal Structure -->
 <div id="modal3" class="modal bottom-sheet">
