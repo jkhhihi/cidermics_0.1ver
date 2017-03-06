@@ -1,10 +1,10 @@
 body{font-family: 'Nanum Gothic', serif;}
 .parallax {
     /* The image used */
-    background-image: url("/page_imgs/fixed_img/mainimg.jpg");
+    background-image: url(http://i.imgur.com/9jD6LU4.jpg);
 
     /* Set a specific height */
-    min-height: 500px; 
+    min-height: 450px; 
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -12,22 +12,26 @@ body{font-family: 'Nanum Gothic', serif;}
     background-repeat: no-repeat;
     background-size: cover;
 }
-.parallax img{padding-top:100px;}
+.parallax .parallax-in{padding-top:180px; color:#fff; text-shadow: #444 0 1px 1px; font-weight:bold; font-size:24px;}
+.parallax .parallax-in img{width:130px; margin-bottom:20px;}
+
 #main {
-  margin-top:450px;
   position:relative;
   background:#fff;
 }
+.swiper-slide img{width:90%;}
 
 .appbanner{display:none;}
-.appbanner-bg{position:relative; background-image:url(http://i.imgur.com/5mXAWvJ.jpg); background-repeat:no-repeat; background-size:100%; width:100%; height:auto; max-width:2000px; max-height:700px;}
+
+/*.appbanner-bg{position:relative; background-image:url(http://i.imgur.com/dKrKBm0.jpg); background-repeat:no-repeat; background-size:100%; width:100%; height:auto; max-width:2000px; max-height:700px;}
 .appbanner-bg .ul-place{width:100%; height:auto; position:absolute; z-index:100; right:12%; bottom:6%;}
 .appbanner-bg ul li{ width:22%; text-align:center; float:right; list-style:none;}
-.appbanner-bg ul li img{width:100%; max-width:427px;}
+.appbanner-bg ul li img{width:100%; max-width:427px;}*/
+
 .main-menu p{font-size:38px; text-align:center; margin:60px 0 60px 0;}
 .main-menu p span{color:#1B87C9;}
-.main-banner{margin-bottom:50px;}
-.main-banner p{font-family: "BMD", sans-serif; font-size:16px; color:#1b87c9; margin:80px 0 10px 0;}
+.main-banner{margin:20px 0 50px 0;}
+.main-banner p{font-family: "BMD", sans-serif; font-size:16px; color:#1b87c9; margin:30px 0 10px 0;}
 .contents{font-size:16px; text-align:center; font-weight:bold;}
 .contents div div{margin:10px 0 10px 0;}
 .contents div div p{margin-top:20px;}
