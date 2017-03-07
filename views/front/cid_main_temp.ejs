@@ -1,60 +1,36 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="utf-8">
 
+<meta charset="utf-8">
 <!-- 네이버 -->
 <meta name="naver-site-verification" content="083657cb98aa9a4a9c62dedeffddfb2490545da0"/>
-
 <!--페이스북 관련 -->
 <meta property="fb:admins" content="{jkhhihi@naver.com}"/><!--페이스북 슈퍼아이디-->
-
-
 <!--공유 meta tags-->
 <meta name="title" content="사이다경제" />
 <meta property="og:image"  content="http://www.cidermics.com/page_imgs/fixed_img/thum_img.jpg" />
-
 <meta property="og:title"  content="사이다경제" />	
 <meta property="og:site_name"  content="사이다경제"/ >
 <meta property="og:type"  content="article">
 <meta property="og:url"  content="http://www.cidermics.com/" />
 <meta property="og:description" content="경제/금융을 쉽고 시원하게 풀어드리겠습니다!" />
-
-
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>사이다경제</title>
-<!--link href="/css/bootstrap.min.css" rel="stylesheet"-->
+
 <link href="/css/cid_main_temp.css" rel="stylesheet">
 <link href="/css/swiper.css" rel="stylesheet">
-
-
 <link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
 <link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
-
-<!-- 콘텐츠 JQUERY
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script-->
-
-<style>
-	.ui-datepicker-calendar {
-    display: none;
-    }
-</style>
-
-<!--script src="/js/bootstrap.min.js"></script-->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/css/component.css" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
 <script src="/js/modernizr.custom.js"></script>
 <script src="/js/gotoup.js"></script>
-
-<script>
-$(document).ready(function(){
-    $('.parallax').parallax();
-  });
-</script>
-
 <script language="javascript" type="text/javascript">
-
 function openWinFB(){  
     window.open("https://www.facebook.com/cidermics");  
 }
@@ -62,7 +38,6 @@ function openWinKA(){
     window.open("http://plus.kakao.com/home/@%EC%82%AC%EC%9D%B4%EB%8B%A4%EA%B2%BD%EC%A0%9C");  
 }
 </script>
-
 <script>
 var now = new Date(); 
 var todayAtMidn = new Date(now.getFullYear(), now.getMonth(), now.getDate(),now.getHours());
@@ -77,7 +52,6 @@ if (todayAtMidn.getTime() == specificDate.getTime())
     location.href="cid_main";
 }
 </script>
-
 <style>
 #info-wrap {
 	color:#fff;
@@ -105,19 +79,16 @@ if (todayAtMidn.getTime() == specificDate.getTime())
 	letter-spacing: 1px;
 	margin: 1em 0 0 0;
 }
-
 @media screen and (max-width: 70em) {
 	.mockup-width--forth {
 		width: 50%;
 	}
 }
-
 @media screen and (max-width: 60em) {
 	.mockup-width--third {
 		width: 100%;
 	}
 }
-
 @media screen and (max-width: 50em) {
 	.customizer {
 		top: 0;
@@ -166,10 +137,13 @@ if (todayAtMidn.getTime() == specificDate.getTime())
 		font-size: 1.5em;
 	}
 }
-
-
 </style>
-
+<style>
+	.ui-datepicker-calendar {
+    display: none;
+    }
+</style>
+<!-- 팝업창 -->
 <style type="text/css">
 .button-checkbox .btn{height:45px; padding:0 10px; background-color:#025F96; color:#fff; font-size:14px; border-radius:2px;}
 .button-checkbox .btn:focus, .btn:hover{background-color:#025F96; color:#fff;}
@@ -198,16 +172,15 @@ if (todayAtMidn.getTime() == specificDate.getTime())
 }  
 }
 </style>
-
 </head>
+
 <body>
+
 <!--위로가기 버튼-->
 <div id="but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></div>
 <% include top %>
-
 <div class="contents_detail-mob_menu"><img src="http://i.imgur.com/iW4DMcC.png" height="50"></div>
-
- <script type="text/javascript">
+<script type="text/javascript">
   function setCookie( name, value, expiredays ) { 
    var todayDate = new Date(); 
     todayDate.setDate( todayDate.getDate() + expiredays ); 
@@ -286,9 +259,7 @@ if (todayAtMidn.getTime() == specificDate.getTime())
         init();
     });
 });
-  
- </script>
-
+</script>
 
 <!-- 메인 팝업 창 -->
 <div id="info-wrap">
@@ -324,14 +295,21 @@ if (todayAtMidn.getTime() == specificDate.getTime())
   }
 </script>
 
+<!-- 메인이미지 -->
+<script>
+$(document).ready(function(){
+    $('.parallax').parallax();
+  });
+</script>
 <div class="parallax">
-<div class="parallax-in container" align="center">
-<img src="/page_imgs/fixed_img/logo.svg">
-<p>경제의 첫걸음,사이다경제와 함께!</p>
-</div>
+	<div class="parallax-in container" align="center">
+		<img src="/page_imgs/fixed_img/logo.svg" style="border-radius:6px;">
+		<p>경제의 첫걸음,사이다경제와 함께!</p>
+	</div>
 </div>
 
 <div class="container-fluid" id="main">
+
 <!--배너뿌림-->
 <div class="main-banner container">
 		<!-- p>사이다 소식</p -->
@@ -340,18 +318,7 @@ if (todayAtMidn.getTime() == specificDate.getTime())
 						<div class="swiper-wrapper">
 								<!-- 재무 배너 -->
 								<div class="swiper-slide"><a href="/finance/necessary"><img class="img-responsive" src="http://i.imgur.com/QkOUVl7.jpg"></a></div>
-								<div class="swiper-slide"><a href="/appdown"><img class="img-responsive" src="http://i.imgur.com/qIhfF54.jpg"></a>
-								<!-- 앱 다운 배너 >
-								<div class="appbanner-bg">
-									<div style="opacity:0; width:100%;"><a href="/appdown"><img src="http://i.imgur.com/5mXAWvJ.jpg" alt="" style="width:100%;"></a></div>
-									<div class="ul-place">
-									<ul>
-									<li class="btn-1"><a href="https://play.google.com/store/apps/details?id=com.cidermics.cmics"><img class="img-responsive" src="http://i.imgur.com/fp6odgn.png"></a></li>
-									<li class="btn-2"><a href="https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=1165201857&mt=8"><img class="img-responsive" src="http://i.imgur.com/wR81byA.png"></a></li>
-									</ul>
-									</div>
-									</div -->
-								</div>
+								<div class="swiper-slide"><a href="/appdown"><img class="img-responsive" src="http://i.imgur.com/qIhfF54.jpg"></a></div>
 								<!--div class="swiper-slide"><a href="#" onClick="javascript:openWinKA();"><img class="img-responsive" src="http://i.imgur.com/HqOgYxY.jpg"></a></div-->
 								<!--div class="swiper-slide"><a href="#" onClick="javascript:openWinFB();"><img class="img-responsive" src="http://i.imgur.com/vS27U54.jpg"></a></div-->	
 						</div>
@@ -362,10 +329,8 @@ if (todayAtMidn.getTime() == specificDate.getTime())
         <div class="swiper-button-prev"></div>
 				</div>
 </div>
-
 <!-- Swiper JS -->
 <script src="/js/swiper.js"></script>
-
 <!-- Initialize Swiper -->
 <script>
     var swiper = new Swiper('.swiper-container', {
@@ -382,18 +347,69 @@ if (todayAtMidn.getTime() == specificDate.getTime())
     });
 </script>
 
-<div class="menu-6 container row">
-<div class="col-md-2"><p>최신 콘텐츠</p></div>
-<div class="col-md-2"><p>인기 콘텐츠</p></div>
-<div class="col-md-2"><p>기획 콘텐츠</p></div>
-<div class="col-md-2"><p>팟캐스트</p></div>
-<div class="col-md-2"><p>재무 리얼후기</p></div>
-<div class="col-md-2"><p>토론 게시판</p></div>
+<!-- 메인에 6개 메뉴 -->
+<div class="menu6 container row" align="center">
+	<a href=""><div class="col-md-2 col-xs-4"><p>최신 콘텐츠</p></div></a>
+	<a href=""><div class="col-md-2 col-xs-4"><p>인기 콘텐츠</p></div></a>
+	<a href=""><div class="col-md-2 col-xs-4"><p>기획 콘텐츠</p></div></a>
+	<a href=""><div class="col-md-2 col-xs-4"><p>팟캐스트</p></div></a>
+	<a href="/finance/review"><div class="col-md-2 col-xs-4"><p>재무 리얼후기</p></div></a>
+	<a href=""><div class="col-md-2 col-xs-4"><p>토론 게시판</p></div></a>
 </div>
 
-
-
-
+<!-- 콘텐츠 -->
+<div class="menu6_con container row">
+	<div class="new-con col-md-6 col-xs-12">
+		<div class="menu-title row">
+			<div class="col-xs-8">최신 콘텐츠</div><div class="col-xs-4" align="right"><p class="plus">더보기 ></p></div>
+		</div>
+		<div class="con-in row" align="center">
+		<!-- 콘텐츠 뿌림 시작 -->
+			<div class="col-md-6 col-xs-4">
+				<a href="/contents">
+				<div class="con-img">
+					<img class="img-responsive img-new" style="width:40px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+					<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/1.png">
+					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
+				</div>
+				</a>			
+			</div>
+			<div class="col-md-6 col-xs-4">
+				<a href="/contents">
+				<div class="con-img">
+					<img class="img-responsive img-new" style="width:50px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+					<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/2.png">
+					<div class="con-title">공든 아파트가 무너지랴?!</div>
+				</div>
+				</a>	
+			</div>
+			<div class="col-md-6 col-xs-4">
+				<a href="/contents">
+				<div class="con-img">
+					<img class="img-responsive img-new" style="width:50px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+					<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/3.png">
+					<div class="con-title">공짜로 주식을 준다고?</div>
+				</div>
+				</a>
+			</div>
+			<div class="col-md-6 col-xs-4">
+				<a href="/contents">
+				<div class="con-img">
+					<img class="img-responsive img-new" style="width:50px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+					<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/4.png">
+					<div class="con-title">기업 경영에 참여하는 횡령 대통령?</div>
+				</div>
+				</a>
+			</div>
+		<!-- 콘텐츠 뿌림 끝 -->
+		</div>
+	</div>
+	<div class="popular-con col-md-6 col-xs-12"></div>
+	<div class="plan-con col-md-6 col-xs-12"></div>
+	<div class="podcast-con col-md-6 col-xs-12"></div>
+	<div class="review-con main-con col-md-6 col-xs-12"></div>
+	<div class="discuss-con col-md-6 col-xs-12"></div>
+</div>
 
 <script type="text/javascript">
 $(function() {
@@ -442,7 +458,7 @@ $(function() {
 <!--datePicker and contents JQUERY-->
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
 
 
 <!--form name="doneform" method="post" action="/selectDate">
@@ -465,11 +481,9 @@ jQuery.datepicker._hideDatepicker = function() {
 		};
 </script-->
 
-<% include cid_contents/cid_contents_include %>
-
 <% include bottom %>
 
-<script>
+	<script>
 		var idx = 2;
 		function addMore (){
 			var contents = '';
