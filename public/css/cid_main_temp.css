@@ -13,7 +13,7 @@ body{font-family: 'Nanum Gothic', serif;}
     background-size: cover;
 }
 .parallax .parallax-in{padding-top:130px; color:#fff; text-shadow: #444 0 1px 1px; font-weight:bold; font-size:24px;}
-.parallax .parallax-in img{width:130px; margin-bottom:10px;}
+.parallax .parallax-in img{width:130px; margin-bottom:20px;}
 #main {
   position:relative;
   background:#fff;
