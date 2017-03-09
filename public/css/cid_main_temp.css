@@ -13,7 +13,7 @@ body{font-family: 'Nanum Gothic', serif;}
     background-size: cover;
 }
 .parallax .parallax-in{padding-top:130px; color:#fff; text-shadow: #444 0 1px 1px; font-weight:bold; font-size:24px;}
-.parallax .parallax-in img{width:130px; margin-bottom:20px;}
+.parallax .parallax-in img{width:130px;}
 #main {
   position:relative;
   background:#fff;
@@ -22,8 +22,10 @@ body{font-family: 'Nanum Gothic', serif;}
 .menu6{margin:20px 0 40px 0;}
 .menu6 p{font-weight:900; border:3px solid #1b87c9; border-radius:3px; padding:10px 5px; color:#808080;}
 .menu6 a:hover p{background-color:#1b87c9; color:#fff;}
-.menu-title{border-bottom:2px solid #ececec; margin-bottom:20px; font-weight:bold;}
-.menu-title p.plus{color:#ff574a;}
+.menu6_con .line-3px{width:100%; height:2px; background-color:#ececec;}
+.menu6_con div.new-con, div.popular-con, div.plan-con, div.podcast-con{padding:0 30px 20px 30px;}
+.menu-title{margin-bottom:20px; font-weight:bold; padding:0 15px;}
+.menu-title p.plus{color:#ff574a; margin:0 0 5px;}
 .con-in .con-img{border:2px solid #ececec; border-radius:6px; margin-bottom:20px;}
 .con-in .con-title
 {
@@ -45,7 +47,18 @@ body{font-family: 'Nanum Gothic', serif;}
 	padding:10px 0; color:#fff; border-radius: 5px; font-size:16px; font-weight:bold;}
 
 @media all and (max-width:1024px) {
-
+.parallax{display:none;}
+.main-banner{margin:5px 0 5px 0;}
+.swiper-button-next, div.swiper-button-prev{display:none;}
+.swiper-slide img{width:100%;}
+.container-fluid{padding:0 !important;}
+.menu6{margin:0 0 10px 0;}
+.menu6 p{border:2px solid #1b87c9; padding:6px 5px;}
+.menu6 .col-xs-4{padding:0 2px; height:40px;}
+.menu6_con div.new-con, div.popular-con, div.plan-con, div.podcast-con{padding:0 10px;}
+.menu-title{padding:0 10px; height:20px;}
+.con-in .col-xs-4{padding:0 5px;}
+.con-in .con-title{font-size:12px;}
 .error img.logo{margin-top:50px;}
 
 }
