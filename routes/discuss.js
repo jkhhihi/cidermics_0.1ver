@@ -130,7 +130,7 @@ router.get('/discuss/detail/:no', function(req, res, next) {
 	var row;
 	var sets = {dis_no : no};
 	var next = {};
-	var pre = {};
+	var pre = {}
 
 	mysql.update('update cider.cid_dis_reg set dis_view = dis_view + 1 where dis_no = ?', [no] ,function (err, data){
 		if(err){
@@ -143,11 +143,90 @@ router.get('/discuss/detail/:no', function(req, res, next) {
 				res.redirect('back');
 			}
 			row = data;
-				res.render('front/cid_discuss/cid_discuss_detail', {discuss:row});
+				mysql.select('select * from cider.cid_dis_comt where dis_no = '+no+' order by comt_regdate desc', function(err,data){
+					if(err){
+						res.redirect('back');
+					}
+				var comt = data;
+
+					//mysql.select('select comt_opt as chk,count(ifnull(comt_opt,0)) as cnt, dis_no from cider.cid_dis_comt where dis_no='+no+' group by comt_opt', function(err,data){
+					//mysql.select('select comt_opt as chk,count(comt_opt) as cnt from cider.cid_dis_comt where dis_no='+no+'  group by comt_opt', function(err,data){
+					//mysql.select('select comt_opt,count(comt_opt) from cider.cid_dis_comt where dis_no='+no+'  group by comt_opt', function(err,data){
+					mysql.select('select count(*) as dis_no,comt_no from cider.cid_dis_comt where dis_no='+no+'', function(err,data){
+						var comtCount = data;
+
+						//mysql.select('select count(comt_opt) from cider.cid_dis_comt where dis_no='+no+'', function(err,data){
+
+								//var a_comtCount = data;
+
+							mysql.select('select comt_opt as chk,count(ifnull(comt_opt,0)) as cnt from cider.cid_dis_comt where dis_no='+no+' group by comt_opt order by comt_opt asc', function(err,data){
+								var g_comtCount = data;
+
+									var a1 = 0;
+									var a2 = 0;
+									var a3 = 0;
+									if((g_comtCount.length) == 1)
+									{
+
+										for (var i in data) {
+                                           //console.log('Post Titles: ', g_comtCount[i].chk);
+                                           if(g_comtCount[i].chk==0)
+                                           {
+                                           	a1=g_comtCount[i].cnt
+                                           }else if(g_comtCount[i].chk==1)
+                                           {
+                                           	 a2=g_comtCount[i].cnt
+                                           }else if(g_comtCount[i].chk==2)
+                                           {
+                                           	 a3=g_comtCount[i].cnt
+                                           }
+                                        }
+
+									} else if((g_comtCount.length) == 2)
+									{
+										for (var i in data) {
+                                           if(g_comtCount[i].chk=="0")
+                                           {
+                                           	a1=g_comtCount[i].cnt
+                                           }else if(g_comtCount[i].chk=="1")
+                                           {
+                                           	 a2=g_comtCount[i].cnt
+                                           }else if(g_comtCount[i].chk=="2")
+                                           {
+                                           	 a3=g_comtCount[i].cnt
+                                           }
+                                        }
+									}else if((g_comtCount.length) == 3)
+									{
+										for (var i in data) {
+                                           if(g_comtCount[i].chk==0)
+                                           {
+                                           	a1=g_comtCount[i].cnt
+                                           }else if(g_comtCount[i].chk==1)
+                                           {
+                                           	 a2=g_comtCount[i].cnt
+                                           }else if(g_comtCount[i].chk==2)
+                                           {
+                                           	 a3=g_comtCount[i].cnt
+                                           }
+                                        }
+									}
+
+								//mysql.select('(SELECT IFNULL(comt_opt, 0) as cnt FROM cider.cid_dis_comt where dis_no='+no+')UNION(SELECT 0 comt_opt)', function(err,data){
+									//var testCount = data;
+								mysql.select('select * from cider.cid_dis_comt_comt where comt_no = '+no+'', function(err,data){
+									if(err){ res.redirect('back');	}
+								var comtco = data;
+
+				res.render('front/cid_discuss/cid_discuss_detail', {discuss:row, comt:comt, comtCount:comtCount,g_comtCount:g_comtCount,a1:a1,a2:a2,a3:a3,comtco:comtco});
 			});
 		  });  
 		});
-
+	  });
+	});
+  });
+});
+//});
 router.post('/discuss/comtPush', function(req,res,next){
 	var options = req.body.options;
 	var comt_writer = req.body.comt_writer;
@@ -155,7 +234,6 @@ router.post('/discuss/comtPush', function(req,res,next){
 	var comt_text = req.body.comt_text;
 	var dis_no = req.body.dis_no;
 	var date = getWorldTime(+9);
-	console.log(options,comt_writer,comt_pw,comt_text,dis_no,date);
 
 	var sets = {dis_no:dis_no, comt_opt:options,comt_writer:comt_writer, comt_pw:comt_pw, comt_text:comt_text,comt_regdate:date,comt_update:date};
 
@@ -164,6 +242,99 @@ router.post('/discuss/comtPush', function(req,res,next){
     res.redirect('/discuss/detail/'+dis_no+'');
   });
 });
+router.post('/discuss/comtcomtPush', function(req,res,next){
+	var comt_writer = req.body.comt_writer;
+	var comt_pw = req.body.comt_pw;
+	var comt_text = req.body.comt_text;
+	var dis_no = req.body.dis_no;
+	var comt_no = req.body.comt_no;
+	var date = getWorldTime(+9);
+
+	console.log(comt_writer);
+	console.log(comt_pw);
+	console.log(dis_no); 
+	console.log(comt_no);
+
+	var sets = {comt_no:comt_no, comtco_writer:comt_writer, comtco_pw:comt_pw, comtco_text:comt_text, comtco_date:date};
+
+	mysql.insert('insert into cider.cid_dis_comt_comt set ?', sets,  function (err, data){
+		dis_no;
+    res.redirect('/discuss/detail/'+dis_no+'');
+  });
+});
+
+router.get('/ssss/:idx', function(req, res, next) {
+	var idx = req.params.idx;
+   
+   //alert("1111");
+   console.log("222222");
+   idx=15;
+
+    mysql.select("select * from cider.cid_dis_comt_comt where comt_no = '16'", function (err, data){
+
+        if (err) throw err;
+
+        //var aaa = data;
+       // aaa == "123";
+       //res.send( {aaa:data} );
+     // res.send(data[0].comt_no);
+   // var json=JSON.stringify(data);
+   // res.send(json);
+  res.send(data);
+	});
+});
+
+router.get('/shComt/:idx', function(req, res, next) {
+   
+   alert("1111");
+   var idx = req.params.idx;
+
+
+   var qry="";
+   
+   var now = new Date();
+   var _year=  now.getFullYear();
+   var _mon =   now.getMonth()+1;
+    _mon=""+_mon;
+    if (_mon.length < 2 )
+    {
+       _mon="0"+_mon;
+    }
+     var _date=now.getDate ();
+     _date =""+_date;
+     if (_date.length < 2 )
+	 {
+	    _date="0"+_date;
+	 }
+     var _hor = now.getHours ();
+    _hor =""+_hor;
+    if (_hor.length < 2 )
+    {
+       _hor="0"+_hor;
+    }
+    var _min=now.getMinutes();
+     _min =""+_min;
+    if (_min.length < 2 )
+    {
+       _min="0"+_min;
+    }
+    
+    var _tot=_year+""+_mon+""+_date+""+_hor+""+ _min;
+   var lang = req.params.lang;
+   var start = (idx - 1) * 12;
+   //var start= start +1;
+   //var end = idx * 12;
+   var end = 12;
+    qry="select * from cider.cid_dis_comt_comt order by comtco_no desc limit "+ start +", "+ end +"";
+   console.log(qry);
+   mysql.select(qry, function (err, data){
+
+       if (err) throw err;
+       res.send({ contents : data });
+   });
+   
+});
+
 
 router.post('/ftest', function(req, res, next) {
 	var consult_name = req.body.consult_name;

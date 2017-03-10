@@ -802,6 +802,16 @@ router.get('/discuss/askdelete/:no', function(req, res, next) {
     });
 });
 
+router.get('/discuss/comtlist', ensureAuthenticated, function(req, res, next) {
+	var CP = 4;
+	mysql.select('(SELECT dis_no,comt_no,"" as comtco_no,comt_writer,comt_regdate from cider.cid_dis_comt) UNION (SELECT "",comt_no,comtco_no as comtco_no,comtco_writer,comtco_date FROM cider.cid_dis_comt_comt)order by comt_regdate desc;', function (err, data){
+	//mysql.select('SELECT * from cider.cid_dis_comt order by dis_no desc;', function (err, data){
+
+		var comtlist = data;
+
+	res.render('admin/discuss/discuss_comtlist', { CP : CP, comtlist:data });
+	});    	
+ });
 
 
 
