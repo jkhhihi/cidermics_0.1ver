@@ -51,6 +51,42 @@
 }
 </style>
 
+<!--글자수 제한 스크립트 -->
+<script type="text/javascript">
+    function chkword(obj, maxByte) {
+ 
+        var strValue = obj.value;
+        var strLen = strValue.length;
+        var totalByte = 0;
+        var len = 0;
+        var oneChar = "";
+        var str2 = "";
+ 
+        for (var i = 0; i < strLen; i++) {
+            oneChar = strValue.charAt(i);
+            if (escape(oneChar).length > 4) {
+                totalByte += 2;
+            } else {
+                totalByte++;
+            }
+ 
+            // 입력한 문자 길이보다 넘치면 잘라내기 위해 저장
+            if (totalByte <= maxByte) {
+                len = i + 1;
+            }
+        }
+ 
+        // 넘어가는 글자는 자른다.
+        if (totalByte > maxByte) {
+            alert(maxByte + "자를 초과 입력 할 수 없습니다.");
+            str2 = strValue.substr(0, len);
+            obj.value = str2;
+            chkword(obj, 4000);
+        }
+    }
+</script>
+
+<!--- 차트 스크립트 -->
 <script type="text/javascript">
 window.onload = function () {
 	var chart = new CanvasJS.Chart("chartContainer",
@@ -63,19 +99,26 @@ window.onload = function () {
 		{
 			type: "doughnut",
 			startAngle: 60,
-			toolTipContent: "{legendText}: {y} - <strong>#percent% </strong>",
+			toolTipContent: "{legendText}: {y}",
+			//toolTipContent: "{legendText}: {y} - <strong>#percent% </strong>",
 			showInLegend: true,
           explodeOnClick: false, //**Change it to true
 			dataPoints: [
-				{y: 60, indexLabel: "<%=discuss[0].dis_comt_1%> #percent%", legendText: "<%=discuss[0].dis_comt_1%>" },
-				{y: 52, indexLabel: "<%=discuss[0].dis_comt_2%> #percent%", legendText: "<%=discuss[0].dis_comt_2%>" },
-				{y: 21,  indexLabel: "<%=discuss[0].dis_comt_3%> #percent%", legendText: "<%=discuss[0].dis_comt_3%>" }
+
+				{y: "<%=a1%>", indexLabel: "<%=discuss[0].dis_comt_1%> : {y} ", legendText: "<%=discuss[0].dis_comt_1%>" },
+				{y: "<%=a2%>", indexLabel: "<%=discuss[0].dis_comt_2%> : {y} ", legendText: "<%=discuss[0].dis_comt_2%>" },
+				{y: "<%=a3%>", indexLabel: "<%=discuss[0].dis_comt_3%> : {y} ", legendText: "<%=discuss[0].dis_comt_3%>" }
+
+
+
+	
 			]
 		}
 		]
 	});
 	chart.render();
 	}
+
 </script>
 <script src="/js/canvasjs.min.js"></script>
 
@@ -128,19 +171,24 @@ window.onload = function () {
 <!-- 찬성 반대 기타 버튼 -->
 <div class="container">
 	<div class="well well-sm text-center">
+		<% if(comtCount[0].dis_no == 0){ %>
+		
+		<% }else{ %>
 		<div id="chartContainer" style="height: 200px; width: 100%;"></div>
+		<% } %>
 		<div class="btn-group" data-toggle="buttons">
 		  <label class="btn btn-primary active">
 		  <span class="glyphicon glyphicon-thumbs-up"></span>
-		    <input type="radio" name="options" id="option1" autocomplete="off" checked value="1"> <%=discuss[0].dis_comt_1%>
+
+		    <input type="radio" name="options" id="option1" autocomplete="off" checked value="0"> <%=discuss[0].dis_comt_1%>
 		  </label>
 		  <label class="btn btn-danger">
 		  <span class="glyphicon glyphicon-thumbs-down"></span>
-		    <input type="radio" name="options" id="option2" autocomplete="off" value="2"> <%=discuss[0].dis_comt_2%>
+		    <input type="radio" name="options" id="option2" autocomplete="off" value="1"> <%=discuss[0].dis_comt_2%>
 		  </label>
 		  <label class="btn btn-warning">
 		  <span class="glyphicon glyphicon-check"></span>
-		    <input type="radio" name="options" id="option3" autocomplete="off" value="3"> 기타
+		    <input type="radio" name="options" id="option3" autocomplete="off" value="2"> 기타
 		  </label>
 		</div>
 	</div>
@@ -163,24 +211,239 @@ window.onload = function () {
     border-color: #8064A2;
 	}
 </style>
-
 <div class="container">
   <h2>토론하기</h2>
   <p><%= discuss[0].dis_title%></p>
 	  <div class="form-group">
 	    <label for="id">작성자 : </label>
-	    <input type="text" class="form-control" id="exampleInputName2" placeholder="" name="comt_writer">
+	    <input type="text" class="form-control" id="exampleInputName2" placeholder="" name="comt_writer" onkeyup="chkword(this, 20)">
 	  </div>
 	  <div class="form-group">
 	    <label for="password">비밀번호 : </label>
-	    <input type="password" class="form-control" id="exampleInputEmail2" placeholder="" name="comt_pw">
+	    <input type="password" class="form-control" id="exampleInputEmail2" placeholder="" name="comt_pw" onkeyup="chkword(this, 22)">
 	  </div>
 	  <div class="form-group">
-	  	<textarea class="form-control" rows="3" name="comt_text"></textarea>
+	  	<textarea class="form-control" rows="3" name="comt_text"  onkeyup="chkword(this, 100)")></textarea>
+	  	<label>*100자 이하로 작성해주세요.</label>
 	  </div>
 	  <button type="submit" class="btn btn-primary">등록</button>
 </div>
 </form>
+
+<% if(comtCount[0].dis_no == 0){ %>
+
+<p> 아무것도 없다 </p>
+
+<% }else{ %>
+<table class="table table-condensed">
+	<tr>
+		<td>댓글쓰기 (<%=comtCount[0].dis_no%>)</td>
+	</tr>
+	<% for(var i =0; i< comt.length; i++){ %>
+	<tr class="default">
+		<td class="primary">
+		<% if(comt[i].comt_opt == 0){ %>
+		<%= discuss[0].dis_comt_1 %>
+		<% } else if(comt[i].comt_opt == 1){ %>
+		<%= discuss[0].dis_comt_2 %>
+		<% } else if(comt[i].comt_opt == 2){ %>
+		<%= discuss[0].dis_comt_3 %>
+		<% } else{ %>
+		<%} %>
+		<br>
+		<h6><%= comt[i].comt_writer %> | <%= comt[i].comt_regdate %> | <a href="#"> 신고 </a> | <a href="#"><span class="glyphicon glyphicon-remove"></span></a></h6>
+		<%= comt[i].comt_text %>
+		<br>
+			
+		<!--button value="<%= comt[i].comt_no%>" onclick="shComt()">답글</button-->
+		<button class="show" id="d<%= comt[i].comt_no%>" value="<%= comt[i].comt_no%>" onclick="btest(<%= comt[i].comt_no%>)">답글</button>
+			
+		<form class="form-inline" method="post" action="/discuss/comtcomtPush">
+		<input type="hidden" name="dis_no" value="<%= comt[i].dis_no%>">
+		<input type="hidden" name="comt_no" value="<%= comt[i].comt_no%>">
+		<div class="showComt" value="<%= comt[i].comt_no%>" id="showComt<%= comt[i].comt_no%>" name="zyx" style="display:none;">
+		
+		<div class="form-group">
+				<div class="col-xs-4">
+					<input type="text" class="form-control input-sm" name="comt_writer" ></div>
+				<div class="col-xs-4">
+					<input type="password" class="form-control input-sm" name="comt_pw"></div>
+				<div class="form-group">
+	  				<textarea class="form-control" rows="3" name="comt_text"  onkeyup="chkword(this, 100)")></textarea>
+	  			</div>
+	  			<button type="submit" id="submit<%= comt[i].comt_no%>" value="<%= comt[i].comt_no%>" class="btn btn-primary">등록</button>
+	  			<div id="test"></div>
+			</div>
+			
+			<% for (var j=0; j < comtco.length; j++){%>
+			<% console.log(comtco[j].length); %>
+			<% if((comtco[j].length) > 0){ %>
+
+			<p>1</p>
+			<% }else{ %>
+			<p>2</p>
+			
+			<% } %>
+		<% } %>
+		</div>
+		</form>
+
+		</td>
+	</tr>
+	<% } %>
+
+</table>
+<% } %>
+<script type="text/javascript">
+/*
+		$(document).ready(function(){
+	$(".show").click(function(){
+    	//alert($(this).val());
+
+        $(".showComt").toggle(300);
+    });
+});
+*/	function btest(id) {
+	//alert("d"+id);
+   var chk="#showComt"+id;
+    $(chk).toggle(300);
+
+    test(id);
+}
+function test(id)
+{
+  /*
+  var idx=id;
+  $.ajax({
+  	url:'/shComt/'+idx,
+  	method : 'get',
+  	success: function(result){
+  		alert(result);
+  	}
+
+  });
+  */
+  alert("11111");
+   $.ajax({
+				url : '/ssss/'+idx,
+				method : 'get',
+				success : function(data){
+					//if (data.contents.length == 0){
+					//	alert('마지막 콘텐츠입니다.');
+					//	return;
+					//}
+                  // alert(JSON.stringify(data));
+					//$.each(data.aaa, function (index, value){
+					//	aaa +='<p>value.comt_no</p>';
+					//alert(value.comt_no);
+					//});
+					//alert(data);
+					//$.each(data.aaa, function (index, value){
+						//alert(aaa+=value.comt_no);
+
+					//}
+					//for(var i in data)
+					//{
+					//	alert(data[i].comt_no);
+					//}
+					var ss=JSON.parse(data);
+					//for (var i = 0; i < data.length; i++) { 
+   
+
+					//alert(data[4][0]);
+				//}
+				var ht="";
+				for(var i =0; i < ss.length;i++){
+					//alert(ss[i]["comtco_writer"]);
+					//<p>ss[i]["comtco_writer"]</p>
+					ht+=""+ss[i]["comtco_writer"]+"<br/>";
+				}
+				 document.getElementById("test").innerHTML = ht;
+				alert(data);
+					
+				}
+			});
+     alert("ggggggg");
+}
+</script>
+
+
+<script>
+		var idx = 2;
+		function shComt (){
+			var contents = '';
+			$.ajax({
+				url : '/shComt/'+idx,
+				method : 'get',
+				success : function(data){
+					if (data.contents.length == 0){
+						alert('마지막 콘텐츠입니다.');
+						return;
+					}
+					idx ++;
+					/*
+					$.each(data.contents, function (index, value){
+						contents += '<li> ' +
+							 			'<div class="con-border bg-w"> ' + 
+												'<a href="/contents/detail/'+value.con_no+'"> ' +
+													'<div class="con-img" align="center"> ' +
+														'<img src="'+value.con_photo+'"/> ' + 
+													'</div> ' +
+												'</a> ' +
+							 					'<a href="/contents/detail/'+value.con_no+'"> ' +
+							 						'<div class="con-title"><span><center>' + value.con_title +'</center></span></div>' +
+							 					'</a> '+
+							 			'</div> '+
+							 		'</li> ';
+							
+					});
+					$('#grid').append(contents);
+					new AnimOnScroll( document.getElementById( 'grid' ), {
+						minDuration : 0.4,
+						maxDuration : 0.7,
+						viewportFactor : 0.2
+					} );
+					*/
+				}
+			});
+		}
+		
+</script>
+
+
+
+<script type="text/javascript">
+
+//$('.show').on('click', function() {
+
+	//var sh = $('.show').val();
+	//var shcomt = $(".showComt").val();
+	//alert($('div[name=zyx]').val());
+	//if (sh == 7){
+		//alert(sh+"ss");
+		//alert(shcomt+"ss");
+	//}else{
+		//alert($(this).val());
+	//}
+    //var hiddenField = $('.showComt'),
+       // val = hiddenField.val();
+        //alert($(this).val());
+        //alert($(hiddenField).val(val === "1" ? "7" : "1"));
+       // $(".showComt").toggle(300);
+//});
+
+</script>
+
+<script type="text/javascript">
+	var pageNum = 1;
+	var list = 50;
+	var b_pageNum_list = 10;
+	var block = ceil(pageNum/b_pageNum_list);
+	var b_start_page = ((block -1))
+</script>
+
+         
+
 
 
 
