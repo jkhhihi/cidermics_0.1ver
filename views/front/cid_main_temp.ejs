@@ -308,44 +308,34 @@ $(document).ready(function(){
 	</div>
 </div>
 
-<div class="container-fluid" id="main">
 
-<!--배너뿌림-->
-<div class="main-banner container">
-		<!-- p>사이다 소식</p -->
-				<!-- Swiper 배너-->
-				<div class="swiper-container" align="center">
-						<div class="swiper-wrapper">
-								<!-- 재무 배너 -->
-								<div class="swiper-slide"><a href="/finance/necessary"><img class="img-responsive" src="http://i.imgur.com/QkOUVl7.jpg"></a></div>
-								<div class="swiper-slide"><a href="/appdown"><img class="img-responsive" src="http://i.imgur.com/qIhfF54.jpg"></a></div>
-								<!--div class="swiper-slide"><a href="#" onClick="javascript:openWinKA();"><img class="img-responsive" src="http://i.imgur.com/HqOgYxY.jpg"></a></div-->
-								<!--div class="swiper-slide"><a href="#" onClick="javascript:openWinFB();"><img class="img-responsive" src="http://i.imgur.com/vS27U54.jpg"></a></div-->	
-						</div>
-		<!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
-        <!-- Add Arrows -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-				</div>
+<!-- 슬라이드 배너 -->
+<div id="myCarousel" class="container carousel slide" data-ride="carousel">
+  <!-- Indicators>
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+  </ol -->
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <a href="/finance/necessary"><img class="img-responsive" src="http://i.imgur.com/QkOUVl7.jpg"></a>
+    </div>
+    <div class="item">
+      <a href="/appdown"><img class="img-responsive" src="http://i.imgur.com/qIhfF54.jpg"></a>
+    </div>
+  </div>
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
-<!-- Swiper JS -->
-<script src="/js/swiper.js"></script>
-<!-- Initialize Swiper -->
-<script>
-    var swiper = new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
-        paginationClickable: true,
-        spaceBetween: 10,
-				//effect: 'fade',
-        centeredSlides: true,
-        		//autoplay: 5000,
-        autoplayDisableOnInteraction: false,
-        loop: true
-    });
-</script>
+
 
 <!-- 메인에 6개 메뉴 -->
 <div class="menu6 container row" align="center">
@@ -356,7 +346,7 @@ $(document).ready(function(){
 	<a href="/finance/review"><div class="col-md-2 col-xs-4"><p>재무 리얼후기</p></div></a>
 	<a href=""><div class="col-md-2 col-xs-4"><p>토론 게시판</p></div></a>
 </div>
-
+	
 <!-- 콘텐츠 -->
 <div class="menu6_con container row">
 	<div class="new-con col-md-6 col-xs-12">
@@ -511,6 +501,67 @@ $(document).ready(function(){
 	<div class="discuss-con col-md-6 col-xs-12"></div>
 </div>
 
+	
+	
+	<!-- 모바일 콘텐츠 -->
+<div class="mob_menu6_con container row">
+	<div class="new-con swiper-container col-md-6 col-xs-12">
+		<div class="menu-title row">
+			<div class="col-xs-8 padding-0">최신 콘텐츠</div><div class="col-xs-4 padding-0" align="right"><p class="plus">더보기 ></p></div>
+			<div class="line-3px col-xs-12"></div>
+		</div>
+		<!-- 콘텐츠 뿌림 시작 -->		
+		<div class="con-in swiper-wrapper" align="center">
+			<div class="swiper-slide">
+				<a href="/contents">
+				<div class="con-img">
+					<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+					<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/1.png">
+					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
+				</div>
+				</a>			
+			</div>
+			<div class="swiper-slide">
+				<a href="/contents">
+				<div class="con-img">
+					<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+					<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/2.png">
+					<div class="con-title">공든 아파트가 무너지랴?!</div>
+				</div>
+				</a>	
+			</div>
+			<div class="swiper-slide">
+				<a href="/contents">
+				<div class="con-img">
+					<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+					<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/3.png">
+					<div class="con-title">공짜로 주식을 준다고?</div>
+				</div>
+				</a>
+			</div>
+			<div class="swiper-slide">
+				<a href="/contents">
+				<div class="con-img">
+					<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+					<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/4.png">
+					<div class="con-title">기업 경영에 참여하는 횡령 대통령?</div>
+				</div>
+				</a>
+			</div>
+		</div>
+		<!-- 콘텐츠 뿌림 끝 -->
+	</div>
+</div>	
+	
+	<script src="/js/swiper.js"></script>
+	<script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 3,
+        spaceBetween:3
+    });
+    </script>
+	
+
 <script type="text/javascript">
 $(function() {
      $('.date-picker').datepicker(
@@ -622,6 +673,6 @@ jQuery.datepicker._hideDatepicker = function() {
 		}
 		
 	</script>
-</div>
+
 </body>
 </html>
