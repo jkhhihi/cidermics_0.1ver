@@ -265,12 +265,8 @@ router.post('/discuss/comtcomtPush', function(req,res,next){
 
 router.get('/ssss/:idx', function(req, res, next) {
 	var idx = req.params.idx;
-   
-   //alert("1111");
-   console.log("222222");
-   idx=15;
 
-    mysql.select("select * from cider.cid_dis_comt_comt where comt_no = '16'", function (err, data){
+    mysql.select('select * from cider.cid_dis_comt_comt where comt_no = '+idx+'', function (err, data){
 
         if (err) throw err;
 
@@ -280,7 +276,8 @@ router.get('/ssss/:idx', function(req, res, next) {
      // res.send(data[0].comt_no);
    // var json=JSON.stringify(data);
    // res.send(json);
-  res.send(data);
+  //res.send(data);
+  res.send({ ddd : data });
 	});
 });
 
