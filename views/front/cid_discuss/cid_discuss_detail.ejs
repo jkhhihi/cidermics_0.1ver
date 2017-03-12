@@ -256,7 +256,7 @@ window.onload = function () {
 		<br>
 			
 		<!--button value="<%= comt[i].comt_no%>" onclick="shComt()">답글</button-->
-		<button class="show" id="d<%= comt[i].comt_no%>" value="<%= comt[i].comt_no%>" onclick="btest(<%= comt[i].comt_no%>)">답글</button>
+		<button class="show" id="d<%= comt[i].comt_no%>" value="<%= comt[i].comt_no%>" onclick="showJs(<%= comt[i].comt_no%>)">답글</button>
 			
 		<form class="form-inline" method="post" action="/discuss/comtcomtPush">
 		<input type="hidden" name="dis_no" value="<%= comt[i].dis_no%>">
@@ -272,7 +272,7 @@ window.onload = function () {
 	  				<textarea class="form-control" rows="3" name="comt_text"  onkeyup="chkword(this, 100)")></textarea>
 	  			</div>
 	  			<button type="submit" id="submit<%= comt[i].comt_no%>" value="<%= comt[i].comt_no%>" class="btn btn-primary">등록</button>
-	  			<div id="test"></div>
+	  			<div id="showComtco"></div>
 			</div>
 			
 			<% for (var j=0; j < comtco.length; j++){%>
@@ -295,143 +295,27 @@ window.onload = function () {
 </table>
 <% } %>
 <script type="text/javascript">
-/*
-		$(document).ready(function(){
-	$(".show").click(function(){
-    	//alert($(this).val());
-
-        $(".showComt").toggle(300);
-    });
-});
-*/	function btest(id) {
-	//alert("d"+id);
+function showJs(id) {
    var chk="#showComt"+id;
     $(chk).toggle(300);
-
-    test(id);
+    showComtco(id);
 }
-function test(id)
-{
-  /*
-  var idx=id;
-  $.ajax({
-  	url:'/shComt/'+idx,
-  	method : 'get',
-  	success: function(result){
-  		alert(result);
-  	}
 
-  });
-  */
-  alert("11111");
+function showComtco(id)
+{
+	var idx = id;
    $.ajax({
 				url : '/ssss/'+idx,
 				method : 'get',
 				success : function(data){
-					//if (data.contents.length == 0){
-					//	alert('마지막 콘텐츠입니다.');
-					//	return;
-					//}
-                  // alert(JSON.stringify(data));
-					//$.each(data.aaa, function (index, value){
-					//	aaa +='<p>value.comt_no</p>';
-					//alert(value.comt_no);
-					//});
-					//alert(data);
-					//$.each(data.aaa, function (index, value){
-						//alert(aaa+=value.comt_no);
-
-					//}
-					//for(var i in data)
-					//{
-					//	alert(data[i].comt_no);
-					//}
-					var ss=JSON.parse(data);
-					//for (var i = 0; i < data.length; i++) { 
-   
-
-					//alert(data[4][0]);
-				//}
-				var ht="";
-				for(var i =0; i < ss.length;i++){
-					//alert(ss[i]["comtco_writer"]);
-					//<p>ss[i]["comtco_writer"]</p>
-					ht+=""+ss[i]["comtco_writer"]+"<br/>";
-				}
-				 document.getElementById("test").innerHTML = ht;
-				alert(data);
-					
-				}
-			});
-     alert("ggggggg");
-}
-</script>
-
-
-<script>
-		var idx = 2;
-		function shComt (){
-			var contents = '';
-			$.ajax({
-				url : '/shComt/'+idx,
-				method : 'get',
-				success : function(data){
-					if (data.contents.length == 0){
-						alert('마지막 콘텐츠입니다.');
-						return;
-					}
-					idx ++;
-					/*
-					$.each(data.contents, function (index, value){
-						contents += '<li> ' +
-							 			'<div class="con-border bg-w"> ' + 
-												'<a href="/contents/detail/'+value.con_no+'"> ' +
-													'<div class="con-img" align="center"> ' +
-														'<img src="'+value.con_photo+'"/> ' + 
-													'</div> ' +
-												'</a> ' +
-							 					'<a href="/contents/detail/'+value.con_no+'"> ' +
-							 						'<div class="con-title"><span><center>' + value.con_title +'</center></span></div>' +
-							 					'</a> '+
-							 			'</div> '+
-							 		'</li> ';
-							
+					var ht="";
+					$.each(data.ddd, function (index, value){
+						ht += value.comtco_date+value.comtco_writer+value.comtco_text+value.comtco_no+"<br/>";
+						document.getElementById('showComtco').innerHTML = ht;
 					});
-					$('#grid').append(contents);
-					new AnimOnScroll( document.getElementById( 'grid' ), {
-						minDuration : 0.4,
-						maxDuration : 0.7,
-						viewportFactor : 0.2
-					} );
-					*/
 				}
 			});
-		}
-		
-</script>
-
-
-
-<script type="text/javascript">
-
-//$('.show').on('click', function() {
-
-	//var sh = $('.show').val();
-	//var shcomt = $(".showComt").val();
-	//alert($('div[name=zyx]').val());
-	//if (sh == 7){
-		//alert(sh+"ss");
-		//alert(shcomt+"ss");
-	//}else{
-		//alert($(this).val());
-	//}
-    //var hiddenField = $('.showComt'),
-       // val = hiddenField.val();
-        //alert($(this).val());
-        //alert($(hiddenField).val(val === "1" ? "7" : "1"));
-       // $(".showComt").toggle(300);
-//});
-
+};
 </script>
 
 <script type="text/javascript">
