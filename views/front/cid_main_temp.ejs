@@ -340,7 +340,7 @@ $(document).ready(function(){
 <!-- 메인에 6개 메뉴 -->
 <div class="menu6 container row" align="center">
 	<a href=""><div class="col-md-2 col-xs-4"><p>최신 콘텐츠</p></div></a>
-	<a href=""><div class="col-md-2 col-xs-4"><p>인기 콘텐츠</p></div></a>
+	<a href="/contents"><div class="col-md-2 col-xs-4"><p>인기 콘텐츠</p></div></a>
 	<a href=""><div class="col-md-2 col-xs-4"><p>기획 콘텐츠</p></div></a>
 	<a href=""><div class="col-md-2 col-xs-4"><p>팟캐스트</p></div></a>
 	<a href="/finance/review"><div class="col-md-2 col-xs-4"><p>재무 리얼후기</p></div></a>
@@ -504,24 +504,56 @@ $(document).ready(function(){
 				<div class="line-3px col-xs-12"></div>
 			</div>
 			<!-- 콘텐츠 뿌림 시작 -->		
-			<div class="con-in border-box row" align="center">
-				<div class="col-xs-12">
-					<p><B>후기 : 현재 가입되어 있는 상품과 <br> 소비 패턴을 꼼꼼하게 ...<span>+</span></B></p>
-					<p>신상 : 홍XX / 40대 / 대기업 직원</P>
-				</div>
+			<div id="text-carousel" class="carousel slide" data-ride="carousel">
+		    <!-- Wrapper for slides -->
+		    <div class="con-in row" align="center">
+		    	<div class="col-xs-12 border-box">
+			        <ol class="carousel-indicators">
+			          <li data-target="#text-carousel" data-slide-to="0" class="active"></li>
+			          <li data-target="#text-carousel" data-slide-to="1"></li>
+			          <li data-target="#text-carousel" data-slide-to="2"></li>
+			        </ol>		    	
+		            <div class="carousel-inner" role="listbox">
+		                <div class="item active">
+						    <p><B>후기1 : 현재 가입되어 있는 상품과 <br> 소비 패턴을 꼼꼼하게 ...<span>+</span></B></p>
+						    <p>신상 : 홍XX / 40대 / 대기업 직원</P>
+		                </div>
+		                <div class="item">
+						    <p><B>후기2 : 현재 가입되어 있는 상품과 <br> 소비 패턴을 꼼꼼하게 ...<span>+</span></B></p>
+							<p>신상 : 홍XX / 40대 / 대기업 직원</P>
+		                </div>
+		                <div class="item">
+						    <p><B>후기3 : 현재 가입되어 있는 상품과 <br> 소비 패턴을 꼼꼼하게 ...<span>+</span></B></p>
+							<p>신상 : 홍XX / 40대 / 대기업 직원</P>
+		                </div>
+		            </div>
+			    </div>
+		    </div>
+		    <!-- Controls --> 
+		    <a class="left carousel-control" href="#text-carousel" role="button" data-slide="prev">
+		    	<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+   				<span class="sr-only">Previous</span>
+		  	</a>
+			<a class="right carousel-control" href="#text-carousel" role="button" data-slide="next">
+		    	<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+   				<span class="sr-only">Next</span>
+		    </a>
+			<!-- 콘텐츠 뿌림 끝 -->	
 			</div>
-			<!-- 콘텐츠 뿌림 끝 -->			
 		</div>
-		<div class="main-con row">
-			<div class="menu-title row">
-				<div class="col-xs-3">경제</div>
-				<div class="col-xs-3">금융</div>
-				<div class="col-xs-3">기업</div>
-				<div class="col-xs-3">주식</div>
+		<div class="main-con row" align="center">	
+			<div class="menu-title">	
+			<ul class="nav nav-tabs row">
+		    	<li class="active col-xs-3"><a data-toggle="tab" href="#home"><img class="img-responsive" src="/page_imgs/main_img/icon-con-menu1.png">경제</a></li>
+		    	<li class="col-xs-3"><a data-toggle="tab" href="#menu1"><img class="img-responsive" src="/page_imgs/main_img/icon-con-menu2n.png">금융</a></li>
+		    	<li class="col-xs-3"><a data-toggle="tab" href="#menu2"><img class="img-responsive" src="/page_imgs/main_img/icon-con-menu3n.png">기업</a></li>
+		    	<li class="col-xs-3"><a data-toggle="tab" href="#menu3"><img class="img-responsive" src="/page_imgs/main_img/icon-con-menu4n.png">주식</a></li>
+		  	</ul>
 			</div>
-			<!-- 콘텐츠 뿌림 시작 -->		
-			<div class="con-in row" align="center">
-				<div class="col-md-6 col-xs-4">
+		 </div>
+		 <div class="tab-content">
+		 	<div id="home" class="con-in row tab-pane fade in active">
+				<div class="col-xs-6">
 					<a href="/contents">
 					<div class="con-img">
 						<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
@@ -530,7 +562,7 @@ $(document).ready(function(){
 					</div>
 					</a>			
 				</div>
-				<div class="col-md-6 col-xs-4">
+				<div class="col-xs-6">
 					<a href="/contents">
 					<div class="con-img">
 						<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
@@ -539,8 +571,67 @@ $(document).ready(function(){
 					</div>
 					</a>	
 				</div>
-			</div>
-			<!-- 콘텐츠 뿌림 끝 -->
+		    </div>
+		    <div id="menu1" class="con-in row tab-pane fade">
+				<div class="col-xs-6">
+					<a href="/contents">
+					<div class="con-img">
+						<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+						<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/1.png">
+						<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
+					</div>
+					</a>			
+				</div>
+				<div class="col-xs-6">
+					<a href="/contents">
+					<div class="con-img">
+						<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+						<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/2.png">
+						<div class="con-title">공든 아파트가 무너지랴?!</div>
+					</div>
+					</a>	
+				</div>
+		    </div>
+		    <div id="menu2" class="con-in row tab-pane fade">
+				<div class="col-xs-6">
+					<a href="/contents">
+					<div class="con-img">
+						<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+						<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/1.png">
+						<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
+					</div>
+					</a>			
+				</div>
+				<div class="col-xs-6">
+					<a href="/contents">
+					<div class="con-img">
+						<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+						<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/2.png">
+						<div class="con-title">공든 아파트가 무너지랴?!</div>
+					</div>
+					</a>	
+				</div>
+		    </div>
+		    <div id="menu3" class="con-in row tab-pane fade">
+				<div class="col-xs-6">
+					<a href="/contents">
+					<div class="con-img">
+						<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+						<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/1.png">
+						<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
+					</div>
+					</a>			
+				</div>
+				<div class="col-xs-6">
+					<a href="/contents">
+					<div class="con-img">
+						<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+						<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/2.png">
+						<div class="con-title">공든 아파트가 무너지랴?!</div>
+					</div>
+					</a>	
+				</div>
+		    </div>
 		</div>
 	</div>
 	<div class="discuss-con col-md-6 col-xs-12">
@@ -549,38 +640,40 @@ $(document).ready(function(){
 			<div class="line-3px col-xs-12"></div>
 		</div>
 		<!-- 콘텐츠 뿌림 시작 -->		
-		<div class="con-in row" align="center">
+		<div class="con-in row" align="center" style="padding:0 15px;">
 			<div class="col-xs-12">
-				<a href="/contents">
-				<div class="con-img">
-					<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
-					<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/1.png">
-					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
+				<div class="row">
+					<div class="dis-title col-xs-12"><p>"서울메트로와 도시철도공사는 통합해야 하나"</p></div>
+					<div class="dis-img col-xs-12" align="right">
+						<img style="display:inline-block;" src="/page_imgs/main_img/icon-discuss-like.png" ><p style="display:inline-block;">52</p>
+						<img style="display:inline-block;" src="/page_imgs/main_img/icon-discuss-comment.png" ><p style="display:inline-block;">39</p>
+					</div>
+					<div class="dis-bg-img col-xs-12"><img class="img-responsive" src="/page_imgs/main_img/img2.jpg"></div>	
 				</div>
-				</a>			
 			</div>
 			<div class="col-xs-12">
-				<a href="/contents">
-				<div class="con-img">
-					<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
-					<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/2.png">
-					<div class="con-title">공든 아파트가 무너지랴?!</div>
+				<div class="row">
+					<div class="dis-title col-xs-12"><p>"법인세, 주요국은 내리는데 한국은 올려야 하나"</p></div>
+					<div class="dis-img col-xs-12" align="right">
+						<img style="display:inline-block;" src="/page_imgs/main_img/icon-discuss-like.png" ><p style="display:inline-block;">52</p>
+						<img style="display:inline-block;" src="/page_imgs/main_img/icon-discuss-comment.png" ><p style="display:inline-block;">39</p>
+					</div>
+					<div class="dis-bg-img col-xs-12"><img class="img-responsive" src="/page_imgs/main_img/img1.jpg"></div>	
 				</div>
-				</a>	
-			</div>
+			</div>			
 		</div>
-		<!-- 콘텐츠 뿌림 끝 -->		
 	</div>
+		<!-- 콘텐츠 뿌림 끝 -->		
 </div>
+
 
 	
 	
-	<!-- 모바일 콘텐츠 -->
+<!----------------------- 모바일 콘텐츠 ----------------------------->
 <div class="mob_menu6_con container row">
 	<div class="new-con swiper-container col-md-6 col-xs-12">
 		<div class="menu-title row">
 			<div class="col-xs-8 padding-0">최신 콘텐츠</div><div class="col-xs-4 padding-0" align="right"><p class="plus">더보기 ></p></div>
-			<div class="line-3px col-xs-12"></div>
 		</div>
 		<!-- 콘텐츠 뿌림 시작 -->		
 		<div class="con-in swiper-wrapper" align="center">
@@ -623,6 +716,308 @@ $(document).ready(function(){
 		</div>
 		<!-- 콘텐츠 뿌림 끝 -->
 	</div>
+		<div class="popular-con swiper-container col-md-6 col-xs-12">
+		<div class="menu-title row">
+			<div class="col-xs-8 padding-0">인기 콘텐츠</div><div class="col-xs-4 padding-0" align="right"><p class="plus">더보기 ></p></div>
+		</div>
+		<!-- 콘텐츠 뿌림 시작 -->		
+		<div class="con-in swiper-wrapper" align="center">
+			<div class="swiper-slide">
+				<a href="/contents">
+				<div class="con-img">
+					<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+					<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/1.png">
+					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
+				</div>
+				</a>			
+			</div>
+			<div class="swiper-slide">
+				<a href="/contents">
+				<div class="con-img">
+					<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+					<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/2.png">
+					<div class="con-title">공든 아파트가 무너지랴?!</div>
+				</div>
+				</a>	
+			</div>
+			<div class="swiper-slide">
+				<a href="/contents">
+				<div class="con-img">
+					<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+					<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/3.png">
+					<div class="con-title">공짜로 주식을 준다고?</div>
+				</div>
+				</a>
+			</div>
+			<div class="swiper-slide">
+				<a href="/contents">
+				<div class="con-img">
+					<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+					<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/4.png">
+					<div class="con-title">기업 경영에 참여하는 횡령 대통령?</div>
+				</div>
+				</a>
+			</div>
+		</div>
+		<!-- 콘텐츠 뿌림 끝 -->
+	</div>
+	<div class="plan-con swiper-container col-md-6 col-xs-12">
+		<div class="menu-title row">
+			<div class="col-xs-8 padding-0">기획 콘텐츠</div><div class="col-xs-4 padding-0" align="right"><p class="plus">더보기 ></p></div>
+		</div>
+		<!-- 콘텐츠 뿌림 시작 -->		
+		<div class="con-in swiper-wrapper" align="center">
+			<div class="swiper-slide">
+				<a href="/contents">
+				<div class="con-img">
+					<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+					<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/1.png">
+					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
+				</div>
+				</a>			
+			</div>
+			<div class="swiper-slide">
+				<a href="/contents">
+				<div class="con-img">
+					<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+					<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/2.png">
+					<div class="con-title">공든 아파트가 무너지랴?!</div>
+				</div>
+				</a>	
+			</div>
+			<div class="swiper-slide">
+				<a href="/contents">
+				<div class="con-img">
+					<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+					<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/3.png">
+					<div class="con-title">공짜로 주식을 준다고?</div>
+				</div>
+				</a>
+			</div>
+			<div class="swiper-slide">
+				<a href="/contents">
+				<div class="con-img">
+					<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+					<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/4.png">
+					<div class="con-title">기업 경영에 참여하는 횡령 대통령?</div>
+				</div>
+				</a>
+			</div>
+		</div>
+		<!-- 콘텐츠 뿌림 끝 -->
+	</div>	
+		<!-- 재무리얼후기 모바일 -->
+	<div class="col-md-6 col-xs-12">
+		<div class="review-con row">
+			<div class="menu-title row">
+				<div class="col-xs-8 padding-0">재무 리얼후기</div><div class="col-xs-4 padding-0" align="right"><p class="plus">더보기 ></p></div>
+			</div>
+			<!-- 콘텐츠 뿌림 시작 -->		
+			<div id="text-carousel" class="carousel slide" data-ride="carousel">
+		    <!-- Wrapper for slides -->
+		    <div class="con-in row" align="center">
+		    	<div class="col-xs-12 border-box">
+			        <ol class="carousel-indicators">
+			          <li data-target="#text-carousel" data-slide-to="0" class="active"></li>
+			          <li data-target="#text-carousel" data-slide-to="1"></li>
+			          <li data-target="#text-carousel" data-slide-to="2"></li>
+			        </ol>		    	
+		            <div class="carousel-inner" role="listbox">
+		                <div class="item active">
+						    <p><B>후기1 : 현재 가입되어 있는 상품과 <br> 소비 패턴을 꼼꼼하게 ...<span>+</span></B></p>
+						    <p>신상 : 홍XX / 40대 / 대기업 직원</P>
+		                </div>
+		                <div class="item">
+						    <p><B>후기2 : 현재 가입되어 있는 상품과 <br> 소비 패턴을 꼼꼼하게 ...<span>+</span></B></p>
+							<p>신상 : 홍XX / 40대 / 대기업 직원</P>
+		                </div>
+		                <div class="item">
+						    <p><B>후기3 : 현재 가입되어 있는 상품과 <br> 소비 패턴을 꼼꼼하게 ...<span>+</span></B></p>
+							<p>신상 : 홍XX / 40대 / 대기업 직원</P>
+		                </div>
+		            </div>
+			    </div>
+		    </div>
+		    <!-- Controls --> 
+		    <a class="left carousel-control" href="#text-carousel" role="button" data-slide="prev">
+		    	<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+   				<span class="sr-only">Previous</span>
+		  	</a>
+			<a class="right carousel-control" href="#text-carousel" role="button" data-slide="next">
+		    	<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+   				<span class="sr-only">Next</span>
+		    </a>
+			<!-- 콘텐츠 뿌림 끝 -->	
+			</div>
+		</div>
+	</div>
+	<div class="podcast-con swiper-container col-md-6 col-xs-12">
+		<div class="menu-title row">
+			<div class="col-xs-8 padding-0">팟캐스트</div><div class="col-xs-4 padding-0" align="right"><p class="plus">더보기 ></p></div>
+		</div>
+		<!-- 콘텐츠 뿌림 시작 -->		
+		<div class="con-in swiper-wrapper" align="center">
+			<div class="swiper-slide">
+				<a href="/contents">
+				<div class="con-img">
+					<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+					<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/1.png">
+					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
+				</div>
+				</a>			
+			</div>
+			<div class="swiper-slide">
+				<a href="/contents">
+				<div class="con-img">
+					<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+					<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/2.png">
+					<div class="con-title">공든 아파트가 무너지랴?!</div>
+				</div>
+				</a>	
+			</div>
+			<div class="swiper-slide">
+				<a href="/contents">
+				<div class="con-img">
+					<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+					<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/3.png">
+					<div class="con-title">공짜로 주식을 준다고?</div>
+				</div>
+				</a>
+			</div>
+			<div class="swiper-slide">
+				<a href="/contents">
+				<div class="con-img">
+					<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+					<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/4.png">
+					<div class="con-title">기업 경영에 참여하는 횡령 대통령?</div>
+				</div>
+				</a>
+			</div>
+		</div>
+		<!-- 콘텐츠 뿌림 끝 -->
+	</div>
+	<div class="discuss-con col-md-6 col-xs-12">
+		<div class="menu-title row">
+			<div class="col-xs-8 padding-0">토론 게시판</div><div class="col-xs-4 padding-0" align="right"><p class="plus">더보기 ></p></div>
+		</div>
+		<!-- 콘텐츠 뿌림 시작 -->		
+		<div class="con-in row" align="center" style="padding:0 15px;">
+			<div class="col-sm-6 col-xs-12">
+				<div class="row">
+					<div class="dis-title col-xs-12"><p>"서울메트로와 도시철도공사는 통합해야 하나"</p></div>
+					<div class="dis-img col-xs-12" align="right">
+						<img style="display:inline-block;" src="/page_imgs/main_img/icon-discuss-like.png" ><p style="display:inline-block;">52</p>
+						<img style="display:inline-block;" src="/page_imgs/main_img/icon-discuss-comment.png" ><p style="display:inline-block;">39</p>
+					</div>
+					<div class="dis-bg-img col-xs-12"><img class="img-responsive" src="/page_imgs/main_img/img2.jpg"></div>	
+				</div>
+			</div>
+			<div class="col-sm-6 col-xs-12">
+				<div class="row">
+					<div class="dis-title col-xs-12"><p>"법인세, 주요국은 내리는데 한국은 올려야 하나"</p></div>
+					<div class="dis-img col-xs-12" align="right">
+						<img style="display:inline-block;" src="/page_imgs/main_img/icon-discuss-like.png" ><p style="display:inline-block;">52</p>
+						<img style="display:inline-block;" src="/page_imgs/main_img/icon-discuss-comment.png" ><p style="display:inline-block;">39</p>
+					</div>
+					<div class="dis-bg-img col-xs-12"><img class="img-responsive" src="/page_imgs/main_img/img1.jpg"></div>	
+				</div>
+			</div>			
+		</div>
+	</div>
+	<div class="col-xs-12" align="center">
+		<div class="main-con row">	
+			<div class="menu-title">	
+			<ul class="nav nav-tabs row">
+		    	<li class="active col-xs-3"><a data-toggle="tab" href="#home"><img class="img-responsive" src="/page_imgs/main_img/icon-con-menu1.png">경제</a></li>
+		    	<li class="col-xs-3"><a data-toggle="tab" href="#menu1"><img class="img-responsive" src="/page_imgs/main_img/icon-con-menu2n.png">금융</a></li>
+		    	<li class="col-xs-3"><a data-toggle="tab" href="#menu2"><img class="img-responsive" src="/page_imgs/main_img/icon-con-menu3n.png">기업</a></li>
+		    	<li class="col-xs-3"><a data-toggle="tab" href="#menu3"><img class="img-responsive" src="/page_imgs/main_img/icon-con-menu4n.png">주식</a></li>
+		  	</ul>
+			</div>
+		 </div>
+		 <div class="tab-content">
+		 	<div id="home" class="con-in row tab-pane fade in active">
+				<div class="col-xs-6">
+					<a href="/contents">
+					<div class="con-img">
+						<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+						<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/1.png">
+						<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
+					</div>
+					</a>			
+				</div>
+				<div class="col-xs-6">
+					<a href="/contents">
+					<div class="con-img">
+						<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+						<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/2.png">
+						<div class="con-title">공든 아파트가 무너지랴?!</div>
+					</div>
+					</a>	
+				</div>
+		    </div>
+		    <div id="menu1" class="con-in row tab-pane fade">
+				<div class="col-xs-6">
+					<a href="/contents">
+					<div class="con-img">
+						<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+						<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/1.png">
+						<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
+					</div>
+					</a>			
+				</div>
+				<div class="col-xs-6">
+					<a href="/contents">
+					<div class="con-img">
+						<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+						<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/2.png">
+						<div class="con-title">공든 아파트가 무너지랴?!</div>
+					</div>
+					</a>	
+				</div>
+		    </div>
+		    <div id="menu2" class="con-in row tab-pane fade">
+				<div class="col-xs-6">
+					<a href="/contents">
+					<div class="con-img">
+						<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+						<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/1.png">
+						<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
+					</div>
+					</a>			
+				</div>
+				<div class="col-xs-6">
+					<a href="/contents">
+					<div class="con-img">
+						<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+						<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/2.png">
+						<div class="con-title">공든 아파트가 무너지랴?!</div>
+					</div>
+					</a>	
+				</div>
+		    </div>
+		    <div id="menu3" class="con-in row tab-pane fade">
+				<div class="col-xs-6">
+					<a href="/contents">
+					<div class="con-img">
+						<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+						<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/1.png">
+						<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
+					</div>
+					</a>			
+				</div>
+				<div class="col-xs-6">
+					<a href="/contents">
+					<div class="con-img">
+						<img class="img-responsive img-new" style="width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
+						<img class="img-responsive con-thumbnail" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/2.png">
+						<div class="con-title">공든 아파트가 무너지랴?!</div>
+					</div>
+					</a>	
+				</div>
+		    </div>
+		</div>	 
+	</div>	  	
 </div>	
 	
 	<script src="/js/swiper.js"></script>

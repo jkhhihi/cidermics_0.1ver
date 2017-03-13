@@ -15,7 +15,7 @@ body{font-family: 'Nanum Gothic', serif;}
     margin-bottom:20px;
 }
 .parallax .parallax-in{padding-top:130px; color:#fff; text-shadow: #444 0 1px 1px; font-weight:bold; font-size:24px;}
-.parallax .parallax-in img{width:130px;}
+.parallax .parallax-in img{width:130px; margin-bottom:20px;}
 #main {
   position:relative;
   background:#fff;
@@ -24,7 +24,7 @@ body{font-family: 'Nanum Gothic', serif;}
 .menu6 p{font-weight:900; border:3px solid #1b87c9; border-radius:3px; padding:10px 5px; color:#808080;}
 .menu6 a:hover p{background-color:#1b87c9; color:#fff;}
 .line-3px{width:100%; height:2px; background-color:#ececec;}
-.menu6_con div.new-con, div.popular-con, div.plan-con, div.podcast-con{padding:0 30px 20px 30px;}
+.menu6_con .new-con, div.popular-con, div.plan-con, div.podcast-con, div.review-con, div.main-con, div.discuss-con{padding:0 30px 20px 30px;}
 .menu-title{margin-bottom:20px; font-weight:bold; padding:0 15px;}
 .menu-title p.plus{color:#ff574a; margin:0 0 5px;}
 .con-in .con-img{border:2px solid #ececec; border-radius:6px; margin-bottom:20px;}
@@ -39,8 +39,18 @@ body{font-family: 'Nanum Gothic', serif;}
 	font-size:16px;
 }
 .con-in a:hover{color:#1b87c9;}
-.border-box{border:2px solid #1b87c9; padding:40px 0}
-
+.review-con .con-in{padding:0 15px;}
+.review-con .border-box{border:3px solid #1b87c9; border-radius:3px; padding:40px 0;}
+.main-con{margin-top:10px; padding:0 30px 10px 30px !important;}
+.main-con .menu-title{margin-bottom:0;}
+.main-con .menu-title img{width:40px; margin-bottom:10px;}
+.discuss-con .dis-title{width:100%; position:absolute; z-index:2; font-size:20px; font-weight:bold; top:35%;}
+.discuss-con .dis-title p{width:65%;}
+.discuss-con .con-in .col-xs-12{margin-bottom:10px;}
+.discuss-con .dis-img{position:absolute; z-index:3; padding:10px 20px 5px 10px; background-color:rgba(0,0,0,0.8); bottom:0; color:#fff; font-size:18px; font-weight:bold; border:0 solid; border-radius:6px;}
+.discuss-con .dis-img img{width:30px; margin:0 5px 0 10px;}
+.discuss-con .dis-bg-img{padding:0px;}
+.discuss-con .dis-bg-img img{width:100%; position:relative; z-index:1; border:0 solid; border-radius:6px; opacity:0.7;}
 .error img.logo{margin:20px 0;}
 .error .line{width:310px; height:1px; background-color:#1b87c9; margin:20px 0;}
 .error p.sorry1{font-weight:bold; font-size:18px;}
@@ -56,7 +66,15 @@ padding:10px 0; color:#fff; border-radius: 5px; font-size:16px; font-weight:bold
 .menu6{margin:5px 0 10px 0;}
 .menu6 p{border:2px solid #1b87c9; padding:6px 5px;}
 .menu6 .col-xs-4{padding:0 2px; height:40px;}
-.mob_menu6_con .menu-title{padding:0 10px; height:20px;}
-.mob_menu6_con .con-in .con-title{font-size:12px;}
+.mob_menu6_con div.new-con, div.popular-con, div.plan-con, div.podcast-con, div.review-con, div.main-con, div.discuss-con{padding:0 4px;}
+.mob_menu6_con .menu-title{padding:0 20px; height:4px; font-size:14px;}
+.mob_menu6_con .con-title{font-size:12px;}
+.mob_menu6_con .podcast-con{margin-top:20px;}
+.mob_menu6_con .dis-title{font-size:16px; top:30%;}
+.mob_menu6_con .dis-img{font-size:14px; padding:10px 20px 0 10px;}
+.mob_menu6_con .discuss-con .dis-img img{width:20px;}
+.mob_menu6_con .tab-content{margin-top:10px;}
+.mob_menu6_con .tab-content .col-xs-6{padding:0 5px !important;}
+.mob_menu6_con .main-con{padding:0 !important;}
 .error img.logo{margin-top:50px;}
 }
