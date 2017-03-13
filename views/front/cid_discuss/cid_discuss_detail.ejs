@@ -23,12 +23,12 @@
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title><%= discuss[0].con_title %> - 사이다경제 | 콘텐츠</title>
-<link href="/css/bootstrap.min.css" rel="stylesheet">
+<title><%= discuss[0].dis_title %> - 사이다경제 | 토론</title>
+<!--link href="/css/bootstrap.min.css" rel="stylesheet"-->
+<!--script src="/js/bootstrap.min.js"></script-->
 <link href="/css/cid_contents.css" rel="stylesheet">
 <link href="/css/swiper.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/css/component.css" />
 <script src="/js/modernizr.custom.js"></script>
 
@@ -37,18 +37,31 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
 
+<style type="text/css">
+	.appbanner-bg{
+	margin-top: 15px;
+	}
+	.form-group{
+		margin-bottom: 0px !important;
+	}
+	.form-control1{border:#1b87c9 1px solid; width:116px; height:30px; padding:2px; font-size:13px;
+	border-radius:2px;}
+	.form-control2{border:#1b87c9 1px solid; padding:5px; font-size:13px; width: 100%; height: 70px; margin-bottom:0px; border-radius:2px;}
+	.btn{
+		padding: 8px 15px !important;
+	}
 
-<style>
-.youtubeWrap {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-}
-.youtubeWrap iframe {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
+	.btncomt{
+		padding: 0px 10px !important;
+		background-color: ;
+	}
+
+	.padding-1{
+		padding: 5px;
+	}
+	.comtImg{
+		margin-top: 5px;
+	}
 </style>
 
 <!--글자수 제한 스크립트 -->
@@ -86,6 +99,34 @@
     }
 </script>
 
+<!---등록제한 스크립트 -->
+<script type="text/javascript"> 
+function comt_submit(){
+	if(document.comtInsert.comt_writer.value==""){
+	 alert("작성자명을 입력해 주세요.");
+	document.comtInsert.comt_writer.focus();
+	  return;
+	}
+	if(document.comtInsert.comt_pw.value==""){
+	 alert("비밀번호를 입력해 주세요.");
+	document.comtInsert.comt_pw.focus();
+	  return;
+	}
+	if(document.comtInsert.comt_text.value==""){
+	 alert("댓글 내용을 입력해 주세요.");
+	document.comtInsert.comt_text.focus();
+	  return;
+	}
+	if(document.comtInsert.options.value==""){
+	 alert("<%=discuss[0].dis_comt_1%>,<%=discuss[0].dis_comt_2%>,<%=discuss[0].dis_comt_3%>를 선택해주세요.");
+	 return;
+	}
+	alert("댓글이 등록되었습니다.");
+	 	document.comtInsert.submit();
+}
+
+</script>
+
 <!--- 차트 스크립트 -->
 <script type="text/javascript">
 window.onload = function () {
@@ -102,15 +143,12 @@ window.onload = function () {
 			toolTipContent: "{legendText}: {y}",
 			//toolTipContent: "{legendText}: {y} - <strong>#percent% </strong>",
 			showInLegend: true,
-          explodeOnClick: false, //**Change it to true
+            explodeOnClick: false, //**Change it to true
 			dataPoints: [
 
 				{y: "<%=a1%>", indexLabel: "<%=discuss[0].dis_comt_1%> : {y} ", legendText: "<%=discuss[0].dis_comt_1%>" },
 				{y: "<%=a2%>", indexLabel: "<%=discuss[0].dis_comt_2%> : {y} ", legendText: "<%=discuss[0].dis_comt_2%>" },
 				{y: "<%=a3%>", indexLabel: "<%=discuss[0].dis_comt_3%> : {y} ", legendText: "<%=discuss[0].dis_comt_3%>" }
-
-
-
 	
 			]
 		}
@@ -120,6 +158,24 @@ window.onload = function () {
 	}
 
 </script>
+
+<script>
+
+function cngtype(){
+	if($("#exampleInputPw").val()==" 비밀번호"){
+	$("#exampleInputPw").val("");
+	$("#exampleInputPw").attr("type","password");
+	}
+}
+
+
+function cngtype1(){
+	if($("#exampleInputPw1").val()==" 비밀번호"){
+	$("#exampleInputPw1").val("");
+	$("#exampleInputPw1").attr("type","password");
+	}
+}
+</script>
 <script src="/js/canvasjs.min.js"></script>
 
 </head>
@@ -128,36 +184,185 @@ window.onload = function () {
 <div id="but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></div>
 
 <% include ../top %>
+
 <div class="discuss_detail-mob_menu"><img src="/page_imgs/fixed_img/detail_line.png"></div>
-									
 <div class="bg-blue">
 	<div class="bg-white container">
-		<div class="appbanner-bg"><a href="/appdown"><img class="img-responsive" src="http://i.imgur.com/yG0WZLJ.jpg"></a></div>			
+		<div class="appbanner-bg"><a href="/appdown"><img class="img-responsive" src="http://i.imgur.com/yG0WZLJ.jpg"></a></div>
+
 			<div class="mob-bg-blue">
 				<div class="mob-bg-white container">
 					<div class="discuss container">
-							<div class="row">
-									<div class="col-xs-12 title"><%= discuss[0].dis_title%></div>
-									<div class="col-xs-6 date-view"><span class="date"><%= discuss[0].dis_update %></span><br>
-										<span class="icon-view"><img src="/page_imgs/contents_img/icon_view.svg"></span><span class="date"><%=discuss[0].dis_view%></span></div>
-									<div class="col-xs-6 editor" align="right"><span class="cate_name"><%= discuss[0].dis_writer %></span><br>
-											<span class="write">written by <%=discuss[0].dis_writer%></span></div>
-									<div class="col-xs-12 line-1px"></div>
-							</div>
-
-
-
 							
-							<div class="banner">
-								<div class="swiper-container">
-									<div class="swiper-wrapper">
-										<div class="swiper-slide"><a href="/finance"><img class="img-responsive" src="http://imgur.com/eukyCju.jpg"></a></div>
-										<!--div class="swiper-slide">배너들어가는곳</div-->
+							
+						<form class="form-inline" method="post" action="/discuss/comtPush" name="comtInsert">
+						<input type="hidden" name="dis_no" value="<%= discuss[0].dis_no%>">
+						<!-- 찬성 반대 기타 버튼 -->
+						<div class="container">
+							<div class="well well-sm text-center">
+								<% if(comtCount[0].dis_no == 0){ %>
+								
+								<% }else{ %>
+								<div id="chartContainer" style="height: 200px; width: 100%;"></div>
+								<% } %>
+								<div id="comtImg col-lg-12" align="center" onclick="comtImg()">
+										<img class="img-responsive" src="/page_imgs/discuss_img/comt_btn.png" width="150" style="margin-top: 5px; cursor:pointer">
+								</div>
+
+								<div id="comtImgShow" style="display:none;">
+								<div class="row">
+									<div class="form-group col-lg-12 padding-1">
+									    <input type="text" class="form-control1" id="exampleInputName" placeholder=" 작성자" name="comt_writer" onkeyup="chkword(this, 20)" onfocus="if(this.value ==' 작성자') this.value='';" onblur="if(this.value =='') this.value=' 작성자';" value=" 작성자">
+									    <input type="text" class="form-control1" id="exampleInputPw" placeholder=" 비밀번호" name="comt_pw" onkeyup="chkword(this, 22)"  onfocus="cngtype()" value=' 비밀번호'>
+								  	</div>
+								</div>
+								<div class="row">
+								  	<!--div class="form-group">
+									    <input type="text" class="form-control1" id="exampleInputPw" placeholder="" name="comt_pw" onkeyup="chkword(this, 22)"  onfocus="cngtype()" value='비밀번호'>
+								  	</div-->
+								    <div class="form-group col-xs-1 col-lg-4"></div>
+								    <div class="form-group col-xs-10 col-lg-4">
+									  	<textarea class="form-control2" rows="3" name="comt_text"  placeholder="내용 *100자 이하" onkeyup="chkword(this, 100)")></textarea></div>
+								    <div class="form-group col-xs-1 col-lg-4"></div>
+							    </div> 
+							    <div class="row">
+									<div class="btn-group" data-toggle="buttons" style="margin-bottom: 5px;">
+									  <label class="btn btn-success">
+									  <span class="glyphicon glyphicon-thumbs-up"></span>
+
+									    <input type="radio" name="options" id="option1" autocomplete="off" value="0"> <%=discuss[0].dis_comt_1%>
+									  </label>
+									  <label class="btn btn-danger">
+									  <span class="glyphicon glyphicon-thumbs-down"></span>
+									    <input type="radio" name="options" id="option2" autocomplete="off" value="1"> <%=discuss[0].dis_comt_2%>
+									  </label>
+									  <label class="btn btn-warning active">
+									  <span class="glyphicon glyphicon-check"></span>
+									    <input type="radio" name="options" id="option3" autocomplete="off" value="2"> 기타
+									  </label>
 									</div>
-										<!-- Add Pagination -->
-										<div class="swiper-pagination"></div>
+									<button type="button" class="btn btn-primary" onClick="comt_submit()" style="width:180px; margin-bottom: 5px;">등록</button>
+								</div>
 								</div>
 							</div>
+						</div>
+						</form>
+
+						<style type="text/css">
+							.btn span.glyphicon {
+							opacity: 0.2;				
+							}
+							.btn.active span.glyphicon {
+							opacity: 1;
+							}
+							.btn span{color:#fff;}
+							.btn-warning,
+							.btn-warning:focus,
+							.btn-warning:hover,
+							.btn-warning:visited,
+							.btn-warning.active {
+						    background-color: #3ad78b;
+						    border-color: #3ad78b;
+							}
+
+							.btn-danger,
+							.btn-danger:focus,
+							.btn-danger:hover,
+							.btn-danger:visited,
+							.btn-danger.active {
+						    background-color: #d73a75;
+						    border-color: #d73a75;
+							}
+
+							.btn-success,
+							.btn-success:focus,
+							.btn-success:hover,
+							.btn-success:visited,
+							.btn-success.active {
+						    background-color: #3a99d7;
+						    border-color: #3a99d7;
+							}
+						</style>
+
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-1 col-md-2"></div>
+						<div class="col-xs-11 col-md-8">
+						  <h2> 토론하기</h2>
+						  <p><b> 주제 : <%= discuss[0].dis_title%></b></p>
+						</div>
+						<div class="col-xs-0 col-md-2"></div>
+					</div>
+
+
+						<% if(comtCount[0].dis_no == 0){ %>
+
+						<p> 아무것도 없다 </p>
+
+						<% }else{ %>
+
+					<div class="row">
+						<div class="col-xs-0 col-md-2"></div>
+						<div class="col-xs-12 col-md-8">
+						<table class="table table-condensed">
+							<tr>
+								<td>총 댓글 개수 (<%=comtCount[0].dis_no%>)</td>
+							</tr>
+							<% for(var i =0; i< comt.length; i++){ %>
+							<tr class="default">
+								<td class="primary">
+
+								<% if(comt[i].comt_opt == 0){ %>
+								<%= discuss[0].dis_comt_1 %>
+								<% } else if(comt[i].comt_opt == 1){ %>
+								<%= discuss[0].dis_comt_2 %>
+								<% } else if(comt[i].comt_opt == 2){ %>
+								<%= discuss[0].dis_comt_3 %>
+								<% } else{ %>
+								<%} %>
+								<br>
+								<h6><%= comt[i].comt_writer %> | <%= comt[i].comt_regdate %> | <a href="/discuss/declaration"> 신고 </a> | <a href="#"><span class="glyphicon glyphicon-remove"></span></a></h6>
+								<%= comt[i].comt_text %>
+								<br>
+
+								<!--button value="<%= comt[i].comt_no%>" onclick="shComt()">답글</button-->
+								<button class="btn btn-primary btncomt" id="d<%= comt[i].comt_no%>" value="<%= comt[i].comt_no%>" onclick="showJs(<%= comt[i].comt_no%>)"><h6>답글</h6></button>
+
+								<div class="showComt" value="<%= comt[i].comt_no%>" id="showComt<%= comt[i].comt_no%>" style="display:none;">
+								<form class="form-inline" method="post" action="/discuss/comtcomtPush">
+									<input type="hidden" name="dis_no" value="<%= comt[i].dis_no%>">
+									<input type="hidden" name="comt_no" value="<%= comt[i].comt_no%>">
+									
+									<div class="form-group">
+										<div class="row">
+											<div class="form-group col-lg-12 padding-1">
+											    <input type="text" class="form-control1" id="exampleInputName1" placeholder=" 작성자" name="comt_writer" onkeyup="chkword(this, 20)" onfocus="if(this.value ==' 작성자') this.value='';" onblur="if(this.value =='') this.value=' 작성자';" value=" 작성자">
+											    <input type="password" class="form-control1" id="exampleInputPw1" placeholder="비밀번호" name="comt_pw" onkeyup="chkword(this, 22)" >
+										  	</div>
+										</div>
+										<div class="row">
+										    <div class="form-group col-xs-0 col-lg-4"></div>
+										    <div class="form-group col-xs-11 col-lg-4">
+											  	<textarea class="form-control2" rows="3" name="comt_text"  placeholder="내용 *100자 이하" onkeyup="chkword(this, 100)")></textarea></div>
+										    <div class="form-group col-xs-1 col-lg-4"></div>
+									    </div> 
+								  			<button type="submit" id="submit<%= comt[i].comt_no%>" value="<%= comt[i].comt_no%>" class="btn btn-primary">등록</button>
+								  			
+									</div>
+										
+								</form>
+
+								<div id="showComtco<%= comt[i].comt_no%>"></div>
+								</div>
+
+								</td>
+							</tr>
+							<% } %>
+
+						</table>
+						<% } %>
+						</div>
+						<div class="col-xs-0 col-md-2"></div>
 							
 					</div>
 				</div>
@@ -166,134 +371,13 @@ window.onload = function () {
 	</div>
 </div>
 
-<form class="form-inline" method="post" action="/discuss/comtPush">
-<input type="hidden" name="dis_no" value="<%= discuss[0].dis_no%>">
-<!-- 찬성 반대 기타 버튼 -->
-<div class="container">
-	<div class="well well-sm text-center">
-		<% if(comtCount[0].dis_no == 0){ %>
-		
-		<% }else{ %>
-		<div id="chartContainer" style="height: 200px; width: 100%;"></div>
-		<% } %>
-		<div class="btn-group" data-toggle="buttons">
-		  <label class="btn btn-primary active">
-		  <span class="glyphicon glyphicon-thumbs-up"></span>
 
-		    <input type="radio" name="options" id="option1" autocomplete="off" checked value="0"> <%=discuss[0].dis_comt_1%>
-		  </label>
-		  <label class="btn btn-danger">
-		  <span class="glyphicon glyphicon-thumbs-down"></span>
-		    <input type="radio" name="options" id="option2" autocomplete="off" value="1"> <%=discuss[0].dis_comt_2%>
-		  </label>
-		  <label class="btn btn-warning">
-		  <span class="glyphicon glyphicon-check"></span>
-		    <input type="radio" name="options" id="option3" autocomplete="off" value="2"> 기타
-		  </label>
-		</div>
-	</div>
-</div>
+<script type="text/javascript">
+	function comtImg() {
+        $("#comtImgShow").toggle(300);
+    }
+</script>
 
-<style type="text/css">
-	.btn span.glyphicon {
-	opacity: 0.5;				
-	}
-	.btn.active span.glyphicon {
-	opacity: 1;				
-	}
-	.btn span{color:#fff;}
-	.btn-warning,
-	.btn-warning:focus,
-	.btn-warning:hover,
-	.btn-warning:visited,
-	.btn-warning.active {
-    background-color: #8064A2;
-    border-color: #8064A2;
-	}
-</style>
-<div class="container">
-  <h2>토론하기</h2>
-  <p><%= discuss[0].dis_title%></p>
-	  <div class="form-group">
-	    <label for="id">작성자 : </label>
-	    <input type="text" class="form-control" id="exampleInputName2" placeholder="" name="comt_writer" onkeyup="chkword(this, 20)">
-	  </div>
-	  <div class="form-group">
-	    <label for="password">비밀번호 : </label>
-	    <input type="password" class="form-control" id="exampleInputEmail2" placeholder="" name="comt_pw" onkeyup="chkword(this, 22)">
-	  </div>
-	  <div class="form-group">
-	  	<textarea class="form-control" rows="3" name="comt_text"  onkeyup="chkword(this, 100)")></textarea>
-	  	<label>*100자 이하로 작성해주세요.</label>
-	  </div>
-	  <button type="submit" class="btn btn-primary">등록</button>
-</div>
-</form>
-
-<% if(comtCount[0].dis_no == 0){ %>
-
-<p> 아무것도 없다 </p>
-
-<% }else{ %>
-<table class="table table-condensed">
-	<tr>
-		<td>댓글쓰기 (<%=comtCount[0].dis_no%>)</td>
-	</tr>
-	<% for(var i =0; i< comt.length; i++){ %>
-	<tr class="default">
-		<td class="primary">
-		<% if(comt[i].comt_opt == 0){ %>
-		<%= discuss[0].dis_comt_1 %>
-		<% } else if(comt[i].comt_opt == 1){ %>
-		<%= discuss[0].dis_comt_2 %>
-		<% } else if(comt[i].comt_opt == 2){ %>
-		<%= discuss[0].dis_comt_3 %>
-		<% } else{ %>
-		<%} %>
-		<br>
-		<h6><%= comt[i].comt_writer %> | <%= comt[i].comt_regdate %> | <a href="#"> 신고 </a> | <a href="#"><span class="glyphicon glyphicon-remove"></span></a></h6>
-		<%= comt[i].comt_text %>
-		<br>
-			
-		<!--button value="<%= comt[i].comt_no%>" onclick="shComt()">답글</button-->
-		<button class="show" id="d<%= comt[i].comt_no%>" value="<%= comt[i].comt_no%>" onclick="showJs(<%= comt[i].comt_no%>)">답글</button>
-			
-		<form class="form-inline" method="post" action="/discuss/comtcomtPush">
-		<input type="hidden" name="dis_no" value="<%= comt[i].dis_no%>">
-		<input type="hidden" name="comt_no" value="<%= comt[i].comt_no%>">
-		<div class="showComt" value="<%= comt[i].comt_no%>" id="showComt<%= comt[i].comt_no%>" name="zyx" style="display:none;">
-		
-		<div class="form-group">
-				<div class="col-xs-4">
-					<input type="text" class="form-control input-sm" name="comt_writer" ></div>
-				<div class="col-xs-4">
-					<input type="password" class="form-control input-sm" name="comt_pw"></div>
-				<div class="form-group">
-	  				<textarea class="form-control" rows="3" name="comt_text"  onkeyup="chkword(this, 100)")></textarea>
-	  			</div>
-	  			<button type="submit" id="submit<%= comt[i].comt_no%>" value="<%= comt[i].comt_no%>" class="btn btn-primary">등록</button>
-	  			<div id="showComtco"></div>
-			</div>
-			
-			<% for (var j=0; j < comtco.length; j++){%>
-			<% console.log(comtco[j].length); %>
-			<% if((comtco[j].length) > 0){ %>
-
-			<p>1</p>
-			<% }else{ %>
-			<p>2</p>
-			
-			<% } %>
-		<% } %>
-		</div>
-		</form>
-
-		</td>
-	</tr>
-	<% } %>
-
-</table>
-<% } %>
 <script type="text/javascript">
 function showJs(id) {
    var chk="#showComt"+id;
@@ -310,8 +394,9 @@ function showComtco(id)
 				success : function(data){
 					var ht="";
 					$.each(data.ddd, function (index, value){
-						ht += value.comtco_date+value.comtco_writer+value.comtco_text+value.comtco_no+"<br/>";
-						document.getElementById('showComtco').innerHTML = ht;
+						ht += value.comtco_no+"<br/>";
+						var shco_no = value.comt_no;
+						document.getElementById('showComtco'+shco_no).innerHTML = ht;
 					});
 				}
 			});

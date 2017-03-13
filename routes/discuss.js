@@ -266,9 +266,13 @@ router.post('/discuss/comtcomtPush', function(req,res,next){
 router.get('/ssss/:idx', function(req, res, next) {
 	var idx = req.params.idx;
 
+	console.log(idx);
+
     mysql.select('select * from cider.cid_dis_comt_comt where comt_no = '+idx+'', function (err, data){
 
         if (err) throw err;
+        console.log("+++++++");
+        console.log(data);
 
         //var aaa = data;
        // aaa == "123";
@@ -280,6 +284,35 @@ router.get('/ssss/:idx', function(req, res, next) {
   res.send({ ddd : data });
 	});
 });
+
+router.get('/discuss/declaration', function(req,res,next){
+	res.render('front/cid_discuss/cid_discuss_declaration', {})
+ });
+
+
+router.post('/discuss/declaration', function(req,res,next){
+	var comt_writer = req.body.comt_writer;
+	var comt_pw = req.body.comt_pw;
+	var comt_text = req.body.comt_text;
+	var dis_no = req.body.dis_no;
+	var comt_no = req.body.comt_no;
+	var date = getWorldTime(+9);
+
+	console.log(comt_writer);
+	console.log(comt_pw);
+	console.log(dis_no); 
+	console.log(comt_no);
+
+	var sets = {comt_no:comt_no, comtco_writer:comt_writer, comtco_pw:comt_pw, comtco_text:comt_text, comtco_date:date};
+
+	mysql.insert('insert into cider.cid_dis_comt_comt set ?', sets,  function (err, data){
+		dis_no;
+    res.redirect('/discuss/detail/'+dis_no+'');
+  });
+});
+
+
+
 
 router.get('/shComt/:idx', function(req, res, next) {
    
