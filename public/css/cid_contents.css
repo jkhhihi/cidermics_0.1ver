@@ -90,6 +90,37 @@ color:#ff574a; font-family:"BMD"; border-bottom:2px solid #ff574a; font-weight:n
 /*.con-img{background-color:#000;}*/
 .con-img img{width:100%;}
 
+/*팟캐스트*/
+.podcast-main{margin-top:70px;}
+.podcast .radio-icon{font-size:20px; color:#e68a82; font-weight:bold; border-bottom:4px solid #ececec; margin-bottom:20px;}
+.podcast .radio-icon img{margin:20px 0;}
+.podcast-con{margin:50px 0;}
+.podcast-con .con-in{font-weight:bold; padding:0 30px; margin-bottom:30px; font-size:12px;}
+.podcast-con .con-in .thum-img{padding-left:0 !important; padding-right:0 !important;}
+.podcast-con .con-in .thum-img img{border:0 solid; border-radius:5px;}
+.podcast-con .con-plus p{width:200px; background-color:#e68a82; margin-top:50px;
+border:4px solid #ececec; border-radius:10px; color:#fff; font-weight:bold; font-size:18px; padding:10px 0;}
+.podcast-con .border-2{border:2px solid #e68a82; border-radius:5px;}
+.podcast-con .border-2 img{margin:5px 0;}
+
+/*기획 콘텐츠*/
+.project-main{margin-top:70px;}
+.project-title{width:60%; border-bottom:4px solid #ececec; font-size:20px; font-weight:bold; margin:50px 0 30px 0;}
+.project-con .con-plus p{width:200px; background-color:#ececec; margin:50px 0 40px 0;
+border:4px solid #1b87c9; border-radius:10px; color:#1b87c9; font-weight:bold; font-size:18px; padding:10px 0;}
+.project-in .banner img{width:100%;}
+.project-in .con-in .con-img{border:2px solid #ececec; border-radius:6px; margin-bottom:40px;}
+.project-in .con-in .con-title
+{
+	overflow: hidden; 
+	text-overflow: ellipsis;
+	white-space: nowrap; 
+	width: 96%;
+	margin:8px 0;
+	font-weight:bold;
+	font-size:16px;
+}
+.project-in .con-in a:hover{color:#1b87c9;}
 
 @media all and (max-width:1024px) {
 .menu{margin-top:0;}	
@@ -156,4 +187,23 @@ color:#ff574a; font-family:"BMD"; border-bottom:2px solid #ff574a; font-weight:n
 .recommendation p{margin-top:10px;}
 .contents .row .col-sm-4, .col-xs-6{padding:0 5px 0 5px;}
 .contents iframe{height:100% !important;}
+
+/*팟캐스트*/
+.podcast-main{margin-top:50px;}
+.podcast .radio-icon{margin-bottom:10px; font-size:14px;} 
+.podcast .radio-icon img{margin:10px 0; width:100px;}
+.podcast-con{margin:20px 0;}
+.podcast-con .con-in{padding:0 5px; margin-bottom:15px;}
+.podcast-con .con-plus p{border:2px solid #ececec; width:80%; margin-top:30px; font-size:12px; padding:10px 0;}
+.podcast-con .border-2 .col-xs-6{padding:0 2px;}
+
+/*기획 콘텐츠*/
+.project-main{margin-top:20px;}
+.project-title{width:100%; font-size:16px; margin:50px 0 10px 0;}
+.project-con .con-plus p{border:2px solid #1b87c9; width:80%; margin-top:30px; font-size:12px; padding:10px 0;}
+.project-con .banner{margin:10px 0; padding:0 5px;}
+.project-in .con-in .con-img{margin-bottom:20px;}
+.project-in .con-in .col-xs-6{padding:0 5px;}
+.project-in .con-in .con-title{font-size:12px;}
+
 }
