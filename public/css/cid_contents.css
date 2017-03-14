@@ -103,6 +103,25 @@ border:4px solid #ececec; border-radius:10px; color:#fff; font-weight:bold; font
 .podcast-con .border-2{border:2px solid #e68a82; border-radius:5px;}
 .podcast-con .border-2 img{margin:5px 0;}
 
+/*기획 콘텐츠*/
+.project-main{margin-top:70px;}
+.project-title{width:60%; border-bottom:4px solid #ececec; font-size:20px; font-weight:bold; margin:50px 0 30px 0;}
+.project-con .con-plus p{width:200px; background-color:#ececec; margin:50px 0 40px 0;
+border:4px solid #1b87c9; border-radius:10px; color:#1b87c9; font-weight:bold; font-size:18px; padding:10px 0;}
+.project-in .banner img{width:100%;}
+.project-in .con-in .con-img{border:2px solid #ececec; border-radius:6px; margin-bottom:40px;}
+.project-in .con-in .con-title
+{
+	overflow: hidden; 
+	text-overflow: ellipsis;
+	white-space: nowrap; 
+	width: 96%;
+	margin:8px 0;
+	font-weight:bold;
+	font-size:16px;
+}
+.project-in .con-in a:hover{color:#1b87c9;}
+
 @media all and (max-width:1024px) {
 .menu{margin-top:0;}	
 	
@@ -175,7 +194,16 @@ border:4px solid #ececec; border-radius:10px; color:#fff; font-weight:bold; font
 .podcast .radio-icon img{margin:10px 0; width:100px;}
 .podcast-con{margin:20px 0;}
 .podcast-con .con-in{padding:0 5px; margin-bottom:15px;}
-.podcast-con .con-plus p{width:80%; margin-top:30px; font-size:14px; padding:10px 0;}
+.podcast-con .con-plus p{border:2px solid #ececec; width:80%; margin-top:30px; font-size:12px; padding:10px 0;}
 .podcast-con .border-2 .col-xs-6{padding:0 2px;}
+
+/*기획 콘텐츠*/
+.project-main{margin-top:20px;}
+.project-title{width:100%; font-size:16px; margin:50px 0 10px 0;}
+.project-con .con-plus p{border:2px solid #1b87c9; width:80%; margin-top:30px; font-size:12px; padding:10px 0;}
+.project-con .banner{margin:10px 0; padding:0 5px;}
+.project-in .con-in .con-img{margin-bottom:20px;}
+.project-in .con-in .col-xs-6{padding:0 5px;}
+.project-in .con-in .con-title{font-size:12px;}
 
 }
