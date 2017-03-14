@@ -33,6 +33,8 @@ var finance = require('./routes/finance');
 var lecture = require('./routes/lecture');
 var quiz = require('./routes/quiz');
 var discuss = require('./routes/discuss');
+var project = require('./routes/project');
+var podcast = require('./routes/podcast');
 
 // all environments
 app.set('port', process.env.PORT || 80);
@@ -69,6 +71,8 @@ app.use('/cid_finance', express.static(__dirname + '/views/cid_finance'));
 app.use('/cid_lecture', express.static(__dirname + '/views/cid_lecture'));
 app.use('/cid_quiz', express.static(__dirname + '/views/cid_quiz'));
 app.use('/cid_discuss',express.static(__dirname+'/views/cid_discuss'));
+app.use('/cid_project',express.static(__dirname+'/views/cid_project'));
+app.use('/cid_podcast',express.static(__dirname+'/views/cid_podcast'));
 app.use(flash());
 
 app.use(bodyParser.json({limit: '1000mb'}));
@@ -95,6 +99,8 @@ app.use('/',finance);
 app.use('/',lecture);
 app.use('/',quiz);
 app.use('/',discuss);
+app.use('/',project);
+app.use('/',podcast);
 
 
 passport.use('local', new LocalStrategy({
