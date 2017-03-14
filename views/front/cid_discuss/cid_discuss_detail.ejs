@@ -99,7 +99,7 @@
     }
 </script>
 
-<!---등록제한 스크립트 -->
+<!--- 댓글 ,대댓글 등록제한 스크립트 -->
 <script type="text/javascript"> 
 function comt_submit(){
 	if(document.comtInsert.comt_writer.value==""){
@@ -123,6 +123,35 @@ function comt_submit(){
 	}
 	alert("댓글이 등록되었습니다.");
 	 	document.comtInsert.submit();
+}
+
+function comtco_submit(id){
+var chk="#form-inline"+id;
+alert(id);
+var list= document.getElementsByClassName("form-inline");
+alert(list[0]);
+for (var i = 0; i < list.length; i++) {
+   // alert(list[i].comt_writer.value); //second console output
+alert(document.comtcoInsert[1].comt_writer.value);
+	if(document.comtcoInsert[i].comt_writer.value==""){
+	 alert("작성자를 입력해 주세요.");
+	document.comtcoInsert[i].comt_writer.focus();
+	  return;
+	}
+	if(document.comtcoInsert[i].comt_pw.value==""){
+	 alert("비밀번호를 입력해 주세요.");
+	document.comtcoInsert[i].comt_pw.focus();
+	  return;
+	}
+	if(document.comtcoInsert[i].comt_text.value==""){
+	 alert("댓글 내용을 입력해 주세요.");
+	document.comtcoInsert[i].comt_text.focus();
+	  return;
+	}
+	alert("답글이 등록되었습니다.");
+	 	document.comtcoInsert[i].submit();
+}
+	
 }
 
 </script>
@@ -194,8 +223,7 @@ function cngtype1(){
 				<div class="mob-bg-white container">
 					<div class="discuss container">
 							
-							
-						<form class="form-inline" method="post" action="/discuss/comtPush" name="comtInsert">
+					<form class="form-inline" method="post" action="/discuss/comtPush" name="comtInsert">
 						<input type="hidden" name="dis_no" value="<%= discuss[0].dis_no%>">
 						<!-- 찬성 반대 기타 버튼 -->
 						<div class="container">
@@ -210,44 +238,47 @@ function cngtype1(){
 								</div>
 
 								<div id="comtImgShow" style="display:none;">
-								<div class="row">
-									<div class="form-group col-lg-12 padding-1">
-									    <input type="text" class="form-control1" id="exampleInputName" placeholder=" 작성자" name="comt_writer" onkeyup="chkword(this, 20)" onfocus="if(this.value ==' 작성자') this.value='';" onblur="if(this.value =='') this.value=' 작성자';" value=" 작성자">
-									    <input type="text" class="form-control1" id="exampleInputPw" placeholder=" 비밀번호" name="comt_pw" onkeyup="chkword(this, 22)"  onfocus="cngtype()" value=' 비밀번호'>
-								  	</div>
-								</div>
-								<div class="row">
-								  	<!--div class="form-group">
-									    <input type="text" class="form-control1" id="exampleInputPw" placeholder="" name="comt_pw" onkeyup="chkword(this, 22)"  onfocus="cngtype()" value='비밀번호'>
-								  	</div-->
-								    <div class="form-group col-xs-1 col-lg-4"></div>
-								    <div class="form-group col-xs-10 col-lg-4">
-									  	<textarea class="form-control2" rows="3" name="comt_text"  placeholder="내용 *100자 이하" onkeyup="chkword(this, 100)")></textarea></div>
-								    <div class="form-group col-xs-1 col-lg-4"></div>
-							    </div> 
-							    <div class="row">
-									<div class="btn-group" data-toggle="buttons" style="margin-bottom: 5px;">
-									  <label class="btn btn-success">
-									  <span class="glyphicon glyphicon-thumbs-up"></span>
-
-									    <input type="radio" name="options" id="option1" autocomplete="off" value="0"> <%=discuss[0].dis_comt_1%>
-									  </label>
-									  <label class="btn btn-danger">
-									  <span class="glyphicon glyphicon-thumbs-down"></span>
-									    <input type="radio" name="options" id="option2" autocomplete="off" value="1"> <%=discuss[0].dis_comt_2%>
-									  </label>
-									  <label class="btn btn-warning active">
-									  <span class="glyphicon glyphicon-check"></span>
-									    <input type="radio" name="options" id="option3" autocomplete="off" value="2"> 기타
-									  </label>
+									<div class="row">
+										<div class="form-group col-lg-12 padding-1">
+										    <input type="text" class="form-control1" id="exampleInputName" placeholder=" 작성자" name="comt_writer" onkeyup="chkword(this, 20)">
+										    <!--input type="text" class="form-control1" id="exampleInputName" placeholder=" 작성자" name="comt_writer" onkeyup="chkword(this, 20)" onfocus="if(this.value ==' 작성자') this.value='';" onblur="if(this.value =='') this.value=' 작성자';" value=" 작성자"-->
+										    <input type="text" class="form-control1" id="exampleInputPw" placeholder=" 비밀번호" name="comt_pw" onkeyup="chkword(this, 22)">
+										    <!--input type="text" class="form-control1" id="exampleInputPw" placeholder=" 비밀번호" name="comt_pw" onkeyup="chkword(this, 22)"  onfocus="cngtype()" value=' 비밀번호'-->
+									  	</div>
 									</div>
-									<button type="button" class="btn btn-primary" onClick="comt_submit()" style="width:180px; margin-bottom: 5px;">등록</button>
-								</div>
+									<div class="row">
+									  	<!--div class="form-group">
+										    <input type="text" class="form-control1" id="exampleInputPw" placeholder="" name="comt_pw" onkeyup="chkword(this, 22)"  onfocus="cngtype()" value='비밀번호'>
+									  	</div-->
+									    <div class="form-group col-xs-1 col-lg-4"></div>
+									    <div class="form-group col-xs-10 col-lg-4">
+										  	<textarea class="form-control2" rows="3" name="comt_text"  placeholder="내용 *100자 이하" onkeyup="chkword(this, 100)")></textarea></div>
+									    <div class="form-group col-xs-1 col-lg-4"></div>
+								    </div> 
+								    <div class="row">
+										<div class="btn-group" data-toggle="buttons" style="margin-bottom: 5px;">
+										  <label class="btn btn-success">
+										  <span class="glyphicon glyphicon-thumbs-up"></span>
+
+										    <input type="radio" name="options" id="option1" autocomplete="off" value="0"> <%=discuss[0].dis_comt_1%>
+										  </label>
+										  <label class="btn btn-danger">
+										  <span class="glyphicon glyphicon-thumbs-down"></span>
+										    <input type="radio" name="options" id="option2" autocomplete="off" value="1"> <%=discuss[0].dis_comt_2%>
+										  </label>
+										  <label class="btn btn-warning active">
+										  <span class="glyphicon glyphicon-check"></span>
+										    <input type="radio" name="options" id="option3" autocomplete="off" value="2"> 기타
+										  </label>
+										</div>
+										<button type="button" class="btn btn-primary" onClick="comt_submit()" style="width:180px; margin-bottom: 5px;">등록</button>
+									</div>
 								</div>
 							</div>
 						</div>
-						</form>
+					</form>
 
+						<!--버튼 색상 스크립트-->
 						<style type="text/css">
 							.btn span.glyphicon {
 							opacity: 0.2;				
@@ -281,6 +312,16 @@ function cngtype1(){
 							.btn-success.active {
 						    background-color: #3a99d7;
 						    border-color: #3a99d7;
+							}
+
+							.btn-info,
+							.btn-info:focus,
+							.btn-info:hover,
+							.btn-info:visited,
+							.btn-info.active {
+						    background-color: #fff;
+						    border-color: #3a99d7;
+						    color: #000;
 							}
 						</style>
 
@@ -326,31 +367,31 @@ function cngtype1(){
 								<br>
 
 								<!--button value="<%= comt[i].comt_no%>" onclick="shComt()">답글</button-->
-								<button class="btn btn-primary btncomt" id="d<%= comt[i].comt_no%>" value="<%= comt[i].comt_no%>" onclick="showJs(<%= comt[i].comt_no%>)"><h6>답글</h6></button>
+								<button class="btn btn-info btncomt" id="d<%= comt[i].comt_no%>" value="<%= comt[i].comt_no%>" onclick="showJs(<%= comt[i].comt_no%>)"><h6>답글</h6></button>
 
 								<div class="showComt" value="<%= comt[i].comt_no%>" id="showComt<%= comt[i].comt_no%>" style="display:none;">
-								<form class="form-inline" method="post" action="/discuss/comtcomtPush">
+								
+									
+									
+									<form class="form-inline" method="post" action="/discuss/comtcomtPush" name="comtcoInsert" id="form-inline<%= comt[i].comt_no%>">
 									<input type="hidden" name="dis_no" value="<%= comt[i].dis_no%>">
 									<input type="hidden" name="comt_no" value="<%= comt[i].comt_no%>">
-									
-									<div class="form-group">
 										<div class="row">
 											<div class="form-group col-lg-12 padding-1">
-											    <input type="text" class="form-control1" id="exampleInputName1" placeholder=" 작성자" name="comt_writer" onkeyup="chkword(this, 20)" onfocus="if(this.value ==' 작성자') this.value='';" onblur="if(this.value =='') this.value=' 작성자';" value=" 작성자">
-											    <input type="password" class="form-control1" id="exampleInputPw1" placeholder="비밀번호" name="comt_pw" onkeyup="chkword(this, 22)" >
+											    <input type="text" class="form-control1" id="exampleInputName1" placeholder=" 작성자" name="comt_writer" onkeyup="chkword(this, 20)">
+											    <input type="text" class="form-control1" id="exampleInputPw" placeholder=" 비밀번호" name="comt_pw" onkeyup="chkword(this, 22)">
 										  	</div>
 										</div>
 										<div class="row">
-										    <div class="form-group col-xs-0 col-lg-4"></div>
-										    <div class="form-group col-xs-11 col-lg-4">
+										    <div class="form-group col-xs-0 col-lg-0"></div>
+										    <div class="form-group col-xs-10 col-lg-12">
 											  	<textarea class="form-control2" rows="3" name="comt_text"  placeholder="내용 *100자 이하" onkeyup="chkword(this, 100)")></textarea></div>
-										    <div class="form-group col-xs-1 col-lg-4"></div>
+										    <div class="form-group col-xs-2 col-lg-0"></div>
 									    </div> 
-								  			<button type="submit" id="submit<%= comt[i].comt_no%>" value="<%= comt[i].comt_no%>" class="btn btn-primary">등록</button>
-								  			
-									</div>
-										
-								</form>
+								  			<!--button type="button" id="submit<%= comt[i].comt_no%>" value="<%= comt[i].comt_no%>" class="btn btn-primary" onClick="comtco_submit()">등록</button-->
+								  			<button type="button" class="btn btn-primary" onClick="comtco_submit(<%= comt[i].comt_no%>)">등록</button>
+								  	</form>
+									
 
 								<div id="showComtco<%= comt[i].comt_no%>"></div>
 								</div>
@@ -367,8 +408,9 @@ function cngtype1(){
 					</div>
 				</div>
 			</div>
-
-	</div>
+		</div>
+	  </div>
+   </div>
 </div>
 
 
