@@ -221,5 +221,38 @@ router.post('/lecture/done/insert/2', function(req, res, next) {
 });
 
 
+/*역사학자 주경철 교수 강연  21세기 북스 */
+
+router.get('/lecture/detail/3', function(req, res, next) {
+	res.render('front/cid_lecture2/cid_lecture_detail_3', { });
+});
+
+
+router.post('/lecture/insert/3', function(req, res, next) {
+	var app_cate = req.body.app_cate;
+	var app_name = req.body.app_name;
+	var phone1 = req.body.app_phone1;
+	var phone2 = req.body.app_phone2;
+	var phone3 = req.body.app_phone3;
+
+	var app_phone = phone1 + "-" + phone2 + "-" + phone3;
+	
+	var date = getWorldTime(+9);
+	
+	var row;
+	var sets = {app_cate : 3, app_name : app_name, app_phone : app_phone, app_regDate : date};
+	
+	pool.insert('insert into cider.cid_applyform set ?', sets, function (err, data){
+		if(err){
+			res.redirect('back');
+		}
+		mysql.select('select * from cider.cid_applyform where app_phone ="'+app_phone+'" and app_name = "'+app_name+'"', function (err, data2){
+			console.log(data2);
+		res.redirect('/lecture/detail/3');
+		//res.render('front/cid_lecture2/cid_lecture_done', {row : data2});
+		});
+	 });
+});
+
 
 module.exports = router;

@@ -124,34 +124,29 @@ function comt_submit(){
 	alert("댓글이 등록되었습니다.");
 	 	document.comtInsert.submit();
 }
-
+/* 대댓글 스크립트 */
 function comtco_submit(id){
-var chk="#form-inline"+id;
-alert(id);
-var list= document.getElementsByClassName("form-inline");
-alert(list[0]);
-for (var i = 0; i < list.length; i++) {
-   // alert(list[i].comt_writer.value); //second console output
-alert(document.comtcoInsert[1].comt_writer.value);
-	if(document.comtcoInsert[i].comt_writer.value==""){
-	 alert("작성자를 입력해 주세요.");
-	document.comtcoInsert[i].comt_writer.focus();
-	  return;
-	}
-	if(document.comtcoInsert[i].comt_pw.value==""){
-	 alert("비밀번호를 입력해 주세요.");
-	document.comtcoInsert[i].comt_pw.focus();
-	  return;
-	}
-	if(document.comtcoInsert[i].comt_text.value==""){
-	 alert("댓글 내용을 입력해 주세요.");
-	document.comtcoInsert[i].comt_text.focus();
-	  return;
-	}
-	alert("답글이 등록되었습니다.");
-	 	document.comtcoInsert[i].submit();
-}
-	
+var vv = document.getElementById("form-inline"+id);
+
+	for(i=0; i<vv.length; i++){
+		if(vv[2].value ==""){
+			alert("작성자를 입력해주세요.");
+			vv[2].value.focus();
+		}
+		if(vv[3].value==""){
+			alert("비밀번호를 입력해주세요.");
+			vv[3].value.focus();
+		}
+		if(vv[4].value==""){
+			alert("내용을 입력해주세요.");
+			vv[4].value.focus();
+		}
+
+		vv.submit();
+		}
+vv.focus();
+ // document.getElementById("form-inline"+id).focus();
+
 }
 
 </script>
@@ -342,7 +337,7 @@ function cngtype1(){
 
 						<% }else{ %>
 
-					<div class="row">
+					<div class="row" style="margin-right: 0px;">
 						<div class="col-xs-0 col-md-2"></div>
 						<div class="col-xs-12 col-md-8">
 						<table class="table table-condensed">
@@ -382,14 +377,16 @@ function cngtype1(){
 											    <input type="text" class="form-control1" id="exampleInputPw" placeholder=" 비밀번호" name="comt_pw" onkeyup="chkword(this, 22)">
 										  	</div>
 										</div>
+
 										<div class="row">
 										    <div class="form-group col-xs-0 col-lg-0"></div>
-										    <div class="form-group col-xs-10 col-lg-12">
+										    <div class="form-group col-xs-9 col-lg-10">
 											  	<textarea class="form-control2" rows="3" name="comt_text"  placeholder="내용 *100자 이하" onkeyup="chkword(this, 100)")></textarea></div>
-										    <div class="form-group col-xs-2 col-lg-0"></div>
+										    <div class="form-group col-xs-3 col-lg-2"></div>
 									    </div> 
-								  			<!--button type="button" id="submit<%= comt[i].comt_no%>" value="<%= comt[i].comt_no%>" class="btn btn-primary" onClick="comtco_submit()">등록</button-->
-								  			<button type="button" class="btn btn-primary" onClick="comtco_submit(<%= comt[i].comt_no%>)">등록</button>
+
+								  			<button type="button" id="submit<%= comt[i].comt_no%>" value="<%= comt[i].comt_no%>" class="btn btn-primary" onClick="comtco_submit(<%= comt[i].comt_no%>)">등록</button>
+								  			<!--button type="button" class="btn btn-primary" onClick="comtco_submit(<%= comt[i].comt_no%>)">등록</button-->
 								  	</form>
 									
 
@@ -416,7 +413,7 @@ function cngtype1(){
 
 <script type="text/javascript">
 	function comtImg() {
-        $("#comtImgShow").toggle(300);
+        $("#comtImgShow").toggle(200);
     }
 </script>
 
@@ -436,7 +433,7 @@ function showComtco(id)
 				success : function(data){
 					var ht="";
 					$.each(data.ddd, function (index, value){
-						ht += value.comtco_no+"<br/>";
+						ht += "<table class='table table-condensed'><tr class='active'><td class='primary'><h6>"+value.comtco_writer+" | "+ value.comtco_date+"</h6><br/>"+value.comtco_text+"</td></tr></table>";
 						var shco_no = value.comt_no;
 						document.getElementById('showComtco'+shco_no).innerHTML = ht;
 					});
