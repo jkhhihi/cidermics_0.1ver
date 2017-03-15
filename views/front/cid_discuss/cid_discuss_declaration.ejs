@@ -6,17 +6,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>사이다경제 | 토론 신고</title>
-<!--link href="/css/bootstrap.min.css" rel="stylesheet"-->
-<!--script src="/js/bootstrap.min.js"></script-->
-<!--link href="/css/cid_contents.css" rel="stylesheet">
-<link href="/css/swiper.css" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="/css/component.css" />
-<script src="/js/modernizr.custom.js"></script>
-
-<script src="/js/gotoup.js"></script-->
-
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
 <!--글자수 제한 스크립트 -->
 <script type="text/javascript">
@@ -53,6 +42,19 @@
     }
 </script>
 
+<style type="text/css">
+  .declaration{
+    margin: 30px;
+  }
+</style>
+       
+    <link rel='stylesheet' href='/css/materialize.css' />
+    <link rel='stylesheet' href='/css/style.css' />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="/js/materialize.js"></script>
+
+
 </head>
 <body style="font-family: 'Nanum Gothic', serif !important;">
 <!--위로가기 버튼-->
@@ -62,35 +64,52 @@
 
 <div class="discuss_detail-mob_menu"><img src="/page_imgs/fixed_img/detail_line.png"></div>
 
+<div class="declaration container">
 <div class="row">
-  <div class="col-md-2">.col-md-4</div>
-  <div class="col-md-8">
+            <div class="col-xs-1 col-md-2"></div>
+            <div class="col-xs-11 col-md-8">
+              <h2> 신고하기</h2>
+              <p><b> 내용 : </b></p>
+            </div>
+            <div class="col-xs-0 col-md-2"></div>
+          </div>
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-10">
   	<form>
   <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputFile">File input</label>
-    <input type="file" id="exampleInputFile">
-    <p class="help-block">Example block-level help text here.</p>
-  </div>
-  <div class="checkbox">
-    <label>
-      <input type="checkbox"> Check me out
-    </label>
+    <label for="exampleInputEmail1">사유 : </label>
+    <textarea class="form-control" rows="6" name="comt_text"  placeholder="사유 내용" onkeyup="chkword(this, 500)")></textarea>
   </div>
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
 
   </div>
-  <div class="col-md-2">.col-md-4</div>
+</div>
 </div>
 
+
+
+  <!-- Modal Trigger -->
+  <a class="modal-trigger1 waves-effect waves-light btn" href="#modal1">Modal</a>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Modal Header</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+    </div>
+  </div>
+<script>
+  $(document).ready(function(){
+    $('.modal-trigger1').leanModal();
+  });
+</script>
+
+          
 
 <% include ../bottom %>
 

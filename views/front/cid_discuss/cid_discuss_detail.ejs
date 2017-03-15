@@ -24,17 +24,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><%= discuss[0].dis_title %> - 사이다경제 | 토론</title>
-<!--link href="/css/bootstrap.min.css" rel="stylesheet"-->
-<!--script src="/js/bootstrap.min.js"></script-->
+
 <link href="/css/cid_contents.css" rel="stylesheet">
 <link href="/css/swiper.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
 <link rel="stylesheet" type="text/css" href="/css/component.css" />
 <script src="/js/modernizr.custom.js"></script>
 
 <script src="/js/gotoup.js"></script>
 
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<!--link href="/css/bootstrap.min.css" rel="stylesheet">
+<script src="/js/bootstrap.min.js"></script-->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
 
 
 <style type="text/css">
@@ -62,6 +64,9 @@
 	.comtImg{
 		margin-top: 5px;
 	}
+
+
+
 </style>
 
 <!--글자수 제한 스크립트 -->
@@ -141,10 +146,11 @@ var vv = document.getElementById("form-inline"+id);
 			alert("내용을 입력해주세요.");
 			vv[4].value.focus();
 		}
-
+		//vv.action="/discuss/detail/"+vv[0].value;
 		vv.submit();
 		}
-vv.focus();
+		//location.reload();
+//vv.focus();
  // document.getElementById("form-inline"+id).focus();
 
 }
@@ -218,7 +224,7 @@ function cngtype1(){
 				<div class="mob-bg-white container">
 					<div class="discuss container">
 							
-					<form class="form-inline" method="post" action="/discuss/comtPush" name="comtInsert">
+					<form class="form-inline" method="post" action="/discuss/comtPush" name="comtInsert" target="_self">
 						<input type="hidden" name="dis_no" value="<%= discuss[0].dis_no%>">
 						<!-- 찬성 반대 기타 버튼 -->
 						<div class="container">
@@ -321,13 +327,13 @@ function cngtype1(){
 						</style>
 
 				<div class="container">
-					<div class="row">
+					<div class="row" style="margin-right: 0px;">
 						<div class="col-xs-1 col-md-2"></div>
-						<div class="col-xs-11 col-md-8">
+						<div class="col-xs-10 col-md-8">
 						  <h2> 토론하기</h2>
 						  <p><b> 주제 : <%= discuss[0].dis_title%></b></p>
 						</div>
-						<div class="col-xs-0 col-md-2"></div>
+						<div class="col-xs-1 col-md-2"></div>
 					</div>
 
 
@@ -357,8 +363,12 @@ function cngtype1(){
 								<% } else{ %>
 								<%} %>
 								<br>
-								<h6><%= comt[i].comt_writer %> | <%= comt[i].comt_regdate %> | <a href="/discuss/declaration"> 신고 </a> | <a href="#"><span class="glyphicon glyphicon-remove"></span></a></h6>
+								<h6><%= comt[i].comt_writer %> | <%= comt[i].comt_regdate %> | <a href="/discuss/declaration"> 신고 </a> | <span class="glyphicon glyphicon-remove" id="deleteComt<%= comt[i].comt_no%>" onclick="deleteComt(<%= comt[i].comt_no%>)"></span> <form class="showDeleteComt" value="<%= comt[i].comt_no%>" id="showDeleteComt<%= comt[i].comt_no%>" style="display: none;">
+									비밀번호 : <input type="password" name="delectPw" value=""><a onclick="deleteComtSmt(<%= comt[i].comt_no%>)" style="cursor:pointer">삭제</a></button>
+								</form></h6>
 								<%= comt[i].comt_text %>
+								
+
 								<br>
 
 								<!--button value="<%= comt[i].comt_no%>" onclick="shComt()">답글</button-->
@@ -368,7 +378,7 @@ function cngtype1(){
 								
 									
 									
-									<form class="form-inline" method="post" action="/discuss/comtcomtPush" name="comtcoInsert" id="form-inline<%= comt[i].comt_no%>">
+									<form class="form-inline" method="post" action="/discuss/comtcomtPush" name="comtcoInsert" id="form-inline<%= comt[i].comt_no%>" target="_self">
 									<input type="hidden" name="dis_no" value="<%= comt[i].dis_no%>">
 									<input type="hidden" name="comt_no" value="<%= comt[i].comt_no%>">
 										<div class="row">
@@ -410,17 +420,122 @@ function cngtype1(){
    </div>
 </div>
 
+<div class="container">
+  <h2>Modal Example</h2>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
 
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">New message</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+	function deleteComt(id){
+		//alert(id);
+		var sdc = "#showDeleteComt"+id;
+		$(sdc).toggle(300);
+		deleteComtSmt(id);
+		//deleteComtShow(id);
+		location.reload();
+	}
+
+	function deleteComtSmt(id)
+	{
+		var aaa = document.getElementById("showDeleteComt"+id);
+		if(aaa[0].value ==""){
+			aaa[0].value.focus();
+		}
+		var ida = id;
+		var pwNum = aaa[0].value;
+		//alert(pwNum);
+
+		$.ajax({
+			url : '/discuss/deleteComt/'+ida+'&'+pwNum,
+			method : 'get',
+			success : function(data){
+				if(data.fail == 1){
+				alert("비밀번호가 틀렸습니다.");
+				}else{
+					//alert("성공~");
+					location.reload();
+				}
+			}
+		})
+	}
+	
+</script>
+
+<!--댓글 쓰기 버튼 toggle-->
 <script type="text/javascript">
 	function comtImg() {
         $("#comtImgShow").toggle(200);
     }
 </script>
 
+<!-- show 코멘트 toggle 및 ajax로 대댓글 불러오기 -->
 <script type="text/javascript">
 function showJs(id) {
    var chk="#showComt"+id;
-    $(chk).toggle(300);
+    $(chk).toggle(200);
     showComtco(id);
 }
 
@@ -437,6 +552,7 @@ function showComtco(id)
 						var shco_no = value.comt_no;
 						document.getElementById('showComtco'+shco_no).innerHTML = ht;
 					});
+					
 				}
 			});
 };
@@ -450,7 +566,7 @@ function showComtco(id)
 	var b_start_page = ((block -1))
 </script>
 
-         
+
 
 
 

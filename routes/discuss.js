@@ -259,7 +259,12 @@ router.post('/discuss/comtcomtPush', function(req,res,next){
 
 	mysql.insert('insert into cider.cid_dis_comt_comt set ?', sets,  function (err, data){
 		dis_no;
-    res.redirect('/discuss/detail/'+dis_no+'');
+
+	//뒤로 가는 스크립트
+	var backURL=req.header('Referer') || '/';
+  	// do your thang
+  	res.redirect(backURL);
+    //res.redirect('/discuss/detail/'+dis_no+'');
   });
 });
 
@@ -286,9 +291,11 @@ router.get('/ssss/:idx', function(req, res, next) {
 });
 
 router.get('/discuss/declaration', function(req,res,next){
-	res.render('front/cid_discuss/cid_discuss_declaration', {})
+	mysql.select('(SELECT dis_no,comt_no,"" as comtco_no,comt_writer,comt_regdate from cider.cid_dis_comt) UNION (SELECT "",comt_no,comtco_no as comtco_no,comtco_writer,comtco_date FROM cider.cid_dis_comt_comt)order by comt_regdate desc;', function (err, data){
+		var comtlist = data
+	res.render('front/cid_discuss/cid_discuss_declaration', {comtlist: comtlist})
+	 });
  });
-
 
 router.post('/discuss/declaration', function(req,res,next){
 	var comt_writer = req.body.comt_writer;
@@ -311,6 +318,33 @@ router.post('/discuss/declaration', function(req,res,next){
   });
 });
 
+router.get('/discuss/deleteComt/:ida&:pwNum', function(req, res, next) {
+	
+	var CP = 1;
+	var ida = req.params.ida;
+	var pwNum = req.params.pwNum;
+
+	mysql.select('select comt_pw from cider.cid_dis_comt where comt_no = '+ida+'', function (err, data){
+
+		if(pwNum == data[0].comt_pw){
+
+	
+	mysql.del('delete from cider.cid_dis_comt where comt_no = '+ ida +'', function (err, data){
+		if(err){
+			res.send({fail:data});
+		}else{
+			res.send({success:data});
+		}
+    });
+
+		} else{
+			//console.log("fail");
+			//res.redirect('/discuss/detail/');
+			//res.send('<script>alert("비밀번호를 확인해주세요.");location.href="/discuss/detail/";</script>');
+			res.send({fail:1});
+		}
+  });
+});
 
 
 
