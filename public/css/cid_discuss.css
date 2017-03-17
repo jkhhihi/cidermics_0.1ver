@@ -1,9 +1,6 @@
 body{font-family: 'Nanum Gothic', serif;}
-.web-banner{margin-top:70px; background-image:url(http://i.imgur.com/zTh0s76.jpg); background-repeat : no-repeat;
-background-position:center; width:100%; padding:100px 0 100px 0;}
-.web-banner .border-box{border:4px solid #fff; padding:50px 0;}
-.web-banner p.title{font-size:32px; font-weight:bold; color:#fff;}
-.web-banner .line3{width:300px; height:2px; background-color:#1b87c9;}
+.discuss-main{margin-top:100px;}
+.discuss-main .title{font-size:20px; font-weight:bold; border:2px solid #ececec; padding:50px 0}
 .discuss-con .mg-bot{margin-bottom:20px; padding-left:10px; padding-right:10px;}
 .discuss-con .dis-title{width:100%; position:absolute; z-index:4; font-size:18px; font-weight:bold; top:30%; color:#fff; padding-left:0; line-height:1.5em;}
 .discuss-con .dis-title p{width:65%;}
@@ -15,14 +12,11 @@ background-position:center; width:100%; padding:100px 0 100px 0;}
 .discuss-con .dis-bg-img .dis-black-box{width:100%; height:100%; position:absolute; z-index:2; background-color:rgba(0,0,0,0.5); border-radius:6px;}
 .discuss-con .dis-bg-img img{width:100%; position:relative; z-index:1; border:0 solid; border-radius:6px;}
 @media all and (max-width:1024px) {
-.web-banner{margin-top:50px; padding:20px 10px 20px 10px;}
-.web-banner .border-box{padding:20px 0;}
-.web-banner p.title{font-size:20px;}
-.web-banner .line3{width:200px;}
-.discuss-con .dis-title{font-size:16px; padding-left:0; line-height:1.5em;}
-.discuss-con .dis-title p{width:75%;}
+
+.discuss-con .dis-title{font-size:16px; padding-left:0; line-height:1.5em; top:30%}
+.discuss-con .dis-title p{width:60%;}
 .discuss-con .dis-img{font-size:14px;}
-.discuss-con .dis-img img{width:20px;}
+.discuss-con .dis-img img{width:25px;}
 
 }
 
