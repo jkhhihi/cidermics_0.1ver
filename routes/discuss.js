@@ -155,6 +155,7 @@ router.get('/discuss/detail/:no', function(req, res, next) {
 					mysql.select('select count(*) as dis_no,comt_no from cider.cid_dis_comt where dis_no='+no+'', function(err,data){
 						var comtCount = data;
 
+
 						//mysql.select('select count(comt_opt) from cider.cid_dis_comt where dis_no='+no+'', function(err,data){
 
 								//var a_comtCount = data;
@@ -214,18 +215,18 @@ router.get('/discuss/detail/:no', function(req, res, next) {
 
 								//mysql.select('(SELECT IFNULL(comt_opt, 0) as cnt FROM cider.cid_dis_comt where dis_no='+no+')UNION(SELECT 0 comt_opt)', function(err,data){
 									//var testCount = data;
-								mysql.select('select * from cider.cid_dis_comt_comt where comt_no = '+no+'', function(err,data){
+								/*mysql.select('select * from cider.cid_dis_comt_comt where comt_no = '+no+'', function(err,data){
 									if(err){ res.redirect('back');	}
-								var comtco = data;
+								var comtco = data;*/
 
-				res.render('front/cid_discuss/cid_discuss_detail', {discuss:row, comt:comt, comtCount:comtCount,g_comtCount:g_comtCount,a1:a1,a2:a2,a3:a3,comtco:comtco});
+				res.render('front/cid_discuss/cid_discuss_detail', {discuss:row, comt:comt, comtCount:comtCount,g_comtCount:g_comtCount,a1:a1,a2:a2,a3:a3});
 			});
 		  });  
 		});
 	  });
 	});
   });
-});
+//});
 //});
 router.post('/discuss/comtPush', function(req,res,next){
 	var options = req.body.options;
@@ -271,13 +272,13 @@ router.post('/discuss/comtcomtPush', function(req,res,next){
 router.get('/ssss/:idx', function(req, res, next) {
 	var idx = req.params.idx;
 
-	console.log(idx);
+	//console.log(idx);
 
     mysql.select('select * from cider.cid_dis_comt_comt where comt_no = '+idx+'', function (err, data){
 
         if (err) throw err;
-        console.log("+++++++");
-        console.log(data);
+        //console.log("+++++++");
+        //console.log(data);
 
         //var aaa = data;
        // aaa == "123";
@@ -291,30 +292,31 @@ router.get('/ssss/:idx', function(req, res, next) {
 });
 
 router.get('/discuss/declaration', function(req,res,next){
-	mysql.select('(SELECT dis_no,comt_no,"" as comtco_no,comt_writer,comt_regdate from cider.cid_dis_comt) UNION (SELECT "",comt_no,comtco_no as comtco_no,comtco_writer,comtco_date FROM cider.cid_dis_comt_comt)order by comt_regdate desc;', function (err, data){
-		var comtlist = data
+
+	var comt_no = req.query.declar_comt_no;
+	console.log(comt_no);
+	mysql.select('select dis_no, comt_no, comt_text from cider.cid_dis_comt where comt_no ='+comt_no+'', function (err, data){
+	//mysql.select('(SELECT dis_no,comt_no,"" as comtco_no,comt_writer,comt_regdate from cider.cid_dis_comt) UNION (SELECT "",comt_no,comtco_no as comtco_no,comtco_writer,comtco_date FROM cider.cid_dis_comt_comt)order by comt_regdate desc;', function (err, data){
+		var comtlist = data;
 	res.render('front/cid_discuss/cid_discuss_declaration', {comtlist: comtlist})
 	 });
  });
 
 router.post('/discuss/declaration', function(req,res,next){
-	var comt_writer = req.body.comt_writer;
-	var comt_pw = req.body.comt_pw;
-	var comt_text = req.body.comt_text;
 	var dis_no = req.body.dis_no;
 	var comt_no = req.body.comt_no;
+	var comt_text = req.body.comt_text;
 	var date = getWorldTime(+9);
 
-	console.log(comt_writer);
-	console.log(comt_pw);
-	console.log(dis_no); 
+	console.log(dis_no);
 	console.log(comt_no);
 
-	var sets = {comt_no:comt_no, comtco_writer:comt_writer, comtco_pw:comt_pw, comtco_text:comt_text, comtco_date:date};
+	var sets = {dis_no:dis_no, comt_no:comt_no, comt_text:comt_text, comt_regdate:date};
 
-	mysql.insert('insert into cider.cid_dis_comt_comt set ?', sets,  function (err, data){
+	mysql.insert('insert into cider.cid_dis_declar set ?', sets,  function (err, data){
 		dis_no;
-    res.redirect('/discuss/detail/'+dis_no+'');
+	res.send('<script>alert("신고 완료되었습니다.");location.href="/discuss/detail/'+dis_no+'";</script>');
+    //res.redirect('/discuss/detail/'+dis_no+'');
   });
 });
 

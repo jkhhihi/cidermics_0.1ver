@@ -590,8 +590,11 @@ router.get('/discuss', ensureAuthenticated, function(req, res, next) {
 		mysql.select('select * from cider.cid_dis_ask order by disAsk_no desc;', function(err,data2){
 
 			askval = data2;
+			mysql.select('select * from cider.cid_dis_declar order by disDec_no desc;', function(err,data3){
+				declar = data3;
 
-	res.render('admin/discuss/discuss_index', { CP : CP, discuss : data, askval : askval });
+	res.render('admin/discuss/discuss_index', { CP : CP, discuss : data, askval : askval, declar:declar });
+	 });
 	});    	
   });
 });
@@ -804,14 +807,93 @@ router.get('/discuss/askdelete/:no', function(req, res, next) {
 
 router.get('/discuss/comtlist', ensureAuthenticated, function(req, res, next) {
 	var CP = 4;
-	mysql.select('(SELECT dis_no,comt_no,"" as comtco_no,comt_writer,comt_regdate from cider.cid_dis_comt) UNION (SELECT "",comt_no,comtco_no as comtco_no,comtco_writer,comtco_date FROM cider.cid_dis_comt_comt)order by comt_regdate desc;', function (err, data){
-	//mysql.select('SELECT * from cider.cid_dis_comt order by dis_no desc;', function (err, data){
+	//mysql.select('(SELECT dis_no,comt_no,"" as comtco_no,comt_writer,comt_regdate from cider.cid_dis_comt) UNION (SELECT "",comt_no,comtco_no as comtco_no,comtco_writer,comtco_date FROM cider.cid_dis_comt_comt)order by comt_regdate desc;', function (err, data){
+	mysql.select('SELECT * from cider.cid_dis_comt order by comt_regdate desc;', function (err, data){
 
 		var comtlist = data;
 
 	res.render('admin/discuss/discuss_comtlist', { CP : CP, comtlist:data });
-	});    	
+  });
+});
+
+router.get('/discuss/comtcolist', ensureAuthenticated, function(req, res, next) {
+	var CP = 4;
+	//mysql.select('(select dis_no,comt_no,"" as comtco_no,"" as comtco_writer, "" as comtco_text,"" as comtco_date from cider.cid_dis_comt) UNION (select "",comt_no,comtco_no,comtco_writer, comtco_text, comtco_date from cider.cid_dis_comt_comt) order by comtco_date desc;', function (err, data){
+	mysql.select('SELECT * FROM cider.cid_dis_comt_comt order by comtco_date desc;', function (err, data){
+		var comtlistco = data;
+		console.log(comtlistco);
+
+	res.render('admin/discuss/discuss_comtcolist', { CP : CP, comtlistco:data });
+	});
  });
+
+/* comtcolist Ajax */
+router.get('/gotoComtNo/:comtco_no', function(req,res,next){
+	var comtco_no = req.params.comtco_no;
+
+	mysql.select('SELECT dis_no FROM cider.cid_dis_comt where comt_no='+comtco_no+'',function(err,data){
+		console.log(data);
+		res.send({disno:data});
+	});
+
+});
+
+router.get('/discuss/comtdelete/:no', function(req, res, next) {
+	
+	var CP = 3;
+	var no = req.params.no;
+	
+	mysql.del('delete from cider.cid_dis_comt where comt_no = '+ no +'', function (err, data){
+		if(err){
+			res.redirect('/adm/discuss/comtlist');
+		}else{
+			res.redirect('/adm/discuss/comtlist');
+		}
+    });
+});
+
+router.get('/discuss/comtcodelete/:no', function(req, res, next) {
+	
+	var CP = 3;
+	var no = req.params.no;
+	
+	mysql.del('delete from cider.cid_dis_comt_comt where comtco_no = '+ no +'', function (err, data){
+		if(err){
+			res.redirect('/adm/discuss/comtcolist');
+		}else{
+			res.redirect('/adm/discuss/comtcolist');
+		}
+    });
+});
+
+router.get('/discuss/declarComtdelete/:no', function(req, res, next) {
+	
+	var CP = 3;
+	var no = req.params.no;
+	
+	mysql.del('delete from cider.cid_dis_comt where comt_no = '+ no +'', function (err, data){
+		if(err){
+			res.redirect('/adm/discuss');
+		}else{
+			res.redirect('/adm/discuss');
+		}
+    });
+});
+
+
+router.get('/discuss/declardelete/:no', function(req, res, next) {
+	
+	var CP = 3;
+	var no = req.params.no;
+	
+	mysql.del('delete from cider.cid_dis_declar where disDec_no = '+ no +'', function (err, data){
+		if(err){
+			res.redirect('/adm/discuss');
+		}else{
+			res.redirect('/adm/discuss');
+		}
+    });
+});
 
 
 
