@@ -1,22 +1,37 @@
 body{font-family: 'Nanum Gothic', serif;}
-.discuss-main{margin-top:100px;}
-.discuss-main .title{font-size:20px; font-weight:bold; border:2px solid #ececec; padding:50px 0}
+.padding-lr0{padding-left:0 !important; padding-right:0 !important;}
+.title{width:100%; background-color:#ececec; margin:70px 0 40px 0; padding:30px 0;}
+.title img{width:150px; margin-bottom:20px;}
+.title p{width:250px; font-size:16px; font-weight:900; border-bottom:2px solid #1b87c9; padding-bottom:10px;}
+.discuss-main .btn-request{border:2px solid #ececec; border-radius:5px; padding:10px; cursor:pointer; font-weight:bold; font-size:14px}
+.discuss-main .btn-request img{width:25px; margin-bottom:5px; display:inline-block;}
+.discuss-main .btn-request span{display:inline-block; margin-left:5px;}
+.discuss-con{margin:20px 0;}
 .discuss-con .mg-bot{margin-bottom:20px; padding-left:10px; padding-right:10px;}
-.discuss-con .dis-title{width:100%; position:absolute; z-index:4; font-size:18px; font-weight:bold; top:30%; color:#fff; padding-left:0; line-height:1.5em;}
+.discuss-con .dis-title{width:100%; position:absolute; z-index:4; font-size:18px; font-weight:bold; top:30%; color:#fff; line-height:1.5em;}
 .discuss-con .dis-title p{width:65%;}
-.discuss-con .dis-img{position:absolute; z-index:3; color:#fff; font-size:18px; bottom:5px; font-weight:bold; padding-left:0;}
+.discuss-con .dis-img{position:absolute; z-index:3; color:#fff; font-size:18px; bottom:5px; font-weight:bold; }
 .discuss-con .dis-img .dis-icon{border-top:2px solid #fff; padding:8px 20px 0 0;}
 .discuss-con .dis-img .dis-icon p{margin-bottom:0;}
 .discuss-con .dis-img img{width:30px; margin:0 5px 0 10px;}
 .discuss-con .dis-bg-img{padding-left:0; padding-right:0;}
 .discuss-con .dis-bg-img .dis-black-box{width:100%; height:100%; position:absolute; z-index:2; background-color:rgba(0,0,0,0.5); border-radius:6px;}
 .discuss-con .dis-bg-img img{width:100%; position:relative; z-index:1; border:0 solid; border-radius:6px;}
-@media all and (max-width:1024px) {
+.discuss-con .btn-plus{width:40px; height:40px; background-color:#e0e0e0; border:2px solid #ececec; border-radius:5px; padding-top:5px;
+font-weight:900; font-size:22px; margin:50px 0;}
 
-.discuss-con .dis-title{font-size:16px; padding-left:0; line-height:1.5em; top:30%}
+@media all and (max-width:1024px) {
+.title{margin:50px 0 20px 0; padding:10px 0;}
+.title img{width:100px;}
+.title p{width:200px;}
+.discuss-main .btn-request{padding:5px; font-size:12px}
+.discuss-main .btn-request img{width:22px; margin-bottom:5px;}
+.discuss-main .btn-request span{margin-left:3px;}
+.discuss-con{margin:10px 0;}
+.discuss-con .dis-title{font-size:16px; line-height:1.5em; top:30%}
 .discuss-con .dis-title p{width:60%;}
 .discuss-con .dis-img{font-size:14px;}
 .discuss-con .dis-img img{width:25px;}
-
+.discuss-con .btn-plus{margin:20px 0 40px 0;}
 }
 

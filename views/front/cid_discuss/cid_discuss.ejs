@@ -38,17 +38,23 @@ body { padding-right: 0px !important }
 <div id="but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></div>	
 <% include ../top %>
 
-<div class="discuss-main container" align="center">
-	<p class="title">자유 토론 포럼</p>
 
+	<div class="title" align="center">
+		<img class="img-responsive" src="/page_imgs/discuss_img/discuss-icon.svg">
+		<p>자유 토론 포럼</p>
+	</div>
+
+<div class="discuss-main container" align="center">
 
 <!-- modal 구동 버튼 (trigger) -->
-<div class="row but-area">
+<div class="row">
 	<div class="col-xs-12" align="right">
-	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-	주제 요청하기
-	</button>
+		<span data-toggle="modal" data-target="#myModal" class="btn-request"><img src="/page_imgs/discuss_img/discuss-icon-pencil.svg"><span>주제 요청하기</span></span>
 	</div>
+	
+	<!--button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+	주제 요청하기
+	</button-->
 </div>
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -115,50 +121,124 @@ body { padding-right: 0px !important }
   });
 </script>
 
-<!--콘텐츠뿌림-->
-
-<div class="discuss-con container" style="margin-bottom:50px;" align="center">
-	<!-- 콘텐츠 뿌림 시작 -->		
-	<div class="con-in row" align="center">
-		<div class="col-md-4 col-sm-6 col-xs-12 mg-bot">
-			<div class="row">
-				<a href="/discuss"><div class="dis-title col-xs-12"><p>"서울메트로와 도시철도공사는 통합해야 하나"</p></div></a>
-				<div class="dis-img col-xs-12" align="right">
-					<div class="dis-icon row">
-						<!-- img style="display:inline-block;" src="/page_imgs/main_img/icon-discuss-like.png" ><p style="display:inline-block;">52</p -->
-						<img style="display:inline-block;" src="/page_imgs/main_img/icon-discuss-comment1.svg" ><p style="display:inline-block;">39</p>	
-					</div>	
-				</div>
-				<div class="dis-bg-img col-xs-12"><div class="dis-black-box"></div><img class="img-responsive" src="/page_imgs/main_img/img2.jpg"></div>	
-			</div>
-		</div>
-		<div class="col-md-4 col-sm-6 col-xs-12 mg-bot">
-			<div class="row">
-				<a href="/discuss"><div class="dis-title col-xs-12"><p>"서울메트로와 도시철도공사는 통합해야 하나"</p></div></a>
-				<div class="dis-img col-xs-12" align="right">
-					<div class="dis-icon row">
-						<!-- img style="display:inline-block;" src="/page_imgs/main_img/icon-discuss-like.png" ><p style="display:inline-block;">52</p -->
-						<img style="display:inline-block;" src="/page_imgs/main_img/icon-discuss-comment1.svg" ><p style="display:inline-block;">39</p>	
-					</div>	
-				</div>
-				<div class="dis-bg-img col-xs-12"><div class="dis-black-box"></div><img class="img-responsive" src="/page_imgs/main_img/img2.jpg"></div>	
-			</div>
-		</div>
-		<div class="col-md-4 col-sm-6 col-xs-12 mg-bot">
-			<div class="row">
-				<a href="/discuss"><div class="dis-title col-xs-12"><p>"서울메트로와 도시철도공사는 통합해야 하나"</p></div></a>
-				<div class="dis-img col-xs-12" align="right">
-					<div class="dis-icon row">
-						<!-- img style="display:inline-block;" src="/page_imgs/main_img/icon-discuss-like.png" ><p style="display:inline-block;">52</p -->
-						<img style="display:inline-block;" src="/page_imgs/main_img/icon-discuss-comment1.svg" ><p style="display:inline-block;">39</p>	
-					</div>	
-				</div>
-				<div class="dis-bg-img col-xs-12"><div class="dis-black-box"></div><img class="img-responsive" src="/page_imgs/main_img/img2.jpg"></div>	
-			</div>
-		</div>													
-	</div>
 </div>
 
+
+<!--콘텐츠뿌림-->
+<div class="discuss-con container" align="center">
+	<!-- 콘텐츠 뿌림 시작 -->		
+	<div class="con-in row" align="center">
+		<div class="col-md-4 col-sm-6 col-xs-12 mg-bot padding-lr0">
+			<div class="row">
+				<a href="/discuss"><div class="dis-title col-xs-12"><p>"서울메트로와 도시철도공사는 통합해야 하나"</p></div></a>
+				<div class="dis-img col-xs-12" align="right">
+					<div class="dis-icon row">
+						<!-- img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-like.png" ><p style="display:inline-block;">52</p -->
+						<img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-comment1.svg" ><p style="display:inline-block;">39</p>	
+					</div>	
+				</div>
+				<div class="dis-bg-img col-xs-12"><div class="dis-black-box"></div><img class="img-responsive" src="/page_imgs/main_img/img2.jpg"></div>	
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-6 col-xs-12 mg-bot padding-lr0">
+			<div class="row">
+				<a href="/discuss"><div class="dis-title col-xs-12"><p>"서울메트로와 도시철도공사는 통합해야 하나"</p></div></a>
+				<div class="dis-img col-xs-12" align="right">
+					<div class="dis-icon row">
+						<!-- img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-like.png" ><p style="display:inline-block;">52</p -->
+						<img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-comment1.svg" ><p style="display:inline-block;">39</p>	
+					</div>	
+				</div>
+				<div class="dis-bg-img col-xs-12"><div class="dis-black-box"></div><img class="img-responsive" src="/page_imgs/main_img/img2.jpg"></div>	
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-6 col-xs-12 mg-bot padding-lr0">
+			<div class="row">
+				<a href="/discuss"><div class="dis-title col-xs-12"><p>"서울메트로와 도시철도공사는 통합해야 하나"</p></div></a>
+				<div class="dis-img col-xs-12" align="right">
+					<div class="dis-icon row">
+						<!-- img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-like.png" ><p style="display:inline-block;">52</p -->
+						<img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-comment1.svg" ><p style="display:inline-block;">39</p>	
+					</div>	
+				</div>
+				<div class="dis-bg-img col-xs-12"><div class="dis-black-box"></div><img class="img-responsive" src="/page_imgs/main_img/img2.jpg"></div>	
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-6 col-xs-12 mg-bot padding-lr0">
+			<div class="row">
+				<a href="/discuss"><div class="dis-title col-xs-12"><p>"서울메트로와 도시철도공사는 통합해야 하나"</p></div></a>
+				<div class="dis-img col-xs-12" align="right">
+					<div class="dis-icon row">
+						<!-- img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-like.png" ><p style="display:inline-block;">52</p -->
+						<img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-comment1.svg" ><p style="display:inline-block;">39</p>	
+					</div>	
+				</div>
+				<div class="dis-bg-img col-xs-12"><div class="dis-black-box"></div><img class="img-responsive" src="/page_imgs/main_img/img2.jpg"></div>	
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-6 col-xs-12 mg-bot padding-lr0">
+			<div class="row">
+				<a href="/discuss"><div class="dis-title col-xs-12"><p>"서울메트로와 도시철도공사는 통합해야 하나"</p></div></a>
+				<div class="dis-img col-xs-12" align="right">
+					<div class="dis-icon row">
+						<!-- img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-like.png" ><p style="display:inline-block;">52</p -->
+						<img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-comment1.svg" ><p style="display:inline-block;">39</p>	
+					</div>	
+				</div>
+				<div class="dis-bg-img col-xs-12"><div class="dis-black-box"></div><img class="img-responsive" src="/page_imgs/main_img/img2.jpg"></div>	
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-6 col-xs-12 mg-bot padding-lr0">
+			<div class="row">
+				<a href="/discuss"><div class="dis-title col-xs-12"><p>"서울메트로와 도시철도공사는 통합해야 하나"</p></div></a>
+				<div class="dis-img col-xs-12" align="right">
+					<div class="dis-icon row">
+						<!-- img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-like.png" ><p style="display:inline-block;">52</p -->
+						<img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-comment1.svg" ><p style="display:inline-block;">39</p>	
+					</div>	
+				</div>
+				<div class="dis-bg-img col-xs-12"><div class="dis-black-box"></div><img class="img-responsive" src="/page_imgs/main_img/img2.jpg"></div>	
+			</div>
+		</div>	
+		<div class="col-md-4 col-sm-6 col-xs-12 mg-bot padding-lr0">
+			<div class="row">
+				<a href="/discuss"><div class="dis-title col-xs-12"><p>"서울메트로와 도시철도공사는 통합해야 하나"</p></div></a>
+				<div class="dis-img col-xs-12" align="right">
+					<div class="dis-icon row">
+						<!-- img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-like.png" ><p style="display:inline-block;">52</p -->
+						<img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-comment1.svg" ><p style="display:inline-block;">39</p>	
+					</div>	
+				</div>
+				<div class="dis-bg-img col-xs-12"><div class="dis-black-box"></div><img class="img-responsive" src="/page_imgs/main_img/img2.jpg"></div>	
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-6 col-xs-12 mg-bot padding-lr0">
+			<div class="row">
+				<a href="/discuss"><div class="dis-title col-xs-12"><p>"서울메트로와 도시철도공사는 통합해야 하나"</p></div></a>
+				<div class="dis-img col-xs-12" align="right">
+					<div class="dis-icon row">
+						<!-- img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-like.png" ><p style="display:inline-block;">52</p -->
+						<img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-comment1.svg" ><p style="display:inline-block;">39</p>	
+					</div>	
+				</div>
+				<div class="dis-bg-img col-xs-12"><div class="dis-black-box"></div><img class="img-responsive" src="/page_imgs/main_img/img2.jpg"></div>	
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-6 col-xs-12 mg-bot padding-lr0">
+			<div class="row">
+				<a href="/discuss"><div class="dis-title col-xs-12"><p>"서울메트로와 도시철도공사는 통합해야 하나"</p></div></a>
+				<div class="dis-img col-xs-12" align="right">
+					<div class="dis-icon row">
+						<!-- img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-like.png" ><p style="display:inline-block;">52</p -->
+						<img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-comment1.svg" ><p style="display:inline-block;">39</p>	
+					</div>	
+				</div>
+				<div class="dis-bg-img col-xs-12"><div class="dis-black-box"></div><img class="img-responsive" src="/page_imgs/main_img/img2.jpg"></div>	
+			</div>
+		</div>																						
+	</div>
+	
+	<div class="btn-plus"><p>+</p></div>
 </div>
 
 		<!-- ul class="grid effect-2" id="grid">
