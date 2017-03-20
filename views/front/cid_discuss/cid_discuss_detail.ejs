@@ -64,6 +64,20 @@
 	.comtImg{
 		margin-top: 5px;
 	}
+.web-banner{background-image:url(<%= discuss[0].dis_thum %>); background-repeat : no-repeat;
+background-position:center; width:100%; padding:150px 0 100px 0; background-color: rgba(0,0,0,0.5);}
+.web-banner .border-box{border:5px solid #fff; padding:50px 0;}
+.web-banner p.title{font-size:32px; font-weight:bold; color:#fff;}
+
+.discuss-con .dis-title{width:100%; position:absolute; z-index:4; font-size:18px; font-weight:bold; top:30%; color:#fff; line-height:1.5em;}
+.discuss-con .dis-title p{width:65%;}
+.discuss-con .dis-img{position:absolute; z-index:3; color:#fff; font-size:18px; bottom:5px; font-weight:bold; }
+.discuss-con .dis-img .dis-icon{border-top:2px solid #fff; padding:8px 20px 0 0;}
+.discuss-con .dis-img .dis-icon p{margin-bottom:0;}
+.discuss-con .dis-img img{width:30px; margin:0 5px 0 10px;}
+.discuss-con .dis-bg-img{padding-left:0; padding-right:0;}
+.discuss-con .dis-bg-img .dis-black-box{width:100%; height:100%; position:absolute; z-index:2; background-color:rgba(0,0,0,0.5); border-radius:6px;}
+.discuss-con .dis-bg-img img{width:100%; position:relative; z-index:1; border:0 solid; border-radius:6px;}
 
 
 
@@ -227,6 +241,44 @@ function cngtype1(){
 			<div class="mob-bg-blue">
 				<div class="mob-bg-white container">
 					<div class="discuss container">
+
+<div class="web-banner" align="center">
+	<div class="border-box container">
+		<p class="title">재무설계 상담</p>
+		<div class="line3"></div>
+		<p class="con">내 월급은 통장을 스칠 뿐?<br>
+		<span style="color:#1b87c9">사이다경제</span>가 당신을 위해 준비한 <span style="color:#ff574a;">재무설계!</span></p>
+		<div class="apply-bg">
+
+			<!--재무 신청 오픈-->
+			<!--div class="but-apply"><a href="/finance/apply/"><div class="btn-apply-in" align="center">상담 신청하기</div></a></div-->
+
+			<!--재무 신청 마감-->
+			<div class="but-apply"><a href="#" onClick="alert('이번 달 무료 재무상담 신청이 마감되었습니다. 다음 달에 더 좋은 상담으로 찾아뵙겠습니다.')"><div class="btn-apply-in" align="center">상담 신청하기</div></a></div>
+		</div>
+	</div>
+</div>
+
+
+<div class="discuss-con container" align="center">
+	<!-- 콘텐츠 뿌림 시작 -->		
+	<div class="con-in row" align="center" style="margin-left:0; margin-right:0;">
+		<div class="col-xs-12 mg-bot padding-lr0">
+			<div class="row">
+				<a href="/discuss"><div class="dis-title col-xs-12"><p>"서울메트로와 도시철도공사는 통합해야 하나"</p></div></a>
+				<div class="dis-img col-xs-12" align="right">
+					<div class="dis-icon row">
+						<!-- img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-like.png" ><p style="display:inline-block;">52</p -->
+						<img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-comment1.svg" ><p style="display:inline-block;">39</p>	
+					</div>	
+				</div>
+				<div class="dis-bg-img col-xs-12"><div class="dis-black-box"></div><img class="img-responsive" src="<%= discuss[0].dis_thum %>"></div>	
+			</div>
+		</div>
+	</div>
+</div>
+
+
 							
 					<form class="form-inline" method="post" action="/discuss/comtPush" name="comtInsert" target="_self">
 						<input type="hidden" name="dis_no" value="<%= discuss[0].dis_no%>">
@@ -378,6 +430,7 @@ function cngtype1(){
 								<br>
 
 								<!--button value="<%= comt[i].comt_no%>" onclick="shComt()">답글</button-->
+								
 								<button class="btn btn-info btncomt" id="d<%= comt[i].comt_no%>" value="<%= comt[i].comt_no%>" onclick="showJs(<%= comt[i].comt_no%>)"><h6>답글 <span style="color: red"><%= comtCount[0].comt_no %></span></h6></button>
 
 								<div class="showComt" value="<%= comt[i].comt_no%>" id="showComt<%= comt[i].comt_no%>" style="display:none;">

@@ -219,6 +219,31 @@ router.get('/discuss/detail/:no', function(req, res, next) {
 									if(err){ res.redirect('back');	}
 								var comtco = data;*/
 
+								/*mysql.select('(select count(comt_no) as comt_no from cider.cid_dis_comt_comt)UNION(SELECT dis_no FROM cider.cid_dis_comt where dis_no = '+no+')', function(err,data){
+									if(err){ res.redirect('back');	}
+									var comtco_cnt = data;
+								*/
+
+								mysql.select('select * from cider.cid_dis_comt where dis_no = '+no+'', function(err,data){
+									var d_n = data;
+									var d_val;
+									var qry='';
+									var comtco_count;
+
+
+									for(var j =0; j < d_n.length; j++){
+										d_val = d_n[j].comt_no;
+										console.log(d_val);
+										qry='select count(comt_no) as ctno from cider.cid_dis_comt_comt where comt_no = '+d_val+'';
+										mysql.select(qry, function(err,data){
+										comtco_count = data;
+										console.log(comtco_count);
+										});
+									}
+									console.log(d_val);
+
+									console.log("--아래에 있는 것은 undefined뜸--")
+									console.log(comtco_count);
 				res.render('front/cid_discuss/cid_discuss_detail', {discuss:row, comt:comt, comtCount:comtCount,g_comtCount:g_comtCount,a1:a1,a2:a2,a3:a3});
 			});
 		  });  
@@ -226,8 +251,39 @@ router.get('/discuss/detail/:no', function(req, res, next) {
 	  });
 	});
   });
+});
 //});
 //});
+
+router.get('/discuss/detail/:no', function(req, res, next) {
+mysql.select('select * from cider.cid_dis_comt where dis_no = '+no+'', function(err,data){
+			var d_n = data;
+			var d_val;
+			//var comtco_count;
+			var abab;
+			var qry="";
+			var qrycnt="";
+
+			for(var j =0; j < d_n.length; j++){
+				d_val = d_n[j].comt_no;
+				console.log(d_val);
+				
+				qry='select count(comt_no) as ctno from cider.cid_dis_comt_comt where comt_no = '+d_val+'';
+				console.log(qry);
+				console.log("----");
+				mysql.select(qry, function(err,data){
+					var comtco_count = data;
+					var bbb = 1;
+					//abab = comtco_count[0];
+					//console.log(comtco_count);
+					//{comtco_count:comtco_count};
+					res.render('front/cid_discuss/cid_discuss_detail', {comtco_count:comtco_count,bbb:bbb});
+				});
+				
+			}
+	
+	});
+});
 router.post('/discuss/comtPush', function(req,res,next){
 	var options = req.body.options;
 	var comt_writer = req.body.comt_writer;
