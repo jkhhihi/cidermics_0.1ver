@@ -1,20 +1,37 @@
 @charset "utf-8";
+/*----------------------폰트------------------------*/
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);/*font-family: 'Nanum Gothic', serif;*/
 @import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);/*font-family: 'Nanum Pen Script', cursive;*/
 @import url("/font/font-BMDOHYEON-wallel.css");/* font-family: "BMD", sans-serif;*/
-
-/*
-@import url("/font/NotoSansMonoCJKkr-Bold.otf");
-@font-face{font-family:"Noto-Bold";
-		   src: local("/font/NotoSansMonoCJKkr-Bold.otf");
+@font-face{font-family:'Noto-Bold';
+		   src: local('/font/NotoSansMonoCJKkr-Bold.otf');
 		   font-weight:bold;}
 @font-face{font-family:"Noto-Regular";
-		   src: local("/font/NotoSansMonoCJKkr-Regular.otf");
+		   src: local('/font/NotoSansMonoCJKkr-Regular.otf');
 		   font-weight:normal;}
-*/	   
+@font-face{
+ font-family:'Godo';
+ font-style:normal;
+ font-weight:400;
+ src:url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff2') format('woff2'),
+     url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoM.woff') format('woff');
+}
+@font-face{
+ font-family:'Godo';
+ font-style:normal;
+ font-weight:700;
+ src:url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff2') format('woff2'),
+     url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff') format('woff');
+}
+
+@import url('https://cdn.rawgit.com/singihae/Webfonts/master/style.css'); 
+/*.jua {font-family:'BM JUA','배달의민족 주아',sans-serif;} .hana{font-family:'BM HANNA','배달의민족 한나', sans-serif; }*/
+
+
+/*----------------------폰트끝------------------------*/	   
 
 /* CSS Document */
-body{font-family: 'Nanum Gothic', serif;}
+body{font-family:'Noto-Bold';}
 .padding-0{padding:0;}
 .padding-lr-0{padding-left:0; padding-right:0;}
 #menu{display:none;}
@@ -48,20 +65,19 @@ header .search{padding-top:19px; padding-right:0;}
 	border: solid 1px #1b87c9;
 }
 .mob-footer{display:none;}
-.web-footer{width:100%; height:auto; background-color:#ececec; padding:30px 0; color:#82878b; line-height:1.5em;}
-.web-footer .about p{font-family: "BMD", sans-serif; font-size:20px; color:#1b87c9;}
+.web-footer{width:100%; height:auto; background-color:#ececec; padding:30px 0; color:#82878b; line-height:1.5em; font-weight:bold;}
+.web-footer .about p{font-size:20px; color:#1b87c9;}
 .web-footer .about p a{color:#9fa4a8;}
 .web-footer .line-about{width:auto; height:3px; background-color:#1b87c9; margin:-8px 0 10px 0;}
-.web-footer .about-con p{font-family:"BMD", sans-serif; font-size:18px; color:#82878b;}
-.web-footer .ourworks p{font-family: "BMD", sans-serif; font-size:20px; color:#1b87c9;}
+.web-footer .about-con p{font-size:18px; color:#82878b;}
+.web-footer .ourworks p{font-size:20px; color:#1b87c9;}
 .web-footer .ourworks p a{color:#9fa4a8;}
-.web-footer .ourworks-con p{font-family:"BMD", sans-serif; font-size:18px; color:#82878b;}
+.web-footer .ourworks-con p{font-size:18px; color:#82878b;}
 .web-footer .line-1px{width:auto; height:1px; background-color:#1b87c9;}
 .web-footer .company-con{font-size:12px; margin-top:10px;}
 
 
 @media all and (max-width:1024px) {
-body{font-family: 'Nanum Gothic', serif;}
 .tab-menu{margin-left:0; margin-right:0;}
 .tab-menu-select{background-color:#fff; color:#1b87c9;}
 .contents_sub_menu{margin-left:58px; color:#FFFFFF; font-size:16px; }
