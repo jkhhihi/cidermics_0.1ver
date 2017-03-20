@@ -1,4 +1,4 @@
-body{font-family: 'Nanum Gothic', serif;}
+body{/*font-family: 'Nanum Gothic', serif;*/}
 .appbanner{display:none;}
 .appbanner-bg{position:relative; background-image:url(http://i.imgur.com/5mXAWvJ.jpg); background-repeat:no-repeat; background-size:100%; width:100%; height:auto; max-width:2000px; max-height:700px;}
 .appbanner-bg .ul-place{width:100%; height:auto; position:absolute; z-index:100; right:12%; bottom:6%;}

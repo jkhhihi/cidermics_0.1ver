@@ -1,4 +1,4 @@
-body{font-family: 'Nanum Gothic', serif;}
+body{/*font-family: 'Nanum Gothic', serif;*/}
 .menu{margin-top:70px;}
 
 .appbanner-bg{position:relative; background-image:url(/page_imgs/main_img/bg-appbanner2.jpg); background-repeat:no-repeat; background-size:100%; width:100%; height:auto; max-width:2000px; max-height:700px;}
@@ -91,26 +91,26 @@ color:#ff574a; font-family:"BMD"; border-bottom:2px solid #ff574a; font-weight:n
 .con-img img{width:100%;}
 
 /*팟캐스트*/
-.podcast-main{margin-top:70px;}
-.podcast .padcast-title{font-size:20px; color:#212121; font-weight:bold; border-bottom:4px solid #ececec; margin:20px 0;}
+.podcast-main{margin-top:70px; font-family:'BM JUA','배달의민족 주아',sans-serif;}
+.podcast .padcast-title{font-size:20px; color:#212121; border-bottom:4px solid #ececec; margin:20px 0;}
 .podcast .padcast-title img{margin:20px 0;}
 .podcast-con{margin:50px 0;}
-.podcast-con .con-in{font-weight:bold; padding:0 30px; margin-bottom:30px; font-size:16px;}
+.podcast-con .con-in{padding:0 30px; margin-bottom:30px; font-size:16px;}
 .podcast-con .con-in .thum-img{padding-left:0 !important; padding-right:0 !important;}
 .podcast-con .con-in .thum-img img{border:0 solid; border-radius:5px;}
 .podcast-con .con-plus p{width:200px; background-color:#e68a82; margin-top:50px;
-border:4px solid #ececec; border-radius:10px; color:#fff; font-weight:bold; font-size:18px; padding:10px 0;}
+border:4px solid #ececec; border-radius:10px; color:#fff; font-size:18px; padding:10px 0;}
 .podcast-con .border-2{border:2px solid #e68a82; border-radius:5px;}
 .podcast-con .border-2 img{margin:5px 0;}
 .podcast-con .border-2 a p:hover{color:#ff574a;}
 
 /*기획 콘텐츠*/
-.project-main{margin:70px 0;}
-.project-title{border-bottom:4px solid #ececec; font-size:20px; color:#212121; font-weight:bold; margin:20px 0;}
+.project-main{margin:60px 0; font-family:'Godo'; font-weight:400;}
+.project-title{border-bottom:4px solid #ececec; font-size:18px; color:#212121; margin:20px 0;}
 .project-title img{margin:20px 0;}
 ./*project-con .banner img{width:100%;}*/
 .project-con .con-plus p{width:200px; background-color:#ececec; margin:50px 0 40px 0;
-border:4px solid #1b87c9; border-radius:10px; color:#1b87c9; font-weight:bold; font-size:18px; padding:10px 0;}
+border:4px solid #1b87c9; border-radius:10px; color:#1b87c9; font-size:18px; padding:10px 0;}
 .project-in{margin:100px 0;}
 .project-in .banner img{width:100%;}
 .project-in .con-in .con-img{border:2px solid #ececec; border-radius:6px; margin-bottom:40px;}
@@ -121,7 +121,6 @@ border:4px solid #1b87c9; border-radius:10px; color:#1b87c9; font-weight:bold; f
 	white-space: nowrap; 
 	width: 96%;
 	margin:8px 0;
-	font-weight:bold;
 	font-size:16px;
 }
 .project-in .con-in a:hover{color:#1b87c9;}
@@ -202,9 +201,9 @@ border:4px solid #1b87c9; border-radius:10px; color:#1b87c9; font-weight:bold; f
 .podcast-con .border-2 .col-xs-6{padding:0 2px;}
 
 /*기획 콘텐츠*/
-.project-main{margin:50px 0;}
+.project-main{margin:40px 0;}
 .project-title{font-size:16px;}
-.project-title img{margin:10px 0; width:100px;}
+.project-title img{margin:10px 0; width:80px;}
 .project-con .con-plus p{border:2px solid #1b87c9; width:80%; margin-top:30px; font-size:12px; padding:10px 0;}
 .project-con .banner{margin:10px 0; padding:0 5px;}
 .project-in{margin:50px 0;}
