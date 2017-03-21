@@ -30,7 +30,7 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
 color:#ff574a; font-family:"BMD"; border-bottom:2px solid #ff574a; font-weight:normal;}
 /*.con-img{background-color:#000;}*/
 .main-contents .con-img img{width:100%;}
-.icon-plus_con img{width:40px; margin-bottom:80px;}
+.icon-plus_con img{width:30px; margin-bottom:80px;}
 
 /*콘텐츠 디테일 부분*/
 .contents .contents-in{padding:0 15px;}
