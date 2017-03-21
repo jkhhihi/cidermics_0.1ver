@@ -28,156 +28,21 @@
 <link rel="stylesheet" type="text/css" href="/css/component.css" />
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
+
 <script src="/js/modernizr.custom.js"></script>
-<script src="/js/gotoup.js"></script>
 <script language="javascript" type="text/javascript">
 function openWinFB(){  
-    window.open("https://www.facebook.com/cidermics");  
+    window.open("https://www.facebook.com/cidermics");
 }
 function openWinKA(){
     window.open("http://plus.kakao.com/home/@%EC%82%AC%EC%9D%B4%EB%8B%A4%EA%B2%BD%EC%A0%9C");  
 }
 </script>
-<script>
-var now = new Date(); 
-var todayAtMidn = new Date(now.getFullYear(), now.getMonth(), now.getDate(),now.getHours());
- 
-// Set specificDate to a specified date at midnight.
-var specificDate = new Date("2016/8/20/2");
- 
-// Compare the two dates by comparing the millisecond
-// representations.
-if (todayAtMidn.getTime() == specificDate.getTime())
-{
-    location.href="cid_main";
-}
-</script>
-<style>
-#info-wrap {
-	color:#fff;
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	display: -webkit-flex;
-	display: flex;
-	-webkit-align-items: center;
-	align-items: center;
-	-webkit-justify-content: center;
-	justify-content: center;
-	background: rgba(0, 0, 0, 0.55);
-	z-index: 999999;
-}
-.info-close {
-	border: 2px solid #fff;
-	color: #fff;
-	background: none;
-	text-transform: uppercase;
-	font-weight: bold;
-	padding: 0.5em 0.5em;
-	letter-spacing: 1px;
-	margin: 1em 0 0 0;
-}
-@media screen and (max-width: 70em) {
-	.mockup-width--forth {
-		width: 50%;
-	}
-}
-@media screen and (max-width: 60em) {
-	.mockup-width--third {
-		width: 100%;
-	}
-}
-@media screen and (max-width: 50em) {
-	.customizer {
-		top: 0;
-		width: 100%;
-		height: auto;
-		padding: 30px 0;
-		-webkit-transform: none;
-		transform: none;
-		border-radius: 0;
-	}
-	.color-tool {
-		-webkit-flex-direction: row;
-		flex-direction: row;
-		-webkit-justify-content: center;
-		justify-content: center;
-	}
-	.color-tool li {
-		margin: 3px;
-	}
-	.content {
-		padding: 1em 0;
-	}
-	.mockup-section {
-		padding: 40px 0;
-	}
-	.mockup-content {
-		padding: 0 10px;
-	}
-	.mockup-width--forth,
-	.mockup-width--half {
-		width: 100%;
-	}
-	.mockup-logo,
-	.mockup-nav {
-		width: 100%;
-		text-align: center;
-	}
-	.mockup-nav {
-		line-height: 1.5;
-		padding: 20px 0 0;
-	}
-	.mockup-heading--large {
-		font-size: 2.25em;
-	}
-	.mockup-blockquote {
-		font-size: 1.5em;
-	}
-}
-</style>
-<style>
-	.ui-datepicker-calendar {
-    display: none;
-    }
-</style>
-<!-- 팝업창 -->
-<style type="text/css">
-.button-checkbox .btn{height:45px; padding:0 10px; background-color:#025F96; color:#fff; font-size:14px; border-radius:2px;}
-.button-checkbox .btn:focus, .btn:hover{background-color:#025F96; color:#fff;}
-.button-close .btn{height:45px; padding:0 10px; background-color:#ececec; color:#025F96; font-size:14px; border-radius:2px;}
-#pop{
-  	width: 90%;
- 	height:auto;
-	max-width: 500px;
-	max-height: 580px;
-	background: #fff;
-	padding: 1em 1em;
-	line-height: 1.5;
-	text-align: center;
-	box-shadow: 0 0 30px rgba(0,0,0,0.2);
-	left:50%;
-	padding:10px 10px;
-}
-.close1 div{float:left; text-align:right; }
-#pdtop{padding-top:10px;}
-
-@media(max-width: 760px){
-#pop{
-  	height:auto;
-	max-height: 580px;
-	padding:10px 10px;
-}  
-}
-</style>
 </head>
 
 <body>
 
 <!--위로가기 버튼-->
-<div id="but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></div>
 <% include top %>
 <div class="contents_detail-mob_menu"><img src="http://i.imgur.com/iW4DMcC.png" height="50"></div>
 <script type="text/javascript">
@@ -262,7 +127,7 @@ if (todayAtMidn.getTime() == specificDate.getTime())
 </script>
 
 <!-- 메인 팝업 창 -->
-<div id="info-wrap">
+<!--div id="info-wrap">
 		<div id="pop">
 			 <div>
   				<a href="/finance/necessary"><img class="img-responsive" src="http://i.imgur.com/FzstPqS.jpg"></a>
@@ -281,7 +146,7 @@ if (todayAtMidn.getTime() == specificDate.getTime())
  			</div>
 			
 		</div>
-</div>
+</div-->
  
 <script language="Javascript">
   cookiedata = document.cookie;    
@@ -344,65 +209,36 @@ $(document).ready(function(){
 	<a href="/project"><div class="col-md-2 col-xs-4"><p>기획 콘텐츠</p></div></a>
 	<a href="/podcast"><div class="col-md-2 col-xs-4"><p>팟캐스트</p></div></a>
 	<a href="/finance/review"><div class="col-md-2 col-xs-4"><p>재무 리얼후기</p></div></a>
-	<a href="/discuss"><div class="col-md-2 col-xs-4"><p>토론 게시판</p></div></a>
+	<a href="/discuss"><div class="col-md-2 col-xs-4"><p>토론 포럼</p></div></a>
 </div>
 	
 <!-- 콘텐츠 -->
 <div class="menu6_con container row">
 	<div class="new-con col-md-6 col-xs-12">
 		<div class="menu-title row" >
-			<div class="col-xs-8 padding-0">최신 콘텐츠</div><div class="col-xs-4 padding-0" align="right"><a href="#"></a><a href="#"><p class="plus">더보기 ></p></a></a></div>
+			<div class="col-xs-8 padding-0">최신 콘텐츠</div>
+			<div class="col-xs-4 padding-0" align="right"><a href="#"></a><a href="#"><p class="plus">더보기 ></p></a></a></div>
 			<div class="line-3px col-xs-12"></div>
 		</div>
 		<!-- 콘텐츠 뿌림 시작 -->		
 		<div class="con-in row" align="center">
+		<% for(var i=0; i < contents.length; i++) { %>
 			<div class="col-md-6 col-xs-4">
-				<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
+				<div class="new-mark"><img class="img-responsive" src="<%= contents[i].chkDat%>"></div>
 				<div class="thumnail">
-					<a href="/contents">
+					<a href="/contents/detail/<%= contents[i].con_no %>">
 					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/5.png"></div>
+						<div class="con-thumbnail"><img class="img-responsive" src="<%= contents[i].con_photo %>"></div>
 					</div>
-					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
+					<div class="con-title"><%= contents[i].con_title %></div>
 					</a>
 				</div>			
 			</div>
-			<div class="col-md-6 col-xs-4">
-				<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
-				<div class="thumnail">
-					<a href="/contents">
-					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/3.png"></div>
-					</div>
-					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
-					</a>
-				</div>			
-			</div>
-			<div class="col-md-6 col-xs-4">
-				<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
-				<div class="thumnail">
-					<a href="/contents">
-					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/1.png"></div>
-					</div>
-					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
-					</a>
-				</div>			
-			</div>
-			<div class="col-md-6 col-xs-4">
-				<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
-				<div class="thumnail">
-					<a href="/contents">
-					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/7.png"></div>
-					</div>
-					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
-					</a>
-				</div>			
-			</div>									
-		</div>
+		<% } %>
 		<!-- 콘텐츠 뿌림 끝 -->
+		</div>
 	</div>
+	<!--최신 콘텐츠 끝 -->
 	<div class="popular-con col-md-6 col-xs-12">
 		<div class="menu-title row">
 			<div class="col-xs-8 padding-0">인기 콘텐츠</div><div class="col-xs-4 padding-0" align="right"><a href="/contents"><p class="plus">더보기 ></p></a></div>
@@ -410,52 +246,21 @@ $(document).ready(function(){
 		</div>
 		<!-- 콘텐츠 뿌림 시작 -->		
 		<div class="con-in row" align="center">
+			<% for(var i=0; i < popular.length; i++) { %>
 			<div class="col-md-6 col-xs-4">
-				<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
+				<div class="new-mark"><img class="img-responsive" src="<%= popular[i].chkDat%>"></div>
 				<div class="thumnail">
-					<a href="/contents">
+					<a href="/contents/detail/<%= popular[0].con_no %>">
 					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/5.png"></div>
+						<div class="con-thumbnail"><img class="img-responsive" src="<%= popular[i].con_photo %>"></div>
 					</div>
-					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
+					<div class="con-title"><%= popular[i].con_title %></div>
 					</a>
 				</div>			
 			</div>
-			<div class="col-md-6 col-xs-4">
-				<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
-				<div class="thumnail">
-					<a href="/contents">
-					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/3.png"></div>
-					</div>
-					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
-					</a>
-				</div>			
-			</div>
-			<div class="col-md-6 col-xs-4">
-				<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
-				<div class="thumnail">
-					<a href="/contents">
-					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/1.png"></div>
-					</div>
-					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
-					</a>
-				</div>			
-			</div>
-			<div class="col-md-6 col-xs-4">
-				<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
-				<div class="thumnail">
-					<a href="/contents">
-					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/7.png"></div>
-					</div>
-					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
-					</a>
-				</div>			
-			</div>									
-		</div>
+			<% } %>
 		<!-- 콘텐츠 뿌림 끝 -->
+		</div>
 	</div>
 	<div class="plan-con col-md-6 col-xs-12">
 		<div class="menu-title row">
@@ -464,31 +269,23 @@ $(document).ready(function(){
 		</div>
 		<!-- 콘텐츠 뿌림 시작 -->		
 		<div class="con-in row" align="center">
+			<% for(var i=0; i < project.length; i++) { %>
 			<div class="col-md-6 col-xs-4">
-				<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
+				<div class="new-mark"><img class="img-responsive" src="<%= project[i].chkDat%>"></div>
 				<div class="thumnail">
-					<a href="/contents">
+					<a href="/contents/detail/<%= project[i].con_no %>">
 					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/1.png"></div>
+						<div class="con-thumbnail"><img class="img-responsive" src="<%= project[i].con_photo %>"></div>
 					</div>
-					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
+					<div class="con-title"><%= project[i].con_title %></div>
 					</a>
 				</div>			
 			</div>
-			<div class="col-md-6 col-xs-4">
-				<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
-				<div class="thumnail">
-					<a href="/contents">
-					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/7.png"></div>
-					</div>
-					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
-					</a>
-				</div>			
-			</div>
+			<% } %>
 		</div>
 		<!-- 콘텐츠 뿌림 끝 -->
 	</div>
+
 	<div class="podcast-con col-md-6 col-xs-12">
 		<div class="menu-title row">
 			<div class="col-xs-8 padding-0">팟캐스트</div><div class="col-xs-4 padding-0" align="right"><a href="/podcast"><p class="plus">더보기 ></p></a></div>
@@ -496,63 +293,57 @@ $(document).ready(function(){
 		</div>
 		<!-- 콘텐츠 뿌림 시작 -->		
 		<div class="con-in row" align="center">
+			<% for(var i=0; i < podcast.length; i++) { %>
 			<div class="col-md-6 col-xs-4">
-				<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
+				<div class="new-mark"><img class="img-responsive" src="<%= podcast[i].chkDat%>"></div>
 				<div class="thumnail">
-					<a href="/contents">
+					<a href="/contents/detail/<%= podcast[i].con_no %>">
 					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/1.png"></div>
+						<div class="con-thumbnail"><img class="img-responsive" src="<%= podcast[i].con_photo %>"></div>
 					</div>
-					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
+					<div class="con-title"><%= podcast[i].con_title %></div>
 					</a>
 				</div>			
 			</div>
-			<div class="col-md-6 col-xs-4">
-				<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
-				<div class="thumnail">
-					<a href="/contents">
-					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/8.png"></div>
-					</div>
-					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
-					</a>
-				</div>			
-			</div>
+			<% } %>
 		</div>
 		<!-- 콘텐츠 뿌림 끝 -->
 	</div>
-	<div class="col-md-6 col-xs-12"><!-- 재무리얼후기,콘텐츠카테고리별 -->
+
+
+
+
+<div class="col-md-6 col-xs-12"><!-- 재무리얼후기,콘텐츠카테고리별 -->
 		<div class="review-con row">
 			<div class="menu-title row">
-				<div class="col-xs-8 padding-0">재무 리얼후기</div><div class="col-xs-4 padding-0" align="right"><a href="/finance/review"><p class="plus">더보기 ></p></a></div>
+				<div class="col-xs-8 padding-0">재무 리얼후기</div>
+				<div class="col-xs-4 padding-0" align="right"><a href="/finance/review"><p class="plus">더보기 ></p></a></div>
 				<div class="line-3px col-xs-12"></div>
 			</div>
 			<!-- 콘텐츠 뿌림 시작 -->		
 			<div id="text-carousel" class="carousel slide" data-ride="carousel">
 		    <!-- Wrapper for slides -->
-		    <div class="con-in row" align="center" style="margin-right:0; margin-left:0">
-		    	<div class="col-xs-12 border-box">
-			        <ol class="carousel-indicators">
-			          <li data-target="#text-carousel" data-slide-to="0" class="active"></li>
-			          <li data-target="#text-carousel" data-slide-to="1"></li>
-			          <li data-target="#text-carousel" data-slide-to="2"></li>
-			        </ol>		    	
-		            <div class="carousel-inner" role="listbox">
-		                <div class="item active">
-						    <p><B>후기1 : 현재 가입되어 있는 상품과 <br> 소비 패턴을 꼼꼼하게 ...<span>+</span></B></p>
-						    <p>신상 : 홍XX / 40대 / 대기업 직원</P>
-		                </div>
-		                <div class="item">
-						    <p><B>후기2 : 현재 가입되어 있는 상품과 <br> 소비 패턴을 꼼꼼하게 ...<span>+</span></B></p>
-							<p>신상 : 홍XX / 40대 / 대기업 직원</P>
-		                </div>
-		                <div class="item">
-						    <p><B>후기3 : 현재 가입되어 있는 상품과 <br> 소비 패턴을 꼼꼼하게 ...<span>+</span></B></p>
-							<p>신상 : 홍XX / 40대 / 대기업 직원</P>
-		                </div>
-		            </div>
+			    <div class="con-in row" align="center" style="margin-right:0; margin-left:0">
+			    	<div class="col-xs-12 border-box">
+				        <ol class="carousel-indicators">
+				          <li data-target="#text-carousel" data-slide-to="0" class="active"></li>
+				          <li data-target="#text-carousel" data-slide-to="1"></li>
+				          <li data-target="#text-carousel" data-slide-to="2"></li>
+				        </ol>
+				            <div class="carousel-inner" role="listbox">
+				                <div class="item active">
+								    <p><B>후기 " <%= rev[0].rev_QA1 %> "</B></p>
+								    <p><%= rev[0].rev_title %></P>
+				                </div>
+				                <% for(var i=1; i < rev.length; i++) { %>
+				                <div class="item">
+								    <p><B>후기 " <%= rev[i].rev_QA1 %> "</B></p>
+									<p><%= rev[i].rev_title %></P>
+				                </div>
+				            	<% } %>
+				            </div>
+				    </div>
 			    </div>
-		    </div>
 		    <!-- Controls --> 
 		    <a class="left carousel-control" href="#text-carousel" role="button" data-slide="prev">
 		    	<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -565,6 +356,8 @@ $(document).ready(function(){
 			<!-- 콘텐츠 뿌림 끝 -->	
 			</div>
 		</div>
+
+
 		<!-- 경제 금융 기업 주식 카테고리별 콘텐츠 나오는것 -->		
 		<div class="main-con row" align="center" style="margin-right:0; margin-left:0">	
 			<div class="menu-title col-xs-12">	
@@ -575,137 +368,99 @@ $(document).ready(function(){
 		    	<li class="col-xs-3"><a data-toggle="tab" href="#menu3"><img class="img-responsive" src="/page_imgs/main_img/icon-con-menu4n.png" onclick="changeImg()">주식</a></li>
 		  	</ul>
 			</div>
-		 </div>
+		</div>
+
+
 		 <div class="tab-content col-xs-12">
 		 	<div id="home" class="con-in row tab-pane fade in active">
+				<% for(var i=0; i < economics.length; i++) { %>
 				<div class="col-md-6 col-xs-4">
-					<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
+					<div class="new-mark"><img class="img-responsive" src="<%= economics[i].chkDat%>"></div>
 					<div class="thumnail">
-						<a href="/contents">
+						<a href="/contents/detail/<%= economics[i].con_no %>">
 						<div class="con-img">
-							<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/8.png"></div>
+							<div class="con-thumbnail"><img class="img-responsive" src="<%= economics[i].con_photo %>"></div>
 						</div>
-						<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
+						<div class="con-title"><%= economics[i].con_title %></div>
 						</a>
 					</div>			
 				</div>
-				<div class="col-md-6 col-xs-4">
-					<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
-					<div class="thumnail">
-						<a href="/contents">
-						<div class="con-img">
-							<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/8.png"></div>
-						</div>
-						<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
-						</a>
-					</div>			
-				</div>
+				<% } %>
 		    </div>
 		    <div id="menu1" class="con-in row tab-pane fade">
+				<% for(var i=0; i < finance.length; i++) { %>
 				<div class="col-md-6 col-xs-4">
-					<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
+					<div class="new-mark"><img class="img-responsive" src="<%= finance[i].chkDat%>"></div>
 					<div class="thumnail">
-						<a href="/contents">
+						<a href="/contents/detail/<%= finance[i].con_no %>">
 						<div class="con-img">
-							<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/8.png"></div>
+							<div class="con-thumbnail"><img class="img-responsive" src="<%= finance[i].con_photo %>"></div>
 						</div>
-						<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
+						<div class="con-title"><%= finance[i].con_title %></div>
 						</a>
 					</div>			
 				</div>
-				<div class="col-md-6 col-xs-4">
-					<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
-					<div class="thumnail">
-						<a href="/contents">
-						<div class="con-img">
-							<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/8.png"></div>
-						</div>
-						<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
-						</a>
-					</div>			
-				</div>
+				<% } %>
 		    </div>
 		    <div id="menu2" class="con-in row tab-pane fade">
+				<% for(var i=0; i < company.length; i++) { %>
 				<div class="col-md-6 col-xs-4">
-					<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
+					<div class="new-mark"><img class="img-responsive" src="<%= company[i].chkDat%>"></div>
 					<div class="thumnail">
-						<a href="/contents">
+						<a href="/contents/detail/<%= company[i].con_no %>">
 						<div class="con-img">
-							<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/8.png"></div>
+							<div class="con-thumbnail"><img class="img-responsive" src="<%= company[i].con_photo %>"></div>
 						</div>
-						<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
+						<div class="con-title"><%= company[i].con_title %></div>
 						</a>
 					</div>			
 				</div>
-				<div class="col-md-6 col-xs-4">
-					<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
-					<div class="thumnail">
-						<a href="/contents">
-						<div class="con-img">
-							<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/8.png"></div>
-						</div>
-						<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
-						</a>
-					</div>			
-				</div>
+				<% } %>
 		    </div>
 		  	<div id="menu3" class="con-in row tab-pane fade">
+				<% for(var i=0; i < stock.length; i++) { %>
 				<div class="col-md-6 col-xs-4">
-					<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
+					<div class="new-mark"><img class="img-responsive" src="<%= stock[i].chkDat%>"></div>
 					<div class="thumnail">
-						<a href="/contents">
+						<a href="/contents/detail/<%= stock[i].con_no %>">
 						<div class="con-img">
-							<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/8.png"></div>
+							<div class="con-thumbnail"><img class="img-responsive" src="<%= stock[i].con_photo %>"></div>
 						</div>
-						<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
+						<div class="con-title"><%= stock[i].con_title %></div>
 						</a>
 					</div>			
 				</div>
-				<div class="col-md-6 col-xs-4">
-					<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
-					<div class="thumnail">
-						<a href="/contents">
-						<div class="con-img">
-							<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/8.png"></div>
-						</div>
-						<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
-						</a>
-					</div>			
-				</div>
+				<% } %>
 		    </div>
 		</div>
-	</div>
+</div>
+
+
+	<!-- 토론 게시판 -->
 	<div class="discuss-con col-md-6 col-xs-12">
 		<div class="menu-title row">
-			<div class="col-xs-8 padding-0">토론 게시판</div><div class="col-xs-4 padding-0" align="right"><a href="/discuss"><p class="plus">더보기 ></p></a></div>
+			<div class="col-xs-8 padding-0">토론 포럼</div><div class="col-xs-4 padding-0" align="right"><a href="/discuss"><p class="plus">더보기 ></p></a></div>
 			<div class="line-3px col-xs-12"></div>
 		</div>
 		<!-- 콘텐츠 뿌림 시작 -->		
 		<div class="con-in row" align="center" style="margin-left:0; margin-right:0">
+		<% for(var i=0; i < discuss.length; i++) { %>
 			<div class="col-xs-12 mg-bot">
 				<div class="row">
-					<a href="/discuss"><div class="dis-title col-xs-12"><p>"서울메트로와 도시철도공사는 통합해야 하나"</p></div></a>
+					<a href="/discuss"><div class="dis-title col-xs-12"><p>"<%= discuss[i].dis_title%>"</p></div></a>
 					<div class="dis-img col-xs-12" align="right">
 						<div class="dis-icon row">
 							<!-- img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-like.png" ><p style="display:inline-block;">52</p -->
 							<img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-comment1.svg" ><p style="display:inline-block;">39</p>	
 						</div>	
 					</div>
-					<div class="dis-bg-img col-xs-12"><div class="dis-black-box"></div><img class="img-responsive" src="/page_imgs/main_img/img2.jpg"></div>	
+					<div class="dis-bg-img col-xs-12">
+					<div class="dis-black-box"></div>
+					<img class="img-responsive" src="<%= discuss[i].dis_thum%>">
+					</div>	
 				</div>
 			</div>
-			<div class="col-xs-12 mg-bot">
-				<div class="row">
-					<a href="/discuss"><div class="dis-title col-xs-12"><p>"서울메트로와 도시철도공사는 통합해야 하나"</p></div></a>
-					<div class="dis-img col-xs-12" align="right">
-						<div class="dis-icon row">
-							<!-- img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-like.png" ><p style="display:inline-block;">52</p -->
-							<img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-comment1.svg" ><p style="display:inline-block;">39</p>	
-						</div>	
-					</div>
-					<div class="dis-bg-img col-xs-12"><div class="dis-black-box"></div><img class="img-responsive" src="/page_imgs/main_img/img2.jpg"></div>	
-				</div>
-			</div>					
+			<% } %>					
 		</div>
 	</div>
 		<!-- 콘텐츠 뿌림 끝 -->		
@@ -714,62 +469,33 @@ $(document).ready(function(){
 
 	
 	
-<!----------------------- 모바일 콘텐츠 ----------------------------->
+<!--             모바일 콘텐츠              -->
+
 <div class="mob_menu6_con container row">
+
 	<div class="new-con swiper-container col-md-6 col-xs-12">
 		<div class="menu-title row" >
 			<div class="col-xs-8 padding-0">최신 콘텐츠</div><div class="col-xs-4 padding-0" align="right"><a href="#"><p class="plus">더보기 ></p></a></div>
 		</div>
 		<!-- 콘텐츠 뿌림 시작 -->
 		<div class="con-in swiper-wrapper" align="center">
+			<% for(var i=0; i < contents.length; i++) { %>
 			<div class="swiper-slide">
-				<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
+				<div class="new-mark"><img class="img-responsive" src="<%= contents[i].chkDat%>"></div>
 				<div class="thumnail">
-					<a href="/contents">
+					<a href="/contents/detail/<%= contents[i].con_no %>">
 					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/8.png"></div>
+						<div class="con-thumbnail"><img class="img-responsive" src="<%= contents[i].con_photo %>"></div>
 					</div>
-					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
+					<div class="con-title"><%= contents[i].con_title %></div>
 					</a>
-				</div>					
+				</div>
 			</div>
-			<div class="swiper-slide">
-				<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
-				<div class="thumnail">
-					<a href="/contents">
-					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/2.png"></div>
-					</div>
-					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
-					</a>
-				</div>	
-			</div>
-			<div class="swiper-slide">
-				<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
-				<div class="thumnail">
-					<a href="/contents">
-					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/1.png"></div>
-					</div>
-					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
-					</a>
-				</div>	
-			</div>
-			<div class="swiper-slide">
-				<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
-				<div class="thumnail">
-					<a href="/contents">
-					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/7.png"></div>
-					</div>
-					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
-					</a>
-				</div>	
-			</div>
+			<% } %>			
 		</div>
 		<!-- 콘텐츠 뿌림 끝 -->
 	</div>
-	
+
 	
 	<div class="section-line col-xs-12"></div>
 	<div class="popular-con swiper-container col-md-6 col-xs-12">
@@ -778,50 +504,19 @@ $(document).ready(function(){
 		</div>
 		<!-- 콘텐츠 뿌림 시작 -->		
 		<div class="con-in swiper-wrapper" align="center">
+		<% for(var i=0; i < popular.length; i++) { %>
 			<div class="swiper-slide">
-				<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
+				<div class="new-mark"><img class="img-responsive" src="<%= popular[i].chkDat%>"></div>
 				<div class="thumnail">
-					<a href="/contents">
+					<a href="/contents/detail/<%= popular[0].con_no %>">
 					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/8.png"></div>
+						<div class="con-thumbnail"><img class="img-responsive" src="<%= popular[i].con_photo %>"></div>
 					</div>
-					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
+					<div class="con-title"><%= popular[i].con_title %></div>
 					</a>
-				</div>					
+				</div>
 			</div>
-			<div class="swiper-slide">
-				<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
-				<div class="thumnail">
-					<a href="/contents">
-					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/2.png"></div>
-					</div>
-					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
-					</a>
-				</div>	
-			</div>
-			<div class="swiper-slide">
-				<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
-				<div class="thumnail">
-					<a href="/contents">
-					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/1.png"></div>
-					</div>
-					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
-					</a>
-				</div>	
-			</div>
-			<div class="swiper-slide">
-				<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
-				<div class="thumnail">
-					<a href="/contents">
-					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/7.png"></div>
-					</div>
-					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
-					</a>
-				</div>	
-			</div>
+			<% } %>
 		</div>
 		<!-- 콘텐츠 뿌림 끝 -->
 	</div>
@@ -832,50 +527,19 @@ $(document).ready(function(){
 		</div>
 		<!-- 콘텐츠 뿌림 시작 -->		
 		<div class="con-in swiper-wrapper" align="center">
+		<% for(var i=0; i < project.length; i++) { %>
 			<div class="swiper-slide">
-				<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
+				<div class="new-mark"><img class="img-responsive" src="<%= project[i].chkDat%>"></div>
 				<div class="thumnail">
-					<a href="/contents">
+					<a href="/contents/detail/<%= project[0].con_no %>">
 					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/8.png"></div>
+						<div class="con-thumbnail"><img class="img-responsive" src="<%= project[i].con_photo %>"></div>
 					</div>
-					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
+					<div class="con-title"><%= project[i].con_title %></div>
 					</a>
-				</div>					
+				</div>
 			</div>
-			<div class="swiper-slide">
-				<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
-				<div class="thumnail">
-					<a href="/contents">
-					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/2.png"></div>
-					</div>
-					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
-					</a>
-				</div>	
-			</div>
-			<div class="swiper-slide">
-				<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
-				<div class="thumnail">
-					<a href="/contents">
-					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/1.png"></div>
-					</div>
-					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
-					</a>
-				</div>	
-			</div>
-			<div class="swiper-slide">
-				<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
-				<div class="thumnail">
-					<a href="/contents">
-					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/7.png"></div>
-					</div>
-					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
-					</a>
-				</div>	
-			</div>
+		<% } %>
 		</div>
 		<!-- 콘텐츠 뿌림 끝 -->
 	</div>	
@@ -898,17 +562,15 @@ $(document).ready(function(){
 			        </ol>		    	
 		            <div class="carousel-inner" role="listbox">
 		                <div class="item active">
-						    <p><B>후기1 : 현재 가입되어 있는 상품과 <br> 소비 패턴을 꼼꼼하게 ...<span>+</span></B></p>
-						    <p>신상 : 홍XX / 40대 / 대기업 직원</P>
+						   <p><B>후기 " <%= rev[0].rev_QA1 %> "</B></p>
+								    <p><%= rev[0].rev_title %></P>
+				        </div>
+				        <% for(var i=1; i < rev.length; i++) { %>
+				         <div class="item">
+						    <p><B>후기 " <%= rev[i].rev_QA1 %> "</B></p>
+							<p><%= rev[i].rev_title %></P>
 		                </div>
-		                <div class="item">
-						    <p><B>후기2 : 현재 가입되어 있는 상품과 <br> 소비 패턴을 꼼꼼하게 ...<span>+</span></B></p>
-							<p>신상 : 홍XX / 40대 / 대기업 직원</P>
-		                </div>
-		                <div class="item">
-						    <p><B>후기3 : 현재 가입되어 있는 상품과 <br> 소비 패턴을 꼼꼼하게 ...<span>+</span></B></p>
-							<p>신상 : 홍XX / 40대 / 대기업 직원</P>
-		                </div>
+		            	<% } %>
 		            </div>
 			    </div>
 		    </div>
@@ -932,84 +594,43 @@ $(document).ready(function(){
 		</div>
 		<!-- 콘텐츠 뿌림 시작 -->		
 		<div class="con-in swiper-wrapper" align="center">
+			<% for(var i=0; i < podcast.length; i++) { %>
 			<div class="swiper-slide">
-				<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
+				<div class="new-mark"><img class="img-responsive" src="<%= podcast[i].chkDat%>"></div>
 				<div class="thumnail">
-					<a href="/contents">
+					<a href="/contents/detail/<%= podcast[0].con_no %>">
 					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/8.png"></div>
+						<div class="con-thumbnail"><img class="img-responsive" src="<%= podcast[i].con_photo %>"></div>
 					</div>
-					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
+					<div class="con-title"><%= podcast[i].con_title %></div>
 					</a>
-				</div>					
+				</div>
 			</div>
-			<div class="swiper-slide">
-				<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
-				<div class="thumnail">
-					<a href="/contents">
-					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/2.png"></div>
-					</div>
-					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
-					</a>
-				</div>	
-			</div>
-			<div class="swiper-slide">
-				<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
-				<div class="thumnail">
-					<a href="/contents">
-					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/1.png"></div>
-					</div>
-					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
-					</a>
-				</div>	
-			</div>
-			<div class="swiper-slide">
-				<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
-				<div class="thumnail">
-					<a href="/contents">
-					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/7.png"></div>
-					</div>
-					<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
-					</a>
-				</div>	
-			</div>
+		<% } %>
 		</div>
 		<!-- 콘텐츠 뿌림 끝 -->
 	</div>
 	<div class="section-line col-xs-12"></div>	
 	<div class="discuss-con col-md-6 col-xs-12">
 		<div class="menu-title row" >
-			<div class="col-xs-8 padding-0">토론 게시판</div><div class="col-xs-4 padding-0" align="right"><a href="/discuss"><p class="plus">더보기 ></p></a></div>
+			<div class="col-xs-8 padding-0">토론 포럼</div><div class="col-xs-4 padding-0" align="right"><a href="/discuss"><p class="plus">더보기 ></p></a></div>
 		</div>
 		<!-- 콘텐츠 뿌림 시작 -->		
 		<div class="con-in row" align="center" style="margin-left:0; margin-right:0">
+		<% for(var i=0; i < discuss.length; i++) { %>
 			<div class="col-xs-12 mg-bot">
 				<div class="row">
-					<a href="/discuss"><div class="dis-title col-xs-12"><p>"서울메트로와 도시철도공사는 통합해야 하나"</p></div></a>
+					<a href="/discuss"><div class="dis-title col-xs-12"><p>"<%= discuss[i].dis_title%>"</p></div></a>
 					<div class="dis-img col-xs-12" align="right">
 						<div class="dis-icon row">
 							<!-- img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-like.png" ><p style="display:inline-block;">52</p -->
 							<img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-comment1.svg" ><p style="display:inline-block;">39</p>	
 						</div>	
 					</div>
-					<div class="dis-bg-img col-xs-12"><div class="dis-black-box"></div><img class="img-responsive" src="/page_imgs/main_img/img2.jpg"></div>	
+					<div class="dis-bg-img col-xs-12"><div class="dis-black-box"></div><img class="img-responsive" src="<%= discuss[i].dis_thum%>"></div>	
 				</div>
 			</div>
-			<div class="col-xs-12 mg-bot">
-				<div class="row">
-					<a href="/discuss"><div class="dis-title col-xs-12"><p>"서울메트로와 도시철도공사는 통합해야 하나"</p></div></a>
-					<div class="dis-img col-xs-12" align="right">
-						<div class="dis-icon row">
-							<!-- img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-like.png" ><p style="display:inline-block;">52</p -->
-							<img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-comment1.svg" ><p style="display:inline-block;">39</p>	
-						</div>	
-					</div>
-					<div class="dis-bg-img col-xs-12"><div class="dis-black-box"></div><img class="img-responsive" src="/page_imgs/main_img/img2.jpg"></div>	
-				</div>
-			</div>					
+			<% } %>				
 		</div>
 		<!-- 콘텐츠 뿌림 끝 -->
 	</div>
@@ -1031,100 +652,64 @@ $(document).ready(function(){
 		 </div>
 		 <div class="tab-content">
 		 	<div id="home_1" class="con-in row tab-pane fade in active">
-				<div class="col-xs-6">
-					<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
+				<% for(var i=0; i < economics.length; i++) { %>
+				<div class="col-md-6">
+					<div class="new-mark"><img class="img-responsive" src="<%= economics[i].chkDat%>"></div>
 					<div class="thumnail">
-						<a href="/contents">
+						<a href="/contents/detail/<%= economics[i].con_no %>">
 						<div class="con-img">
-							<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/8.png"></div>
+							<div class="con-thumbnail"><img class="img-responsive" src="<%= economics[i].con_photo %>"></div>
 						</div>
-						<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
+						<div class="con-title"><%= economics[i].con_title %></div>
 						</a>
 					</div>			
 				</div>
-				<div class="col-xs-6">
-					<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
-					<div class="thumnail">
-						<a href="/contents">
-						<div class="con-img">
-							<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/8.png"></div>
-						</div>
-						<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
-						</a>
-					</div>			
-				</div>
+				<% } %>
 		    </div>
 		    <div id="menu_1" class="con-in row tab-pane fade">
-				<div class="col-xs-6">
-					<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
+				<% for(var i=0; i < finance.length; i++) { %>
+				<div class="col-md-6">
+					<div class="new-mark"><img class="img-responsive" src="<%= finance[i].chkDat%>"></div>
 					<div class="thumnail">
-						<a href="/contents">
+						<a href="/contents/detail/<%= finance[i].con_no %>">
 						<div class="con-img">
-							<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/8.png"></div>
+							<div class="con-thumbnail"><img class="img-responsive" src="<%= finance[i].con_photo %>"></div>
 						</div>
-						<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
+						<div class="con-title"><%= finance[i].con_title %></div>
 						</a>
 					</div>			
 				</div>
-				<div class="col-xs-6">
-					<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
-					<div class="thumnail">
-						<a href="/contents">
-						<div class="con-img">
-							<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/8.png"></div>
-						</div>
-						<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
-						</a>
-					</div>			
-				</div>
+				<% } %>
 		    </div>
 		    <div id="menu_2" class="con-in row tab-pane fade">
-				<div class="col-xs-6">
-					<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
+				<% for(var i=0; i < company.length; i++) { %>
+				<div class="col-md-6">
+					<div class="new-mark"><img class="img-responsive" src="<%= company[i].chkDat%>"></div>
 					<div class="thumnail">
-						<a href="/contents">
+						<a href="/contents/detail/<%= company[i].con_no %>">
 						<div class="con-img">
-							<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/8.png"></div>
+							<div class="con-thumbnail"><img class="img-responsive" src="<%= company[i].con_photo %>"></div>
 						</div>
-						<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
+						<div class="con-title"><%= company[i].con_title %></div>
 						</a>
 					</div>			
 				</div>
-				<div class="col-xs-6">
-					<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
-					<div class="thumnail">
-						<a href="/contents">
-						<div class="con-img">
-							<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/8.png"></div>
-						</div>
-						<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
-						</a>
-					</div>			
-				</div>
+				<% } %>
 		    </div>
 		  	<div id="menu_3" class="con-in row tab-pane fade">
-				<div class="col-xs-6">
-					<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
+				<% for(var i=0; i < stock.length; i++) { %>
+				<div class="col-md-6">
+					<div class="new-mark"><img class="img-responsive" src="<%= stock[i].chkDat%>"></div>
 					<div class="thumnail">
-						<a href="/contents">
+						<a href="/contents/detail/<%= stock[i].con_no %>">
 						<div class="con-img">
-							<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/8.png"></div>
+							<div class="con-thumbnail"><img class="img-responsive" src="<%= stock[i].con_photo %>"></div>
 						</div>
-						<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
+						<div class="con-title"><%= stock[i].con_title %></div>
 						</a>
-					</div>			
+					</div>
 				</div>
-				<div class="col-xs-6">
-					<div class="new-mark"><img class="img-responsive" src="/page_imgs/main_img/new_mark4.svg"></div>
-					<div class="thumnail">
-						<a href="/contents">
-						<div class="con-img">
-							<div class="con-thumbnail"><img class="img-responsive" src="/page_imgs/contents_img/8.png"></div>
-						</div>
-						<div class="con-title">중국의 '사드 몽니'란? 너만 모르는 시사경제용어</div>
-						</a>
-					</div>			
-				</div>
+				<% } %>
 		    </div>
 		</div>
 	</div>		
@@ -1138,32 +723,6 @@ $(document).ready(function(){
     </script>
 	
 
-
-<!--datePicker and contents JQUERY-->
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-
-
-<!--form name="doneform" method="post" action="/selectDate">
-<div>
-    <label for="startDate">Date :</label>
-    <input name="startDate" id="startDate" class="date-picker" />
-</div>
-</form-->
-<!--script> 
-jQuery.datepicker._hideDatepicker = function() {
-	alert(month);
-  		/*$.ajax({
-    		url : '',
-    		data : '{year : year, month : month}',
-    		method : 'post',
-    		success : function (data){
-    			 alert("통신데이터 값 : " + data);
-            	}
-			});*/
-		};
-</script-->
 
 <% include bottom %>
 

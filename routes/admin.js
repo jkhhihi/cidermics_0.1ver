@@ -251,11 +251,13 @@ router.post('/contents/insert', ensureAuthenticated, function(req, res, next) {
 	var photo = req.body.photo;
 	var userNo = req.body.userNo;
 	var writer = req.body.writer;
+	console.log(writer);
 	var userText = req.body.userText;
 	var date = getWorldTime(+9);
 	var rdate = req.body.rdate;
-	
-	var sets = {con_category : category, con_title : title, con_content : contents, con_photo : photo, con_viewCount : 0, con_regDate : date, con_upDate : date, con_writer : writer, user_no : userNo, user_comment : userText, con_release : rdate};
+	console.log(userNo);
+	console.log(title);
+	var sets = {con_category : category, con_writer : writer, con_title : title, con_content : contents, con_photo : photo, con_viewCount : 0, con_regDate : date, con_upDate : date, user_no : userNo, user_comment : userText, con_release : rdate};
 	
 	mysql.insert('insert into cider.cid_contents set ?', sets,  function (err, data){
 		
@@ -278,7 +280,6 @@ router.post('/contents/update', ensureAuthenticated, function(req, res, next) {
 	var userText = req.body.userText;
 	var rdate   = req.body.rdate;
 	var date = getWorldTime(+9);
-	
 	var sets = {con_no : no, con_category : category, con_title : title, con_content : contents, con_photo : photo, con_upDate : date, user_no : userNo, user_comment : userText, con_writer : writer,con_release : rdate   };
 	mysql.update('update cider.cid_contents set con_category = ?,  con_title = ?, con_content = ?, con_photo = ?,  con_upDate = ?, user_no = ?, user_comment = ?, con_writer = ? ,con_release= ?  where con_no = ?', [category,title,contents,photo,date,userNo,userText,writer,rdate,no], function (err, data){
 		

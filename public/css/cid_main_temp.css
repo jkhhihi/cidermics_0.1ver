@@ -5,7 +5,7 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
     background-image: url(http://i.imgur.com/wZSzkux.jpg);
 
     /* Set a specific height */
-    min-height: 450px; 
+    min-height: 400px; 
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -21,7 +21,7 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
   background:#fff;
 }
 .menu6{margin:20px 0 40px 0;}
-.menu6 p{font-family:'Godo'; font-weight:400; font-size:14px; border:3px solid #1b87c9; border-radius:3px; padding:10px 5px; color:#666;}
+.menu6 p{font-family:'Godo'; font-weight:200; font-size:13px; border:1px solid #1b87c9; border-radius:3px; padding:10px 5px; color:#666;}
 .menu6 a:hover p{background-color:#1b87c9; color:#fff;}
 .line-3px{width:100%; height:2px; background-color:#ececec;}
 .menu6_con .new-con, div.popular-con, div.plan-con, div.podcast-con, div.review-con, div.main-con, div.discuss-con{padding:0 30px 20px 30px;}
@@ -40,7 +40,7 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
 	width: 96%;
 	margin:8px 0;
 	font-weight:bold;
-	font-size:16px;
+	font-size:12px;
 }
 .con-in a:hover{color:#1b87c9;}
 .review-con .border-box{border:3px solid #1b87c9; border-radius:3px; padding:40px 0;}
@@ -72,7 +72,7 @@ padding:10px 0; color:#fff; border-radius: 5px; font-size:16px; font-weight:bold
 .parallax{display:none;}
 .container-fluid{padding:0 !important;}
 .menu6{margin:5px 0 10px 0;}
-.menu6 p{border:2px solid #1b87c9; padding:6px 5px;}
+.menu6 p{border:1px solid #1b87c9; padding:7px 5px;}
 .menu6 .col-xs-4{padding:0 2px; height:40px;}
 .mob_menu6_con div.new-con, div.popular-con, div.plan-con, div.podcast-con, div.review-con, div.main-con, div.discuss-con{padding:0 4px;}
 .mob_menu6_con .menu-title{height:4px; font-size:14px; margin-right:0; margin-left:0; padding:0 5px;}
@@ -88,4 +88,119 @@ padding:10px 0; color:#fff; border-radius: 5px; font-size:16px; font-weight:bold
 .mob_menu6_con .tab-content .col-xs-6{padding:0 5px !important;}
 .mob_menu6_con .main-con{padding:0 !important;}
 .error img.logo{margin-top:50px;}
+}
+
+
+/* 팝업창 style */
+#info-wrap {
+    color:#fff;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 999999;
+}
+.info-close {
+    border: 2px solid #fff;
+    color: #fff;
+    background: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0.5em 0.5em;
+    letter-spacing: 1px;
+    margin: 1em 0 0 0;
+}
+@media screen and (max-width: 70em) {
+    .mockup-width--forth {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 60em) {
+    .mockup-width--third {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 50em) {
+    .customizer {
+        top: 0;
+        width: 100%;
+        height: auto;
+        padding: 30px 0;
+        -webkit-transform: none;
+        transform: none;
+        border-radius: 0;
+    }
+    .color-tool {
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -webkit-justify-content: center;
+        justify-content: center;
+    }
+    .color-tool li {
+        margin: 3px;
+    }
+    .content {
+        padding: 1em 0;
+    }
+    .mockup-section {
+        padding: 40px 0;
+    }
+    .mockup-content {
+        padding: 0 10px;
+    }
+    .mockup-width--forth,
+    .mockup-width--half {
+        width: 100%;
+    }
+    .mockup-logo,
+    .mockup-nav {
+        width: 100%;
+        text-align: center;
+    }
+    .mockup-nav {
+        line-height: 1.5;
+        padding: 20px 0 0;
+    }
+    .mockup-heading--large {
+        font-size: 2.25em;
+    }
+    .mockup-blockquote {
+        font-size: 1.5em;
+    }
+}
+
+/*팝업창 */
+.button-checkbox .btn{height:45px; padding:0 10px; background-color:#025F96; color:#fff; font-size:14px; border-radius:2px;}
+.button-checkbox .btn:focus, .btn:hover{background-color:#025F96; color:#fff;}
+.button-close .btn{height:45px; padding:0 10px; background-color:#ececec; color:#025F96; font-size:14px; border-radius:2px;}
+#pop{
+    width: 90%;
+    height:auto;
+    max-width: 500px;
+    max-height: 580px;
+    background: #fff;
+    padding: 1em 1em;
+    line-height: 1.5;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0,0,0,0.2);
+    left:50%;
+    padding:10px 10px;
+}
+.close1 div{float:left; text-align:right; }
+#pdtop{padding-top:10px;}
+
+@media(max-width: 760px){
+#pop{
+    height:auto;
+    max-height: 580px;
+    padding:10px 10px;
+}  
 }

@@ -36,7 +36,8 @@ router.get('/contents', function(req, res, next) {
 	 {
 	    _min="0"+_min;
 	 }
-	 
+	
+	var _totmon = _year+""+_mon;
 	var _tot=_year+""+_mon+""+_date+""+_hor+""+ _min;
 
 	var qry="";
@@ -44,24 +45,25 @@ router.get('/contents', function(req, res, next) {
 	var sets = {con_no : no};
 	var next = {};
 	var pre = {};
-	
-	
-	mysql.select('select con_no, con_photo, con_title from cider.cid_contents order by con_viewCount desc limit 0,30', function (err, data){
+	//qry="SELECT * FROM cider.cid_contents where con_release between "+_totmon+"010000 and "+_tot+" order by con_viewCount desc limit 0,16;"
+	//console.log(qry);
+	mysql.select("SELECT * FROM cider.cid_contents where con_release between "+_totmon+"010000 and "+_tot+" order by con_viewCount desc limit 0,15;", function (err, data){
+	//mysql.select('select con_no, con_photo, con_title from cider.cid_contents order by con_viewCount desc limit 0,30', function (err, data){
 		 if (err) throw err;
 		 
 		 row = data;
-		 
+		 /*
 		 qry="select con_no, con_photo, con_title from cider.cid_contents where con_release <= '"+_tot+"' ORDER BY RAND() LIMIT 0,24";
 		   mysql.select(qry, function (err, data1){
 			if(err){
 			res.redirect('back');
 			}
+		*/
 			
-			
-		 res.render('front/cid_contents/cid_contents_popular', { contents : row, cont: data1});
+		 res.render('front/cid_contents/cid_contents_popular', { contents : row});
 	});
   });
-});
+//});
 
 
 router.get('/contents/:no', function(req, res, next) {

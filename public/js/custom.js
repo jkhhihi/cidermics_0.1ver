@@ -308,6 +308,7 @@ $(document).ready(function(){
 		var arr = userinfo.split("/");
 		var userNo = arr[0];
 		var writer = arr[1];
+		//var writer = $('[name=writer]').val();
 		
 		if(cate == null) {
 			alert('카테고리를 지정해주세요');
@@ -332,6 +333,8 @@ $(document).ready(function(){
 		$('[name=contents]').val(contents);
 		$('[name=userNo]').val(userNo);
 		$('[name=writer]').val(writer);
+		//console.log(writer);
+		//console.log(title);
 		
 		$('#cform').attr('action', '/adm/contents/insert');
 		$('#cform').attr('method', 'post');
@@ -383,7 +386,7 @@ $(document).ready(function(){
 			return;
 		}
 		
-		console.log('contents : ' + contents + '| cate : ' + cate + ' | title + ' + title );
+		//console.log('contents : ' + contents + '| cate : ' + cate + ' | title + ' + title );
 		$('[name=title]').val(title);
 		$('[name=contents]').val(contents);
 		$('[name=userNo]').val(userNo);
