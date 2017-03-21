@@ -25,7 +25,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><%= discuss[0].dis_title %> - 사이다경제 | 토론</title>
 
-<link href="/css/cid_contents.css" rel="stylesheet">
+<link href="/css/cid_discuss.css" rel="stylesheet">
 <link href="/css/swiper.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
@@ -236,43 +236,20 @@ function cngtype1(){
 <div class="discuss_detail-mob_menu"><img src="/page_imgs/fixed_img/detail_line.png"></div>
 <div class="bg-blue">
 	<div class="bg-white container">
-		<div class="appbanner-bg"><a href="/appdown"><img class="img-responsive" src="http://i.imgur.com/yG0WZLJ.jpg"></a></div>
-
-			<div class="mob-bg-blue">
-				<div class="mob-bg-white container">
-					<div class="discuss container">
-
-<div class="web-banner" align="center">
-	<div class="border-box container">
-		<p class="title">재무설계 상담</p>
-		<div class="line3"></div>
-		<p class="con">내 월급은 통장을 스칠 뿐?<br>
-		<span style="color:#1b87c9">사이다경제</span>가 당신을 위해 준비한 <span style="color:#ff574a;">재무설계!</span></p>
-		<div class="apply-bg">
-
-			<!--재무 신청 오픈-->
-			<!--div class="but-apply"><a href="/finance/apply/"><div class="btn-apply-in" align="center">상담 신청하기</div></a></div-->
-
-			<!--재무 신청 마감-->
-			<div class="but-apply"><a href="#" onClick="alert('이번 달 무료 재무상담 신청이 마감되었습니다. 다음 달에 더 좋은 상담으로 찾아뵙겠습니다.')"><div class="btn-apply-in" align="center">상담 신청하기</div></a></div>
-		</div>
-	</div>
-</div>
-
-
+		<div class="mob-bg-blue">
+			<div class="mob-bg-white container">
+					<div class="discuss_detail container">
+					
 <div class="discuss-con container" align="center">
 	<!-- 콘텐츠 뿌림 시작 -->		
 	<div class="con-in row" align="center" style="margin-left:0; margin-right:0;">
-		<div class="col-xs-12 mg-bot padding-lr0">
+		<div class="col-xs-12 mg-bot">
 			<div class="row">
-				<a href="/discuss"><div class="dis-title col-xs-12"><p>"서울메트로와 도시철도공사는 통합해야 하나"</p></div></a>
-				<div class="dis-img col-xs-12" align="right">
-					<div class="dis-icon row">
-						<!-- img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-like.png" ><p style="display:inline-block;">52</p -->
-						<img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-comment1.svg" ><p style="display:inline-block;">39</p>	
-					</div>	
-				</div>
-				<div class="dis-bg-img col-xs-12"><div class="dis-black-box"></div><img class="img-responsive" src="<%= discuss[0].dis_thum %>"></div>	
+				<a href="/discuss">
+					<div class="dis-title col-xs-12"><p>"서울메트로와 도시철도공사는 통합해야 하나"</p></div>
+					<div class="dis-black-box"></div>
+					<!-- img class="img-responsive" src="<%= discuss[0].dis_thum %>" -->
+				</a>
 			</div>
 		</div>
 	</div>
