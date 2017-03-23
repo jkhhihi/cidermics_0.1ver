@@ -38,51 +38,6 @@
 <script src="/js/bootstrap.min.js"></script-->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
 
-
-<style type="text/css">
-	.appbanner-bg{
-	margin-top: 15px;
-	}
-	.form-group{
-		margin-bottom: 0px !important;
-	}
-	.form-control1{border:#1b87c9 1px solid; width:116px; height:30px; padding:2px; font-size:13px;
-	border-radius:2px;}
-	.form-control2{border:#1b87c9 1px solid; padding:5px; font-size:13px; width: 100%; height: 70px; margin-bottom:0px; border-radius:2px;}
-	.btn{
-		padding: 8px 15px !important;
-	}
-
-	.btncomt{
-		padding: 0px 10px !important;
-		background-color: ;
-	}
-
-	.padding-1{
-		padding: 5px;
-	}
-	.comtImg{
-		margin-top: 5px;
-	}
-.web-banner{background-image:url(<%= discuss[0].dis_thum %>); background-repeat : no-repeat;
-background-position:center; width:100%; padding:150px 0 100px 0; background-color: rgba(0,0,0,0.5);}
-.web-banner .border-box{border:5px solid #fff; padding:50px 0;}
-.web-banner p.title{font-size:32px; font-weight:bold; color:#fff;}
-
-.discuss-con .dis-title{width:100%; position:absolute; z-index:4; font-size:18px; font-weight:bold; top:30%; color:#fff; line-height:1.5em;}
-.discuss-con .dis-title p{width:65%;}
-.discuss-con .dis-img{position:absolute; z-index:3; color:#fff; font-size:18px; bottom:5px; font-weight:bold; }
-.discuss-con .dis-img .dis-icon{border-top:2px solid #fff; padding:8px 20px 0 0;}
-.discuss-con .dis-img .dis-icon p{margin-bottom:0;}
-.discuss-con .dis-img img{width:30px; margin:0 5px 0 10px;}
-.discuss-con .dis-bg-img{padding-left:0; padding-right:0;}
-.discuss-con .dis-bg-img .dis-black-box{width:100%; height:100%; position:absolute; z-index:2; background-color:rgba(0,0,0,0.5); border-radius:6px;}
-.discuss-con .dis-bg-img img{width:100%; position:relative; z-index:1; border:0 solid; border-radius:6px;}
-
-
-
-</style>
-
 <!--글자수 제한 스크립트 -->
 <script type="text/javascript">
     function chkword(obj, maxByte) {
@@ -240,9 +195,12 @@ function cngtype1(){
 			<div class="mob-bg-white container">
 
 					<div class="discuss_detail container"  align="center">
-						<div class="mg-bot">
-							<a href="/discuss"><div class="dis-title"><p>"서울메트로와 도시철도공사는 통합해야 하나"</p></div></a>
-							<div class="dis-bg-img"><div class="dis-black-box"></div><img class="img-responsive" src="/page_imgs/main_img/img2.jpg"></div>	
+						<div class="row margin-lr0">
+							<div class="col-xs-12 mg-bot padding-lr0">
+								<div class="dis-title"><p>"서울메트로와 도시철도공사는 통합해야 하나"</p></div>
+								<div class="dis-black-box"></div>
+								<div class="dis-bg-img"><img class="img-responsive" src="/page_imgs/main_img/img2.jpg"></div>
+							</div>
 						</div>
 					</div>
 							
@@ -256,8 +214,8 @@ function cngtype1(){
 								<% }else{ %>
 								<div id="chartContainer" style="height: 200px; width: 100%;"></div>
 								<% } %>
-								<div id="comtImg col-lg-12" align="center" onclick="comtImg()">
-										<img class="img-responsive" src="/page_imgs/discuss_img/comt_btn.png" width="150" style="margin-top: 5px; cursor:pointer">
+								<div id="comtImg col-xs-12" align="center" onclick="comtImg()">
+										<img class="img-responsive" src="/page_imgs/discuss_img/comt_btn.png" width="150px;" style="margin:10px 0 5px 0; cursor:pointer">
 								</div>
 
 								<div id="comtImgShow" style="display:none;">
@@ -273,28 +231,29 @@ function cngtype1(){
 									  	<!--div class="form-group">
 										    <input type="text" class="form-control1" id="exampleInputPw" placeholder="" name="comt_pw" onkeyup="chkword(this, 22)"  onfocus="cngtype()" value='비밀번호'>
 									  	</div-->
-									    <div class="form-group col-xs-1 col-lg-4"></div>
-									    <div class="form-group col-xs-10 col-lg-4">
-										  	<textarea class="form-control2" rows="3" name="comt_text"  placeholder="내용 *100자 이하" onkeyup="chkword(this, 100)")></textarea></div>
-									    <div class="form-group col-xs-1 col-lg-4"></div>
+									    <!-- div class="form-group col-xs-1 col-lg-4"></div -->
+									    <div class="form-group col-xs-12">
+										  	<textarea class="form-control2" rows="3" name="comt_text"  placeholder="내용 *100자 이하" onkeyup="chkword(this, 100)" style="resize:none;")></textarea></div>
+									    <!-- div class="form-group col-xs-1 col-lg-4"></div -->
 								    </div> 
 								    <div class="row">
-										<div class="btn-group" data-toggle="buttons" style="margin-bottom: 5px;">
-										  <label class="btn btn-success">
+										<div class="btn-group" data-toggle="buttons" style="margin:10px 0 5px 0">
+										  <label class="btn btn-success btn-width">
 										  <span class="glyphicon glyphicon-thumbs-up"></span>
-
 										    <input type="radio" name="options" id="option1" autocomplete="off" value="0"> <%=discuss[0].dis_comt_1%>
 										  </label>
-										  <label class="btn btn-danger">
+										  <label class="btn btn-danger btn-width">
 										  <span class="glyphicon glyphicon-thumbs-down"></span>
 										    <input type="radio" name="options" id="option2" autocomplete="off" value="1"> <%=discuss[0].dis_comt_2%>
 										  </label>
-										  <label class="btn btn-warning active">
+										  <label class="btn btn-warning btn-width active">
 										  <span class="glyphicon glyphicon-check"></span>
 										    <input type="radio" name="options" id="option3" autocomplete="off" value="2"> 기타
 										  </label>
 										</div>
-										<button type="button" class="btn btn-primary" onClick="comt_submit()" style="width:180px; margin-bottom: 5px;">등록</button>
+										<div class="col-xs-12">
+										<button type="button" class="btn btn-primary btn-width1" onClick="comt_submit()">등록</button>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -348,14 +307,16 @@ function cngtype1(){
 							}
 						</style>
 
-				<div class="container">
-					<div class="row" style="margin-right: 0px;">
-						<div class="col-xs-1 col-md-2"></div>
-						<div class="col-xs-10 col-md-8">
-						  <h2> 토론하기</h2>
-						  <p><b> 주제 : <%= discuss[0].dis_title%></b></p>
+				<div class="container dis-comment">
+					<div class="row margin-lr0">
+						<!-- div class="col-xs-0 col-md-2"></div -->
+						<div class="col-xs-12" style="padding-left:5px; padding-right:5px;">
+							<h3 style="display:inline; font-weight:bold; padding:0 10px;">
+							<img class="img-responsive" src="/page_imgs/discuss_img/discuss-icon.svg" style="display:inline; width:60px; margin-bottom:5px;">
+							토론하기</h3>
+							<p style="margin:2px 0 20px 0; padding:0 10px;"><b> 주제 : <%= discuss[0].dis_title%></b></p>
 						</div>
-						<div class="col-xs-1 col-md-2"></div>
+						<!-- div class="col-xs-0 col-md-2"></div -->
 					</div>
 
 
@@ -365,16 +326,16 @@ function cngtype1(){
 
 						<% }else{ %>
 
-					<div class="row" style="margin-right: 0px;">
-						<div class="col-xs-0 col-md-2"></div>
-						<div class="col-xs-12 col-md-8">
+					<div class="row margin-lr0">
+						<!-- div class="col-xs-0 col-md-2"></div -->
+						<div class="col-xs-12" style="padding-left:5px; padding-right:5px;">
 						<table class="table table-condensed">
 							<tr>
-								<td>전체 댓글 (<span style="color:red"><%=comtCount[0].dis_no%></span>)</td>
+								<td class="padding-10">전체 댓글 (<span style="color:red"><%=comtCount[0].dis_no%></span>)</td>
 							</tr>
 							<% for(var i =0; i< comt.length; i++){ %>
 							<tr class="default">
-								<td class="primary">
+								<td class="primary padding-10">
 
 								<% if(comt[i].comt_opt == 0){ %>
 								<%= discuss[0].dis_comt_1 %>
@@ -385,11 +346,15 @@ function cngtype1(){
 								<% } else{ %>
 								<%} %>
 								<br>
-								<h6><%= comt[i].comt_writer %> | <%= comt[i].comt_regdate %> | <span class="glyphicon glyphicon-remove-circle" id="deleteComt<%= comt[i].comt_no%>" onclick="deleteComt(<%= comt[i].comt_no%>)"></span> <form class="showDeleteComt" value="<%= comt[i].comt_no%>" id="showDeleteComt<%= comt[i].comt_no%>" style="display: none;">
-									비밀번호 : <input type="password" name="delectPw" value=""><a onclick="deleteComtSmt(<%= comt[i].comt_no%>)" style="cursor:pointer"><span class="glyphicon glyphicon-trash">삭제</span></a></button>
+								<h6>
+								<%= comt[i].comt_writer %> | <%= comt[i].comt_regdate %> | <span class="glyphicon glyphicon-remove-circle" id="deleteComt<%= comt[i].comt_no%>" onclick="deleteComt(<%= comt[i].comt_no%>)"></span>
+								<form class="showDeleteComt" value="<%= comt[i].comt_no%>" id="showDeleteComt<%= comt[i].comt_no%>" style="display: none; padding:5px 0 10px 0">
+								비밀번호 : <input type="password" name="delectPw" value=""><a onclick="deleteComtSmt(<%= comt[i].comt_no%>)" style="cursor:pointer"><span class="glyphicon glyphicon-trash">삭제</span></a></button>
 								</form>
-								<form method="get" action="/discuss/declaration" name="declaration"> | <input type="hidden" name="declar_comt_no" value="<%= comt[i].comt_no%>"><a onclick="declarationSb()" style="cursor:pointer">신고</a> </form>
-
+								<form method="get" action="/discuss/declaration" name="declaration" style="margin:5px 0 0 5px">
+								<img class="img-responsive" src="/page_imgs/discuss_img/discuss-icon-siren.svg" style="display:inline; width:15px; margin-bottom:5px;">
+								<input type="hidden" name="declar_comt_no" value="<%= comt[i].comt_no%>">| 
+								<a onclick="declarationSb()" style="cursor:pointer">신고</a> </form>
 								</h6>
 								<%= comt[i].comt_text %>
 								
@@ -397,7 +362,9 @@ function cngtype1(){
 
 								<!--button value="<%= comt[i].comt_no%>" onclick="shComt()">답글</button-->
 								
-								<button class="btn btn-info btncomt" id="d<%= comt[i].comt_no%>" value="<%= comt[i].comt_no%>" onclick="showJs(<%= comt[i].comt_no%>)"><h6>답글 <span style="color: red"><%= comtCount[0].comt_no %></span></h6></button>
+								<button class="btn btn-info btncomt" id="d<%= comt[i].comt_no%>" value="<%= comt[i].comt_no%>" onclick="showJs(<%= comt[i].comt_no%>)" style="margin:5px 0">
+								<h6>답글 <span style="color: red"><%= comtCount[0].comt_no %></span></h6>
+								</button>
 
 								<div class="showComt" value="<%= comt[i].comt_no%>" id="showComt<%= comt[i].comt_no%>" style="display:none;">
 								
@@ -407,20 +374,20 @@ function cngtype1(){
 									<input type="hidden" name="dis_no" value="<%= comt[i].dis_no%>">
 									<input type="hidden" name="comt_no" value="<%= comt[i].comt_no%>">
 										<div class="row">
-											<div class="form-group col-lg-12 padding-1">
+											<div class="form-group col-xs-12 padding-1">
 											    <input type="text" class="form-control1" id="exampleInputName1" placeholder=" 작성자" name="comt_writer" onkeyup="chkword(this, 20)">
 											    <input type="text" class="form-control1" id="exampleInputPw" placeholder=" 비밀번호" name="comt_pw" onkeyup="chkword(this, 22)">
 										  	</div>
 										</div>
 
 										<div class="row">
-										    <div class="form-group col-xs-0 col-lg-0"></div>
-										    <div class="form-group col-xs-9 col-lg-10">
-											  	<textarea class="form-control2" rows="3" name="comt_text"  placeholder="내용 *100자 이하" onkeyup="chkword(this, 100)")></textarea></div>
-										    <div class="form-group col-xs-3 col-lg-2"></div>
+										    <!-- div class="form-group col-xs-0 col-lg-0"></div -->
+										    <div class="form-group col-xs-12">
+											  	<textarea class="form-control2" rows="3" name="comt_text"  placeholder="내용 *100자 이하" onkeyup="chkword(this, 100)") style="resize:none;"></textarea></div>
+										    <!-- div class="form-group col-xs-0 col-lg-0"></div -->
 									    </div> 
 
-								  			<button type="button" id="submit<%= comt[i].comt_no%>" value="<%= comt[i].comt_no%>" class="btn btn-primary" onClick="comtco_submit(<%= comt[i].comt_no%>)">등록</button>
+								  			<button type="button" id="submit<%= comt[i].comt_no%>" value="<%= comt[i].comt_no%>" class="btn btn-primary" onClick="comtco_submit(<%= comt[i].comt_no%>)" style="margin-bottom:10px;">등록</button>
 								  			<!--button type="button" class="btn btn-primary" onClick="comtco_submit(<%= comt[i].comt_no%>)">등록</button-->
 								  	</form>
 									
@@ -435,7 +402,7 @@ function cngtype1(){
 						</table>
 						<% } %>
 						</div>
-						<div class="col-xs-0 col-md-2"></div>
+						<!-- div class="col-xs-0 col-md-2"></div -->
 							
 					</div>
 				</div>
@@ -508,7 +475,7 @@ function showComtco(id)
 				success : function(data){
 					var ht="";
 					$.each(data.ddd, function (index, value){
-						ht += "<table class='table table-condensed'><tr class='active'><td class='primary'><h6>"+value.comtco_writer+" | "+ value.comtco_date+"</h6><br/>"+value.comtco_text+"</td></tr></table>";
+						ht += "<table class='table table-condensed'><tr class='active'><td class='primary re-comment'><h6>"+value.comtco_writer+" | "+ value.comtco_date+"</h6>"+value.comtco_text+"</td></tr></table>";
 						var shco_no = value.comt_no;
 						document.getElementById('showComtco'+shco_no).innerHTML = ht;
 					});
