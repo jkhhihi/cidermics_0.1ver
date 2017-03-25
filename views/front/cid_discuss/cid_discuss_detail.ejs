@@ -315,7 +315,7 @@ function cngtype1(){
 							<h3 style="display:inline; font-weight:bold; padding:0 10px;">
 							<img class="img-responsive" src="/page_imgs/discuss_img/discuss-icon.svg" style="display:inline; width:60px; margin-bottom:5px;">
 							토론하기</h3>
-							<p style="margin:2px 0 20px 0; padding:0 10px;"><b> 주제 : <%= discuss[0].dis_title%></b></p>
+							<p style="margin:2px 0 10px 0; padding:0 10px;"><b> 주제 : " <%= discuss[0].dis_title%> "</b></p>
 						</div>
 						<!-- div class="col-xs-0 col-md-2"></div -->
 					</div>
@@ -347,15 +347,15 @@ function cngtype1(){
 								<% } else{ %>
 								<%} %>
 								<br>
-								<h6>
+								<h6 style="margin-bottom:5px;">
 								<%= comt[i].comt_writer %> | <%= comt[i].comt_regdate %> | <span class="glyphicon glyphicon-remove-circle" id="deleteComt<%= comt[i].comt_no%>" onclick="deleteComt(<%= comt[i].comt_no%>)"></span>
 								<form class="showDeleteComt" value="<%= comt[i].comt_no%>" id="showDeleteComt<%= comt[i].comt_no%>" style="display: none; padding:5px 0 10px 0">
 								비밀번호 : <input type="password" name="delectPw" value=""><a onclick="deleteComtSmt(<%= comt[i].comt_no%>)" style="cursor:pointer"><span class="glyphicon glyphicon-trash">삭제</span></a></button>
 								</form>
 								<form method="get" action="/discuss/declaration" name="declaration" style="margin:5px 0 0 5px">
-								<img class="img-responsive" src="/page_imgs/discuss_img/discuss-icon-siren.svg" style="display:inline; width:15px; margin-bottom:5px;">
+								<img class="img-responsive" src="/page_imgs/discuss_img/discuss-icon-siren.svg" style="display:inline; width:10px; margin-bottom:5px;">
 								<input type="hidden" name="declar_comt_no" value="<%= comt[i].comt_no%>">|
-								<button type="submit"></button>
+								<button type="submit" class="btn-declaration">신고</button>
 								<!--a onclick="declarationSb()" style="cursor:pointer;">신고</a-->
 								</form>
 								</h6>
@@ -365,8 +365,8 @@ function cngtype1(){
 
 								<!--button value="<%= comt[i].comt_no%>" onclick="shComt()">답글</button-->
 								
-								<button class="btn btn-info btncomt" id="d<%= comt[i].comt_no%>" value="<%= comt[i].comt_no%>" onclick="showJs(<%= comt[i].comt_no%>)" style="margin:5px 0">
-								<h6>답글 <span style="color: red"><%= comtCount[0].comt_no %></span></h6>
+								<button class="btn btn-info btncomt" id="d<%= comt[i].comt_no%>" value="<%= comt[i].comt_no%>" onclick="showJs(<%= comt[i].comt_no%>)" style="margin-top:15px; padding:5px 10px !important;">
+								<h6 style="margin:0 !important;">답글 <span style="color: red"><%= comtCount[0].comt_no %></span></h6>
 								</button>
 
 								<div class="showComt" value="<%= comt[i].comt_no%>" id="showComt<%= comt[i].comt_no%>" style="display:none;">
@@ -390,7 +390,8 @@ function cngtype1(){
 										    <!-- div class="form-group col-xs-0 col-lg-0"></div -->
 									    </div> 
 
-								  			<button type="button" id="submit<%= comt[i].comt_no%>" value="<%= comt[i].comt_no%>" class="btn btn-primary" onClick="comtco_submit(<%= comt[i].comt_no%>)" style="margin-bottom:10px;">등록</button>
+								  			<button type="button" id="submit<%= comt[i].comt_no%>" value="<%= comt[i].comt_no%>" class="btn btn-primary" onClick="comtco_submit(<%= comt[i].comt_no%>)"
+								  			style="margin-bottom:10px; padding:5px 10px !important; font-size:12px !important; background-color:#1b87c9; border:1px solid #ececec !important;">등록</button>
 								  			<!--button type="button" class="btn btn-primary" onClick="comtco_submit(<%= comt[i].comt_no%>)">등록</button-->
 								  	</form>
 									
