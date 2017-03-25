@@ -285,26 +285,29 @@ function CopyToClipboard ( tagToCopy, textarea ){
 		<div class="row editor-introduce container" style="padding:0 10px 0 10px;">
 				<div class="col-xs-12 mob-editor-con">
 						<div class="row">
-								<div class="col-xs-12 editor-picture" align="center"><img class="img-responsive" width="80" src="<%= contents[0].user_sns_icon %>"></div>
+								<div class="col-xs-12 editor-picture" align="center"><a href="/contents/editor/<%=contents[0].user_no%>"><img class="img-responsive" width="80" src="<%= contents[0].user_sns_icon %>"></a></div>
 								<div class="col-xs-12 editor-intro" align="left">
-										<p>에디터 : <%=contents[0].con_writer%></p>
+										<p>에디터 : <a href="/contents/editor/<%=contents[0].user_no%>"><%=contents[0].con_writer%></a></p>
 										<p><%=contents[0].user_comment%></p>
 										<p><%=contents[0].user_email%></p>
 								</div>
 								<!--div class="col-xs-12 editor-sns" align="right">
+								<p><a href="/contents/editor/<%=contents[0].user_no%>">이 에디터의 다른 글 더 보기</a></p>
 									<a href="<%= contents[0].user_sns_url%>"><img src="/page_imgs/contents_img/icon_editor_facebook.png"></a>
 								</div-->
 						</div>
 				</div>
 				<div class="col-xs-12 web-editor-con">
 						<div class="row">
-								<div class="col-xs-2 editor-picture"><img class="img-responsive" width="135" src="<%= contents[0].user_sns_icon %>"></div>
+								<div class="col-xs-2 editor-picture"><a href="/contents/editor/<%=contents[0].user_no%>"><img class="img-responsive" width="135" src="<%= contents[0].user_sns_icon %>"></a></div>
 								<div class="col-xs-6 editor-intro">
-										<p>에디터 : <%=contents[0].con_writer%></p>
+										<p>에디터 : <a href="/contents/editor/<%=contents[0].user_no%>"><%=contents[0].con_writer%></a></p>
 										<p><%=contents[0].user_comment%></p>
 										<p><%=contents[0].user_email%></p>
 								</div>
-								<!--div class="col-xs-4 editor-sns" align="right"><a href="<%= contents[0].user_sns_url%>"><img src="/page_imgs/contents_img/icon_editor_facebook.png"></a>
+								<!--div class="col-xs-4 editor-sns" align="right">
+								<p><a href="/contents/editor/<%=contents[0].user_no%>">이 에디터의 다른 글 더 보기</a></p>
+								<a href="<%= contents[0].user_sns_url%>"><img src="/page_imgs/contents_img/icon_editor_facebook.png"></a>
 								</div-->
 						</div>
 				</div>

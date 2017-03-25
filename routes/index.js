@@ -89,7 +89,7 @@ router.get('/main2', function(req, res, next) {
 
 				project = data;
 
-					mysql.select('SELECT * FROM cider.cid_fi_review order by rev_no desc limit 1,3;', function (err, data2){
+					mysql.select('SELECT rev_title,rev_QA1 FROM cider.cid_fi_review order by rev_no desc limit 1,3;', function (err, data2){
 
 
 						mysql.select("select con_no, con_photo, con_title from cider.cid_contents where con_category = '4' and con_release <= '"+_tot+"' order by con_no desc limit 0,2", function (err, data){
@@ -105,7 +105,7 @@ router.get('/main2', function(req, res, next) {
 									mysql.select("select con_no, con_photo, con_title from cider.cid_contents where con_category = '1' and con_release <= '"+_tot+"' order by con_no desc limit 0,2", function (err, data){
 									if(err){ res.redirect('back'); }
 									economics = data;
-										mysql.select("select * from cider.cid_dis_reg where dis_release <= '"+_tot+"' order by dis_no desc limit 0,2", function(err,data){
+										mysql.select("select dis_no,dis_title,dis_thum from cider.cid_dis_reg where dis_release <= '"+_tot+"' order by dis_no desc limit 0,2", function(err,data){
 											discuss = data;
 
 
@@ -154,6 +154,8 @@ router.get('/appdown', function(req, res, next) {
 	res.render('front/cid_appdown', { });
 
 });
+
+
 
 
 /*인서트 테스트 코드*/
