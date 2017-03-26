@@ -60,6 +60,7 @@ router.get('/main2', function(req, res, next) {
 	var _tot = releaseTime();
 
 
+
 	var now = new Date();
 	var _year=  now.getFullYear();
 	var _mon =   now.getMonth()+1;
@@ -107,6 +108,9 @@ router.get('/main2', function(req, res, next) {
 									economics = data;
 										mysql.select("select dis_no,dis_title,dis_thum from cider.cid_dis_reg where dis_release <= '"+_tot+"' order by dis_no desc limit 0,2", function(err,data){
 											discuss = data;
+											//mysql.select("select dis_no,dis_title,dis_thum from cider.cid_dis_reg where dis_release <= '"+_tot+"' order by dis_no desc limit 0,2", function(err,data){
+
+												//mysql.select("select count(*) from cider.cid_dis_comt where dis_no = '2'", function(err,data){
 
 
 	    		res.render('front/cid_main_temp', { contents : row, popular: popular,podcast:podcast,project:project,rev:data2,stock:stock,company:company,finance:finance,economics:economics,discuss:discuss});
@@ -121,6 +125,49 @@ router.get('/main2', function(req, res, next) {
    });
   });
  });
+});
+
+router.get('/maincon_include', function(req,res,next){
+	
+	var arr = []
+	for(var i = 1; i < 7; i++){
+	    arr[i] = function(id){
+	    return function(){
+	        return id;
+	    }
+	   }(i);
+	}
+
+
+	for(var index in arr) {
+	var con_qry;
+    con_qry = "select con_no, con_photo, con_title from cider.cid_contents where con_category = '"+arr[index]()+"' order by con_no desc limit 0,4";
+
+    //console.log(con_qry);
+
+    if(arr[index]() == 6 ){
+
+    mysql.select(con_qry, function (err, data){
+				if(err){ res.redirect('back'); }
+				podcast = data;
+				console.log(podcast);
+				
+
+		});
+	   }
+	else if(arr[index]() == 5){
+		 mysql.select(con_qry, function (err, data){
+				if(err){ res.redirect('back'); }
+				project = data;
+				console.log(project);
+
+		});
+
+	}
+
+	}
+
+	res.render('front/cid_maincon_include', {podcast:podcast});
 });
 
 

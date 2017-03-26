@@ -1,0 +1,15 @@
+<div class="con-in swiper-wrapper" align="center">
+			<% for(var i=0; i < podcast.length; i++) { %>
+			<div class="swiper-slide">
+				<div class="new-mark"><img class="img-responsive" src="<%= podcast[i].chkDat%>"></div>
+				<div class="thumnail">
+					<a href="/contents/detail/<%= podcast[0].con_no %>">
+					<div class="con-img">
+						<div class="con-thumbnail"><img class="img-responsive" src="<%= podcast[i].con_photo %>"></div>
+					</div>
+					<div class="con-title"><%= podcast[i].con_title %></div>
+					</a>
+				</div>
+			</div>
+		<% } %>
+		</div>
