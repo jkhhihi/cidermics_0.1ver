@@ -196,6 +196,9 @@ function cngtype1(){
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    border-radius: 5px;
+
 }
 </style>
 
@@ -348,7 +351,7 @@ function cngtype1(){
 						<div class="row margin-lr0" align="center">
 							<div class="col-xs-12 no-comment">
 							<img class="img-responsive" src="/page_imgs/discuss_img/discuss-icon-no-comment1.svg" style="width:150px; margin-bottom:15px;">							
-								<p>" 첫번째 댓글을 달아주세요 :( "</p>
+								<p>" 첫번째 댓글을 달아주세요! "</p>
 							</div>
 						</div>
 
@@ -377,13 +380,17 @@ function cngtype1(){
 								<h6 style="margin-bottom:5px;">
 
 								<form method="get" action="/discuss/declaration" name="declaration" style="margin:5px 0 0 5px">
-								<%= comt[i].comt_writer %> | <%= comt[i].comt_regdate %>  | <span class="glyphicon glyphicon-remove-circle" id="deleteComt<%= comt[i].comt_no%>" onclick="deleteComt(<%= comt[i].comt_no%>)"></span>
-
+								<%= comt[i].comt_writer %> | <%= comt[i].comt_regdate %>
 
 								<!--img class="img-responsive" src="/page_imgs/discuss_img/discuss-icon-siren.svg" style="display:inline; width:10px; margin-bottom:5px;"-->
 								<input type="hidden" name="declar_comt_no" value="<%= comt[i].comt_no%>">|
 								<button type="submit" class="btn-declaration">신고</button>
 								<!--a onclick="declarationSb()" style="cursor:pointer;">신고</a-->
+
+
+								 | <span class="glyphicon glyphicon-remove-circle" id="deleteComt<%= comt[i].comt_no%>" onclick="deleteComt(<%= comt[i].comt_no%>)"></span>
+
+
 								</form>
 
 
@@ -404,8 +411,6 @@ function cngtype1(){
 
 								<div class="showComt" value="<%= comt[i].comt_no%>" id="showComt<%= comt[i].comt_no%>" style="display:none;">
 								
-									
-									
 									<form class="form-inline" method="post" action="/discuss/comtcomtPush" name="comtcoInsert" id="form-inline<%= comt[i].comt_no%>" target="_self">
 									<input type="hidden" name="dis_no" value="<%= comt[i].dis_no%>">
 									<input type="hidden" name="comt_no" value="<%= comt[i].comt_no%>">
@@ -451,12 +456,12 @@ function cngtype1(){
 
 
 
-
+<!--댓글 삭제 -->
 <script type="text/javascript">
 	function deleteComt(id){
 		//alert(id);
 		var sdc = "#showDeleteComt"+id;
-		$(sdc).toggle(300);
+		$(sdc).toggle(100);
 		deleteComtSmt(id);
 		//deleteComtShow(id);
 		location.reload();
@@ -465,6 +470,7 @@ function cngtype1(){
 	function deleteComtSmt(id)
 	{
 		var aaa = document.getElementById("showDeleteComt"+id);
+
 		if(aaa[0].value ==""){
 			aaa[0].value.focus();
 		}
@@ -495,6 +501,44 @@ function cngtype1(){
     }
 </script>
 
+<!-- 대댓글 삭제 -->
+<script type="text/javascript">
+	function deleteComtco(id){
+		//alert(id);
+		var sdcc = "#showDeleteComtco"+id;
+		$(sdcc).toggle(100);
+		deleteComtcoSmt(id);
+		//location.reload();
+	}
+
+	function deleteComtcoSmt(id)
+	{
+		var aaa = document.getElementById("showDeleteComtco"+id);
+
+		alert(aaa[0]);
+		if(aaa[0].value ==""){
+			aaa[0].value.focus();
+		}
+		var ida = id;
+		var pwNum = aaa[0].value;
+		//alert(pwNum);
+
+		$.ajax({
+			url : '/discuss/deleteComt/'+ida+'&'+pwNum,
+			method : 'get',
+			success : function(data){
+				if(data.fail == 1){
+				alert("비밀번호가 틀렸습니다.");
+				}else{
+					//alert("성공~");
+					location.reload();
+				}
+			}
+		})
+	}
+	
+</script>
+
 <!-- show 코멘트 toggle 및 ajax로 대댓글 불러오기 -->
 <script type="text/javascript">
 function showJs(id) {
@@ -512,7 +556,7 @@ function showComtco(id)
 				success : function(data){
 					var ht="";
 					$.each(data.ddd, function (index, value){
-						ht += "<table class='table table-condensed'><tr class='active'><td class='primary re-comment'><h6>"+value.comtco_writer+" | "+ value.comtco_date+"</h6>"+value.comtco_text+"</td></tr></table>";
+						ht += "<table class='table table-condensed'><tr class='active'><td class='primary re-comment'><h6><b>┖ </b>"+value.comtco_writer+" | "+ value.comtco_date+"| <span class='glyphicon glyphicon-remove-circle' id='deleteComtco"+value.comtco_no+"' onclick='deleteComtco("+value.comtco_no+")'></span><form class='showDeleteComtco' id='showDeleteComtco"+value.comtco_no+"' value='"+value.comtco_no+"'>비밀번호 : <input type='password' name='delectPw' value=''><a onclick='deleteComtcoSmt("+value.comtco_no+")' style='cursor:pointer'><span class='glyphicon glyphicon-trash'>삭제</span></a></button></form></h6>"+value.comtco_text+"</td></tr></table>";
 						var shco_no = value.comt_no;
 						document.getElementById('showComtco'+shco_no).innerHTML = ht;
 					});
@@ -521,6 +565,8 @@ function showComtco(id)
 			});
 };
 </script>
+
+
 
 <script type="text/javascript">
 	var pageNum = 1;
