@@ -180,7 +180,24 @@ function cngtype1(){
 	}
 }
 </script>
+
 <script src="/js/canvasjs.min.js"></script>
+
+<style>
+.parallax1 {
+    /* The image used */
+    background-image: url("<%=discuss[0].dis_thum%>");
+
+    /* Set a specific height */
+    min-height: 350px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>
 
 </head>
 <body style="font-family: 'Nanum Gothic', serif !important;">
@@ -188,6 +205,7 @@ function cngtype1(){
 <div id="but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></div>
 
 <% include ../top %>
+
 
 <div class="discuss_detail-mob_menu"><img src="/page_imgs/fixed_img/detail_line.png"></div>
 <div class="bg-blue">
@@ -197,11 +215,15 @@ function cngtype1(){
 
 					<div class="discuss_detail container"  align="center">
 						<div class="row margin-lr0">
+						  <div class="parallax1">
 							<div class="col-xs-12 mg-bot padding-lr0">
-								<div class="dis-title"><p>"서울메트로와 도시철도공사는 통합해야 하나"</p></div>
-								<div class="dis-black-box"></div>
-								<div class="dis-bg-img"><img class="img-responsive" src="/page_imgs/main_img/img2.jpg"></div>
+								
+								<div class="dis-black-box">
+									<div class="dis-title"><p>"서울메트로와 도시철도공사는 통합해야 하나"</p></div>
+								</div>
+								<!--div class="dis-bg-img"><img class="img-responsive" src="/page_imgs/main_img/img2.jpg"></div-->
 							</div>
+						   </div>
 						</div>
 					</div>
 							
@@ -325,7 +347,7 @@ function cngtype1(){
 
 						<div class="row margin-lr0" align="center">
 							<div class="col-xs-12 no-comment">
-							<img class="img-responsive" src="/page_imgs/discuss_img/discuss-icon-no-comment.svg" style="width:100px; margin-bottom:15px;">							
+							<img class="img-responsive" src="/page_imgs/discuss_img/discuss-icon-no-comment1.svg" style="width:150px; margin-bottom:15px;">							
 								<p>" 첫번째 댓글을 달아주세요 :( "</p>
 							</div>
 						</div>
@@ -353,16 +375,22 @@ function cngtype1(){
 								<%} %>
 								<br>
 								<h6 style="margin-bottom:5px;">
-								<%= comt[i].comt_writer %> | <%= comt[i].comt_regdate %> | <span class="glyphicon glyphicon-remove-circle" id="deleteComt<%= comt[i].comt_no%>" onclick="deleteComt(<%= comt[i].comt_no%>)"></span>
-								<form class="showDeleteComt" value="<%= comt[i].comt_no%>" id="showDeleteComt<%= comt[i].comt_no%>" style="display: none; padding:5px 0 10px 0">
-								비밀번호 : <input type="password" name="delectPw" value=""><a onclick="deleteComtSmt(<%= comt[i].comt_no%>)" style="cursor:pointer"><span class="glyphicon glyphicon-trash">삭제</span></a></button>
-								</form>
+
 								<form method="get" action="/discuss/declaration" name="declaration" style="margin:5px 0 0 5px">
-								<img class="img-responsive" src="/page_imgs/discuss_img/discuss-icon-siren.svg" style="display:inline; width:10px; margin-bottom:5px;">
+								<%= comt[i].comt_writer %> | <%= comt[i].comt_regdate %>  | <span class="glyphicon glyphicon-remove-circle" id="deleteComt<%= comt[i].comt_no%>" onclick="deleteComt(<%= comt[i].comt_no%>)"></span>
+
+
+								<!--img class="img-responsive" src="/page_imgs/discuss_img/discuss-icon-siren.svg" style="display:inline; width:10px; margin-bottom:5px;"-->
 								<input type="hidden" name="declar_comt_no" value="<%= comt[i].comt_no%>">|
 								<button type="submit" class="btn-declaration">신고</button>
 								<!--a onclick="declarationSb()" style="cursor:pointer;">신고</a-->
 								</form>
+
+
+								<form class="showDeleteComt" value="<%= comt[i].comt_no%>" id="showDeleteComt<%= comt[i].comt_no%>" style="display: none; padding:5px 0 10px 0">
+								비밀번호 : <input type="password" name="delectPw" value=""><a onclick="deleteComtSmt(<%= comt[i].comt_no%>)" style="cursor:pointer"><span class="glyphicon glyphicon-trash">삭제</span></a></button>
+								</form>
+								
 								</h6>
 								<%= comt[i].comt_text %>
 								
