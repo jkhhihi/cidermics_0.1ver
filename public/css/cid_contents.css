@@ -94,15 +94,17 @@ color:#ff574a; font-family:"BMD"; border-bottom:2px solid #ff574a; font-weight:n
 .podcast-main{margin-top:70px; font-family:'BM JUA','배달의민족 주아',sans-serif;}
 .podcast .padcast-title{font-size:20px; color:#212121; border-bottom:4px solid #ececec; margin:20px 0;}
 .podcast .padcast-title img{margin:20px 0;}
-.podcast-con{margin:50px 0;}
+.podcast-con{margin:20px 0;}
 .podcast-con .con-in{padding:0 30px; margin-bottom:30px; font-size:16px;}
 .podcast-con .con-in .thum-img{padding-left:0 !important; padding-right:0 !important;}
 .podcast-con .con-in .thum-img img{border:0 solid; border-radius:5px;}
 .podcast-con .con-plus p{width:200px; background-color:#e68a82; margin-top:50px;
 border:4px solid #ececec; border-radius:10px; color:#fff; font-size:18px; padding:10px 0;}
-.podcast-con .border-2{border:2px solid #e68a82; border-radius:5px;}
-.podcast-con .border-2 img{margin:5px 0;}
-.podcast-con .border-2 a p:hover{color:#ff574a;}
+.podcast-con .pod-radio{margin-bottom:40px; font-size:16px;}
+.podcast-con .pod-radio1, .pod-radio2{border:2px solid #e68a82; border-radius:5px; width:120px; padding:5px 0}
+.podcast-con .pod-radio1 p, .pod-radio2 p{margin:0;}
+.podcast-con .pod-radio img{margin-bottom:5px;}
+.podcast-con .pod-radio a p:hover{color:#ff574a;}
 
 /*기획 콘텐츠*/
 .project-main{margin:60px 0; font-family:'Godo'; font-weight:400;}
@@ -195,10 +197,11 @@ border:4px solid #1b87c9; border-radius:10px; color:#1b87c9; font-size:18px; pad
 .podcast-main{margin-top:50px;}
 .podcast .padcast-title{margin-bottom:10px; font-size:16px;} 
 .podcast .padcast-title img{margin:10px 0; width:100px;}
-.podcast-con{margin:20px 0;}
+.podcast-con{margin:10px 0;}
 .podcast-con .con-in{padding:0 5px; margin-bottom:15px; font-size:14px;}
 .podcast-con .con-plus p{border:2px solid #ececec; width:80%; margin-top:30px; font-size:12px; padding:10px 0;}
-.podcast-con .border-2 .col-xs-6{padding:0 2px;}
+.podcast-con .pod-radio{margin-bottom:10px; font-size:12px;}
+.podcast-con .pod-radio img{width:20px;}
 
 /*기획 콘텐츠*/
 .project-main{margin:40px 0;}
