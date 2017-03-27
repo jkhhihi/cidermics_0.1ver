@@ -1,15 +1,45 @@
-<div class="con-in swiper-wrapper" align="center">
-			<% for(var i=0; i < podcast.length; i++) { %>
-			<div class="swiper-slide">
-				<div class="new-mark"><img class="img-responsive" src="<%= podcast[i].chkDat%>"></div>
-				<div class="thumnail">
-					<a href="/contents/detail/<%= podcast[0].con_no %>">
-					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="<%= podcast[i].con_photo %>"></div>
-					</div>
-					<div class="con-title"><%= podcast[i].con_title %></div>
-					</a>
-				</div>
+<html>
+<head>
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+
+
+
+
+<script>
+
+$('#myImage').on({
+    'click': function() {
+         var src = ($(this).attr('src') === '/page_imgs/main_img/icon-con-menu1n.png')
+            ? '/page_imgs/main_img/icon-con-menu2.png'
+            : '/page_imgs/main_img/icon-con-menu1n.png';
+         $(this).attr('src', src);
+    }
+});
+
+	$('#myImage1').on({
+    'click': function(){
+    	alert("123");
+        $('#myImage1').attr('src','/page_imgs/main_img/icon-con-menu2.png');
+    }
+});
+</script>
+
+
+
+		<!-- 경제 금융 기업 주식 카테고리별 콘텐츠 나오는것 -->		
+		<div class="main-con row" align="center" style="margin-right:0; margin-left:0">	
+			<div class="menu-title col-xs-12">	
+			<ul class="nav nav-tabs row">
+		    	<li class="active col-xs-3"><img class="img-responsive" id="myImage" src="/page_imgs/main_img/icon-con-menu1n.png">경제</li>
+		    	<li class="col-xs-3"><img class="img-responsive" id="myImage1" src="/page_imgs/main_img/icon-con-menu2n.png" >금융</li>
+		    	<li class="col-xs-3"><a data-toggle="tab" href="#menu2"><img class="img-responsive" id="myImage2" src="/page_imgs/main_img/icon-con-menu3n.png" >기업</a></li>
+		    	<li class="col-xs-3"><a data-toggle="tab" href="#menu3"><img class="img-responsive" id="myImage3" src="/page_imgs/main_img/icon-con-menu4n.png" onclick="changeImg(4)">주식</a></li>
+		  	</ul>
 			</div>
-		<% } %>
 		</div>
+
+		</body>
+		</html>
