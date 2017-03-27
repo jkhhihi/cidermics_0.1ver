@@ -2,7 +2,10 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
 .mob_menu6_con{display:none;}
 .parallax {
     /* The image used */
-    background-image: url(http://i.imgur.com/wZSzkux.jpg);
+    /*background-image: url(http://i.imgur.com/wZSzkux.jpg);*/
+    /*background-image: url("../page_imgs/main_img/222.jpeg");*/
+    /*background-image: url(https://static.pexels.com/photos/72161/pexels-photo-72161.jpeg);*/
+    background-image: url("http://i.imgur.com/WH08LJb.jpg");
 
     /* Set a specific height */
     min-height: 400px; 
@@ -48,6 +51,7 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
 .main-con .menu-title{margin-bottom:0; padding:0 !important;}
 .main-con .menu-title img{width:40px; margin-bottom:10px;}
 .main-con .nav>li>a:focus, .nav>li>a:hover, .nav-tabs>li.active>a{color:#ff574a !important;}
+.main-con .menu-title .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{border:1px solid #ff574a; !important;}
 .discuss-con .mg-bot{margin-bottom:20px;}
 .discuss-con .dis-title{width:100%; position:absolute; z-index:4; font-size:20px; font-weight:bold; top:40%; color:#fff;}
 .discuss-con .dis-title p{width:65%;}

@@ -208,7 +208,7 @@ $(document).ready(function(){
 	<a href="/contents"><div class="col-md-2 col-xs-4"><p>인기 콘텐츠</p></div></a>
 	<a href="/project"><div class="col-md-2 col-xs-4"><p>기획 콘텐츠</p></div></a>
 	<a href="/podcast"><div class="col-md-2 col-xs-4"><p>팟캐스트</p></div></a>
-	<a href="/finance/review"><div class="col-md-2 col-xs-4"><p>재무 리얼후기</p></div></a>
+	<a href="/finance/review"><div class="col-md-2 col-xs-4"><p>사이다재무</p></div></a>
 	<a href="/discuss"><div class="col-md-2 col-xs-4"><p>토론 포럼</p></div></a>
 </div>
 	
@@ -316,8 +316,8 @@ $(document).ready(function(){
 <div class="col-md-6 col-xs-12"><!-- 재무리얼후기,콘텐츠카테고리별 -->
 		<div class="review-con row">
 			<div class="menu-title row">
-				<div class="col-xs-8 padding-0">재무 리얼후기</div>
-				<div class="col-xs-4 padding-0" align="right"><a href="/finance/review"><p class="plus">더보기 ></p></a></div>
+				<div class="col-xs-8 padding-0">사이다재무</div>
+				<div class="col-xs-4 padding-0" align="right"><a href="/finance/necessary"><p class="plus">더보기 ></p></a></div>
 				<div class="line-3px col-xs-12"></div>
 			</div>
 			<!-- 콘텐츠 뿌림 시작 -->		
@@ -332,13 +332,17 @@ $(document).ready(function(){
 				        </ol>
 				            <div class="carousel-inner" role="listbox">
 				                <div class="item active">
+				                	<a href="/finance/review/">
 								    <p><B>후기 " <%= rev[0].rev_QA1 %> "</B></p>
-								    <p><%= rev[0].rev_title %></P>
+								    <p><%= rev[0].rev_title %></p>
+								    </a>
 				                </div>
 				                <% for(var i=1; i < rev.length; i++) { %>
 				                <div class="item">
+				                	<a href="/finance/review/">
 								    <p><B>후기 " <%= rev[i].rev_QA1 %> "</B></p>
-									<p><%= rev[i].rev_title %></P>
+									<p><%= rev[i].rev_title %></p>
+									</a>
 				                </div>
 				            	<% } %>
 				            </div>
@@ -357,7 +361,7 @@ $(document).ready(function(){
 			</div>
 		</div>
 
-<script type="text/javascript">
+<!--script type="text/javascript">
 function changeImg(idx){
 	//alert(idx);
 	if(idx == 1){
@@ -377,16 +381,15 @@ function changeImg(idx){
 	}
 }
 
-</script>
+</script-->
 		<!-- 경제 금융 기업 주식 카테고리별 콘텐츠 나오는것 -->		
 		<div class="main-con row" align="center" style="margin-right:0; margin-left:0">	
 			<div class="menu-title col-xs-12">	
 			<ul class="nav nav-tabs row">
-		    	<li class="active col-xs-3" onclick="changeImg(1)"><a data-toggle="tab" href="#home"><img class="img-responsive" id="myImage" src="/page_imgs/main_img/icon-con-menu1n.png">경제</a></li>
-		    	<!--li class="active col-xs-3" onclick="changeImg(1)" onmouseout="this.src='/page_imgs/main_img/icon-con-menu1n.png'" ><a data-toggle="tab" href="#home"><img class="img-responsive" src="/page_imgs/main_img/icon-con-menu1n.png" id="myImage">경제</a></li-->
-		    	<li class="col-xs-3" onclick="changeImg(2)"><a data-toggle="tab" href="#menu1"><img class="img-responsive" id="myImage1" src="/page_imgs/main_img/icon-con-menu2n.png">금융</a></li>
-		    	<li class="col-xs-3" onclick="changeImg(3)"><a data-toggle="tab" href="#menu2"><img class="img-responsive" id="myImage2" src="/page_imgs/main_img/icon-con-menu3n.png">기업</a></li>
-		    	<li class="col-xs-3" onclick="changeImg(4)"><a data-toggle="tab" href="#menu3"><img class="img-responsive" id="myImage3" src="/page_imgs/main_img/icon-con-menu4n.png">주식</a></li>
+		    	<li class="active col-xs-3" ><a data-toggle="tab" href="#home"><img class="img-responsive" id="myImage" src="/page_imgs/main_img/icon-con-menu1.png">경제</a></li>
+		    	<li class="col-xs-3" ><a data-toggle="tab" href="#menu1"><img class="img-responsive" id="myImage1" src="/page_imgs/main_img/icon-con-menu2.png">금융</a></li>
+		    	<li class="col-xs-3" ><a data-toggle="tab" href="#menu2"><img class="img-responsive" id="myImage2" src="/page_imgs/main_img/icon-con-menu3.png">기업</a></li>
+		    	<li class="col-xs-3" ><a data-toggle="tab" href="#menu3"><img class="img-responsive" id="myImage3" src="/page_imgs/main_img/icon-con-menu4.png">주식</a></li>
 		  	</ul>
 			</div>
 		</div>
@@ -591,7 +594,7 @@ $('#myImage').hover(function() {
 	<div class="col-md-6 col-xs-12">
 		<div class="review-con row">
 			<div class="menu-title row" >
-				<div class="col-xs-8 padding-0">재무 리얼후기</div><div class="col-xs-4 padding-0" align="right"><a href="/finance/review"><p class="plus">더보기 ></p></a></div>
+				<div class="col-xs-8 padding-0">사이다재무</div><div class="col-xs-4 padding-0" align="right"><a href="/finance/necessary"><p class="plus">더보기 ></p></a></div>
 			</div>
 			<!-- 콘텐츠 뿌림 시작 -->		
 			<div id="text-carousel2" class="carousel slide" data-ride="carousel">
@@ -605,13 +608,17 @@ $('#myImage').hover(function() {
 			        </ol>		    	
 		            <div class="carousel-inner" role="listbox">
 		                <div class="item active">
+		                	<a href="/finance/review/">
 						   <p><B>후기 " <%= rev[0].rev_QA1 %> "</B></p>
-								    <p><%= rev[0].rev_title %></P>
+								    <p><%= rev[0].rev_title %></p>
+							</a>
 				        </div>
 				        <% for(var i=1; i < rev.length; i++) { %>
 				         <div class="item">
+				         	<a href="/finance/review/">
 						    <p><B>후기 " <%= rev[i].rev_QA1 %> "</B></p>
-							<p><%= rev[i].rev_title %></P>
+							<p><%= rev[i].rev_title %></p>
+							</a>
 		                </div>
 		            	<% } %>
 		            </div>
@@ -687,9 +694,9 @@ $('#myImage').hover(function() {
 			<div class="menu-title">	
 			<ul class="nav nav-tabs row" style="margin-right:0; margin-left:0;">
 		    	<li class="active col-xs-3"><a data-toggle="tab" href="#home_1" style="padding:10px 1px;"><img class="img-responsive" src="/page_imgs/main_img/icon-con-menu1.png">경제</a></li>
-		    	<li class="col-xs-3"><a data-toggle="tab" href="#menu_1" style="padding:10px 1px;"><img class="img-responsive" src="/page_imgs/main_img/icon-con-menu2n.png">금융</a></li>
-		    	<li class="col-xs-3"><a data-toggle="tab" href="#menu_2" style="padding:10px 1px;"><img class="img-responsive" src="/page_imgs/main_img/icon-con-menu3n.png">기업</a></li>
-		    	<li class="col-xs-3"><a data-toggle="tab" href="#menu_3" style="padding:10px 1px;"><img class="img-responsive" src="/page_imgs/main_img/icon-con-menu4n.png">주식</a></li>
+		    	<li class="col-xs-3"><a data-toggle="tab" href="#menu_1" style="padding:10px 1px;"><img class="img-responsive" src="/page_imgs/main_img/icon-con-menu2.png">금융</a></li>
+		    	<li class="col-xs-3"><a data-toggle="tab" href="#menu_2" style="padding:10px 1px;"><img class="img-responsive" src="/page_imgs/main_img/icon-con-menu3.png">기업</a></li>
+		    	<li class="col-xs-3"><a data-toggle="tab" href="#menu_3" style="padding:10px 1px;"><img class="img-responsive" src="/page_imgs/main_img/icon-con-menu4.png">주식</a></li>
 		  	</ul>
 			</div>
 		 </div>
