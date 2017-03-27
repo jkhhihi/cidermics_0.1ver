@@ -101,7 +101,7 @@ color:#ff574a; font-family:"BMD"; border-bottom:2px solid #ff574a; font-weight:n
 .podcast-con .con-plus p{width:200px; background-color:#e68a82; margin-top:50px;
 border:4px solid #ececec; border-radius:10px; color:#fff; font-size:18px; padding:10px 0;}
 .podcast-con .pod-radio{margin-bottom:40px; font-size:16px;}
-.podcast-con .pod-radio1, .pod-radio2{border:2px solid #e68a82; border-radius:5px; width:120px; padding:5px 0}
+.podcast-con .pod-radio1, .pod-radio2{border:2px solid #e68a82; border-radius:5px; width:150px; padding:5px 0}
 .podcast-con .pod-radio1 p, .pod-radio2 p{margin:0;}
 .podcast-con .pod-radio img{margin-bottom:5px;}
 .podcast-con .pod-radio a p:hover{color:#ff574a;}
