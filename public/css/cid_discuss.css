@@ -52,6 +52,8 @@ td.re-comment{padding:5px 0 10px 20px !important;}
 .btn-width1{width:315px !important; margin-bottom: 5px; background-color:#1b87c9 !important; border:1px solid #ececec !important;}
 .btn-declaration{background-color:#ececec; border:1px solid #d1d1d1; border-radius:2px;}
 
+.no-comment{border-top:4px solid #ececec; border-bottom:4px solid #ececec; padding:20px 0; margin-bottom:20px; font-size:16px; font-weight:600;}
+
 /* ----- 토론 게시판 신고 ----- */
 .declaration{margin:60px; width:60% !important;}
 .btn2:hover{background-color:#ececec!important; color:#212121 !important;}
@@ -91,6 +93,8 @@ td.re-comment{padding:5px 0 10px 20px !important;}
 .btn-width1{width:268px !important; padding:5px 10px !important;}
 
 .dis-comment{width:100% !important;}
+
+.no-comment{width:100%;}
 
 /* ----- 토론 게시판 신고 ----- */
 .declaration{margin:30px; width:90% !important;}

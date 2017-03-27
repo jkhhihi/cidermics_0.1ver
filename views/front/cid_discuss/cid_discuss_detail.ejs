@@ -216,7 +216,7 @@ function cngtype1(){
 								<div id="chartContainer" style="height: 200px; width: 100%;"></div>
 								<% } %>
 								<div id="comtImg col-xs-12" align="center" onclick="comtImg()">
-										<img class="img-responsive" src="/page_imgs/discuss_img/comt_btn.png" width="150px;" style="margin:10px 0 5px 0; cursor:pointer">
+										<img class="img-responsive" src="/page_imgs/discuss_img/comt_btn.png" width="130px;" style="margin:10px 0 5px 0; cursor:pointer">
 								</div>
 
 								<div id="comtImgShow" style="display:none;">
@@ -323,7 +323,12 @@ function cngtype1(){
 
 						<% if(comtCount[0].dis_no == 0 ){ %>
 
-						<p> 아무것도 없다 </p>
+						<div class="row margin-lr0" align="center">
+							<div class="col-xs-12 no-comment">
+							<img class="img-responsive" src="/page_imgs/discuss_img/discuss-icon-no-comment.svg" style="width:100px; margin-bottom:15px;">							
+								<p>" 첫번째 댓글을 달아주세요 :( "</p>
+							</div>
+						</div>
 
 						<% }else{ %>
 
