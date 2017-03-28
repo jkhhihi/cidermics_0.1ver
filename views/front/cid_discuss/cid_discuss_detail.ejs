@@ -515,7 +515,7 @@ function cngtype1(){
 	{
 		var aaa = document.getElementById("showDeleteComtco"+id);
 
-		alert(aaa[0]);
+		//alert(aaa[0]);
 		if(aaa[0].value ==""){
 			aaa[0].value.focus();
 		}
@@ -524,7 +524,7 @@ function cngtype1(){
 		//alert(pwNum);
 
 		$.ajax({
-			url : '/discuss/deleteComt/'+ida+'&'+pwNum,
+			url : '/discuss/deleteComtco/'+ida+'&'+pwNum,
 			method : 'get',
 			success : function(data){
 				if(data.fail == 1){
@@ -556,7 +556,7 @@ function showComtco(id)
 				success : function(data){
 					var ht="";
 					$.each(data.ddd, function (index, value){
-						ht += "<table class='table table-condensed'><tr class='active'><td class='primary re-comment'><h6><b>┖ </b>"+value.comtco_writer+" | "+ value.comtco_date+"| <span class='glyphicon glyphicon-remove-circle' id='deleteComtco"+value.comtco_no+"' onclick='deleteComtco("+value.comtco_no+")'></span><form class='showDeleteComtco' id='showDeleteComtco"+value.comtco_no+"' value='"+value.comtco_no+"'>비밀번호 : <input type='password' name='delectPw' value=''><a onclick='deleteComtcoSmt("+value.comtco_no+")' style='cursor:pointer'><span class='glyphicon glyphicon-trash'>삭제</span></a></button></form></h6>"+value.comtco_text+"</td></tr></table>";
+						ht += "<form method='get' action='/discuss/declaration2' style='margin:5px 0 0 5px'><table class='table table-condensed'><tr class='active'><td class='primary re-comment'><h6><b>┖ </b>"+value.comtco_writer+" | "+ value.comtco_date+"<input type='hidden' name='declar_comtco_no' value='"+value.comtco_no+"'> | <button type='submit' class='btn-declaration'>신고</button> | <span class='glyphicon glyphicon-remove-circle' id='deleteComtco"+value.comtco_no+"' onclick='deleteComtco("+value.comtco_no+")'></span></form><form class='showDeleteComtco' id='showDeleteComtco"+value.comtco_no+"' value='"+value.comtco_no+"' style='display: none; padding:5px 0 10px 0'>비밀번호 : <input type='password' name='delectPw' value=''><a onclick='deleteComtcoSmt("+value.comtco_no+")' style='cursor:pointer'><span class='glyphicon glyphicon-trash'>삭제</span></a></button></form></h6>"+value.comtco_text+"</td></tr></table>";
 						var shco_no = value.comt_no;
 						document.getElementById('showComtco'+shco_no).innerHTML = ht;
 					});
