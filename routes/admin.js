@@ -851,17 +851,37 @@ router.get('/discuss/comtcodelete/:no', function(req, res, next) {
     });
 });
 
-router.get('/discuss/declarComtdelete/:no', function(req, res, next) {
+router.get('/discuss/declarComtdelete/:no&:decno', function(req, res, next) {
 	
 	var CP = 3;
 	var no = req.params.no;
+	var decno = req.params.decno;
 	
 	mysql.del('delete from cider.cid_dis_comt where comt_no = '+ no +'', function (err, data){
+		mysql.del('delete from cider.cid_dis_declar where disDec_no = '+ decno +'', function (err, data){
 		if(err){
 			res.redirect('/adm/discuss');
 		}else{
 			res.redirect('/adm/discuss');
 		}
+	  });
+    });
+});
+
+router.get('/discuss/declarComtdelete2/:no&:decno', function(req, res, next) {
+	
+	var CP = 3;
+	var no = req.params.no;
+	var decno = req.params.decno;
+	
+	mysql.del('delete from cider.cid_dis_comt_comt where comtco_no = '+ no +'', function (err, data){
+		mysql.del('delete from cider.cid_dis_declar where disDec_no = '+ decno +'', function (err, data){
+		if(err){
+			res.redirect('/adm/discuss');
+		}else{
+			res.redirect('/adm/discuss');
+		}
+	  });
     });
 });
 

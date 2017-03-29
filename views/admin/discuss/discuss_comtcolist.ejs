@@ -33,11 +33,11 @@
     <table class="bordered">
         <thead>
           <tr>
-              <th data-field="no">댓글 번호</th>
               <th data-field="cno">대댓 번호</th>
               <th data-field="writer">작성자</th>
               <th data-field="text">내용</th>
               <th data-field="date">날짜</th>
+              <th data-field="no">댓글 번호</th>
               <th data-field=""></th>
           </tr>
         </thead>
@@ -45,11 +45,11 @@
           
           <% for(var i = 0; i< comtlistco.length; i++) { %>
             <tr>
-              <td><a onclick="gotoComtNo(id)" target="_blank" id="<%= comtlistco[i].comt_no %>" ><%= comtlistco[i].comt_no %></a><div id="delComt"></div></td>
               <td><%= comtlistco[i].comtco_no %></td>
               <td><%= comtlistco[i].comtco_writer %></td>
               <td><%= comtlistco[i].comtco_text %></td>
               <td><h6><%= comtlistco[i].comtco_date %></h6></td>
+              <td><a onclick="gotoComtNo(id)" target="_blank" id="<%= comtlistco[i].comt_no %>" ><%= comtlistco[i].comt_no %></a><div id="delComt"></div></td>
               <td><a href="/adm/discuss/comtcodelete/<%= comtlistco[i].comtco_no %>">삭제</a></td>
             </tr>
           <% } %>

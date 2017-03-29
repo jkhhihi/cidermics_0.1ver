@@ -97,15 +97,25 @@
           <% for (var i=0; i<declar.length; i++) { %>
         <li class="collection-item avatar">
           <i class="material-icons circle green">perm_identity</i>
-          <span class="disDec_no"><%=declar[i].disDec_no%></span>
-          <span class="dis_no"><%=declar[i].dis_no%></span>
-          <span class="dis_no"><%=declar[i].comt_no%></span>
-          <span class="dis_text"><%=declar[i].comt_text%></span>
+          <span class="disDec_no">신고번호:<%=declar[i].disDec_no%></span>
+          <span> | </span>
+          <span class="dis_no" style="color:#f00">페이지번호:<%=declar[i].dis_no%></span>
+          <span> | </span>
+          <span class="comt_no" style="color:#0f8429">댓글번호:<%=declar[i].comt_no%></span>
+          <span> | </span>
+          <span class="comtco_no" style="color:#ab4aa7">대댓글번호:<%=declar[i].comtco_no%></span>
+          <span> | </span>
           <span class="dis_regdate"><%=declar[i].comt_regdate%></span>
-          <a href="/adm/discuss/declarComtdelete/<%= declar[i].comt_no %>">댓글 삭제</a>
+          <% if (declar[i].dis_no == null){ %>
+          <a href="/adm/discuss/declarComtdelete2/<%= declar[i].comtco_no %>&<%=declar[i].disDec_no%>">대댓글 삭제</a>
+          <% } else { %>
+          <a href="/adm/discuss/declarComtdelete/<%= declar[i].comt_no %>&<%=declar[i].disDec_no%>">댓글 삭제</a>
+          <% } %>
           <span> | </span>
           <a href="/adm/discuss/declardelete/<%= declar[i].disDec_no %>"><i class="tiny material-icons">delete</i></a>
-      </a>
+          <br>
+          <span class="dis_text">내용:<%=declar[i].comt_text%></span>
+
         </li>
         <% } %>
       </ul>

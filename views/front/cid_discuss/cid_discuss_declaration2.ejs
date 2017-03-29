@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="/css/cid_discuss.css" rel="stylesheet">
+
+<title>사이다경제 | 토론 신고</title>
+
+<!--글자수 제한 스크립트 -->
+<script type="text/javascript">
+    function chkword(obj, maxByte) {
+ 
+        var strValue = obj.value;
+        var strLen = strValue.length;
+        var totalByte = 0;
+        var len = 0;
+        var oneChar = "";
+        var str2 = "";
+ 
+        for (var i = 0; i < strLen; i++) {
+            oneChar = strValue.charAt(i);
+            if (escape(oneChar).length > 4) {
+                totalByte += 2;
+            } else {
+                totalByte++;
+            }
+ 
+            // 입력한 문자 길이보다 넘치면 잘라내기 위해 저장
+            if (totalByte <= maxByte) {
+                len = i + 1;
+            }
+        }
+ 
+        // 넘어가는 글자는 자른다.
+        if (totalByte > maxByte) {
+            alert(maxByte + "자를 초과 입력 할 수 없습니다.");
+            str2 = strValue.substr(0, len);
+            obj.value = str2;
+            chkword(obj, 4000);
+        }
+    }
+</script>
+
+</head>
+<body>
+<!--위로가기 버튼-->
+<div id="but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></div>
+
+<% include ../top %>
+
+<div class="discuss_detail-mob_menu"><img src="/page_imgs/fixed_img/detail_line.png"></div>
+<div class="bg-blue">
+	<div class="bg-white container">
+		<div class="mob-bg-blue" style="padding-bottom:0 !important;">
+			<div class="mob-bg-white container">
+
+
+<form method="post" action="/discuss/declaration2">
+<input type="hidden" name="comt_no" value="<%=comtlist2[0].comt_no%>">
+<input type="hidden" name="comtco_no" value="<%=comtlist2[0].comtco_no%>">
+<div class="declaration container">
+  <div class="row">
+        <div class="col-xs-12">
+	        <h4><b>
+	        <img class="img-responsive" src="/page_imgs/discuss_img/discuss-icon-siren.svg" style="display:inline; width:15px; margin:0 5px 5px 0;">신고하기
+	        </b></h4>
+	        <h5><b> 신고 댓글 내용 : <%=comtlist2[0].comtco_text%></b></h5>
+        </div>
+   		<div class="col-xs-12">
+	        <div class="form-group">
+	       	 <label for="exampleInputEmail1">사유 : </label>
+	       	 <textarea class="form-control" rows="6" name="comt_text"  placeholder="사유 내용" onkeyup="chkword(this, 500)" style="resize:none; font-size:14px; width:100%;")></textarea>
+	    	</div>
+	    	<button type="submit" class="btn2 btn-default" style="padding:5px 10px; font-size:12px; border:none; border-radius:2px; background-color:#1b87c9; color:#fff; margin-top:10px;">신고하기</button>
+   		</div>
+  </div>
+</div>
+</form>
+
+<script>
+  $(document).ready(function(){
+    $('.modal-trigger1').leanModal();
+  });
+</script>
+
+			</div>
+		</div>
+	</div>
+</div>        
+
+<% include ../bottom %>
+
+</body>
+</html>

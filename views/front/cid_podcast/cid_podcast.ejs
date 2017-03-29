@@ -49,23 +49,25 @@
 		<div class="padcast-banner"><img class="img-responsive" src="http://i.imgur.com/Wh9OMkl.jpg"></div>
 		<div class="podcast-con row">
 					<div class="pod-radio">
-						<div class="pod-radio1" style="display:inline-block; margin-right:5px;"><a href="#"><img class="img responsive" src="/page_imgs/contents_img/icon-cd.svg"><p>팟빵에서 듣기</p></a></div>
-						<div class="pod-radio2" style="display:inline-block;"><a href="#"><img class="img responsive" src="/page_imgs/contents_img/icon-cd.svg"><p>데마시안에서 듣기</p></a></div>
+						<div class="pod-radio1" style="display:inline-block; margin-right:5px;"><a href="http://www.podbbang.com/ch/13140"><img class="img responsive" src="/page_imgs/contents_img/icon-cd.svg"><p>팟빵에서 듣기</p></a></div>
+						<div class="pod-radio2" style="display:inline-block;"><a href="http://www.demasian.com/program/3163"><img class="img responsive" src="/page_imgs/contents_img/icon-cd.svg"><p>데마시안에서 듣기</p></a></div>
 					</div>
+			<% for (var i = 0; i < podcast.length; i++) { %>
 			<div class="con-in col-sm-4 col-xs-6">
 				<div>
-					<a href="#">
+					<a href="/contents/detail/<%= podcast[i].con_no %>">
 					<div class="con-img">
-					<img class="img-responsive" style="width:50px; position:absolute; z-index:2; margin:5px 0 0 5px;" src="/page_imgs/main_img/new_mark4.svg">    <!--새로 업데이트된거 표시-->
-					<img class="img-responsive con-thumbnail-img" style="position:relative; z-index:1" align="center" src="/page_imgs/contents_img/1.png">
+					<!--img class="img-responsive" style="width:50px; position:absolute; z-index:2; margin:5px 0 0 5px;"  src="<%= podcast[i].chkDat%>"-->
+
+					<img class="img-responsive con-thumbnail-img" style="position:relative; z-index:1" align="center" src="<%= podcast[i].con_photo %>">
 					</div>
 					</a>
-					<p style="margin-top:10px;" align="center"><a href="#">
-						타이틀자리</a></p>
+					<p style="margin-top:10px;" align="center"><a href="#"><%= podcast[i].con_title %></a></p>
 				</div>
 			</div>
+			<% } %>
 
-			<a href="#"><div class="con-plus col-xs-12"><p>더보기</p></div></a>													
+			<!--a href="#"><div class="con-plus col-xs-12"><p>더보기</p></div></a-->													
 		</div>
 	</div>
 </div>

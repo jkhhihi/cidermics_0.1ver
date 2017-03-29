@@ -108,7 +108,7 @@ router.get('/contents/:no', function(req, res, next) {
 	var sets = {con_category : no, con_release : _tot};
 	var row;
 	
-	qry="select con_no, con_photo, con_title from cider.cid_contents where con_category = '"+no+"' and con_release <= '"+_tot+"' order by con_no desc limit 0,12";
+	qry="select con_no, con_photo, con_title from cider.cid_contents where con_category = '"+no+"' and con_release <= '"+_tot+"' order by con_no desc limit 0,60";
 
 	//mysql.select('select con_no, con_photo, con_title from cider.cid_contents where con_category = '+no+' order by con_no desc limit 0,12', function (err, data){
 	mysql.select(qry,
@@ -178,10 +178,10 @@ router.get('/addMore/:idx', function(req, res, next) {
   var _tot = releaseTime();
 
    var lang = req.params.lang;
-   var start = (idx - 1) * 12;
+   var start = (idx - 1) * 20;
    //var start= start +1;
    //var end = idx * 12;
-   var end = 12;
+   var end = 20;
    
     qry="select con_no, con_photo, con_title  from cider.cid_contents where con_release <= '"+_tot+"' order by con_no desc limit "+ start +", "+ end +"";
    //console.log(qry);
@@ -200,8 +200,8 @@ router.get('/addMore2/:idx/:p', function(req, res, next) {
    var p=req.params.p;
    var _tot = releaseTime();
    var lang = req.params.lang;
-   var start = (idx - 1) * 12;
-   var end = 12;
+   var start = (idx - 1) * 30;
+   var end = 30;
    var qry='';
    //console.log(start, end);
          qry="select con_no, con_photo, con_title  from cider.cid_contents where con_release <= '"+_tot+"' and con_category = "+ p +" order by con_no desc limit "+ start +", "+ end +"";
