@@ -111,10 +111,12 @@ router.get('/main2', function(req, res, next) {
 											//mysql.select("select dis_no,dis_title,dis_thum from cider.cid_dis_reg where dis_release <= '"+_tot+"' order by dis_no desc limit 0,2", function(err,data){
 
 												//mysql.select("select count(*) from cider.cid_dis_comt where dis_no = '2'", function(err,data){
+													mysql.select("select r.dis_no as rno , c.dis_no as cno from cider.cid_dis_reg as r left join cider.cid_dis_comt as c on r.dis_no = c.dis_no", function(err,data){
+														discussCnt = data;
 
 
-	    		res.render('front/cid_main_temp', { contents : row, popular: popular,podcast:podcast,project:project,rev:data2,stock:stock,company:company,finance:finance,economics:economics,discuss:discuss});
-
+	    		res.render('front/cid_main_temp', { contents : row, popular: popular,podcast:podcast,project:project,rev:data2,stock:stock,company:company,finance:finance,economics:economics,discuss:discuss,discussCnt:discussCnt});
+	       });
 	      });
 	 	 });
 		});

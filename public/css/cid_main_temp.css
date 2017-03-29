@@ -54,7 +54,7 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
 .main-con .menu-title .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{border:1px solid #ff574a; !important;}
 .discuss-con .mg-bot{margin-bottom:20px;}
 .discuss-con .dis-title{width:100%; position:absolute; z-index:4; font-size:20px; font-weight:bold; top:40%; color:#fff;}
-.discuss-con .dis-title p{width:65%;}
+.discuss-con .dis-title p{width:70%;}
 .discuss-con .dis-img{position:absolute; z-index:3; color:#fff; font-size:18px; bottom:5px; font-weight:bold;}
 .discuss-con .dis-img .dis-icon{border-top:2px solid #fff; padding:5px 15px 0 0;}
 .discuss-con .dis-img .dis-icon p{margin-bottom:0;}
@@ -85,7 +85,7 @@ padding:10px 0; color:#fff; border-radius: 5px; font-size:16px; font-weight:bold
 .mob_menu6_con .review-con{margin-bottom:20px; font-size:12px;}
 .mob_menu6_con .podcast-con{margin-top:0;}
 .mob_menu6_con .dis-title{font-size:16px; top:30%;}
-.mob_menu6_con .dis-title p{width:60%;}
+.mob_menu6_con .dis-title p{width:70%;}
 .mob_menu6_con .dis-img{font-size:14px;}
 .mob_menu6_con .dis-img .dis-icon{border-top:2px solid #fff; padding:5px 15px 0 0;}
 .mob_menu6_con .discuss-con .dis-img img{width:25px;}

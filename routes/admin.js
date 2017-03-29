@@ -251,12 +251,12 @@ router.post('/contents/insert', ensureAuthenticated, function(req, res, next) {
 	var photo = req.body.photo;
 	var userNo = req.body.userNo;
 	var writer = req.body.writer;
-	console.log(writer);
+	//console.log(writer);
 	var userText = req.body.userText;
 	var date = getWorldTime(+9);
 	var rdate = req.body.rdate;
-	console.log(userNo);
-	console.log(title);
+	//console.log(userNo);
+	//console.log(title);
 	var sets = {con_category : category, con_writer : writer, con_title : title, con_content : contents, con_photo : photo, con_viewCount : 0, con_regDate : date, con_upDate : date, user_no : userNo, user_comment : userText, con_release : rdate};
 	
 	mysql.insert('insert into cider.cid_contents set ?', sets,  function (err, data){
@@ -735,44 +735,28 @@ router.get('/discuss/detail/:dis_no', ensureAuthenticated, function(req, res, ne
   });
 });
 
-router.get('/finance/detail/:fi_app_no', ensureAuthenticated, function(req, res, next) {
-	
-	var CP = 3;
-	var fi_app_no = req.params.fi_app_no;
-	
-	mysql.select('select * from cider.cid_fi_applyform', function (err, data2){
-		if(err){
-			res.redirect('back');
-		}
-		user = data2;
-		mysql.select('select * from cider.cid_fi_applyform where fi_app_no = '+ fi_app_no +'', function (err, data){
-			if(err){
-				res.redirect('back');
-			}
-			res.render('admin/finance/finance_detail', {CP : CP, finance : data});
-		});
-    });
-});
 
-router.post('/contents/update', ensureAuthenticated, function(req, res, next) {
+router.post('/discuss/update', ensureAuthenticated, function(req, res, next) {
 	
 	var CP = 1;
 	
-	var no = req.body.no;
 	var title = req.body.title;
-	var contents = req.body.contents;
 	var category = req.body.category;
 	var photo = req.body.photo;
-	var userNo = req.body.userNo;
 	var writer = req.body.writer;
-	var userText = req.body.userText;
-	var rdate   = req.body.rdate;
+	var comt_1 = req.body.comt_1;
+	var comt_2 = req.body.comt_2;
+	var date = getWorldTime(+9);
+	var rdate = req.body.rdate;
+	var no = req.body.dis_no;
+
 	var date = getWorldTime(+9);
 	
-	var sets = {con_no : no, con_category : category, con_title : title, con_content : contents, con_photo : photo, con_upDate : date, user_no : userNo, user_comment : userText, con_writer : writer,con_release : rdate   };
-	mysql.update('update cider.cid_contents set con_category = ?,  con_title = ?, con_content = ?, con_photo = ?,  con_upDate = ?, user_no = ?, user_comment = ?, con_writer = ? ,con_release= ?  where con_no = ?', [category,title,contents,photo,date,userNo,userText,writer,rdate,no], function (err, data){
+	var sets = {dis_no : no, dis_cate : category, dis_writer : writer, dis_title:title, dis_thum:photo,dis_comt_1:comt_1, dis_comt_2:comt_2 , dis_update:date, dis_release:rdate};
+	console.log(sets);
+	mysql.update('update cider.cid_dis_reg set dis_cate = ?,  dis_writer = ?, dis_title = ?, dis_thum = ?,  dis_comt_1 = ?, dis_comt_2 = ?, dis_update = ? ,dis_release= ? where dis_no = ?', [category,writer,title,photo,comt_1,comt_2,date,rdate,no], function (err, data){
 		
-    	res.redirect('/adm/contents');
+    	res.redirect('/adm/discuss');
     	
     });
 });

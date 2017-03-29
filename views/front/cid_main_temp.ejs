@@ -670,11 +670,11 @@ $('#myImage').hover(function() {
 		<% for(var i=0; i < discuss.length; i++) { %>
 			<div class="col-xs-12 mg-bot">
 				<div class="row">
-					<a href="/discuss"><div class="dis-title col-xs-12"><p>"<%= discuss[i].dis_title%>"</p></div></a>
+					<a href="/discuss/detail/<%= discuss[i].dis_no%>">"><div class="dis-title col-xs-12"><p>"<%= discuss[i].dis_title%>"</p></div></a>
 					<div class="dis-img col-xs-12" align="right">
 						<div class="dis-icon row">
 							<!-- img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-like.png" ><p style="display:inline-block;">52</p -->
-							<img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-comment1.svg" ><p style="display:inline-block;">39</p>	
+							<img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-comment1.svg" ><!--p style="display:inline-block;">39</p-->	
 						</div>	
 					</div>
 					<div class="dis-bg-img col-xs-12"><div class="dis-black-box"></div><img class="img-responsive" src="<%= discuss[i].dis_thum%>"></div>	
@@ -684,6 +684,8 @@ $('#myImage').hover(function() {
 		</div>
 		<!-- 콘텐츠 뿌림 끝 -->
 	</div>
+
+
 	<div class="section-line col-xs-12"></div>	
 	
 

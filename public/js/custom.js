@@ -528,30 +528,46 @@ $(document).ready(function(){
 		$('#discuss_update').click(function(e){
 			var F_body = $('iframe').contents().find('#se2_iframe').contents().find('.se2_inputarea');
 			var contents = F_body.html();
-			var name = $('#name').val();
-			var url = $('#url').val();
+			var title = $('#title').val();
+			var cate = $('[name=category]').val();
 			var photo = $('[name=photo]').val();
-			
-			if(url == null) {
-				alert('사이트URL를 지정해주세요');
+			var writer = $('#writer').val();
+			var comt_1 = $('#icon_prefix').val();
+			var comt_2 = $('#icon_telephone').val();
+
+			var rdate =  $('#rdate').val();
+		
+
+			if(title == "") {
+				alert('제목을 작성해주세요');
 				return;
 			}
-			if(name == "") {
-				alert('회사명1을 작성해주세요');
+			if(cate == "") {
+				alert('카테고리를 선택해주세요.');
 				return;
 			}
 			if(photo == ""){
 				alert('썸네일 설정해주세요');
 				return;
 			}
+			if(writer == ""){
+				alert('등록자 설정해주세요');
+				return;
+			}
+			if(comt_1 == ""){
+				alert('문항을 설정해주세요');
+				return;
+			}
+			if(comt_2 == ""){
+				alert('문항을 설정해주세요');
+				return;
+			}
 			
 			$('[name=name]').val(name);
-			$('[name=contents]').val(contents);
-			$('[name=url]').val(url);
 			
-			$('#csform').attr('action', '/adm/consulting/update');
-			$('#csform').attr('method', 'post');
-			$('#csform').submit();
+			$('#discussform').attr('action', '/adm/discuss/update');
+			$('#discussform').attr('method', 'post');
+			$('#discussform').submit();
 			
 		});
 	});
