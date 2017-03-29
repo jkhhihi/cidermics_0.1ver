@@ -38,7 +38,7 @@ body{font-family:'Noto-Bold';}
 a{color:#333; text-decoration:none;}
 .a-white{color:#fff;}
 .mob-header{display:none;}
-.header{height:70px; font-family: 'Nanum Gothic', serif; color:#1b87c9; margin:0;
+.header{height:70px; color:#1b87c9; margin:0;
 width: 100%;
 position: fixed;
 background-color: white;
