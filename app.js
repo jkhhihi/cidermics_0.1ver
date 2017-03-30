@@ -35,6 +35,7 @@ var quiz = require('./routes/quiz');
 var discuss = require('./routes/discuss');
 var project = require('./routes/project');
 var podcast = require('./routes/podcast');
+var books = require('./routes/books');
 
 // all environments
 app.set('port', process.env.PORT || 80);
@@ -73,6 +74,7 @@ app.use('/cid_quiz', express.static(__dirname + '/views/cid_quiz'));
 app.use('/cid_discuss',express.static(__dirname+'/views/cid_discuss'));
 app.use('/cid_project',express.static(__dirname+'/views/cid_project'));
 app.use('/cid_podcast',express.static(__dirname+'/views/cid_podcast'));
+app.use('/cid_books',express.static(__dirname+'/views/cid_books'));
 app.use(flash());
 
 app.use(bodyParser.json({limit: '1000mb'}));
@@ -101,6 +103,7 @@ app.use('/',quiz);
 app.use('/',discuss);
 app.use('/',project);
 app.use('/',podcast);
+app.use('/',books);
 
 
 passport.use('local', new LocalStrategy({
