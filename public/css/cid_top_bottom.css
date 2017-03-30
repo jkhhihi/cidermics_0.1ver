@@ -31,7 +31,7 @@
 /*----------------------폰트끝------------------------*/	   
 
 /* CSS Document */
-body{font-family:'Noto-Bold';}
+body{font-family:'Noto-Bold'; font-weight:bold;}
 .padding-0{padding:0;}
 .padding-lr-0{padding-left:0; padding-right:0;}
 #menu{display:none;}
@@ -81,15 +81,15 @@ header .search{padding-top:19px; padding-right:0;}
 .tab-menu{margin-left:0; margin-right:0;}
 .tab-menu-select{background-color:#fff; color:#1b87c9;}
 .contents_sub_menu{margin-left:58px; color:#FFFFFF; font-size:16px; }
-.contents_sub_menu ul li{margin-bottom:20px;}
-#tab-menu1-contents{margin-left:30px;}
+.contents_sub_menu ul li{margin-bottom:16px;}
+#tab-menu1-contents{margin-left:30px; margin-bottom:30px;}
 #tab-menu1-contents ul li img{width:40px; margin-right:30px;}
 #tab-menu2-contents{margin-top:30px;}
 #tab-menu2-contents ul a li{border:5px solid #fff; padding:30px 0; width:80%;}
 #tab-menu2-contents ul a li span:hover{border-bottom:2px solid #fff;}
 
-#menu ul{padding:0; margin:0;}
-#menu ul li{color:#FFFFFF; font-size:18px; margin-top:20px;}
+#menu ul{padding:0; margin:0 0 0 0;}
+#menu ul li{color:#FFFFFF; font-size:18px; margin-top:16px;}
 #menu ul li a{color:#fff;}
 
 #menu .scrollBlind{

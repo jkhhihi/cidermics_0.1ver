@@ -22,7 +22,7 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
 .bg-blue{background-color:#1b87c9;}
 .main-contents{background-color:#ffffff; box-shadow:0 8px 10px rgba(0, 0, 0, 0.8); padding-top:50px;}
 .main-contents .contents-menu .menu img{margin:0 15px 20px 15px;}
-.main-contents .contents{font-size:16px; text-align:center; font-weight:bold;}
+.main-contents .contents{font-size:14px; text-align:center; font-weight:bold;}
 .main-contents .contents div div p{margin-top:20px;}
 .main-contents .contents .icon-plus_con{margin:60px 0 50px 0;}
 .main-contents .contents-mob_menu{display:none;}
@@ -91,8 +91,8 @@ color:#ff574a; font-family:"BMD"; border-bottom:2px solid #ff574a; font-weight:n
 .con-img img{width:100%;}
 
 /*팟캐스트*/
-.podcast-main{margin-top:70px; font-family:'BM JUA','배달의민족 주아',sans-serif;}
-.podcast .padcast-title{font-size:20px; color:#212121; border-bottom:4px solid #ececec; margin:20px 0;}
+.podcast-main{margin-top:70px; /*font-family:'BM JUA','배달의민족 주아',sans-serif;*/ font-weight:bold;}
+.podcast .padcast-title{font-size:18px; color:#212121; border-bottom:4px solid #ececec; margin:20px 0; font-family:'Godo'; font-weight:400;}
 .podcast .padcast-title img{margin:20px 0;}
 .podcast-con{margin:20px 0;}
 .podcast-con .con-in{padding:0 30px; margin-bottom:30px; font-size:16px;}
@@ -107,8 +107,8 @@ border:4px solid #ececec; border-radius:10px; color:#fff; font-size:18px; paddin
 .podcast-con .pod-radio a p:hover{color:#ff574a;}
 
 /*기획 콘텐츠*/
-.project-main{margin:60px 0; font-family:'Godo'; font-weight:400;}
-.project-title{border-bottom:4px solid #ececec; font-size:18px; color:#212121; margin:20px 0;}
+.project-main{margin:60px 0;}
+.project-title{border-bottom:4px solid #ececec; font-size:18px; color:#212121; margin:20px 0; font-family:'Godo'; font-weight:400;}
 .project-title img{margin:20px 0;}
 ./*project-con .banner img{width:100%;}*/
 .project-con .con-plus p{width:200px; background-color:#ececec; margin:50px 0 40px 0;
@@ -127,6 +127,11 @@ border:4px solid #1b87c9; border-radius:10px; color:#1b87c9; font-size:18px; pad
 }
 .project-in .con-in a:hover{color:#1b87c9;}
 
+/*책 콘텐츠*/
+.books-main{margin:50px 0;}
+.books-title{border-bottom:4px solid #ececec; font-size:18px; color:#212121; margin:20px 0; font-family:'Godo'; font-weight:400;}
+.books-title img{margin:20px 0;}
+
 @media all and (max-width:1024px) {
 .menu{margin-top:0;}	
 	
@@ -136,12 +141,12 @@ border:4px solid #1b87c9; border-radius:10px; color:#1b87c9; font-size:18px; pad
 
 /*인기*/
 .bg-blue{margin-top:0 !important; height:100%;}	
-.main-contents{padding-top:80px;}	
+.main-contents{padding-top:60px;}	
 .main-contents .contents-menu{display:none;}
 .main-contents .contents .icon-plus_con{margin:10px 0 30px 0;}
 .main-contents .contents .icon-plus_con img{height:80px;}
 .main-contents .contents .row .col-sm-4, .col-xs-6{padding:0 5px 0 5px;}
-.main-contents .contents-mob_menu{display:block; margin-bottom:20px;}
+.main-contents .contents-mob_menu{display:block;}
 .contents .popular-title p{margin:0 0 20px 0; width:95%;}
 .icon-plus_con img{width:35px; margin-bottom:40px;}
 
@@ -152,7 +157,7 @@ border:4px solid #1b87c9; border-radius:10px; color:#1b87c9; font-size:18px; pad
 .bg-blue{margin-top:0 !important; height:100%;}
 .mob-bg-blue{background-color:#1b87c9; height:100%; padding-top:10px; padding-bottom:20px;}
 .mob-bg-white{background-color:#fff; width:95%; box-shadow:0 8px 40px rgba(0, 0, 0, 0.8); margin-bottom:10px; border-radius: 5px;}
-.contents{width:100% !important; margin-top:20px;}	
+.contents{width:100% !important;}	
 .contents_detail-mob_menu {display:block;}
 .contents .contents-in img{width:100% !important;}/*img 빼기*/
 .contents .title{font-size:22px; margin:20px 0 25px 0; }
@@ -214,5 +219,10 @@ border:4px solid #1b87c9; border-radius:10px; color:#1b87c9; font-size:18px; pad
 .project-in .con-in .con-img{margin-bottom:20px;}
 .project-in .con-in .col-xs-6{padding:0 5px;}
 .project-in .con-in .con-title{font-size:12px;}
+
+/*책 콘텐츠*/
+.books-main{margin:40px 0;}
+.books-title{font-size:16px;}
+.books-title img{margin:10px 0; width:100px;}
 
 }
