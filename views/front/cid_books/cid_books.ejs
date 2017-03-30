@@ -8,7 +8,7 @@
 <meta name="naver-site-verification" content="083657cb98aa9a4a9c62dedeffddfb2490545da0"/>
 
 <!--meta http-equiv="X-UA-Compatible" content="IE=edge"-->
-<title>사이다경제 | 기획 콘텐츠</title>
+<title>사이다경제 | Books</title>
 
 <!-- CSS -->
 <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -40,7 +40,28 @@
 <div id="but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></div>
 <% include ../top %>
 
-
+<!-- div class="bg-blue">
+<div class="bg-white project-main container" -->
+<div class="books-main container">
+<!--콘텐츠뿌림-->
+	<div class="books container" align="center">
+		<div class="books-title"><img src="/page_imgs/contents_img/icon-book.svg"><p>사이다경제가 추천하는 "경제/경영 Books"</p></div>
+		
+		<ul class="grid effect-2" id="grid">
+				<% for(var i=0; i<project.length; i++) { %>
+				<li>
+				<div>
+					<a href="/contents/detail/<%= project[i].con_no %>">
+					<div class="con-img" align="center"><img class="img-responsive" src="<%= project[i].con_photo %>"></div></a>
+					<p><a href="/contents/detail/<%= project[i].con_no %>">
+						<%= project[i].con_title %></a></p>
+				</div>
+			</li>
+			<% } %>
+		</ul>	
+		<!-- 콘텐츠 뿌림 끝 -->
+	</div>
+</div>
 
 		<script src="/js/contents_js/masonry.pkgd.min.js"></script>
 		<script src="/js/contents_js/imagesloaded.js"></script>

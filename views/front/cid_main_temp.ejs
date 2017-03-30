@@ -214,6 +214,7 @@ $(document).ready(function(){
 	
 <!-- 콘텐츠 -->
 <div class="menu6_con container row">
+	<div class="row">
 	<div class="new-con col-md-6 col-xs-12">
 		<div class="menu-title row" >
 			<div class="col-xs-8 padding-0" style="margin-bottom:5px;">최신 콘텐츠</div>
@@ -262,6 +263,9 @@ $(document).ready(function(){
 		<!-- 콘텐츠 뿌림 끝 -->
 		</div>
 	</div>
+	</div>
+	
+	<div class="row">
 	<div class="plan-con col-md-6 col-xs-12">
 		<div class="menu-title row">
 			<div class="col-xs-8 padding-0">기획 콘텐츠</div><div class="col-xs-4 padding-0" align="right"><a href="/project"><p class="plus">더보기 ></p></a></div>
@@ -309,11 +313,12 @@ $(document).ready(function(){
 		</div>
 		<!-- 콘텐츠 뿌림 끝 -->
 	</div>
+	</div>
 
 
 
-
-<div class="col-md-6 col-xs-12"><!-- 재무리얼후기,콘텐츠카테고리별 -->
+	<div class="row">
+	<div class="col-xs-6"><!-- 재무리얼후기,콘텐츠카테고리별 -->
 		<div class="review-con row">
 			<div class="menu-title row">
 				<div class="col-xs-8 padding-0">사이다재무</div>
@@ -478,11 +483,10 @@ $('#myImage').hover(function() {
 				</div>
 		    </div>
 		</div>
-</div>
-
+	</div>
 
 	<!-- 토론 게시판 -->
-	<div class="discuss-con col-md-6 col-xs-12">
+	<div class="discuss-con col-xs-6">
 		<div class="menu-title row">
 			<div class="col-xs-8 padding-0">토론 포럼</div><div class="col-xs-4 padding-0" align="right"><a href="/discuss"><p class="plus">더보기 ></p></a></div>
 			<div class="line-3px col-xs-12"></div>
@@ -509,13 +513,65 @@ $('#myImage').hover(function() {
 			<% } %>
 		</div>
 	</div>
-		<!-- 콘텐츠 뿌림 끝 -->		
+	</div>
+		<!-- 콘텐츠 뿌림 끝 -->	
+			
+	<!-- 책, 강의 -->
+	<div class="row">	
+	<div class="discuss-con col-md-6">
+		<div class="menu-title row">
+			<div class="col-xs-8 padding-0">사이다강의</div><div class="col-xs-4 padding-0" align="right"><a href="/lecture"><p class="plus">더보기 ></p></a></div>
+			<div class="line-3px col-xs-12"></div>
+		</div>
+		<!-- 콘텐츠 뿌림 시작 -->		
+		<div class="con-in row" align="center" style="margin-left:0; margin-right:0">
+		<% for(var i=0; i < discuss.length; i++) { %>
+			<div class="col-xs-12 mg-bot">
+				<div class="row">
+					<a href="/discuss/detail/<%= discuss[i].dis_no%>"><div class="dis-title1 col-xs-12"><p>"<%= discuss[i].dis_title%>"</p></div></a>
+					<div class="dis-bg-img col-xs-12"><a href="/discuss/detail/<%= discuss[i].dis_no%>">
+					<div class="dis-black-box"></div>
+					<img class="img-responsive" src="<%= discuss[i].dis_thum%>">
+					</a>
+					</div>
+				</div>
+			</div>
+			<% } %>
+		</div>
+	</div>
+	<div class="books-con col-md-6">
+		<div class="menu-title row">
+			<div class="col-xs-8 padding-0">경제/경영 Books</div><div class="col-xs-4 padding-0" align="right"><a href="/books"><p class="plus">더보기 ></p></a></div>
+			<div class="line-3px col-xs-12"></div>
+		</div>
+		<!-- 콘텐츠 뿌림 시작 -->		
+		<div class="con-in row" align="center">
+			<% for(var i=0; i < project.length; i++) { %>
+			<div class="col-md-6 col-xs-4">
+				<div class="new-mark"><img class="img-responsive" src="<%= project[i].chkDat%>"></div>
+				<div class="thumnail">
+					<a href="/contents/detail/<%= project[i].con_no %>">
+					<div class="con-img">
+						<div class="con-thumbnail"><img class="img-responsive" src="<%= project[i].con_photo %>"></div>
+					</div>
+					<div class="con-title"><%= project[i].con_title %></div>
+					</a>
+				</div>			
+			</div>
+			<% } %>
+		</div>
+		<!-- 콘텐츠 뿌림 끝 -->
+	</div>
+	</div>
+	
+	
+		
 </div>
 
 
 	
 	
-<!--             모바일 콘텐츠              -->
+<!--         모바일 콘텐츠              -->
 
 <div class="mob_menu6_con container row">
 
@@ -638,6 +694,51 @@ $('#myImage').hover(function() {
 			</div>
 		</div>
 	</div>
+		<!-- books 모바일  -->
+	<div class="section-line col-xs-12"></div>
+	<div class="books-con swiper-container col-md-6 col-xs-12">
+		<div class="menu-title row" >
+			<div class="col-xs-8 padding-0">경제/경영 Books</div><div class="col-xs-4 padding-0" align="right"><a href="/books"><p class="plus">더보기 ></p></a></div>
+		</div>
+		<!-- 콘텐츠 뿌림 시작 -->		
+		<div class="con-in swiper-wrapper" align="center">
+		<% for(var i=0; i < project.length; i++) { %>
+			<div class="swiper-slide">
+				<div class="new-mark"><img class="img-responsive" src="<%= project[i].chkDat%>"></div>
+				<div class="thumnail">
+					<a href="/contents/detail/<%= project[0].con_no %>">
+					<div class="con-img">
+						<div class="con-thumbnail"><img class="img-responsive" src="<%= project[i].con_photo %>"></div>
+					</div>
+					<div class="con-title"><%= project[i].con_title %></div>
+					</a>
+				</div>
+			</div>
+		<% } %>
+		</div>
+		<!-- 콘텐츠 뿌림 끝 -->
+	</div>	
+		<!-- 강의 모바일 -->
+	<div class="section-line col-xs-12"></div>	
+	<div class="discuss-con col-md-6 col-xs-12">
+		<div class="menu-title row" >
+			<div class="col-xs-8 padding-0">사이다강의</div><div class="col-xs-4 padding-0" align="right"><a href="/lecture"><p class="plus">더보기 ></p></a></div>
+		</div>
+		<!-- 콘텐츠 뿌림 시작 -->		
+		<div class="con-in row" align="center" style="margin-left:0; margin-right:0">
+		<% for(var i=0; i < discuss.length; i++) { %>
+			<div class="col-xs-12 mg-bot">
+				<div class="row">
+					<a href="/discuss/detail/<%= discuss[i].dis_no%>"><div class="dis-title1 col-xs-12"><p>"<%= discuss[i].dis_title%>"</p></div></a>
+					<div class="dis-bg-img col-xs-12"><a href="/discuss/detail/<%= discuss[i].dis_no%>"><div class="dis-black-box"></div><img class="img-responsive" src="<%= discuss[i].dis_thum%>"></a></div>	
+				</div>
+			</div>
+			<% } %>				
+		</div>
+		<!-- 콘텐츠 뿌림 끝 -->
+	</div>
+	
+	
 	<div class="section-line col-xs-12"></div>	
 	<div class="podcast-con swiper-container col-md-6 col-xs-12">
 		<div class="menu-title row" >
@@ -688,8 +789,6 @@ $('#myImage').hover(function() {
 
 
 	<div class="section-line col-xs-12"></div>	
-	
-
 	<div class="col-xs-12" align="center">
 	
 		<!-- 경제 금융 기업 주식 카테고리별 콘텐츠 나오는것 -->
