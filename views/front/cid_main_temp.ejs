@@ -204,12 +204,12 @@ $(document).ready(function(){
 
 <!-- 메인에 6개 메뉴 -->
 <div class="menu6 container row" align="center">
-	<a href=""><div class="col-md-2 col-xs-4"><p>최신 콘텐츠</p></div></a>
 	<a href="/contents"><div class="col-md-2 col-xs-4"><p>인기 콘텐츠</p></div></a>
 	<a href="/project"><div class="col-md-2 col-xs-4"><p>기획 콘텐츠</p></div></a>
 	<a href="/podcast"><div class="col-md-2 col-xs-4"><p>팟캐스트</p></div></a>
 	<a href="/finance/review"><div class="col-md-2 col-xs-4"><p>사이다재무</p></div></a>
-	<a href="/discuss"><div class="col-md-2 col-xs-4"><p>토론 포럼</p></div></a>
+	<a href="/discuss"><div class="col-md-2 col-xs-4"><p>사이다토론</p></div></a>
+	<a href="/lecture"><div class="col-md-2 col-xs-4"><p>사이다강의</p></div></a>
 </div>
 	
 <!-- 콘텐츠 -->
@@ -488,7 +488,7 @@ $('#myImage').hover(function() {
 	<!-- 토론 게시판 -->
 	<div class="discuss-con col-xs-6">
 		<div class="menu-title row">
-			<div class="col-xs-8 padding-0">토론 포럼</div><div class="col-xs-4 padding-0" align="right"><a href="/discuss"><p class="plus">더보기 ></p></a></div>
+			<div class="col-xs-8 padding-0">사이다토론</div><div class="col-xs-4 padding-0" align="right"><a href="/discuss"><p class="plus">더보기 ></p></a></div>
 			<div class="line-3px col-xs-12"></div>
 		</div>
 		<!-- 콘텐츠 뿌림 시작 -->		
@@ -598,7 +598,6 @@ $('#myImage').hover(function() {
 		</div>
 		<!-- 콘텐츠 뿌림 끝 -->
 	</div>
-
 	
 	<div class="section-line col-xs-12"></div>
 	<div class="popular-con swiper-container col-md-6 col-xs-12">
@@ -623,7 +622,15 @@ $('#myImage').hover(function() {
 		</div>
 		<!-- 콘텐츠 뿌림 끝 -->
 	</div>
-	<div class="section-line col-xs-12"></div>	
+	
+	
+	<!-- 광고 -->
+	<div class="ad col-xs-12"></div>
+		<img class="img-responsive" src="http://i.imgur.com/GDZGS6y.jpg">
+	<div class="ad col-xs-12" style="margin-bottom:10px;"></div>
+	
+	
+	<!--  div class="section-line col-xs-12"></div -->	
 	<div class="plan-con swiper-container col-md-6 col-xs-12">
 		<div class="menu-title row" >
 			<div class="col-xs-8 padding-0">기획 콘텐츠</div><div class="col-xs-4 padding-0" align="right"><a href="/project"><p class="plus">더보기 ></p></a></div>
@@ -694,8 +701,15 @@ $('#myImage').hover(function() {
 			</div>
 		</div>
 	</div>
+	
+		<!-- 광고 -->
+	<div class="ad col-xs-12"></div>
+		<img class="img-responsive" src="http://i.imgur.com/qBgiXX9.jpg">
+	<div class="ad col-xs-12" style="margin-bottom:10px;"></div>
+	
+
 		<!-- books 모바일  -->
-	<div class="section-line col-xs-12"></div>
+	<!--  div class="section-line col-xs-12"></div -->	
 	<div class="books-con swiper-container col-md-6 col-xs-12">
 		<div class="menu-title row" >
 			<div class="col-xs-8 padding-0">경제/경영 Books</div><div class="col-xs-4 padding-0" align="right"><a href="/books"><p class="plus">더보기 ></p></a></div>
@@ -765,7 +779,7 @@ $('#myImage').hover(function() {
 	<div class="section-line col-xs-12"></div>	
 	<div class="discuss-con col-md-6 col-xs-12">
 		<div class="menu-title row" >
-			<div class="col-xs-8 padding-0">토론 포럼</div><div class="col-xs-4 padding-0" align="right"><a href="/discuss"><p class="plus">더보기 ></p></a></div>
+			<div class="col-xs-8 padding-0">사이다토론</div><div class="col-xs-4 padding-0" align="right"><a href="/discuss"><p class="plus">더보기 ></p></a></div>
 		</div>
 		<!-- 콘텐츠 뿌림 시작 -->		
 		<div class="con-in row" align="center" style="margin-left:0; margin-right:0">
@@ -873,8 +887,12 @@ $('#myImage').hover(function() {
 	<script src="/js/swiper.js"></script>
 	<script>
     var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
         slidesPerView: 3,
-        spaceBetween:3
+        paginationClickable: true,
+        spaceBetween: 2,
+        freeMode: true
+        
     });
     </script>
 	
