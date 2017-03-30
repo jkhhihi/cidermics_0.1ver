@@ -53,6 +53,7 @@ router.get('/project', function(req, res, next) {
   });
 });
 
+
 router.get('/project/in', function(req, res, next) {
 
 		 res.render('front/cid_project/cid_project_in', { });
