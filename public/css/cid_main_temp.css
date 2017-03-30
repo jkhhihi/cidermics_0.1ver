@@ -36,14 +36,14 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
 .con-in .thumnail .con-img .con-thumbnail{position:absolute; width:100%; height:100%; background:#fff; text-align:center;}
 .con-in .thumnail .con-img .con-thumbnail img{position: absolute; top:0; bottom:0; left:0; right:0; margin:auto; max-height:100%; max-width:100%;}
 .con-in .con-title
-{
-	overflow: hidden; 
+{height:40px;
+	/*overflow: hidden; 
 	text-overflow: ellipsis;
-	white-space: nowrap; 
+	white-space: nowrap;*/
 	width: 96%;
 	margin:8px 0;
 	font-weight:bold;
-	font-size:12px;
+	font-size:14px;
 }
 .con-in a:hover{color:#1b87c9;}
 .review-con .border-box{border:3px solid #1b87c9; border-radius:3px; padding:40px 30px;}
@@ -82,6 +82,16 @@ padding:10px 0; color:#fff; border-radius: 5px; font-size:16px; font-weight:bold
 .mob_menu6_con div.new-con, div.popular-con, div.plan-con, div.podcast-con, div.review-con, div.main-con, div.discuss-con{padding:0 4px;}
 .mob_menu6_con .menu-title{height:4px; font-size:14px; margin-right:0; margin-left:0; padding:0 5px;}
 .mob_menu6_con .con-title{font-size:12px;}
+
+.con-in .new-mark{width:38px;}
+.con-in .con-title
+{height:auto;
+	/*overflow: hidden; 
+	text-overflow: ellipsis;
+	white-space: nowrap;*/
+	font-size:12px;
+}
+
 .mob_menu6_con .review-con{margin-bottom:20px; font-size:12px;}
 .mob_menu6_con .podcast-con{margin-top:0;}
 .mob_menu6_con .dis-title{font-size:16px; top:30%;}
