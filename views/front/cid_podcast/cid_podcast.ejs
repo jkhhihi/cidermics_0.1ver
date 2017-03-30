@@ -52,20 +52,20 @@
 						<div class="pod-radio1" style="display:inline-block; margin-right:5px;"><a href="http://www.podbbang.com/ch/13140"><img class="img responsive" src="/page_imgs/contents_img/icon-cd.svg"><p>팟빵에서 듣기</p></a></div>
 						<div class="pod-radio2" style="display:inline-block;"><a href="http://www.demasian.com/program/3163"><img class="img responsive" src="/page_imgs/contents_img/icon-cd.svg"><p>데마시안에서 듣기</p></a></div>
 					</div>
-			<% for (var i = 0; i < podcast.length; i++) { %>
-			<div class="con-in col-sm-4 col-xs-6">
+			
+			<ul class="grid effect-2" id="grid">
+				<% for(var i=0; i<podcast.length; i++) { %>
+				<li>
 				<div>
 					<a href="/contents/detail/<%= podcast[i].con_no %>">
-					<div class="con-img">
+					<div class="con-img" align="center"><img class="img-responsive" src="<%= podcast[i].con_photo %>"></div></a>
 					<!--img class="img-responsive" style="width:50px; position:absolute; z-index:2; margin:5px 0 0 5px;"  src="<%= podcast[i].chkDat%>"-->
-
-					<img class="img-responsive con-thumbnail-img" style="position:relative; z-index:1" align="center" src="<%= podcast[i].con_photo %>">
-					</div>
-					</a>
-					<p style="margin-top:10px;" align="center"><a href="#"><%= podcast[i].con_title %></a></p>
+					<p><a href="/contents/detail/<%= podcast[i].con_no %>">
+						<%= podcast[i].con_title %></a></p>
 				</div>
-			</div>
+			</li>
 			<% } %>
+			</ul>
 
 			<!--a href="#"><div class="con-plus col-xs-12"><p>더보기</p></div></a-->													
 		</div>
