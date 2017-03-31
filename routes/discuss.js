@@ -86,7 +86,7 @@ router.get('/discuss', function(req, res, next) {
 	var row;
 	var cate;
 
-		mysql.select('select * from cider.cid_dis_reg', function (err, data2){
+		mysql.select('select * from cider.cid_dis_reg order by dis_no desc', function (err, data2){
 
 		row=data2;
 

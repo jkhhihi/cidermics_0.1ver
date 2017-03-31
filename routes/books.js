@@ -41,7 +41,15 @@ function releaseTime(){
 
 router.get('/books', function(req, res, next) {
 
-		 res.render('front/cid_books/cid_books', { });
+	var books;
+	var _tot = releaseTime();
+
+	mysql.select("select con_no, con_photo, con_title from cider.cid_contents where con_category = '7' and con_release <= '"+_tot+"' order by con_no desc", function (err, data){
+	if(err){ res.redirect('back'); }
+	books = data;
+
+		 res.render('front/cid_books/cid_books', { books:books });
 	});
+});
 
 module.exports = router;

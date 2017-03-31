@@ -26,12 +26,12 @@
 <link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
 
 <!--공유 meta tags-->
-<meta name="title" content="사이다경제 | 콘텐츠" />
+<meta name="title" content="사이다경제 | 사이다Books" />
 <meta property="og:image" content="http://cidermics.com/page_imgs/fixed_img/thum_img.jpg" />
 <meta property="og:title" content="사이다경제" />	
 <meta property="og:site_name" content="사이다경제">
 <meta property="og:type" content="article">
-<meta property="og:url" content="http://www.cidermics.com/contents/" />
+<meta property="og:url" content="http://www.cidermics.com/books/" />
 <meta property="og:description" content="사이다경제 경제,금융,주식,기업 콘텐츠" />
 
 </head>
@@ -45,16 +45,16 @@
 <div class="books-main container">
 <!--콘텐츠뿌림-->
 	<div class="books container" align="center">
-		<div class="books-title"><img src="/page_imgs/contents_img/icon-book.svg"><p>사이다경제가 추천하는 "경제/경영 Books"</p></div>
+		<div class="books-title"><img src="/page_imgs/contents_img/icon-book.svg"><p>사이다경제가 추천하는 "사이다Books"</p></div>
 		
 		<ul class="grid effect-2" id="grid">
-				<% for(var i=0; i<project.length; i++) { %>
+				<% for(var i=0; i< books.length; i++) { %>
 				<li>
 				<div>
-					<a href="/contents/detail/<%= project[i].con_no %>">
-					<div class="con-img" align="center"><img class="img-responsive" src="<%= project[i].con_photo %>"></div></a>
-					<p><a href="/contents/detail/<%= project[i].con_no %>">
-						<%= project[i].con_title %></a></p>
+					<a href="/contents/detail/<%= books[i].con_no %>">
+					<div class="con-img" align="center"><img class="img-responsive" src="<%= books[i].con_photo %>"></div></a>
+					<p><a href="/contents/detail/<%= books[i].con_no %>">
+						<%= books[i].con_title %></a></p>
 				</div>
 			</li>
 			<% } %>

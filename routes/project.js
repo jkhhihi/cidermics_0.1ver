@@ -46,7 +46,7 @@ router.get('/project', function(req, res, next) {
 
 	mysql.select("select con_no, con_photo, con_title from cider.cid_contents where con_category = '5' and con_release <= '"+_tot+"' order by con_no desc", function (err, data){
 	if(err){ res.redirect('back'); }
-	console.log(data);
+	//console.log(data);
 	project = data;
 
 	 res.render('front/cid_project/cid_project', {project:project});

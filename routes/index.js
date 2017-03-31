@@ -80,6 +80,11 @@ router.get('/main2', function(req, res, next) {
 		  if (err) throw err;
 			popular = data;
 
+		  mysql.select("select con_no, con_photo, con_title from cider.cid_contents where con_category = '7' and con_release <= '"+_tot+"' order by con_no desc limit 0,4", function (err, data){
+			if(err){ res.redirect('back'); }
+
+			books = data;
+
 			mysql.select("select con_no, con_photo, con_title from cider.cid_contents where con_category = '6' and con_release <= '"+_tot+"' order by con_no desc limit 0,4", function (err, data){
 				if(err){ res.redirect('back'); }
 
@@ -115,7 +120,8 @@ router.get('/main2', function(req, res, next) {
 														discussCnt = data;
 
 
-	    		res.render('front/cid_main_temp', { contents : row, popular: popular,podcast:podcast,project:project,rev:data2,stock:stock,company:company,finance:finance,economics:economics,discuss:discuss,discussCnt:discussCnt});
+		    		res.render('front/cid_main_temp', { contents : row, popular: popular,books:books,podcast:podcast,project:project,rev:data2,stock:stock,company:company,finance:finance,economics:economics,discuss:discuss,discussCnt:discussCnt});
+		    });
 	       });
 	      });
 	 	 });

@@ -78,7 +78,7 @@ router.get('/contents', function(req, res, next) {
 	var pre = {};
 	//qry="SELECT * FROM cider.cid_contents where con_release between "+_totmon+"010000 and "+_tot+" order by con_viewCount desc limit 0,16;"
 	//console.log(qry);
-	mysql.select("SELECT * FROM cider.cid_contents where con_release between "+_totmon+"010000 and "+_tot+" order by con_viewCount desc limit 0,15;", function (err, data){
+	mysql.select("SELECT * FROM cider.cid_contents where con_release between "+_totmon+"010000 and "+_tot+" order by con_viewCount desc limit 0,16;", function (err, data){
 	//mysql.select('select con_no, con_photo, con_title from cider.cid_contents order by con_viewCount desc limit 0,30', function (err, data){
 		 if (err) throw err;
 		 
