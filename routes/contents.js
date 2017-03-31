@@ -37,9 +37,8 @@ function releaseTime(){
 
 
 router.get('/contents', function(req, res, next) {
-	
-	var row;
 	var no = req.params.no;
+	var row;
 	
 	 var now = new Date();
 	 var _year=  now.getFullYear();
@@ -49,53 +48,61 @@ router.get('/contents', function(req, res, next) {
 	 {
 	    _mon="0"+_mon;
 	 }
-	 var _date=now.getDate ();
-	 _date =""+_date;
-     if (_date.length < 2 )
-	 {
-	    _date="0"+_date;
-	 }
-	 var _hor = now.getHours  ();
-	 _hor =""+_hor;
-	 if (_hor.length < 2 )
-	 {
-	    _hor="0"+_hor;
-	 }
-	 var _min=now.getMinutes();
-	  _min =""+_min;
-	 if (_min.length < 2 )
-	 {
-	    _min="0"+_min;
-	 }
+
 	
 	var _totmon = _year+""+_mon;
-	var _tot=_year+""+_mon+""+_date+""+_hor+""+ _min;
+	var _tot = releaseTime();
 
 	var qry="";
 	
 	var sets = {con_no : no};
 	var next = {};
 	var pre = {};
-	//qry="SELECT * FROM cider.cid_contents where con_release between "+_totmon+"010000 and "+_tot+" order by con_viewCount desc limit 0,16;"
-	//console.log(qry);
-	mysql.select("SELECT * FROM cider.cid_contents where con_release between "+_totmon+"010000 and "+_tot+" order by con_viewCount desc limit 0,16;", function (err, data){
-	//mysql.select('select con_no, con_photo, con_title from cider.cid_contents order by con_viewCount desc limit 0,30', function (err, data){
+	//mysql.select("SELECT * FROM cider.cid_contents where con_release between "+_totmon+"010000 and "+_tot+" order by con_viewCount desc limit 0,16;", function (err, data){
+		mysql.select("SELECT * FROM cider.cid_contents where con_release between 201703010000 and "+_tot+" order by con_viewCount desc limit 0,16;", function (err, data){
 		 if (err) throw err;
 		 
 		 row = data;
-		 /*
-		 qry="select con_no, con_photo, con_title from cider.cid_contents where con_release <= '"+_tot+"' ORDER BY RAND() LIMIT 0,24";
-		   mysql.select(qry, function (err, data1){
-			if(err){
-			res.redirect('back');
-			}
-		*/
 			
 		 res.render('front/cid_contents/cid_contents_popular', { contents : row});
 	});
-  });
-//});
+ });
 
+
+
+router.get('/contents/all', function(req, res, next) {
+	var no = req.params.no;
+	var row;
+
+	var _tot = releaseTime();
+
+	var qry="";
+	
+	 qry="select con_no, con_photo, con_title, if (a.con_upDate > DATE_ADD(now(),INTERVAL -1 DAY) ,'/page_imgs/main_img/new_mark4.svg','/page_imgs/main_img/new_mark1px.png') as chkDat from cider.cid_contents a where a.con_release <= '"+_tot+"' order by a.con_no desc limit 0,60";
+	mysql.select(qry, function (err, data){
+		if (err) throw err;
+		 row = data;
+			
+		 res.render('front/cid_contents/cid_contents_all', { contents : row});
+	});
+ });
+
+
+router.get('/main_ver1', function(req, res, next) {
+	
+	var no = req.params.no;
+	var row;
+
+	var _tot = releaseTime();
+
+	 
+	 qry="select con_no, con_photo, con_title, if (a.con_upDate > DATE_ADD(now(),INTERVAL -1 DAY) ,'/page_imgs/main_img/new_mark4.svg','/page_imgs/main_img/new_mark1px.png') as chkDat from cider.cid_contents a where a.con_release <= '"+_tot+"' order by a.con_no desc limit 0,60";
+	mysql.select(qry, function (err, data){
+		if (err) throw err;
+		 row = data;
+	res.render('front/cid_main', { contents : row});
+	});
+  });
 
 router.get('/contents/:no', function(req, res, next) {
 	
@@ -178,10 +185,10 @@ router.get('/addMore/:idx', function(req, res, next) {
   var _tot = releaseTime();
 
    var lang = req.params.lang;
-   var start = (idx - 1) * 20;
+   var start = (idx - 1) * 30;
    //var start= start +1;
    //var end = idx * 12;
-   var end = 20;
+   var end = 30;
    
     qry="select con_no, con_photo, con_title  from cider.cid_contents where con_release <= '"+_tot+"' order by con_no desc limit "+ start +", "+ end +"";
    //console.log(qry);

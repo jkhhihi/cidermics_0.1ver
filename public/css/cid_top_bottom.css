@@ -24,27 +24,28 @@
      url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff') format('woff');
 }
 
-@import url('https://cdn.rawgit.com/singihae/Webfonts/master/style.css'); 
+@import url('https://cdn.rawgit.com/singihae/Webfonts/master/style.css');
+
 /*.jua {font-family:'BM JUA','배달의민족 주아',sans-serif;} .hana{font-family:'BM HANNA','배달의민족 한나', sans-serif; }*/
 
 
 /*----------------------폰트끝------------------------*/	   
 
 /* CSS Document */
-body{font-family:'Noto-Bold'; font-weight:bold;}
+/* body{font-family:'Noto-Bold'; font-weight:bold;} */
+
+body{font-family:'Noto-Bold';}
+
+.header{height: 70px; color:#1b87c9; margin:0; width:100%; position: fixed; background-color:white;
+z-index: 999; box-shadow: 0px -5px 20px #222; top:0;}
+
 .padding-0{padding:0;}
 .padding-lr-0{padding-left:0; padding-right:0;}
 #menu{display:none;}
 a{color:#333; text-decoration:none;}
 .a-white{color:#fff;}
 .mob-header{display:none;}
-.header{height:70px; color:#1b87c9; margin:0;
-width: 100%;
-position: fixed;
-background-color: white;
-z-index: 999;
-box-shadow: 0px -5px 20px #222;
-top:0;}
+
 header div{float:left;}
 header .menu{font-size:16px; font-weight:600;}
 header .login{padding-right:10px; font-size:14px; padding-top:15px; font-weight:600;}

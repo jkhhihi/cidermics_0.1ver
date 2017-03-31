@@ -186,7 +186,7 @@ function cngtype1(){
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
-    background-position: center;
+	background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -212,7 +212,7 @@ function cngtype1(){
 
 					<div class="discuss_detail container"  align="center">
 						<div class="row margin-lr0">
-						  <div class="parallax1">
+						  <div class="parallax1" >
 							<div class="col-xs-12 mg-bot padding-lr0">
 								
 								<div class="dis-black-box">
@@ -245,7 +245,7 @@ function cngtype1(){
 										<div class="form-group col-lg-12 padding-1">
 										    <input type="text" class="form-control1" id="exampleInputName" placeholder=" 작성자" name="comt_writer" onkeyup="chkword(this, 20)">
 										    <!--input type="text" class="form-control1" id="exampleInputName" placeholder=" 작성자" name="comt_writer" onkeyup="chkword(this, 20)" onfocus="if(this.value ==' 작성자') this.value='';" onblur="if(this.value =='') this.value=' 작성자';" value=" 작성자"-->
-										    <input type="text" class="form-control1" id="exampleInputPw" placeholder=" 비밀번호" name="comt_pw" onkeyup="chkword(this, 22)">
+										    <input type="password" class="form-control1" id="exampleInputPw" placeholder=" 비밀번호" name="comt_pw" onkeyup="chkword(this, 22)">
 										    <!--input type="text" class="form-control1" id="exampleInputPw" placeholder=" 비밀번호" name="comt_pw" onkeyup="chkword(this, 22)"  onfocus="cngtype()" value=' 비밀번호'-->
 									  	</div>
 									</div>
@@ -255,20 +255,25 @@ function cngtype1(){
 									  	</div-->
 									    <!-- div class="form-group col-xs-1 col-lg-4"></div -->
 									    <div class="form-group col-xs-12">
-										  	<textarea class="form-control2" rows="3" name="comt_text"  placeholder="내용 *100자 이하" onkeyup="chkword(this, 100)" style="resize:none;")></textarea></div>
+										  	<textarea class="form-control2" rows="3" name="comt_text"  placeholder="주제와 무관한 댓글, 악플, 욕설, 비하 등은 삭제될 수 있습니다. 건전한 토론을 하는 지식인이 됩시다. 내용 *100자 이하" onkeyup="chkword(this, 100)" style="resize:none;")></textarea></div>
 									    <!-- div class="form-group col-xs-1 col-lg-4"></div -->
-								    </div> 
+								    </div>
+
+								    <style type="text/css">
+							.btn btn-success btn-width{font-size: 12px !important;}
+							</style>
+
 								    <div class="row">
 										<div class="btn-group" data-toggle="buttons" style="margin:10px 0 5px 0">
-										  <label class="btn btn-success btn-width">
+										  <label class="btn btn-success btn-width" style="font-size: 12px !important;">
 										  <span class="glyphicon glyphicon-thumbs-up"></span>
 										    <input type="radio" name="options" id="option1" autocomplete="off" value="0"> <%=discuss[0].dis_comt_1%>
 										  </label>
-										  <label class="btn btn-danger btn-width">
+										  <label class="btn btn-danger btn-width" style="font-size: 12px !important;">
 										  <span class="glyphicon glyphicon-thumbs-down"></span>
 										    <input type="radio" name="options" id="option2" autocomplete="off" value="1"> <%=discuss[0].dis_comt_2%>
 										  </label>
-										  <label class="btn btn-warning btn-width active">
+										  <label class="btn btn-warning btn-width active" style="font-size: 12px !important;">
 										  <span class="glyphicon glyphicon-check"></span>
 										    <input type="radio" name="options" id="option3" autocomplete="off" value="2"> 기타
 										  </label>
@@ -284,6 +289,7 @@ function cngtype1(){
 
 						<!--버튼 색상 스크립트-->
 						<style type="text/css">
+							.btn btn-success btn-width{font-size: 12px !important;}
 							.btn span.glyphicon {
 							opacity: 0.2;				
 							}
@@ -429,14 +435,14 @@ document.getElementById("dis_cate_name").innerHTML = a;
 										<div class="row">
 											<div class="form-group col-xs-12 padding-1">
 											    <input type="text" class="form-control1" id="exampleInputName1" placeholder=" 작성자" name="comt_writer" onkeyup="chkword(this, 20)">
-											    <input type="text" class="form-control1" id="exampleInputPw" placeholder=" 비밀번호" name="comt_pw" onkeyup="chkword(this, 22)">
+											    <input type="password" class="form-control1" id="exampleInputPw" placeholder=" 비밀번호" name="comt_pw" onkeyup="chkword(this, 22)">
 										  	</div>
 										</div>
 
 										<div class="row">
 										    <!-- div class="form-group col-xs-0 col-lg-0"></div -->
 										    <div class="form-group col-xs-12">
-											  	<textarea class="form-control2" rows="3" name="comt_text"  placeholder="내용 *100자 이하" onkeyup="chkword(this, 100)") style="resize:none;"></textarea></div>
+											  	<textarea class="form-control2" rows="3" name="comt_text"  placeholder="주제와 무관한 댓글, 악플, 욕설, 비하 등은 삭제될 수 있습니다. 건전한 토론을 하는 지식인이 됩시다. 내용 *100자 이하" onkeyup="chkword(this, 100)") style="resize:none;"></textarea></div>
 										    <!-- div class="form-group col-xs-0 col-lg-0"></div -->
 									    </div> 
 
