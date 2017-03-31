@@ -11,7 +11,7 @@ body{/*font-family: 'Nanum Gothic', serif;*/ font-weight:bold}
 .discuss-main .title img{width:150px; margin-bottom:20px;}
 .discuss-main .title p{width:100%; font-size:18px; border-bottom:4px solid #ececec; padding-bottom:20px;}
 .discuss-main .btn-request{border:2px solid #ececec; border-radius:5px; padding:10px; cursor:pointer; font-size:14px}
-.discuss-main .btn-request img{width:25px; margin-bottom:5px; display:inline-block;}
+.discuss-main .btn-request img{width:25px; display:inline-block;}
 .discuss-main .btn-request span{display:inline-block; margin-left:5px;}
 .discuss-con{margin:20px 0;}
 .discuss-con .con-in{margin-left:15px;}
@@ -58,6 +58,9 @@ td.re-comment{padding:5px 0 10px 20px !important;}
 .declaration{margin:60px; width:60% !important;}
 .btn2:hover{background-color:#ececec!important; color:#212121 !important;}
 
+
+
+
 @media all and (max-width:1024px) {
 
 .bg-blue{margin-top:0 !important; height:100%;}
@@ -67,8 +70,8 @@ td.re-comment{padding:5px 0 10px 20px !important;}
 .discuss-main .title{margin:60px 0 15px 0; padding:10px 0 0 0;}
 .discuss-main .title img{width:100px; margin-bottom:10px;}
 .discuss-main .title p{font-size:16px; padding-bottom:10px;}
-.discuss-main .btn-request{padding:5px; font-size:12px}
-.discuss-main .btn-request img{width:22px; margin-bottom:5px;}
+.discuss-main .btn-request{padding:8px; font-size:12px}
+.discuss-main .btn-request img{width:22px;}
 .discuss-main .btn-request span{margin-left:3px;}
 .discuss-con{margin:10px 0; width:96%;}
 .discuss-con .con-in{margin-left:0;}
@@ -78,8 +81,6 @@ td.re-comment{padding:5px 0 10px 20px !important;}
 .discuss-con .dis-img{font-size:14px; padding-right:0 !important;}
 .discuss-con .dis-img img{width:25px;}
 .discuss-con .btn-plus{margin:20px 0 40px 0;}
-
-
 
 /* ----- 토론 게시판 디테일 ----- */
 .discuss_detail .mg-bot{margin-top:0;}
