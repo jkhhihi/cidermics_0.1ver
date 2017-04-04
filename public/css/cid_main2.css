@@ -54,7 +54,7 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
 .main-con .menu-title .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{border:1px solid #ff574a; !important;}
 .discuss-con .mg-bot{margin-bottom:20px;}
 .discuss-con .dis-title{width:100%; position:absolute; z-index:4; font-size:20px; font-weight:bold; top:40%; color:#fff;}
-.discuss-con .dis-title p{width:70%;}
+.discuss-con .dis-title p{width:80%;}
 .discuss-con .dis-title1{width:100%; position:absolute; z-index:4; font-size:20px; font-weight:bold; top:40%; color:#fff;}
 .discuss-con .dis-title1 p{width:70%;}
 .discuss-con .dis-img{position:absolute; z-index:3; color:#fff; font-size:18px; bottom:5px; font-weight:bold;}
