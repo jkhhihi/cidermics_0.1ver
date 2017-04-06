@@ -21,25 +21,22 @@
 <meta property="og:url" content="http://www.cidermics.com/contents/detail/<%= contents[0].con_no%>" />
 <meta property="og:description" content="사이다경제" />
 
-
 <link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
 <link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+<link rel="stylesheet" type="text/css" href="/css/component.css" />
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/cid_contents.css" rel="stylesheet">
+<link href="/css/swiper.css" rel="stylesheet">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><%= contents[0].con_title %> - 사이다경제 | 콘텐츠</title>
-<link href="/css/bootstrap.min.css" rel="stylesheet">
-<link href="/css/cid_contents.css" rel="stylesheet">
-<link href="/css/swiper.css" rel="stylesheet">
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="/css/component.css" />
 <script src="/js/modernizr.custom.js"></script>
-
 <script src="/js/gotoup.js"></script>
-
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-
 
 
 <style>
@@ -116,7 +113,7 @@ finestra=window.open(img,"",stringa);
 </style>
 
 </head>
-<body style="font-family: 'Nanum Gothic', serif !important;">
+<body>
 <!--위로가기 버튼-->
 <div id="but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></div>
 <!--페이스북 연동 스크립트-->
@@ -140,7 +137,7 @@ finestra=window.open(img,"",stringa);
 	</div>		
 <div class="mob-bg-blue">
 <div class="mob-bg-white container">
-<div class="contents container">
+<div class="contents container" style="font-family:'NanumGothic';">
 		<div class="row">
 				<div class="col-xs-12 title"><%= contents[0].con_title%></div>
 				<!--div class="col-xs-12 icon-menu">
