@@ -94,7 +94,7 @@ router.get('/contents', ensureAuthenticated, function(req, res, next) {
 
 router.get('/index', ensureAuthenticated, function(req, res, next) {
 	var CP = 0;
-		mysql.select('SELECT * from cider.cid_contents where con_title like \'%더미%\' order by con_no desc;', function (err, data){
+		mysql.select('SELECT * from cider.cid_contents where con_pop = 1 order by con_release desc;', function (err, data){
 			 res.render('admin/admin_index', { CP : CP, contents : data });	    	
 		});
 });
@@ -332,6 +332,32 @@ router.get('/contents/detail/:no', ensureAuthenticated, function(req, res, next)
 		
     });
 	
+});
+
+
+router.post('/pop_ck', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 1;
+	
+	var pop_ck = req.body.pop_ck;
+	var sets = { con_no : pop_ck };
+	mysql.update('update cider.cid_contents set con_pop= 1  where con_no = ?', [pop_ck], function (err, data){
+		
+    	res.redirect('/adm/contents');
+    	
+    });
+});
+router.post('/pop_ck_default', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 0;
+	
+	var pop_ck = req.body.pop_ck;
+	var sets = { con_no : pop_ck };
+	mysql.update('update cider.cid_contents set con_pop= 0 where con_no = ?', [pop_ck], function (err, data){
+		
+    	res.redirect('/adm/index');
+    	
+    });
 });
 
 router.get('/lecture', ensureAuthenticated, function(req, res, next) {

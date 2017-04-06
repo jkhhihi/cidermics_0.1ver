@@ -58,8 +58,9 @@ router.get('/contents', function(req, res, next) {
 	var sets = {con_no : no};
 	var next = {};
 	var pre = {};
-	//mysql.select("SELECT * FROM cider.cid_contents where con_release between "+_totmon+"010000 and "+_tot+" order by con_viewCount desc limit 0,16;", function (err, data){
-		mysql.select("SELECT * FROM cider.cid_contents where con_release between 201703010000 and "+_tot+" order by con_viewCount desc limit 0,16;", function (err, data){
+	mysql.select("SELECT * FROM cider.cid_contents where con_pop = 1 order by con_release desc limit 0,16;", function (err, data){
+	//mysql.select("SELECT * FROM cider.cid_contents where con_release between "+_totmon+"010000 and "+_tot+" order by con_release desc limit 0,16;", function (err, data){
+		//mysql.select("SELECT * FROM cider.cid_contents where con_release between 201703010000 and "+_tot+" order by con_viewCount desc limit 0,16;", function (err, data){
 		 if (err) throw err;
 		 
 		 row = data;
@@ -87,22 +88,6 @@ router.get('/contents/all', function(req, res, next) {
 	});
  });
 
-//예전버젼
-router.get('/main_ver1', function(req, res, next) {
-	
-	var no = req.params.no;
-	var row;
-
-	var _tot = releaseTime();
-
-	 
-	 qry="select con_no, con_photo, con_title, if (a.con_upDate > DATE_ADD(now(),INTERVAL -1 DAY) ,'/page_imgs/main_img/new_mark4.svg','/page_imgs/main_img/new_mark1px.png') as chkDat from cider.cid_contents a where a.con_release <= '"+_tot+"' order by a.con_no desc limit 0,60";
-	mysql.select(qry, function (err, data){
-		if (err) throw err;
-		 row = data;
-	res.render('front/cid_main', { contents : row});
-	});
-  });
 
 router.get('/contents/:no', function(req, res, next) {
 	
@@ -191,7 +176,7 @@ router.get('/addMore/:idx', function(req, res, next) {
    var end = 30;
    
     qry="select con_no, con_photo, con_title  from cider.cid_contents where con_release <= '"+_tot+"' order by con_no desc limit "+ start +", "+ end +"";
-   //console.log(qry);
+
    mysql.select(qry, function (err, data){
 
        if (err) throw err;
@@ -210,9 +195,8 @@ router.get('/addMore2/:idx/:p', function(req, res, next) {
    var start = (idx - 1) * 30;
    var end = 30;
    var qry='';
-   //console.log(start, end);
          qry="select con_no, con_photo, con_title  from cider.cid_contents where con_release <= '"+_tot+"' and con_category = "+ p +" order by con_no desc limit "+ start +", "+ end +"";
-       //console.log(qry);
+
    
    mysql.select(qry, function (err, data){
        if (err) throw err;
