@@ -241,18 +241,9 @@ router.post('/insert', function(req, res, next) {
 });
 
 
-router.post('/test2', function(req, res, next) {
-	var ds = req.body.dateSelect;
-	console.log(ds);
-   var qry="";
-   //where con_regDate like \'%"+x+"\'
-    qry="select con_no, con_photo, con_title from cider.cid_contents where con_regDate like \'%"+ds+"%\' order by con_no desc limit 0,2";
-   mysql.select(qry, function (err, data){
-
-       if (err) throw err;
-       res.render('front/cid_quiz/test', { contents : data});
+router.get('/facetest', function(req, res, next) {
+       res.render('front/facebooklogin_test', {});
    });
-});
 
 
 module.exports = router;
