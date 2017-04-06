@@ -87,7 +87,7 @@ router.get('/contents/all', function(req, res, next) {
 	});
  });
 
-
+//예전버젼
 router.get('/main_ver1', function(req, res, next) {
 	
 	var no = req.params.no;
