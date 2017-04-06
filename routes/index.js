@@ -72,12 +72,12 @@ router.get('/', function(req, res, next) {
 	var _totmon = _year+""+_mon;
 
 	//최신 콘텐츠 qry
-	var qry="select con_no, con_photo, con_title, if (a.con_upDate > DATE_ADD(now(),INTERVAL -1 DAY) ,'/page_imgs/main_img/new_mark4.svg','/page_imgs/main_img/new_mark1px.png') as chkDat from cider.cid_contents a where a.con_release <= '"+_tot+"' order by a.con_no desc limit 0,3";
+	var qry="select con_no, con_photo, con_title, if (a.con_upDate > DATE_ADD(now(),INTERVAL -1 DAY) ,'/page_imgs/main_img/new_mark4.svg','/page_imgs/main_img/new_mark1px.png') as chkDat from cider.cid_contents a where a.con_release <= '"+_tot+"' order by a.con_no desc limit 0,5";
 	mysql.select(qry, function (err, data){
 		if (err) throw err;
 		 row = data;
 
-		mysql.select("SELECT con_no, con_photo, con_title FROM cider.cid_contents where con_release between 201703010000 and "+_tot+" order by con_viewCount desc limit 0,4;", function (err, data){
+		mysql.select("SELECT con_no, con_photo, con_title FROM cider.cid_contents where con_release between 201703010000 and "+_tot+" order by con_viewCount desc limit 0,6;", function (err, data){
 		  if (err) throw err;
 			popular = data;
 
