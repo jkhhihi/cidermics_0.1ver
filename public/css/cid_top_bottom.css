@@ -3,6 +3,18 @@
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);/*font-family: 'Nanum Gothic', serif;*/
 @import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);/*font-family: 'Nanum Pen Script', cursive;*/
 @import url("/font/font-BMDOHYEON-wallel.css");/* font-family: "BMD", sans-serif;*/
+@import url('https://cdn.rawgit.com/singihae/Webfonts/master/style.css');
+/*.jua {font-family:'BM JUA','배달의민족 주아',sans-serif;} .hana{font-family:'BM HANNA','배달의민족 한나', sans-serif; }*/
+
+@font-face {
+    font-family:'NanumGothic';
+    src: local('/font/NanumGothic.eot');
+    src: local('/font/NanumGothic.eot?#iefix') format('embedded-opentype'),
+         local('/font/NanumGothic.woff') format('woff'),
+         local('/font/NanumGothic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 @font-face{font-family:'Noto-Bold';
 		   src: local('/font/NotoSansMonoCJKkr-Bold.otf');
 		   font-weight:bold;}
@@ -23,10 +35,6 @@
  src:url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff2') format('woff2'),
      url('//cdn.jsdelivr.net/korean-webfonts/1/corps/godo/Godo/GodoB.woff') format('woff');
 }
-
-@import url('https://cdn.rawgit.com/singihae/Webfonts/master/style.css');
-
-/*.jua {font-family:'BM JUA','배달의민족 주아',sans-serif;} .hana{font-family:'BM HANNA','배달의민족 한나', sans-serif; }*/
 
 
 /*----------------------폰트끝------------------------*/	   
