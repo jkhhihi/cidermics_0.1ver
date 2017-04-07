@@ -95,7 +95,7 @@ router.get('/contents', ensureAuthenticated, function(req, res, next) {
 router.get('/index', ensureAuthenticated, function(req, res, next) {
 	var CP = 0;
 		mysql.select('SELECT * from cider.cid_contents where con_pop = 1 order by con_release desc;', function (err, data){
-			 res.render('admin/admin_index', { CP : CP, contents : data });	    	
+			 res.render('admin/admin_index', { CP : CP, contents : data });
 		});
 });
 
