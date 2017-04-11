@@ -166,8 +166,6 @@ passport.use('local', new LocalStrategy({
 function(req, email, pw, done) {
 	
 	mysql.select('select * from cider.cid_user where user_email ="'+email+'" and user_password = "'+pw+'"', function (err, data){
-		console.log("data");
-		console.log(data.length);
 		if(data.length < 1){
 			console.log('fail');
 			return done(null, false);
@@ -194,8 +192,6 @@ passport.use('applycancel', new LocalStrategy({
 ,function(req, app_no, app_name, done) {
 	
 	mysql.select('select * from cider.cid_applyform where app_no ="'+app_no+'" and app_name = "'+app_name+'"', function (err, data){
-		console.log("data");
-		console.log(data.length);
 		if(data.length < 1){
 			console.log('fail');
 			//res.send('<script>alert("쿠폰번호를 확인해주세요.");location.href="/lecture/apply";</script>');

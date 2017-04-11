@@ -292,6 +292,16 @@ function CopyToClipboard ( tagToCopy, textarea ){
 								<p><a href="/contents/editor/<%=contents[0].user_no%>">이 에디터의 다른 글 더 보기</a></p>
 									<a href="<%= contents[0].user_sns_url%>"><img src="/page_imgs/contents_img/icon_editor_facebook.png"></a>
 								</div-->
+								<% if ( contents[0].user_profile_img == 1 ){ %>
+
+								<div class="col-xs-12 editor-sns" align="right">
+								<a href="<%= contents[0].user_sns_url%>"><img src="/page_imgs/contents_img/icon_editor_facebook.png"></a>
+								</div>
+								<% } else { %>
+								<div class="col-xs-12 editor-sns" align="right">
+								<a href="<%= contents[0].user_sns_url%>"><img src="/page_imgs/contents_img/icon_editor_inst.png"></a>
+								</div>
+								<% } %>
 						</div>
 				</div>
 				<div class="col-xs-12 web-editor-con">
@@ -303,9 +313,21 @@ function CopyToClipboard ( tagToCopy, textarea ){
 										<p><%=contents[0].user_email%></p>
 								</div>
 								<!--div class="col-xs-4 editor-sns" align="right">
-								<p><a href="/contents/editor/<%=contents[0].user_no%>">이 에디터의 다른 글 더 보기</a></p>
+								<p><a href="/contents/editor/<%=contents[0].user_no%>">이 에디터의 다른 글 더 보기</a></p-->
+
+								<% if ( contents[0].user_profile_img == 1 ){ %>
+								<div class="col-xs-4 editor-sns" align="right">
 								<a href="<%= contents[0].user_sns_url%>"><img src="/page_imgs/contents_img/icon_editor_facebook.png"></a>
-								</div-->
+								</div>
+
+								<% } else if ( contents[0].user_profile_img == 2 ) { %>
+								<div class="col-xs-4 editor-sns" align="right">
+								<a href="<%= contents[0].user_sns_url%>"><img src="/page_imgs/contents_img/icon_editor_inst.png"></a>
+								</div>
+
+								<% } else { %>
+								
+								<% } %>
 						</div>
 				</div>
 				
