@@ -11,8 +11,9 @@ var bodyParser = require('body-parser');
 //cidermics
 var session = require('express-session');
 var debug = require('debug')('cidermics:server');
-var passport = require('passport')
-, LocalStrategy = require('passport-local').Strategy;
+var passportFB = require('passport')
+    , FacebookStrategy = require('passport-facebook').Strategy;
+var passport = require('passport'), LocalStrategy = require('passport-local').Strategy;
 var mysql = require("./routes/model/mysql");
 var flash = require('req-flash');
 
@@ -105,6 +106,54 @@ app.use('/',project);
 app.use('/',podcast);
 app.use('/',books);
 
+passportFB.use('FBlogin', new FacebookStrategy({
+        clientID: '237556010053271',
+        clientSecret: 'cc7f7051e543769a0cffdfaa3f946200',
+        callbackURL: "http://localhost/auth/facebook/callback"
+    },
+    function(accessToken, refreshToken, profile, done) {
+        console.log(profile);
+        console.log("+++++++");
+        console.log(profile.id);
+        console.log(profile.displayName);
+        var sets = {mem_id : profile.id, mem_name : profile.displayName };
+        mysql.insert('insert into cider.cid_member set ?', sets, function(err,data){
+
+          if(data.length < 1){
+            console.log('fail');
+            return done(null, false);
+          }else {
+            console.log('success');
+            return done(null, data);
+          }
+          if(err){
+            res.redirect('back');
+          }
+        });
+  
+    
+        done(null,profile);
+    }
+));
+
+app.get('/auth/facebook', passportFB.authenticate('facebook'));
+app.get('/auth/facebook/callback',
+    passportFB.authenticate('facebook', { successRedirect: '/login_success',
+        failureRedirect: '/login_fail' }));
+app.get('/login_success', ensureAuthenticated, function(req, res){
+    res.send(req.user);
+});
+app.get('/logout', function(req, res){
+    req.logout();
+    res.redirect('/');
+});
+function ensureAuthenticated(req, res, next) {
+    // 로그인이 되어 있으면, 다음 파이프라인으로 진행
+    if (req.isAuthenticated()) { return next(); }
+    // 로그인이 안되어 있으면, login 페이지로 진행
+    res.redirect('/');
+}
+
 
 passport.use('local', new LocalStrategy({
 	
@@ -172,6 +221,18 @@ passport.serializeUser(function(user, done) {
 passport.deserializeUser(function(user, done) {
     done(null, user);
 });
+
+passportFB.serializeUser(function(user, done) {
+    done(null, user);
+    // if you use Model.id as your idAttribute maybe you'd want
+    // done(null, user.id);
+});
+
+passportFB.deserializeUser(function(user, done) {
+    done(null, user);
+});
+
+
 
 
 // catch 404 and forward to error handler

@@ -238,7 +238,7 @@ router.post('/insert', function(req, res, next) {
 });
 
 
-router.get('/facetest', function(req, res, next) {
+router.get('/fbtest', function(req, res, next) {
        res.render('front/facebooklogin_test', {});
    });
 
