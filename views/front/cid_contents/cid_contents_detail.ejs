@@ -3,6 +3,14 @@
 <head>
 <meta charset="utf-8">
 
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KZ5KCJV');</script>
+<!-- End Google Tag Manager -->
+
 <!-- 네이버 -->
 <meta name="naver-site-verification" content="083657cb98aa9a4a9c62dedeffddfb2490545da0"/>
 
@@ -112,8 +120,26 @@ finestra=window.open(img,"",stringa);
 	}
 </style>
 
+<script>
+$('swiper-wrapper').on('click','swiper-slide', function() {
+var name = $(this).find('a').text();
+ga('send', {
+hitType: 'event', //이벤트라고 명시
+eventCategory: '재무배너', //메인 화면에서 일어나는
+eventAction: '배너', //메뉴
+eventLabel: '재무상담' //카테고리명
+});
+});
+</script>
+
 </head>
+
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZ5KCJV"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 <!--위로가기 버튼-->
 <div id="but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></div>
 <!--페이스북 연동 스크립트-->

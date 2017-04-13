@@ -208,6 +208,12 @@ router.get('/appdown', function(req, res, next) {
 
 });
 
+router.get('/survey', function(req, res, next) {
+
+	res.render('front/cid_survey', { });
+
+});
+
 
 
 

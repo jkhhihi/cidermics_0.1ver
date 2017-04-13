@@ -11,8 +11,7 @@ var bodyParser = require('body-parser');
 //cidermics
 var session = require('express-session');
 var debug = require('debug')('cidermics:server');
-var passportFB = require('passport')
-    , FacebookStrategy = require('passport-facebook').Strategy;
+var passportFB = require('passport'), FacebookStrategy = require('passport-facebook').Strategy;
 var passport = require('passport'), LocalStrategy = require('passport-local').Strategy;
 var mysql = require("./routes/model/mysql");
 var flash = require('req-flash');
@@ -106,21 +105,31 @@ app.use('/',project);
 app.use('/',podcast);
 app.use('/',books);
 
-passportFB.use('FBlogin', new FacebookStrategy({
+//passportFB.use('fbLogin', new LocalStrategy({
+passportFB.use( new FacebookStrategy({
         clientID: '237556010053271',
         clientSecret: 'cc7f7051e543769a0cffdfaa3f946200',
-        callbackURL: "http://localhost/auth/facebook/callback"
+        callbackURL: "http://localhost/auth/facebook/callback",
+        profileFields: ['id', 'displayName', 'photos']
     },
     function(accessToken, refreshToken, profile, done) {
         console.log(profile);
         console.log("+++++++");
         console.log(profile.id);
         console.log(profile.displayName);
+
+        //mysql.select('select * from cider.cid_member where mem_id ="'+profile.id+'" and mem_name = "'+profile.displayName+'"', function (err, data){
+         // console.log(data);
+        /*
         var sets = {mem_id : profile.id, mem_name : profile.displayName };
         mysql.insert('insert into cider.cid_member set ?', sets, function(err,data){
-
+        */
+        //var sets = {mem_id : profile.id, mem_name : profile.displayName };
+/*
           if(data.length < 1){
-            console.log('fail');
+            //mysql.insert('insert into cider.cid_member set ?', sets, function(err,data){
+            console.log('회원가입 완료');
+           // });
             return done(null, false);
           }else {
             console.log('success');
@@ -128,8 +137,8 @@ passportFB.use('FBlogin', new FacebookStrategy({
           }
           if(err){
             res.redirect('back');
-          }
-        });
+          }*/
+       // });
   
     
         done(null,profile);
@@ -141,16 +150,34 @@ app.get('/auth/facebook/callback',
     passportFB.authenticate('facebook', { successRedirect: '/login_success',
         failureRedirect: '/login_fail' }));
 app.get('/login_success', ensureAuthenticated, function(req, res){
-    res.send(req.user);
+    var sets = {mem_id : req.user.id, mem_name : req.user.displayName };
+    mysql.select('select * from cider.cid_member where mem_id ="'+req.user.id+'" and mem_name = "'+req.user.displayName+'"', function (err, data){
+    console.log(req.user.id);
+    console.log(data);
+    if(data.length < 1){
+      console.log("하앙");
+      mysql.insert('insert into cider.cid_member set ?', sets, function(err,data){
+      console.log('회원가입 완료');
+      });
+    }
+    //res.send(req.user);
+    res.redirect('/');
+    //res.render('front/facebooklogin_test', {member:data});
+  });
+});
+app.get('/login_fail', ensureAuthenticated, function(req, res){
+    res.redirect('/');
 });
 app.get('/logout', function(req, res){
     req.logout();
-    res.redirect('/');
+    res.redirect('/fbtest');
 });
 function ensureAuthenticated(req, res, next) {
     // 로그인이 되어 있으면, 다음 파이프라인으로 진행
+    console.log("로그인이 되어 있음");
     if (req.isAuthenticated()) { return next(); }
     // 로그인이 안되어 있으면, login 페이지로 진행
+     console.log("로그인이 안되어 있음");
     res.redirect('/');
 }
 
@@ -183,7 +210,6 @@ function(req, email, pw, done) {
 ));
 
 passport.use('applycancel', new LocalStrategy({
-	
     usernameField : 'app_no',
     passwordField : 'app_name',
     passReqToCallback : true
