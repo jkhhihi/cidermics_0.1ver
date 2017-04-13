@@ -3,14 +3,6 @@
 <head>
 <meta charset="utf-8">
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KZ5KCJV');</script>
-<!-- End Google Tag Manager -->
-
 <!-- 네이버 -->
 <meta name="naver-site-verification" content="083657cb98aa9a4a9c62dedeffddfb2490545da0"/>
 
@@ -33,7 +25,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
 <link rel="stylesheet" type="text/css" href="/css/component.css" />
 <link href="/css/bootstrap.min.css" rel="stylesheet">
-<link href="/css/cid_contents2.css" rel="stylesheet">
+<link href="/css/cid_contents.css" rel="stylesheet">
 <link href="/css/swiper.css" rel="stylesheet">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
@@ -120,26 +112,8 @@ finestra=window.open(img,"",stringa);
 	}
 </style>
 
-<script>
-$('swiper-wrapper').on('click','swiper-slide', function() {
-var name = $(this).find('a').text();
-ga('send', {
-hitType: 'event', //이벤트라고 명시
-eventCategory: '재무배너', //메인 화면에서 일어나는
-eventAction: '배너', //메뉴
-eventLabel: '재무상담' //카테고리명
-});
-});
-</script>
-
 </head>
-
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZ5KCJV"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
 <!--위로가기 버튼-->
 <div id="but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></div>
 <!--페이스북 연동 스크립트-->
@@ -156,34 +130,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="contents_detail-mob_menu"><img src="/page_imgs/fixed_img/detail_line.png"></div>
 									
 <div class="bg-blue">
-<div class="bg-white container">
-	<div class="appbanner-bg">
-	<!-- a href="/appdown"><img class="img-responsive" src="http://i.imgur.com/0m1JFrK.jpg"></a -->
-	<a href="#" onClick="javascript:openWinKA();"><img class="img-responsive" src="http://i.imgur.com/h2TP0sx.jpg"></a>
-	</div>		
-<div class="mob-bg-blue">
-<div class="mob-bg-white container">
-<div class="contents container">
-		<div class="row">
-				<div class="col-xs-12 title"><%= contents[0].con_title%></div>
-				<!--div class="col-xs-12 icon-menu">
-					<%= contents[0].cate_name %>	
-					<img src="/page_imgs/contents_img/icon_menu_in.png"></div-->
-				<div class="col-xs-6 date-view"><!--span class="date"><%= contents[0].con_upDate %></span--><br>
-					<span class="icon-view"><!--img src="/page_imgs/contents_img/icon_view.svg"--></span>
-					<span class="date"><%= contents[0].con_upDate %></span></div>
-				<!--div class="col-xs-6 date-view"><span class="date"><%= contents[0].con_upDate %></span><br>
-					<span class="icon-view"><img src="/page_imgs/contents_img/icon_view.svg"></span>
-					<span class="date"><%=contents[0].con_viewCount%></span></div-->
-				<div class="col-xs-6 editor" align="right"><span class="cate_name"><%= contents[0].cate_name %></span><br>
-						<span class="write">written by <%=contents[0].con_writer%></span></div>
-				<div class="col-xs-12 line-1px"></div>
-				<div class="col-xs-12 contents-in">
-					<%- contents[0].con_content %>
-				</div>
+<div class="bg-white container">		
+		<div class="row margin-lr0">
+			<div class="parallax3" >
+				<div class="col-xs-12 padding-lr0">
+					<div class="conthum-black-box padding-lr0">
+						<div class="row margin-lr0">
+							<div class="col-xs-12 title" align="center"><%= contents[0].con_title%></div>
+							<div class="col-xs-12 info" align="right">
+							<span class="date"><%= contents[0].con_upDate %></span><br>
+							<span class="cate_name"><%= contents[0].cate_name %></span><br>
+							<span class="write">written by <%=contents[0].con_writer%></span><br>
+							</div>
+						</div>
+					</div>
+			    </div>
+			</div>
 		</div>
-		
-		
+<div class="mob-bg-gray">
+<div class="mob-bg-white container">		
+	<div class="contents container">
+		<div class="row">
+			<div class="col-xs-12 contents-in">
+				<%- contents[0].con_content %>
+			</div>
+		</div>
+	</div>	
 		
 		
 <!--script type="text/javascript">
@@ -254,6 +226,7 @@ function CopyToClipboard ( tagToCopy, textarea ){
 						<div class="swiper-pagination"></div>
 		</div>
 		</div>
+		
 <!-- Swiper JS -->
 <script src="/js/swiper.js"></script>
 <!-- Initialize Swiper -->
@@ -378,11 +351,9 @@ function CopyToClipboard ( tagToCopy, textarea ){
 								
 								<% } %>
 						</div>
-				</div>
-				
+				</div>		
 		</div>
 		
-</div>
 </div>
 </div>
 
@@ -433,10 +404,17 @@ function CopyToClipboard ( tagToCopy, textarea ){
 		</div>
 		<% } %>
 		
+		
+	<!-- 광고 -->
+	<div class="ad col-xs-12"></div>
+		<a href="http://plus.kakao.com/home/@%EC%82%AC%EC%9D%B4%EB%8B%A4%EA%B2%BD%EC%A0%9C"><img class="img-responsive" src="http://i.imgur.com/h2TP0sx.jpg"></a>
+	<div class="ad col-xs-12" style="margin-bottom:10px;"></div>
+		
+		
 		<div class="recommendation" style="margin-bottom:70px;">
 		<div class="recommendation-con container" >
 		<div class="recommendation-title" align="center">
-		<p>사이다경제 추천</p>
+		<p>" 사이다경제 추천 "</p>
 		</div>
 
 			<ul class="grid effect-2" id="grid">
@@ -467,7 +445,7 @@ function CopyToClipboard ( tagToCopy, textarea ){
 				viewportFactor : 0.2
 			} );
 		</script>
-</div>
+
 </div>
 
 
