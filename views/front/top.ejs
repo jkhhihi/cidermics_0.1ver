@@ -178,6 +178,11 @@ padding:20px 0 20px 10px;
 
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/cid_top_bottom.js"></script>
+
+
+<!-- top include w3data -->
+<script src="https://www.w3schools.com/lib/w3data.js"></script>
+
 <body>
 <div class="mob-header">
 		<header class="container-fulid">
@@ -235,6 +240,12 @@ padding:20px 0 20px 10px;
 									<a href="/our_company"><li><span>Our Company</span></li></a>
 									<a href="/our_team"><li><span>Our Team</span></li></a>
 									<a href="/contact"><li><span>Contact Us</span></li></a>
+									<div w3-include-html="/fbtest"></div>
+				<!-- top include url링크로 -->
+				<script>
+				w3IncludeHTML();
+				</script>
+				<!-- top include url 끝 -->
 								</ul>
 						</div>	
 		</div>
@@ -281,9 +292,17 @@ padding:20px 0 20px 10px;
   </ul>
 </div>
 </div>
-<% include facebooklogin_test %>
+
+
+
 				<form name="search_box" action="/search/process" method="post">
-				<div class="login" style="width:35%;" align="right"><!--a href="/login">로그인</a> | <a href="/join">회원가입</a-->
+				<div class="login" style="width:35%;" align="right"><div w3-include-html="/fbtest"></div>
+				<!-- top include url링크로 -->
+				<script>
+				w3IncludeHTML();
+				</script>
+				<!-- top include url 끝 -->
+				<!--a href="/login">로그인</a> | <a href="/join">회원가입</a-->
 				<input type="text" class="form-control web-search-box" placeholder="search" name="keyword" value=''>
 				<a onClick="search_submit()" style="cursor:pointer" class="web-search-box-img">검색<!--img src="../../page_imgs/fixed_img/search_btn.png"--></a></div>
 				<div id="search" class="search" style="width:5%;"><img src="/page_imgs/fixed_img/icon_search.svg" ></div>

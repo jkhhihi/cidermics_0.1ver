@@ -369,8 +369,8 @@ function CopyToClipboard ( tagToCopy, textarea ){
 		</div>
 		<div class="row pre-next container">
 		
-		<% for(var i=0; i<contents.length; i++) {
-		if (preNext[i].con_no < contents[i].con_no && preNext[i+1] == null) { %>
+		<% for(var i=0; i<contents.length; i++) { %>
+		<% if (preNext[i].con_no < contents[i].con_no && preNext[i+1] == null) { %>
 			<a href="/contents/detail/<%= preNext[i].con_no %>">
 				<div class="col-xs-6 con-next">
 						<p>이전 편</p>

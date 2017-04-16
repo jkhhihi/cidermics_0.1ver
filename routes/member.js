@@ -26,7 +26,7 @@ router.get('/join', function(req, res, next) {
 
 });
 
-router.get('/login', function(req, res, next) {
+router.get('/mem_login', function(req, res, next) {
 
 	res.render('front/cid_member/cid_login', { });
 

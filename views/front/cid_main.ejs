@@ -196,11 +196,23 @@ if (todayAtMidn.getTime() == specificDate.getTime())
 }
 </style>
 
+<!-- top include w3data -->
+<script src="https://www.w3schools.com/lib/w3data.js"></script>
+
 </head>
+
 <body>
+
 <!--위로가기 버튼-->
+<!-- top include url링크로 -->
+<div w3-include-html="/top"></div> 
+<script>
+w3IncludeHTML();
+</script>
+<!-- top include url 끝 -->
+
 <div id="but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></div>
-<% include top %>
+
 
 <div class="contents_detail-mob_menu"><img src="http://i.imgur.com/iW4DMcC.png" height="50"></div>
 

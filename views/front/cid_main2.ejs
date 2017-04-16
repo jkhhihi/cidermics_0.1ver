@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html> -->
+<!--<!DOCTYPE html>-->
 <html lang="ko">
 <head>
 
@@ -38,12 +38,11 @@ function openWinKA(){
     window.open("http://plus.kakao.com/home/@%EC%82%AC%EC%9D%B4%EB%8B%A4%EA%B2%BD%EC%A0%9C");  
 }
 </script>
+
 </head>
-
 <body>
-
-<!--위로가기 버튼-->
 <% include top %>
+
 <div class="contents_detail-mob_menu"><img src="http://i.imgur.com/iW4DMcC.png" height="50"></div>
 <script type="text/javascript">
   function setCookie( name, value, expiredays ) { 
@@ -173,7 +172,6 @@ $(document).ready(function(){
 	</div>
 </div>
 
-
 <!-- 슬라이드 배너 -->
 <div id="myCarousel" class="container carousel slide" data-ride="carousel" style="margin-top:5px;">
   <!-- Indicators> 
@@ -222,7 +220,9 @@ $(document).ready(function(){
 			<div class="line-3px col-xs-12"></div>
 		</div>
 
-			<div class="col-md-6 col-xs-4">
+			<!-- 재무 상담 오픈 -->
+
+			<!--div class="col-md-6 col-xs-4">
 				<div class="thumnail">
 					<a href="/finance/necessary">
 					<div class="con-img">
@@ -231,7 +231,7 @@ $(document).ready(function(){
 					<div class="con-title" align="center" style="margin-top:8px; font-weight:bold;">2017년 4월, 사이다재무상담 오픈!</div>
 					</a>
 				</div>
-			</div>
+			</div-->
 
 		<!-- 콘텐츠 뿌림 시작 -->		
 		<div class="con-in row" align="center">
@@ -596,7 +596,7 @@ $('#myImage').hover(function() {
 		<!-- 콘텐츠 뿌림 시작 -->
 		<div class="con-in row" align="center" style="margin-left:0 !important; margin-right:2px !important;">
 			<!-- 재무 상담 콘텐츠 목록 맨 앞줄에 넣는 거 재무할때만.-->
-			<div class="col-xs-4" style="padding-right:0 !important; padding-left:2px !important;">
+			<!--div class="col-xs-4" style="padding-right:0 !important; padding-left:2px !important;">
 				<div class="thumnail">
 					<a href="/finance/necessary">
 					<div class="con-img">
@@ -605,7 +605,7 @@ $('#myImage').hover(function() {
 					<div class="con-title1">2017년 4월, 사이다재무상담 오픈!</div>
 					</a>
 				</div>
-			</div>
+			</div-->
 
 			<% for(var i=0; i < contents.length; i++) { %>
 			<div class="col-xs-4" style="padding-right:0 !important; padding-left:2px !important;">

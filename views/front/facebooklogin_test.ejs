@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
- <button onclick="location.href='/auth/facebook'">페이스북 회원가입</button>
- <button onclick="location.href='/auth/facebook'">페이스북 로그인</button>
-  <button onclick="location.href='/logout'">페이스북 로그아웃</button>
-  
-</body>
-</html>
 
+
+<% if (proPhoto == null){ %>
+<!--a href="/login">로그인</a> | <a href="/join">회원가입</a--><br>
+<a href="/mem_login" style="color: #228bcb;">로그인</a> <!--a onclick="location.href='/auth/facebook'">페이스북 회원가입</a-->
+<% } else {%>
+ <img src="<%= proPhoto %>">
+ <!--button onclick="location.href='/auth/facebook'">페이스북 로그인</button-->
+ <a onclick="location.href='/logout'">페이스북 로그아웃</a>
+ <button onclick="location.href='/mypage'"">mypage</button>
+<% } %>

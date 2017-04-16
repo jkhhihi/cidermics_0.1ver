@@ -107,39 +107,13 @@ app.use('/',books);
 
 //passportFB.use('fbLogin', new LocalStrategy({
 passportFB.use( new FacebookStrategy({
-        clientID: '237556010053271',
-        clientSecret: 'cc7f7051e543769a0cffdfaa3f946200',
-        callbackURL: "http://localhost/auth/facebook/callback",
+        clientID: '116627908812749',
+        clientSecret: '38a1b7476831ada2468cc7e9fa054f3c',
+        callbackURL: "http://cidermics.com/auth/facebook/callback",
+        //callbackURL: "http://localhost/auth/facebook/callback",
         profileFields: ['id', 'displayName', 'photos']
     },
     function(accessToken, refreshToken, profile, done) {
-        console.log(profile);
-        console.log("+++++++");
-        console.log(profile.id);
-        console.log(profile.displayName);
-
-        //mysql.select('select * from cider.cid_member where mem_id ="'+profile.id+'" and mem_name = "'+profile.displayName+'"', function (err, data){
-         // console.log(data);
-        /*
-        var sets = {mem_id : profile.id, mem_name : profile.displayName };
-        mysql.insert('insert into cider.cid_member set ?', sets, function(err,data){
-        */
-        //var sets = {mem_id : profile.id, mem_name : profile.displayName };
-/*
-          if(data.length < 1){
-            //mysql.insert('insert into cider.cid_member set ?', sets, function(err,data){
-            console.log('회원가입 완료');
-           // });
-            return done(null, false);
-          }else {
-            console.log('success');
-            return done(null, data);
-          }
-          if(err){
-            res.redirect('back');
-          }*/
-       // });
-  
     
         done(null,profile);
     }
@@ -147,30 +121,36 @@ passportFB.use( new FacebookStrategy({
 
 app.get('/auth/facebook', passportFB.authenticate('facebook'));
 app.get('/auth/facebook/callback',
-    passportFB.authenticate('facebook', { successRedirect: '/login_success',
+    passportFB.authenticate('facebook', { successRedirect: '/login_success/:mem_id',
         failureRedirect: '/login_fail' }));
-app.get('/login_success', ensureAuthenticated, function(req, res){
+app.get('/login_success/:mem_id', ensureAuthenticated, function(req, res){
     var sets = {mem_id : req.user.id, mem_name : req.user.displayName };
     mysql.select('select * from cider.cid_member where mem_id ="'+req.user.id+'" and mem_name = "'+req.user.displayName+'"', function (err, data){
     console.log(req.user.id);
-    console.log(data);
+    console.log(req.user.photos[0].value);
+    var profilephoto = req.user.photos[0].value;
+
     if(data.length < 1){
-      console.log("하앙");
       mysql.insert('insert into cider.cid_member set ?', sets, function(err,data){
       console.log('회원가입 완료');
       });
     }
     //res.send(req.user);
     res.redirect('/');
-    //res.render('front/facebooklogin_test', {member:data});
+    //res.render('front/facebooklogin_success', {member:data,profilephoto:profilephoto});
   });
 });
 app.get('/login_fail', ensureAuthenticated, function(req, res){
     res.redirect('/');
 });
 app.get('/logout', function(req, res){
-    req.logout();
-    res.redirect('/fbtest');
+
+  req.session.destroy(function (err) {
+    res.redirect('/'); //Inside a callback… bulletproof!
+  });
+    //req.logout();
+    //res.send('<script>alert("로그아웃되었습니다.");location.href="/main_old";</script>');
+    //res.redirect('/');
 });
 function ensureAuthenticated(req, res, next) {
     // 로그인이 되어 있으면, 다음 파이프라인으로 진행

@@ -59,7 +59,6 @@ router.get('/', function(req, res, next) {
 	var _tot = releaseTime();
 
 
-
 	var now = new Date();
 	var _year=  now.getFullYear();
 	var _mon =   now.getMonth()+1;
@@ -71,7 +70,7 @@ router.get('/', function(req, res, next) {
 	var _totmon = _year+""+_mon;
 
 	//최신 콘텐츠 qry
-	var qry="select con_no, con_photo, con_title, if (a.con_upDate > DATE_ADD(now(),INTERVAL -1 DAY) ,'/page_imgs/main_img/new_mark4.svg','/page_imgs/main_img/new_mark1px.png') as chkDat from cider.cid_contents a where a.con_release <= '"+_tot+"' order by a.con_release desc limit 0,5";
+	var qry="select con_no, con_photo, con_title, if (a.con_upDate > DATE_ADD(now(),INTERVAL -1 DAY) ,'/page_imgs/main_img/new_mark4.svg','/page_imgs/main_img/new_mark1px.png') as chkDat from cider.cid_contents a where a.con_release <= '"+_tot+"' order by a.con_release desc limit 0,6";
 	mysql.select(qry, function (err, data){
 		if (err) throw err;
 		 row = data;
@@ -214,6 +213,27 @@ router.get('/survey', function(req, res, next) {
 
 });
 
+router.get('/mypage', function(req, res, next) {
+
+	res.render('front/mypage', { });
+
+});
+
+router.get('/top', function(req, res, next) {
+
+	var sess = req.session;
+	console.log(sess);
+	var sePass = sess.passport;
+	if(sePass != null){
+		var proPhoto = sess.passport.user.photos[0].value;
+	console.log(sess.passport.user.photos[0].value);
+	}
+
+
+	res.render('front/top', {proPhoto:proPhoto,sePass:sePass});
+
+});
+
 
 
 
@@ -245,8 +265,17 @@ router.post('/insert', function(req, res, next) {
 
 
 router.get('/fbtest', function(req, res, next) {
-       res.render('front/facebooklogin_test', {});
+		var sess = req.session;
+	//console.log(sess);
+	var sePass = sess.passport;
+	if(sePass != null){
+		var proPhoto = sess.passport.user.photos[0].value;
+	}
+       res.render('front/facebooklogin_test', {proPhoto:proPhoto});
    });
+
+
+
 
 
 module.exports = router;
