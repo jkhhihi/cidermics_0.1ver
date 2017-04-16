@@ -1,0 +1,12 @@
+@import url('https://cdn.rawgit.com/singihae/Webfonts/master/style.css');
+body{font-family:'BM JUA','배달의민족 주아',sans-serif; font-size:16px;}
+.btn-home{width:120px; height:auto; background-color:#ececec; border:2px solid #ddd; border-radius:3px; color:#333; padding:8px;}
+.main-banner{width:100%; height:auto; background-color:#ff574a; color:#fff; font-size:20px; padding:50px 0;}
+.main-banner img{height:50px;}
+.survey{width:100%; height:auto; border:4px solid #ececec; padding:10px;}
+.survey .title p{color:#ff574a; font-size:20px;}
+
+
+@media all and (max-width:1024px) {
+
+}
