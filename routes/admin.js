@@ -130,6 +130,28 @@ router.get('/contents/insert', function(req, res, next) {
 		});
     });
 
+router.get('/contents/insertMore', function(req, res, next) {
+	
+	var CP = 1;
+	var cate;
+	var user;
+	mysql.select('SELECT * FROM cider.cid_contents where con_category = 7 order by con_no desc', function (err, data){
+		if(err){
+			res.redirect('back');
+		}
+		
+		cate = data;
+		
+		mysql.select('select * from cider.cid_user where user_level="2"', function (err, data2){
+			if(err){
+				res.redirect('back');
+			}
+			user = data2;
+
+			res.render('admin/contents/insertMore', {cate : cate, user : user, CP : CP});
+			});
+		});
+    });
 
 
 /*test중 comment
@@ -295,6 +317,25 @@ router.post('/contents/update', ensureAuthenticated, function(req, res, next) {
     });
 });
 
+
+router.post('/contents/insertMore', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 1;
+	
+	var con_no = req.body.con_no;
+	var yes24 = req.body.yes24;
+	var ala = req.body.ala;
+	var kyobo = req.body.kyobo;
+	var cmlabel = req.body.label;
+	var sets = {con_no : con_no, cmore_label : cmlabel, cmore_op1 : yes24, cmore_op2 : ala, cmore_op3 : kyobo};
+	
+	mysql.insert('insert into cider.cid_contentsMore set ?', sets,  function (err, data){
+		
+    	res.redirect('/adm/contents');
+    	
+    });
+
+});
 
 router.get('/contents/delete/:no', ensureAuthenticated, function(req, res, next) {
 	

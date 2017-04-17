@@ -153,61 +153,21 @@ router.get('/contents/detail/:no', function(req, res, next) {
 					}
 					row = data1;
 
-				res.render('front/cid_contents/cid_contents_detail', {contents : contents, preNext : data, cont : row});
+					mysql.select('SELECT con_no, cmore_op1, cmore_op2,cmore_op3,cmore_label FROM cider.cid_contentsMore WHERE con_no = '+ no +'' , function (err, data2){	
+						if(err){
+							res.redirect('back');
+						}
+						var cmore = data2;
+						console.log(data2);
+
+				res.render('front/cid_contents/cid_contents_detail', {contents : contents, preNext : data, cont : row, cmore:cmore });
 			});
 		  });
-		  
-		});
+		 });
+	   });
 	});
 });
 
-
-router.get('/contents/detail2/:no', function(req, res, next) {
-	
-
-	var no = req.params.no;
-	
-	var _tot = releaseTime();
-
-	var qry="";
-	
-	var row;
-	var sets = {con_no : no};
-	var next = {};
-	var pre = {};
-
-	mysql.update('update cider.cid_contents set con_viewCount = con_viewCount + 1 where con_no = ?', [no] ,function (err, data){
-		if(err){
-			res.redirect('back');
-		}
-		
-		mysql.select('select c.con_no, c.con_category, c.con_writer, c.con_title, c.con_content, c.con_photo, c.con_viewCount,c.con_regDate, c.con_upDate, c.con_likeCnt, c.comment_no, c.user_no, c.user_comment, c.con_release,  u.user_email, u.user_name, u.user_profile_img, u.user_sns_url, u.user_sns_icon, cate.cate_no, cate.cate_name from cider.cid_contents c left join cider.cid_user u on u.user_no = c.user_no left join cider.cid_con_cate cate on c.con_category = cate.cate_no and u.user_level = "2" where 1=1 and c.con_no = '+no+'', function (err, data){
-			if(err){
-				res.redirect('back');
-			} 
-			
-			var lang = data[0].con_category;
-			var contents = data;
-			
-			mysql.select('(SELECT con_no, con_title, con_photo FROM cider.cid_contents WHERE con_no > '+ no +' and con_category = "'+ lang +'" and con_release <= "'+_tot+'"  LIMIT 1) UNION ( SELECT con_no, con_title ,con_photo FROM cider.cid_contents WHERE con_no < '+ no +' and con_category = "'+ lang +'" and con_release <= "'+_tot+'" ORDER BY con_no DESC LIMIT 1 ) order by con_no desc' , function (err, data){	
-				if(err){
-					res.redirect('back');
-				}
-				
-				qry="select con_no, con_photo, con_title from cider.cid_contents where con_release <= '"+_tot+"' ORDER BY RAND() LIMIT 0,24";
-				   mysql.select(qry, function (err, data1){
-					if(err){
-					res.redirect('back');
-					}
-					row = data1;
-
-				res.render('front/cid_contents/cid_contents_detail2', {contents : contents, preNext : data, cont : row});
-			});
-		  });
-		  
-		});
-	});
-});
 
 
 router.get('/addMore/:idx', function(req, res, next) {

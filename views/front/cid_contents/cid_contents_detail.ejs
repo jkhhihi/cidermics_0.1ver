@@ -27,14 +27,14 @@
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/cid_contents.css" rel="stylesheet">
 <link href="/css/swiper.css" rel="stylesheet">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<!--link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"-->
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><%= contents[0].con_title %> - 사이다경제 | 콘텐츠</title>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
+<!--script src="/js/bootstrap.min.js"></script-->
 <script src="/js/modernizr.custom.js"></script>
 <script src="/js/gotoup.js"></script>
 
@@ -115,10 +115,14 @@ finestra=window.open(img,"",stringa);
     /* The image used */
     background-image: url("<%= contents[0].con_photo %>");
 	}
+
+body { padding-right: 0px !important }
+
+
 </style>
 
 </head>
-<body>
+<body style="overflow:scroll;">
 <!--위로가기 버튼-->
 <div id="but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></div>
 <!--페이스북 연동 스크립트-->
@@ -160,66 +164,41 @@ finestra=window.open(img,"",stringa);
 				<%- contents[0].con_content %>
 			</div>
 		</div>
-	</div>	
-		
-		
-<!--script type="text/javascript">
+	</div>
+	<% console.log(cmore.length); %>
+<% if(contents[0].cate_name == "BOOKS" && cmore.length == 1) { %>
+<!--더 알아보기 -->
+	<div class="row">
+		<div class="col-xs-12" align="center">
+			<span data-toggle="modal" data-target="#myModal" class="btn-request" ><img src="/page_imgs/fixed_img/contentsMore.png" width="165" height="88" onclick="ga('send','event','책연결','버튼클릭','<%=cmore[0].cmore_label %><%=cmore[0].con_no %>' );"></span>
+		</div>
+	</div>
+	<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document" style="width:320px; margin-top:150px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h5 class="modal-title" id="myModalLabel" style="font-weight:bold;">더 알아보기</h5>
+      </div>
+      	<div id="form-group" style="margin-bottom: 30px; font-size: 12px; padding: 15px;">
+            <label for="writer-name" class="control-label">예스24</label><br>
+            <a href="<%=cmore[0].cmore_op1%>"><span><%=cmore[0].cmore_op1%></span></a>
+        </div>
+        <div id="form-group2" style="margin-bottom: 30px; font-size: 12px; padding: 15px;">
+            <label for="writer-name" class="control-label">알라딘</label><br>
+            <a href="<%=cmore[0].cmore_op1%>"><span><%=cmore[0].cmore_op2%></span></a>
+        </div>
+        <div id="form-group3" style="margin-bottom: 30px; font-size: 12px; padding: 15px;">
+            <label for="writer-name" class="control-label">교보문고</label><br>
+            <a href="<%=cmore[0].cmore_op1%>"><span><%=cmore[0].cmore_op3%></span></a>
+        </div>
 
-function CopyToClipboard ( tagToCopy, textarea ){ 
-
-        textarea.parentNode.style.display = "block"; 
-
-        var textToClipboard = ""; 
-        if ( "value" in tagToCopy ){    textToClipboard = tagToCopy.value;    } 
-        else {    textToClipboard = ( tagToCopy.innerText ) ? tagToCopy.innerText : tagToCopy.textContent;    } 
-
-        var success = false; 
-
-        if ( window.clipboardData ){ 
-                window.clipboardData.setData ( "Text", textToClipboard ); 
-                success = true; 
-        } 
-        else { 
-                textarea.value = textToClipboard; 
-
-                var rangeToSelect = document.createRange(); 
-
-                rangeToSelect.selectNodeContents( textarea ); 
-
-                var selection = window.getSelection(); 
-                selection.removeAllRanges(); 
-                selection.addRange( rangeToSelect ); 
-
-                success = true; 
-
-                try { 
-                    if ( window.netscape && (netscape.security && netscape.security.PrivilegeManager) ){ 
-                        netscape.security.PrivilegeManager.enablePrivilege( "UniversalXPConnect" ); 
-                    } 
-
-                    textarea.select(); 
-                    success = document.execCommand( "copy", false, null ); 
-                } 
-                catch ( error ){ 
-                    success = false; 
-                    console.log( error ); 
-                } 
-        } 
-
-        textarea.parentNode.style.display = "none"; 
-        textarea.value = ""; 
-
-        if ( success ){ alert( ' 클립보드에 복사되었습니다. \n "Ctrl+v"를 사용하여 원하는 곳에 붙여넣기 하세요. ' ); } 
-        else {    alert( " 복사하지 못했습니다. " );    }
-} 
-
-</script-->
-<!--div style="display: none;"><textarea id="myClipboard"></textarea></div>
-<br>
-<center>
-이 글의 트랙백 주소 복사하기
-<p onclick="CopyToClipboard( this, myClipboard )"> http://www.cidermics.com/contents/detail/<%=contents[0].con_no%></p>
-</center-->
+    </div>
+  </div>
+</div>
+<!--더 알아보기 끝 -->
+<% } %>
 
 		<div class="banner">
 		<div class="swiper-container">
@@ -248,6 +227,8 @@ function CopyToClipboard ( tagToCopy, textarea ){
         autoplayDisableOnInteraction: false
     });
 </script>
+
+
 
 		
 		<div class="contents container">
@@ -452,8 +433,6 @@ function CopyToClipboard ( tagToCopy, textarea ){
 		</script>
 
 </div>
-
-
 
 <% include ../bottom %>
 
