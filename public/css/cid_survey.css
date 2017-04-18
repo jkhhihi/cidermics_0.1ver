@@ -34,7 +34,7 @@ input[type=text]:focus:not([readonly]) {
 .survey .title{color:#ff574a; font-size:20px;}
 .thanks{color:#333; font-size:18px;}
 .submit{margin:50px 0 20px 0; width:300px;}
-.btn-submit{width:120px; height:auto; background-color:#ff574a; border:2px solid #ececec; border-radius:6px; color:#fff; padding:6px; margin:0;}
+.btn-submit{width:120px; height:auto; background-color:#ff574a; border:2px solid #ececec; border-radius:6px; color:#fff; padding:6px; margin:0; text-align:center;}
 
 @media all and (max-width:800px) {
 /*-----------------------------------*/

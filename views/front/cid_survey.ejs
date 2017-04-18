@@ -9,6 +9,38 @@
 <link href="/css/cid_survey.css" rel="stylesheet">
 <link href="/css/materialize.css" rel="stylesheet">
 <script src="/js/materialize.min.js"></script>
+
+<script type="text/javascript">
+	function surveyGo()
+	{
+		if(document.surveyGoform.name.value==""){
+		 alert("이름을 입력해 주세요.");
+		document.surveyGoform.name.focus();
+		  return;
+		}
+		if(document.surveyGoform.phone.value==""){
+		 alert("휴대폰 번호를 정확히 입력해 주세요.");
+		document.surveyGoform.phone.focus();
+		  return;
+		}
+		
+		for (i=0; i<document.surveyGoform.phone.value.length; i++)
+	     {
+	     	 var ch = document.surveyGoform.phone.value.charAt(i);//문자를 반환(정수형), 범위 검사 가능
+			if ( ch < "0" || ch > "9" )
+	    	 {
+	            alert("휴대폰 번호는 숫자로만 입력 가능 합니다!");
+	            document.surveyGoform.phone.focus();
+	            return;
+	         }
+	      }
+
+	 	alert("설문에 참여해 주셔서 감사합니다.")
+	 	document.surveyGoform.submit();
+	}
+</script>
+
+
 </head>
 
 
@@ -20,11 +52,13 @@
 		<img src="/page_imgs/main_img/survey-icon.svg">
 		<p style="margin-bottom:0 !important;">
 			오프라인 강의 콘텐츠 제작에 앞서<br>
-			구독자 분들이 관심있는 분야를 알기 위해<br>
+			구독자분들이 관심 있는 분야를 알기 위해<br>
 			온라인 설문을 준비해보았습니다.
 		</p>
 	</div>
+
 	<div class="container">
+		<form action="/surveyGo" method="post" name="surveyGoform">
 		<p class="event" align="left">
 			<span style="color:#ff574a;">*</span>
 			아메리카노 쿠폰도 준비했으니 <br>
@@ -36,186 +70,192 @@
 			<p class="title"> < 오프라인 강의 분야 설문조사 > </p>
 			<div class="q1" align="left">
 				<p>01. 나이는 어떻게 되나요?</p>
-				 <form action="#">
+				 
 			     	<p>
-			     		<input class="with-gap" name="group1" type="radio" id="1-a1"  />
+			     		<input class="with-gap" name="group1" type="radio" id="1-a1" value="20" />
 			     		<label for="1-a1">20대</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group1" type="radio" id="1-a2"  />
+			     		<input class="with-gap" name="group1" type="radio" id="1-a2" value="30" />
 			     		<label for="1-a2">30대</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group1" type="radio" id="1-a3"  />
+			     		<input class="with-gap" name="group1" type="radio" id="1-a3" value="40" />
 			     		<label for="1-a3">40대</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group1" type="radio" id="1-a4"  />
+			     		<input class="with-gap" name="group1" type="radio" id="1-a4" value="50" />
 			     		<label for="1-a4">50대</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group1" type="radio" id="1-a5"  />
+			     		<input class="with-gap" name="group1" type="radio" id="1-a5" value="60" />
 			     		<label for="1-a5">60대 이상</label>
 			     	</p>
-			     </form>
+			     
 			</div>
 			<div class="q2" align="left">
 				<p>02. 직업을 선택해주세요!</p>
-				 <form action="#">
+				 
 			     	<p>
-			     		<input class="with-gap" name="group2" type="radio" id="2-a1"  />
+			     		<input class="with-gap" name="group2" type="radio" id="2-a1" value="1"  />
 			     		<label for="2-a1">회사원</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group2" type="radio" id="2-a2"  />
+			     		<input class="with-gap" name="group2" type="radio" id="2-a2" value="2" />
 			     		<label for="2-a2">사업소득자(자영업자포함)</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group2" type="radio" id="2-a3"  />
+			     		<input class="with-gap" name="group2" type="radio" id="2-a3" value="3" />
 			     		<label for="2-a3">공무원</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group2" type="radio" id="2-a4"  />
+			     		<input class="with-gap" name="group2" type="radio" id="2-a4" value="4" />
 			     		<label for="2-a4">학생</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group2" type="radio" id="2-a5"  />
+			     		<input class="with-gap" name="group2" type="radio" id="2-a5"  value="5"/>
 			     		<label for="2-a5">프리랜서</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group2" type="radio" id="2-a6"  />
+			     		<input class="with-gap" name="group2" type="radio" id="2-a6" value="6" />
 			     		<label for="2-a6">주부</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group2" type="radio" id="2-a7"  />
+			     		<input class="with-gap" name="group2" type="radio" id="2-a7" value="7" />
 			     		<label for="2-a7">기타</label>
 			     	</p>
-            		<input placeholder="기타사항을 입력해주세요:)" id="etc" type="text" class="validate">
-			     </form>
+            		<input placeholder="기타  내용을 입력해주세요:)" name="etc2" id="2-a7" type="text" class="validate">
+			     
 			</div>
 			<div class="q3" align="left">
-				<p>03. 효율적인 돈 관리 방법 중 관심있는 분야는 어떤건가요? (복수응답 가능)</p>
-				 <form action="#">
+				<p>03. 효율적인 돈 관리 방법 중 관심있는 분야는 어떤건가요? </p>
+				 
 			     	<p>
-			     		<input class="filled-in" name="group3" type="checkbox" id="3-a1"  />
+			     		<input class="with-gap" name="group3" type="radio" id="3-a1" value="1" />
 			     		<label for="3-a1">수입과 지출의 관리</label>
 			     	</p>
 			     	<p>
-			     		<input class="filled-in" name="group3" type="checkbox" id="3-a2"  />
+			     		<input class="with-gap" name="group3" type="radio" id="3-a2" value="2" />
 			     		<label for="3-a2">효율적인 계좌 관리</label>
 			     	</p>
 			     	<p>
-			     		<input class="filled-in" name="group3" type="checkbox" id="3-a3"  />
+			     		<input class="with-gap" name="group3" type="radio" id="3-a3" value="3" />
 			     		<label for="3-a3">비상예비자금 마련방법</label>
 			     	</p>
 			     	<p>
-			     		<input class="filled-in" name="group3" type="checkbox" id="3-a4"  />
+			     		<input class="with-gap" name="group3" type="radio" id="3-a4" value="4" />
 			     		<label for="3-a4">부채상환계획</label>
 			     	</p>
 			     	<p>
-			     		<input class="filled-in" name="group3" type="checkbox" id="3-a5"  />
+			     		<input class="with-gap" name="group3" type="radio" id="3-a5" value="5" />
 			     		<label for="3-a5">흔들리지 않는 투자원칙</label>
 			     	</p>
 			     	<p>
-			     		<input class="filled-in" name="group3" type="checkbox" id="3-a6"  />
+			     		<input class="with-gap" name="group3" type="radio" id="3-a6" value="6" />
 			     		<label for="3-a6">복잡한 보험 정리하기</label>
 			     	</p>
 			     	<p>
-			     		<input class="filled-in" name="group3" type="checkbox" id="3-a7"  />
+			     		<input class="with-gap" name="group3" type="radio" id="3-a7" value="7" />
 			     		<label for="3-a7">기타</label>
 			     	</p>
-        			<input placeholder="기타사항을 입력해주세요:)" id="etc" type="text" class="validate">
-			     </form>
+        			<input placeholder="기타 내용을 입력해주세요:)" name="etc3" id="etc" type="text" class="validate">
+			     
 			</div>
 			<div class="q4" align="left">
-				<p>04. 알쏭달쏭 세금이야기 중 관심있는 분야는 어떤건가요? (복수응답 가능)</p>
-				 <form action="#">
+				<p>04. 알쏭달쏭 세금이야기 중 관심있는 분야는 어떤건가요? </p>
+				 
 			     	<p>
-			     		<input class="filled-in" name="group4" type="checkbox" id="4-a1"  />
+			     		<input class="with-gap 4a" name="group4" type="radio" id="4-a1" value="1" />
 			     		<label for="4-a1">연말정산(소득공제)</label>
 			     	</p>
 			     	<p>
-			     		<input class="filled-in" name="group4" type="checkbox" id="4-a2"  />
+			     		<input class="with-gap 4a" name="group4" type="radio" id="4-a2" value="2" />
 			     		<label for="4-a2">연금저축계좌 (신탁, 보험, 펀드)</label>
 			     	</p>
 			     	<p>
-			     		<input class="filled-in" name="group4" type="checkbox" id="4-a3"  />
+			     		<input class="with-gap 4a" name="group4" type="radio" id="4-a3" value="3" />
 			     		<label for="4-a3">퇴직연금 (DB형, DC형, IRP)</label>
 			     	</p>
 			     	<p>
-			     		<input class="filled-in" name="group4" type="checkbox" id="4-a4"  />
+			     		<input class="with-gap 4a" name="group4" type="radio" id="4-a4" value="4" />
 			     		<label for="4-a4">부가가치세 신고</label>
 			     	</p>
 			     	<p>
-			     		<input class="filled-in" name="group4" type="checkbox" id="4-a5"  />
+			     		<input class="with-gap 4a" name="group4" type="radio" id="4-a5" value="5" />
 			     		<label for="4-a5">종합소득세 신고</label>
 			     	</p>
 			     	<p>
-			     		<input class="filled-in" name="group4" type="checkbox" id="4-a6"  />
+			     		<input class="with-gap 4a" name="group4" type="radio" id="4-a6" value="6" />
 			     		<label for="4-a6">기타</label>
 			     	</p>
-        			<input placeholder="기타사항을 입력해주세요:)" id="etc" type="text" class="validate">
-			     </form>
+        			<input placeholder="기타 내용을 입력해주세요:)" name="etc4" id="etc" type="text" class="validate">
+			     
 			</div>
 			<div class="q5" align="left">
-				<p>05. 재무적 이슈에 따른 관심사는 어떤건가요? (복수응답 가능)</p>
-				 <form action="#">
+				<p>05. 재무적 이슈에 따른 관심사는 어떤건가요? </p>
+				 
 			     	<p>
-			     		<input class="filled-in" name="group5" type="checkbox" id="5-a1"  />
+			     		<input class="with-gap" name="group5" type="radio" id="5-a1" value="1" />
 			     		<label for="5-a1">결혼자금 마련</label>
 			     	</p>
 			     	<p>
-			     		<input class="filled-in" name="group5" type="checkbox" id="5-a2"  />
+			     		<input class="with-gap" name="group5" type="radio" id="5-a2" value="2" />
 			     		<label for="5-a2">자녀 결혼자금 마련</label>
 			     	</p>
 			     	<p>
-			     		<input class="filled-in" name="group5" type="checkbox" id="5-a3"  />
+			     		<input class="with-gap" name="group5" type="radio" id="5-a3" value="3" />
 			     		<label for="5-a3">전세자금마련</label>
 			     	</p>
 			     	<p>
-			     		<input class="filled-in" name="group5" type="checkbox" id="5-a4"  />
+			     		<input class="with-gap" name="group5" type="radio" id="5-a4" value="4" />
 			     		<label for="5-a4">주택 구입자금 마련</label>
 			     	</p>
 			     	<p>
-			     		<input class="filled-in" name="group5" type="checkbox" id="5-a5"  />
+			     		<input class="with-gap" name="group5" type="radio" id="5-a5" value="5" />
 			     		<label for="5-a5">자녀교육자금 마련 </label>
 			     	</p>
 			     	<p>
-			     		<input class="filled-in" name="group5" type="checkbox" id="5-a6"  />
+			     		<input class="with-gap" name="group5" type="radio" id="5-a6" value="6" />
 			     		<label for="5-a6">은퇴자금 마련</label>
 			     	</p>
 			     	<p>
-			     		<input class="filled-in" name="group5" type="checkbox" id="5-a7"  />
+			     		<input class="with-gap" name="group5" type="radio" id="5-a7" value="7" />
 			     		<label for="5-a7">상속 및 증여</label>
 			     	</p>
 			     	<p>
-			     		<input class="filled-in" name="group5" type="checkbox" id="5-a8"  />
+			     		<input class="with-gap" name="group5" type="radio" id="5-a8" value="8" />
 			     		<label for="5-a8">기타</label>
 			     	</p>			     	
-        			<input placeholder="기타사항을 입력해주세요:)" id="etc" type="text" class="validate">
-			     </form>
+        			<input placeholder="기타 내용을 입력해주세요:)" name="etc5" id="etc" type="text" class="validate">
+			     
 			</div>
 			<div class="q6" align="left">
 				<p>06. 사이다경제에게 바라는점?</p>
-				 <form action="#">
-				 	<textarea placeholder="사이다경제에게 하고싶은말!!" id="hope" class="materialize-textarea"></textarea>
-				 </form>
+				 
+				 	<textarea placeholder="사이다경제에게 하고싶은말!!" name="group6" id="hope" class="materialize-textarea"></textarea>
+				 
 			</div>
 			<p class="thanks">설문에 참여해 주셔서 감사합니다 :)</p>
 		</div>
+
 		<div class="submit">
-			<input placeholder="이름" id="name" type="text" class="validate">
-			<input placeholder="휴대폰 번호" id="callnum" type="text" class="validate" style="margin-bottom:5px;">
+			<input placeholder="이름" id="name" type="text" class="validate" name="name">
+			<input placeholder="휴대폰 번호" id="callnum" type="text" class="validate" name="phone" style="margin-bottom:5px;">
 			<p align="left" style="margin:0; font-size:14px;">
 				<span style="color:#ff574a;">*</span>'-'표시 없이 입력해주세요.
 			</p>
 		</div>
-			<p style="color:#ff2f1f; font-size:16px; margin-top:0;">
+			<!--button class="btn waves-effect btn-submit" style="background-color: #ff574a;" onclick="surveyGo()">제출하기
+			    <i class="material-icons right">send</i>
+			</button-->
+			<p class="btn-submit"><a style="cursor:pointer; color: #fff;" onclick="surveyGo()">제출하기</a></p>
+	</form>
+	</div>
+			<p style="color:#ff2f1f; font-size:14px; margin-top:20px;">
 				위 개인정보는 이벤트에만 활용되며,<br>목적 이외의 그 어떤 용도로 사용되지 않습니다.<br>
 				개인정보는 설문조사 종료 후 일괄 삭제됩니다.
 			</p>
-			<p class="btn-submit">-> 제출하기</p>
-	</div>
+
 	<a href="/"><p class="btn-home">홈으로</p></a>	
 </div>
 

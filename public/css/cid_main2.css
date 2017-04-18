@@ -208,7 +208,7 @@ padding:10px 0; color:#fff; border-radius: 5px; font-size:16px; font-weight:bold
 }
 
 /*팝업창 */
-.button-checkbox .btn{height:45px; padding:0 10px; background-color:#c3686f; color:#fff; font-size:14px; border-radius:2px;}
+.button-checkbox .btn{height:45px; padding:0 10px; background-color:#ff574a; color:#fff; font-size:14px; border-radius:2px;}
 .button-checkbox .btn:focus, .btn:hover{background-color:#922d35 !important; color:#ffffff; }
 .button-close .btn{height:45px; padding:0 10px; background-color:#ececec; color:#922d35 !important; font-size:14px; border-radius:2px;}
 #pop{

@@ -70,7 +70,7 @@ router.get('/', function(req, res, next) {
 	var _totmon = _year+""+_mon;
 
 	//최신 콘텐츠 qry
-	var qry="select con_no, con_photo, con_title, if (a.con_upDate > DATE_ADD(now(),INTERVAL -1 DAY) ,'/page_imgs/main_img/new_mark4.svg','/page_imgs/main_img/new_mark1px.png') as chkDat from cider.cid_contents a where a.con_release <= '"+_tot+"' order by a.con_release desc limit 0,6";
+	var qry="select con_no, con_photo, con_title, if (a.con_upDate > DATE_ADD(now(),INTERVAL -1 DAY) ,'/page_imgs/main_img/new_mark4.svg','/page_imgs/main_img/new_mark1px.png') as chkDat from cider.cid_contents a where a.con_release <= '"+_tot+"' order by a.con_release desc limit 0,5";
 	mysql.select(qry, function (err, data){
 		if (err) throw err;
 		 row = data;
@@ -212,6 +212,38 @@ router.get('/survey', function(req, res, next) {
 	res.render('front/cid_survey', { });
 
 });
+
+
+router.post('/surveyGo', function(req, res, next) {
+
+	var g1 = req.body.group1;
+	var g2 = req.body.group2;
+	var g3 = req.body.group3;
+	var g4 = req.body.group4;
+	var g5 = req.body.group5;
+	var g6 = req.body.group6;
+
+
+	var etc1 = req.body.etc1;
+	var etc2 = req.body.etc2;
+	var etc3 = req.body.etc3;
+	var etc4 = req.body.etc4;
+	var etc5 = req.body.etc5;
+
+	var name = req.body.name;
+	var phone = req.body.phone;
+
+	//var sets = {sry_cate:1,sry_group2:g2};
+
+	//mysql.insert('insert into cider.cid_survey (sry_group3) values('+g3+')', function (err, data){
+
+	var sets = {sry_cate: 1 , sry_name : name , sry_phone : phone , sry_group1:g1,sry_group2:g2,sry_group3:g3,sry_group4:g4,sry_group5:g5,sry_group6:g6,sry_etc1:etc1,sry_etc2:etc2,sry_etc3:etc3,sry_etc4:etc4,sry_etc5:etc5};
+	mysql.insert('insert into cider.cid_survey set ?', sets,  function (err, data){
+		res.redirect('/');
+		//res.send('<script>alert("참여해주셔서 감사합니다");location.href="/";</script>');
+	});
+});
+
 
 router.get('/mypage', function(req, res, next) {
 
