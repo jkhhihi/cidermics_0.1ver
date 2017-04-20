@@ -1,5 +1,5 @@
 @import url('https://cdn.rawgit.com/singihae/Webfonts/master/style.css');
-body{font-family:'BM JUA','배달의민족 주아',sans-serif; font-size:16px;}
+.body{font-family:'BM JUA','배달의민족 주아',sans-serif; font-size:16px;}
 /*-----------------------------------*/
 input[type=text]{height:2rem !important;}
 textarea.materialize-textarea{padding:0.2rem 0 !important;}

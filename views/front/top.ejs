@@ -128,12 +128,12 @@ $('.contents_menu').click(function(e){
       e.preventDefault();
       if($(this).is('.on')){
          $(this).removeClass('on');
-         $('.contents_sub_menu').slideUp();
-         $('.contents_menu').text("▼");
+         $('.contents_sub_menu').slideDown();
+         $('.contents_menu').attr("src","/page_imgs/fixed_img/mob-menu-down.svg");
       }else{
          $(this).addClass('on');
-         $('.contents_sub_menu').slideDown();
-         $('.contents_menu').text("▲");
+         $('.contents_sub_menu').slideUp();
+         $('.contents_menu').attr("src","/page_imgs/fixed_img/mob-menu-up.svg");  
       }
 });
 });
@@ -188,14 +188,11 @@ padding:20px 0 20px 10px;
 		<header class="container-fulid">
 				<div class="mob-menu" align="left"><img class="img-responsive" src="/page_imgs/fixed_img/mob_icon_menu.svg"></div>
 				<div class="mob-logo" align="center"><a href="/"><img class="img-responsive" src="/page_imgs/fixed_img/mob_icon_logo.svg"></a></div>
-				
-				
 				<div id="mob-search" class="mob-search" align="right"><img src="/page_imgs/fixed_img/mob_icon_search.svg"></div>
-				
 				<form name="search_box_mob" action="/search/process" method="post" align="center" style="margin-bottom: 0px;">
 					<div class="input"><input type="text" class="form-control mob-search-box" placeholder="search"  name="keyword" value=''>
-						<a onClick="search_submit_mob()" style="cursor:pointer" class="mob-search-box-img" >검색<!--img src="../../page_imgs/fixed_img/search_btn.png"--></a></div>
-					</form>
+					<a onClick="search_submit_mob()" style="cursor:pointer" class="mob-search-box-img" >검색<!--img src="../../page_imgs/fixed_img/search_btn.png"--></a></div>
+				</form>
 		</header>
 </div>
 
@@ -206,22 +203,29 @@ padding:20px 0 20px 10px;
 		<div class="nav">
 		<div class="view">
 		<div class="scrollBlind">
-				
-						<div class="logo" align="center"><a href="/"><img src="/page_imgs/fixed_img/mob_icon_logo.svg" style="width:80px; margin:20px 0"></a></div>
+						<div class="profile row" align="center" style="height:auto; padding:20px 0 5px 0; background-color:#ececec;">
+							<div class="picture col-xs-12"><img src="/page_imgs/fixed_img/profile-basic-pic.svg"></div>
+							<div class="mem-name col-xs-12">
+								<span>양희아</span>  님
+								<a href="#"><img style="display:inline-block; width:15px;" src="/page_imgs/fixed_img/setting-icon.svg"></a>
+							</div>
+							<div class="col-xs-12" align="right" style="padding-right:20px;"><a href="/mypage"><span>마이페이지   |</span></a><a href="#"><span>  로그아웃</span></a><!--span>로그인</span--></div>
+						</div>
 						<div class="tab-menu row">
 							<div class="tab-menu1 col-xs-6" align="center" style="cursor:pointer;">Sections</div>
 							<div class="tab-menu2 col-xs-6" align="center" style="cursor:pointer;">Company Info</div>
 						</div>
 						<div id="tab-menu1-contents" align="left">
 								<ul class="menu">
-									<li><a href="/finance/necessary"><img src="/page_imgs/fixed_img/mob_icon_menu_finance.svg">사이다재무</a></li>
-    								<li><a href="/lecture"><img src="/page_imgs/fixed_img/mob_icon_menu_lecture.svg">사이다강의</a></li>
-    								<li><a href="/discuss"><img src="/page_imgs/fixed_img/mob_icon_menu_discuss.svg">사이다토론</a></li>
+									<li><a href="/finance/necessary"><img src="/page_imgs/fixed_img/mob-menu-finance.svg">사이다재무</a></li>
+    								<li><a href="/lecture"><img src="/page_imgs/fixed_img/mob-menu-lecture.svg">사이다강의</a></li>
+    								<li><a href="/discuss"><img src="/page_imgs/fixed_img/mob-menu-discuss.svg">사이다토론</a></li>
     								
-						    		<li><a href="/contents/all"><img src="/page_imgs/fixed_img/mob_icon_menu_contents.svg">사이다콘텐츠</a>
-						    		<span class="contents_menu" style="cursor:pointer; margin-left:10px;">▲</span></li>
+						    		<li><a href="/contents/all"><img src="/page_imgs/fixed_img/mob-menu-contents.svg">사이다콘텐츠</a>
+						    		<img class="contents_menu" style="cursor:pointer; margin-left:10px; width:20px;" src="/page_imgs/fixed_img/mob-menu-down.svg"></li>
 								<div class="contents_sub_menu">
 									<ul style="margin-left:10px;">
+										<li style="padding-right:10px; margin-top:0;"><div style="width:100%; height:1px; background-color:#ccc;"></div></li>
 							   	 		<li><a href="/contents/1"> 경제이야기</a></li>
 	    								<li><a href="/contents/2"> 금융이야기</a></li>
 	    								<li><a href="/contents/3"> 기업이야기</a></li>
@@ -232,8 +236,7 @@ padding:20px 0 20px 10px;
 									    <li><a href="/contents/8">사이다BEST</a></li>
 	    							</ul>
 	    						</div>
-	    							
-    							</ul>
+	    						</ul>
     					</div>	
     					<div id="tab-menu2-contents" align="center">
 								<ul>	
@@ -241,11 +244,11 @@ padding:20px 0 20px 10px;
 									<a href="/our_team"><li><span>Our Team</span></li></a>
 									<a href="/contact"><li><span>Contact Us</span></li></a>
 									<div w3-include-html="/fbtest"></div>
-				<!-- top include url링크로 -->
-				<script>
-				w3IncludeHTML();
-				</script>
-				<!-- top include url 끝 -->
+						<!-- top include url링크로 -->
+						<script>
+						w3IncludeHTML();
+						</script>
+						<!-- top include url 끝 -->
 								</ul>
 						</div>	
 		</div>
@@ -258,8 +261,6 @@ padding:20px 0 20px 10px;
 		</div>
 		<div onClick="history.back();" class="page_cover"></div>
 		<div onClick="history.back();" class="close"></div>  
-		
-		
 </div>
 
 
@@ -267,34 +268,28 @@ padding:20px 0 20px 10px;
 
 <div class="header">
 		<header class="container">
-				<div class="logo" style="width:10%;"><a href="/"><img src="/page_imgs/fixed_img/logo.svg"></a></div>
-					
-				
-<div class="dropdown" style="width:50%;">
-
-<div class='menu-bar'>
-  <ul class="menu">
-  	<li><a href="/finance/necessary">사이다재무</a></li>
-   	<li><a href="/lecture">사이다강의</a></li>
-    <li><a href="/contents/all">사이다콘텐츠</a>
-      <ul class="sub">
-		<li><a href="/contents/1">경제이야기</a></li>
-    	<li><a href="/contents/2">금융이야기</a></li>
-    	<li><a href="/contents/3">기업이야기</a></li>
-    	<li><a href="/contents/4">주식이야기</a></li>
-    	<li><a href="/project">기획콘텐츠</a></li>
-	    <li><a href="/podcast">팟캐스트</a></li>
-	    <li><a href="/books">사이다Books</a></li>
-	    <li><a href="/contents/8">사이다BEST</a></li>
-      </ul>
-    </li>
-    <li><a href="/discuss">사이다토론</a></li>
-  </ul>
-</div>
-</div>
-
-
-
+				<div class="logo" style="width:10%;"><a href="/"><img src="/page_imgs/fixed_img/logo.svg"></a></div>		
+				<div class="dropdown" style="width:50%;">
+				<div class='menu-bar'>
+				  <ul class="menu">
+				  	<li><a href="/finance/necessary">사이다재무</a></li>
+				   	<li><a href="/lecture">사이다강의</a></li>
+				    <li><a href="/contents/all">사이다콘텐츠</a>
+				      <ul class="sub">
+						<li><a href="/contents/1">경제이야기</a></li>
+				    	<li><a href="/contents/2">금융이야기</a></li>
+				    	<li><a href="/contents/3">기업이야기</a></li>
+				    	<li><a href="/contents/4">주식이야기</a></li>
+				    	<li><a href="/project">기획콘텐츠</a></li>
+					    <li><a href="/podcast">팟캐스트</a></li>
+					    <li><a href="/books">사이다Books</a></li>
+					    <li><a href="/contents/8">사이다BEST</a></li>
+				      </ul>
+				    </li>
+				    <li><a href="/discuss">사이다토론</a></li>
+				  </ul>
+				</div>
+				</div>
 				<form name="search_box" action="/search/process" method="post">
 				<div class="login" style="width:35%;" align="right"><div w3-include-html="/fbtest"></div>
 				<!-- top include url링크로 -->
@@ -302,14 +297,12 @@ padding:20px 0 20px 10px;
 				w3IncludeHTML();
 				</script>
 				<!-- top include url 끝 -->
-				<!--a href="/login">로그인</a> | <a href="/join">회원가입</a-->
+				<a href="/mypage"><!--span>사다</span-->님의 마이페이지</a > | <a href="/mem_login"><span>로그인</span><!--span>로그아웃</span--></a>  
 				<input type="text" class="form-control web-search-box" placeholder="search" name="keyword" value=''>
 				<a onClick="search_submit()" style="cursor:pointer" class="web-search-box-img">검색<!--img src="../../page_imgs/fixed_img/search_btn.png"--></a></div>
 				<div id="search" class="search" style="width:5%;"><img src="/page_imgs/fixed_img/icon_search.svg" ></div>
-				</form>
-				
+				</form>		
 		</header>
-		
 </div>
 
 
