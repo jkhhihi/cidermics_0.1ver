@@ -125,7 +125,7 @@ header .search{padding-top:19px; padding-right:0;}
   left :-90%;
   z-index : 10;
   background-color : #fff;
-  opacity:0.97;
+  opacity:1;
   text-align : center;
   transition: All 0.2s ease; 
   	-webkit-transition: All 0.2s ease; 
