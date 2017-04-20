@@ -46,7 +46,7 @@
 
 body{font-family: 'Nanum Gothic', serif;}
 
-.header{height: 70px; color:#1b87c9; margin:0; width:100%; position: fixed; background-color:white;
+.header{height: 70px; margin:0; width:100%; position: fixed; background-color:white;
 z-index: 999; box-shadow: 0px -5px 20px #222; top:0;}
 
 .padding-0{padding:0;}
@@ -58,7 +58,8 @@ a{color:#333; text-decoration:none;}
 
 header div{float:left;}
 header .menu{font-size:16px; font-weight:600;}
-header .login{padding-right:10px; font-size:14px; padding-top:15px; font-weight:600;}
+header .login{padding-right:20px; font-size:14px; padding-top:28px;}
+header .login a{color:#212121;}
 header .search{padding-top:19px; padding-right:0;}
 /*.menu ul li{float:left; list-style:none; padding:25px;}*/
 .web-footer{display:block;}
@@ -89,45 +90,67 @@ header .search{padding-top:19px; padding-right:0;}
 
 
 @media all and (max-width:1024px) {
-.tab-menu{margin-left:0; margin-right:0;}
-.tab-menu-select{background-color:#fff; color:#1b87c9;}
+.tab-menu{margin-left:0; margin-right:0; font-size:14px; color:#666; background-color:#fff; border:2px solid #1b87c9; font-weight:900;}
+.tab-menu div{padding:10px 0;}
+.tab-menu-select{background-color:#1b87c9; color:#fff;}
 .contents_sub_menu{margin-left:58px; color:#FFFFFF; font-size:16px; }
 .contents_sub_menu ul li{margin-bottom:16px;}
+
+.profile a:hover{color:#666;}
+.profile .picture img{width:100px; border-radius:50px; border:5px solid #fff;}
+.profile .mem-name{font-family:'BM JUA','배달의민족 주아',sans-serif; margin:10px 0 10px 8px;}
+
 #tab-menu1-contents{margin-left:30px; margin-bottom:30px;}
-#tab-menu1-contents ul li img{width:40px; margin-right:30px;}
+#tab-menu1-contents ul li img{width:38px; margin-right:30px;}
 #tab-menu2-contents{margin-top:30px;}
-#tab-menu2-contents ul a li{border:5px solid #fff; padding:30px 0; width:80%;}
-#tab-menu2-contents ul a li span:hover{border-bottom:2px solid #fff;}
+#tab-menu2-contents ul a li{border:3px solid #ccc; padding:30px 0; width:80%;}
+#tab-menu2-contents ul a li span:hover{border-bottom:2px solid #666;}
 
 #menu ul{padding:0; margin:0 0 0 0;}
-#menu ul li{color:#FFFFFF; font-size:18px; margin-top:16px;}
-#menu ul li a{color:#fff;}
-
+#menu ul li{color:#666; font-size:16px; margin-top:16px;}
+#menu ul li a{color:#666;}
 #menu .scrollBlind{
    width:100%;
    height:100%;
    overflow-y:scroll;
    padding-bottom:50px;
 }
-
-#menu .scrollBlind .tab-menu{font-size:16px; color:#fff; border:2px solid #fff; font-size:18px; font-weight:900;}
-#menu .scrollBlind .tab-menu div{padding:10px 0;}
-
+#menu {
+  font-weight:bold;
+  display:block;
+  width : 90%;
+  height : 100%;
+  position : fixed;
+  top : 0;
+  left :-90%;
+  z-index : 10;
+  background-color : #fff;
+  opacity:0.97;
+  text-align : center;
+  transition: All 0.2s ease; 
+  	-webkit-transition: All 0.2s ease; 
+  	-moz-transition: All 0.2s ease; 
+  	-o-transition: All 0.2s ease; 
+}
+#menu.open {
+  left : 0px;
+  z-index :999;
+  box-shadow:5px 5px 20px #333;
+}
 .view{
     width:100%;
     height:100%;
     position: absolute;
     overflow: hidden;
 }
-.view .link{width:100%; height:50px; background-color:#fff; color:#1b87c9; position:absolute; bottom:0; padding-top:18px; margin-left:0; margin-right:0;}
-.view .link a{color:#1b87c9; font-weight:900;}
+.view .link{width:100%; height:50px; background-color:#ececec; color:#666; position:absolute; bottom:0; padding-top:18px; margin-left:0; margin-right:0;}
+.view .link a{color:#666; font-weight:900;}
 html.open {
     overflow: hidden;
 }
 .page_cover.open {
 	display: block;
 }
-
 .page_cover {
 	width: 10%;
 	height: 100%;
@@ -142,38 +165,16 @@ html.open {
   width : 50px;
   height : 50px;
   position : absolute;
-  right : 0px;
+  right : -50px;
   top : 0px;
-  z-index : 1;
+  z-index : 9;
   background-image:url(http://i.imgur.com/6a6RL9G.png);
   background-size : 50%;
   background-repeat : no-repeat;
   background-position : center;
   cursor : pointer;
+  opacity : 0.5 !important;
 }
-#menu {
-  font-weight:bold;
-  display:block;
-  width : 90%;
-  height : 100%;
-  position : fixed;
-  top : 0;
-  left :-90%;
-  z-index : 10;
-  background-color : #1b87c9;
-  opacity:0.97;
-  text-align : center;
-  transition: All 0.2s ease; 
-  	-webkit-transition: All 0.2s ease; 
-  	-moz-transition: All 0.2s ease; 
-  	-o-transition: All 0.2s ease; 
-}
-#menu.open {
-  left : 0px;
-  z-index :999;
-  box-shadow:5px 5px 20px #333;
-}
-
 .header{display:none;}
 .login input{display:none;}
 .mob-header header{position:relative;}

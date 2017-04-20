@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="500px"
+	 height="500px" viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">
+<g id="환경설정">
+	
+		<image overflow="visible" width="700" height="700" xlink:href="C:\Users\양희아\Downloads\noun_865835_cc.png"  transform="matrix(0.9999 0 0 0.9999 529.8574 -48.8564)">
+	</image>
+	<path fill="none" stroke="#CCCCCC" stroke-width="36" stroke-linejoin="round" stroke-miterlimit="10" d="M937.678,407.144
+		c0-29.357,23.799-53.156,53.157-53.156c16.508,0,31.259,7.525,41.009,19.332c21.762-22.896,38.03-51.059,46.718-82.373
+		c-25.198-4.17-44.419-26.051-44.419-52.43c0-26.38,19.221-48.26,44.419-52.43c-8.673-31.263-24.902-59.38-46.608-82.256
+		c-9.749,11.886-24.547,19.471-41.118,19.471c-29.358,0-53.157-23.799-53.157-53.158c0-7.23,1.449-14.121,4.064-20.404
+		c-16.495-4.514-33.854-6.938-51.781-6.938c-18.337,0-36.081,2.528-52.912,7.244c2.535,6.202,3.943,12.984,3.943,20.098
+		c0,29.358-23.8,53.158-53.157,53.158c-16.24,0-30.771-7.292-40.521-18.769c-21.35,22.721-37.331,50.539-45.924,81.438
+		c25.519,3.896,45.067,25.938,45.067,52.546c0,26.605-19.549,48.648-45.067,52.545c8.608,30.955,24.631,58.818,46.039,81.563
+		c9.749-11.402,24.228-18.637,40.405-18.637c29.357,0,53.157,23.799,53.157,53.156c0,7.027-1.376,13.729-3.853,19.867
+		c16.804,4.699,34.518,7.219,52.821,7.219c17.895,0,35.222-2.414,51.689-6.912C939.096,421.095,937.678,414.286,937.678,407.144z"/>
+	<circle fill="none" stroke="#CCCCCC" stroke-width="36" stroke-miterlimit="10" cx="889.977" cy="238.517" r="70"/>
+	
+		<polyline fill="none" stroke="#CCCCCC" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+		661.992,-110.481 731.742,-40.731 801.992,-110.981 	"/>
+</g>
+<g id="사이다콘텐츠">
+	<path fill="none" stroke="#666666" stroke-width="20" stroke-linejoin="round" stroke-miterlimit="10" d="M444.126,330.665
+		c0,27.614-22.386,50-50,50H210.125l-37.333,58.666l-36.667-58.666h-30.667c-27.614,0-50-22.386-50-50V147.331
+		c0-27.614,22.386-50,50-50h288.667c27.614,0,50,22.386,50,50V330.665z"/>
+	
+		<rect x="110.292" y="149.331" fill="none" stroke="#666666" stroke-width="20" stroke-linejoin="round" stroke-miterlimit="10" width="279" height="86"/>
+	
+		<line fill="none" stroke="#666666" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="110.792" y1="280.998" x2="388.792" y2="280.998"/>
+	
+		<line fill="none" stroke="#666666" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="110.792" y1="323.998" x2="388.792" y2="323.998"/>
+</g>
+</svg>
