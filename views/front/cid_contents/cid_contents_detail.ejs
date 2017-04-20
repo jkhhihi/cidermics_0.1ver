@@ -165,7 +165,6 @@ body { padding-right: 0px !important }
 			</div>
 		</div>
 	</div>
-	<% console.log(cmore.length); %>
 <% if(contents[0].cate_name == "BOOKS" && cmore.length == 1) { %>
 <!--더 알아보기 -->
 	<div class="row">
@@ -174,24 +173,21 @@ body { padding-right: 0px !important }
 		</div>
 	</div>
 	<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" align="center">
   <div class="modal-dialog" role="document" style="width:320px; margin-top:150px;">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h5 class="modal-title" id="myModalLabel" style="font-weight:bold;">더 알아보기</h5>
       </div>
-      	<div id="form-group" style="margin-bottom: 30px; font-size: 12px; padding: 15px;">
-            <label for="writer-name" class="control-label">예스24</label><br>
-            <a href="<%=cmore[0].cmore_op1%>"><span><%=cmore[0].cmore_op1%></span></a>
-        </div>
-        <div id="form-group2" style="margin-bottom: 30px; font-size: 12px; padding: 15px;">
-            <label for="writer-name" class="control-label">알라딘</label><br>
-            <a href="<%=cmore[0].cmore_op1%>"><span><%=cmore[0].cmore_op2%></span></a>
-        </div>
-        <div id="form-group3" style="margin-bottom: 30px; font-size: 12px; padding: 15px;">
-            <label for="writer-name" class="control-label">교보문고</label><br>
-            <a href="<%=cmore[0].cmore_op1%>"><span><%=cmore[0].cmore_op3%></span></a>
+
+      	<div id="form-group" style="margin-bottom: 5px; font-size: 12px; padding: 15px;" align="center">
+
+            <a href="<%=cmore[0].cmore_op1%>" style="padding:5px;"><img src="/page_imgs/contents_img/yes24.png" width="80" height="80"></a>
+
+            <a href="<%=cmore[0].cmore_op2%>" style="padding:5px;"><img src="/page_imgs/contents_img/ala.png" width="80" height="80"></a>
+
+            <a href="<%=cmore[0].cmore_op3%>" style="padding:5px;"><img src="/page_imgs/contents_img/kyobo.png" width="80" height="80"></a>
         </div>
 
     </div>
@@ -331,6 +327,11 @@ body { padding-right: 0px !important }
 								<% } else if ( contents[0].user_profile_img == 4 ) { %>
 								<div class="col-xs-4 editor-sns" align="right">
 								<a href="<%= contents[0].user_sns_url%>"><img src="/page_imgs/contents_img/sns_4.png" width="70" height="70"></a> 
+								</div>
+
+								<% } else if ( contents[0].user_profile_img == 5 ) { %>
+								<div class="col-xs-4 editor-sns" align="right">
+								<a href="<%= contents[0].user_sns_url%>"><img src="/page_imgs/contents_img/sns_5.png" width="70" height="70"></a> 
 								</div>
 
 								<% } else { %>

@@ -120,7 +120,7 @@ $(document).ready(function (){
 });
 
 //콘텐츠 이미지 설정 버튼 스크립트
-function fileList(type, page){5
+function fileList(type, page){
 	var pages = '';
 	$.ajax({
 		url : '/adm/contents/files/'+ page,
@@ -173,7 +173,7 @@ function fileList(type, page){5
 }
 
 //토론 이미지 설정 버튼
-function fileList1(type, page){5
+function fileList1(type, page){
 	var pages = '';
 	$.ajax({
 		url : '/adm/discuss/files/'+ page,

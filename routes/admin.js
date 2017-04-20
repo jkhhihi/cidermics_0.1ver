@@ -6,6 +6,7 @@ var router = express.Router();
 var fs = require('fs');
 var multer = require('multer');
 
+/*의미없는 코드
 var storage = multer.diskStorage({
 	destination: function (req, file, callback) {
 		callback(null, './public/uploads');
@@ -15,6 +16,7 @@ var storage = multer.diskStorage({
 	}
 });
 var upload = multer({ storage : storage});
+*/
 
 var formidable = require('formidable');
 var dir = require('node-dir');
@@ -23,6 +25,7 @@ var mysql = require("./model/mysql");
 var multiparty = require('connect-multiparty');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+
 
 //var upload = multer({ dest: '../public/uploads/' });
 var passport = require('passport');
@@ -215,6 +218,7 @@ router.get('/contents/files/:page', ensureAuthenticated, function(req, res, next
 router.post('/contents/insert/upload', ensureAuthenticated, function(req, res, next) {
 	
 	var form = new formidable.IncomingForm();
+	console.log(req.file);
 	
 	form.parse(req);
 //	form.on("fileBegin", function (name, file){
@@ -223,6 +227,10 @@ router.post('/contents/insert/upload', ensureAuthenticated, function(req, res, n
     form.on("file", function (name, file){
         fs.readFile(file.path, function(error, data){
         	var filePath = __dirname + '/../public/uploads/' + file.name;
+        	console.log(filePath);
+        	console.log(file);
+
+
 			
         	
         	fs.writeFile(filePath, data, function(error){
@@ -247,11 +255,15 @@ router.post('/contents/insert/upload', ensureAuthenticated, function(req, res, n
 router.post('/discuss/insert/upload', ensureAuthenticated, function(req, res, next) {
 	
 	var form = new formidable.IncomingForm();
+	console.log("++++");
+	console.log(req.form);
 	
 	form.parse(req);
     form.on("file", function (name, file){
         fs.readFile(file.path, function(error, data){
-        	var filePath = __dirname + '/../public/discuss_imgs/' + file.name;
+        	var filePath = __dirname + '/../public/discuss_imgs' + file.name;
+        	console.log(filePath);
+        	console.log(file);
 			
         	
         	fs.writeFile(filePath, data, function(error){
@@ -326,7 +338,7 @@ router.post('/contents/insertMore', ensureAuthenticated, function(req, res, next
 	var yes24 = req.body.yes24;
 	var ala = req.body.ala;
 	var kyobo = req.body.kyobo;
-	var cmlabel = req.body.label;
+	var cmlabel = req.body.cmlabel;
 	var sets = {con_no : con_no, cmore_label : cmlabel, cmore_op1 : yes24, cmore_op2 : ala, cmore_op3 : kyobo};
 	
 	mysql.insert('insert into cider.cid_contentsMore set ?', sets,  function (err, data){
@@ -523,17 +535,14 @@ router.post('/lecture/detail/update', ensureAuthenticated, function(req, res, ne
 	var app_no = req.body.app_no;
 	var app_process = req.body.app_process;
 	
-	console.log(app_process);
-	console.log(app_no);
+	//console.log(app_process);
+	//console.log(app_no);
 	
 	var date = getWorldTime(+9);
 	
 	var sets = {app_no : app_no, app_process : app_process, app_upDate : date };
 	
 	mysql.update('update cider.cid_applyform set app_process = ?, app_upDate = ? where app_no = ?', [app_process,date,app_no], function (err, data){
-		
-		console.log(err);
-		console.log(data);
 		
     	res.redirect('/adm/lecture/list/');
     	
@@ -596,6 +605,7 @@ router.get('/finance/delete/:fi_app_no', function(req, res, next) {
 		}
     });
 });
+
 
 
 
@@ -974,6 +984,52 @@ router.get('/discuss/declardelete/:no', function(req, res, next) {
     });
 });
 
+//설문조사 2017 4월 19일
+
+
+
+router.get('/survey', ensureAuthenticated, function(req, res, next) {
+	var CP = 5;
+		mysql.select('SELECT * from cider.cid_survey order by sry_no desc;', function (err, data){
+			mysql.select('SELECT count(*) as sry FROM cider.cid_survey;', function (err, data1){
+			res.render('admin/survey/survey_index', { CP : CP, survey : data, sryAll:data1 });	    	
+		});
+	});
+});
+
+router.get('/survey/detail/:sry_no', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 5;
+	var sry_no = req.params.sry_no;
+	
+	mysql.select('select * from cider.cid_survey', function (err, data2){
+		if(err){
+			res.redirect('back');
+		}
+		user = data2;
+		mysql.select('select * from cider.cid_survey where sry_no = '+ sry_no +'', function (err, data){
+			if(err){
+				res.redirect('back');
+			}
+			res.render('admin/survey/survey_detail', {CP : CP, survey : data});
+		});
+    });
+});
+
+
+router.get('/survey/delete/:sry_no', function(req, res, next) {
+	
+	var CP = 5;
+	var sry_no = req.params.sry_no;
+	
+	mysql.del('delete from cider.cid_survey where sry_no = '+ sry_no +'', function (err, data){
+		if(err){
+			res.redirect('/adm/survey');
+		}else{
+			res.redirect('/adm/survey');
+		}
+    });
+});
 
 
 
