@@ -49,4 +49,34 @@ router.get('/psearch3', function(req, res, next) {
 	res.render('front/cid_member/password_search3', { });
 
 });
+
+router.get('/mypage', function(req, res, next) {
+
+	res.render('front/cid_member/mypage', { });
+
+});
+
+router.get('/meminfo', function(req, res, next) {
+
+	res.render('front/cid_member/memInfo', { });
+
+});
+
+router.get('/memup', function(req, res, next) {
+
+	res.render('front/cid_member/memUpdate', { });
+
+});
+
+router.get('/passup', function(req, res, next) {
+
+	res.render('front/cid_member/passUpdate', { });
+
+});
+
+router.get('/memdel', function(req, res, next) {
+
+	res.render('front/cid_member/memDelete', { });
+
+});
 module.exports = router;

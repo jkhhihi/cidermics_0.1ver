@@ -245,11 +245,6 @@ router.post('/surveyGo', function(req, res, next) {
 });
 
 
-router.get('/mypage', function(req, res, next) {
-
-	res.render('front/mypage', { });
-
-});
 
 router.get('/top', function(req, res, next) {
 
