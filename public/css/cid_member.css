@@ -4,16 +4,64 @@
 .mypage .profile{margin:70px 0 30px 0}
 .mypage .profile a:hover{color:#666;}
 .mypage .profile .picture img{width:150px; border-radius:100px; border:5px solid #fff;}
-.mypage .profile .mem-name{font-size:20px; margin:10px 0 10px 10px;}
+.mypage .profile .mem-name{font-size:20px; margin:20px 0 10px 0;}
 .enjoy-con-title{border:3px solid #1b87c9; border-radius:10px; padding:5px 10px;}
 .con-plus{margin:50px 0;}
 
-/*------------  ------------*/
+/*------------ 회원정보 ------------*/
+.pic-update{margin:20px 0 10px 0;}
+.pic-update span{border-radius:15px; border:3px solid #ff574a; padding:5px 10px;}
+.passup{border-radius:15px; border:3px solid #ff574a; padding:5px 10px;}
+
+.box{border:2px solid #ececec; width:600px; height:auto; padding:20px; margin:10px 0 40px 0; font-family:'Godo';}
+.title{font-size:20px;}
+.title1{width:100px; display:inline-block; margin:20px 0;}
+.title2{width:150px; display:inline-block; margin:20px 0;}
+.line{width:100%; height:1px; background-color:#ececec; margin:20px 0;}
+.btn-apply p{width:85px; color:#fff; border-radius:5px; border:3px solid #ddd; background-color:#ff574a; padding:5px 10px;}
+.btn-cancel p{width:85px; border-radius:5px; border:3px solid #aaa; background-color:#ececec; padding:5px 10px;}
+.btn-apply, .btn-cancel{margin:10px 0 10px 0; display:inline-block;}
+
+/*------------ 회원정보 수정 ------------*/
+.color-red{color:#ff0000;}
+.star{color:#ff0000; font-size:14px;}
+input{border:0; box-shadow:2px 2px 4px; padding:5px; margin-right:5px !important;}
+select{border:0; box-shadow:2px 2px 4px; padding:5px; margin:0 5px !important;}
+.memdel{width:580px; margin-bottom:50px;}
+.memdel-link{font-size:18px; border-bottom:1px solid #666; padding-bottom:2px; margin-left:5px;}
+
+/*------------ 비밀번호 변경 ------------*/
+
+/*------------ 회원탈퇴 ------------*/
 
 @media all and (max-width:1024px) {
+.mypage{font-family:'BM JUA','배달의민족 주아',sans-serif; font-size:12px;}
 /*------------ 마이페이지 ------------*/
 .mypage .profile{margin:50px 0 30px 0}
+.mypage .profile .picture img{width:100px;}
+.mypage .profile .mem-name{font-size:16px; margin:10px 0 5px 0;}
+.enjoy-con-title{border:2px solid #1b87c9; border-radius:10px; padding:5px 10px;}
 
-/*------------  ------------*/
+/*------------ 회원정보 ------------*/
+.pic-update span{border:2px solid #ff574a; padding:3px 5px;}
+.passup{border:2px solid #ff574a; padding:3px 5px;}
+
+.box{width:98%; margin:-20px 0 20px 0; padding:10px;}
+.title{font-size:16px; margin-top:10px;}
+.title1{width:70px; margin:15px 0;}
+.title2{width:100px; display:inline-block; margin:20px 0;}
+.line{width:100%; height:1px; background-color:#ececec; margin:10px 0;}
+.btn-apply p{border:2px solid #ddd; padding:5px 5px;}
+.btn-cancel p{border:2px solid #aaa; padding:5px 5px;}
+.btn-apply, .btn-cancel{margin:10px 0 0 0;}
+
+/*------------ 회원정보 수정 ------------*/
+.star{font-size:10px;}
+.memdel{width:94%;}
+.memdel-link{font-size:14px;}
+
+/*------------ 비밀번호 변경 ------------*/
+
+/*------------ 회원탈퇴 ------------*/
 
 }

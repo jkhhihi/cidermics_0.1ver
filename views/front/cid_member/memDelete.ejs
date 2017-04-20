@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1"-->
-<title>마이페이지</title>
+<title>회원탈퇴</title>
 <link href="/css/cid_member.css" rel="stylesheet">
 
 <body>
@@ -16,18 +16,27 @@
 <% include ../top %>
 
 <div class="mypage">
-<div class="profile row" align="center" style="height:auto; padding:30px 0; background-color:#ececec;">
-	<div class="picture col-xs-12"><img src="/page_imgs/fixed_img/profile-basic-pic.svg"></div>
-	<div class="mem-name col-xs-12">
-		<span>양희아</span>  님
-		<a href="#"><img style="display:inline-block; width:15px;" src="/page_imgs/fixed_img/setting-icon.svg"></a>
+<div class="profile" align="center" style="height:auto; padding:20px 0 10px 0; background-color:#ececec;">
+	<div class="picture"><img src="/page_imgs/fixed_img/profile-basic-pic.svg"></div>
+	<div class="pic-update"><a href="#"><span>사진변경</span></a></div>
+	<div class="mem-name">
+		<span>양희아</span>  님</a>
 	</div>
 </div>
 <div class="container" align="center">
-	<span class="enjoy-con-title">즐겨찾는 콘텐츠</span>
-	<!-- 즐겨찾기한 콘텐츠 뿌림 -->
-	
-	<p class="con-plus">+ 더보기</p>
+	<div id="meminfo" class="box" align="left">
+		<div class="title"><span>회원정보</span></div>
+		<div class="line"></div>
+		<div class="id"><p class="title1">아이디</p><span>contact@cidermincs.com</span></div>
+		<div class="name"><p class="title1">이름</p><span>양희아</span></div>
+		<div class="password"><p class="title1">비밀번호</p><a href="/passup"><span class="passup">비밀번호 변경</span></a></div>
+		<div class="birthday"><p class="title1">생년월일</p><span>1993년 04월 03일</span></div>
+		<div class="sex"><p class="title1">성별</p><span>여</span></div>
+		<div class="line"></div>
+		<div align="center">
+			<div class="btn-apply"><a href="/memup"><p style="width:120px;">회원정보 수정</p></a></div>
+		</div>
+	</div>
 </div>
 </div>
 
