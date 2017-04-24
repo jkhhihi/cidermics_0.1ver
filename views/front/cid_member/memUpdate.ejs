@@ -24,19 +24,85 @@
 	</div>
 </div>
 <div class="container" align="center">
-	<div id="meminfo" class="box" align="left">
+	<div id="memup" class="box" align="left">
 		<div class="title"><span>회원정보</span></div>
 		<div class="line"></div>
+		<div class="star">*항목은 필수로 작성해주세요</div>
 		<div class="id"><p class="title1">아이디</p><span>contact@cidermincs.com</span></div>
-		<div class="name"><p class="title1">이름</p><span>양희아</span></div>
-		<div class="password"><p class="title1">비밀번호</p><a href="/passup"><span class="passup">비밀번호 변경</span></a></div>
-		<div class="birthday"><p class="title1">생년월일</p><span>1993년 04월 03일</span></div>
-		<div class="sex"><p class="title1">성별</p><span>여</span></div>
+		<div class="name"><p class="title1">이름<span class="color-red">*</span></p><input name='mem_name' class="nicname1" type="text" style="IME-MODE: disabled" maxlength="6" size="12"></div>
+		<div class="password"><p class="title1">비밀번호<span class="color-red">*</span></p><a href="/passup"><span class="passup">비밀번호 변경</span></a></div>
+		<div class="birthday"><p class="title1">생년월일<span class="color-red">*</span></p>
+				<input name="mem_year" class="year" type="text" maxlength="4" value="1900" size="4">년 
+				<select name="mem_month" class="month" id="month">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+					<option>7</option>
+					<option>8</option>
+					<option>9</option>
+					<option>10</option>
+					<option>11</option>
+					<option>12</option>
+				</select>월 
+				<select name="mem_day" class="day" id="month">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+					<option>7</option>
+					<option>8</option>
+					<option>9</option>
+					<option>10</option>
+					<option>11</option>
+					<option>12</option>
+					<option>13</option>
+					<option>14</option>
+					<option>15</option>
+					<option>16</option>
+					<option>17</option>
+					<option>18</option>
+					<option>19</option>
+					<option>20</option>
+					<option>21</option>
+					<option>22</option>
+					<option>23</option>
+					<option>24</option>
+					<option>25</option>
+					<option>26</option>
+					<option>27</option>
+					<option>28</option>
+					<option>29</option>
+					<option>30</option>
+					<option>31</option>
+				</select>일 
+		</div>
+		<div class="sex"><p class="title1">성별<span class="color-red">*</span></p>
+			<div class="form-group" style="display:inline;">
+    		<div class="btn-group" data-toggle="buttons">
+				<label class="btn btn-info1 active" style="padding:5px 20px;">
+				<input type="radio" name="male" id="option2" autocomplete="off" chacked>남
+				<!--img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-man-64.png" width=20 height=20 alt=""-->
+				</label>
+				<label class="btn btn-info" style="padding:5px 20px;">
+				<input type="radio" name="female" id="option1" autocomplete="off">여
+				<!--img src="https://cdn1.iconfinder.com/data/icons/iconbeast-lite/30/woman-figure.png" width=20 height=20 alt=""-->
+				</label>
+			</div>
+			</div>
+		</div>
 		<div class="line"></div>
 		<div align="center">
-			<div class="btn-apply"><a href="/memup"><p style="width:120px;">회원정보 수정</p></a></div>
+			<div class="btn-apply"><p>적용</p></div>
+			<div class="btn-cancel"><p>취소</p></div>
 		</div>
 	</div>
+	<div class="memdel" style="color:#666;" align="right">사이다경제를 더이상 구독하지 않으신다면
+	<a href="/memdel"><span class="memdel-link">회원탈퇴 ></span></a></div>
 </div>
 </div>
 
