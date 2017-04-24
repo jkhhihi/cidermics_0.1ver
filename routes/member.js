@@ -68,7 +68,8 @@ router.post('/psearch1', function(req, res, next) {
 	    to: email,
 
 	    subject: '[사이다경제] 비밀번호 인증코드',
-	    text: '인증코드' + codeRandom
+	    //text: "<html><head></head><body>" + '인증코드' + codeRandom + "</body></html>",
+	    html: '<table width="500" style="font-family:"나눔고딕;" font-size:12px"><tr><td height="100" style="background-color:#1b87c9; color:#fff; font-size:16px"><blockquote> <b>사이다경제<br /><br />"인증코드"</b> </blockquote></td></tr><tr><td height="130"><blockquote><p><span><b>'+email+'</b></span> 님 안녕하세요.<br /><br /> 사이다경제입니다.<br /><br />인증코드는<br /><br /><span><b><h2>' + codeRandom + '</h2></b></span> 입니다.</p></blockquote></td></tr><tr><td height="50" style="border-bottom:1px solid #1b87c9"><blockquote><p align="right"><b>문의 : contact@cidermics.com</b></p></blockquote></td></tr><tr><td height="80"><blockquote><p align="center"><span style="color:#1b87c9; border:2px solid #1b87c9; border-radius:6px; padding:5px 10px;"><a href="http://www.cidermics.com"><b>"사이다경제" 로 바로가기 ></b></a></span></p></blockquote></td></tr></table></body></html>'
 
 
 	};
@@ -153,6 +154,28 @@ router.post('/psearch3', function(req,res,next){
 });
 
 /* Pass found 17. 4. 21 */
+
+/* ID chk 17. 4. 24 */
+
+router.post('/idcheck/:email', function(req, res, next) {
+	var email = req.params.email;
+
+	//console.log(email);
+	var flag;
+
+	mysql.select('select * from cider.cid_member where mem_email =\''+email+'\'', function (err, data){
+		flag = data;
+		if(flag.length < 1){
+			flag = "NO";
+		}else{
+			flag = "YES";
+		}
+		res.send({ emailchk : flag });
+  });
+});
+/* ID chk 17. 4. 24 */
+
+
 
 
 router.get('/mypage', function(req, res, next) {
