@@ -25,6 +25,5 @@
     "req-flash": "*",
     "serve-favicon": "~2.3.0",
     "xhr": "^2.2.0"
-    
   }
 }
