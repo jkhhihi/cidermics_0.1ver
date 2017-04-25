@@ -114,7 +114,7 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
 .main-psearch .bg{background-color: rgba( 255, 255, 255, 0.8); width:600px; height:auto; border-radius:10px; padding:20px; }
 .main-psearch .bg .col-xs-12{float:none !important;}
 .main-psearch .bg .title{font-size:18px; font-weight:bold; border-bottom:solid 3px #ff574a; width:60%; margin-top:20px;}
-.main-psearch .step-title{font-size:14px; margin:40px 0 20px 0; font-family:dotum,'돋움',arial,sans-serif,Helvetica,sans-serif; color:#1b87c9;}
+.main-psearch .step-title{font-size:14px; margin:20px 0 20px 0; font-family:dotum,'돋움',arial,sans-serif,Helvetica,sans-serif; color:#1b87c9;}
 .main-psearch .psearch-btn div img{margin-top:10px; margin-bottom:20px; height:40px; border-radius:3px;}
 .main-psearch .id input{
 	width:150px;
@@ -125,12 +125,14 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
     border-top: 0;
     border-left: 0;
     border-right: 0;
-    margin: 0 0 30px 0;
+    margin: 0 0 10px 0;
     box-shadow: 2px 1px 2px 0px;
+    padding: 7px;
 }
 .main-psearch .code input{
 	width:200px;
 	height:30px;
+  padding: 7px;
 }
 .main-psearch .new-pwd input{
 	width:200px;
