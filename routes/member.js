@@ -57,14 +57,14 @@ router.post('/psearch1', function(req, res, next) {
     
     service: 'Gmail',
 	    auth: {
-	        user: 'JeongKH91@gmail.com',
-	        pass: 'wjdrlgns1'
+	        user: 'cidermailer@gmail.com',
+	        pass: 'tkdlekapdlffj!@'
 	    }
 	});
 
 	var mailOptions = {
 
-	    from: 'jeongkh91@gmail.com',
+	    from: 'cidermailer@gmail.com',
 	    to: email,
 
 	    subject: '[사이다경제] 비밀번호 인증코드',

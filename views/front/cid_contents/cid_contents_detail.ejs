@@ -169,30 +169,10 @@ body { padding-right: 0px !important }
 <!--더 알아보기 -->
 	<div class="row">
 		<div class="col-xs-12" align="center">
-			<span data-toggle="modal" data-target="#myModal" class="btn-request" ><img src="/page_imgs/fixed_img/contentsMore.png" width="165" height="103" onclick="ga('send','event','책연결','버튼클릭','<%=cmore[0].cmore_label %><%=cmore[0].con_no %>' );"></span>
+			<span data-toggle="modal" data-target="#myModal" class="btn-request" ><a href="<%=cmore[0].cmore_op1%>"><img src="/page_imgs/fixed_img/contentsMore.png" width="165" height="100" onclick="ga('send','event','책연결','버튼클릭','<%=cmore[0].cmore_label %><%=cmore[0].con_no %>' );"></a></span>
 		</div>
 	</div>
 	<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" align="center">
-  <div class="modal-dialog" role="document" style="width:320px; margin-top:150px;">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h5 class="modal-title" id="myModalLabel" style="font-weight:bold;">더 알아보기</h5>
-      </div>
-
-      	<div id="form-group" style="margin-bottom: 5px; font-size: 12px; padding: 15px;" align="center">
-
-            <a href="<%=cmore[0].cmore_op1%>" style="padding:5px;"><img src="/page_imgs/contents_img/yes24.png" width="80" height="80"></a>
-
-            <a href="<%=cmore[0].cmore_op2%>" style="padding:5px;"><img src="/page_imgs/contents_img/ala.png" width="80" height="80"></a>
-
-            <a href="<%=cmore[0].cmore_op3%>" style="padding:5px;"><img src="/page_imgs/contents_img/kyobo.png" width="80" height="80"></a>
-        </div>
-
-    </div>
-  </div>
-</div>
 <!--더 알아보기 끝 -->
 <% } %>
 
