@@ -70,7 +70,7 @@ router.get('/', function(req, res, next) {
 	var _totmon = _year+""+_mon;
 
 	//최신 콘텐츠 qry
-	var qry="select con_no, con_photo, con_title, if (a.con_upDate > DATE_ADD(now(),INTERVAL -5 DAY) ,'/page_imgs/main_img/new_mark4.svg','/page_imgs/main_img/new_mark1px.png') as chkDat from cider.cid_contents a where a.con_release <= '"+_tot+"' order by a.con_release desc limit 0,6";
+	var qry="select con_no, con_photo, con_title, if (a.con_upDate > DATE_ADD(now(),INTERVAL -5 DAY) ,'/page_imgs/main_img/new_mark4.svg','/page_imgs/main_img/new_mark1px.png') as chkDat from cider.cid_contents a where a.con_release <= '"+_tot+"' order by a.con_release desc limit 0,5";
 	mysql.select(qry, function (err, data){
 		if (err) throw err;
 		 row = data;
@@ -136,7 +136,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/maincon_include', function(req,res,next){
-	
 	var arr = []
 	for(var i = 1; i < 7; i++){
 	    arr[i] = function(id){
@@ -145,7 +144,6 @@ router.get('/maincon_include', function(req,res,next){
 	    }
 	   }(i);
 	}
-
 
 	for(var index in arr) {
 	var con_qry;
@@ -167,11 +165,8 @@ router.get('/maincon_include', function(req,res,next){
 				project = data;
 
 		});
-
 	}
-
-	}
-
+  }
 	res.render('front/cid_maincon_include', {podcast:podcast});
 });
 
@@ -248,16 +243,17 @@ router.post('/surveyGo', function(req, res, next) {
 
 router.get('/top', function(req, res, next) {
 
+/*
 	var sess = req.session;
 	console.log(sess);
 	var sePass = sess.passport;
 	if(sePass != null){
 		var proPhoto = sess.passport.user.photos[0].value;
-	console.log(sess.passport.user.photos[0].value);
+		console.log(sess.passport.user.photos[0].value);
 	}
-
-
 	res.render('front/top', {proPhoto:proPhoto,sePass:sePass});
+*/
+		res.render('front/top', {});
 
 });
 
@@ -292,14 +288,32 @@ router.post('/insert', function(req, res, next) {
 
 
 router.get('/fbtest', function(req, res, next) {
-		var sess = req.session;
-	//console.log(sess);
-	var sePass = sess.passport;
+
+	var sePass = req.session.passport;
+	console.log(sePass);
 	if(sePass != null){
-		var proPhoto = sess.passport.user.photos[0].value;
+		var proPhoto ='';
+		if(sePass.user.length == 1){
+			proPhoto = sePass.user[0].mem_profile;
+		}else{
+			proPhoto = proPhoto = sePass.user.photos[0].value;
+		}
+		/*
+		console.log(sess.passport.user.length);
+		console.log(sess.passport.user.photos[0].value);
+		if(sess.passport.user.photos[0].value != null){
+			proPhoto = sess.passport.user.photos[0].value;
+			console.log(proPhoto);
+			console.log("ㅋㅋㅋ");
+		}else{
+			proPhoto = sess.passport.user[0].mem_no;
+			console.log(proPhoto);
+			console.log("ㄷㄷㄷ");
+		}
+		*/
 	}
        res.render('front/facebooklogin_test', {proPhoto:proPhoto});
-   });
+});
 
 
 

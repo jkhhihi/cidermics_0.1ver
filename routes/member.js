@@ -2,6 +2,35 @@ var express = require('express');
 var router = express.Router();
 var mysql = require("./model/mysql");
 var nodemailer = require('nodemailer');
+var passport = require('passport');
+
+
+function getWorldTime(tzOffset) { // 24시간제
+	  var now = new Date();
+	  var tz = now.getTime() + (now.getTimezoneOffset() * 60000) + (tzOffset * 3600000);
+	  now.setTime(tz);
+	  var s =
+	    leadingZeros(now.getFullYear(), 4) + '-' +
+	    leadingZeros(now.getMonth() + 1, 2) + '-' +
+	    leadingZeros(now.getDate(), 2) + ' ' +
+
+	    leadingZeros(now.getHours(), 2) + ':' +
+	    leadingZeros(now.getMinutes(), 2) + ':' +
+	    leadingZeros(now.getSeconds(), 2);
+
+	  return s;
+}
+function leadingZeros(n, digits) {
+	  var zero = '';
+	  n = n.toString();
+
+	  if (n.length < digits) {
+	    for (i = 0; i < digits - n.length; i++)
+	      zero += '0';
+	  }
+	  return zero + n;
+	}
+
 
 router.get('/join_step_1', function(req, res, next) {
 
@@ -13,6 +42,40 @@ router.get('/join_step_2', function(req, res, next) {
 
 	res.render('front/cid_member/cid_join_step_2', { });
 
+});
+
+router.post('/join_step_done',function(req,res,next){
+	var em1 = req.body.email1;
+	var em2 = req.body.email2;
+	var email = em1 + '@' + em2;
+
+	var name = req.body.mem_name;
+	var nick = req.body.mem_nick;
+	var pw = req.body.mem_pw;
+
+	var mye = req.body.mem_year;
+	var mmo = req.body.mem_month;
+		if (mmo.length < 2 )
+		 {
+		    mmo="0"+mmo;
+		 }
+	var mda = req.body.mem_day;
+		if (mda.length < 2 )
+		 {
+		    mda="0"+mda;
+		 }
+	var mem_birth = mye+mmo+mda;
+
+	var mem_sex = req.body.mem_sex;
+
+	var mem_id = em1 + mem_birth;
+
+	var date = getWorldTime(+9);
+
+	var sets = {mem_id:mem_id, mem_name: name , mem_nick : name , mem_pwd : pw , mem_email : email, mem_birth : mem_birth, mem_sex:mem_sex,mem_regdate:date};
+	mysql.insert('insert into cider.cid_member set ?', sets,  function (err, data){
+		res.redirect('/join_step_3');
+	});
 });
 
 router.get('/join_step_3', function(req, res, next) {
@@ -31,6 +94,11 @@ router.get('/mem_login', function(req, res, next) {
 
 	res.render('front/cid_member/cid_login', { });
 
+});
+
+router.post('/mem_login', passport.authenticate('mem_login', { failureRedirect: '/', failureFlash: true }), function(req, res, next) {
+
+	res.redirect('/');
 });
 
 /* Pass found 17. 4. 21 */
@@ -180,8 +248,21 @@ router.post('/idcheck/:email', function(req, res, next) {
 
 router.get('/mypage', function(req, res, next) {
 
-	res.render('front/cid_member/mypage', { });
+	var sePass = req.session.passport;
+	if(sePass != null){
+		var mem_id ='';
+		if(sePass.user.length == 1){
+			mem_id = sePass.user[0].mem_id;
+		}else{
+			mem_id = proPhoto = sePass.user.id;
+		}
+	}
+	console.log(mem_id);
 
+	mysql.select('select * from cider.cid_member where mem_id =\''+mem_id+'\'', function (err, data){
+
+	res.render('front/cid_member/mypage', {mypage:data});
+  });
 });
 
 router.get('/meminfo', function(req, res, next) {

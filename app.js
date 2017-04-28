@@ -107,10 +107,10 @@ app.use('/',books);
 
 //passportFB.use('fbLogin', new LocalStrategy({
 passportFB.use( new FacebookStrategy({
-        clientID: '116627908812749',
-        clientSecret: '38a1b7476831ada2468cc7e9fa054f3c',
-        callbackURL: "http://cidermics.com/auth/facebook/callback",
-        //callbackURL: "http://localhost/auth/facebook/callback",
+        clientID: '237556010053271',
+        clientSecret: 'cc7f7051e543769a0cffdfaa3f946200',
+        //callbackURL: "http://cidermics.com/auth/facebook/callback",
+        callbackURL: "http://localhost/auth/facebook/callback",
         profileFields: ['id', 'displayName', 'photos']
     },
     function(accessToken, refreshToken, profile, done) {
@@ -126,9 +126,9 @@ app.get('/auth/facebook/callback',
 app.get('/login_success/:mem_id', ensureAuthenticated, function(req, res){
     var sets = {mem_id : req.user.id, mem_name : req.user.displayName };
     mysql.select('select * from cider.cid_member where mem_id ="'+req.user.id+'" and mem_name = "'+req.user.displayName+'"', function (err, data){
-    console.log(req.user.id);
-    console.log(req.user.photos[0].value);
-    var profilephoto = req.user.photos[0].value;
+    //console.log(req.user.id);
+    //console.log(req.user.photos[0].value);
+    //var profilephoto = req.user.photos[0].value;
 
     if(data.length < 1){
       mysql.insert('insert into cider.cid_member set ?', sets, function(err,data){
@@ -161,9 +161,8 @@ function ensureAuthenticated(req, res, next) {
     res.redirect('/');
 }
 
-
+//관리자
 passport.use('local', new LocalStrategy({
-	
     usernameField : 'email',
     passwordField : 'pw',
     passReqToCallback : true
@@ -171,7 +170,7 @@ passport.use('local', new LocalStrategy({
 ,
 
 function(req, email, pw, done) {
-	
+
 	mysql.select('select * from cider.cid_user where user_email ="'+email+'" and user_password = "'+pw+'"', function (err, data){
 		if(data.length < 1){
 			console.log('fail');
@@ -188,7 +187,7 @@ function(req, email, pw, done) {
 	
 }
 ));
-
+//쿠폰
 passport.use('applycancel', new LocalStrategy({
     usernameField : 'app_no',
     passwordField : 'app_name',
@@ -198,6 +197,7 @@ passport.use('applycancel', new LocalStrategy({
 ,function(req, app_no, app_name, done) {
 	
 	mysql.select('select * from cider.cid_applyform where app_no ="'+app_no+'" and app_name = "'+app_name+'"', function (err, data){
+
 		if(data.length < 1){
 			console.log('fail');
 			//res.send('<script>alert("쿠폰번호를 확인해주세요.");location.href="/lecture/apply";</script>');
@@ -211,6 +211,36 @@ passport.use('applycancel', new LocalStrategy({
 			res.redirect('back');
 		}
     });	
+}
+));
+//회원 로그인
+passport.use('mem_login', new LocalStrategy({
+    usernameField : 'email',
+    passwordField : 'pw',
+    passReqToCallback : true
+}
+,
+
+function(req, email, pw, done) {
+
+  mysql.select('select * from cider.cid_member where mem_email ="'+email+'" and mem_pwd = "'+pw+'"', function (err, data){
+
+    console.log(data[0].mem_no);
+
+    if(data.length < 1){
+      console.log('fail');
+      return done(null, false);
+    }else {
+      console.log('success');
+      console.log(data);
+      return done(null, data);
+    }
+    if(err){
+      res.redirect('back');
+    }
+    
+    });
+  
 }
 ));
 

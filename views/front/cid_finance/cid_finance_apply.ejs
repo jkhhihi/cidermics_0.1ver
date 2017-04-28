@@ -56,7 +56,7 @@ function next_submit(){
 	  return;
 	}
 	if(document.fi_applyform.fi_app_email2.value==""){
-	 alert("이메일를 입력해 주세요.");
+	 alert("이메일을 정확히 입력해 주세요.");
 	document.fi_applyform.fi_app_email2.focus();
 	  return;
 	}
@@ -76,7 +76,7 @@ function next_submit(){
          var ch = document.fi_applyform.fi_app_email1.value.charAt(i);//문자를 반환(정수형), 범위 검사 가능
 	if ( ( ch < "a" || ch > "z") && (ch < "A" || ch > "Z") && (ch < "0" || ch > "9" ) )
     	{
-            alert("이메일은 영문 소문자로만 입력 가능 합니다!");
+            alert("이메일은 영문 및 숫자로만 입력 가능 합니다!");
             document.fi_applyform.fi_app_email1.focus();
             return;
          }

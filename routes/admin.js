@@ -75,13 +75,16 @@ router.get('/', function(req, res, next) {
 router.post('/login', passport.authenticate('local', { failureRedirect: '/adm', failureFlash: true }), function(req, res, next) {
 	var CP = 0;
 	res.redirect('/adm/index');
+
+	/*4월 27일 아이디 프로필 사진 작업 */
+	/*
 	var sess = req.session;
-	//console.log(sess);
 	var sePass = sess.passport;
 	if(sePass != null){
 		var proPhoto = sess.passport.user;
-	//console.log(proPhoto);
 	}
+	*/
+
 	/*var id = req.body.id;
 	var pw = req.body.pw;
 	

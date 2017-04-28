@@ -67,17 +67,18 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
 .step2{color:#212121; font-size:12px; font-weight:bold;}
 .step2 .star{color:#ff0000;}
 .step2 .id{margin:30px 0; float:left;}
-.step2 .id input{width:100px; height:30px; border-radius:3px; padding:0 5px;}
+.step2 .id input{width:100px; height:30px; border-radius:3px; padding:0 5px; border:#1b87c9 1px solid;}
+.step2 .id select{width:100px; height:30px; border-radius:3px; padding:0 5px; border:#1b87c9 1px solid;}
 .step2 .name{margin-bottom:30px; float:left;}
-.step2 .name input{width:100px; height:30px; border-radius:3px; padding:0 5px;}
+.step2 .name input{width:100px; height:30px; border-radius:3px; padding:0 5px; border:#1b87c9 1px solid;}
 .step2 .password{margin-bottom:30px; float:left;}
-.step2 .password input{width:100px; height:30px; border-radius:3px; padding:0 5px;}
+.step2 .password input{width:100px; height:30px; border-radius:3px; padding:0 5px; border:#1b87c9 1px solid;}
 .step2 .ch_password{margin-bottom:30px; float:left;}
-.step2 .ch_password input{width:100px; height:30px; border-radius:3px; padding:0 5px;}
+.step2 .ch_password input{width:100px; height:30px; border-radius:3px; padding:0 5px; border:#1b87c9 1px solid;}
 .step2 .birth{margin-bottom:30px; float:left;}
-.step2 .birth input.year{width:55px; height:30px; border-radius:3px; padding:0 5px;}
-.step2 .birth select.month{width:55px; height:30px; border-radius:3px; padding:0 5px;}
-.step2 .birth select.day{width:55px; height:30px; border-radius:3px; padding:0 5px;}
+.step2 .birth input.year{width:55px; height:30px; border-radius:3px; padding:0 5px; border:#1b87c9 1px solid;}
+.step2 .birth select.year{width:65px; height:30px; border-radius:3px; padding:0 5px; border:#1b87c9 1px solid;}
+.step2 .birth select.month{width:55px; height:30px; border-radius:3px; padding:0 5px; border:#1b87c9 1px solid;}
 .step2 .sex{margin-bottom:20px; float:left;}
 .step2 .email-check{width:80px; height:30px; background-color:#1b87c9; color:#FFFFFF; font-size:12px; padding-top:8px; display:inline-block; margin-left:10px; text-align:center; border-radius:3px;}
 .join .step2 .step2-btn{width:100%; margin:0;}
@@ -165,6 +166,7 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
 /*회원가입 스텝2*/
 .step2 .id{margin:20px 0;}
 .step2 .id input{width:66px; height:20px; padding:0 0;}
+.step2 .id select{width:66px; height:20px; padding:0 0;}
 .step2 .name{margin-bottom:20px;}
 .step2 .name input{width:100px; height:20px; padding:0 0;}
 .step2 .password{margin-bottom:20px;}
@@ -172,7 +174,7 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
 .step2 .ch_password{margin-bottom:20px;}
 .step2 .ch_password input{width:100px; height:20px; padding:0 0;}
 .step2 .birth{margin-bottom:20px;}
-.step2 .birth input.year{width:50px; height:20px; padding:0 0;}
+.step2 .birth select.year{width:60px; height:20px; padding:0 0;}
 .step2 .birth select.month{width:50px; height:20px; padding:0 0;}
 .step2 .birth select.day{width:50px; height:20px; padding:0 0;}
 .step2 .sex{margin-bottom:20px;}

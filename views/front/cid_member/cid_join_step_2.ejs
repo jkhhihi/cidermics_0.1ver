@@ -22,14 +22,14 @@
 
 
 function mem_join_next(){
-	 if(document.mem_join.mem_email_id.value==""){
+	 if(document.mem_join.email1.value==""){
 	 alert("이메일 아이디를 입력해 주세요.");
-	document.mem_join.mem_email_id.focus();
+	document.mem_join.email1.focus();
 	  return;
 	}
-	if(document.mem_join.mem_email_add.value==""){
-	 alert("이메일를 입력해 주세요.");
-	document.mem_join.mem_email_add.focus();
+	if(document.mem_join.email2.value==""){
+	 alert("이메일을 정확히 입력해 주세요.");
+	document.mem_join.email2.focus();
 	  return;
 	}
 	if(document.mem_join.mem_pw.value!= document.mem_join.mem_pw2.value){
@@ -42,6 +42,11 @@ function mem_join_next(){
 	document.mem_join.mem_name.focus();
 	  return;
 	}
+	if(document.mem_join.mem_nick.value==""){
+	 alert("이름을 입력해 주세요.");
+	document.mem_join.mem_nick.focus();
+	  return;
+	}
 	
 	if(document.mem_join.mem_pw.value.length<=7){
 	 alert("비밀번호는 8자리 이상 입력해 주세요.");
@@ -49,35 +54,28 @@ function mem_join_next(){
 	return;
 	 }
 	 
-	if(document.mem_join.mem_year.value.length<=3){
-	 alert("생년월일은 4자리를 입력해 주세요. 예) 1989");
+	if(document.mem_join.mem_year.value==""){
+	 alert("생년월일을 선택해주세요.");
 	document.mem_join.mem_year.focus();
 	  return;
 	}
+
+	if(document.mem_join.mem_sex.value==""){
+	 alert("성별을 선택 주세요.");
+	document.mem_join.mem_sex.focus();
+	  return;
+	}
 	
-	for (i=0; i<document.mem_join.mem_email_id.value.length; i++)
+	for (i=0; i<document.mem_join.email1.value.length; i++)
         {
-         var ch = document.mem_join.mem_email_id.value.charAt(i);//문자를 반환(정수형), 범위 검사 가능
+         var ch = document.mem_join.email1.value.charAt(i);//문자를 반환(정수형), 범위 검사 가능
 	if ( ( ch < "a" || ch > "z") && (ch < "A" || ch > "Z") && (ch < "0" || ch > "9" ) )
     	{
-            alert("아이디는 영문 소문자로만 입력 가능 합니다!");
-            document.mem_join.mem_email_id.focus();
+            alert("아이디는 영문, 숫자 조합으로만 입력 가능 합니다!");
+            document.mem_join.email1.focus();
             return;
          }
 		}
-	
-	
-	for (i=0; i<document.mem_join.mem_year.value.length; i++)
-     {
-     	 var ch = document.mem_join.mem_year.value.charAt(i);//문자를 반환(정수형), 범위 검사 가능
-		if ( ch < "0" || ch > "9" )
-    	 {
-            alert("번호는 숫자로만 입력 가능 합니다!");
-            document.mem_join.mem_year.focus();
-            return;
-         }
-      }
-	
 	 
 	 	document.mem_join.submit();
 }
@@ -95,8 +93,6 @@ function checkPwd(){
   }  
  }
 
-
-
 </script>
 </head>
 <body>
@@ -112,21 +108,40 @@ function checkPwd(){
 					<img src="/page_imgs/member_img/join_3.png">
 				</div>
 					<div class="row step2" align="left" style="margin-top:20px;">
-						<form name="mem_join" action="/join_step_3" method="get" >
-							<div class="col-xs-12 star padding-lr-0">*항목은 필수로 작성해주세요.</div>
+						<form name="mem_join" action="/join_step_done" method="post" >
+							<div class="col-xs-12 star padding-lr-0">*항목을 정확하게 입력해주세요.</div>
 							<div class="col-xs-12 id padding-lr-0">
 								<span class="width-80 id_title">아이디<span class="star">*</span></span>
-								<input name='mem_email_id' class="email1" type="text" style="IME-MODE: disabled" size="11"> @
-								<input name='mem_email_add' class="email2" type="text" style="IME-MODE: disabled" size="11">
-								<div class="email-check">중복확인</div>
+
+
+							<input type="text" name="email1" class="email" style="IME-MODE: disabled" maxlength=20   placeholder="이메일 주소">@ 
+							<input type="text" name="email2" class="email" size="11" style="IME-MODE: disabled">
+							<select class="email" name="emaillist" onchange="this.form.email2.value=this[this.selectedIndex].value;">
+			       				 <option selected="selected">메일 선택</option>
+			       				 <option value="naver.com">naver.com</option>
+			       				 <option value="daum.net">daum.net</option>
+			       				 <option value="gmail.com">gmail.com</option>
+			       				 <option value="nate.com">nate.com</option>
+			       				 <option value="hotmail.com">hotmail.com</option>
+			       				 <option value="yahoo.com">yahoo.com</option>
+			       				 <option value="empas.com">empas.com</option>
+			       				 <option value="korea.com">korea.com</option>
+			       				 <option value="dreamwiz.com">dreamwiz.com</option>
+			       				 <option value="">직접입력</option>
+							   </select>
+
 							</div>
 							<div class="col-xs-12 name padding-lr-0">
 								<span class="width-80 name_title">이름<span class="star">*</span></span>
-								<input name='mem_name' class="nicname1" type="text" style="IME-MODE: disabled" size="12">
+								<input name='mem_name' class="nicname1" type="text" style="IME-MODE: disabled" size="12" placeholder="이름 입력">
+							</div>
+							<div class="col-xs-12 name padding-lr-0">
+								<span class="width-80 name_title">닉네임<span class="star">*</span></span>
+								<input name='mem_nick' class="nicname1" type="text" style="IME-MODE: disabled" size="12" placeholder="닉네임 입력">
 							</div>
 							<div class="col-xs-12 password padding-lr-0">
 								<span class="width-80 password_title">비밀번호<span class="star">*</span></span>
-								<input name='mem_pw' class="password1" type="password" style="IME-MODE: disabled" size="12" minlength="8" maxlength="20"  onKeyUp="checkPwd()" />
+								<input name='mem_pw' class="password1" type="password" style="IME-MODE: disabled" size="12" minlength="8" maxlength="20"  onKeyUp="checkPwd()"  placeholder="8~20자 입력"/>
 							</div>
 							<div class="col-xs-12 ch_password padding-lr-0">	
 								<span class="width-80 ch_password_title">비밀번호 확인<span class="star">*</span></span>
@@ -135,8 +150,90 @@ function checkPwd(){
 							</div>
 							<div class="col-xs-12 birth padding-lr-0">
 								<span class="width-80 birth_title">생년월일<span class="star">*</span></span>
-								<input name="mem_year" class="year" type="text" maxlength="4" value="1900">년 
-								<select name="mem_month" class="month" id="month">
+								<select name="mem_year" class="year">
+									<option>1936</option>
+									<option>1937</option>
+									<option>1938</option>
+									<option>1939</option>
+									<option>1940</option>
+									<option>1941</option>
+									<option>1942</option>
+									<option>1943</option>
+									<option>1944</option>
+									<option>1945</option>
+									<option>1946</option>
+									<option>1947</option>
+									<option>1948</option>
+									<option>1949</option>
+									<option>1950</option>
+									<option>1951</option>
+									<option>1952</option>
+									<option>1953</option>
+									<option>1954</option>
+									<option>1955</option>
+									<option>1956</option>
+									<option>1957</option>
+									<option>1958</option>
+									<option>1959</option>
+									<option>1960</option>
+									<option>1961</option>
+									<option>1962</option>
+									<option>1963</option>
+									<option>1964</option>
+									<option>1965</option>
+									<option>1966</option>
+									<option>1967</option>
+									<option>1968</option>
+									<option>1969</option>
+									<option>1970</option>
+									<option>1971</option>
+									<option>1972</option>
+									<option>1973</option>
+									<option>1974</option>
+									<option>1975</option>
+									<option>1976</option>
+									<option>1977</option>
+									<option>1978</option>
+									<option>1979</option>
+									<option>1980</option>
+									<option>1981</option>
+									<option>1982</option>
+									<option>1983</option>
+									<option>1984</option>
+									<option>1985</option>
+									<option>1986</option>
+									<option>1987</option>
+									<option>1988</option>
+									<option selected="selected">1989</option>
+									<option>1990</option>
+									<option>1991</option>
+									<option>1992</option>
+									<option>1993</option>
+									<option>1994</option>
+									<option>1995</option>
+									<option>1996</option>
+									<option>1997</option>
+									<option>1998</option>
+									<option>1999</option>
+									<option>2000</option>
+									<option>2001</option>
+									<option>2002</option>
+									<option>2003</option>
+									<option>2004</option>
+									<option>2005</option>
+									<option>2006</option>
+									<option>2007</option>
+									<option>2008</option>
+									<option>2009</option>
+									<option>2010</option>
+									<option>2011</option>
+									<option>2012</option>
+									<option>2013</option>
+									<option>2014</option>
+									<option>2015</option>
+									<option>2016</option>
+								</select>년 
+								<select name="mem_month" class="month">
 									<option>1</option>
 									<option>2</option>
 									<option>3</option>
@@ -150,7 +247,7 @@ function checkPwd(){
 									<option>11</option>
 									<option>12</option>
 								</select>월 
-								<select name="mem_day" class="day" id="month">
+								<select name="mem_day" class="month">
 									<option>1</option>
 									<option>2</option>
 									<option>3</option>
@@ -189,11 +286,11 @@ function checkPwd(){
 									<div class="form-group" style="display:inline;">
     								<div class="btn-group" data-toggle="buttons">
 										<label class="btn btn-info1 active" style="padding:5px 20px;">
-											<input type="radio" name="male" id="option2" autocomplete="off" chacked>남
+											<input type="radio" name="mem_sex" value="남" id="option2" autocomplete="off">남
 											<!--img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-man-64.png" width=20 height=20 alt=""-->
 										</label>
 										<label class="btn btn-info" style="padding:5px 20px;">
-											<input type="radio" name="female" id="option1" autocomplete="off">여
+											<input type="radio" name="mem_sex" value="여" id="option1" autocomplete="off">여
 											<!--img src="https://cdn1.iconfinder.com/data/icons/iconbeast-lite/30/woman-figure.png" width=20 height=20 alt=""-->
 										</label>
 									</div>
