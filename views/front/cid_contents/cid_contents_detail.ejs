@@ -137,16 +137,18 @@ body { padding-right: 0px !important }
 <% include ../top %>
 
 <div class="contents_detail-mob_menu"><img src="/page_imgs/fixed_img/detail_line.png"></div>
-									
+
 <div class="bg-blue">
-<div class="bg-white container">		
+<div class="bg-white container">
 		<div class="row margin-lr0">
 			<div class="parallax3" >
 				<div class="col-xs-12 padding-lr0">
 					<div class="conthum-black-box padding-lr0">
 						<div class="row margin-lr0">
 							<div class="col-xs-12 title" align="center"><%= contents[0].con_title%></div>
+
 							<div class="col-xs-12 info" align="right">
+							<button onclick="clipping()" style="color: red;">스크랩하기 <%= sePass %></button>
 							<span class="date"><%= contents[0].con_upDate %></span><br>
 							<span class="cate_name"><%= contents[0].cate_name %></span><br>
 							<span class="write">written by <%=contents[0].con_writer%></span><br>
@@ -156,6 +158,31 @@ body { padding-right: 0px !important }
 			    </div>
 			</div>
 		</div>
+
+<!--스크랩하기 script-->
+<script type="text/javascript">
+	function clipping() {
+		var no = <%=contents[0].con_no%>;
+		var sePasschk = '<%=sePass%>';
+		if( sePasschk == 0){
+			alert("로그인이 필요합니다.");
+			location.href="/mem_login";
+		}else if(sePasschk == '<%=sePass%>'){
+			alert("로그인되있다");
+				alert("하하하");
+				$.ajax({
+				url : '/clipping/'+sePasschk+"&"+no,
+				method : 'post',
+				success : function(data){
+				}
+			  });
+		}else{
+			alert("일시적 오류가 발생했습니다.");
+			location.href="/";
+		}
+
+	}
+</script>
 <div class="mob-bg-gray">
 <div class="mob-bg-white container">		
 	<div class="contents container">

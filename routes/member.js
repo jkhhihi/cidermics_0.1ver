@@ -257,13 +257,15 @@ router.get('/mypage', function(req, res, next) {
 			mem_id = proPhoto = sePass.user.id;
 		}
 	}
-	console.log(mem_id);
+	//console.log(mem_id);
 
 	mysql.select('select * from cider.cid_member where mem_id =\''+mem_id+'\'', function (err, data){
 
 	res.render('front/cid_member/mypage', {mypage:data});
   });
 });
+
+
 
 router.get('/meminfo', function(req, res, next) {
 

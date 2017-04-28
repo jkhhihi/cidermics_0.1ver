@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mysql = require("./model/mysql");
+var passport = require('passport');
 
 function releaseTime(){
 	 var now = new Date();
@@ -115,7 +116,26 @@ router.get('/contents/:no', function(req, res, next) {
 
 
 router.get('/contents/detail/:no', function(req, res, next) {
-	
+
+	var sePass = req.session.passport;
+	var mem_id ='';
+	if(sePass != null){
+		if(sePass.user.length == 1){
+			mem_id = sePass.user[0].mem_id;
+		}else{
+			mem_id = proPhoto = sePass.user.id;
+		}
+	}else{
+		mem_id = 0;
+	}
+
+	var sePass = req.session.passport;
+	var sePasschk;
+	if(sePass != null){
+		sePasschk = 1;
+	}else{
+		sePasschk = 0;
+	}
 
 	var no = req.params.no;
 	
@@ -160,13 +180,22 @@ router.get('/contents/detail/:no', function(req, res, next) {
 						var cmore = data2;
 						console.log(data2);
 
-				res.render('front/cid_contents/cid_contents_detail', {contents : contents, preNext : data, cont : row, cmore:cmore });
+				res.render('front/cid_contents/cid_contents_detail', {contents : contents, preNext : data, cont : row, cmore:cmore,sePass:mem_id });
 			});
 		  });
 		 });
 	   });
 	});
 });
+
+router.post('/clipping/:sePasschk&:no', function(req, res, next) {
+	var sePasschk = req.params.sePasschk;
+	var no = req.params.no;
+	console.log(sePasschk);
+	console.log(no);
+	console.log("성공");
+});
+
 
 
 
