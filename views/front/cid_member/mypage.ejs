@@ -10,8 +10,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"-->
 <title>마이페이지</title>
 <link href="/css/cid_member.css" rel="stylesheet">
-
-<body>
+<style type="text/css">
+body { padding-right: 0px !important }
+.but-area{text-align:center; padding:5px 20px;}
+.btn{padding: 15px 20px !important;}
+</style>
+<body style="overflow:scroll;">
 
 <% include ../top %>
 
@@ -20,16 +24,115 @@
 	<div class="picture"><img src="<%=mypage[0].mem_profile%>"><!--img src="/page_imgs/fixed_img/profile-basic-pic.svg"--></div>
 	<div class="mem-name">
 		<span><%=mypage[0].mem_name%>(<%=mypage[0].mem_nick%>)</span>
-		<a href="#"><img style="display:inline-block; width:15px;" src="/page_imgs/fixed_img/setting-icon.svg"></a>
+		<span data-toggle="modal" data-target="#myModal" class="btn-request"><img style="display:inline-block; width:55px;" src="/page_imgs/fixed_img/setting-icon.svg"><span>회원정보수정</span></span>
+		<!--a href="#"><img style="display:inline-block; width:15px;" src="/page_imgs/fixed_img/setting-icon.svg"></a-->
 	</div>
 </div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document"style="width:300px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h5 class="modal-title" id="myModalLabel" style="font-weight:bold;">회원정보 수정</h5>
+      </div>
+      <!--form action="/discuss/ask" method="post"-->
+      <form id='formMeg'>
+      <div class="modal-body">
+          <div class="form-group">
+            <label for="writer-name" class="control-label">성명</label>
+            <input type="text" class="form-control3" id="mem_name" name="mem_name" value="<%=mypage[0].mem_name%>">
+          </div>
+          <div class="form-group">
+            <label for="title" class="control-label">닉네임</label>
+            <input type="text" class="form-control3" id="mem_nick" name="mem_nick" value="<%=mypage[0].mem_nick%>">
+          </div>
+          <div class="form-group">
+            <label for="messageText" class="control-label">내용</label>
+            <textarea class="form-control4" id="messageText" name="text" style="resize:none;"></textarea>
+          </div>
+
+      </div>
+
+
+      <div class="modal-footer">
+        <button type="button" class="btn1 btn-default" data-dismiss="modal">닫기</button>
+        <button type="submit" class="btn1 btn-primary">보내기</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Modal 끝 -->
+
+<!--프로필 이미지 설정 -->
+<p>프로필 이미지 바꾸깅 </p>
+<form action="mypage/upload" enctype="multipart/form-data" method="post">
+    <input type="file" name="upload" multiple>
+    <input type="submit" value="Upload">
+</form>
+<!-- 프로필 이미지 설정 -->
+
+<script type="text/javascript">
+
+//AJAX로 서브밋한 후에 메세지 넘기기 
+
+  $(function () {
+
+   $('#formMeg').on('submit', function (e) {
+
+   	e.preventDefault();
+
+	$.ajax({
+ 	url: 'mypage/update/',
+ 	type: "POST",
+	//data: JSON.stringify(data),
+	data: $('#formMeg').serialize(),
+	success: function(response){
+  	alert('주제 요청 등록이 완료되었습니다. 소중한 의견 감사합니다.');
+  	//window.location.href="/discuss";
+ 	}
+	});
+   });
+  });
+</script>
+
 <div class="container" align="center">
 	<span class="enjoy-con-title">즐겨찾는 콘텐츠</span>
 	<!-- 즐겨찾기한 콘텐츠 뿌림 -->
+	<div class="con-in row" align="center">
+			<% for(var i=0; i < clip.length; i++) { %>
+			<div class="col-md-6 col-xs-4">
+				<div class="thumnail">
+					<a href="/contents/detail/<%= clip[i].con_no %>">
+					<div class="con-img">
+						<div class="con-thumbnail"><img class="img-responsive" src="<%= clip[i].con_photo %>"></div>
+					</div>
+					<div class="con-title"><%= clip[i].con_title %></div>
+					</a>
+				</div>			
+			</div>
+			<% } %>
+
+		</div>
+	<!-- 콘텐츠 뿌림 끝 -->
 	
 	<p class="con-plus">+ 더보기</p>
 </div>
 </div>
+
+	<script src="/js/swiper.js"></script>
+	<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        slidesPerView: 3,
+        paginationClickable: true,
+        spaceBetween: 2,
+        freeMode: true
+        
+    });
+    </script>
+
 
 <% include ../bottom %>
 </body>

@@ -4,6 +4,9 @@ var mysql = require("./model/mysql");
 var nodemailer = require('nodemailer');
 var passport = require('passport');
 
+var formidable = require('formidable');
+var fs = require('fs');
+
 
 function getWorldTime(tzOffset) { // 24시간제
 	  var now = new Date();
@@ -29,7 +32,7 @@ function leadingZeros(n, digits) {
 	      zero += '0';
 	  }
 	  return zero + n;
-	}
+}
 
 
 router.get('/join_step_1', function(req, res, next) {
@@ -261,9 +264,38 @@ router.get('/mypage', function(req, res, next) {
 
 	mysql.select('select * from cider.cid_member where mem_id =\''+mem_id+'\'', function (err, data){
 
-	res.render('front/cid_member/mypage', {mypage:data});
+		var memidval = data;
+		mysql.select('SELECT * FROM cider.cid_clipping where mem_id =\''+mem_id+'\'', function (err, data){
+			var clipping = data;
+
+	res.render('front/cid_member/mypage', {mypage:memidval, clip : clipping});
+   });
   });
 });
+
+
+router.post('/mypage/update', function(req, res, next) {
+
+});
+
+router.post('/mypage/upload', function (req, res){
+    var form = new formidable.IncomingForm();
+
+    form.parse(req);
+
+    form.on('fileBegin', function (name, file){
+        file.path = __dirname + '/../public/discuss_imgs/' + file.name;
+        console.log(file.path);
+    });
+
+    form.on('file', function (name, file){
+        console.log('Uploaded ' + file.name);
+    });
+
+    //res.sendFile(__dirname + '/../public/discuss_imgs/');
+    res.redirect('back');
+});
+
 
 
 

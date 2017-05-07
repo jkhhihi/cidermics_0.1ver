@@ -264,7 +264,7 @@ router.post('/discuss/insert/upload', ensureAuthenticated, function(req, res, ne
 	form.parse(req);
     form.on("file", function (name, file){
         fs.readFile(file.path, function(error, data){
-        	var filePath = __dirname + '/../public/discuss_imgs' + file.name;
+        	var filePath = __dirname + '/../public/discuss_imgs/' + file.name;
         	console.log(filePath);
         	console.log(file);
 			
