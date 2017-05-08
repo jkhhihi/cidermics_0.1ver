@@ -255,4 +255,10 @@ router.post('/lecture/insert/3', function(req, res, next) {
 });
 
 
+/* 삼박자 투자법 */
+router.get('/lecture/detail/4', function(req, res, next) {
+	res.render('front/cid_lecture2/cid_lecture_detail_4', { });
+});
+
+
 module.exports = router;

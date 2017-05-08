@@ -311,6 +311,9 @@ router.post('/mypage/upload', function (req, res){
         console.log('Uploaded ' + file.name);
     });
 
+   // var sets = { mem_pwd : mem_pwd , mem_no : memno};
+	//mysql.update('update cider.cid_member set mem_pwd = ? where mem_no = '+memno+'', [mem_pwd,memno], function (err, data){
+
     //res.sendFile(__dirname + '/../public/discuss_imgs/');
     res.redirect('back');
 });
