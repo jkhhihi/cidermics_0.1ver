@@ -99,10 +99,29 @@ router.get('/mem_login', function(req, res, next) {
 
 });
 
-router.post('/mem_login', passport.authenticate('mem_login', { failureRedirect: '/', failureFlash: true }), function(req, res, next) {
+/*router.post('/mem_login', passport.authenticate('mem_login', { failureRedirect: '/mem_login',  failureFlash: true }), function(req, res, next) {
 
 	res.redirect('/');
+});*/
+
+router.post('/mem_login', function(req, res, next) {
+  passport.authenticate('mem_login', function(err, user, info) {
+    if (err) {
+      return next(err); // will generate a 500 error
+    }
+    // Generate a JSON response reflecting authentication status
+    if (! user) {
+      return res.send('<script>alert("아이디 및 비밀번호를 확인해주세요.");location.href="/mem_login";</script>');
+    }
+    req.login(user, function(err){
+      if(err){
+        return next(err);
+      }
+      return res.redirect('/');        
+    });
+  })(req, res, next);
 });
+
 
 /* Pass found 17. 4. 21 */
 

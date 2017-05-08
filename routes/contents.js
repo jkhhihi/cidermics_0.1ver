@@ -175,7 +175,7 @@ router.get('/contents/detail/:no', function(req, res, next) {
 	var next = {};
 	var pre = {};
 
-	mysql.select('select mem_id from cider.cid_clipping where mem_id = '+mem_id+'', function(err,data3){
+	mysql.select("select mem_id from cider.cid_clipping where mem_id = '"+mem_id+"' and con_no = "+no+"", function(err,data3){
 
 	mysql.update('update cider.cid_contents set con_viewCount = con_viewCount + 1 where con_no = ?', [no] ,function (err, data){
 		if(err){
@@ -224,15 +224,14 @@ router.post('/clipping/:sePasschk&:no', function(req, res, next) {
 	var title = req.body.title;
 	var photo = req.body.photo;
 	var date = getWorldTime(+9);
-	console.log(sePasschk);
-	console.log(no);
-	console.log(title);
-	console.log(photo);
-	console.log("성공");
 	var sets = {mem_id: sePasschk , con_no: no, con_title:title, con_photo:photo, reg_date:date};
 	mysql.insert('insert into cider.cid_clipping set ?', sets,  function (err, data){
-		res.redirect('/');
-		//res.send('<script>alert("참여해주셔서 감사합니다");location.href="/";</script>');
+
+		console.log("성공");
+		res.send({success:1});
+		//res.redirect('back');
+		//res.send('<script>location.reload()</script>');
+		//res.redirect('/');
 	});
 });
 

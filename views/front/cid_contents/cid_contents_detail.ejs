@@ -148,7 +148,6 @@ body { padding-right: 0px !important }
 							<div class="col-xs-12 title" align="center"><%= contents[0].con_title%></div>
 
 							<div class="col-xs-12 info" align="right">
-							<%= memidval.length %>
 							<% if ( memidval.length == 0) { %>
 							<button onclick="clipping()" style="color: red;">스크랩하기 <%= sePass %></button>
 							<% } else { %>
@@ -167,17 +166,16 @@ body { padding-right: 0px !important }
 <!--스크랩하기 script-->
 <script type="text/javascript">
 	function clipping() {
-		var no = <%=contents[0].con_no%>;
-		var title = '<%=contents[0].con_title%>';
+		var no = '<%=contents[0].con_no%>';
+		var title = $('<textarea />').html('<%=contents[0].con_title%>').text();
 		var photo = '<%=contents[0].con_photo%>';
 		var sePasschk = '<%=sePass%>';
 		if( sePasschk == 0){
 			alert("로그인이 필요합니다.");
 			location.href="/mem_login";
 		}else if(sePasschk == '<%=sePass%>'){
-			alert("로그인되있다");
-				alert("하하하");
-				$.ajax({
+			alert("OK");
+			$.ajax({
 				url : '/clipping/'+sePasschk+"&"+no,
 				dataType: 'json',
 				data:{
@@ -185,8 +183,11 @@ body { padding-right: 0px !important }
 					'photo' : photo,
 				},
 				method : 'post',
+
 				success : function(data){
+				location.reload();
 				}
+				
 			  });
 		}else{
 			alert("일시적 오류가 발생했습니다.");

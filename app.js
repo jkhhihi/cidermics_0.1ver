@@ -223,12 +223,14 @@ passport.use('mem_login', new LocalStrategy({
 
 function(req, email, pw, done) {
 
+  console.log(email);
   mysql.select('select * from cider.cid_member where mem_email ="'+email+'" and mem_pwd = "'+pw+'"', function (err, data){
 
-    console.log(data[0].mem_no);
 
     if(data.length < 1){
       console.log('fail');
+      //alert('<script>alert("아이디 및 비밀번호를 확인해주세요.");location.href="/mem_login";</script>');
+      //req.flash('<script>alert("아이디 및 비밀번호를 확인해주세요.");location.href="/mem_login";</script>');
       return done(null, false);
     }else {
       console.log('success');
