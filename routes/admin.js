@@ -258,8 +258,6 @@ router.post('/contents/insert/upload', ensureAuthenticated, function(req, res, n
 router.post('/discuss/insert/upload', ensureAuthenticated, function(req, res, next) {
 	
 	var form = new formidable.IncomingForm();
-	console.log("++++");
-	console.log(req.form);
 	
 	form.parse(req);
     form.on("file", function (name, file){

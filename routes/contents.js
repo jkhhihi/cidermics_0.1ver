@@ -144,6 +144,8 @@ router.get('/contents/:no', function(req, res, next) {
 
 router.get('/contents/detail/:no', function(req, res, next) {
 
+
+
 	var sePass = req.session.passport;
 	var mem_id ='';
 	if(sePass != null){
@@ -165,6 +167,8 @@ router.get('/contents/detail/:no', function(req, res, next) {
 	}
 
 	var no = req.params.no;
+
+
 	
 	var _tot = releaseTime();
 
@@ -177,6 +181,7 @@ router.get('/contents/detail/:no', function(req, res, next) {
 
 	mysql.select("select mem_id from cider.cid_clipping where mem_id = '"+mem_id+"' and con_no = "+no+"", function(err,data3){
 
+
 	mysql.update('update cider.cid_contents set con_viewCount = con_viewCount + 1 where con_no = ?', [no] ,function (err, data){
 		if(err){
 			res.redirect('back');
@@ -185,9 +190,14 @@ router.get('/contents/detail/:no', function(req, res, next) {
 		mysql.select('select c.con_no, c.con_category, c.con_writer, c.con_title, c.con_content, c.con_photo, c.con_viewCount,c.con_regDate, c.con_upDate, c.con_likeCnt, c.comment_no, c.user_no, c.user_comment, c.con_release,  u.user_email, u.user_name, u.user_profile_img, u.user_sns_url, u.user_sns_icon, cate.cate_no, cate.cate_name from cider.cid_contents c left join cider.cid_user u on u.user_no = c.user_no left join cider.cid_con_cate cate on c.con_category = cate.cate_no and u.user_level = "2" where 1=1 and c.con_no = '+no+'', function (err, data){
 			if(err){
 				res.redirect('back');
-			} 
-			
+			}
+			console.log(data.length == 0)
+			if(data.length == 0){
+			var lang = 0;
+
+			}else{			
 			var lang = data[0].con_category;
+			}
 			var contents = data;
 			
 			mysql.select('(SELECT con_no, con_title, con_photo FROM cider.cid_contents WHERE con_no > '+ no +' and con_category = "'+ lang +'" and con_release <= "'+_tot+'"  LIMIT 1) UNION ( SELECT con_no, con_title ,con_photo FROM cider.cid_contents WHERE con_no < '+ no +' and con_category = "'+ lang +'" and con_release <= "'+_tot+'" ORDER BY con_no DESC LIMIT 1 ) order by con_no desc' , function (err, data){	
