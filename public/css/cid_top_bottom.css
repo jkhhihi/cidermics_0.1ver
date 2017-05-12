@@ -57,8 +57,8 @@ a{color:#333; text-decoration:none;}
 .mob-header{display:none;}
 
 header div{float:left;}
-header .menu{font-size:16px; font-weight:600;}
-header .login{padding-right:20px; font-size:14px; padding-top:28px;}
+header .menu{font-size:16px; font-weight:600; height:70px;}
+header .login{font-size:14px; height:70px;}
 header .login a{color:#212121;}
 header .search{padding-top:19px; padding-right:0;}
 /*.menu ul li{float:left; list-style:none; padding:25px;}*/
