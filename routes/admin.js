@@ -232,9 +232,6 @@ router.post('/contents/insert/upload', ensureAuthenticated, function(req, res, n
         	var filePath = __dirname + '/../public/uploads/' + file.name;
         	console.log(filePath);
         	console.log(file);
-
-
-			
         	
         	fs.writeFile(filePath, data, function(error){
         		if(error){

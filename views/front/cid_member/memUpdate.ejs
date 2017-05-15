@@ -8,103 +8,100 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1"-->
-<title>회원정보 수정</title>
+<title>사이다경제 | 회원정보 수정</title>
 <link href="/css/cid_member.css" rel="stylesheet">
+
+<script type="text/javascript">
+	function mem_update_next(){
+
+		if(document.memUpdate.mem_birth.value.length<=7){
+		 alert("생년월일은 8자리를 입력해주세요. 예) 19920101");
+		 document.memUpdate.mem_birth.focus();
+		 return;
+		}
+
+
+		if(document.memUpdate.nickchk.value.length > 1){
+		 alert("중복된 닉네임입니다.");
+		 document.memUpdate.nickchk.focus();
+		 return;
+		}
+
+	alert("수정되었습니다.")
+	document.memUpdate.submit();
+
+	}
+</script>
 
 <body>
 
 <% include ../top %>
 
 <div class="mypage">
-<div class="profile" align="center" style="height:auto; padding:20px 0 10px 0; background-color:#ececec;">
-	<div class="picture"><img src="/page_imgs/fixed_img/profile-basic-pic.svg"></div>
-	<div class="pic-update"><a href="#"><span>사진변경</span></a></div>
-	<div class="mem-name">
-		<span>양희아</span>  님</a>
-	</div>
-</div>
+
+<% include mypagetop %>
+
+<form name="memUpdate" action="/mypage/update" method="post" >
 <div class="container" align="center">
 	<div id="memup" class="box" align="left">
 		<div class="title"><span>회원정보</span></div>
 		<div class="line"></div>
-		<div class="star">*항목은 필수로 작성해주세요</div>
-		<div class="id"><p class="title1">아이디</p><span>contact@cidermincs.com</span></div>
-		<div class="name"><p class="title1">이름<span class="color-red">*</span></p><input name='mem_name' class="nicname1" type="text" style="IME-MODE: disabled" maxlength="6" size="12"></div>
-		<div class="password"><p class="title1">비밀번호<span class="color-red">*</span></p><a href="/passup"><span class="passup">비밀번호 변경</span></a></div>
-		<div class="birthday"><p class="title1">생년월일<span class="color-red">*</span></p>
-				<input name="mem_year" class="year" type="text" maxlength="4" value="1900" size="4">년 
-				<select name="mem_month" class="month" id="month">
-					<option>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-					<option>6</option>
-					<option>7</option>
-					<option>8</option>
-					<option>9</option>
-					<option>10</option>
-					<option>11</option>
-					<option>12</option>
-				</select>월 
-				<select name="mem_day" class="day" id="month">
-					<option>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-					<option>6</option>
-					<option>7</option>
-					<option>8</option>
-					<option>9</option>
-					<option>10</option>
-					<option>11</option>
-					<option>12</option>
-					<option>13</option>
-					<option>14</option>
-					<option>15</option>
-					<option>16</option>
-					<option>17</option>
-					<option>18</option>
-					<option>19</option>
-					<option>20</option>
-					<option>21</option>
-					<option>22</option>
-					<option>23</option>
-					<option>24</option>
-					<option>25</option>
-					<option>26</option>
-					<option>27</option>
-					<option>28</option>
-					<option>29</option>
-					<option>30</option>
-					<option>31</option>
-				</select>일 
+		<div class="id"><p class="title1">아이디(Email)</p><span><%= memVal[0].mem_email%></span></div>
+		<div class="name"><p class="title1">닉네임</p><input name='mem_nick' class="nicname1" type="text" style="IME-MODE: disabled" maxlength="6" size="12" value="<%= memVal[0].mem_nick%>"><a onclick="nickChk()"><span class="passup">중복확인</span></a></div>
+		
+		<div id="idchk"><input type="hidden" name="nickchk" value=1></div>
+		<div class="password"><p class="title1">비밀번호</p><a href="/passup"><span class="passup">비밀번호 변경</span></a></div>
+		<div class="birthday"><p class="title1">생년월일</p>
+				<input name="mem_birth" class="year" type="text" maxlength="8" value="<%=memVal[0].mem_birth%>" size="8"><span>*예)19890101</span>
 		</div>
-		<div class="sex"><p class="title1">성별<span class="color-red">*</span></p>
-			<div class="form-group" style="display:inline;">
-    		<div class="btn-group" data-toggle="buttons">
-				<label class="btn btn-info1 active" style="padding:5px 20px;">
-				<input type="radio" name="male" id="option2" autocomplete="off" chacked>남
-				<!--img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-man-64.png" width=20 height=20 alt=""-->
-				</label>
-				<label class="btn btn-info" style="padding:5px 20px;">
-				<input type="radio" name="female" id="option1" autocomplete="off">여
-				<!--img src="https://cdn1.iconfinder.com/data/icons/iconbeast-lite/30/woman-figure.png" width=20 height=20 alt=""-->
-				</label>
-			</div>
-			</div>
+		<div class="sex"><p class="title1">성별</p>
+			<select name="mem_sex">
+				<option selected="<%= memVal[0].mem_sex%>"><%= memVal[0].mem_sex%></option>
+				<option>남</option>
+				<option>여</option>
+			</select>
 		</div>
 		<div class="line"></div>
 		<div align="center">
-			<div class="btn-apply"><p>적용</p></div>
-			<div class="btn-cancel"><p>취소</p></div>
+			<div class="btn-apply"><a onClick="mem_update_next()" style="cursor:pointer"><p>적용</p></a></div>
+			<div class="btn-cancel"><a href="/mypage"><p>취소</p></a></div>
 		</div>
 	</div>
-	<div class="memdel" style="color:#666;" align="right">사이다경제를 더이상 구독하지 않으신다면
+	<div class="memdel" style="color:#666;" align="right">사이다경제
 	<a href="/memdel"><span class="memdel-link">회원탈퇴 ></span></a></div>
 </div>
+<input type="hidden" name="mem_id" value="<%=memVal[0].mem_id%>">
+
+</form>
 </div>
+<script type="text/javascript">
+
+/* 닉네임 중복확인 */
+function nickChk(){
+
+	var nick = document.memUpdate.mem_nick.value;
+	//alert(nick);
+
+        $.ajax({
+            url:'/nickcheck/',
+            dataType: 'json',
+				data:{
+					'mem_nick' : nick,
+				},
+
+            method:"POST",
+            success:function(data){
+                if($.trim(data.success) == 0){
+                    //alert('사용가능');
+                    $('#idchk').html('<b style="font-size:16px;color:#1d87c9">사용 가능한 닉네임입니다.<input type="hidden" name="nickchk" value=0></b>');
+                }else{
+                    //alert('사용불가');
+                    $('#idchk').html('<b style="font-size:16px;color:#ff574a">중복된 닉네임이 있습니다.<input type="hidden" name="nickchk" value=11></b>');
+                }
+            }
+        });
+}
+</script>
 
 <% include ../bottom %>
 </body>

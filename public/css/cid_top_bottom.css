@@ -46,8 +46,9 @@
 
 body{font-family: 'Nanum Gothic', serif;}
 
-.header{height: 70px; margin:0; width:100%; position: fixed; background-color:white;
-z-index: 999; box-shadow: 0px -5px 20px #222; top:0;}
+/*.header{height: 70px; margin:0; width:100%; position: fixed; background-color:white;
+z-index: 999; box-shadow: 0px -5px 20px #222; top:0;}*//* 2017년 5월 16일 TOP - 정기훈 수정 css 수정*/
+.header{width:100%; position: fixed; background-color:white; z-index: 10; box-shadow: 0px -5px 20px #222; top:0;}
 
 .padding-0{padding:0;}
 .padding-lr-0{padding-left:0; padding-right:0;}
@@ -57,22 +58,22 @@ a{color:#333; text-decoration:none;}
 .mob-header{display:none;}
 
 header div{float:left;}
-header .menu{font-size:16px; font-weight:600; height:70px;}
-header .login{font-size:14px; height:70px;}
+/*header .menu{font-size:16px; font-weight:600; height:70px;}*/ /* 2017년 5월 16일 TOP - 정기훈 수정 css 삭제*/
+.menu{font-size:15px; font-weight:600;} /* 2017년 5월 16일 TOP - 정기훈 수정 css 추가*/
+header .login{padding-right:20px; font-size:14px; padding-top: :16px;}
 header .login a{color:#212121;}
 header .search{padding-top:19px; padding-right:0;}
-/*.menu ul li{float:left; list-style:none; padding:25px;}*/
+/*.menu ul li{float:left; list-style:none; padding:25px;}*/ /* 2017년 5월 16일 TOP - 정기훈 수정 css 삭제*/
 .web-footer{display:block;}
 .menu ul li a{color:#1b87c9;}
 .login a{color:#1b87c9;}
 .search a{color:#1b87c9;}
 .mob-header .input input{display:none;}
-.login input{display:none;}
+/*.login input{display:none;}*/ /* 2017년 5월 16일 TOP - 정기훈 수정 css 삭제*/
 .web-search-box-img{display:none; margin-left:10px;}
 .mob-search-box-img{display:none; margin-left:10px;}
 .login input{
-	height:40px;
-	width:50%;
+	height:33px;
 	border-radius:20px;
 	border: solid 1px #1b87c9;
 }
@@ -98,7 +99,8 @@ header .search{padding-top:19px; padding-right:0;}
 
 .profile a:hover{color:#666;}
 .profile .picture img{width:100px; border-radius:50px; border:5px solid #fff;}
-.profile .mem-name{font-family:'BM JUA','배달의민족 주아',sans-serif; margin:10px 0 10px 8px;}
+/*.profile .mem-name{font-family:'BM JUA','배달의민족 주아',sans-serif; margin:10px 0 10px 8px;}*/ 
+.profile .mem-name{font-family:'Godo',sans-serif; margin:10px 0 10px 8px;}
 
 #tab-menu1-contents{margin-left:30px; margin-bottom:30px;}
 #tab-menu1-contents ul li img{width:38px; margin-right:30px;}
@@ -236,3 +238,11 @@ padding:5px;
  border-radius: 0.25em;
  background: rgba(255, 255, 255, 0.9);
 }
+
+/* 2017년 5월 16일 TOP - 정기훈 수정 css 추가*/
+.loginwrap{
+      padding-top: 20px;
+    }
+#login1{
+      padding-top: 5px;
+    }

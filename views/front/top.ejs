@@ -57,7 +57,7 @@ document.ondragstart=function(){return false;} // 선택 방지
 
 
 $(document).ready(function(){
-    $('#search').click(function(){ // ID가 toggleButton인 요소를 클릭하면
+/*    $('#search').click(function(){ // ID가 toggleButton인 요소를 클릭하면
         var state = $('.web-search-box').css('display'); // state 변수에 ID가 moreMenu인 요소의 display의 속성을 '대입'
         if(state == 'none'){ // state가 none 상태일경우 
             $('.web-search-box').show(); // ID가 moreMenu인 요소를 show();
@@ -66,18 +66,18 @@ $(document).ready(function(){
             $('.web-search-box').hide();
             $('.web-search-box-img').hide(); // ID가 moreMenu인 요소를 hide();         
         }
-    });
+    });*/
     
     
-    $('#mob-search').click(function(){ // ID가 toggleButton인 요소를 클릭하면
-        var state = $('.mob-search-box').css('display'); // state 변수에 ID가 moreMenu인 요소의 display의 속성을 '대입'
-        var state2 = $('.mob-search-box-img').css('display'); // state 변수에 ID가 moreMenu인 요소의 display의 속성을 '대입'
+    $('#mob-search1').click(function(){ // ID가 toggleButton인 요소를 클릭하면
+        var state = $('.mob-search-box1').css('display'); // state 변수에 ID가 moreMenu인 요소의 display의 속성을 '대입'
+        var state2 = $('.mob-search-box-img1').css('display'); // state 변수에 ID가 moreMenu인 요소의 display의 속성을 '대입'
         if(state == 'none' && state2 == 'none'){ // state가 none 상태일경우 
-            $('.mob-search-box').show(); // ID가 moreMenu인 요소를 show();
-            $('.mob-search-box-img').show(); // ID가 moreMenu인 요소를 show();
+            $('.mob-search-box1').show(); // ID가 moreMenu인 요소를 show();
+            $('.mob-search-box-img1').show(); // ID가 moreMenu인 요소를 show();
         }else{ // 그 외에는
-            $('.mob-search-box').hide(); // ID가 moreMenu인 요소를 hide();     
-            $('.mob-search-box-img').hide(); // ID가 moreMenu인 요소를 hide();     
+            $('.mob-search-box1').hide(); // ID가 moreMenu인 요소를 hide();     
+            $('.mob-search-box-img1').hide(); // ID가 moreMenu인 요소를 hide();     
         }
     });    
     
@@ -145,19 +145,21 @@ $('.contents_menu').click(function(e){
 
 .menu-bar .menu {
   display: inline-block;
-  width: 100%;
-  margin: 0; padding: 0;
+  margin: 0;
+  padding: 0;
 }
 .menu-bar .menu li {
   float: left;
   list-style:none;
   position: relative;
+
 }
 .menu-bar .menu li:hover>a { color:#1b87c9; }
 .menu-bar .menu a {
   color:#333333;
   display: block;
   padding:26px 32px 0 10px;
+  text-decoration:none;
 }
 .menu-bar .menu ul {
   background-color:#fff;
@@ -188,10 +190,10 @@ padding:20px 0 20px 10px;
 		<header class="container-fulid">
 				<div class="mob-menu" align="left"><img class="img-responsive" src="/page_imgs/fixed_img/mob_icon_menu.svg"></div>
 				<div class="mob-logo" align="center"><a href="/"><img class="img-responsive" src="/page_imgs/fixed_img/mob_icon_logo.svg"></a></div>
-				<div id="mob-search" class="mob-search" align="right"><img src="/page_imgs/fixed_img/mob_icon_search.svg"></div>
+				<div id="mob-search1" class="mob-search" align="right"><img src="/page_imgs/fixed_img/mob_icon_search.svg"></div>
 				<form name="search_box_mob" action="/search/process" method="post" align="center" style="margin-bottom: 0px;">
-					<div class="input"><input type="text" class="form-control mob-search-box" placeholder="search"  name="keyword" value=''>
-					<a onClick="search_submit_mob()" style="cursor:pointer" class="mob-search-box-img" >검색<!--img src="../../page_imgs/fixed_img/search_btn.png"--></a></div>
+					<div class="input"><input type="text" class="form-control mob-search-box1" placeholder="search"  name="keyword" value=''>
+					<a onClick="search_submit_mob()" style="cursor:pointer; display: none;" class="mob-search-box-img1" >검색<!--img src="../../page_imgs/fixed_img/search_btn.png"--></a></div>
 				</form>
 		</header>
 </div>
@@ -243,12 +245,7 @@ padding:20px 0 20px 10px;
 									<a href="/our_company"><li><span>Our Company</span></li></a>
 									<a href="/our_team"><li><span>Our Team</span></li></a>
 									<a href="/contact"><li><span>Contact Us</span></li></a>
-									<div w3-include-html="/fbtest"></div>
-						<!-- top include url링크로 -->
-						<script>
-						w3IncludeHTML();
-						</script>
-						<!-- top include url 끝 -->
+						
 								</ul>
 						</div>	
 		</div>
@@ -263,46 +260,61 @@ padding:20px 0 20px 10px;
 		<div onClick="history.back();" class="close"></div>  
 </div>
 
-
-
-
 <div class="header">
-		<header class="container">
-				<div class="logo" style="width:10%;"><a href="/"><img src="/page_imgs/fixed_img/logo.svg"></a></div>		
-				<div class="dropdown" style="width:50%;">
-				<div class='menu-bar'>
-				  <ul class="menu">
-				  	<li><a href="/finance/necessary">사이다재무</a></li>
-				   	<li><a href="/lecture">사이다강의</a></li>
-				    <li><a href="/contents/all">사이다콘텐츠</a>
-				      <ul class="sub">
-						<li><a href="/contents/1">경제이야기</a></li>
-				    	<li><a href="/contents/2">금융이야기</a></li>
-				    	<li><a href="/contents/3">기업이야기</a></li>
-				    	<li><a href="/contents/4">주식이야기</a></li>
-				    	<li><a href="/project">기획콘텐츠</a></li>
-					    <li><a href="/podcast">팟캐스트</a></li>
-					    <li><a href="/books">사이다Books</a></li>
-					    <li><a href="/contents/8">사이다BEST</a></li>
-				      </ul>
-				    </li>
-				    <li><a href="/discuss">사이다토론</a></li>
-				  </ul>
-				</div>
-				</div>
-				<form name="search_box" action="/search/process" method="post">
-				<div class="login" style="width:35%;" align="right"><div w3-include-html="/fbtest"></div>
-					<!-- top include url링크로 -->
-					<script>
-					w3IncludeHTML();
-					</script>
-					<!-- top include url 끝 -->
-				<input type="text" class="form-control web-search-box" placeholder="search" name="keyword" value=''>
-				<a onClick="search_submit()" style="cursor:pointer" class="web-search-box-img">검색</a></div>
-				<div id="search" class="search" style="width:5%;"><img src="/page_imgs/fixed_img/icon_search.svg" ></div>
-				</form>		
-		</header>
+<div class="container">
+<div class="logo col-md-1"><a href="/"><img src="/page_imgs/fixed_img/logo.svg"></a></div>
+	<div class="dropdown col-md-6">
+		<div class='menu-bar'>
+		  <ul class="menu">
+		  	<li><a href="/finance/necessary">사이다재무</a></li>
+		   	<li><a href="/lecture">사이다강의</a></li>
+		    <li><a href="/contents/all">사이다콘텐츠</a>
+		      <ul class="sub">
+				<li><a href="/contents/1">경제이야기</a></li>
+		    	<li><a href="/contents/2">금융이야기</a></li>
+		    	<li><a href="/contents/3">기업이야기</a></li>
+		    	<li><a href="/contents/4">주식이야기</a></li>
+		    	<li><a href="/project">기획콘텐츠</a></li>
+			    <li><a href="/podcast">팟캐스트</a></li>
+			    <li><a href="/books">사이다Books</a></li>
+			    <li><a href="/contents/8">사이다BEST</a></li>
+		      </ul>
+		    </li>
+		    <li><a href="/discuss">사이다토론</a></li>
+		  </ul>
+		</div>
+	</div>
+
+
+<div class="loginwrap col-md-5">
+
+	<div w3-include-html="/topLogin" class="col-md-5" align="right"></div>
+		<!-- top include url링크로 -->
+		<script>
+		w3IncludeHTML();
+		</script>
+		<!-- top include url 끝 -->
+
+	<div class="col-md-7">
+		<form name="search_box" action="/search/process" method="post">
+		<div class="login col-md-8">
+		<input type="text" class="form-control web-search-box" placeholder=" search" name="keyword" value='' style="width: 115%">
+		</div>
+		<!--a style="cursor:pointer; display:block;" class="web-search-box-img">검색</a></div-->
+		<!--a onClick="search_submit()" style="cursor:pointer" class="web-search-box-img">검색</a></div-->
+		<div id="search" class="login col-md-4" onClick="search_submit()" style="cursor:pointer"><img src="/page_imgs/fixed_img/icon_search.svg" width="30" height="30"></div>
+		</div>
+
+		</form>
+	</div>
 </div>
+
+
+</div>
+</div>
+
+
+
 
 
 

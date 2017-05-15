@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  
+<!-- 네이버 -->
+<meta name="naver-site-verification" content="083657cb98aa9a4a9c62dedeffddfb2490545da0"/>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1"-->
+<title>사이다경제 | 사진 변경</title>
+<link href="/css/cid_member.css" rel="stylesheet">
+
+<body>
+
+<% include ../top %>
+
+<div class="mypage">
+
+<% include mypagetop %>
+
+
+<div class="container" align="center">
+  <div id="passup" class="box" align="left">
+    <!--프로필 이미지 설정 -->
+<p>프로필 이미지 바꾸기</p>
+<span style="font-size:14px; color: #ff574a;"> * 페이스북 회원은 적용되지 않습니다. *</span>
+<br>
+<br>
+
+<form action="" enctype="multipart/form-data" method="post" id="upload-image-form">
+  <div id="image-preview-div" style="display: none">
+    <label for="exampleInputFile">선택된 이미지:</label>
+    <br>
+    <span style="font-size:12px; color: #ff574a;">(크기가 유효하지 않으면 적용되지 않습니다.)</span>
+    <br>
+    <img id="preview-img" src="noimage" width="100" height="100">
+    </div>
+    <input type="file" name="upload" id="file" required style="font-size: 14px;">
+    <br>
+  <button class="btn btn-lg btn-primary" id="upload-button" type="submit" disabled>이미지 업로드</button>
+</form>
+<form action="/imgupload" method="post">
+<div id="message" style="font-size: 14px;"></div>
+<br>
+<div id="message2" style="font-size: 15px; color: #ff574a;"></div>
+<div class="alert alert-info" id="loading" style="display: none;" role="alert">
+  Uploading image...
+  <div class="progress">
+    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+    </div>
+  </div>
+</div>
+
+<br>
+<button type="submit" class="btn btn-primary">변경하기</button>
+</form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- 프로필 이미지 설정 -->
+
+<script type="text/javascript">
+function noPreview() {
+  $('#image-preview-div').css("display", "none");
+  $('#preview-img').attr('src', 'noimage');
+  $('upload-button').attr('disabled', '');
+}
+
+function selectImage(e) {
+  $('#file').css("color", "green");
+  $('#image-preview-div').css("display", "block");
+  $('#preview-img').attr('src', e.target.result);
+  $('#preview-img').css('max-width', '550px');
+}
+
+$(document).ready(function (e) {
+
+  var maxsize = 200 * 200; // 500 KB
+  $('#max-size').html((maxsize/1024).toFixed(2));
+
+  $('#upload-image-form').on('submit', function(e) {
+
+    e.preventDefault();
+
+    $('#message').empty();
+    $('#loading').show();
+
+    console.log('mem_id');
+
+    $.ajax({
+      url: "mypage/upload/",
+      type: "POST",
+      data: new FormData(this),
+      contentType: false,
+      cache: false,
+      processData: false,
+      success: function(data)
+      {
+        $('#loading').hide();
+
+        //location.reload();
+        //refresh;
+        $('#message').html("<input type='text' name='upimg' value="+data.a+">");
+        $('#message2').html("변경하기를 눌러주세요!");
+      }
+  });
+});
+
+  $('#file').change(function() {
+
+    $('#message').empty();
+
+    var file = this.files[0];
+
+    var match = ["image/jpeg", "image/png", "image/jpg"];
+    if ( !( (file.type == match[0]) || (file.type == match[1]) || (file.type == match[2]) ) )
+    {
+      noPreview();
+
+      $('#message').html('<div class="alert alert-warning" role="alert">JPG, JPEG, PNG만 허용됩니다.</div>');
+
+      return false;
+    }
+    if ( file.size > maxsize )
+    {
+      noPreview();
+
+      $('#message').html('<div class=\"alert alert-danger\" role=\"alert\">선택하신 이미지 사이즈: ' + (file.size/1024).toFixed(2) + ' KB, <br>크기 제한 :' + (maxsize/1024).toFixed(2) + ' KB <br>* jpg,jpeg, 200 X 200 px (권장) </div>');
+
+      return false;
+    }
+
+    $('#upload-button').removeAttr("disabled");
+
+    var reader = new FileReader();
+    reader.onload = selectImage;
+    reader.readAsDataURL(this.files[0]);
+
+  });
+
+});
+
+</script>
+  </div>
+</div>
+</div>
+
+<% include ../bottom %>
+</body>
+</html>

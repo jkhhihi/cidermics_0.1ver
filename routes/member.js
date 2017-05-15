@@ -283,39 +283,103 @@ router.get('/mypage', function(req, res, next) {
 
 	mysql.select('select * from cider.cid_member where mem_id =\''+mem_id+'\'', function (err, data){
 
-		var memidval = data;
+		var memVal = data;
 		mysql.select('SELECT * FROM cider.cid_clipping where mem_id =\''+mem_id+'\'', function (err, data){
-			var clipping = data;
+		var clipping = data;
 
-	res.render('front/cid_member/mypage', {mypage:memidval, clip : clipping});
+	res.render('front/cid_member/mypage', {memVal:memVal, clip : clipping});
    });
   });
 });
 
 
 router.post('/mypage/update', function(req, res, next) {
+	var mem_id = req.body.mem_id;
+	var mem_nick = req.body.mem_nick;
+	var mem_birth = req.body.mem_birth;
+	var mem_sex = req.body.mem_sex;
+	var date = getWorldTime(+9);
+	var sets = { mem_nick:mem_nick, mem_birth:mem_birth,mem_sex:mem_sex,mem_update:date };
+	mysql.update('update cider.cid_member set mem_nick = ?,  mem_birth = ?, mem_sex = ?, mem_update =? where mem_id = ?', [mem_nick,mem_birth,mem_sex,date,mem_id], function (err, data){
+		
+    	res.redirect('/mypage');
+    });
+});
 
+router.post('/nickcheck', function(req, res, next) {
+
+	var mem_nick = req.body.mem_nick;
+	var flag = 0;
+	console.log(mem_nick);
+	mysql.select('select mem_nick from cider.cid_member where mem_nick =\''+mem_nick+'\'', function (err, data){
+		if(data.length > 0){
+			flag = 1;
+		}
+		console.log(data);
+		console.log(flag);
+		res.send({success:flag});
+	});
 });
 
 router.post('/mypage/upload', function (req, res){
+	var sePass = req.session.passport;
+	if(sePass != null){
+			var mem_id ='';
+			if(sePass.user.length == 1){
+				mem_id = sePass.user[0].mem_id;
+			}else{
+				mem_id = proPhoto = sePass.user.id;
+			}
+		}
+
     var form = new formidable.IncomingForm();
 
     form.parse(req);
 
     form.on('fileBegin', function (name, file){
-        file.path = __dirname + '/../public/discuss_imgs/' + file.name;
-        console.log(file.path);
+
+    	
+    	//console.log(file);
+        file.path = __dirname + '/../public/userPic/'+ mem_id+'_'+file.name;
+        //console.log(file.path);
+        
+       /* fs.rename(__dirname + '/../public/userPic/' + file.name, __dirname + '/../public/userPic/' + mem_id+'_'+file.name, function(err) {
+		    if ( err ) console.log('ERROR: ' + err);
+		});*/
+		res.send({a:'/userPic/'+ mem_id+'_'+file.name})
     });
 
     form.on('file', function (name, file){
-        console.log('Uploaded ' + file.name);
+    	var stats = fs.statSync(file.path);
+    	//console.log(stats.size);
+    	if(stats.size > 40000){
+    		fs.unlink(__dirname + '/../public/userPic/'+ mem_id+'_'+file.name,
+			    function(err){
+			if(err) throw err;
+			//console.log('파일을 정상적으로 삭제하였습니다.');
+			    } 
+			);
+    	}
+        //console.log('Uploaded ' + file.name);
     });
 
-   // var sets = { mem_pwd : mem_pwd , mem_no : memno};
-	//mysql.update('update cider.cid_member set mem_pwd = ? where mem_no = '+memno+'', [mem_pwd,memno], function (err, data){
+    form.on("end", function() {
+	});
+
+
+    /*console.log("123123");
+
+    var filePath = file.path;
+    console.log(filePath);
+
+    var sets = { mem_profile : filePath};
+
+    console.log(sets);
+	mysql.update('update cider.cid_member set mem_profile = ? where mem_no = 15', [mem_profile], function (err, data){*/
 
     //res.sendFile(__dirname + '/../public/discuss_imgs/');
-    res.redirect('back');
+    //res.redirect('back');
+  //});
 });
 
 
@@ -328,15 +392,63 @@ router.get('/meminfo', function(req, res, next) {
 });
 
 router.get('/memup', function(req, res, next) {
+	var sePass = req.session.passport;
+	if(sePass != null){
+		var mem_id ='';
+		if(sePass.user.length == 1){
+			mem_id = sePass.user[0].mem_id;
+		}else{
+			mem_id = proPhoto = sePass.user.id;
+		}
+	}
+	
+	mysql.select('select * from cider.cid_member where mem_id =\''+mem_id+'\'', function (err, data){
 
-	res.render('front/cid_member/memUpdate', { });
+		var memVal = data;
 
+	res.render('front/cid_member/memUpdate', {memVal:memVal});
+  });
 });
 
 router.get('/passup', function(req, res, next) {
+	var sePass = req.session.passport;
+	if(sePass != null){
+			var mem_id ='';
+			if(sePass.user.length == 1){
+				mem_id = sePass.user[0].mem_id;
+			}else{
+				mem_id = proPhoto = sePass.user.id;
+			}
+		}
 
-	res.render('front/cid_member/passUpdate', { });
 
+	mysql.select('select mem_name,mem_nick,mem_profile from cider.cid_member where mem_id =\''+mem_id+'\'', function (err, data){
+
+		var memVal = data;
+	res.render('front/cid_member/passUpdate', {memVal:memVal});
+  });
+});
+
+router.post('/mypage/passup', function(req, res, next) {
+	var sePass = req.session.passport;
+	if(sePass != null){
+		var mem_id ='';
+		if(sePass.user.length == 1){
+			mem_id = sePass.user[0].mem_id;
+		}else{
+			mem_id = proPhoto = sePass.user.id;
+		}
+	}
+
+	var mem_id = sessionPass();
+
+	var mem_pw = req.body.mem_re_pw;
+	var date = getWorldTime(+9);
+	var sets = { mem_pwd:mem_pw,mem_update:date };
+	mysql.update('update cider.cid_member set mem_pwd = ?, mem_update =? where mem_id = ?', [mem_pw,date,mem_id], function (err, data){
+	res.redirect('/mypage');
+
+	});
 });
 
 router.get('/memdel', function(req, res, next) {
@@ -344,4 +456,43 @@ router.get('/memdel', function(req, res, next) {
 	res.render('front/cid_member/memDelete', { });
 
 });
+
+router.get('/chgpic', function(req, res, next) {
+
+	var sePass = req.session.passport;
+	if(sePass != null){
+		var mem_id ='';
+		if(sePass.user.length == 1){
+			mem_id = sePass.user[0].mem_id;
+		}else{
+			mem_id = proPhoto = sePass.user.id;
+		}
+	}
+	mysql.select('select mem_name,mem_nick,mem_profile from cider.cid_member where mem_id =\''+mem_id+'\'', function (err, data){
+	var memVal = data;
+	res.render('front/cid_member/chgPic', {memVal:memVal});
+  });
+});
+
+router.post('/imgupload', function(req, res, next) {
+
+	var sePass = req.session.passport;
+	if(sePass != null){
+		var mem_id ='';
+		if(sePass.user.length == 1){
+			mem_id = sePass.user[0].mem_id;
+		}else{
+			mem_id = proPhoto = sePass.user.id;
+		}
+	}
+
+	var imgUrl = req.body.upimg;
+	console.log(imgUrl);
+	var date = getWorldTime(+9);
+	var sets = { mem_profile:imgUrl,mem_update:date };
+	mysql.update('update cider.cid_member set mem_profile = ?, mem_update =? where mem_id = ?', [imgUrl,date,mem_id], function (err, data){
+	res.redirect('/mypage');
+	});
+});
+
 module.exports = router;

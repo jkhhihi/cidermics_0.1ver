@@ -70,7 +70,7 @@ router.get('/', function(req, res, next) {
 	var _totmon = _year+""+_mon;
 
 	//최신 콘텐츠 qry
-	var qry="select con_no, con_photo, con_title, if (a.con_upDate > DATE_ADD(now(),INTERVAL -5 DAY) ,'/page_imgs/main_img/new_mark4.svg','/page_imgs/main_img/new_mark1px.png') as chkDat from cider.cid_contents a where a.con_release <= '"+_tot+"' order by a.con_release desc limit 0,5";
+	var qry="select con_no, con_photo, con_title, if (a.con_upDate > DATE_ADD(now(),INTERVAL -5 DAY) ,'/page_imgs/main_img/new_mark4.svg','/page_imgs/main_img/new_mark1px.png') as chkDat from cider.cid_contents a where a.con_release <= '"+_tot+"' order by a.con_release desc limit 0,6";
 	mysql.select(qry, function (err, data){
 		if (err) throw err;
 		 row = data;
@@ -287,7 +287,7 @@ router.post('/insert', function(req, res, next) {
 });
 
 
-router.get('/fbtest', function(req, res, next) {
+router.get('/topLogin', function(req, res, next) {
 
 	var sePass = req.session.passport;
 	if(sePass != null){
@@ -297,6 +297,9 @@ router.get('/fbtest', function(req, res, next) {
 		}else{
 			proPhoto = proPhoto = sePass.user.photos[0].value;
 		}
+
+
+
 		/*
 		console.log(sess.passport.user.length);
 		console.log(sess.passport.user.photos[0].value);
@@ -311,7 +314,7 @@ router.get('/fbtest', function(req, res, next) {
 		}
 		*/
 	}
-       res.render('front/facebooklogin_test', {proPhoto:proPhoto});
+       res.render('front/topLogin', {proPhoto:proPhoto});
 });
 
 
