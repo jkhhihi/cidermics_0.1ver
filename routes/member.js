@@ -513,4 +513,12 @@ router.post('/imgupload', function(req, res, next) {
 	});
 });
 
+router.get('/facebooklogin', function(req,res,next){
+
+	var mem_id = req.session.passport.user.id;
+	console.log(mem_id);
+	res.render('front/facebooklogin',{});
+});
+
+
 module.exports = router;

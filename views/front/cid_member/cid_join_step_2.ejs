@@ -32,6 +32,11 @@ function mem_join_next(){
 	document.mem_join.email2.focus();
 	  return;
 	}
+	if(document.mem_join.idchk.value.length > 1){
+		 alert("중복된 이메일 주소입니다.");
+		 document.mem_join.idchk.focus();
+		 return;
+	}
 	if(document.mem_join.mem_pw.value!= document.mem_join.mem_pw2.value){
 	  alert("비밀번호가 일치하지 않습니다.");
 	 document.mem_join.mem_pw.focus();
@@ -73,11 +78,7 @@ function mem_join_next(){
 	  return;
 	}
 
-	if(document.mem_join.idchk.value.length > 1){
-		 alert("중복된 이메일 주소입니다.");
-		 document.mem_join.idchk.focus();
-		 return;
-	}
+	
 	
 	for (i=0; i<document.mem_join.email1.value.length; i++)
         {
@@ -109,7 +110,7 @@ function checkPwd(){
 
 
 /* 아이디 중복확인 작업 */
-/*$(function(){
+$(function(){
 	  $('#email2').blur(function(){
     	var email1 = document.mem_join.email1.value;
     	var email2 = document.mem_join.email2.value;
@@ -121,18 +122,18 @@ function checkPwd(){
             success:function(data){
             	//alert(data.emailchk);
                 if($.trim(data.emailchk) == "YES"){
-                    alert('사용불가');
-                    $('#idchk').html('<b style="font-size:14px;color:#ff574a;">*이미 등록된 이메일 주소입니다.<input type="hidden" name="idexist" value="1"></b>');
+                    //alert('사용불가');
+                    $('#idchk').html('<b style="font-size:14px;color:#ff574a;">*이미 등록된 이메일 주소입니다.(중복확인 필수)<input type="hidden" name="idexist" value="1"></b>');
                 }else{
-                    alert('사용가능');
-                    $('#idchk').html('<b style="font-size:14px;color:#ff574a;">사용 가능한 이메일 주소입니다.</b>');
+                    //alert('사용가능');
+                    $('#idchk').html('<b style="font-size:14px;color:#1d87c9">사용 가능한 이메일 주소입니다.(중복확인 필수)</b>');
                     
                 }
             }
         });
     });
 });
-*/
+
 </script>
 </head>
 <body>
@@ -181,7 +182,7 @@ function checkPwd(){
 							   <input type="text" name="email3" id="email2" class="email" size="11" style="IME-MODE: disabled"> -->
 							<input type="text" name="email2" id="email2" class="email" size="11" style="IME-MODE: disabled" placeholder="cidermics.com">
 							<a onclick="idChk()" style="cursor: pointer;"><span class="chkbtn">중복확인</span></a>
-							<div id="idchk"></div>
+							<div id="idchk"><input type="hidden" name="nickchk" value=1></div>
 
 							</div>
 							<div class="col-xs-12 name padding-lr-0">
@@ -191,7 +192,7 @@ function checkPwd(){
 							<div class="col-xs-12 name padding-lr-0">
 								<span class="width-80 name_title">닉네임<span class="star">*</span></span>
 								<input name='mem_nick' class="nicname1" type="text" style="IME-MODE: disabled" size="12" placeholder="닉네임 입력"><a onclick="nickChk()" style="cursor: pointer;"><span class="chkbtn">중복확인</span></a>
-								<div id="nickchk"><input type="hidden" name="nickchk" value=1></div>
+								<div id="nickchk"><input type="hidden" name="idchk" value=1></div>
 							</div>
 							<div class="col-xs-12 password padding-lr-0">
 								<span class="width-80 password_title">비밀번호<span class="star">*</span></span>
@@ -383,10 +384,10 @@ function idChk(){
             success:function(data){
                 if($.trim(data.success) == 0){
                     //alert('사용가능');
-                    $('#idchk').html('<b style="font-size:16px;color:#1d87c9">사용 가능한 이메일입니다.<input type="hidden" name="idchk" value=0></b>');
+                    $('#idchk').html('<b style="font-size:14px;color:#1d87c9">사용 가능한 이메일 주소입니다.<input type="hidden" name="idchk" value=0></b>');
                 }else{
                     //alert('사용불가');
-                    $('#idchk').html('<b style="font-size:16px;color:#ff574a">중복된 이메일이 있습니다.<input type="hidden" name="idchk" value=11></b>');
+                    $('#idchk').html('<b style="font-size:14px;color:#ff574a;">*이미 등록된 이메일 주소입니다!<input type="hidden" name="idchk" value=11></b>');
                 }
             }
         });
@@ -409,10 +410,10 @@ function nickChk(){
             success:function(data){
                 if($.trim(data.success) == 0){
                     //alert('사용가능');
-                    $('#nickchk').html('<b style="font-size:16px;color:#1d87c9">사용 가능한 닉네임입니다.<input type="hidden" name="nickchk" value=0></b>');
+                    $('#nickchk').html('<b style="font-size:14px;color:#1d87c9">사용 가능한 닉네임입니다.<input type="hidden" name="nickchk" value=0></b>');
                 }else{
                     //alert('사용불가');
-                    $('#nickchk').html('<b style="font-size:16px;color:#ff574a">중복된 닉네임이 있습니다.<input type="hidden" name="nickchk" value=11></b>');
+                    $('#nickchk').html('<b style="font-size:14px;color:#ff574a">중복된 닉네임이 있습니다.<input type="hidden" name="nickchk" value=11></b>');
                 }
             }
         });

@@ -253,7 +253,7 @@ router.get('/top', function(req, res, next) {
 	}
 	res.render('front/top', {proPhoto:proPhoto,sePass:sePass});
 */
-		res.render('front/top', {});
+		res.render('front/top', {proPhoto:proPhoto});
 
 });
 
@@ -299,7 +299,6 @@ router.get('/topLogin', function(req, res, next) {
 		}
 
 
-
 		/*
 		console.log(sess.passport.user.length);
 		console.log(sess.passport.user.photos[0].value);
@@ -315,6 +314,10 @@ router.get('/topLogin', function(req, res, next) {
 		*/
 	}
        res.render('front/topLogin', {proPhoto:proPhoto});
+});
+
+router.get('/facebooklogin', function(req,res,next){
+	res.render('front/facebooklogin',{});
 });
 
 

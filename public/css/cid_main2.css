@@ -24,11 +24,11 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
   background:#fff;
 }
 .menu6{margin:20px 0 40px 0;}
-.menu6 p{font-family:'Godo'; font-weight:200; font-size:13px; border:1px solid #1b87c9; border-radius:3px; padding:10px 5px; color:#666;}
+.menu6 p{font-family:'Nanum Gothic'; font-weight:200; font-size:13px; border:1px solid #1b87c9; border-radius:3px; padding:10px 5px; color:#666;}
 .menu6 a:hover p{background-color:#1b87c9; color:#fff;}
 .line-3px{width:100%; height:2px; background-color:#ececec;}
 .menu6_con .new-con, div.popular-con, div.plan-con, div.podcast-con, div.review-con, div.main-con, div.discuss-con, div.books-con{padding:0 30px 20px 30px;}
-.menu-title{font-family:'Godo'; font-weight:400; margin-bottom:20px; padding:0 15px;}
+.menu-title{font-family:'Nanum Gothic'; font-weight:400; margin-bottom:20px; padding:0 15px;}
 .menu-title p.plus{color:#ff574a; margin:0 0 5px;}
 .con-in .new-mark{width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;}
 .con-in .thumnail{border:2px solid #ececec; border-radius:6px; position:relative; z-index:1; margin-bottom:20px;}
