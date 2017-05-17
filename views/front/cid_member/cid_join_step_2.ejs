@@ -37,15 +37,22 @@ function mem_join_next(){
 	 document.mem_join.mem_pw.focus();
 	 return;
 	 }
+	
 	 if(document.mem_join.mem_name.value==""){
 	 alert("이름을 입력해 주세요.");
 	document.mem_join.mem_name.focus();
 	  return;
 	}
 	if(document.mem_join.mem_nick.value==""){
-	 alert("이름을 입력해 주세요.");
+	 alert("닉네임을 입력해 주세요.");
 	document.mem_join.mem_nick.focus();
 	  return;
+	}
+
+	if(document.mem_join.nickchk.value.length > 1){
+		 alert("중복된 닉네임입니다.");
+		 document.mem_join.nickchk.focus();
+		 return;
 	}
 	
 	if(document.mem_join.mem_pw.value.length<=7){
@@ -64,6 +71,12 @@ function mem_join_next(){
 	 alert("성별을 선택 주세요.");
 	document.mem_join.mem_sex.focus();
 	  return;
+	}
+
+	if(document.mem_join.idchk.value.length > 1){
+		 alert("중복된 이메일 주소입니다.");
+		 document.mem_join.idchk.focus();
+		 return;
 	}
 	
 	for (i=0; i<document.mem_join.email1.value.length; i++)
@@ -93,6 +106,33 @@ function checkPwd(){
   }  
  }
 
+
+
+/* 아이디 중복확인 작업 */
+/*$(function(){
+	  $('#email2').blur(function(){
+    	var email1 = document.mem_join.email1.value;
+    	var email2 = document.mem_join.email2.value;
+
+    	var email = email1+'@'+email2;
+        $.ajax({
+            url:'/idcheck/'+email,
+            type:"POST",
+            success:function(data){
+            	//alert(data.emailchk);
+                if($.trim(data.emailchk) == "YES"){
+                    alert('사용불가');
+                    $('#idchk').html('<b style="font-size:14px;color:#ff574a;">*이미 등록된 이메일 주소입니다.<input type="hidden" name="idexist" value="1"></b>');
+                }else{
+                    alert('사용가능');
+                    $('#idchk').html('<b style="font-size:14px;color:#ff574a;">사용 가능한 이메일 주소입니다.</b>');
+                    
+                }
+            }
+        });
+    });
+});
+*/
 </script>
 </head>
 <body>
@@ -112,8 +152,8 @@ function checkPwd(){
 							<div class="col-xs-12 star padding-lr-0">*항목을 정확하게 입력해주세요.</div>
 							<div class="col-xs-12 id padding-lr-0">
 								<span class="width-80 id_title">아이디<span class="star">*</span></span>
-							<input type="text" name="email1" class="email" style="IME-MODE: disabled" maxlength=20   placeholder="이메일 주소">@ 
-							<input type="text" name="email2" class="email" size="11" style="IME-MODE: disabled">
+							<input type="text" name="email1" id="email1" class="email" style="IME-MODE: disabled" maxlength=20   placeholder="이메일 주소">@ 
+							<!-- <input type="text" name="email2" id="email2" class="email" size="11" style="IME-MODE: disabled">
 							<select class="email" name="emaillist" onchange="this.form.email2.value=this[this.selectedIndex].value;">
 			       				 <option selected="selected">메일 선택</option>
 			       				 <option value="naver.com">naver.com</option>
@@ -124,18 +164,34 @@ function checkPwd(){
 			       				 <option value="yahoo.com">yahoo.com</option>
 			       				 <option value="empas.com">empas.com</option>
 			       				 <option value="korea.com">korea.com</option>
-			       				 <option value="dreamwiz.com">dreamwiz.com</option>
 			       				 <option value="">직접입력</option>
+							   </select> -->
+							   <!-- <select class="email" name="email2" id="email2">
+			       				 <option selected="selected">메일 선택</option>
+			       				 <option value="naver.com">naver.com</option>
+			       				 <option value="daum.net">daum.net</option>
+			       				 <option value="gmail.com">gmail.com</option>
+			       				 <option value="nate.com">nate.com</option>
+			       				 <option value="hotmail.com">hotmail.com</option>
+			       				 <option value="yahoo.com">yahoo.com</option>
+			       				 <option value="empas.com">empas.com</option>
+			       				 <option value="korea.com">korea.com</option>
+			       				 <option value=""  onchange="this.form.email3.value=this[this.selectedIndex].value">직접입력</option>
 							   </select>
+							   <input type="text" name="email3" id="email2" class="email" size="11" style="IME-MODE: disabled"> -->
+							<input type="text" name="email2" id="email2" class="email" size="11" style="IME-MODE: disabled" placeholder="cidermics.com">
+							<a onclick="idChk()" style="cursor: pointer;"><span class="chkbtn">중복확인</span></a>
+							<div id="idchk"></div>
 
 							</div>
 							<div class="col-xs-12 name padding-lr-0">
 								<span class="width-80 name_title">이름<span class="star">*</span></span>
-								<input name='mem_name' class="nicname1" type="text" style="IME-MODE: disabled" size="12" placeholder="이름 입력">
+								<input name='mem_name' class="nicname1" type="text" id="name1" style="IME-MODE: disabled" size="12" placeholder="이름 입력">
 							</div>
 							<div class="col-xs-12 name padding-lr-0">
 								<span class="width-80 name_title">닉네임<span class="star">*</span></span>
-								<input name='mem_nick' class="nicname1" type="text" style="IME-MODE: disabled" size="12" placeholder="닉네임 입력">
+								<input name='mem_nick' class="nicname1" type="text" style="IME-MODE: disabled" size="12" placeholder="닉네임 입력"><a onclick="nickChk()" style="cursor: pointer;"><span class="chkbtn">중복확인</span></a>
+								<div id="nickchk"><input type="hidden" name="nickchk" value=1></div>
 							</div>
 							<div class="col-xs-12 password padding-lr-0">
 								<span class="width-80 password_title">비밀번호<span class="star">*</span></span>
@@ -304,6 +360,65 @@ function checkPwd(){
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+
+/* 닉네임 중복확인 */
+function idChk(){
+
+	
+    var email1 = document.mem_join.email1.value;
+    var email2 = document.mem_join.email2.value;
+    var email = email1+'@'+email2;
+	//alert(nick);
+
+        $.ajax({
+            url:'/idcheck/',
+            dataType: 'json',
+				data:{
+					'mem_email' : email,
+				},
+
+            method:"POST",
+            success:function(data){
+                if($.trim(data.success) == 0){
+                    //alert('사용가능');
+                    $('#idchk').html('<b style="font-size:16px;color:#1d87c9">사용 가능한 이메일입니다.<input type="hidden" name="idchk" value=0></b>');
+                }else{
+                    //alert('사용불가');
+                    $('#idchk').html('<b style="font-size:16px;color:#ff574a">중복된 이메일이 있습니다.<input type="hidden" name="idchk" value=11></b>');
+                }
+            }
+        });
+}
+
+/* 닉네임 중복확인 */
+function nickChk(){
+
+	var nick = document.mem_join.mem_nick.value;
+	//alert(nick);
+
+        $.ajax({
+            url:'/nickcheck/',
+            dataType: 'json',
+				data:{
+					'mem_nick' : nick,
+				},
+
+            method:"POST",
+            success:function(data){
+                if($.trim(data.success) == 0){
+                    //alert('사용가능');
+                    $('#nickchk').html('<b style="font-size:16px;color:#1d87c9">사용 가능한 닉네임입니다.<input type="hidden" name="nickchk" value=0></b>');
+                }else{
+                    //alert('사용불가');
+                    $('#nickchk').html('<b style="font-size:16px;color:#ff574a">중복된 닉네임이 있습니다.<input type="hidden" name="nickchk" value=11></b>');
+                }
+            }
+        });
+}
+</script>
+
 <% include ../bottom %>
 
 </body>

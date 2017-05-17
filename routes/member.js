@@ -122,6 +122,13 @@ router.post('/mem_login', function(req, res, next) {
   })(req, res, next);
 });
 
+/* 아이디 조회 17.5.16 */
+router.get('/idsearch', function(req, res, next) {
+
+
+	res.render('front/cid_member/id_search1', { });
+
+});
 
 /* Pass found 17. 4. 21 */
 
@@ -265,6 +272,20 @@ router.post('/idcheck/:email', function(req, res, next) {
 });
 /* ID chk 17. 4. 24 */
 
+/* ID chk 17. 5. 17 회원가입 중복확인 */
+router.post('/idcheck', function(req, res, next) {
+
+	var email = req.body.mem_email;
+	console.log(email);
+	var flag = 0;
+	mysql.select('select mem_email from cider.cid_member where mem_email =\''+email+'\'', function (err, data){
+		if(data.length > 0){
+			flag = 1;
+		}
+		res.send({success:flag});
+	});
+});
+
 
 
 
@@ -310,13 +331,10 @@ router.post('/nickcheck', function(req, res, next) {
 
 	var mem_nick = req.body.mem_nick;
 	var flag = 0;
-	console.log(mem_nick);
 	mysql.select('select mem_nick from cider.cid_member where mem_nick =\''+mem_nick+'\'', function (err, data){
 		if(data.length > 0){
 			flag = 1;
 		}
-		console.log(data);
-		console.log(flag);
 		res.send({success:flag});
 	});
 });

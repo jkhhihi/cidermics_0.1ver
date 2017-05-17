@@ -13,6 +13,8 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
 .main-join .bg .text2{font-size:16px; margin-bottom:20px;}
 .main-join .bg .text2 b{text-decoration:underline;}
 
+.chkbtn{border-radius:15px; border:2px solid #ff574a; padding:5px 10px;}
+
 /*회원가입 스텝1*/
 .join .join-step img{margin-left:20px; width:85px;}
 .join .step1 .service, .privacy{margin:25px 0 10px 0;}
