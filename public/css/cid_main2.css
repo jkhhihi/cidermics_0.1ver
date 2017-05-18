@@ -7,7 +7,8 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
     /*background-image: url(https://static.pexels.com/photos/72161/pexels-photo-72161.jpeg);*/
     /*background-image: url("http://i.imgur.com/NL1FbRz.jpg");*/
     
-    background-image: url("../page_imgs/main_img/main22.jpg");
+    /*background-image: url("../page_imgs/main_img/main22.jpg");*/
+    background-image: url("http://i.imgur.com/rXebJx7.jpg");
 
     /* Set a specific height */
     min-height: 450px; 
@@ -16,7 +17,7 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
     margin-bottom:20px;
 }
 .parallax .parallax-in{padding-top:170px; color:#fff; text-shadow: #444 0 1px 1px; font-weight:bold; font-size:24px;}
