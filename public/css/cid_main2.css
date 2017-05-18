@@ -5,10 +5,12 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
     /*background-image: url(http://i.imgur.com/wZSzkux.jpg);*/
     /*background-image: url("../page_imgs/main_img/222.jpeg");*/
     /*background-image: url(https://static.pexels.com/photos/72161/pexels-photo-72161.jpeg);*/
-    background-image: url("http://i.imgur.com/NL1FbRz.jpg");
+    /*background-image: url("http://i.imgur.com/NL1FbRz.jpg");*/
+    
+    background-image: url("../page_imgs/main_img/main22.jpg");
 
     /* Set a specific height */
-    min-height: 400px; 
+    min-height: 450px; 
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -17,7 +19,7 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
     background-size: cover;
     margin-bottom:20px;
 }
-.parallax .parallax-in{padding-top:130px; color:#fff; text-shadow: #444 0 1px 1px; font-weight:bold; font-size:24px;}
+.parallax .parallax-in{padding-top:170px; color:#fff; text-shadow: #444 0 1px 1px; font-weight:bold; font-size:24px;}
 .parallax .parallax-in img{width:130px; margin-bottom:20px;}
 .ad{width:100%; height:8px; background-color:#ececec;}
 .menu6{margin:20px 0 40px 0;}
