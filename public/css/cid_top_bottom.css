@@ -44,7 +44,7 @@
 /* CSS Document */
 /* body{font-family:'Noto-Bold'; font-weight:bold;} */
 
-body{font-family: 'Nanum Gothic', serif;}
+/*body{font-family: 'Nanum Gothic', serif;}*/
 
 /*.header{height: 70px; margin:0; width:100%; position: fixed; background-color:white;
 z-index: 999; box-shadow: 0px -5px 20px #222; top:0;}*//* 2017년 5월 16일 TOP - 정기훈 수정 css 수정*/
@@ -78,7 +78,7 @@ header .search{padding-top:19px; padding-right:0;}
 	border: solid 1px #1b87c9;
 }
 .mob-footer{display:none;}
-.web-footer{width:100%; height:auto; background-color:#ececec; padding:30px 0; color:#82878b; line-height:1.5em; font-weight:bold;}
+.web-footer{width:100%; height:auto; background-color:#ececec; padding:30px 0; color:#82878b; line-height:1.5em;}
 .web-footer .about p{font-size:20px; color:#1b87c9;}
 .web-footer .about p a{color:#9fa4a8;}
 .web-footer .line-about{width:auto; height:3px; background-color:#1b87c9; margin:-8px 0 10px 0;}

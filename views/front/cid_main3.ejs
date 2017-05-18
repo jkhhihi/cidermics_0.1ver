@@ -184,7 +184,7 @@ $(document).ready(function(){
 
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <a href="/lecture/detail/4"><img class="img-responsive" src="http://i.imgur.com/6J7HCrK.jpg" onclick="ga('send','event','삼박자투자법','버튼클릭','삼박자메인' );"></a>
+      <a href="/lecture/detail/4"><img class="img-responsive" src="http://i.imgur.com/Yph9rRY.jpg" onclick="ga('send','event','삼박자투자법','버튼클릭','삼박자메인' );"></a>
     </div>
     <div class="item">
       <a href="/finance/necessary"><img class="img-responsive" src="http://i.imgur.com/QkOUVl7.jpg"></a>
@@ -216,6 +216,368 @@ $(document).ready(function(){
 </div>
 	
 	
+
+  
+  
+<!--         모바일 콘텐츠              -->
+
+<div class="mob_menu6_con container row">
+
+  <div class="new-con col-xs-12">
+    <div class="menu-title row" >
+      <div class="col-xs-8 padding-0">최신 콘텐츠</div>
+      <div class="col-xs-4 padding-0" align="right"><a href="/contents/all"><p class="plus">더보기 ></p></a></div>
+    </div>
+    <!-- 콘텐츠 뿌림 시작 -->
+    <div class="con-in row" align="center" style="margin-left:0 !important; margin-right:2px !important;">
+      <!-- 재무 상담 콘텐츠 목록 맨 앞줄에 넣는 거 재무할때만.-->
+      <!--div class="col-xs-4" style="padding-right:0 !important; padding-left:2px !important;">
+        <div class="thumnail">
+          <a href="/finance/necessary">
+          <div class="con-img">
+            <div class="con-thumbnail"><img class="img-responsive" src="http://i.imgur.com/ul8mTak.jpg"></div>
+          </div>
+          <div class="con-title1">2017년 5월, 사이다재무상담 오픈!</div>
+          </a>
+        </div>
+      </div-->
+
+      <!-- 설문조사 -->
+
+      <!--div class="col-xs-4" style="padding-right:0 !important; padding-left:2px !important;">
+        <div class="thumnail">
+          <a href="/survey">
+          <div class="con-img">
+            <div class="con-thumbnail"><img class="img-responsive" src="http://i.imgur.com/Bb6Sbk8.jpg"></div>
+          </div>
+          <div class="con-title1">사이다경제 설문조사</div>
+          </a>
+        </div>
+      </div-->
+
+      <% for(var i=0; i < contents.length; i++) { %>
+      <div class="col-xs-4" style="padding-right:0 !important; padding-left:2px !important;">
+        <div class="new-mark"><img class="img-responsive" src="<%= contents[i].chkDat%>"></div>
+        <div class="thumnail">
+          <a href="/contents/detail/<%= contents[i].con_no %>">
+          <div class="con-img">
+            <div class="con-thumbnail"><img class="img-responsive" src="<%= contents[i].con_photo %>"></div>
+          </div>
+          <div class="con-title1"><%= contents[i].con_title %></div>
+          </a>
+        </div>
+      </div>
+      <% } %>
+    </div>
+    <!-- 콘텐츠 뿌림 끝 -->
+  </div>
+  
+  <div class="section-line col-xs-12"></div>
+  <div class="popular-con swiper-container col-xs-12">
+    <div class="menu-title row" >
+      <div class="col-xs-8 padding-0">인기 콘텐츠</div><div class="col-xs-4 padding-0" align="right"><a href="/contents"><p class="plus">더보기 ></p></a></div>
+    </div>
+    <!-- 콘텐츠 뿌림 시작 -->    
+    <div class="con-in swiper-wrapper" align="center">
+    <% for(var i=0; i < popular.length; i++) { %>
+      <div class="swiper-slide">
+        <div class="new-mark"><img class="img-responsive" src="<%= popular[i].chkDat%>"></div>
+        <div class="thumnail">
+          <a href="/contents/detail/<%= popular[i].con_no %>">
+          <div class="con-img">
+            <div class="con-thumbnail"><img class="img-responsive" src="<%= popular[i].con_photo %>"></div>
+          </div>
+          <div class="con-title"><%= popular[i].con_title %></div>
+          </a>
+        </div>
+      </div>
+      <% } %>
+    </div>
+    <!-- 콘텐츠 뿌림 끝 -->
+  </div>
+  
+  
+  <!-- 광고 -->
+  <div class="ad col-xs-12"></div>
+    <a href="/podcast"><img class="img-responsive" src="http://i.imgur.com/GDZGS6y.jpg"></a>
+  <div class="ad col-xs-12" style="margin-bottom:10px;"></div>
+  
+  
+  <!--  div class="section-line col-xs-12"></div -->  
+  <div class="plan-con swiper-container col-xs-12">
+    <div class="menu-title row" >
+      <div class="col-xs-8 padding-0">기획 콘텐츠</div><div class="col-xs-4 padding-0" align="right"><a href="/project"><p class="plus">더보기 ></p></a></div>
+    </div>
+    <!-- 콘텐츠 뿌림 시작 -->    
+    <div class="con-in swiper-wrapper" align="center">
+    <% for(var i=0; i < project.length; i++) { %>
+      <div class="swiper-slide">
+        <div class="new-mark"><img class="img-responsive" src="<%= project[i].chkDat%>"></div>
+        <div class="thumnail">
+          <a href="/contents/detail/<%= project[i].con_no %>">
+          <div class="con-img">
+            <div class="con-thumbnail"><img class="img-responsive" src="<%= project[i].con_photo %>"></div>
+          </div>
+          <div class="con-title"><%= project[i].con_title %></div>
+          </a>
+        </div>
+      </div>
+    <% } %>
+    </div>
+    <!-- 콘텐츠 뿌림 끝 -->
+  </div>  
+    <!-- 재무리얼후기 모바일 -->
+  <div class="section-line col-xs-12"></div>    
+  <div class="col-xs-12">
+    <div class="review-con row">
+      <div class="menu-title row" >
+        <div class="col-xs-8 padding-0">사이다재무 - 생생 후기</div><div class="col-xs-4 padding-0" align="right"><a href="/finance/review"><p class="plus">더보기 ></p></a></div>
+      </div>
+      <!-- 콘텐츠 뿌림 시작 -->    
+      <div id="text-carousel2" class="carousel slide" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="con-in row" align="center" style="margin-left:0; margin-right:0;">
+          <div class="col-xs-12 border-box">
+              <ol class="carousel-indicators">
+                <li data-target="#text-carousel2" data-slide-to="0" class="active"></li>
+                <li data-target="#text-carousel2" data-slide-to="1"></li>
+                <li data-target="#text-carousel2" data-slide-to="2"></li>
+              </ol>         
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                      <a href="/finance/review/">
+               <p><B>후기 " <%= rev[0].rev_QA1 %> "</B></p>
+                    <p><%= rev[0].rev_title %></p>
+              </a>
+                </div>
+                <% for(var i=1; i < rev.length; i++) { %>
+                 <div class="item">
+                  <a href="/finance/review/">
+                <p><B>후기 " <%= rev[i].rev_QA1 %> "</B></p>
+              <p><%= rev[i].rev_title %></p>
+              </a>
+                    </div>
+                  <% } %>
+                </div>
+          </div>
+        </div>
+        <!-- Controls --> 
+        <a class="left carousel-control" href="#text-carousel2" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+      <a class="right carousel-control" href="#text-carousel2" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      <!-- 콘텐츠 뿌림 끝 --> 
+      </div>
+    </div>
+  </div>
+  
+      <!-- 광고 -->
+  <div class="ad col-xs-12"></div>
+    <a href="http://shop.demasian.com"><img class="img-responsive" src="http://i.imgur.com/vdwLa1n.jpg"></a>
+  <div class="ad col-xs-12" style="margin-bottom:10px;"></div>
+  
+
+    <!-- books 모바일  -->
+  <!--  div class="section-line col-xs-12"></div -->  
+  <div class="books-con swiper-container col-xs-12">
+    <div class="menu-title row" >
+      <div class="col-xs-8 padding-0">사이다Books</div><div class="col-xs-4 padding-0" align="right"><a href="/books"><p class="plus">더보기 ></p></a></div>
+    </div>
+    <!-- 콘텐츠 뿌림 시작 -->    
+    <div class="con-in swiper-wrapper" align="center">
+    <% for(var i=0; i < books.length; i++) { %>
+      <div class="swiper-slide">
+        <div class="new-mark"><img class="img-responsive" src="<%= books[i].chkDat%>"></div>
+        <div class="thumnail">
+          <a href="/contents/detail/<%= books[i].con_no %>">
+          <div class="con-img">
+            <div class="con-thumbnail"><img class="img-responsive" src="<%= books[i].con_photo %>"></div>
+          </div>
+          <div class="con-title"><%= books[i].con_title %></div>
+          </a>
+        </div>
+      </div>
+    <% } %>
+    </div>
+    <!-- 콘텐츠 뿌림 끝 -->
+  </div>  
+
+  
+  
+  <div class="section-line col-xs-12"></div>  
+  <div class="podcast-con swiper-container col-xs-12">
+    <div class="menu-title row" >
+      <div class="col-xs-8 padding-0">팟캐스트</div><div class="col-xs-4 padding-0" align="right"><a href="/podcast"><p class="plus">더보기 ></p></a></div>
+    </div>
+    <!-- 콘텐츠 뿌림 시작 -->    
+    <div class="con-in swiper-wrapper" align="center">
+      <% for(var i=0; i < podcast.length; i++) { %>
+      <div class="swiper-slide">
+        <div class="new-mark"><img class="img-responsive" src="<%= podcast[i].chkDat%>"></div>
+        <div class="thumnail">
+          <a href="/contents/detail/<%= podcast[i].con_no %>">
+          <div class="con-img">
+            <div class="con-thumbnail"><img class="img-responsive" src="<%= podcast[i].con_photo %>"></div>
+          </div>
+          <div class="con-title"><%= podcast[i].con_title %></div>
+          </a>
+        </div>
+      </div>
+    <% } %>
+    </div>
+    <!-- 콘텐츠 뿌림 끝 -->
+  </div>
+  
+      <!-- 광고 -->
+  <div class="ad col-xs-12"></div>
+    <a href="http://plus.kakao.com/home/@%EC%82%AC%EC%9D%B4%EB%8B%A4%EA%B2%BD%EC%A0%9C"><img class="img-responsive" src="http://i.imgur.com/qBgiXX9.jpg"></a>
+  <div class="ad col-xs-12" style="margin-bottom:10px;"></div>
+  
+  <!-- div class="section-line col-xs-12"></div --> 
+  <div class="discuss-con col-xs-12">
+    <div class="menu-title row" >
+      <div class="col-xs-8 padding-0">사이다토론</div><div class="col-xs-4 padding-0" align="right"><a href="/discuss"><p class="plus">더보기 ></p></a></div>
+    </div>
+    <!-- 콘텐츠 뿌림 시작 -->    
+    <div class="con-in row" align="center" style="margin-left:0; margin-right:0">
+    <% for(var i=0; i < discuss.length; i++) { %>
+      <div class="col-xs-12 mg-bot">
+        <div class="row">
+          <a href="/discuss/detail/<%= discuss[i].dis_no%>"><div class="dis-title col-xs-12"><p>"<%= discuss[i].dis_title%>"</p></div></a>
+          <div class="dis-img col-xs-12" align="right">
+            <div class="dis-icon row">
+              <!-- img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-like.png" ><p style="display:inline-block;">52</p -->
+              <img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-comment1.svg" ><!--p style="display:inline-block;">39</p--> 
+            </div>  
+          </div>
+          <div class="dis-bg-img col-xs-12"><a href="/discuss/detail/<%= discuss[i].dis_no%>"><div class="dis-black-box"></div><img class="img-responsive" src="<%= discuss[i].dis_thum%>"></a></div> 
+        </div>
+      </div>
+      <% } %>       
+    </div>
+    <!-- 콘텐츠 뿌림 끝 -->
+  </div>
+
+
+  <div class="section-line col-xs-12"></div>  
+  <div class="col-xs-12" align="center">
+  
+    <!-- 경제 금융 기업 주식 카테고리별 콘텐츠 나오는것 -->
+    <div class="main-con row" align="center"> 
+      <div class="menu-title">  
+      <ul class="nav nav-tabs row" style="margin-right:0; margin-left:0;">
+          <li class="active col-xs-3"><a data-toggle="tab" href="#home_1" style="padding:10px 1px;"><img class="img-responsive" src="/page_imgs/main_img/icon-con-menu1.png">경제</a></li>
+          <li class="col-xs-3"><a data-toggle="tab" href="#menu_1" style="padding:10px 1px;"><img class="img-responsive" src="/page_imgs/main_img/icon-con-menu2.png">금융</a></li>
+          <li class="col-xs-3"><a data-toggle="tab" href="#menu_2" style="padding:10px 1px;"><img class="img-responsive" src="/page_imgs/main_img/icon-con-menu3.png">기업</a></li>
+          <li class="col-xs-3"><a data-toggle="tab" href="#menu_3" style="padding:10px 1px;"><img class="img-responsive" src="/page_imgs/main_img/icon-con-menu4.png">주식</a></li>
+        </ul>
+      </div>
+     </div>
+     <div class="tab-content">
+      <div id="home_1" class="con-in row tab-pane fade in active">
+        <% for(var i=0; i < economics.length; i++) { %>
+        <div class="col-md-6">
+          <div class="new-mark"><img class="img-responsive" src="<%= economics[i].chkDat%>"></div>
+          <div class="thumnail">
+            <a href="/contents/detail/<%= economics[i].con_no %>">
+            <div class="con-img">
+              <div class="con-thumbnail"><img class="img-responsive" src="<%= economics[i].con_photo %>"></div>
+            </div>
+            <div class="con-title"><%= economics[i].con_title %></div>
+            </a>
+          </div>      
+        </div>
+        <% } %>
+        <div class="col-xs-12">
+          <div id="moreContents" style="width:100%; text-align:center;"><a href="/contents/1">더보기</a></div>   
+        </div>
+        </div>
+        <div id="menu_1" class="con-in row tab-pane fade">
+        <% for(var i=0; i < finance.length; i++) { %>
+        <div class="col-md-6">
+          <div class="new-mark"><img class="img-responsive" src="<%= finance[i].chkDat%>"></div>
+          <div class="thumnail">
+            <a href="/contents/detail/<%= finance[i].con_no %>">
+            <div class="con-img">
+              <div class="con-thumbnail"><img class="img-responsive" src="<%= finance[i].con_photo %>"></div>
+            </div>
+            <div class="con-title"><%= finance[i].con_title %></div>
+            </a>
+          </div>      
+        </div>
+        <% } %>
+        <div class="col-xs-12">
+          <div id="moreContents" style="width:100%; text-align:center;"><a href="/contents/2">더보기</a></div>   
+        </div>
+        </div>
+        <div id="menu_2" class="con-in row tab-pane fade">
+        <% for(var i=0; i < company.length; i++) { %>
+        <div class="col-md-6">
+          <div class="new-mark"><img class="img-responsive" src="<%= company[i].chkDat%>"></div>
+          <div class="thumnail">
+            <a href="/contents/detail/<%= company[i].con_no %>">
+            <div class="con-img">
+              <div class="con-thumbnail"><img class="img-responsive" src="<%= company[i].con_photo %>"></div>
+            </div>
+            <div class="con-title"><%= company[i].con_title %></div>
+            </a>
+          </div>      
+        </div>
+        <% } %>
+        <div class="col-xs-12">
+          <div id="moreContents" style="width:100%; text-align:center;"><a href="/contents/3">더보기</a></div>   
+        </div>
+        </div>
+        <div id="menu_3" class="con-in row tab-pane fade">
+        <% for(var i=0; i < stock.length; i++) { %>
+        <div class="col-md-6">
+          <div class="new-mark"><img class="img-responsive" src="<%= stock[i].chkDat%>"></div>
+          <div class="thumnail">
+            <a href="/contents/detail/<%= stock[i].con_no %>">
+            <div class="con-img">
+              <div class="con-thumbnail"><img class="img-responsive" src="<%= stock[i].con_photo %>"></div>
+            </div>
+            <div class="con-title"><%= stock[i].con_title %></div>
+            </a>
+          </div>
+        </div>
+        <% } %>
+        <div class="col-xs-12">
+          <div id="moreContents" style="width:100%; text-align:center;"><a href="/contents/4">더보기</a></div>   
+        </div>
+        </div>
+    </div>
+  </div>
+
+      <!-- 강의 모바일 -->
+  <div class="section-line col-xs-12"></div>  
+  
+  <div class="discuss-con col-md-6 col-xs-12">
+    <div class="menu-title row" >
+      <div class="col-xs-8 padding-0">사이다강의</div><div class="col-xs-4 padding-0" align="right"><a href="/lecture"><p class="plus">더보기 ></p></a></div>
+    </div>
+    <div class="con-in row" align="center" style="margin-left:0; margin-right:0">
+    
+
+      <div class="col-xs-12 mg-bot">
+        <div class="row">
+          <a href="/lecture/detail/4">
+            <div class="dis-title1 col-xs-12"><p>"삼박자 투자법"</p></div>
+          </a>
+          <div class="dis-bg-img col-xs-12">
+          <a href="/lecture/detail/4"><div class="dis-black-box"></div>
+          <img class="img-responsive" width="100%" src="http://i.imgur.com/Nk5dGQo.jpg"></a>
+          </div>  
+        </div>
+      </div>
+
+      
+    </div>
+  </div>
 
 
 </div>	
