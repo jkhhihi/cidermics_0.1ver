@@ -151,17 +151,24 @@
 		</div>
 </div>
 
-
+<style type="text/css">
+	.con_border{
+		border: 1px solid #ececec;
+		border-radius: 6px;
+		padding-bottom: 10px;
+		margin: 10 10;
+	}
+</style>
 
 <!--콘텐츠뿌림-->
 <div class="contents container">
 		<ul class="grid effect-2" id="grid">
 				<% for(var i=0; i<contents.length; i++) { %>
 				<li>
-				<div>
-					<a href="/contents/detail/<%= contents[i].con_no %>">
+				<div class="con_border">
+					<a href="/contents/detail/<%= contents[i].con_no %>" style="margin-top: 0px;">
 					<div class="con-img" align="center"><img class="img-responsive" src="<%= contents[i].con_photo %>"></div></a>
-					<p><a href="/contents/detail/<%= contents[i].con_no %>">
+					<p><a href="/contents/detail/<%= contents[i].con_no %>" style="margin: 10px 10px;">
 						<%= contents[i].con_title %></a></p>
 				</div>
 			</li>

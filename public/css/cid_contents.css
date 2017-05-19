@@ -27,7 +27,7 @@ br{line-height:1.5em;}
 /*인기*/
 .main-contents{background-color:#ffffff; box-shadow:0 8px 10px rgba(0, 0, 0, 0.8); padding-top:50px;}
 .main-contents .contents-menu .menu img{margin:0 15px 20px 15px;}
-.main-contents .contents{font-size:14px; text-align:center; font-weight:bold;}
+.main-contents .contents{font-size:14px; text-align:center; }
 .main-contents .contents div div p{margin-top:20px;}
 .main-contents .contents .icon-plus_con{margin:60px 0 50px 0;}
 .main-contents .contents-mob_menu{display:none;}
@@ -75,10 +75,10 @@ color:#ff574a; border-bottom:3px solid #ff574a; font-weight:900;}
 .pre-next .con-next{height:150px; background-color:#c3c0c0fc; color:#000000; font-size:16px; border: 1px solid #988585;}
 .con-next p{margin-top:10px;}
 .con-next p.next-title{font-size:18px; line-height:1.5em;}
-.recommendation{font-size:16px; text-align:center; font-weight:bold; margin-top:50px;}
+.recommendation{font-size:14px; text-align:center; margin-top:50px;}
 .recommendation-con{width:86% !important;}
 .recommendation .recommendation-title p{margin:30px 0 20px 0; font-size:18px; padding-bottom:10px;
-color:#212121; border-bottom:4px solid #ececec; font-family:'Godo'; font-weight:400;}
+color:#212121; border-bottom:4px solid #ececec;}
 /*.recommendation div{margin:10px 0 50px 0;}*/
 .recommendation p{margin-top:20px;}
 .recommendation a:hover{color:#333;}
@@ -90,7 +90,7 @@ color:#212121; border-bottom:4px solid #ececec; font-family:'Godo'; font-weight:
 
 /*팟캐스트*/
 .podcast-main{margin-top:70px; /*font-family:'BM JUA','배달의민족 주아',sans-serif;*/ font-weight:bold;}
-.podcast .padcast-title{font-size:18px; color:#212121; border-bottom:4px solid #ececec; margin:20px 0; font-family:'Godo'; font-weight:400;}
+.podcast .padcast-title{font-size:18px; color:#212121; border-bottom:4px solid #ececec; margin:20px 0; }
 .podcast .padcast-title img{margin:20px 0;}
 .podcast-con{margin:20px 0;}
 .podcast-con .con-in{padding:0 30px; margin-bottom:30px; font-size:16px;}
@@ -98,7 +98,7 @@ color:#212121; border-bottom:4px solid #ececec; font-family:'Godo'; font-weight:
 .podcast-con .con-in .thum-img img{border:0 solid; border-radius:5px;}
 .podcast-con .con-plus p{width:200px; background-color:#e68a82; margin-top:50px;
 border:4px solid #ececec; border-radius:10px; color:#fff; font-size:18px; padding:10px 0;}
-.podcast-con .pod-radio{margin-bottom:40px; font-size:16px; font-family:'Godo'; font-weight:400;}
+.podcast-con .pod-radio{margin-bottom:40px; font-size:16px; }
 .podcast-con .pod-radio1, .pod-radio2{border:2px solid #e68a82; border-radius:5px; width:150px; padding:5px 0}
 .podcast-con .pod-radio1 p, .pod-radio2 p{margin:0;}
 .podcast-con .pod-radio img{margin-bottom:5px;}
@@ -106,7 +106,7 @@ border:4px solid #ececec; border-radius:10px; color:#fff; font-size:18px; paddin
 
 /*기획 콘텐츠*/
 .project-main{margin:60px 0;}
-.project-title{border-bottom:4px solid #ececec; font-size:18px; color:#212121; margin:20px 0; font-family:'Godo'; font-weight:400;}
+.project-title{border-bottom:4px solid #ececec; font-size:18px; color:#212121; margin:20px 0;}
 .project-title img{margin:20px 0;}
 ./*project-con .banner img{width:100%;}*/
 .project-con .con-plus p{width:200px; background-color:#ececec; margin:50px 0 40px 0;
@@ -127,7 +127,7 @@ border:4px solid #1b87c9; border-radius:10px; color:#1b87c9; font-size:18px; pad
 
 /*책 콘텐츠*/
 .books-main{margin:50px 0;}
-.books-title{border-bottom:4px solid #ececec; font-size:18px; color:#212121; margin:20px 0; font-family:'Godo'; font-weight:400;}
+.books-title{border-bottom:4px solid #ececec; font-size:18px; color:#212121; margin:20px 0;}
 .books-title img{margin:20px 0;}
 
 @media all and (max-width:1024px) {
@@ -169,7 +169,7 @@ border:4px solid #1b87c9; border-radius:10px; color:#1b87c9; font-size:18px; pad
 .web-main-banner{display:none;}
 .mob-main-banner{display:block;}
 .mob-main-banner{margin:20px 0 50px 0;}
-.mob-main-banner p{font-family: "BMD", sans-serif; font-size:16px; color:#1b87c9; margin:20px 0 5px 5px;}
+.mob-main-banner p{font-size:16px; color:#1b87c9; margin:20px 0 5px 5px;}
 .like .btn-like img{width:50px;}
 .comment{width:98% !important; margin:30px 0 20px 0}
 .pre-next{margin:30px 0 20px 0; width:98% !important;}
@@ -180,7 +180,7 @@ border:4px solid #1b87c9; border-radius:10px; color:#1b87c9; font-size:18px; pad
 .con-next p{margin-top:10px;}
 .con-next p.next-title{font-size:14px; line-height:1.5em;}
 .title-recommendation{font-size:16px;}
-.recommendation{font-size:16px; width:100%; margin-top:15px;}
+.recommendation{font-size:14px; width:100%; margin-top:15px;}
 .recommendation-con{width:100% !important;}
 .recommendation .recommendation-title p{width:95%; border-bottom:3px solid #ececec;  padding-bottom:0;}
 /*.recommendation div{margin:10px 0 10px 0;}*/

@@ -469,7 +469,7 @@ document.getElementById("dis_cate_name").innerHTML = a;
 								<!--span style="color: red"><%= comtCount[0].comt_no %></span--></h6>
 								</button>
 
-								<div class="showComt" value="<%= comt[i].comt_no%>" id="showComt<%= comt[i].comt_no%>">
+								<div class="showComt" value="<%= comt[i].comt_no%>" id="showComt<%= comt[i].comt_no%>" style="display: none;">
 								
 									<form class="form-inline" method="post" action="/discuss/comtcomtPush" name="comtcoInsert" id="form-inline<%= comt[i].comt_no%>" target="_self">
 									<input type="hidden" name="dis_no" value="<%= comt[i].dis_no%>">
