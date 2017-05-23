@@ -1,18 +1,26 @@
 <html>
 <head>
 <style>
-.btnClick{width:100px; border:2px solid #666666; border-radius:4px; background-color:#ececec; color:#666666; padding:4px 6px; cursor:pointer}
+.btnClick{width:60px; border:2px solid #666666; border-radius:4px; background-color:#ececec; color:#666666; padding:4px 6px; cursor:pointer}
 h5 b{color:#ff6b6b; line-height:1.5em;}
 </style>
 </head>
 <body>
 <% include front/top %>
-<div align="center">
-<h2 style="margin:80px 0 10px 0"><b>ERROR</b></h2>
-<img class="img-responsive" src="/page_imgs/discuss_img/discuss-icon-no-comment1.svg" style="width:150px; margin-bottom:15px;">
-<h5><b>잘못된 경로입니다.<br>경로를 확인해주세요 :)</b></h5>
-<div class="btnClick"><b>자세히보기</b></div>
+<div class="btnClick" align="right" style="margin-top: 80px;"><b>▼</b></div>
+<div id="p-error" style="display:none;">
+	<div class="container">
+		<h1><%= message %></h1>
+		<h2><%= error.status %></h2>
+		<pre><%= error.stack %></pre>
+	</div>
 </div>
+<div align="center">
+<h2 style="margin:20px 0 10px 0"><b>ERROR</b></h2>
+<img class="img-responsive" src="/page_imgs/discuss_img/discuss-icon-no-comment1.svg" style="width:150px; margin-bottom:15px;">
+<h5><b>해당 페이지를 사용할 수 없습니다.</b><br><b>해당 페이지가 삭제되었거나, 일시적으로 다운 또는 네트워크 장애일 수 있습니다.</b></h5>
+</div>
+
 <script type="text/javascript">
 $('.btnClick').click(function(){
 	if($("#p-error").css("display") == "none"){
@@ -22,12 +30,6 @@ $('.btnClick').click(function(){
 	}
 });
 </script>
-<div id="p-error" style="display:none;">
-<div class="container">
-<!--h1><%= message %></h1-->
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
-</div>
-</div>
+
 </body>
 </html>

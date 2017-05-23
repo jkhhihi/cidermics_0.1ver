@@ -284,7 +284,10 @@ router.get('/finance/review', function(req, res, next) {
 
 	var finance;
 	var rev;
-	var fi_app_cate= rdate();
+	var fi_app_cate = rdate();
+	console.log(fi_app_cate[2]);
+	var rd = fi_app_cate[2]+fi_app_cate[3]+fi_app_cate[4]+fi_app_cate[5];
+	console.log(rd);
 	mysql.select("SELECT COUNT(*) AS appno FROM cider.cid_fi_applyform where fi_app_cate="+fi_app_cate+";", function (err, data){
 		
 		mysql.select('SELECT * FROM cider.cid_fi_review order by rev_no desc;', function (err, data2){
@@ -293,6 +296,16 @@ router.get('/finance/review', function(req, res, next) {
 	});
  });
 });
+
+router.get('/reviewDate/:rd', function(req, res, next) {
+
+	var rd = req.params.rd;
+	console.log(rd);
+	mysql.select('SELECT * FROM cider.cid_fi_review where rev_intDate = '+rd+' order by rev_no desc;', function (err, data){
+	res.send({ rd : data });
+	});
+});
+
 
 router.get('/finance/process', function(req, res, next) {
 

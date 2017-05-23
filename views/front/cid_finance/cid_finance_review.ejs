@@ -53,7 +53,65 @@ body { padding-right: 0px !important;}
 </div-->
 
 <% include cid_finance_menu %>
-<% for(var i=0; i<rev.length; i++) { %>
+
+
+<select onchange="review(this)">
+	<option value="1611">2016년 11월</option>
+	<option value="1612">2016년 12월</option>
+	<option value="1701">2017년 01월</option>
+	<option value="1702">2017년 02월</option>
+	<option value="1703">2017년 03월</option>
+	<option value="1704" selected="1704">2017년 04월</option>
+</select>
+
+<script type="text/javascript">
+	function review1(a){
+		var rd = a.value;
+		review1(rd);
+		document.getElementById("demo").innerHTML = rd;
+	}
+</script>
+<p id="demo"></p>
+<div class="grid effect-2" id="grid">
+</div>
+
+
+<script type="text/javascript">
+	function review(a){
+		var rd = a.value;
+		$.ajax({
+			url : '/reviewDate/'+ rd,
+			method : 'get',
+			success : function(data){
+				var ht="";
+				//idx ++;
+				//alert(rd);
+					$.each(data.rd, function (index, value){
+						ht += '<li> ' +
+									'<div align="center">'+
+									'<img class="img-responsive" src='+ value.rev_img +' data-toggle="modal" data-target="#coupon-modal'+value.rev_no+'">'+
+
+									'</div>'+
+							 		'<div class="con-border bg-w"> ' +
+							 			'<div class="con-title"><span><center>' + value.rev_title +'</center></span></div>' +
+							 		'</div> '+
+							  '</li> ';
+							
+					});
+
+					$('#grid').prepend(ht);
+					new AnimOnScroll( document.getElementById( 'grid' ), {
+						minDuration : 0.4,
+						maxDuration : 0.7,
+						viewportFactor : 0.2
+				} );
+
+			}
+		})
+	}
+</script>
+
+<% for(var i=0; i< rev.length; i++) { %>
 				<div id="coupon-modal<%=rev[i].rev_no%>" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" align="center" style="">
        			 <div class="modal-dialog modal-lg">
            		  <div class="modal-content">
@@ -75,12 +133,11 @@ body { padding-right: 0px !important;}
         		 </div>
     		    </div>
 <% } %>
-    		   
 <!--콘텐츠 들어갈 자리-->
-<div class="contents-finance container">
+<!--div class="contents-finance container">
 	
-			<ul class="grid effect-2" id="grid">
-				<% for(var i=0; i<rev.length; i++) { %>
+			<ul class="grid1 effect-2" id="grid1">
+				<% for(var i=0; i< rev.length; i++) { %>
 				<li>
 				<div align="center">
 					
@@ -89,14 +146,12 @@ body { padding-right: 0px !important;}
 				</div>
 				
 				<div class="con row">	
-					<p><a href="#"><%=rev[i].rev_title%></a></p>	
-					<!--div class="date col-xs-12 col-lg-6" align="left"><p>신청기간 : ~ 2016.11.17</p></div>
-					<div class="money col-xs-12 col-lg-6" align="right" ><p align="center" style = "height:33px;">무료</p><h6>* 선착순</h6></div-->
+					<p><a href="#"><%=rev[i].rev_title%></a></p>
 				</div>
 				</li>
 				<% } %>
 			</ul>
-</div>
+</div-->
 
 				
 
@@ -104,13 +159,13 @@ body { padding-right: 0px !important;}
 		<script src="/js/contents_js/imagesloaded.js"></script>
 		<script src="/js/contents_js/classie.js"></script>
 		<script src="/js/contents_js/AnimOnScroll.js"></script>
-		<script>
-			new AnimOnScroll( document.getElementById( 'grid' ), {
+		<!--script>
+			new AnimOnScroll( document.getElementById( 'grid1' ), {
 				minDuration : 0.4,
 				maxDuration : 0.7,
 				viewportFactor : 0.2
 			} );
-		</script>
+		</script-->
 
 
 <% include ../bottom %>
