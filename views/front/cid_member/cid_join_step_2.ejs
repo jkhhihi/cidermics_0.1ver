@@ -90,6 +90,7 @@ function mem_join_next(){
             return;
          }
 		}
+		alert("회원정보가 성공적으로 작성되었습니다.")
 	 
 	 	document.mem_join.submit();
 }
@@ -123,10 +124,10 @@ $(function(){
             	//alert(data.emailchk);
                 if($.trim(data.emailchk) == "YES"){
                     //alert('사용불가');
-                    $('#idchk').html('<b style="font-size:14px;color:#ff574a;">*이미 등록된 이메일 주소입니다.(중복확인 필수)<input type="hidden" name="idexist" value="1"></b>');
+                    $('#idchk').html('<b style="font-size:14px;color:#ff574a;">*이미 등록된 이메일 주소입니다.(중복확인을 눌러주세요.)<input type="hidden" name="idexist" value="1"></b>');
                 }else{
                     //alert('사용가능');
-                    $('#idchk').html('<b style="font-size:14px;color:#1d87c9">사용 가능한 이메일 주소입니다.(중복확인 필수)</b>');
+                    $('#idchk').html('<b style="font-size:14px;color:#1d87c9">사용 가능한 이메일 주소입니다.(중복확인을 눌러주세요.)</b>');
                     
                 }
             }

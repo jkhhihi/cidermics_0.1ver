@@ -151,7 +151,7 @@ body { padding-right: 0px !important }
 							<% if ( memidval.length == 0) { %>
 							<button onclick="clipping()" style="color: red;">스크랩하기 <%= sePass %></button>
 							<% } else { %>
-							<button style="color: red;">스크랩 이미 되어있음.</button>
+							<button onclick="clipping_del(id)" style="color: red;" id="<%= memidval[0].cli_no %>">스크랩 이미 되어있음. <% var cli_no = memidval[0].cli_no; %><%= cli_no %></button>
 							<% } %>
 							<span class="date"><%= contents[0].con_upDate %></span><br>
 							<span class="cate_name"><%= contents[0].cate_name %></span><br>
@@ -174,7 +174,7 @@ body { padding-right: 0px !important }
 			alert("로그인이 필요합니다.");
 			location.href="/mem_login";
 		}else if(sePasschk == '<%=sePass%>'){
-			alert("OK");
+			alert("스크랩 되었습니다.");
 			$.ajax({
 				url : '/clipping/'+sePasschk+"&"+no,
 				dataType: 'json',
@@ -195,6 +195,24 @@ body { padding-right: 0px !important }
 		}
 
 	}
+
+		function clipping_del(id) {
+		var no = '<%=contents[0].con_no%>';
+
+			alert("스크랩이 삭제되었습니다.");
+			$.ajax({
+				url : '/clipping_del/'+id+"&"+no,
+				dataType: 'json',
+				method : 'post',
+
+				success : function(data){
+				location.reload();
+				}
+				
+			  });
+
+	}
+
 </script>
 <div class="mob-bg-gray">
 <div class="mob-bg-white container">		

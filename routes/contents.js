@@ -179,7 +179,7 @@ router.get('/contents/detail/:no', function(req, res, next) {
 	var next = {};
 	var pre = {};
 
-	mysql.select("select mem_id from cider.cid_clipping where mem_id = '"+mem_id+"' and con_no = "+no+"", function(err,data3){
+	mysql.select("select mem_id, cli_no from cider.cid_clipping where mem_id = '"+mem_id+"' and con_no = "+no+"", function(err,data3){
 
 
 	mysql.update('update cider.cid_contents set con_viewCount = con_viewCount + 1 where con_no = ?', [no] ,function (err, data){
@@ -217,7 +217,6 @@ router.get('/contents/detail/:no', function(req, res, next) {
 							res.redirect('back');
 						}
 						var cmore = data2;
-						console.log(data2);
 
 				res.render('front/cid_contents/cid_contents_detail', {contents : contents, preNext : data, cont : row, cmore:cmore,sePass:mem_id, memidval : data3 });
 			  });
@@ -243,6 +242,18 @@ router.post('/clipping/:sePasschk&:no', function(req, res, next) {
 		//res.send('<script>location.reload()</script>');
 		//res.redirect('/');
 	});
+});
+
+router.post('/clipping_del/:id&:no', function(req, res, next) {
+	var clino = req.params.id;
+	var no = req.params.no;
+	mysql.del('delete from cider.cid_clipping where con_no = '+ no +' and cli_no='+clino+'', function (err, data){
+		if(err){
+			res.redirect('back');
+		}else{
+			res.redirect('back');
+		}
+    });
 });
 
 
