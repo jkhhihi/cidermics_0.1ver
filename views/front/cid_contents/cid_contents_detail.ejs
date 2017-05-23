@@ -314,26 +314,26 @@ body { padding-right: 0px !important }
 								<% if ( contents[0].user_profile_img == 1 ){ %>
 
 								<div class="col-xs-12 editor-sns" align="right">
-								<a href="<%= contents[0].user_sns_url%>"><img src="/page_imgs/contents_img/sns_1.png" width="70" height="70"></a>
+								<a href="<%= contents[0].user_sns_url%>"><img src="/page_imgs/contents_img/sns_1.png" width="70" height="70" onclick="ga('send','event','에디터프로필클릭','버튼클릭','<%= contents[0].con_writer %>' );"></a>
 								</div>
 								<% } else if ( contents[0].user_profile_img == 2 ) { %>
 								<div class="col-xs-12 editor-sns" align="right">
-								<a href="<%= contents[0].user_sns_url%>"><img src="/page_imgs/contents_img/sns_2.png" width="70" height="70"></a> 
+								<a href="<%= contents[0].user_sns_url%>"><img src="/page_imgs/contents_img/sns_2.png" width="70" height="70" onclick="ga('send','event','에디터프로필클릭','버튼클릭','<%= contents[0].con_writer %>' );"></a> 
 								</div>
 
 								<% } else if ( contents[0].user_profile_img == 3 ) { %>
 								<div class="col-xs-12 editor-sns" align="right">
-								<a href="<%= contents[0].user_sns_url%>"><img src="/page_imgs/contents_img/sns_3.png" width="70" height="70"></a> 
+								<a href="<%= contents[0].user_sns_url%>"><img src="/page_imgs/contents_img/sns_3.png" width="70" height="70" onclick="ga('send','event','에디터프로필클릭','버튼클릭','<%= contents[0].con_writer %>' );"></a> 
 								</div>
 
 								<% } else if ( contents[0].user_profile_img == 4 ) { %>
 								<div class="col-xs-12 editor-sns" align="right">
-								<a href="<%= contents[0].user_sns_url%>"><img src="/page_imgs/contents_img/sns_4.png" width="70" height="70"></a> 
+								<a href="<%= contents[0].user_sns_url%>"><img src="/page_imgs/contents_img/sns_4.png" width="70" height="70" onclick="ga('send','event','에디터프로필클릭','버튼클릭','<%= contents[0].con_writer %>' );"></a> 
 								</div>
 
 								<% } else if ( contents[0].user_profile_img == 5 ) { %>
 								<div class="col-xs-12 editor-sns" align="right">
-								<a href="<%= contents[0].user_sns_url%>"><img src="/page_imgs/contents_img/sns_5.png" width="70" height="70"></a> 
+								<a href="<%= contents[0].user_sns_url%>"><img src="/page_imgs/contents_img/sns_5.png" width="70" height="70" onclick="ga('send','event','에디터프로필클릭','버튼클릭','<%= contents[0].con_writer %>' );"></a> 
 								</div>
 
 								<% } else { %>
