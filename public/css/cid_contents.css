@@ -89,7 +89,7 @@ color:#212121; border-bottom:4px solid #ececec;}
 .con-img img{width:100%;}
 
 /*팟캐스트*/
-.podcast-main{margin-top:70px; /*font-family:'BM JUA','배달의민족 주아',sans-serif;*/ font-weight:bold;}
+.podcast-main{margin-top:70px; /*font-family:'BM JUA','배달의민족 주아',sans-serif;*/}
 .podcast .padcast-title{font-size:18px; color:#212121; border-bottom:4px solid #ececec; margin:20px 0; }
 .podcast .padcast-title img{margin:20px 0;}
 .podcast-con{margin:20px 0;}
