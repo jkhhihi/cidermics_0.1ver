@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>상담 후기 - 사이다경제 | 재무</title>
-<link href="/css/bootstrap.min.css" rel="stylesheet">
+<!--link href="/css/bootstrap.min.css" rel="stylesheet"-->
 <link href="/css/cid_finance.css" rel="stylesheet">
 <link href="/css/swiper.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -40,6 +40,7 @@
 .modal-body .modal-paper{padding: 5px 0px 10px 0px; width:80%;}
 .modal-lg{max-width:500px;}
 body { padding-right: 0px !important;}
+
 </style>
 </head>
 <body  style="overflow:scroll;">
@@ -54,7 +55,7 @@ body { padding-right: 0px !important;}
 
 <% include cid_finance_menu %>
 
-
+<div align="center" style="padding-top: 10px;">
 <select onchange="review(this)">
 	<option value="1611">2016년 11월</option>
 	<option value="1612">2016년 12월</option>
@@ -63,15 +64,8 @@ body { padding-right: 0px !important;}
 	<option value="1703">2017년 03월</option>
 	<option value="1704" selected="1704">2017년 04월</option>
 </select>
+</div>
 
-<script type="text/javascript">
-	function review1(a){
-		var rd = a.value;
-		review1(rd);
-		document.getElementById("demo").innerHTML = rd;
-	}
-</script>
-<p id="demo"></p>
 <div class="grid effect-2" id="grid">
 </div>
 
@@ -99,7 +93,7 @@ body { padding-right: 0px !important;}
 							
 					});
 
-					$('#grid').prepend(ht);
+					$('#grid').html(ht);
 					new AnimOnScroll( document.getElementById( 'grid' ), {
 						minDuration : 0.4,
 						maxDuration : 0.7,
@@ -116,10 +110,9 @@ body { padding-right: 0px !important;}
        			 <div class="modal-dialog modal-lg">
            		  <div class="modal-content">
                 	 <div class="modal-header">
-                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                     <!--button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button-->
                      <h4 class="modal-title"><b>생생 후기</b></h4><h6 align="left" style="margin-bottom: 0px;">상담 날짜 : <%=rev[i].rev_regDate%></h6>
                 	 </div>
-                	 
                 	 <div class="modal-body">
                    		<img class="img-responsive" src="<%= rev[i].rev_img %>">
                    		<img class="img-responsive" src="/page_imgs/finance_img/review/Q1.png">
@@ -134,38 +127,35 @@ body { padding-right: 0px !important;}
     		    </div>
 <% } %>
 <!--콘텐츠 들어갈 자리-->
-<!--div class="contents-finance container">
 	
-			<ul class="grid1 effect-2" id="grid1">
-				<% for(var i=0; i< rev.length; i++) { %>
+			<div class="grid effect-2" id="grid1">
+				<% for(var i=0; i< rev2.length; i++) { %>
 				<li>
 				<div align="center">
 					
-					<img class="img-responsive" src="<%= rev[i].rev_img %>" data-toggle="modal" data-target="#coupon-modal<%=rev[i].rev_no%>">
+					<img class="img-responsive" src="<%= rev[i].rev_img %>" data-toggle="modal" data-target="#coupon-modal<%=rev[i].rev_no%>" >
 					
 				</div>
 				
 				<div class="con row">	
-					<p><a href="#"><%=rev[i].rev_title%></a></p>
+					<span><center><%=rev2[i].rev_title%></center></span></p>
 				</div>
 				</li>
 				<% } %>
-			</ul>
-</div-->
-
+			</div>
 				
 
 		<script src="/js/contents_js/masonry.pkgd.min.js"></script>
 		<script src="/js/contents_js/imagesloaded.js"></script>
 		<script src="/js/contents_js/classie.js"></script>
 		<script src="/js/contents_js/AnimOnScroll.js"></script>
-		<!--script>
+		<script>
 			new AnimOnScroll( document.getElementById( 'grid1' ), {
 				minDuration : 0.4,
 				maxDuration : 0.7,
 				viewportFactor : 0.2
 			} );
-		</script-->
+		</script>
 
 
 <% include ../bottom %>
