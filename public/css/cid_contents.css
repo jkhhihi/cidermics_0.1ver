@@ -182,7 +182,7 @@ border:4px solid #1b87c9; border-radius:10px; color:#1b87c9; font-size:18px; pad
 .title-recommendation{font-size:16px;}
 .recommendation{font-size:14px; width:100%; margin-top:15px;}
 .recommendation-con{width:100% !important;}
-.recommendation .recommendation-title p{width:95%; border-bottom:3px solid #ececec;  padding-bottom:0;}
+.recommendation .recommendation-title p{width:95%; border-bottom:3px solid #ececec;  padding-bottom:10px;}
 /*.recommendation div{margin:10px 0 10px 0;}*/
 .recommendation p{margin-top:10px;}
 .contents .row .col-sm-4, .col-xs-6{padding:0 5px 0 5px;}
