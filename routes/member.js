@@ -305,7 +305,7 @@ router.get('/mypage', function(req, res, next) {
 	mysql.select('select * from cider.cid_member where mem_id =\''+mem_id+'\'', function (err, data){
 
 		var memVal = data;
-		mysql.select('SELECT * FROM cider.cid_clipping where mem_id =\''+mem_id+'\'', function (err, data){
+		mysql.select('SELECT * FROM cider.cid_clipping where mem_id =\''+mem_id+'\' order by reg_date desc;', function (err, data){
 		var clipping = data;
 
 	res.render('front/cid_member/mypage', {memVal:memVal, clip : clipping});
