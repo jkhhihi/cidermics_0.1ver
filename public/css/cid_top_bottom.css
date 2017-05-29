@@ -59,7 +59,7 @@ a{color:#333; text-decoration:none;}
 
 header div{float:left;}
 /*header .menu{font-size:16px; font-weight:600; height:70px;}*/ /* 2017년 5월 16일 TOP - 정기훈 수정 css 삭제*/
-.menu{font-size:15px; font-weight:600;} /* 2017년 5월 16일 TOP - 정기훈 수정 css 추가*/
+.menu{font-size:14px; font-weight:600;} /* 2017년 5월 16일 TOP - 정기훈 수정 css 추가*/
 header .login{padding-right:20px; font-size:14px; padding-top: :16px;}
 header .login a{color:#212121;}
 header .search{padding-top:19px; padding-right:0;}
@@ -194,11 +194,11 @@ html.open {
 	position: fixed;
 	right:50px;
 	top:20px;
-	color:#fff;
+	color:#1b87c9;
 }
 .web-footer{display:none;}
 .mob-footer{display:block;}
-.mob-header{position:fixed; width:100%;display:block; height:55px; background-color:#1b87c9; margin-top:0px; z-index:999;
+.mob-header{position:fixed; width:100%;display:block; height:55px; background-color:#fff; margin-top:0px; z-index:999;
 box-shadow: 0px -5px 20px #222; top:0;}
 .mob-header .mob-menu{width:20%;}
 .mob-header .mob-logo{width:60%;}
