@@ -285,7 +285,7 @@ router.get('/finance/review', function(req, res, next) {
 	var finance;
 	var rev;
 	var fi_app_cate = rdate();
-	var rd = fi_app_cate[2]+fi_app_cate[3]+fi_app_cate[4]+fi_app_cate[5]-1;
+	var rd = fi_app_cate[2]+fi_app_cate[3]+fi_app_cate[4]+fi_app_cate[5]-2;
 	console.log(rd);
 	mysql.select("SELECT COUNT(*) AS appno FROM cider.cid_fi_applyform where fi_app_cate="+fi_app_cate+";", function (err, data){
 		

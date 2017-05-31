@@ -75,7 +75,7 @@ router.post('/join_step_done',function(req,res,next){
 
 	var date = getWorldTime(+9);
 
-	var sets = {mem_id:mem_id, mem_name: name , mem_nick : name , mem_pwd : pw , mem_email : email, mem_birth : mem_birth, mem_sex:mem_sex,mem_regdate:date};
+	var sets = {mem_id:mem_id, mem_name: name , mem_nick : name , mem_pwd : pw , mem_email : email, mem_birth : mem_birth, mem_sex:mem_sex,mem_profile:'/page_imgs/fixed_img/profile-basic-pic.svg',mem_regdate:date};
 	mysql.insert('insert into cider.cid_member set ?', sets,  function (err, data){
 		res.redirect('/join_step_3');
 	});
@@ -357,9 +357,10 @@ router.post('/mypage/upload', function (req, res){
     form.on('fileBegin', function (name, file){
 
     	
-    	//console.log(file);
+    	console.log(file);
+    	//var filePath = __dirname + '/../public/uploads/' + file.name;
         file.path = __dirname + '/../public/userPic/'+ mem_id+'_'+file.name;
-        //console.log(file.path);
+        console.log(file.path);
         
        /* fs.rename(__dirname + '/../public/userPic/' + file.name, __dirname + '/../public/userPic/' + mem_id+'_'+file.name, function(err) {
 		    if ( err ) console.log('ERROR: ' + err);
@@ -378,7 +379,7 @@ router.post('/mypage/upload', function (req, res){
 			    } 
 			);
     	}
-        //console.log('Uploaded ' + file.name);
+        console.log('Uploaded ' + file.name);
     });
 
     form.on("end", function() {
@@ -470,8 +471,17 @@ router.post('/mypage/passup', function(req, res, next) {
 });
 
 router.get('/memdel', function(req, res, next) {
+	var sePass = req.session.passport;
+	if(sePass != null){
+		var mem_id ='';
+		if(sePass.user.length == 1){
+			mem_id = sePass.user[0].mem_id;
+		}else{
+			mem_id = proPhoto = sePass.user.id;
+		}
+	}
 
-	res.render('front/cid_member/memDelete', { });
+	res.render('front/cid_member/memDelete', {mem_id:mem_id });
 
 });
 
@@ -518,6 +528,22 @@ router.get('/facebooklogin', function(req,res,next){
 	var mem_id = req.session.passport.user.id;
 	console.log(mem_id);
 	res.render('front/facebooklogin',{});
+});
+
+
+
+router.get('/mypage/delete/:mem_id',function(req, res, next) {
+	
+	var CP = 1;
+	var no = req.params.mem_id;
+	
+	mysql.del('delete from cider.cid_member where mem_id = '+ no +'', function (err, data){
+		if(err){
+			res.redirect('/');
+		}else{
+			res.redirect('/');
+		}
+    });
 });
 
 

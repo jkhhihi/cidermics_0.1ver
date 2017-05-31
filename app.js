@@ -110,10 +110,10 @@ app.use('/',cid2_idx);
 
 //passportFB.use('fbLogin', new LocalStrategy({
 passportFB.use( new FacebookStrategy({
-        clientID: '237556010053271',
-        clientSecret: 'cc7f7051e543769a0cffdfaa3f946200',
-        //callbackURL: "http://cidermics.com/auth/facebook/callback",
-        callbackURL: "http://localhost/auth/facebook/callback",
+        clientID: '116627908812749',
+        clientSecret: '38a1b7476831ada2468cc7e9fa054f3c',
+        callbackURL: "http://cidermics.com/auth/facebook/callback",
+        //callbackURL: "http://localhost/auth/facebook/callback",
         profileFields: ['id', 'displayName', 'photos']
     },
     function(accessToken, refreshToken, profile, done) {
