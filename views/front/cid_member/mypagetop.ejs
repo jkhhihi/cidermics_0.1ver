@@ -1,8 +1,8 @@
-<div class="profile" align="center" style="height:auto; padding:20px 0 10px 0; background-color:#ececec;">
+<div class="profile" align="center" style="height:auto; padding:20px 0 0 0; background-color:#ececec;">
 	<div class="picture"><img src="<%=memVal[0].mem_profile%>"></div>
 	<div class="pic-update"><a href="/chgpic"><span>사진변경</span></a></div>
-	<div class="mem-name">
-		<span><%=memVal[0].mem_name%>(<%=memVal[0].mem_nick%>)</span>
-		<span><a href="memup"><img style="display:inline-block; width:55px;" src="/page_imgs/fixed_img/setting-icon.svg"><span>회원정보수정</span></a></span>
+	<div class="mem-name container">
+		<p><%=memVal[0].mem_name%>(<%=memVal[0].mem_nick%>)</p>
+		<p align="right" style="padding:0 10px 5px 0;  margin:0px 0 0px !important;"><a href="memup"><img style="display:inline-block; margin-right:2px; margin-top:-5px; width:30px; " src="/page_imgs/fixed_img/setting-icon.svg"><span>회원정보수정</span></a></p>
 	</div>
 </div>

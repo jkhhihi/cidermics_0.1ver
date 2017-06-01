@@ -39,6 +39,7 @@ function openWinKA(){
 }
 </script>
 
+
 </head>
 <body>
 <% include top %>
@@ -184,10 +185,10 @@ $(document).ready(function(){
       <a href="/lecture/detail/4"><img class="img-responsive" src="/page_imgs/main_img/bakja3.jpg" onclick="ga('send','event','삼박자투자법','버튼클릭','삼박자메인' );"></a>
     </div-->
     <div class="item active">
-      <a href="/finance/review"><img class="img-responsive" src="http://i.imgur.com/l3yehfT.jpg"></a>
+      <a href="/finance/review"><img class="img-responsive" src="/page_imgs/fixed_img/banner/consulting.jpg"></a>
     </div>
     <div class="item">
-      <a href="/appdown"><img class="img-responsive" src="http://i.imgur.com/k9KEQKO.jpg"></a>
+      <a href="/appdown"><img class="img-responsive" src="/page_imgs/fixed_img/banner/appbanner.jpg"></a>
     </div>
   </div>
   <!-- Left and right controls >
@@ -201,7 +202,7 @@ $(document).ready(function(){
   </a -->
 </div>
 
-<!-- 메인에 6개 메뉴-- >
+<!-- 메인에 6개 메뉴 >
 <div class="menu6 container row" align="center">
 	<a href="/contents"><div class="col-md-2 col-xs-4"><p>인기 콘텐츠</p></div></a>
 	<a href="/project"><div class="col-md-2 col-xs-4"><p>기획 콘텐츠</p></div></a>
@@ -211,7 +212,7 @@ $(document).ready(function(){
 	<a href="/lecture"><div class="col-md-2 col-xs-4"><p>사이다강의</p></div></a>
 </div>
 
-<!--div id="swiper-menu" class="container">
+<div id="swiper-menu" class="container">
 <div class="menu6 swiper-container" align="center">
 	<div class="swiper-wrapper">
 		<div class="swiper-slide"><a href="/contents"><h6>인기콘텐츠</h6></a></div>
@@ -224,11 +225,20 @@ $(document).ready(function(){
 </div>
 </div-->
 
+<div class="container menu-wrap" align="center">
+	<a href="/contents"><h6><b>인기콘텐츠</b></h6></a>
+	<a href="/project"><h6><b>기획콘텐츠</b></h6></a>
+	<a href="/podcast"><h6><b>팟캐스트</b></h6></a>
+	<a href="/finance/necessary"><h6><b>사이다재무</b></h6></a>
+	<a href="/discuss"><h6><b>사이다토론</b></h6></a>
+	<a href="/lecture"><h6><b>사이다강의</b></h6></a>
+</div>
+
 <div class="menu6_con container row">
 	<div class="new-con col-xs-12">
 		<div class="menu-title row" style="padding-top:4px;" >
 			<div class="col-xs-8 padding-0">최신 콘텐츠</div>
-			<div class="col-xs-4 padding-0" align="right"><a href="/contents/all"><p class="plus">더보기 ></p></a></div>
+			<div class="col-xs-4 padding-0" align="right"><a href="/contents/all"><p class="plus">더보기 </p></a></div>
 		</div>
 		<!-- 콘텐츠 뿌림 시작 -->
 		<div class="con-in row" align="center" style="margin-left:0 !important; margin-right:2px !important;">
@@ -277,7 +287,7 @@ $(document).ready(function(){
 	<div class="section-line col-xs-12"></div>
 	<div class="popular-con swiper-container col-xs-12">
 		<div class="menu-title row" >
-			<div class="col-xs-8 padding-0">인기 콘텐츠</div><div class="col-xs-4 padding-0" align="right"><a href="/contents"><p class="plus">더보기 ></p></a></div>
+			<div class="col-xs-8 padding-0">인기 콘텐츠</div><div class="col-xs-4 padding-0" align="right"><a href="/contents"><p class="plus">더보기 </p></a></div>
 		</div>
 		<!-- 콘텐츠 뿌림 시작 -->		
 		<div class="con-in swiper-wrapper" align="center">
@@ -301,14 +311,14 @@ $(document).ready(function(){
 	
 	<!-- 광고 -->
 	<div class="ad col-xs-12"></div>
-		<a href="/podcast"><img class="img-responsive" src="/page_imgs/main_img/banner/talktalkcider.jpg"></a>
+		<a href="/podcast"><img class="img-responsive" src="/page_imgs/fixed_img/banner/talktalkcider.jpg"></a>
 	<div class="ad col-xs-12" style="margin-bottom:10px;"></div>
 	
 	
 	<!--  div class="section-line col-xs-12"></div -->	
 	<div class="plan-con swiper-container col-xs-12">
 		<div class="menu-title row margin-top10">
-			<div class="col-xs-8 padding-0">기획 콘텐츠</div><div class="col-xs-4 padding-0" align="right"><a href="/project"><p class="plus">더보기 ></p></a></div>
+			<div class="col-xs-8 padding-0">기획 콘텐츠</div><div class="col-xs-4 padding-0" align="right"><a href="/project"><p class="plus">더보기 </p></a></div>
 		</div>
 		<!-- 콘텐츠 뿌림 시작 -->		
 		<div class="con-in swiper-wrapper" align="center">
@@ -333,7 +343,7 @@ $(document).ready(function(){
 	<div class="col-xs-12">
 		<div class="review-con row">
 			<div class="menu-title row" >
-				<div class="col-xs-8 padding-0">사이다재무 - 생생 후기</div><div class="col-xs-4 padding-0" align="right"><a href="/finance/review"><p class="plus">더보기 ></p></a></div>
+				<div class="col-xs-8 padding-0">사이다재무 - 생생 후기</div><div class="col-xs-4 padding-0" align="right"><a href="/finance/review"><p class="plus">더보기 </p></a></div>
 			</div>
 			<!-- 콘텐츠 뿌림 시작 -->		
 			<div id="text-carousel2" class="carousel slide" data-ride="carousel">
@@ -387,7 +397,7 @@ $(document).ready(function(){
 	<!--  div class="section-line col-xs-12"></div -->	
 	<div class="books-con swiper-container col-xs-12">
 		<div class="menu-title row margin-top10">
-			<div class="col-xs-8 padding-0">사이다Books</div><div class="col-xs-4 padding-0" align="right"><a href="/books"><p class="plus">더보기 ></p></a></div>
+			<div class="col-xs-8 padding-0">사이다Books</div><div class="col-xs-4 padding-0" align="right"><a href="/books"><p class="plus">더보기 </p></a></div>
 		</div>
 		<!-- 콘텐츠 뿌림 시작 -->		
 		<div class="con-in swiper-wrapper" align="center">
@@ -413,7 +423,7 @@ $(document).ready(function(){
 	<div class="section-line col-xs-12"></div>	
 	<div class="podcast-con swiper-container col-xs-12">
 		<div class="menu-title row" >
-			<div class="col-xs-8 padding-0">팟캐스트</div><div class="col-xs-4 padding-0" align="right"><a href="/podcast"><p class="plus">더보기 ></p></a></div>
+			<div class="col-xs-8 padding-0">팟캐스트</div><div class="col-xs-4 padding-0" align="right"><a href="/podcast"><p class="plus">더보기 </p></a></div>
 		</div>
 		<!-- 콘텐츠 뿌림 시작 -->		
 		<div class="con-in swiper-wrapper" align="center">
@@ -436,13 +446,13 @@ $(document).ready(function(){
 	
 			<!-- 광고 -->
 	<div class="ad col-xs-12"></div>
-		<a href="http://plus.kakao.com/home/@%EC%82%AC%EC%9D%B4%EB%8B%A4%EA%B2%BD%EC%A0%9C"><img class="img-responsive" src="http://i.imgur.com/kRwNkdd.jpg"></a>
+		<a href="http://plus.kakao.com/home/@%EC%82%AC%EC%9D%B4%EB%8B%A4%EA%B2%BD%EC%A0%9C"><img class="img-responsive" src="/page_imgs/fixed_img/banner/kakaoplus.jpg"></a>
 	<div class="ad col-xs-12" style="margin-bottom:10px;"></div>
 	
 	<!-- div class="section-line col-xs-12"></div -->	
 	<div class="discuss-con col-xs-12">
 		<div class="menu-title row margin-top10">
-			<div class="col-xs-8 padding-0">사이다토론</div><div class="col-xs-4 padding-0" align="right"><a href="/discuss"><p class="plus">더보기 ></p></a></div>
+			<div class="col-xs-8 padding-0">사이다토론</div><div class="col-xs-4 padding-0" align="right"><a href="/discuss"><p class="plus">더보기 </p></a></div>
 		</div>
 		<!-- 콘텐츠 뿌림 시작 -->		
 		<div class="con-in row" align="center" style="margin-left:0; margin-right:0">
@@ -560,7 +570,7 @@ $(document).ready(function(){
 	
 	<div class="discuss-con col-md-6 col-xs-12">
 		<div class="menu-title row" >
-			<div class="col-xs-8 padding-0">사이다강의</div><div class="col-xs-4 padding-0" align="right"><a href="/lecture"><p class="plus">더보기 ></p></a></div>
+			<div class="col-xs-8 padding-0">사이다강의</div><div class="col-xs-4 padding-0" align="right"><a href="/lecture"><p class="plus">더보기 </p></a></div>
 		</div>
 		<div class="con-in row" align="center" style="margin-left:0; margin-right:0">
 		

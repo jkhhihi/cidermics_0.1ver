@@ -13,7 +13,7 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
 .main-join .bg .text2{font-size:16px; margin-bottom:20px;}
 .main-join .bg .text2 b{text-decoration:underline;}
 
-.chkbtn{border-radius:15px; border:2px solid #ff574a; padding:5px 10px;}
+.chkbtn{border-radius:15px; border:2px solid #ff574a; padding:4px 8px;}
 
 /*회원가입 스텝1*/
 .join .join-step img{margin-left:20px; width:85px;}
@@ -150,7 +150,7 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
 .main-join {display: block !important; height:auto; padding-top:50px; padding-bottom:20px;}
 .main-join .bg{width:98%; height:auto; margin:40px 0 20px 0; padding:0;}
 .main-join .bg .title{font-size:16px; width:80%; border-bottom:solid 2px #ff574a;}
-.main-join .bg .btn-join{width:80%; height:40px; padding-top:10px; font-size:14px; margin:20px 0 20px 0;}
+.main-join .bg .btn-join{width:80%; height:40px; padding-top:12px; font-size:14px; margin:20px 0 20px 0;}
 .main-join .bg .btn-facejoin{width:80%; height:40px; padding-top:10px; font-size:14px; margin-bottom:20px;}
 .main-join .bg .btn-kakaojoin{ width:80%; height:40px; padding-top:12px; font-size:14px; margin-bottom:20px;}
 .main-join .bg .join{width:95%; padding-top:25px;}
@@ -167,18 +167,19 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
 
 /*회원가입 스텝2*/
 .step2 .id{margin:20px 0;}
-.step2 .id input{width:66px; height:20px; padding:0 0;}
-.step2 .id select{width:66px; height:20px; padding:0 0;}
+.step2 .id .id_title{display:block; margin-bottom:10px;}
+.step2 .id input{width:100px; height:25px;}
+.step2 .id select{width:100px; height:25px;}
 .step2 .name{margin-bottom:20px;}
-.step2 .name input{width:100px; height:20px; padding:0 0;}
+.step2 .name input{width:100px; height:25px;}
 .step2 .password{margin-bottom:20px;}
-.step2 .password input{width:100px; height:20px; padding:0 0;}
+.step2 .password input{width:100px; height:25px;}
 .step2 .ch_password{margin-bottom:20px;}
-.step2 .ch_password input{width:100px; height:20px; padding:0 0;}
+.step2 .ch_password input{width:100px; height:25px;}
 .step2 .birth{margin-bottom:20px;}
-.step2 .birth select.year{width:60px; height:20px; padding:0 0;}
-.step2 .birth select.month{width:50px; height:20px; padding:0 0;}
-.step2 .birth select.day{width:50px; height:20px; padding:0 0;}
+.step2 .birth select.year{width:70px; height:25px;}
+.step2 .birth select.month{width:50px; height:25px;}
+.step2 .birth select.day{width:50px; height:25px;}
 .step2 .sex{margin-bottom:20px;}
 .step2 .email-check{width:60px; height:20px; font-size:10px; padding-top:4px; margin-left:2px;}
 .step2 .step2-btn div img{height:30px;}
@@ -198,7 +199,7 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
 .main-login .bg .email #idcheck{width:80%;}
 .main-login .bg .password input{width:80%; font-size:12px; height:34px;}
 .main-login .bg .password #pwdcheck{width:80%;}
-.main-login .bg .btn-login{width:80%; height:40px; padding-top:10px; font-size:14px; margin:10px 0 10px 0;}
+.main-login .bg .btn-login{width:80%; height:40px; padding-top:12px; font-size:14px; margin:10px 0 10px 0;}
 .main-login .bg .text{width:80%; font-size:12px; margin-bottom:25px;}
 .main-login .bg .btn-facelogin{width:80%; height:40px; padding-top:10px; font-size:14px;}
 .main-login .bg .btn-facelogin img{margin-bottom:5px;}

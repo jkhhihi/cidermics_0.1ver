@@ -27,7 +27,7 @@
 .color-red{color:#ff0000;}
 .star{color:#ff0000; font-size:14px;}
 input{border:0; box-shadow:2px 2px 4px; padding:5px; margin-right:5px !important;}
-select{border:0; box-shadow:2px 2px 4px; padding:5px; margin:0 5px !important;}
+select{border:0; box-shadow:2px 2px 4px; padding:5px; }
 .memdel{width:580px; margin-bottom:50px;}
 .memdel-link{font-size:18px; border-bottom:1px solid #666; padding-bottom:2px; margin-left:5px;}
 

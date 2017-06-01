@@ -207,7 +207,7 @@ padding:20px 0 20px 10px;
 						<div class="profile row" align="center" style="height:auto; padding:20px 0 5px 0; background-color:#ececec;">
 							<div class="picture col-xs-12"><img src="/page_imgs/fixed_img/mob_menu_icon_logo.svg" height="50"><!--img src="/page_imgs/fixed_img/profile-basic-pic.svg"--></div>
 
-							<div w3-include-html="/topLogin" class="col-xs-12" align="right" style="padding-right:20px;"></div>
+							<div w3-include-html="/topLogin" class="col-xs-12" align="right"></div>
 		<!-- top include url링크로 -->
 		<script>
 		w3IncludeHTML();
@@ -290,15 +290,15 @@ padding:20px 0 20px 10px;
 
 <div class="loginwrap col-md-4">
 
-	<div w3-include-html="/topLogin" class="col-md-5" align="right"></div>
+	<div w3-include-html="/topLogin" class="col-md-5" align="right"  style="padding:0;"></div>
 		<!-- top include url링크로 -->
 
 		<!-- top include url 끝 -->
 
-	<div class="col-md-7">
+	<div class="col-md-7" style="padding:0;">
 		<form name="search_box" action="/search/process" method="post">
 		<div class="login col-md-9">
-		<input type="text" class="form-control web-search-box" placeholder=" search" name="keyword" value='' style="width: 115%">
+		<input type="text" class="form-control web-search-box" placeholder=" search" name="keyword" value='' style="width: 120%">
 		</div>
 		<!--a style="cursor:pointer; display:block;" class="web-search-box-img">검색</a></div-->
 		<!--a onClick="search_submit()" style="cursor:pointer" class="web-search-box-img">검색</a></div-->
