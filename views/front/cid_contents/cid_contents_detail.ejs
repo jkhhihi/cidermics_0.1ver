@@ -269,10 +269,10 @@ body { padding-right: 0px !important }
 				<div class="row" align="center">
 					<% if ( memidval.length == 0) { %>
 							<!-- button onclick="clipping()" style="color: red;">스크랩하기 <%= sePass %></button -->
-							<img onclick="clipping()" style="width:65px; margin-bottom:5px;" src="/page_imgs/contents_img/btn-favorit-off.png">
+							<img onclick="clipping()" style="width:40px; margin-bottom:5px;" src="/page_imgs/contents_img/btn-favorit-off.png">
 							<% } else { %>
 							<!-- button onclick="clipping_del(id)" style="color: red;" id="<%= memidval[0].cli_no %>">스크랩 이미 되어있음. <% var cli_no = memidval[0].cli_no; %><%= cli_no %></button -->
-							<img onclick="clipping_del(id)" id="<%= memidval[0].cli_no %>" style="width:65px; margin-bottom:5px;" src="/page_imgs/contents_img/btn-favorit-on.png"><% var cli_no = memidval[0].cli_no; %>
+							<img onclick="clipping_del(id)" id="<%= memidval[0].cli_no %>" style="width:40px; margin-bottom:5px;" src="/page_imgs/contents_img/btn-favorit-on.png"><% var cli_no = memidval[0].cli_no; %>
 					<% } %>
 					<p style="border-radius: 5px; border: solid 1px #b9b9b9; padding: 5px; width: 70px;">스크랩</p>
 				</div>
