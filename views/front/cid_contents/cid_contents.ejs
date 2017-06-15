@@ -155,9 +155,7 @@
 	.con_border{
 		border: 1px solid #ececec;
 		border-radius: 6px;
-		padding-bottom: 10px;
 	}
-	.con_border a{margin-top:0 !important;}
 </style>
 
 <!--콘텐츠뿌림-->
@@ -166,9 +164,9 @@
 				<% for(var i=0; i<contents.length; i++) { %>
 				<li>
 				<div class="con_border">
-					<a href="/contents/detail/<%= contents[i].con_no %>">
+					<a href="/contents/detail/<%= contents[i].con_no %>" style="margin-top:0;">
 					<div class="con-img" align="center"><img class="img-responsive" src="<%= contents[i].con_photo %>"></div></a>
-					<p><a href="/contents/detail/<%= contents[i].con_no %>" style="margin: 10px 10px;">
+					<p><a href="/contents/detail/<%= contents[i].con_no %>" style="margin-top:10px;">
 						<%= contents[i].con_title %></a></p>
 				</div>
 			</li>
