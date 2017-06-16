@@ -133,15 +133,15 @@
 						<% }%>
 
 						<% if(no == 3){ %>
-						<a href="/contents/3"><img src="/page_imgs/contents_img/click_icon_menu_mob5.svg" width='50'></a>
+						<a href="/contents/3"><img src="/page_imgs/contents_img/click_icon_menu_mob4.svg" width='50'></a>
 						<% }else{%>
-						<a href="/contents/3"><img src="/page_imgs/contents_img/icon_menu_mob5.svg" width='50'></a>
+						<a href="/contents/3"><img src="/page_imgs/contents_img/icon_menu_mob4.svg" width='50'></a>
 						<% }%>
 						
 						<% if(no == 4){ %>
-						<a href="/contents/4"><img src="/page_imgs/contents_img/click_icon_menu_mob4.svg" width='50'></a>
+						<a href="/contents/4"><img src="/page_imgs/contents_img/click_icon_menu_mob5.svg" width='50'></a>
 						<% }else{%>
-						<a href="/contents/4"><img src="/page_imgs/contents_img/icon_menu_mob4.svg" width='50'></a>
+						<a href="/contents/4"><img src="/page_imgs/contents_img/icon_menu_mob5.svg" width='50'></a>
 						<% }%>
 					
 				</div>
@@ -155,7 +155,6 @@
 	.con_border{
 		border: 1px solid #ececec;
 		border-radius: 6px;
-		padding-bottom: 10px;
 	}
 </style>
 
@@ -165,9 +164,9 @@
 				<% for(var i=0; i<contents.length; i++) { %>
 				<li>
 				<div class="con_border">
-					<a href="/contents/detail/<%= contents[i].con_no %>" style="margin-top: 0px;">
+					<a href="/contents/detail/<%= contents[i].con_no %>" style="margin-top:0;">
 					<div class="con-img" align="center"><img class="img-responsive" src="<%= contents[i].con_photo %>"></div></a>
-					<p><a href="/contents/detail/<%= contents[i].con_no %>" style="margin: 10px 10px;">
+					<p><a href="/contents/detail/<%= contents[i].con_no %>" style="margin-top:10px;">
 						<%= contents[i].con_title %></a></p>
 				</div>
 			</li>
@@ -214,7 +213,7 @@
 					idx ++;
 					$.each(data.contents, function (index, value){
 						contents += '<li> ' +
-							 			'<div class="con-border bg-w"> ' + 
+							 			'<div class="con_border bg-w"> ' + 
 												'<a href="/contents/detail/'+value.con_no+'"> ' +
 													'<div class="con-img"  align="center"> ' +
 														'<img src="'+value.con_photo+'"/> ' + 

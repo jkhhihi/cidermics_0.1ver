@@ -20,6 +20,14 @@
 <link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
 <link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
 
+<style type="text/css">
+	.con_border{
+		border: 1px solid #ececec;
+		border-radius: 6px;
+		padding-bottom: 10px;
+	}
+	.con_border a{margin-top:0 !important;}
+</style>
 
 </head>
 <body>
@@ -34,7 +42,7 @@
 			<ul class="grid effect-2" id="grid">
 				<% for(var i=0; i<contents.length; i++) { %>
 				<li>
-				<div class="col-sm-12 col-xs-12" style="padding:0;">
+				<div class="con_border" style="padding:0;">
 					
 					<a href="/contents/detail/<%= contents[i].con_no %>">
 					<div class="con-img" align="center"><img class="img-responsive" src="<%= contents[i].con_photo %>"></div></a>
