@@ -197,9 +197,11 @@ router.get('/modal', function(req, res, next) {
 });
 
 router.get('/appdown', function(req, res, next) {
-
 	res.render('front/cid_appdown', { });
+});
 
+router.get('/appdown1', function(req, res, next) {
+	res.render('front/cid_appdown_gold', { });
 });
 
 router.get('/survey', function(req, res, next) {
