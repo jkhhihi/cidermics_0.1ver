@@ -204,6 +204,10 @@ router.get('/appdown1', function(req, res, next) {
 	res.render('front/cid_appdown_gold', { });
 });
 
+router.get('/appdown3', function(req, res, next) {
+	res.render('front/cid_appdown3', { });
+});
+
 router.get('/survey', function(req, res, next) {
 
 	res.render('front/cid_survey', { });
