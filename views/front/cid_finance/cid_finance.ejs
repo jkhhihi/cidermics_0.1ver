@@ -26,34 +26,308 @@
 <meta property="og:description" content="현재 무료로 운영하고 있으니 많이 신청해주세요 :)" />
 <meta property="og:image" content="http://cidermics.com/page_imgs/finance_img/finance_thum.png" />
 
+<style>
+.modal{color:#212121;}
+</style>
+
 </head>
 <body>
 <!--위로가기 버튼-->
 <div id="but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></div>	
 <% include ../top %>
 
-<div class="line"></div>
-
 <% include cid_finance_menu %>
 
-<div class="finance_main row" align="center">
-<div class="finance-img col-lg-4 col-xs-12"><img class="img-responsive" src="http://i.imgur.com/e4sDFjt.jpg"></div>
-<div class="finance-img col-lg-4 col-xs-12"><img class="img-responsive" src="http://i.imgur.com/B4TGyc7.jpg"></div>
-<div class="finance-img col-lg-4 col-xs-12"><img class="img-responsive" src="http://i.imgur.com/1Coi8LL.jpg"></div>
+<div class="container info" align="center">
+	<img class="img-responsive info-text1" src="/page_imgs/finance_img/img-info-text1.png">
+	<img class="img-responsive info-text2" src="/page_imgs/finance_img/img-info-text2.png">
 </div>
 
-<div class="finance container" align="center" style="margin-bottom:50px;">
-	<!-- 재무 신청 오픈 -->
-	<a href="/finance/apply/"><div class="btn-apply-in" align="center">상담 신청하기</div></a>
-
-	<!-- 재무 신청 마감 -->
-	<!--a href="#" onClick="alert('이번 달 무료 재무상담 신청이 마감되었습니다. 다음 달에 더 좋은 상담으로 찾아뵙겠습니다.')">
-	<div class="btn-apply-in" align="center" style="margin-top:40px;">상담 신청하기</div></a-->
+<div class="process" align="center">
+	<span>상담 프로세스</span>
+	<!--재무 신청 오픈-->
+	<a href="/finance/apply/"><div class="btn-apply-in1" align="center"><h5><b>상담 신청</b></h5></div></a>
+	<!--재무 신청 마감-->
+	<!-- a href="#" onClick="alert('이번 달 무료 재무상담 신청이 마감되었습니다. 다음 달에 더 좋은 상담으로 찾아뵙겠습니다.')"><div class="btn-apply-in1" align="center">상담 신청하기</div></a-->
 </div>
 
+<div class="nesessary" align="center">
+	<span>누구에게 필요할까?</span>
+	<div class="container nesessary-con row">
+		<div class="col-xs-6 col-sm-3">
+			<img class="img-responsive" src="/page_imgs/finance_img/nesessary/img-ne-part1.png">
+			<span data-toggle="modal" data-target="#myModal1" style="cursor:pointer">사례보기</span>
+			<p>취업 후 소득이 발생하기 시작<br>(소비, 지출, 관리, 인생전반의 이해)</p>
+		</div>
+				<div class="modal fade"  id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" align="center">
+       			<div class="modal-dialog modal-lg">
+           		<div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title"><b>사회초년생 사례</b></h4>
+                </div>
+                <div class="modal-body">
+                <p style="font-size: 10pt;"><b>상담자 실제 신청 사례 1</b><br><br>내년 결혼을 앞두고 있습니다.
+					날짜도 잡았고 약 1년 정도 남아있는 상태인데요.<br><br>
+					얼마 전에 적금이 만기가 됐습니다.<br>
+					요즘은 은행이율이 너무 낮아서..
+					어디다 잠깐 두어야 할지 모르겠네요..<br><br>
+					근데 또 아는 친구가 보험 일을 하는데요..
+					얼마 전에 저희 보험을 보더니<br>
+					부족한 보장이 많다고
+					결혼 전에 들어두라며 종신보험을 추천했습니다.<br><br>
+					문제는 저희가 그전에 부모님이 들어준 보험도 
+					결혼 후에는 직접 관리하기로 해서<br>
+					보험료를 대충 계산해보니 둘이 합쳐
+					한 달에 70만 원 가량은 되는 거 같더군요..<br><br>
 
+					보통 다른 사람들도 결혼하면 이정도 내나요??<br>
+					제 생각엔 너무 많은 거 같아서요..<br>
+					좀 보험료를 필요한 거 위주로만 해서
+					줄이는 방법은 없을까요?<br>
+					목돈 넣어둘 곳도 같이 추천해서 좀 결혼하기 전에
+					어떻게 하는 게 좋은지 같이 알려주시면 좋겠습니다..<br><br>
+				</p>
+				<p style="font-size: 10pt;"><b>상담자 실제 신청 사례 2</b><br><br>
+					결혼을 준비중인 6년차 회사원입니다.<br>
 
-	
+					결혼을 대비해 재테크를 어떻게 해야 될지 궁금합니다.<br>
+
+					결혼 한 이후에도 마찬가지구요.<br><br>
+
+					집을 전세로 구할 예정인데
+
+					전세자금 대출의 적정 대출자금이 얼마인지도 궁금하구요.<br><br>
+
+					현재는 제가 펀드 및 cma 에 월 200
+					개인연금 50만원
+					적금 20만원
+					기타 보험료 15만원<br>
+
+					이렇게 하고 있는데요<br>
+
+					모아놓은 돈은 결혼하면서 모두 전세 마련자금으로 빠질거 같은데<br>
+
+					결혼해서 다시 처음부터 모아야 하는데 
+					어떻게 재태크를 하는게 좋을지 궁금하네요<br>
+				</p>
+                </div>
+                <p data-dismiss="modal" style="width:120px; color:#24babc; font-weight:bold; border:2px solid #24babc; margin:10px 0 30px 0; padding:10px; border-radius:20px; cursor:pointer">닫기</p>
+           		</div>
+        		</div>
+				</div>
+		
+		<div class="col-xs-6 col-sm-3">
+			<img class="img-responsive" src="/page_imgs/finance_img/nesessary/img-ne-part2.png">
+			<span data-toggle="modal" data-target="#myModal2" style="cursor:pointer">사례보기</span>
+			<p>결혼적령기 혹은 신혼부부<br>(기본적인 재무구조 진단,<br>차후 자녀에게 들어갈 자금 설계)</p>
+		</div>
+				<div class="modal fade"  id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" align="center">
+       			<div class="modal-dialog modal-lg">
+           		<div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title"><b>사회초년생 사례</b></h4>
+                </div>
+                <div class="modal-body">
+                <p style="font-size: 10pt;"><b>상담자 실제 신청 사례 1</b><br><br>내년 결혼을 앞두고 있습니다.
+					날짜도 잡았고 약 1년 정도 남아있는 상태인데요.<br><br>
+					얼마 전에 적금이 만기가 됐습니다.<br>
+					요즘은 은행이율이 너무 낮아서..
+					어디다 잠깐 두어야 할지 모르겠네요..<br><br>
+					근데 또 아는 친구가 보험 일을 하는데요..
+					얼마 전에 저희 보험을 보더니<br>
+					부족한 보장이 많다고
+					결혼 전에 들어두라며 종신보험을 추천했습니다.<br><br>
+					문제는 저희가 그전에 부모님이 들어준 보험도 
+					결혼 후에는 직접 관리하기로 해서<br>
+					보험료를 대충 계산해보니 둘이 합쳐
+					한 달에 70만 원 가량은 되는 거 같더군요..<br><br>
+
+					보통 다른 사람들도 결혼하면 이정도 내나요??<br>
+					제 생각엔 너무 많은 거 같아서요..<br>
+					좀 보험료를 필요한 거 위주로만 해서
+					줄이는 방법은 없을까요?<br>
+					목돈 넣어둘 곳도 같이 추천해서 좀 결혼하기 전에
+					어떻게 하는 게 좋은지 같이 알려주시면 좋겠습니다..<br><br>
+				</p>
+				<p style="font-size: 10pt;"><b>상담자 실제 신청 사례 2</b><br><br>
+					결혼을 준비중인 6년차 회사원입니다.<br>
+
+					결혼을 대비해 재테크를 어떻게 해야 될지 궁금합니다.<br>
+
+					결혼 한 이후에도 마찬가지구요.<br><br>
+
+					집을 전세로 구할 예정인데
+
+					전세자금 대출의 적정 대출자금이 얼마인지도 궁금하구요.<br><br>
+
+					현재는 제가 펀드 및 cma 에 월 200
+					개인연금 50만원
+					적금 20만원
+					기타 보험료 15만원<br>
+
+					이렇게 하고 있는데요<br>
+
+					모아놓은 돈은 결혼하면서 모두 전세 마련자금으로 빠질거 같은데<br>
+
+					결혼해서 다시 처음부터 모아야 하는데 
+					어떻게 재태크를 하는게 좋을지 궁금하네요<br>
+				</p>
+                </div>
+                <p data-dismiss="modal" style="width:120px; color:#24babc; font-weight:bold; border:2px solid #24babc; margin:10px 0 30px 0; padding:10px; border-radius:20px; cursor:pointer">닫기</p>
+           		</div>
+        		</div>
+				</div>
+				
+		<div class="col-xs-6 col-sm-3">
+			<img class="img-responsive" src="/page_imgs/finance_img/nesessary/img-ne-part3.png">
+			<span data-toggle="modal" data-target="#myModal3" style="cursor:pointer">사례보기</span>
+			<p>자녀의 육아/교육기를 지나<br>부부의 재산을 저축해야할 시기,<br>자리잡기, 재무구조 변화</p>
+		</div>
+				<div class="modal fade"  id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" align="center">
+       			<div class="modal-dialog modal-lg">
+           		<div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title"><b>사회초년생 사례</b></h4>
+                </div>
+                <div class="modal-body">
+                <p style="font-size: 10pt;"><b>상담자 실제 신청 사례 1</b><br><br>내년 결혼을 앞두고 있습니다.
+					날짜도 잡았고 약 1년 정도 남아있는 상태인데요.<br><br>
+					얼마 전에 적금이 만기가 됐습니다.<br>
+					요즘은 은행이율이 너무 낮아서..
+					어디다 잠깐 두어야 할지 모르겠네요..<br><br>
+					근데 또 아는 친구가 보험 일을 하는데요..
+					얼마 전에 저희 보험을 보더니<br>
+					부족한 보장이 많다고
+					결혼 전에 들어두라며 종신보험을 추천했습니다.<br><br>
+					문제는 저희가 그전에 부모님이 들어준 보험도 
+					결혼 후에는 직접 관리하기로 해서<br>
+					보험료를 대충 계산해보니 둘이 합쳐
+					한 달에 70만 원 가량은 되는 거 같더군요..<br><br>
+
+					보통 다른 사람들도 결혼하면 이정도 내나요??<br>
+					제 생각엔 너무 많은 거 같아서요..<br>
+					좀 보험료를 필요한 거 위주로만 해서
+					줄이는 방법은 없을까요?<br>
+					목돈 넣어둘 곳도 같이 추천해서 좀 결혼하기 전에
+					어떻게 하는 게 좋은지 같이 알려주시면 좋겠습니다..<br><br>
+				</p>
+				<p style="font-size: 10pt;"><b>상담자 실제 신청 사례 2</b><br><br>
+					결혼을 준비중인 6년차 회사원입니다.<br>
+
+					결혼을 대비해 재테크를 어떻게 해야 될지 궁금합니다.<br>
+
+					결혼 한 이후에도 마찬가지구요.<br><br>
+
+					집을 전세로 구할 예정인데
+
+					전세자금 대출의 적정 대출자금이 얼마인지도 궁금하구요.<br><br>
+
+					현재는 제가 펀드 및 cma 에 월 200
+					개인연금 50만원
+					적금 20만원
+					기타 보험료 15만원<br>
+
+					이렇게 하고 있는데요<br>
+
+					모아놓은 돈은 결혼하면서 모두 전세 마련자금으로 빠질거 같은데<br>
+
+					결혼해서 다시 처음부터 모아야 하는데 
+					어떻게 재태크를 하는게 좋을지 궁금하네요<br>
+				</p>
+                </div>
+                <p data-dismiss="modal" style="width:120px; color:#24babc; font-weight:bold; border:2px solid #24babc; margin:10px 0 30px 0; padding:10px; border-radius:20px; cursor:pointer">닫기</p>
+           		</div>
+        		</div>
+				</div>
+				
+		<div class="col-xs-6 col-sm-3">
+			<img class="img-responsive" src="/page_imgs/finance_img/nesessary/img-ne-part4.png">
+			<span data-toggle="modal" data-target="#myModal4" style="cursor:pointer">사례보기</span>
+			<p>자녀 출가, 소득감소,<br>노동력 상실을 대비한<br>나의 노후 준비</p>
+		</div>
+				<div class="modal fade"  id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" align="center">
+       			<div class="modal-dialog modal-lg">
+           		<div class="modal-content">
+                <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title"><b>사회초년생 사례</b></h4>
+                </div>
+                <div class="modal-body">
+                <p style="font-size: 10pt;"><b>상담자 실제 신청 사례 1</b><br><br>내년 결혼을 앞두고 있습니다.
+					날짜도 잡았고 약 1년 정도 남아있는 상태인데요.<br><br>
+					얼마 전에 적금이 만기가 됐습니다.<br>
+					요즘은 은행이율이 너무 낮아서..
+					어디다 잠깐 두어야 할지 모르겠네요..<br><br>
+					근데 또 아는 친구가 보험 일을 하는데요..
+					얼마 전에 저희 보험을 보더니<br>
+					부족한 보장이 많다고
+					결혼 전에 들어두라며 종신보험을 추천했습니다.<br><br>
+					문제는 저희가 그전에 부모님이 들어준 보험도 
+					결혼 후에는 직접 관리하기로 해서<br>
+					보험료를 대충 계산해보니 둘이 합쳐
+					한 달에 70만 원 가량은 되는 거 같더군요..<br><br>
+
+					보통 다른 사람들도 결혼하면 이정도 내나요??<br>
+					제 생각엔 너무 많은 거 같아서요..<br>
+					좀 보험료를 필요한 거 위주로만 해서
+					줄이는 방법은 없을까요?<br>
+					목돈 넣어둘 곳도 같이 추천해서 좀 결혼하기 전에
+					어떻게 하는 게 좋은지 같이 알려주시면 좋겠습니다..<br><br>
+				</p>
+				<p style="font-size: 10pt;"><b>상담자 실제 신청 사례 2</b><br><br>
+					결혼을 준비중인 6년차 회사원입니다.<br>
+
+					결혼을 대비해 재테크를 어떻게 해야 될지 궁금합니다.<br>
+
+					결혼 한 이후에도 마찬가지구요.<br><br>
+
+					집을 전세로 구할 예정인데
+
+					전세자금 대출의 적정 대출자금이 얼마인지도 궁금하구요.<br><br>
+
+					현재는 제가 펀드 및 cma 에 월 200
+					개인연금 50만원
+					적금 20만원
+					기타 보험료 15만원<br>
+
+					이렇게 하고 있는데요<br>
+
+					모아놓은 돈은 결혼하면서 모두 전세 마련자금으로 빠질거 같은데<br>
+
+					결혼해서 다시 처음부터 모아야 하는데 
+					어떻게 재태크를 하는게 좋을지 궁금하네요<br>
+				</p>
+                </div>
+                <p data-dismiss="modal" style="width:120px; color:#24babc; font-weight:bold; border:2px solid #24babc; margin:10px 0 30px 0; padding:10px; border-radius:20px; cursor:pointer">닫기</p>
+           		</div>
+        		</div>
+				</div>
+				
+	</div>
+	<!--재무 신청 오픈-->
+	<a href="/finance/apply/"><div class="btn-apply-in2" align="center"><h5><b>상담 신청</b></h5></div></a>
+	<!--재무 신청 마감-->
+	<!-- a href="#" onClick="alert('이번 달 무료 재무상담 신청이 마감되었습니다. 다음 달에 더 좋은 상담으로 찾아뵙겠습니다.')"><div class="btn-apply-in2" align="center">상담 신청하기</div></a-->
+</div>
+
+<div class="review" align="center">
+	<a href="/finance/review"><span>재무상담 생성후기</span></a>
+</div>
+<div class="review-plus-btn" align="center">
+	<a href="/finance/review/"><span>더 많은 후기 보러가기</span></a>
+</div>
+
+<div class="contents" align="center">
+	<a href="/finance/contents"><span>금융 콘텐츠</span></a>
+	<!--재무 신청 오픈-->
+	<a href="/finance/apply/"><div class="btn-apply-in1" align="center"><h5><b>상담 신청</b></h5></div></a>
+	<!--재무 신청 마감-->
+	<!-- a href="#" onClick="alert('이번 달 무료 재무상담 신청이 마감되었습니다. 다음 달에 더 좋은 상담으로 찾아뵙겠습니다.')"><div class="btn-apply-in1" align="center">상담 신청하기</div></a-->
+</div>
+
 
 <% include ../bottom %>
 </body>

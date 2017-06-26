@@ -27,7 +27,7 @@
 <meta property="og:url" content="http://www.cidermics.com/finance/" />
 
 <style>
-	.modal-lg{width:95%}
+.modal-lg{width:95%}
 .modal-body{padding:2px !important;}
 .modal-body input{width:220px;}
 .main-apply{margin-top:55px;}
@@ -40,35 +40,27 @@
 .modal-body .modal-paper{padding: 5px 0px 10px 0px; width:80%;}
 .modal-lg{max-width:500px;}
 body { padding-right: 0px !important;}
-
 </style>
+
 </head>
 <body  style="overflow:scroll;">
 <!--위로가기 버튼-->
 <div id="but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></div>
 <% include ../top %>
 
-<div class="line"></div>
-<!--div class="mob-banner">
-<img class="img-responsive" src="/page_imgs/finance_img/mob_banner_finance.jpg">
-</div-->
-
 <% include cid_finance_menu %>
 
-<div align="center" style="padding-top: 10px;">
-<select onchange="review(this)">
-	<option value="1611">2016년 11월</option>
-	<option value="1612">2016년 12월</option>
-	<option value="1701">2017년 01월</option>
-	<option value="1702">2017년 02월</option>
-	<option value="1703">2017년 03월</option>
-	<option value="1704" selected="1704">2017년 04월</option>
-</select>
-</div>
-
-<div class="grid effect-2" id="grid">
-</div>
-
+<div class="container">
+	<div align="center">
+	<select onchange="review(this)" style="background-color:#fff; border:2px solid #ececec; margin:20px 0 0 0">
+		<option value="1611">2016년 11월</option>
+		<option value="1612">2016년 12월</option>
+		<option value="1701">2017년 01월</option>
+		<option value="1702">2017년 02월</option>
+		<option value="1703">2017년 03월</option>
+		<option value="1704" selected="1704">2017년 04월</option>
+	</select>
+	</div>
 
 <script type="text/javascript">
 	function review(a){
@@ -120,7 +112,7 @@ body { padding-right: 0px !important;}
                    		<img class="img-responsive" src="/page_imgs/finance_img/review/Q2.png">
                    		<div class="modal-paper" style="color:#000; margin-top:10px;" align="left"><%-rev[i].rev_QA2%></div>
                    		<h5 class="modal-title" style="color:#000; margin-top:10px;"><%=rev[i].rev_title%></h5>
-                   		<a href="#" data-dismiss="modal"><p style="color:#000; margin:30px 0 20px 0; width:300px; height:auto; border-radius:15px; background-color:#e0e0e0; padding:20px;">닫기</p></a>
+                   		<a href="#" data-dismiss="modal"><p style="width:120px; height:auto; border:2px solid #24babc; border-radius:10px; color:#24babc; padding:10px; margin:30px 0 20px 0; font-weight:900">닫기</p></a>
                  	 </div>
            		  </div>
         		 </div>
@@ -142,9 +134,8 @@ body { padding-right: 0px !important;}
 				</div>
 				</li>
 				<% } %>
-			</div>
-				
-
+			</div>		
+</div>
 		<script src="/js/contents_js/masonry.pkgd.min.js"></script>
 		<script src="/js/contents_js/imagesloaded.js"></script>
 		<script src="/js/contents_js/classie.js"></script>

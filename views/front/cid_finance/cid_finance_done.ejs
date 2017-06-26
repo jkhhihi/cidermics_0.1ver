@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>사이다경제 | 강의</title>
+<title>사이다경제 | 재무</title>
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/cid_finance.css" rel="stylesheet">
 <link href="/css/swiper.css" rel="stylesheet">
@@ -50,43 +50,29 @@
 <!--위로가기 버튼-->
 <div id="but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></div>
 <% include ../top %>
-<div class="line"></div>
-<div class="finance-apply" align="center">
-<img class="img-responsive" src="/page_imgs/finance_img/finance-btn-menu7.svg"><p>신청완료</p>
-</div>
 
-<div class="entry" align="center">
-	<p style="color:#fff; font-weight:bold; font-size:16px; margin:0 0 0";>감사합니다:) 신청번호를 꼭 기억해 주세요.</p>
+<div class="finance-apply" align="center">
+<img class="img-responsive" src="/page_imgs/finance_img/icon-apply-done.png">
 </div>
 
 <form name="fi_applyform" method="post" action="/finance/apply/insert">
 <div class="apply-input-done container" align="center" >
+<P class="star1" align="right">감사합니다:) 신청번호는 꼭 기억해주세요!</P>
 		<div class="row" align="left">
-				<div class="d_num col-xs-12 col-lg-12"><span>신청번호 : </span>
-				<%=row[0].fi_app_no%>
+				<div class="d_num col-xs-12 col-lg-12"><p>신청번호</p>
+				<div class="input"><%=row[0].fi_app_no%></div>
 				</div>		
-				<div class="d_name col-xs-12 col-lg-12"><span>신청자명 : </span>
-				<%=row[0].fi_app_name%>
+				<div class="d_name col-xs-12 col-lg-12"><p>신청자명</p>
+				<div class="input"><%=row[0].fi_app_name%></div>
 				</div>
-				<div class="d_cell col-xs-12 col-lg-12"><span>휴대폰 번호 : </span>
-				<%=row[0].fi_app_phone%>
+				<div class="d_cell col-xs-12 col-lg-12"><p>휴대전화</p>
+				<div class="input"><%=row[0].fi_app_phone%></div>
 				</div>
-				<div class="d_mail col-xs-12 col-lg-12"><span>이메일 주소 : </span>
-				<%=row[0].fi_app_email%>
+				<div class="d_mail col-xs-12 col-lg-12"><p>이메일</p>
+				<div class="input"><%=row[0].fi_app_email%></div>
 				</div>
-				<!--div class="job col-xs-12 col-lg-12"><span>소속 및 직무 : </span>
-				
-				</div>
-				<div class="route col-xs-12 col-lg-12"><span>신청경로 : </span>
-				
-				</div>
-				<div class="want col-xs-12"><P>Q. 어떤 재무상담을 원하세요?</P><P style="margin-top:20px;">A.</P>
-				
-				</div-->
 		</div>
-		
-		<a href="/finance" style="cursor:pointer"><div class="btn-apply">첫페이지로</div></a>
-		
+		<a href="/finance" style="cursor:pointer"><img class="img-responsive" src="/page_imgs/finance_img/btn-apply-home.png"></a>
 </div>
 </form>
 
