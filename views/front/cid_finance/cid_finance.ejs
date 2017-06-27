@@ -15,6 +15,10 @@
 
 <script src="/js/gotoup.js"></script>
 
+<link rel="stylesheet" type="text/css" href="/css/component.css" />
+<script src="/js/modernizr.custom.js"></script>
+
+
 <link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
 <link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
 
@@ -320,9 +324,12 @@ body { padding-right: 0px !important;}
 
 <div class="review" align="center">
 	<a href="/finance/review"><span>재무상담 생성후기</span></a>
+
+	<!-- review 시작 -->
 	<div class="container">
 					
 	</div>
+	<!-- review 끝 -->
 	<p>본 후기는 현장에서 상담받는 고객들이<br>직접 자필로 작성해주셨으며,<br>허위없이 캡쳐해 내용 그대로를 공유합니다.</p>
 </div>
 <div class="review-plus-btn" align="center">
@@ -332,11 +339,49 @@ body { padding-right: 0px !important;}
 <div class="contents" align="center">
 	<a href="/finance/contents"><span>금융 콘텐츠</span></a>
 
+	<!-- 콘텐츠 -->
+
+	<!--콘텐츠 들어갈 자리-->
+<style type="text/css">
+	.con_border{
+		border: 1px solid #ececec;
+		border-radius: 6px;
+	}
+</style>
+<div class="contents-finance container">
+	<ul class="grid effect-2" id="grid">
+	<% for(var i=0; i<contents.length; i++) { %>
+	<li>
+		<div class="con_border">
+			<a href="/contents/detail/<%= contents[i].con_no %>" style="margin-top:0">
+			<div class="con-img" align="center" style="margin-top:0"><img class="img-responsive" src="<%= contents[i].con_photo %>"></div></a>
+			<p><a href="/contents/detail/<%= contents[i].con_no %>">
+			<%= contents[i].con_title %></a></p>
+		</div>
+	</li>
+	<% } %>
+	</ul>
+</div>
+<script src="/js/contents_js/masonry.pkgd.min.js"></script>
+<script src="/js/contents_js/imagesloaded.js"></script>
+<script src="/js/contents_js/classie.js"></script>
+<script src="/js/contents_js/AnimOnScroll.js"></script>
+<script>
+new AnimOnScroll( document.getElementById( 'grid' ), {
+minDuration : 0.4,
+maxDuration : 0.7,
+viewportFactor : 0.2
+} );
+</script>
+
+
 	<!--재무 신청 오픈-->
 	<a href="/finance/apply/"><div class="btn-apply-in1" align="center"><h5><b>상담 신청</b></h5></div></a>
 	<!--재무 신청 마감-->
 	<!-- a href="#" onClick="alert('이번 달 무료 재무상담 신청이 마감되었습니다. 다음 달에 더 좋은 상담으로 찾아뵙겠습니다.')"><div class="btn-apply-in1" align="center">상담 신청하기</div></a-->
 </div>
+
+
 
 <% include ../bottom %>
 </body>

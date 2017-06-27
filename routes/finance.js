@@ -105,11 +105,53 @@ router.get('/finance/done', function(req, res, next) {
 
 router.get('/finance', function(req, res, next) {
 	var finance;
+	var no = req.params.no;
+	
+	var now = new Date();
+	 var _year=  now.getFullYear();
+   	 var _mon =   now.getMonth()+1;
+	 _mon=""+_mon;
+	 if (_mon.length < 2 )
+	 {
+	    _mon="0"+_mon;
+	 }
+     var _date=now.getDate ();
+     _date =""+_date;
+     if (_date.length < 2 )
+	 {
+	    _date="0"+_date;
+	 }
+     var _hor = now.getHours  ();
+	 _hor =""+_hor;
+	 if (_hor.length < 2 )
+	 {
+	    _hor="0"+_hor;
+	 }
+	 var _min=now.getMinutes();
+	  _min =""+_min;
+	 if (_min.length < 2 )
+	 {
+	    _min="0"+_min;
+	 }
+	 
+	var _tot=_year+""+_mon+""+_date+""+_hor+""+ _min;
+	
+	var sets = {con_category : no, con_release : _tot};
+	var row;
 	var fi_app_cate= rdate();
+	
+	qry="select con_no, con_photo, con_title from cider.cid_contents where con_category = '2' and con_release <= '"+_tot+"' order by con_no desc limit 0,4";
+	mysql.select(qry,
+			 function (err, data){	 
+				if (err) throw err;
+		 
+		 row = data;
+
 	mysql.select("SELECT COUNT(*) AS appno FROM cider.cid_fi_applyform where fi_app_cate="+fi_app_cate+";", function (err, data){
 		
-	res.render('front/cid_finance/cid_finance', {finance : data});
+	res.render('front/cid_finance/cid_finance', {contents : row, finance:data});
 	});
+  });
 });
 
 
@@ -125,19 +167,19 @@ router.get('/finance/contents', function(req, res, next) {
 	
 	var now = new Date();
 	 var _year=  now.getFullYear();
-   var _mon =   now.getMonth()+1;
+   	 var _mon =   now.getMonth()+1;
 	 _mon=""+_mon;
 	 if (_mon.length < 2 )
 	 {
 	    _mon="0"+_mon;
 	 }
-   var _date=now.getDate ();
-   _date =""+_date;
-   if (_date.length < 2 )
+     var _date=now.getDate ();
+     _date =""+_date;
+     if (_date.length < 2 )
 	 {
 	    _date="0"+_date;
 	 }
-   var _hor = now.getHours  ();
+     var _hor = now.getHours  ();
 	 _hor =""+_hor;
 	 if (_hor.length < 2 )
 	 {
@@ -170,7 +212,7 @@ router.get('/finance/contents', function(req, res, next) {
 			
 
 		 res.render('front/cid_finance/cid_finance_contents', { contents : row, finance:data});
-			});
+		});
 	});
 });
 
