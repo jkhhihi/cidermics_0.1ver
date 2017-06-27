@@ -22,6 +22,7 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
 
 .review-plus-btn{background-color:#24babc; padding:15px 0;}
 .review-plus-btn span{font-weight:bold; color:#fff; border-radius:20px; border:1px solid #fff; padding:5px 10px;}
+.review p{color:#666; margin:20px 0 0;}
 
 .contents{padding:20px 0;}
 
@@ -63,6 +64,10 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
 .main-banner .apply_no{font-size:14px;}
 
 .info-text1, .info-text2{width:90%;}
+
+.nesessary-con{margin:20px 0;}
+
+.review p{font-size:14px;}
 
 .btn-apply-in{margin:15px 0 15px 0;}
 .main-banner .black-box{background-color:#000; opacity:0.6; padding:10px 0; margin:15px 0 0 0;}

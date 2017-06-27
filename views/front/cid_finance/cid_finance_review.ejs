@@ -27,19 +27,8 @@
 <meta property="og:url" content="http://www.cidermics.com/finance/" />
 
 <style>
-.modal-lg{width:95%}
-.modal-body{padding:2px !important;}
-.modal-body input{width:220px;}
-.main-apply{margin-top:55px;}
-.main-apply .deposit-account{padding:0 10px 0 10px; font-size:22px;}
-.main-apply .price{font-size:30px; font-weight:bold; color:#FF0000;}
-.modal-title{color:#1b87c9;}
-.modal-body{margin-top:20px;}
-.modal-body input{border:#1b87c9 2px solid; height:400px; width:80%; border-top:none; border-left:none; border-right:none;}
-.modal-body button{background-color:#1b87c9; width:55px; height:38px; border-radius:2px; color:#fff; font-weight:bold; font-size:16px; border:#1b87c9 1px solid; margin-left:10px;}
-.modal-body .modal-paper{padding: 5px 0px 10px 0px; width:80%;}
 .modal-lg{max-width:500px;}
-body { padding-right: 0px !important;}
+body {padding-right: 0px !important;}
 </style>
 
 </head>
@@ -81,22 +70,18 @@ body { padding-right: 0px !important;}
 							 		'<div class="con-border bg-w"> ' +
 							 			'<div class="con-title"><span><center>' + value.rev_title +'</center></span></div>' +
 							 		'</div> '+
-							  '</li> ';
-							
+							  '</li> ';	
 					});
-
 					$('#grid').html(ht);
 					new AnimOnScroll( document.getElementById( 'grid' ), {
 						minDuration : 0.4,
 						maxDuration : 0.7,
 						viewportFactor : 0.2
 				} );
-
 			}
 		})
 	}
 </script>
-
 <% for(var i=0; i< rev.length; i++) { %>
 				<div id="coupon-modal<%=rev[i].rev_no%>" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" align="center" style="">
        			 <div class="modal-dialog modal-lg">
@@ -119,16 +104,13 @@ body { padding-right: 0px !important;}
     		    </div>
 <% } %>
 <!--콘텐츠 들어갈 자리-->
-	
+
 			<div class="grid effect-2" id="grid1">
 				<% for(var i=0; i< rev2.length; i++) { %>
 				<li>
-				<div align="center">
-					
-					<img class="img-responsive" src="<%= rev[i].rev_img %>" data-toggle="modal" data-target="#coupon-modal<%=rev[i].rev_no%>" >
-					
+				<div align="center">	
+					<img class="img-responsive" src="<%= rev[i].rev_img %>" data-toggle="modal" data-target="#coupon-modal<%=rev[i].rev_no%>" >	
 				</div>
-				
 				<div class="con row">	
 					<span><center><%=rev2[i].rev_title%></center></span></p>
 				</div>
