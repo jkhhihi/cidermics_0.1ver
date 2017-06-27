@@ -1,211 +1,88 @@
 body{/*font-family: 'Nanum Gothic', serif;*/}
 .padding5{padding:0 5px 0 5px !important;}
-.web-banner{background-image:url(http://i.imgur.com/leXvoEN.jpg); background-repeat : no-repeat;
-background-position:center; width:100%; padding:150px 0 100px 0;}
-.web-banner .border-box{border:5px solid #fff; padding:50px 0;}
-.web-banner p.title{font-size:32px; font-weight:bold; color:#fff;}
-.web-banner .line3{width:300px; height:2px; background-color:#186491;}
-.web-banner p.con{font-size:26px; font-weight:bold; line-height:1.8em; margin:50px 0 30px 0; color:#fff;}
-.web-banner .menu1 img{width:80px;}
-.web-banner .menu1 p{font-size:18px; font-weight:bold;}
-.finance-menu-web{height:auto; width:100%; margin:80px 0;}
-.finance-menu-web .title{font-size:20px; font-weight:bold; color:#666; margin-bottom:20px;}
-.apply_no{font-size:20px; color:#303030; margin:60px 0 30px 0; font-weight:900;}
-.finance-menu-web img{height:80px; margin-bottom:10px;}
-.finance-menu-web p{font-size:16px; font-weight:600; color:#333;}
-.finance-menu-web .line1{width:60%; height:3px; background-color:#d8027c;}
-.line2{width:100%; height:3px; background-color:#aeaeae;}
-.finance-menu-mob{display:none;}
-.finance-menu-mob .line2{width:100%; height:3px; background-color:#aeaeae;}
-.finance_main{margin:40px 0; background-color:#ececec; padding:50px 0;}
-.finance_main .finance-img img{width:80%; height:auto; padding:10px 0;}
-.finance p{margin-bottom:40px; border-radius: 5px; width:45px; height:45px; padding-top:8px; background-color:#186491; font-size:24px; font-weight:bold; color:#fff;}
-.finance .btn-apply-in{
-	box-shadow: 0px 0px 10px 2px #333;
-    border: 3px #ececec solid;
-    border-radius: 5px;
-    width: 200px;
-    height: 50px;
-    padding-top: 10px;
-    background-color: #186491;
-    font-size: 20px;
-    font-weight: bold;
-    color: #fff;} 
-.planner-intro{margin-top:100px; margin-bottom:100px;}
-.planner-intro h3{font-weight:bold; margin:30px 0;}
-.planner-intro p{line-height:1.8em; font-size:16px;}
-.planner-intro p.blue{color:#1b87c9;}
-.planner-intro img.img-center {margin: 0 auto; width:220px;}
-.planner-intro .row div{margin-bottom:80px;}
-.contents-finance{font-size:16px; text-align:center; font-weight:bold;}
-.contents-finance div div{margin:10px 0 10px 0;}
-.contents-finance div div p{margin-top:20px;}
-.contents-finance .icon-plus_con{margin:60px 0 50px 0;}
-/*.con-img{background-color:#000;}*/
-.con-img img{width:100%;}
-.icon-plus_con img{width:40px; margin-bottom:100px;}
-.apply-bg .but-apply .btn-apply-in{
-	box-shadow: 0px 0px 10px 2px #333;
-    border: 3px #ececec solid;
-    border-radius: 5px;
-    width: 200px;
-    height: 50px;
-    padding-top: 5px;
-    background-color: #186491;
-    font-size: 20px;
-    font-weight: bold;
-    color: #fff;}
+.main-banner{background-image: url("/page_imgs/finance_img/finance-bg.jpg"); width:100%; height:auto; padding:25px 0 0 0; margin-top:70px;}
+.main-banner .title{font-size:20px; font-weight:900; margin-top:10px;}
+.main-banner .apply_no{font-size:16px; font-weight:900;}
 
-/*necessary부분*/
-.necessary-text1-web{margin:50px 0;}
-.necessary-text1-mob{display:none;}
-.necessary-text2-web{margin:50px 0;}
-.necessary-text2-mob{display:none;}
+.info{margin:30px 0;}
+.info-text1, .info-text2{width:50%;}
+.info-text1{border:3px dotted #24babc; border-radius:5px; padding:20px 60px; margin:0 0 20px 0;}
+.btn-apply-in1{width:120px; height:auto; border:2px solid #24babc; border-radius:10px; color:#24babc; margin:15px 0 0 0;} 
+
+.process, .review{background-color:#efefef; padding:20px 0;}
+.process span, .review span, .contents span{font-weight:bold; color:#24babc; border-bottom:2px solid #24babc; padding-bottom:5px;}
+
+.nesessary{background-color:#24babc; padding:20px 0;}
+.nesessary span{font-weight:bold; color:#fff; border-bottom:2px solid #fff; padding-bottom:5px;}
+.nesessary-con{margin:40px 0; font-size:14px; color:#fff;}
+.nesessary-con img{width:150px; margin-bottom:10px;}
+.nesessary-con span{border:1px solid #fff; border-radius:20px; padding:2px 10px;}
+.nesessary-con p{margin-top:10px; font-size:12px;}
+.btn-apply-in2{width:120px; height:auto; border:2px solid #fff; border-radius:10px; color:#fff; margin:15px 0 0 0;}
+
+.review-plus-btn{background-color:#24babc; padding:15px 0;}
+.review-plus-btn span{font-weight:bold; color:#fff; border-radius:20px; border:1px solid #fff; padding:5px 10px;}
+.review p{color:#666; margin:20px 0 0;}
+
+.contents{padding:20px 0;}
+
+.btn-apply-in{width:120px; height:auto; border:2px solid #24babc; border-radius:10px; color:#24babc; margin:15px 0 0 0;} 
+.main-banner .black-box{background-color:#000; opacity:0.6; padding:10px 0; margin:25px 0 0 0;}
+.main-banner .black-box img{height:80px; margin:0 20px;}
+.contents-finance{font-size:16px; text-align:center; margin:30px 0;}
+.icon-plus_con img{width:35px; margin-bottom:50px;}
 
 /*apply부분*/
 .padding-0{padding:0 !important;}
-.finance-apply{background-color:#ececec; width:100%; height:auto; padding:20px 0; margin-top:70px;}
-.finance-apply p{font-size:18px; font-weight:bold; color:#666; margin-right:10px;}
-.finance-apply img{height:120px; margin-right:10px;}
-.apply1{margin:50px 0;}
-/*.apply1 .title1{font-size:16px; color:#ff0000; font-weight:bold; text-align:center;}
-.apply1 .title2{font-size:20px; color:#666666; font-weight:bold; line-height:2.0em; text-align:center; margin-top:30px;}
-.apply1 .title2 span{font-size:26px; color:#1b87c9;}
-.apply1 .title2 .font{font-size:26px; color:#666666;}
-.entry p{font-size:18px; color:#ffffff; font-weight:bold; text-align:center;}*/
-.apply1 .title1 img{width:500px;}
-.apply1 .title2 img{width:620px;}
-.entry img{width:560px;}
-.entry_p{margin-top:10px;}
-.entry{width:100%; height:auto; padding:10px 2px 10px 2px; background-color:#1b6794;}
-.apply1 .title2{margin-top:30px; margin-bottom:0;}
-.apply-input{font-size:16px; font-weight:bold;}
-.apply-input .row{margin:50px 0; border:#cccccc 2px solid; margin-top:50px; padding:30px; width:70%;}
-.apply-input .row span{display:inline-block; width:120px;}
-.star1{color:#ff0000; margin-bottom:20px;}
-.apply-input .row span .star{display:inline; color:#ff0000; margin-right:4px;}
-.apply-input .name, .gender, .birthday, .cell, .mail, .job, .route, .age, .area{height:60px;}
-.apply-input .name input, .age input{border:#1b87c9 1px solid; width:120px; height:30px; padding:5px; font-size:16px; border-radius:2px;}
-/*.apply-input .gender .male{width:auto; height:30px; background-color:#22beb1; color:#fff; border-radius:2px; display:inline-block !important;}
-.apply-input .gender .male input{margin:8px 12px 0; cursor: pointer;}
-.apply-input .gender .male span{width:50px; cursor: pointer;}
-.apply-input .gender .female{width:auto; height:30px; background-color:#f66a6a; color:#fff; border-radius:2px; display:inline-block !important;}
-.apply-input .gender .female input{margin:8px 12px 0; cursor: pointer;}
-.apply-input .gender .female span{width:50px; cursor: pointer;}
-.apply-input .birthday select{border:#1b87c9 1px solid; height:30px; margin-right:5px; font-size:16px; border-radius:2px; color:#979797;}
-.apply-input .birthday .year{width:75px;}
-.apply-input .birthday .month{width:50px; margin-left:10px;}
-.apply-input .birthday .day{width:50px; margin-left:10px;}*/
-.apply-input .cell input{border:#1b87c9 1px solid; width:70px; height:30px; padding:5px; font-size:16px; margin:0 10px; border-radius:2px;}
-.apply-input .cell select, .area select{border:#1b87c9 1px solid; width:65px; height:30px; margin-right:10px; font-size:16px; border-radius:2px; color:#979797;}
-.apply-input .cell p{color:#FF0000; margin-top:15px; margin-left:125px; font-size:14px;}
-.apply-input .mail input{border:#1b87c9 1px solid; height:30px; padding:5px; font-size:16px; width:130px; border-radius:2px;}
-.apply-input .mail select{border:#1b87c9 1px solid; height:30px; font-size:16px; width:130px; border-radius:2px; color:#979797;}
-.apply-input .mail .mail1{margin-right:10px;}
-.apply-input .job input{border:#1b87c9 1px solid;  height:30px; width:430px; padding:5px; font-size:16px; border-radius:2px;}
-.apply-input .route input{border:#1b87c9 1px solid;  height:30px; width:430px; padding:5px; font-size:16px; border-radius:2px;}
-.apply-input .want textarea{border:#1b87c9 1px solid;  height:30px; padding:5px; font-size:16px; width: 100%; height: 200px; margin-bottom:30px; border-radius:2px;}
-/*.apply-input .want-ex p{border:#cccccc 1px solid; color:#666; line-height:2.0em; padding:10px;}*/
-.apply-input .want-ex .con{border:#cccccc 1px solid; padding:20px; margin-bottom:10px;}
-.apply-input .want-ex .con img{width:360px;}
-.btn-apply{background-color:#1b87c9; width:150px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:13px;}
-.btn-apply a{color:#fff;}
-.apply-input-done{font-size:16px; font-weight:bold;}
-.apply-input-done .row{margin:50px 0; border:#cccccc 2px solid; margin-top:50px; padding:30px; width:70%;}
-.apply-input-done .row span{display:inline-block; width:120px;}
-.apply-input-done .d_num, .d_name, .d_cell{height:80px;}
-.apply-input-done .d_mail{height:20px;}
-.apply-input-done .btn-apply{background-color:#1b87c9; width:150px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px; margin:50px 0 70px 0;}
-.apply-input-done .btn-apply a{color:#fff;}
+.finance-apply{background-image: url("/page_imgs/finance_img/finance-bg.jpg"); width:100%; height:auto; padding:25px 0; margin-top:70px;}
+.finance-apply img{height:100px;}
+.star1{color:#ff0000; margin-bottom:5px;}
+.apply-input{font-size:14px; font-weight:bold; width:60% !important; margin:50px 0;}
+.apply-input .row{border:#ececec 2px solid; padding:30px 150px;}
+.apply-input .row p .star{display:inline; color:#ff0000; margin-right:4px;}
+.apply-input input, select, textarea{background-color:#efefef; border:none; padding:2px 8px;}
+.apply-input div div p{margin-top:20px;}
+.apply-input .age p, .sex p, .area p{display:inline-block;}
+.name input, .job input, .route input, .want textarea{width:100%}
+.want textarea{height:100px;}
+.age input, .area select{width:110px;}
+.cell input, .cell select, .mail input, .mail select{width:30%;}
+.btn-apply{width:120px; height:auto; border:2px solid #24babc; border-radius:10px; color:#24babc; margin:20px 0;}
+.apply-input-done{font-size:14px; font-weight:bold; width:60% !important; margin:50px 0;}
+.apply-input-done .row{border:#ececec 2px solid; padding:30px 150px;}
+.apply-input-done .row p .star{display:inline; color:#ff0000; margin-right:4px;}
+.apply-input-done .input{background-color:#efefef; width:100%; height:auto; padding:2px 8px;}
+.d_num .input, .d_name .input, .d_cell .input, .d_mail .input{margin-bottom:20px;}
+.apply-input-done img{width:80px; margin:20px 0;}
 .privacy{padding:5px; font-size:13px; font-weight:bold; color:#FF0000;}
 .privacy .con{line-height:1.8em;} 
     
-/*상담프로세스 부분*/
-.process .main-title{margin:50px 0 0 0; font-size:20px; font-family: "BMD", sans-serif; line-height:1.8em;}
-.process div div{margin-top:60px; margin-bottom:60px;}
-.process div div p{margin-top:20px; font-size:18px; line-height:1.5em; font-weight:bold;}
-.process div div p.title{font-size:22px; font-weight:900;}
 
 @media all and (max-width:1024px) {
-.web-banner{padding:80px 10px 20px 10px;}
-.web-banner .border-box{padding:20px 0;}
-.web-banner p.title{font-size:20px;}
-.web-banner .line3{width:200px;}
-.web-banner p.con{font-size:16px; margin:20px 0 0 0;}
-.finance-menu-web{display:none;}
-.finance-menu-mob{display:block; height:auto; width:100%;}
-.finance-menu-mob .menu{height:auto; border:1px #ececec solid; font-size:14px; font-weight:bold; padding:0;}
-.finance-menu-mob .menu img{width:30px; padding:6px 5px;}
-.finance-menu-mob .menu p{margin-bottom:0; margin-top:6px;}
-.finance_main{margin:40px 0; padding:10px 0;}
-.finance_main .finance-img img{width:100%; padding:30px 0;}
-.apply_no{font-size:14px; line-height:1.5em; paddind:0; margin:30px 0 30px 0;}
-.finance p{margin-bottom:20px; width:30px; height:30px; padding-top:4px; font-size:18px;}
-.finance .btn-apply-in{margin:20px 0 20px 0;}
-.planner-intro{margin-top:50px; margin-bottom:50px;}
-.contents-finance .icon-plus_con{margin:10px 0 30px 0;}
-.contents-finance .icon-plus_con img{height:80px;}
-.contents-finance .row .col-sm-4, .col-xs-6{padding:0 5px 0 5px;}
-.icon-plus_con img{width:35px; margin-bottom:40px;}
-.apply-bg img{height:40px;}
-.apply-bg .but-apply{padding-top:20px;}
-.apply-bg .but-apply .btn-apply-in{
-    width: 160px;
-    height: 40px;
-    padding-top: 8px;
-    background-color: #186491;
-    font-size: 16px;}
+.main-banner{padding:10px 0 0 0; margin-top:50px;}
+.main-banner .title{font-size:18px;}
+.main-banner .apply_no{font-size:14px;}
 
+.info-text1, .info-text2{width:90%;}
 
-/*necessary부분*/
-.necessary-text1-web{display:none;}
-.necessary-text1-mob{display:block; margin:20px 0;}
-.necessary-text2-web{display:none;}
-.necessary-text2-mob{display:block; margin:20px 0;}
+.nesessary-con{margin:20px 0;}
 
+.review p{font-size:14px;}
+
+.btn-apply-in{margin:15px 0 15px 0;}
+.main-banner .black-box{background-color:#000; opacity:0.6; padding:10px 0; margin:15px 0 0 0;}
+.main-banner .black-box img{height:60px; margin:0 20px;}
+.contents-finance{font-size:14px; margin:15px 0;}
+.icon-plus_con img{width:30px; margin-bottom:30px;}
 
 /*apply부분*/
-.finance-apply{padding:70px 0 10px 0; margin-top:0;}
-.finance-apply img{height:50px; margin-right:10px;}
-.finance-apply p{font-size:16px;}
-.apply1{margin:20px 0;}
-/*.apply1 .title1{font-size:12px;}
-.apply1 .title2{font-size:16px;}
-.apply1 .title2 span{font-size:20px;}
-.apply1 .title2 .font{font-size:20px;}
-.entry p{font-size:14px;}*/
-.apply1 .title1{padding:0 5px;}
-.apply1 .title2{padding:0 5px; margin-top:10px;}
-.entry{padding:10px 2px 5px 2px;}
-.apply-input{width:100% !important; font-size:16px;}
-.apply-input .row{margin:35px 5px 0 5px; padding:30px 5px; width:97%;}
-.apply-input .row span{width:120px;}
-.apply-input .name, .age, .area{height:60px;}
-/*.apply-input .gender{height:100px;}
-.apply-input .birthday{height:120px;}*/
-.apply-input .cell{height:90px;}
-.apply-input .mail{height:120px;}
-.apply-input .job{height:80px;}
-.apply-input .route{height:80px;}
-/*.apply-input .name span{display:block; margin-bottom:20px;}*/
-.apply-input .cell span{margin-bottom:10px; display:block;}
-.apply-input .cell input{margin:0 5px;}
-.apply-input .cell select{margin-right:5px;}
-.apply-input .birthday span{display:block; margin-bottom:10px;}
-.apply-input .mail span{display:block; margin-bottom:10px;}
-/*.apply-input .mail input{width:110px;}*/
-.apply-input .mail select{ margin-top:5px;}
-.apply-input .mail .mail1{margin-right:5px;}
-.apply-input .job span, .route span{margin-bottom:10px; display:block !important;}
-.apply-input .job input, .route input{width:100% !important;}
-/*.apply-input .route input{width:50%}*/
-.apply-input .want-ex .con{padding:5px;}
-.apply-input .want-ex .con img{width:330px;}
-.apply-input-done{width:100% !important; font-size:16px;}
-.apply-input-done .row{margin:35px 5px 0 5px; padding:30px 5px; width:97%;}
-.apply-input-done .row span{width:100px;}
-.apply-input-done .btn-apply{margin-top:60px; margin-bottom:60px;}
-.apply-input .area select{ margin-top:5px;}
-.process .main-title{font-size:18px; padding:0 5px;}
+.finance-apply{margin-top:50px;}
+.finance-apply img{height:60px;}
+.apply-input{width:98% !important; font-size:12px;}
+.apply-input .row{padding:10px;}
+.cell input, .cell select, .mail input, .mail select{width:28%;}
+.apply-input-done{width:98% !important; font-size:12px;}
+.apply-input-done .row{padding:10px;}
+.apply-input-done img{width:60px; margin:15px 0;}
 }
 
