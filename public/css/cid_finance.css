@@ -5,17 +5,19 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
 .main-banner .apply_no{font-size:16px; font-weight:900;}
 
 .info{margin:30px 0;}
-.info-text1, .info-text2{width:50%;}
-.info-text1{border:3px dotted #24babc; border-radius:5px; padding:20px 60px; margin:0 0 20px 0;}
+.info-text1{width:60%;}
+.info-text2{width:50%;}
+.info-text1{border:3px dotted #24babc; border-radius:5px; padding:20px 120px; margin:0 0 20px 0;}
 .btn-apply-in1{width:120px; height:auto; border:2px solid #24babc; border-radius:10px; color:#24babc; margin:15px 0 0 0;} 
 
 .process, .review{background-color:#efefef; padding:20px 0;}
 .process span, .review span, .contents span{font-weight:bold; color:#24babc; border-bottom:2px solid #24babc; padding-bottom:5px;}
+.process img.process-img{width:600px; margin:40px 0 30px 0;}
 
 .nesessary{background-color:#24babc; padding:20px 0;}
 .nesessary span{font-weight:bold; color:#fff; border-bottom:2px solid #fff; padding-bottom:5px;}
 .nesessary-con{margin:40px 0; font-size:14px; color:#fff;}
-.nesessary-con img{width:150px; margin-bottom:10px;}
+.nesessary-con img{width:160px; margin-bottom:10px;}
 .nesessary-con span{border:1px solid #fff; border-radius:20px; padding:2px 10px;}
 .nesessary-con p{margin-top:10px; font-size:12px;}
 .btn-apply-in2{width:120px; height:auto; border:2px solid #fff; border-radius:10px; color:#fff; margin:15px 0 0 0;}
@@ -23,6 +25,9 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
 .review-plus-btn{background-color:#24babc; padding:15px 0;}
 .review-plus-btn span{font-weight:bold; color:#fff; border-radius:20px; border:1px solid #fff; padding:5px 10px;}
 .review p{color:#666; margin:10px 0 20px 0;}
+.review p.text-click{color:#24babc; position:absolute; z-index:2; top:45%; left:45%;
+margin:0; font-size:18px; font-weight:600; text-shadow:#999 0px 0px 4px;}
+.review img.thumnail{position:relative; z-index:1;}
 
 .contents{padding:20px 0;}
 
@@ -40,7 +45,7 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
 .apply-input{font-size:14px; font-weight:bold; width:60% !important; margin:50px 0;}
 .apply-input .row{border:#ececec 2px solid; padding:30px 150px;}
 .apply-input .row p .star{display:inline; color:#ff0000; margin-right:4px;}
-.apply-input input, select, textarea{background-color:#efefef; border:none; padding:2px 8px;}
+.apply-input input, select, textarea{background-color:#efefef; border:none; padding:6px 8px;}
 .apply-input div div p{margin-top:20px;}
 .apply-input .age p, .sex p, .area p{display:inline-block;}
 .name input, .job input, .route input, .want textarea{width:100%}
@@ -51,23 +56,29 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
 .apply-input-done{font-size:14px; font-weight:bold; width:60% !important; margin:50px 0;}
 .apply-input-done .row{border:#ececec 2px solid; padding:30px 150px;}
 .apply-input-done .row p .star{display:inline; color:#ff0000; margin-right:4px;}
-.apply-input-done .input{background-color:#efefef; width:100%; height:auto; padding:2px 8px;}
+.apply-input-done .input{background-color:#efefef; width:100%; height:auto; padding:6px 8px;}
 .d_num .input, .d_name .input, .d_cell .input, .d_mail .input{margin-bottom:20px;}
 .apply-input-done img{width:80px; margin:20px 0;}
 .privacy{padding:5px; font-size:13px; font-weight:bold; color:#FF0000;}
 .privacy .con{line-height:1.8em;} 
+.privacy .con p{margin:5px 0 0 0;}
     
 
 @media all and (max-width:1024px) {
+.padding-10{padding:0 10px 0 10px !important}
 .main-banner{padding:10px 0 0 0; margin-top:50px;}
 .main-banner .title{font-size:18px;}
 .main-banner .apply_no{font-size:14px;}
 
-.info-text1, .info-text2{width:90%;}
+.info-text1, .info-text2{width:95%;}
+.info-text1{padding:20px 20px}
+
+.process img.process-img{width:90%; margin:20px 0 20px 0;}
 
 .nesessary-con{margin:20px 0;}
 
-.review p{font-size:16px;}
+.review p{font-size:12px;}
+.review p.text-click{top:40%; left:40%; font-size:16px;}
 
 .btn-apply-in{margin:15px 0 15px 0;}
 .main-banner .black-box{background-color:#000; opacity:0.6; padding:10px 0; margin:15px 0 0 0;}
@@ -78,10 +89,10 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
 /*apply부분*/
 .finance-apply{margin-top:50px;}
 .finance-apply img{height:60px;}
-.apply-input{width:98% !important; font-size:12px;}
+.apply-input{width:98% !important; font-size:12px; margin:20px 0;}
 .apply-input .row{padding:10px;}
 .cell input, .cell select, .mail input, .mail select{width:28%;}
-.apply-input-done{width:98% !important; font-size:12px;}
+.apply-input-done{width:98% !important; font-size:12px; margin:20px 0;}
 .apply-input-done .row{padding:10px;}
 .apply-input-done img{width:60px; margin:15px 0;}
 }

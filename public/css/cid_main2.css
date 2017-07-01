@@ -230,9 +230,10 @@ padding:10px 0; color:#fff; border-radius: 5px; font-size:16px; font-weight:bold
 }
 
 /*팝업창 */
-.button-checkbox .btn{height:45px; padding:0 10px; background-color:#0b3939; color:#fff; font-size:14px; border-radius:2px;}
-.button-checkbox .btn:focus, .btn:hover{background-color:#186d6d !important; color:#ffffff; }
-.button-close .btn{height:45px; padding:0 10px; background-color:#e5f8f8; color:#186d6d !important; font-size:14px; border-radius:2px;}
+.button-checkbox .btn{height:45px; padding:0 10px; background-color:#09a5c6; color:#fff !important;; font-size:14px; border-radius:2px;}
+.button-checkbox .btn:hover{background-color:#ececec !important; color:#09a5c6 !important;}
+.button-close .btn{height:45px; padding:0 10px; background-color:#ececec; color:#09a5c6 !important; font-size:14px; border-radius:2px;}
+.button-close .btn:focus, .btn:hover{background-color:#09a5c6 !important; color:#fff !important;}
 #pop{
     width: 90%;
     height:auto;

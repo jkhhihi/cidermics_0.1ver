@@ -10,14 +10,13 @@
 
 <title>사이다재무란? - 사이다경제 | 재무</title>
 
-<link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/cid_finance.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="/css/component.css" />
 <link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
 <link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
 <script src="/js/gotoup.js"></script>
 <script src="/js/modernizr.custom.js"></script>
 
@@ -51,6 +50,7 @@ body{padding-right:0px !important;}
 
 <div class="process" align="center">
 	<span>상담 프로세스</span>
+	<img class="img-responsive process-img" src="/page_imgs/finance_img/img-process.png">
 	<!--재무 신청 오픈-->
 	<a href="/finance/apply/"><div class="btn-apply-in1" align="center"><h5><b>상담 신청</b></h5></div></a>
 	<!--재무 신청 마감-->
@@ -60,7 +60,7 @@ body{padding-right:0px !important;}
 <div class="nesessary" align="center">
 	<span>누구에게 필요할까?</span>
 	<div class="container nesessary-con row">
-		<div class="col-xs-6 col-sm-3">
+		<div class="col-xs-6 col-sm-3 padding-10">
 			<img class="img-responsive" src="/page_imgs/finance_img/nesessary/img-ne-part1.png">
 			<span data-toggle="modal" data-target="#myModal1" style="cursor:pointer">사례보기</span>
 			<p><b>취업 후 소득이 발생하기 시작<br>(소비, 지출, 관리, 인생전반의 이해)</b></p>
@@ -123,7 +123,7 @@ body{padding-right:0px !important;}
         		</div>
 				</div>
 		
-		<div class="col-xs-6 col-sm-3">
+		<div class="col-xs-6 col-sm-3 padding-10">
 			<img class="img-responsive" src="/page_imgs/finance_img/nesessary/img-ne-part2.png">
 			<span data-toggle="modal" data-target="#myModal2" style="cursor:pointer">사례보기</span>
 			<p><b>결혼적령기 혹은 신혼부부<br>(기본적인 재무구조 진단,<br>차후 자녀에게 들어갈 자금 설계)</b></p>
@@ -186,7 +186,7 @@ body{padding-right:0px !important;}
         		</div>
 				</div>
 				
-		<div class="col-xs-6 col-sm-3">
+		<div class="col-xs-6 col-sm-3 padding-10">
 			<img class="img-responsive" src="/page_imgs/finance_img/nesessary/img-ne-part3.png">
 			<span data-toggle="modal" data-target="#myModal3" style="cursor:pointer">사례보기</span>
 			<p><b>자녀의 육아/교육기를 지나<br>부부의 재산을 저축해야할 시기,<br>자리잡기, 재무구조 변화</b></p>
@@ -249,7 +249,7 @@ body{padding-right:0px !important;}
         		</div>
 				</div>
 				
-		<div class="col-xs-6 col-sm-3">
+		<div class="col-xs-6 col-sm-3 padding-10">
 			<img class="img-responsive" src="/page_imgs/finance_img/nesessary/img-ne-part4.png">
 			<span data-toggle="modal" data-target="#myModal4" style="cursor:pointer">사례보기</span>
 			<p><b>자녀 출가, 소득감소,<br>노동력 상실을 대비한<br>나의 노후 준비</b></p>
@@ -321,14 +321,16 @@ body{padding-right:0px !important;}
 
 <div class="review" align="center">
 	<a href="/finance/review"><span>재무상담 생성후기</span></a>
+	
 	<!-- review 시작 -->
 	<div class="container" style="margin:30px 0 20px 0">
 		<!-- 상담후기1 -->
 		<div class="col-xs-6 col-sm-3">
-			<img class="img-responsive" src="/page_imgs/finance_img/review/170406.jpg" data-toggle="modal" data-target="#review-modal1">
+			<p class="text-click">Click!</p>
+			<img class="img-responsive thumnail" src="/page_imgs/finance_img/review/170406.jpg" data-toggle="modal" data-target="#coupon-modal1" style="cursor:pointer">
 			<p><b>노X지 / 20대</b></p>
 		</div>
-				<div id="review-modal1" class="modal fade" role="dialog" align="center">
+				<div id="coupon-modal1" class="modal fade" role="dialog" align="center">
        			 <div class="modal-dialog modal-lg">
            		  <div class="modal-content">
                 	 <div class="modal-header">
@@ -352,17 +354,18 @@ body{padding-right:0px !important;}
     		    </div>		
 		<!-- 상담후기2 -->
 		<div class="col-xs-6 col-sm-3">
-			<img class="img-responsive" src="/page_imgs/finance_img/review/170410.jpg" data-toggle="modal" data-target="#review-modal2">
+			<p class="text-click">Click!</p>
+			<img class="img-responsive" src="/page_imgs/finance_img/review/170410.jpg" data-toggle="modal" data-target="#coupon-modal2" style="cursor:pointer">
 			<p><b>전XX / 20대</b></p>
 		</div>
-				<div id="review-modal2" class="modal fade" role="dialog" align="center">
+				<div id="coupon-modal2" class="modal fade" role="dialog" align="center">
        			 <div class="modal-dialog modal-lg">
            		  <div class="modal-content">
                 	 <div class="modal-header">
                      <h4 class="modal-title"><b>생생 후기</b></h4><h6 align="left" style="margin-bottom: 0px;">상담 날짜 : 2017-04-23</h6>
                 	 </div>
                 	 <div class="modal-body">
-                   		<img class="img-responsive" src="/page_imgs/finance_img/review/170406.jpg">
+                   		<img class="img-responsive" src="/page_imgs/finance_img/review/170410.jpg">
                    		<img class="img-responsive" src="/page_imgs/finance_img/review/Q1.png">
                    		<div class="modal-paper" style="color:#000; margin-top:10px;" align="left">
                    		기본적인 용어와 흐름이 하나도 없는 상태였고, 내 돈을 어떻게 관리해야할지 막막했습니다.
@@ -379,17 +382,18 @@ body{padding-right:0px !important;}
     		    </div>
     	<!-- 상담후기3 -->	    
 		<div class="col-xs-6 col-sm-3">
-			<img class="img-responsive" src="/page_imgs/finance_img/review/170409.jpg" data-toggle="modal" data-target="#review-modal3">
+			<p class="text-click">Click!</p>
+			<img class="img-responsive" src="/page_imgs/finance_img/review/170409.jpg" data-toggle="modal" data-target="#coupon-modal3" style="cursor:pointer">
 			<p><b>박XX / 20대</b></p>
 		</div>
-				<div id="review-modal3" class="modal fade" role="dialog" align="center">
+				<div id="coupon-modal3" class="modal fade" role="dialog" align="center">
        			 <div class="modal-dialog modal-lg">
            		  <div class="modal-content">
                 	 <div class="modal-header">
                      <h4 class="modal-title"><b>생생 후기</b></h4><h6 align="left" style="margin-bottom: 0px;">상담 날짜 : 2017-04-11</h6>
                 	 </div>
                 	 <div class="modal-body">
-                   		<img class="img-responsive" src="/page_imgs/finance_img/review/170406.jpg">
+                   		<img class="img-responsive" src="/page_imgs/finance_img/review/170409.jpg">
                    		<img class="img-responsive" src="/page_imgs/finance_img/review/Q1.png">
                    		<div class="modal-paper" style="color:#000; margin-top:10px;" align="left">
                    		경제에 어느정도 관심이 있다고 생각했다. 저축을 통해 자금을 모으기 보다는 그 돈을 어디에 소비할 지를 고민했다. 은행은 돈을 모아주기보다는 이율이라는 미끼를 통해 저축을 유도한다고 생각했다. 안정적인 투자보다는 공격적인 투자가 좋다고 생각했다.
@@ -406,17 +410,18 @@ body{padding-right:0px !important;}
     		    </div>	
 		<!-- 상담후기4 -->
 		<div class="col-xs-6 col-sm-3">
-			<img class="img-responsive" src="/page_imgs/finance_img/review/170415.jpg" data-toggle="modal" data-target="#review-modal4">
+			<p class="text-click">Click!</p>
+			<img class="img-responsive" src="/page_imgs/finance_img/review/170415.jpg" data-toggle="modal" data-target="#coupon-modal4" style="cursor:pointer">
 			<p><b>강XX / 20대</b></p>
 		</div>
-				<div id="review-modal4" class="modal fade" role="dialog" align="center">
+				<div id="coupon-modal4" class="modal fade" role="dialog" align="center">
        			 <div class="modal-dialog modal-lg">
            		  <div class="modal-content">
                 	 <div class="modal-header">
                      <h4 class="modal-title"><b>생생 후기</b></h4><h6 align="left" style="margin-bottom: 0px;">상담 날짜 : 2017-04-24</h6>
                 	 </div>
                 	 <div class="modal-body">
-                   		<img class="img-responsive" src="/page_imgs/finance_img/review/170406.jpg">
+                   		<img class="img-responsive" src="/page_imgs/finance_img/review/170415.jpg">
                    		<img class="img-responsive" src="/page_imgs/finance_img/review/Q1.png">
                    		<div class="modal-paper" style="color:#000; margin-top:10px;" align="left">
                    		사회 초년생, 소비패턴 파악 불가, 저축액에 대한 목표는 있었으나 저축의 용도, 목적에 대한 고민 없음. 특히 장기적 시각이 없고, 미래에 대한 준비를 중요하게 여기지 않음.
@@ -430,13 +435,14 @@ body{padding-right:0px !important;}
                  	 </div>
            		  </div>
         		 </div>
-    		    </div>	
-    		    
+    		    </div>	  
 	</div>
 	<!-- review 끝 -->
 	
 	<p style="color:#24babc"><b>본 후기는 현장에서 상담받는 고객들이<br>직접 자필로 작성해주셨으며,<br>허위없이 캡쳐해 내용 그대로를 공유합니다.</b></p>
+	
 </div>
+
 <div class="review-plus-btn" align="center">
 	<a href="/finance/review/"><span>더 많은 후기 보러가기</span></a>
 </div>
