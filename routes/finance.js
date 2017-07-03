@@ -232,17 +232,19 @@ router.post('/finance/apply/insert', function(req, res, next) {
 	var fi_app_path = req.body.fi_app_path;
 	var fi_app_comment = req.body.fi_app_comment;
 	var fi_app_age = req.body.fi_app_age;
-	var fi_app_place = req.body.fi_app_place
+	var fi_app_place = req.body.fi_app_place;
 	
 	var fi_app_email = email1 + "@" + email2;
 	var fi_app_phone = phone1 + "-" + phone2 + "-" + phone3;
+	
+	var fi_app_sex = req.body.mem_sex;
 	
 	var date = getWorldTime(+9);
 
 	var fi_app_cate= rdate();
 	
 	var row;
-	var sets = {fi_app_cate : fi_app_cate, fi_app_name : fi_app_name, fi_app_phone : fi_app_phone, fi_app_email : fi_app_email, fi_app_job : fi_app_job, fi_app_path : fi_app_path, fi_app_comment : fi_app_comment, fi_app_regDate : date, fi_app_upDate : date, fi_app_age:fi_app_age, fi_app_place:fi_app_place};
+	var sets = {fi_app_cate : fi_app_cate, fi_app_name : fi_app_name, fi_app_phone : fi_app_phone, fi_app_email : fi_app_email, fi_app_sex:fi_app_sex, fi_app_job : fi_app_job, fi_app_path : fi_app_path, fi_app_comment : fi_app_comment, fi_app_regDate : date, fi_app_upDate : date, fi_app_age:fi_app_age, fi_app_place:fi_app_place};
 	
 	pool.insert('insert into cider.cid_fi_applyform set ?', sets, function (err, data){
 		if(err){

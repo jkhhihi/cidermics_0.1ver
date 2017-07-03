@@ -65,10 +65,16 @@ function next_submit(){
 	document.fi_applyform.fi_app_age.focus();
 	  return;
 	}
-	if(document.fi_applyform.fi_app_place.value==""){
-	 alert("지역을 입력해 주세요.");
+	if(document.fi_applyform.fi_app_place.value=="선택"){
+	 alert("지역을 선택해 주세요.");
 	document.fi_applyform.fi_app_place.focus();
 	  return;
+	}
+	
+	if(document.fi_applyform.mem_sex.value==""){
+		 alert("성별을 선택 주세요.");
+		document.fi_applyform.mem_sex.focus();
+		  return;
 	}
 	
 	for (i=0; i<document.fi_applyform.fi_app_email1.value.length; i++)
