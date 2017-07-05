@@ -101,7 +101,7 @@ padding:10px 0; color:#fff; border-radius: 5px; font-size:16px; font-weight:bold
 .container-fluid{padding:0 !important;}
 #myCarousel{margin-top:35px;}
 #swiper-menu{margin-bottom:14px;}
-.menu-wrap{padding:0px 0;}
+.menu-wrap{padding:0px 0; margin-bottom:10px;}
 .menu-wrap h6{display:inline-block; padding:0 2px;}
 .menu-wrap h6 b{padding:6px 10px; font-size:12px;}
 .menu6 .col-xs-4{padding:0 2px; height:40px;}
