@@ -10,7 +10,7 @@
 <!--공유 meta tags-->
 <meta name="title" content="사이다경제" />
 <meta property="og:image"  content="http://www.cidermics.com/page_imgs/fixed_img/thum_img.jpg" />
-<meta property="og:title"  content="사이다경제" />	
+<meta property="og:title"  content="사이다경제" /> 
 <meta property="og:site_name"  content="사이다경제"/ >
 <meta property="og:type"  content="article">
 <meta property="og:url"  content="http://www.cidermics.com/" />
@@ -39,11 +39,15 @@ function openWinKA(){
 }
 </script>
 
+<style>
+.menu-wrap::-webkit-scrollbar { 
+    display: none; 
+}
+</style>
+
 </head>
 <body>
 <% include top %>
-
-<div class="contents_detail-mob_menu"><img src="http://i.imgur.com/iW4DMcC.png" height="50"></div>
 <script type="text/javascript">
   function setCookie( name, value, expiredays ) { 
    var todayDate = new Date(); 
@@ -125,28 +129,26 @@ function openWinKA(){
 });
 </script>
 
-<!-- 메인 팝업 창 -->
-<!--div id="info-wrap">
-		<div id="pop">
-			 <div>
-  				<a href="/finance/necessary"><img class="img-responsive" src="http://i.imgur.com/ul8mTak.jpg"></a>
- 			 </div>
- 			 
-			<div class="close1" style="opacity:.98;">
-  				<form name="pop_form" id="pdtop">
-  					<span class="button-checkbox">
-        				<button type="button" class="btn">하루동안 보지 않기</button>
-        				<input type="checkbox" name="chkbox" value="checkbox" class="hidden" checked />
-    				</span>
-    				<span class="button-close">
-        				<button type="button" class="btn" onclick="closePop();">닫기</button>
-    				</span>
-  				</form>
- 			</div>
-			
-		</div>
-</div-->
- 
+
+<메인 팝업 창 >
+<div id="info-wrap">
+    <div id="pop">
+       <div>
+          <a href="/finance"><img class="img-responsive" src="http://i.imgur.com/62S2UZ7.jpg"></a>
+       </div>
+      <div class="close1" style="opacity:.98;">
+          <form name="pop_form" id="pdtop">
+            <span class="button-checkbox">
+                <button type="button" class="btn">하루동안 보지 않기</button>
+                <input type="checkbox" name="chkbox" value="checkbox" class="hidden" checked />
+            </span>
+            <span class="button-close">
+                <button type="button" class="btn" onclick="closePop();">닫기</button>
+            </span>
+          </form>
+      </div>
+    </div>
+</div>
 <script language="Javascript">
   cookiedata = document.cookie;    
   if ( cookiedata.indexOf("maindiv=done") < 0 ){      
@@ -159,6 +161,7 @@ function openWinKA(){
   }
 </script>
 
+
 <!-- 메인이미지 -->
 <script>
 $(document).ready(function(){
@@ -166,34 +169,32 @@ $(document).ready(function(){
   });
 </script>
 <div class="parallax">
-	<div class="parallax-in container" align="center">
-		<img src="/page_imgs/fixed_img/bg-no-logo.png" style="border-radius:6px;">
-		<p>경제의 첫걸음,사이다경제와 함께!</p>
-	</div>
+  <div class="parallax-in container" align="center">
+    <img src="/page_imgs/fixed_img/bg-no-logo.png" style="border-radius:6px;">
+    <p>경제의 첫걸음,사이다경제와 함께!</p>
+  </div>
 </div>
 
 <!-- 슬라이드 배너 -->
-<div id="myCarousel" class="container carousel slide" data-ride="carousel" style="margin-top:5px;">
+<div id="myCarousel" class="container carousel slide" data-ride="carousel">
   <!-- Indicators> 
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
   </ol -->
   <!-- Wrapper for slides -->
-
-
-  <div class="carousel-inner" role="listbox">
+<div class="carousel-inner" role="listbox" align="center">
+    <!--div class="item active">
+      <a href="/lecture/detail/4"><img class="img-responsive" src="/page_imgs/main_img/bakja3.jpg" onclick="ga('send','event','삼박자투자법','버튼클릭','삼박자메인' );"></a>
+    </div-->
     <div class="item active">
-      <a href="/lecture/detail/4"><img class="img-responsive" src="http://i.imgur.com/Yph9rRY.jpg" onclick="ga('send','event','삼박자투자법','버튼클릭','삼박자메인' );"></a>
+      <a href="/finance"><img class="img-responsive" src="/page_imgs/fixed_img/banner/consulting.jpg"></a>
     </div>
     <div class="item">
-      <a href="/finance/necessary"><img class="img-responsive" src="http://i.imgur.com/QkOUVl7.jpg"></a>
-    </div>
-    <div class="item">
-      <a href="/appdown"><img class="img-responsive" src="http://i.imgur.com/qIhfF54.jpg"></a>
+      <a href="/appdown"><img class="img-responsive" src="/page_imgs/fixed_img/banner/appbanner.jpg"></a>
     </div>
   </div>
-  <!-- Left and right controls -->
+  <!-- Left and right controls >
   <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
@@ -201,49 +202,40 @@ $(document).ready(function(){
   <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
-  </a>
+  </a -->
 </div>
 
-
-<!-- 메인에 6개 메뉴 -->
-<div class="menu6 container row" align="center">
-	<a href="/contents"><div class="col-md-2 col-xs-4"><p>인기 콘텐츠</p></div></a>
-	<a href="/project"><div class="col-md-2 col-xs-4"><p>기획 콘텐츠</p></div></a>
-	<a href="/podcast"><div class="col-md-2 col-xs-4"><p>팟캐스트</p></div></a>
-	<a href="/finance/necessary"><div class="col-md-2 col-xs-4"><p>사이다재무</p></div></a>
-	<a href="/discuss"><div class="col-md-2 col-xs-4"><p>사이다토론</p></div></a>
-	<a href="/lecture"><div class="col-md-2 col-xs-4"><p>사이다강의</p></div></a>
+<div class="container menu-wrap" align="center">
+  <a href="/contents"><h6><b>인기콘텐츠</b></h6></a>
+  <a href="/project"><h6><b>기획콘텐츠</b></h6></a>
+  <a href="/podcast"><h6><b>팟캐스트</b></h6></a>
+  <a href="/finance"><h6><b>사이다재무</b></h6></a>
+  <a href="/discuss"><h6><b>사이다토론</b></h6></a>
+  <a href="/lecture"><h6><b>사이다강의</b></h6></a>
 </div>
-	
-	
 
-  
-  
-<!--         모바일 콘텐츠              -->
-
-<div class="mob_menu6_con container row">
-
+<div class="menu6_con container row">
   <div class="new-con col-xs-12">
-    <div class="menu-title row" >
+    <div class="menu-title row" style="padding-top:4px;" >
       <div class="col-xs-8 padding-0">최신 콘텐츠</div>
-      <div class="col-xs-4 padding-0" align="right"><a href="/contents/all"><p class="plus">더보기 ></p></a></div>
+      <div class="col-xs-4 padding-0" align="right"><a href="/contents/all"><p class="plus">더보기 </p></a></div>
     </div>
     <!-- 콘텐츠 뿌림 시작 -->
     <div class="con-in row" align="center" style="margin-left:0 !important; margin-right:2px !important;">
-      <!-- 재무 상담 콘텐츠 목록 맨 앞줄에 넣는 거 재무할때만.-->
-      <!--div class="col-xs-4" style="padding-right:0 !important; padding-left:2px !important;">
+    
+      <!-- 재무 상담 콘텐츠 목록 맨 앞줄에 넣는 거 재무할때만. -->
+      <div class="col-xs-4" style="padding-right:0 !important; padding-left:2px !important;">
         <div class="thumnail">
-          <a href="/finance/necessary">
+          <a href="/finance">
           <div class="con-img">
-            <div class="con-thumbnail"><img class="img-responsive" src="http://i.imgur.com/ul8mTak.jpg"></div>
+            <div class="con-thumbnail"><img class="img-responsive" src="http://i.imgur.com/62S2UZ7.jpg"></div>
           </div>
-          <div class="con-title1">2017년 5월, 사이다재무상담 오픈!</div>
+          <div class="con-title1">2017년 6월, 사이다재무상담 오픈!</div>
           </a>
         </div>
-      </div-->
+      </div>
 
       <!-- 설문조사 -->
-
       <!--div class="col-xs-4" style="padding-right:0 !important; padding-left:2px !important;">
         <div class="thumnail">
           <a href="/survey">
@@ -275,7 +267,7 @@ $(document).ready(function(){
   <div class="section-line col-xs-12"></div>
   <div class="popular-con swiper-container col-xs-12">
     <div class="menu-title row" >
-      <div class="col-xs-8 padding-0">인기 콘텐츠</div><div class="col-xs-4 padding-0" align="right"><a href="/contents"><p class="plus">더보기 ></p></a></div>
+      <div class="col-xs-8 padding-0">인기 콘텐츠</div><div class="col-xs-4 padding-0" align="right"><a href="/contents"><p class="plus">더보기 </p></a></div>
     </div>
     <!-- 콘텐츠 뿌림 시작 -->    
     <div class="con-in swiper-wrapper" align="center">
@@ -299,14 +291,14 @@ $(document).ready(function(){
   
   <!-- 광고 -->
   <div class="ad col-xs-12"></div>
-    <a href="/podcast"><img class="img-responsive" src="http://i.imgur.com/GDZGS6y.jpg"></a>
+    <a href="/podcast"><img class="ad-img img-responsive" src="/page_imgs/fixed_img/banner/talktalkcider.jpg"></a>
   <div class="ad col-xs-12" style="margin-bottom:10px;"></div>
   
   
   <!--  div class="section-line col-xs-12"></div -->  
   <div class="plan-con swiper-container col-xs-12">
-    <div class="menu-title row" >
-      <div class="col-xs-8 padding-0">기획 콘텐츠</div><div class="col-xs-4 padding-0" align="right"><a href="/project"><p class="plus">더보기 ></p></a></div>
+    <div class="menu-title row margin-top10">
+      <div class="col-xs-8 padding-0">기획 콘텐츠</div><div class="col-xs-4 padding-0" align="right"><a href="/project"><p class="plus">더보기 </p></a></div>
     </div>
     <!-- 콘텐츠 뿌림 시작 -->    
     <div class="con-in swiper-wrapper" align="center">
@@ -331,7 +323,7 @@ $(document).ready(function(){
   <div class="col-xs-12">
     <div class="review-con row">
       <div class="menu-title row" >
-        <div class="col-xs-8 padding-0">사이다재무 - 생생 후기</div><div class="col-xs-4 padding-0" align="right"><a href="/finance/review"><p class="plus">더보기 ></p></a></div>
+        <div class="col-xs-8 padding-0">사이다재무 - 생생 후기</div><div class="col-xs-4 padding-0" align="right"><a href="/finance/review"><p class="plus">더보기 </p></a></div>
       </div>
       <!-- 콘텐츠 뿌림 시작 -->    
       <div id="text-carousel2" class="carousel slide" data-ride="carousel">
@@ -375,17 +367,17 @@ $(document).ready(function(){
     </div>
   </div>
   
-      <!-- 광고 -->
+  <!--데마시안 광고 -->
   <div class="ad col-xs-12"></div>
-    <a href="http://shop.demasian.com"><img class="img-responsive" src="http://i.imgur.com/vdwLa1n.jpg"></a>
+    <a href="http://shop.demasian.com"><img class="ad-img img-responsive" src="http://i.imgur.com/kBwbdSw.jpg"></a>
   <div class="ad col-xs-12" style="margin-bottom:10px;"></div>
   
 
     <!-- books 모바일  -->
   <!--  div class="section-line col-xs-12"></div -->  
   <div class="books-con swiper-container col-xs-12">
-    <div class="menu-title row" >
-      <div class="col-xs-8 padding-0">사이다Books</div><div class="col-xs-4 padding-0" align="right"><a href="/books"><p class="plus">더보기 ></p></a></div>
+    <div class="menu-title row margin-top10">
+      <div class="col-xs-8 padding-0">사이다Books</div><div class="col-xs-4 padding-0" align="right"><a href="/books"><p class="plus">더보기 </p></a></div>
     </div>
     <!-- 콘텐츠 뿌림 시작 -->    
     <div class="con-in swiper-wrapper" align="center">
@@ -411,7 +403,7 @@ $(document).ready(function(){
   <div class="section-line col-xs-12"></div>  
   <div class="podcast-con swiper-container col-xs-12">
     <div class="menu-title row" >
-      <div class="col-xs-8 padding-0">팟캐스트</div><div class="col-xs-4 padding-0" align="right"><a href="/podcast"><p class="plus">더보기 ></p></a></div>
+      <div class="col-xs-8 padding-0">팟캐스트</div><div class="col-xs-4 padding-0" align="right"><a href="/podcast"><p class="plus">더보기 </p></a></div>
     </div>
     <!-- 콘텐츠 뿌림 시작 -->    
     <div class="con-in swiper-wrapper" align="center">
@@ -432,17 +424,17 @@ $(document).ready(function(){
     <!-- 콘텐츠 뿌림 끝 -->
   </div>
   
-      <!-- 광고 -->
+  <!-- 광고 -->
   <div class="ad col-xs-12"></div>
-    <a href="http://plus.kakao.com/home/@%EC%82%AC%EC%9D%B4%EB%8B%A4%EA%B2%BD%EC%A0%9C"><img class="img-responsive" src="http://i.imgur.com/qBgiXX9.jpg"></a>
+    <a href="https://pf.kakao.com/_mpxdIu"><img class="ad-img img-responsive" src="/page_imgs/fixed_img/banner/kakaoplus.jpg"></a>
   <div class="ad col-xs-12" style="margin-bottom:10px;"></div>
   
-  <!-- div class="section-line col-xs-12"></div --> 
+  <!-- div class="section-line col-xs-12"></div>  
   <div class="discuss-con col-xs-12">
-    <div class="menu-title row" >
-      <div class="col-xs-8 padding-0">사이다토론</div><div class="col-xs-4 padding-0" align="right"><a href="/discuss"><p class="plus">더보기 ></p></a></div>
+    <div class="menu-title row margin-top10">
+      <div class="col-xs-8 padding-0">사이다토론</div><div class="col-xs-4 padding-0" align="right"><a href="/discuss"><p class="plus">더보기 </p></a></div>
     </div>
-    <!-- 콘텐츠 뿌림 시작 -->    
+    <!-- 콘텐츠 뿌림 시작 >    
     <div class="con-in row" align="center" style="margin-left:0; margin-right:0">
     <% for(var i=0; i < discuss.length; i++) { %>
       <div class="col-xs-12 mg-bot">
@@ -450,8 +442,7 @@ $(document).ready(function(){
           <a href="/discuss/detail/<%= discuss[i].dis_no%>"><div class="dis-title col-xs-12"><p>"<%= discuss[i].dis_title%>"</p></div></a>
           <div class="dis-img col-xs-12" align="right">
             <div class="dis-icon row">
-              <!-- img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-like.png" ><p style="display:inline-block;">52</p -->
-              <img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-comment1.svg" ><!--p style="display:inline-block;">39</p--> 
+              <img style="display:inline-block;" src="/page_imgs/discuss_img/icon-discuss-comment1.svg" >
             </div>  
           </div>
           <div class="dis-bg-img col-xs-12"><a href="/discuss/detail/<%= discuss[i].dis_no%>"><div class="dis-black-box"></div><img class="img-responsive" src="<%= discuss[i].dis_thum%>"></a></div> 
@@ -459,13 +450,12 @@ $(document).ready(function(){
       </div>
       <% } %>       
     </div>
-    <!-- 콘텐츠 뿌림 끝 -->
-  </div>
+    <!-- 콘텐츠 뿌림 끝 >
+  </div -->
 
-
-  <div class="section-line col-xs-12"></div>  
+  <!-- div class="section-line col-xs-12"></div-->
+    
   <div class="col-xs-12" align="center">
-  
     <!-- 경제 금융 기업 주식 카테고리별 콘텐츠 나오는것 -->
     <div class="main-con row" align="center"> 
       <div class="menu-title">  
@@ -480,7 +470,7 @@ $(document).ready(function(){
      <div class="tab-content">
       <div id="home_1" class="con-in row tab-pane fade in active">
         <% for(var i=0; i < economics.length; i++) { %>
-        <div class="col-md-6">
+        <div class="col-xs-6">
           <div class="new-mark"><img class="img-responsive" src="<%= economics[i].chkDat%>"></div>
           <div class="thumnail">
             <a href="/contents/detail/<%= economics[i].con_no %>">
@@ -492,13 +482,13 @@ $(document).ready(function(){
           </div>      
         </div>
         <% } %>
-        <div class="col-xs-12">
+        <div class="col-xs-12 btn-plus">
           <div id="moreContents" style="width:100%; text-align:center;"><a href="/contents/1">더보기</a></div>   
         </div>
         </div>
         <div id="menu_1" class="con-in row tab-pane fade">
         <% for(var i=0; i < finance.length; i++) { %>
-        <div class="col-md-6">
+        <div class="col-xs-6">
           <div class="new-mark"><img class="img-responsive" src="<%= finance[i].chkDat%>"></div>
           <div class="thumnail">
             <a href="/contents/detail/<%= finance[i].con_no %>">
@@ -510,13 +500,13 @@ $(document).ready(function(){
           </div>      
         </div>
         <% } %>
-        <div class="col-xs-12">
+        <div class="col-xs-12 btn-plus">
           <div id="moreContents" style="width:100%; text-align:center;"><a href="/contents/2">더보기</a></div>   
         </div>
         </div>
         <div id="menu_2" class="con-in row tab-pane fade">
         <% for(var i=0; i < company.length; i++) { %>
-        <div class="col-md-6">
+        <div class="col-xs-6">
           <div class="new-mark"><img class="img-responsive" src="<%= company[i].chkDat%>"></div>
           <div class="thumnail">
             <a href="/contents/detail/<%= company[i].con_no %>">
@@ -528,13 +518,13 @@ $(document).ready(function(){
           </div>      
         </div>
         <% } %>
-        <div class="col-xs-12">
+        <div class="col-xs-12 btn-plus">
           <div id="moreContents" style="width:100%; text-align:center;"><a href="/contents/3">더보기</a></div>   
         </div>
         </div>
         <div id="menu_3" class="con-in row tab-pane fade">
         <% for(var i=0; i < stock.length; i++) { %>
-        <div class="col-md-6">
+        <div class="col-xs-6">
           <div class="new-mark"><img class="img-responsive" src="<%= stock[i].chkDat%>"></div>
           <div class="thumnail">
             <a href="/contents/detail/<%= stock[i].con_no %>">
@@ -546,19 +536,19 @@ $(document).ready(function(){
           </div>
         </div>
         <% } %>
-        <div class="col-xs-12">
+        <div class="col-xs-12 btn-plus">
           <div id="moreContents" style="width:100%; text-align:center;"><a href="/contents/4">더보기</a></div>   
         </div>
         </div>
     </div>
   </div>
 
-      <!-- 강의 모바일 -->
+  <!-- 강의 모바일>
   <div class="section-line col-xs-12"></div>  
   
   <div class="discuss-con col-md-6 col-xs-12">
     <div class="menu-title row" >
-      <div class="col-xs-8 padding-0">사이다강의</div><div class="col-xs-4 padding-0" align="right"><a href="/lecture"><p class="plus">더보기 ></p></a></div>
+      <div class="col-xs-8 padding-0">사이다강의</div><div class="col-xs-4 padding-0" align="right"><a href="/lecture"><p class="plus">더보기 </p></a></div>
     </div>
     <div class="con-in row" align="center" style="margin-left:0; margin-right:0">
     
@@ -570,29 +560,26 @@ $(document).ready(function(){
           </a>
           <div class="dis-bg-img col-xs-12">
           <a href="/lecture/detail/4"><div class="dis-black-box"></div>
-          <img class="img-responsive" width="100%" src="http://i.imgur.com/Nk5dGQo.jpg"></a>
+          <img class="img-responsive" width="100%" src="/page_imgs/main_img/bakja3_2.jpg"></a>
           </div>  
         </div>
       </div>
-
-      
     </div>
-  </div>
+  </div-->
 
 
-</div>	
-	<script src="/js/swiper.js"></script>
-	<script>
+</div>  
+  <script src="/js/swiper.js"></script>
+  <script>
     var swiper = new Swiper('.swiper-container', {
         pagination: '.swiper-pagination',
-        slidesPerView: 3,
+        slidesPerView: 3.1,
         paginationClickable: true,
         spaceBetween: 2,
         freeMode: true
-        
     });
     </script>
-	
+  
 
 
 <% include bottom %>
