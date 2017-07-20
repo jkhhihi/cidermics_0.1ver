@@ -39,10 +39,10 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
 .menu-title{padding:0 15px; font-weight:bold;}
 .menu-title p.plus{color:#1b87c9; margin:0 0 5px;}
 .con-in .new-mark{width:44px; position:absolute; z-index:2; margin:5px 0 0 5px;}
-.con-in .thumnail{border:1px solid #ececec; border-radius:6px; position:relative; z-index:1; margin-bottom:20px;}
+.con-in .thumnail{border-right:1px solid #ececec; border-bottom:1px solid #ececec; border-left:1px solid #ececec; border-radius:8px; position:relative; z-index:1; margin-bottom:20px;}
 .con-in .thumnail .con-img{position:relative; padding-bottom:95%;}
 .con-in .thumnail .con-img .con-thumbnail{position:absolute; width:100%; height:100%; background:#fff; text-align:center;}
-.con-in .thumnail .con-img .con-thumbnail img{height:90%; position: absolute; top:0; bottom:0; left:0; right:0; margin:auto; max-height:100%; max-width:100%;}
+.con-in .thumnail .con-img .con-thumbnail img{width:100%; position: absolute; top:0; bottom:0; left:0; right:0; margin:auto; max-height:100%; max-width:100%;}
 .con-in .con-title
 {height:40px;
     /*overflow: hidden; 
@@ -128,7 +128,7 @@ padding:10px 0; color:#fff; border-radius: 5px; font-size:16px; font-weight:bold
     font-weight:bold;
     font-size:12px;
 }
-.con-in .thumnail .con-img .con-thumbnail img{height:100%;}
+
 .menu6_con .review-con{margin-bottom:20px; font-size:12px;}
 .menu6_con .podcast-con{margin-top:0;}
 .menu6_con .dis-title{font-size:16px; top:30%;}
