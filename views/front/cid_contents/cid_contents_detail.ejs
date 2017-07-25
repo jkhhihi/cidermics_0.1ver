@@ -402,6 +402,11 @@ $(document).ready(function(){
 								<div class="col-xs-12 editor-sns" align="right">
 								<a href="<%= contents[0].user_sns_url%>"><img src="/page_imgs/contents_img/sns_5.png" width="70" height="70" onclick="ga('send','event','에디터프로필클릭','버튼클릭','<%= contents[0].con_writer %>' );"></a> 
 								</div>
+								
+								<% } else if ( contents[0].user_profile_img == 6 ) { %>
+								<div class="col-xs-12 editor-sns" align="left">
+								<img src="/page_imgs/contents_img/rgh.jpg">
+								</div>
 
 								<% } else { %>
 								
@@ -442,6 +447,11 @@ $(document).ready(function(){
 								<% } else if ( contents[0].user_profile_img == 5 ) { %>
 								<div class="col-xs-4 editor-sns" align="right">
 								<a href="<%= contents[0].user_sns_url%>"><img src="/page_imgs/contents_img/sns_5.png" width="70" height="70"></a> 
+								</div>
+								
+								<% } else if ( contents[0].user_profile_img == 6 ) { %>
+								<div class="col-xs-4 editor-sns" align="right">
+								<img src="/page_imgs/contents_img/rgh.jpg">
 								</div>
 
 								<% } else { %>
