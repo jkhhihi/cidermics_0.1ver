@@ -246,7 +246,7 @@ router.get('/discuss/detail/:no', function(req, res, next) {
 									console.log(comtco_count);
 				res.render('front/cid_discuss/cid_discuss_detail', {discuss:row, comt:comt, comtCount:comtCount,g_comtCount:g_comtCount,a1:a1,a2:a2,a3:a3});
 			});
-		  });  
+		  });
 		});
 	  });
 	});
