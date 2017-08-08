@@ -409,5 +409,9 @@ router.get('/facebooklogin', function(req,res,next){
 	res.render('front/facebooklogin',{});
 });
 
+router.get('/alarm', function(req,res,next){
+	res.render('front/alarm',{});
+});
+
 
 module.exports = router;
