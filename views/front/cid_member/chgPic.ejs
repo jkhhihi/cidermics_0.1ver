@@ -24,7 +24,7 @@
   <div id="passup" class="box" align="left">
     <!--프로필 이미지 설정 -->
     <p> 준비 중입니다 </p>
-<!--p>프로필 이미지 바꾸기</p>
+<p>프로필 이미지 바꾸기</p>
 <span style="font-size:14px; color: #ff574a;"> * 페이스북 회원은 적용되지 않습니다. *</span><br>
 <span style="font-size:14px; color: #ff574a;"> * 앱은 사진변경을 지원하지 않습니다. 웹사이트를 이용해주세요. *</span>
 <br>
@@ -56,7 +56,7 @@
 
 <br>
 <button type="submit" class="btn btn-primary">변경하기</button>
-</form-->
+</form>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <!-- 프로필 이미지 설정 -->
@@ -77,7 +77,7 @@ function selectImage(e) {
 
 $(document).ready(function (e) {
 
-  var maxsize = 200 * 200; // 500 KB
+  var maxsize = 1000 * 1000; // 500 KB
   $('#max-size').html((maxsize/1024).toFixed(2));
 
   $('#upload-image-form').on('submit', function(e) {
