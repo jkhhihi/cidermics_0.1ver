@@ -1,0 +1,30 @@
+body{font-family: 'Nanum Gothic', serif;}
+.line{width:50px; height:2px; background-color:#000;}
+.line2{width:50px; height:2px; background-color:#fff;}
+.parallax3 {
+	padding:60px 0;
+    background-image:url("/page_imgs/finbook_img/finbook-main-img.jpg");
+    min-height: 500px; 
+    background-attachment: fixed;
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parallax3 .text-img img{width:350px;}
+.parallax4 {
+	padding:60px 0;
+    background-image:url("/page_imgs/finbook_img/finbook-img2.jpg");
+    min-height: 500px; 
+    background-attachment: fixed;
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.book-info{bacground-color:#f7f7f7; width:100%; height:auto; padding:20px 0;}
+.book-info h3 span{color:#008ffb;}
+.book-recommendation{color:#fff;}
+
+@media all and (max-width:1024px) {
+
+
+}

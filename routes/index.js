@@ -413,5 +413,9 @@ router.get('/alarm', function(req,res,next){
 	res.render('front/alarm',{});
 });
 
+router.get('/finbook', function(req,res,next){
+	res.render('front/finbook',{});
+});
+
 
 module.exports = router;
