@@ -7,16 +7,139 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>사이다경제 | 핀북</title>
-<link href="/css/finbook.css" rel="stylesheet">
+<link href="/css/flipbook/finbook.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="/css/component.css" />
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
 <link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<!-- 책넘기기소스 -->
+<link rel="stylesheet" type="text/css" href="/css/flipbook/bookblock.css" />
+<script src="/js/flipbook/modernizr.custom.js"></script>
+<!--  -->
+
 <script src="/js/bootstrap.min.js"></script>
+		
 </head>
 
 <body>
+
+<% include top %>
+
+<script type="text/javascript">
+$(function() {
+	$( '#bb-bookblock' ).bookblock();
+});
+</script>
+
+<div class="flip-book">
+			<div class=" main clearfix container">
+				<div class="bb-custom-wrapper" align="center">
+					<h3><b>FINBOOK</b></h3>
+					<div id="bb-bookblock" class="bb-bookblock">
+						<div class="bb-item">
+							<img alt="" class="img-responsive" src="/page_imgs/finbook_img/part1.jpg">
+						</div>
+						<div class="bb-item">
+							<img alt="" class="img-responsive" src="/page_imgs/finbook_img/part2.jpg">
+						</div>
+						<div class="bb-item">
+							<img alt="" class="img-responsive" src="/page_imgs/finbook_img/part3.jpg">
+						</div>
+						<div class="bb-item">
+							<img alt="" class="img-responsive" src="/page_imgs/finbook_img/part4.jpg">
+						</div>
+						<div class="bb-item">
+							<img alt="" class="img-responsive" src="/page_imgs/finbook_img/part5.jpg">
+						</div>
+					</div>
+					<nav>
+						<a id="bb-nav-first" href="#">First page</a>
+						<a id="bb-nav-prev" href="#">Previous</a>
+						<a id="bb-nav-next" href="#">Next</a>
+						<a id="bb-nav-last" href="#">Last page</a>
+					</nav>
+				</div>
+			</div>
+			
+			<!-- 책넘기기소스 -->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+			<script src="/js/flipbook/jquerypp.custom.js"></script>
+			<script src="/js/flipbook/jquery.bookblock.js"></script>
+			<!--  -->
+			<script>
+			var Page = (function() {
+				var config = {
+						$bookBlock : $( '#bb-bookblock' ),
+						$navNext : $( '#bb-nav-next' ),
+						$navPrev : $( '#bb-nav-prev' ),
+						$navFirst : $( '#bb-nav-first' ),
+						$navLast : $( '#bb-nav-last' )
+					},
+					init = function() {
+						config.$bookBlock.bookblock( {
+							speed : 800,
+							shadowSides : 0.8,
+							shadowFlip : 0.7
+						} );
+						initEvents();
+					},
+					initEvents = function() {
+						var $slides = config.$bookBlock.children();
+						// add navigation events
+						config.$navNext.on( 'click touchstart', function() {
+							config.$bookBlock.bookblock( 'next' );
+							return false;
+						} );
+						config.$navPrev.on( 'click touchstart', function() {
+							config.$bookBlock.bookblock( 'prev' );
+							return false;
+						} );
+						config.$navFirst.on( 'click touchstart', function() {
+							config.$bookBlock.bookblock( 'first' );
+							return false;
+						} );
+						config.$navLast.on( 'click touchstart', function() {
+							config.$bookBlock.bookblock( 'last' );
+							return false;
+						} );
+						// add swipe events
+						$slides.on( {
+							'swipeleft' : function( event ) {
+								config.$bookBlock.bookblock( 'next' );
+								return false;
+							},
+							'swiperight' : function( event ) {
+								config.$bookBlock.bookblock( 'prev' );
+								return false;
+							}
+						} );
+						// add keyboard events
+						$( document ).keydown( function(e) {
+							var keyCode = e.keyCode || e.which,
+								arrow = {
+									left : 37,
+									up : 38,
+									right : 39,
+									down : 40
+								};
+							switch (keyCode) {
+								case arrow.left:
+									config.$bookBlock.bookblock( 'prev' );
+									break;
+								case arrow.right:
+									config.$bookBlock.bookblock( 'next' );
+									break;
+							}
+						} );
+					};
+					return { init : init };
+			})();
+		</script>
+		<script>
+				Page.init();
+		</script>
+</div>
 
 <div class="parallax3" align="center">
 	<div class="text-img container">
@@ -25,30 +148,101 @@
 </div>
 
 <div class="book-info" align="center">
-<h3><b><span>FIN</span>ish your financial problem, with FIN.<span>BOOK</span></b></h3>
-<h4>마음속으로 앓고 있던 돈 문제, 핀북으로 해결하세요!</h4>
-<div class="line"></div>
+<div class="container">
+	<div class="web-info">
+	<h3><b><span>FIN</span>ish your financial problem, with FIN.<span>BOOK</span></b></h3>
+	<h4>마음속으로 앓고 있던 돈 문제, 핀북으로 해결하세요!</h4>
+	<div class="line"></div>
+		<div class="row" style="margin-bottom:80px;">
+			<div class="col-md-6 left" align="right"><img class="img-responsive" src="/page_imgs/finbook_img/part1.jpg"></div>
+		<div class="col-md-6 right" align="left">PART 1<br><br><B>나의 재무유형 분석</B><div class="book-line"></div>
+		나는 지금 어떤 상태인지 소비, 저축, 투자, 위험준비<br>4가지 영역에서의 재무유형을 분석합니다<br><br>“나는 어떤 재무적 성향과 태도를 가졌을까요?<br>
+		자산관리는 <b>자기 자신을 객관적으로 바라보는 것</b>에서 출발할 때,<br>성공할 가능성이 높아집니다”</div>
+		</div>
+		
+		<div class="row" style="margin-bottom:80px;">
+			<div class="col-md-6 left" align="right">PART 2<br><br><B>나의 재무상태 분석</B><div class="book-line"></div>
+		<자산-부채> <소득-지출> <동일소득/연령비교><br>3가지 영역에서의 재무상태를 분석합니다<br><br>“다른 사람들은 얼마나 모으고 얼마나 쓰고 있을까?<br>
+		<b>나와 비슷한 그룹에 속한 이들과 비교해 보는 것</b><br>나의 재무상황을 객관적으로 판단하는 데 좋은 방법입니다”</div>
+		<div class="col-md-6 right" align="left"><img class="img-responsive" src="/page_imgs/finbook_img/part2.jpg"></div>
+		</div>
+		
+		<div class="row" style="margin-bottom:80px;">
+			<div class="col-md-6 left" align="right"><img class="img-responsive" src="/page_imgs/finbook_img/part3.jpg"></div>
+		<div class="col-md-6 right" align="left">PART 3<br><br><B>맞춤형 재무목표 제시</B><div class="book-line"></div>
+		목표시점, 폭표금액 등을 고려하여 설정한<br>총 3개의 재무목표를 분석합니다<br><br>“누구나 처음에는 막연히 희망하는 목표를 수립하면서<br>
+		<b>내가 정말 원하는 게 무엇인지 생각합니다.</b> 이어서<br>자산과 저축가능액을 고려하여 현실가능한 목표로<br>재조정하는 과정을 저치게 됩니다”</div>
+		</div>
+		
+		<div class="row" style="margin-bottom:80px;">
+			<div class="col-md-6 left" align="right">PART 4<br><br><B>팩트체크</B><div class="book-line"></div>
+		내가 생각하는 나의 모습과 <br>숫자가 말해주는 나의 모습을 비교를 통해 알아봅니다<br><br>“내가 준비하려는 미래가 현재의 내 경제적인 체력에 얼마나 맞는지<br>
+		살펴보는 검증 과정속에서 <b>좀 더 객관적인 나에게 다가서고</b><br><b>보다 실천 가능한 계획</b>을 만들어 가실 수 있습니다”</div>
+		<div class="col-md-6 right" align="left"><img class="img-responsive" src="/page_imgs/finbook_img/part4.jpg"></div>
+		</div>
+		
+		<div class="row">
+				<div class="col-md-6 left" align="right"><img class="img-responsive" src="/page_imgs/finbook_img/part5.jpg"></div>
+		<div class="col-md-6 right" align="left">PART 5<br><br><B>재무처방</B><div class="book-line"></div>
+		분석된 재무 데이터를 기반으로<br>종합적인 재무처방을 제시합니다<br><br><b>“재무적인 문제점이 있는지 확인하고 문제의 소지를</b><br>
+		<b>예방하거나 개선해가는 과정</b>은 병원에서 진행하는<br>건강검진과 비슷합니다”</div>
+		</div>
+	</div>
+	
+	<div class="mob-info">
+	<h3><b><span>FIN</span>ish your financial problem,<br>with FIN.<span>BOOK</span></b></h3>
+	<h4>마음속으로 앓고 있던 돈 문제, 핀북으로 해결하세요!</h4>
+	<div class="line"></div>
+	<div align="left">
+			<div class="col-sm-12"><img class="img-responsive" src="/page_imgs/finbook_img/part1.jpg"></div>
+		<div class="col-sm-12">PART 1<br><br><B>나의 재무유형 분석</B><div class="book-line"></div>
+		나는 지금 어떤 상태인지 소비, 저축, 투자, 위험준비<br>4가지 영역에서의 재무유형을 분석합니다<br><br>“나는 어떤 재무적 성향과 태도를 가졌을까요?<br>
+		자산관리는 <b>자기 자신을 객관적으로 바라보는 것</b>에서 출발할 때,<br>성공할 가능성이 높아집니다”</div>
+		
+			<div class="col-sm-12"><img class="img-responsive" src="/page_imgs/finbook_img/part2.jpg"></div>
+		<div class="col-sm-12">PART 2<br><br><B>나의 재무상태 분석</B><div class="book-line"></div>
+		<자산-부채> <소득-지출> <동일소득/연령비교><br>3가지 영역에서의 재무상태를 분석합니다<br><br>“다른 사람들은 얼마나 모으고 얼마나 쓰고 있을까?<br>
+		<b>나와 비슷한 그룹에 속한 이들과 비교해 보는 것</b><br>나의 재무상황을 객관적으로 판단하는 데 좋은 방법입니다”</div>
+		
+			<div class="col-sm-12"><img class="img-responsive" src="/page_imgs/finbook_img/part3.jpg"></div>
+		<div class="col-sm-12">PART 3<br><br><B>맞춤형 재무목표 제시</B><div class="book-line"></div>
+		목표시점, 폭표금액 등을 고려하여 설정한<br>총 3개의 재무목표를 분석합니다<br><br>“누구나 처음에는 막연히 희망하는 목표를 수립하면서<br>
+		<b>내가 정말 원하는 게 무엇인지 생각합니다.</b> 이어서<br>자산과 저축가능액을 고려하여 현실가능한 목표로<br>재조정하는 과정을 저치게 됩니다”</div>
+		
+			<div class="col-sm-12"><img class="img-responsive" src="/page_imgs/finbook_img/part4.jpg"></div>
+		<div class="col-sm-12">PART 4<br><br><B>팩트체크</B><div class="book-line"></div>
+		내가 생각하는 나의 모습과 <br>숫자가 말해주는 나의 모습을 비교를 통해 알아봅니다<br><br>“내가 준비하려는 미래가 현재의 내 경제적인 체력에 얼마나 맞는지<br>
+		살펴보는 검증 과정속에서 <b>좀 더 객관적인 나에게 다가서고</b><br><b>보다 실천 가능한 계획</b>을 만들어 가실 수 있습니다”</div>
+		
+			<div class="col-sm-12"><img class="img-responsive" src="/page_imgs/finbook_img/part5.jpg"></div>
+		<div class="col-sm-12">PART 5<br><br><B>재무처방</B><div class="book-line"></div>
+		분석된 재무 데이터를 기반으로<br>종합적인 재무처방을 제시합니다<br><br><b>“재무적인 문제점이 있는지 확인하고 문제의 소지를</b><br>
+		<b>예방하거나 개선해가는 과정</b>은 병원에서 진행하는<br>건강검진과 비슷합니다”</div>
+	</div>
+	</div>
+	<a href=""><div class="btn-purchase"><b>핀북 구매하기</b></div></a>
+</div>
 </div>
 
-<div class="book-process" align="center">
+<div class="container book-process" align="center">
 <h3><b>Process</b></h3>
-<h4>핀북이 만들어 지는 과정</h4>
+<h4><b>핀북이 만들어 지는 과정</b></h4>
 <h6>(검사시간 1시간 내외, 검사 후 배송까지 약 15일)</h6>
 <div class="line"></div>
 	<div class="col-md-4 col-xs-12">
-	<img src="/page_imgs/finbook_img/icon-inspection.png">
+	<img class="img-responsive" src="/page_imgs/finbook_img/icon-inspection.png">
 	<h5><b>1단계. 온라인검사</b></h5>
 	<h6>쉽고 편한 질문으로<br>
 	나의 재무상황을 되돌아볼 수 있는 시간</h6>
 	</div>
 	<div class="col-md-4 col-xs-12">
-	<img src="/page_imgs/finbook_img/icon-analysis.png">
+	<img class="img-responsive" src="/page_imgs/finbook_img/icon-analysis.png">
 	<h5><b>2단계. 재무분석</b></h5>
 	<h6>금융 전문가 100명이<br>
 	참여하여 만든 재무분석 엔진</h6>
 	</div>
 	<div class="col-md-4 col-xs-12">
-	<img src="/page_imgs/finbook_img/icon-send.png">
+	<img class="img-responsive" src="/page_imgs/finbook_img/icon-send.png">
 	<h5><b>3단계. 보고서 발송</b></h5>
 	<h6>재무진단과 처방이 담긴<br>
 	‘나’ 만을 위한 맞춤형 책 제작</h6>
@@ -59,8 +253,16 @@
 <div class="parallax4" align="center">
 <h3><b>이런 분들에게 특별히 권합니다</b></h3>
 <div class="line2"></div>
+	<div class="info container" align="left">
+		<p><img src="/page_imgs/finbook_img/icon-check.png">지금 내가 돈 관리를 잘하고 있는지 확인해보고 싶은 사람</p>
+		<p><img src="/page_imgs/finbook_img/icon-check.png">돈과 친해지고 싶은 사람</p>
+		<p><img src="/page_imgs/finbook_img/icon-check.png">나의 돈 관리를 어떻게 해야 하는지 알고 싶은 사람</p>
+	</div>
+	<a href=""><div class="btn-purchase"><b>핀북 구매하기</b></div></a>
 </div>
 </div>
+
+<% include bottom %>
 
 </body>
 </html>

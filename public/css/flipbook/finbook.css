@@ -1,0 +1,63 @@
+body{font-family: 'Nanum Gothic', serif;}
+.line{width:50px; height:2px; background-color:#000; margin:30px 0 70px 0;}
+.line2{width:50px; height:2px; background-color:#fff; margin:30px 0 70px 0;}
+.book-line{width:35px; height:2px; background-color:#000; margin:20px 0;}
+.flip-book{margin-top:70px; width:100%; height:auto; padding:20px 0 50px 0; background-image:url("/page_imgs/finbook_img/bg-flip-book.jpg"); background-repeat: no-repeat;}
+.parallax3 {
+	padding:60px 0;
+    background-image:url("/page_imgs/finbook_img/finbook-main-img.jpg");
+    min-height: 500px; 
+    background-attachment: fixed;
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parallax3 .text-img img{width:350px;}
+.parallax4 {
+	padding:60px 0;
+    background-image:url("/page_imgs/finbook_img/finbook-img2.jpg");
+    min-height: 500px; 
+    background-attachment: fixed;
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.book-info .web-info{display:block;}
+.book-info .mob-info{display:none;}
+.book-info{background-color:#f7f7f7; width:100%; height:auto; padding:100px 0; line-height:1.5em;}
+.book-info h3 span{color:#008ffb;}
+.book-info .web-info div .left{padding-right:60px !important;}
+.book-info .web-info div .right{padding-left:60px !important;}
+.book-info .btn-purchase{width:200px; height:auto; border:2px #333 solid; border-radius:5px; padding:15px 0; margin-top:80px; font-size:16px;}
+.book-info .btn-purchase:hover{color:#008ffb; border:2px #008ffb solid;}
+.book-process{width:100%; height:auto; padding:100px 0;}
+.book-process h6{line-height:1.5em;}
+.book-process div img{width:40px; margin-bottom:15px;}
+.book-recommendation{color:#fff;}
+.book-recommendation .info{width:50%; font-size:18px;}
+.book-recommendation .info img{width:20px; margin:20px 10px;}
+.book-recommendation .btn-purchase{width:200px; height:auto; border:2px #fff solid; border-radius:5px; padding:15px 0; margin-top:50px; font-size:16px;}
+.book-recommendation .btn-purchase:hover{color:#008ffb; border:2px #008ffb solid;}
+.book-recommendation a .btn-purchase{color:#fff;}
+
+@media all and (max-width:1024px) {
+.line{margin:30px 0 40px 0;}
+.line2{margin:30px 0 40px 0;}
+h3{font-size:20px !important; line-height:1.5em !important;}
+h4{font-size:14px !important;}
+.flip-book{margin-top:50px;}
+.parallax3{padding:30px 0; min-height: 200px;}
+.parallax3 .text-img img{width:200px;}
+.parallax4{padding:30px 0; min-height: 200px;}
+.parallax4 .text-img img{width:250px;}
+.book-info .web-info{display:none;}
+.book-info .mob-info{display:block;}
+.book-info{padding:30px 0;}
+.book-info .mob-info img{margin:50px 0 20px 0}
+.book-info .btn-purchase{margin-top:40px; margin-bottom:20px;}
+.book-process{padding:30px 0;}
+.book-process div img{width:30px; margin-top:20px;}
+.book-recommendation .info{width:96%; font-size:14px;}
+.book-recommendation .info img{margin:10px 10px;}
+.book-recommendation .btn-purchase{margin-top:20px; margin-bottom:20px;}
+}
