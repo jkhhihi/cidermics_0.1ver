@@ -1,7 +1,9 @@
 .bb-custom-wrapper .bb-bookblock {
 	box-shadow:0 12px 20px -10px rgba(81,64,49,0.6);
-	margin:10px 0 30px 0;
+	margin:5px 0 30px 0;
 }
+
+.bb-custom-wrapper h5{width:690px; color:#008ffb; margin:0 !important;}
 
 .bb-bookblock {
 	width: 700px;
@@ -144,5 +146,11 @@
 	width: 310px;
 	height: 212px;
 }
-	
+
+.bb-custom-wrapper h5{width:300px;}
+
+.bb-custom-wrapper .bb-bookblock {
+	margin:5px 0 30px 0;
+}
+
 }
