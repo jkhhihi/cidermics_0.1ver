@@ -28,11 +28,15 @@ body{font-family: 'Nanum Gothic', serif;}
 .book-info h3 span{color:#008ffb;}
 .book-info .web-info div .left{padding-right:60px !important;}
 .book-info .web-info div .right{padding-left:60px !important;}
-.book-info .btn-purchase{width:200px; height:auto; border:2px #333 solid; border-radius:5px; padding:15px 0; margin-top:80px; font-size:16px;}
-.book-info .btn-purchase:hover{color:#008ffb; border:2px #008ffb solid;}
-.book-process{width:100%; height:auto; padding:100px 0;}
+/*.book-info .btn-purchase{width:200px; height:auto; border:2px #333 solid; border-radius:5px; padding:15px 0; margin-top:80px; font-size:16px;}
+.book-info .btn-purchase:hover{color:#008ffb; border:2px #008ffb solid;}*/
+.book-Sales{padding:50px 0; line-height:1.5em;}
+.book-Sales .btn-purchase{width:200px; height:auto; background-color:#008ffb; color:#fff; border:2px #008ffb solid; border-radius:5px; padding:15px 0; font-size:16px;}
+.book-Sales .btn-purchase:hover{background-color:#fff; color:#008ffb; border:2px #008ffb solid;}
+.book-process{width:100%; height:auto; padding:100px 0 20px 0;}
 .book-process h6{line-height:1.5em;}
 .book-process div img{width:40px; margin-bottom:15px;}
+.book-process .description{padding-top:80px}
 .book-recommendation{color:#fff;}
 .book-recommendation .info{width:50%; font-size:18px;}
 .book-recommendation .info img{width:20px; margin:20px 10px;}
@@ -54,7 +58,7 @@ h4{font-size:14px !important;}
 .book-info .mob-info{display:block;}
 .book-info{padding:30px 0;}
 .book-info .mob-info img{margin:50px 0 20px 0}
-.book-info .btn-purchase{margin-top:40px; margin-bottom:20px;}
+/*.book-info .btn-purchase{margin-top:40px; margin-bottom:20px;}*/
 .book-process{padding:30px 0;}
 .book-process div img{width:30px; margin-top:20px;}
 .book-recommendation .info{width:96%; font-size:14px;}
