@@ -30,7 +30,8 @@ body{font-family: 'Nanum Gothic', serif;}
 .book-info .web-info div .right{padding-left:60px !important;}
 /*.book-info .btn-purchase{width:200px; height:auto; border:2px #333 solid; border-radius:5px; padding:15px 0; margin-top:80px; font-size:16px;}
 .book-info .btn-purchase:hover{color:#008ffb; border:2px #008ffb solid;}*/
-.book-Sales{padding:50px 0; line-height:1.5em;}
+.book-Sales{padding:80px 0 0 0; line-height:1.5em; width:800px !important;}
+.book-Sales .mob{display:none;}
 .book-Sales .btn-purchase{width:200px; height:auto; background-color:#008ffb; color:#fff; border:2px #008ffb solid; border-radius:5px; padding:15px 0; font-size:16px;}
 .book-Sales .btn-purchase:hover{background-color:#fff; color:#008ffb; border:2px #008ffb solid;}
 .book-process{width:100%; height:auto; padding:100px 0 20px 0;}
@@ -57,11 +58,16 @@ h4{font-size:14px !important;}
 .book-info .web-info{display:none;}
 .book-info .mob-info{display:block;}
 .book-info{padding:30px 0;}
-.book-info .mob-info img{margin:50px 0 20px 0}
+.book-info .mob-info .img1{margin:50px 0 10px 0}
+.book-info .mob-info .img2{padding-left:20px}
 /*.book-info .btn-purchase{margin-top:40px; margin-bottom:20px;}*/
+.book-Sales{padding:50px 0 0 0; width:100% !important;}
+.book-Sales .mob{display:block;}
+.book-Sales .mob img{width:70%; margin-bottom:20px;}
+.book-Sales .web{display:none;}
 .book-process{padding:30px 0;}
 .book-process div img{width:30px; margin-top:20px;}
-.book-recommendation .info{width:96%; font-size:14px;}
+.book-recommendation .info{width:100%; font-size:14px;}
 .book-recommendation .info img{margin:10px 10px;}
 .book-recommendation .btn-purchase{margin-top:20px; margin-bottom:20px;}
 }
