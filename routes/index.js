@@ -417,5 +417,9 @@ router.get('/finbook', function(req,res,next){
 	res.render('front/finbook',{});
 });
 
+router.get('/podo', function(req,res,next){
+	res.render('front/podo',{});
+});
+
 
 module.exports = router;
