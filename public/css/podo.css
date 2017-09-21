@@ -1,5 +1,19 @@
 body{font-family: 'Nanum Gothic', serif; line-height:1.8em;}
 .line1{width:30px; height:2px; background-color:#064e91; margin-bottom:20px;}
+.header{width:100%; height:70px; background-color:#fff; box-shadow:0px -6px 20px #222; z-index:99; position:fixed; top:0;}
+.header img{height:50px; padding-top:15px;}
+/*podo-qa 부트스트랩 아코디언*/
+.panel-default>.panel-heading {
+	color:#fff !important;
+	background-color:#064e91 !important;
+	border-color:#ddd
+}
+.panel-title{padding:8px 0;}
+.panel-body{padding:40px !important;}
+.panel-body img{width:750px;}
+.text-point1{font-size:18px; font-weight:bold;}
+/*-----------------------*/
+
 .parallax5 {
 	padding:100px 0 0 0;
     background-image:url("/page_imgs/podo_img/background1.jpg");
@@ -28,13 +42,32 @@ body{font-family: 'Nanum Gothic', serif; line-height:1.8em;}
 .alliance p{font-size:18px; margin:30px 0;}
 .alliance h4.btn-check{width:130px; height:auto; color:#fff; border:1px solid #fff; border-radius:4px; padding:10px 0;}
 .alliance h4.btn-check a{color:#fff;}
+.diagnosis .bg{color:#fff; width:100%; height:150px; background-image:url("/page_imgs/podo_img/btn-background3.jpg");
+background-position:center; background-repeat:no-repeat; font-size:18px;}
+.diagnosis .bg .text{padding:50px 0;}
+.diagnosis .bg .text span{font-size:16px; color:#ffc000; border-top:2px solid #ffc000; padding-top:5px;}
+.review .bg{color:#fff; width:100%; height:150px; background-image:url("/page_imgs/podo_img/btn-background4.jpg");
+background-position:center; background-repeat:no-repeat; font-size:18px;}
+.review .bg .text{padding:50px 0;}
+.review .bg .text span{font-size:16px; color:#ffc000; border-top:2px solid #ffc000; padding-top:5px;}
+.sns{background-color:#aaa;}
+.sns .row{width:60%; padding:20px 0;}
+.sns img{width:40px;}
+footer{background-color:#343434; color:#fff; padding:30px 0;}
 
 @media all and (max-width:1024px) {
+/*podo-qa 부트스트랩 아코디언*/
+.panel-title{font-size:14px !important; padding:4px 0;}
+.panel-body{padding:10px 0 10px 5px !important;}
+.text-point1{font-size:16px;}
+/*-----------------------*/
+
 .parallax5 {
 	padding:60px 0 0 0;
     min-height: 200px; 
 }
-.parallax5 img{padding:40px 60px;}
+.parallax5 img{width:260px; padding:40px;}
+.parallax5 .black-box{padding:1px 0;}
 .consultation-fee .row div img{width:150px;}
 .alliance img{width:80px;}
 .alliance p{font-size:14px; margin:30px 0;}
