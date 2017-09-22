@@ -421,5 +421,8 @@ router.get('/podo', function(req,res,next){
 	res.render('front/podo',{});
 });
 
+router.get('/podo_alliance', function(req,res,next){
+	res.render('front/podo_alliance',{});
+});
 
 module.exports = router;
