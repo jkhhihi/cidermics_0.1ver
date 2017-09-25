@@ -162,11 +162,7 @@ function openWinKA(){
 
 
 <!-- 메인이미지 -->
-<script>
-$(document).ready(function(){
-    $('.parallax').parallax();
-  });
-</script>
+
 <div class="parallax" style="margin-bottom:0;">
 	<div class="parallax-in container" align="center">
 		<img src="/page_imgs/fixed_img/bg-no-logo.png" style="border-radius:6px;">
@@ -274,15 +270,15 @@ $(document).ready(function(){
 		</div>
 		<!-- 콘텐츠 뿌림 시작 -->
 		<div class="con-in row" align="center" style="margin-left:0 !important; margin-right:2px !important;">
-		<% for(var i=0; i < popular.length; i++) { %>
+		<% for(var i=0; i < stock1.length; i++) { %>
 			<div class="col-xs-4" style="padding-right:0 !important; padding-left:4px !important;">
-				<div class="new-mark"><img class="img-responsive" src="<%= popular[i].chkDat%>"></div>
+				<div class="new-mark"><img class="img-responsive" src="<%= stock1[i].chkDat%>"></div>
 				<div class="thumnail">
-					<a href="/contents/detail/<%= popular[i].con_no %>">
+					<a href="/contents/detail/<%= stock1[i].con_no %>">
 					<div class="con-img">
-						<div class="con-thumbnail"><img class="img-responsive" src="<%= popular[i].con_photo %>"></div>
+						<div class="con-thumbnail"><img class="img-responsive" src="<%= stock1[i].con_photo %>"></div>
 					</div>
-					<div class="con-title1"><%= popular[i].con_title %></div>
+					<div class="con-title1"><%= stock1[i].con_title %></div>
 					</a>
 				</div>
 			</div>

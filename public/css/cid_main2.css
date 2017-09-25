@@ -6,22 +6,20 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
     /*background-image: url("../page_imgs/main_img/222.jpeg");*/
     /*background-image: url(https://static.pexels.com/photos/72161/pexels-photo-72161.jpeg);*/
     /*background-image: url("http://i.imgur.com/NL1FbRz.jpg");*/
-    
     /*background-image: url("../page_imgs/main_img/main22.jpg");*/
     /*background-image: url("http://i.imgur.com/rXebJx7.jpg");*/
+    /*background-image: url("http://i.imgur.com/Qao3e6Y.jpg");*/
+    background-image: url("https://i.imgur.com/h2ylZGA.jpg");
     
-    background-image: url("http://i.imgur.com/Qao3e6Y.jpg");
-
-    /* Set a specific height */
+  
     min-height: 400px; 
-
-    /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
     margin-bottom:20px;
 }
+
 .parallax .parallax-in{padding-top:160px; color:#fff; text-shadow: #444 0 1px 1px; font-weight:bold; font-size:20px;}
 .parallax .parallax-in img{width:120px; margin-bottom:20px;}
 #swiper-menu{border-bottom:2px solid #ececec; margin-bottom:30px;}
