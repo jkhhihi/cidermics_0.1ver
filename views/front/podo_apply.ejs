@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+<!-- 네이버 -->
+<meta name="naver-site-verification" content="083657cb98aa9a4a9c62dedeffddfb2490545da0"/>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>사이다경제 | 포도재무</title>
+
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/cid_finance.css" rel="stylesheet">
+<link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+<link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/gotoup.js"></script>
+
+<script>
+//$('#coupon-modal').modal(options)
+function numberWithCommas(lec_price) {
+	    return lec_price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	    console.log(lec_price);
+	}
+	
+
+	
+function next_submit(){
+	if(document.fi_applyform.fi_app_name.value==""){
+	 alert("신청자명을 입력해 주세요.");
+	document.fi_fi_applyform.fi_app_name.focus();
+	  return;
+	}
+	if(document.fi_applyform.fi_app_phone2.value==""){
+	 alert("휴대전화 번호를 입력해 주세요.");
+	document.fi_applyform.fi_app_phone2.focus();
+	  return;
+	}
+	if(document.fi_applyform.fi_app_phone3.value==""){
+	 alert("휴대전화 번호를 입력해 주세요.");
+	document.fi_applyform.fi_app_phone3.focus();
+	  return;
+	}
+	if(document.fi_applyform.fi_app_phone2.value.length<=3){
+	 alert("휴대전화 번호를 정확히 입력해 주세요.");
+	document.fi_applyform.fi_app_phone2.focus();
+	return;
+	 }
+	 
+	if(document.fi_applyform.fi_app_email1.value==""){
+	 alert("이메일 아이디를 입력해 주세요.");
+	document.fi_applyform.fi_app_email1.focus();
+	  return;
+	}
+	if(document.fi_applyform.fi_app_email2.value==""){
+	 alert("이메일을 정확히 입력해 주세요.");
+	document.fi_applyform.fi_app_email2.focus();
+	  return;
+	}
+	if(document.fi_applyform.fi_app_age.value==""){
+	 alert("나이를 입력해 주세요.");
+	document.fi_applyform.fi_app_age.focus();
+	  return;
+	}
+	if(document.fi_applyform.fi_app_place.value=="선택"){
+	 alert("지역을 선택해 주세요.");
+	document.fi_applyform.fi_app_place.focus();
+	  return;
+	}
+	
+	if(document.fi_applyform.mem_sex.value==""){
+		 alert("성별을 선택 주세요.");
+		document.fi_applyform.mem_sex.focus();
+		  return;
+	}
+	
+	for (i=0; i<document.fi_applyform.fi_app_email1.value.length; i++)
+        {
+         var ch = document.fi_applyform.fi_app_email1.value.charAt(i);//문자를 반환(정수형), 범위 검사 가능
+	if ( ( ch < "a" || ch > "z") && (ch < "A" || ch > "Z") && (ch < "0" || ch > "9" ) )
+    	{
+            alert("이메일은 영문 및 숫자로만 입력 가능 합니다!");
+            document.fi_applyform.fi_app_email1.focus();
+            return;
+         }
+		}
+	
+	
+	for (i=0; i<document.fi_applyform.fi_app_phone2.value.length; i++)
+     {
+     	 var ch = document.fi_applyform.fi_app_phone2.value.charAt(i);//문자를 반환(정수형), 범위 검사 가능
+		if ( ch < "0" || ch > "9" )
+    	 {
+            alert("휴대폰 번호는 숫자로만 입력 가능 합니다!");
+            document.fi_applyform.fi_app_phone2.focus();
+            return;
+         }
+      }
+      
+    for (i=0; i<document.fi_applyform.fi_app_age.value.length; i++)
+     {
+     	 var ch = document.fi_applyform.fi_app_age.value.charAt(i);//문자를 반환(정수형), 범위 검사 가능
+		if ( ch < "0" || ch > "9" )
+    	 {
+            alert("나이는 숫자만 입력 가능 합니다!");
+            document.fi_applyform.fi_app_age.focus();
+            return;
+         }
+      }
+	 
+	 	document.fi_applyform.submit();
+}
+
+</script>
+
+<script language="javascript"> 
+
+function dateSelect(docForm,selectIndex) {
+	watch = new Date(docForm.year.options[docForm.year.selectedIndex].text, docForm.month.options[docForm.month.selectedIndex].value,1);
+	hourDiffer = watch - 86400000;
+	calendar = new Date(hourDiffer);
+
+	var daysInMonth = calendar.getDate();
+		for (var i = 0; i < docForm.day.length; i++) {
+			docForm.day.options[0] = null;
+		}
+		for (var i = 0; i < daysInMonth; i++) {
+			docForm.day.options[i] = new Option(i+1);
+	}
+	document.form1.day.options[0].selected = true;
+}
+
+function Today(year,mon,day){
+     if(year == "null" && mon == "null" && day == "null"){       
+     today = new Date();
+     this_year=today.getFullYear();
+     this_month=today.getMonth();
+     this_month+=1;
+     if(this_month <10) this_month="0" + this_month;
+ 
+     this_day=today.getDate();
+     if(this_day<10) this_day="0" + this_day;     
+ }
+ else{  
+     var this_year = eval(year);
+     var this_month = eval(mon); 
+     var this_day = eval(day);
+     }
+ 
+  montharray=new Array(31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31); 
+  maxdays = montharray[this_month-1]; 
+//아래는 윤달을 구하는 것
+  if (this_month==2) { 
+      if ((this_year/4)!=parseInt(this_year/4)) maxdays=28; 
+      else maxdays=29; 
+  } 
+ 
+ document.writeln("<select class='year' name='year' size=1 onChange='dateSelect(this.form,this.form.month.selectedIndex);'>");
+     for(i=this_year-80;i<this_year+6;i++){//현재 년도에서 과거로 5년까지 미래로 5년까지를 표시함
+         if(i==this_year) document.writeln("<OPTION VALUE="+i+ " selected >" +i); 
+         else document.writeln("<OPTION VALUE="+i+ ">" +i); 
+     }    
+ document.writeln("</select>년");      
+
+ 
+ document.writeln("<select class='month' name='month' size=1 onChange='dateSelect(this.form,this.selectedIndex);'>");
+     for(i=1;i<=12;i++){ 
+         if(i<10){
+             if(i==this_month) document.writeln("<OPTION VALUE=0" +i+ " selected >0"+i); 
+             else document.writeln("<OPTION VALUE=0" +i+ ">0"+i);
+         }         
+         else{
+             if(i==this_month) document.writeln("<OPTION VALUE=" +i+ " selected >" +i);  
+             else document.writeln("<OPTION VALUE=" +i+ ">" +i);  
+         }                     
+    }         
+ document.writeln("</select>월");
+ 
+ document.writeln("<select class='day' name='day' size=1>");
+     for(i=1;i<=maxdays;i++){ 
+         if(i<10){
+             if(i==this_day) document.writeln("<OPTION VALUE=0" +i+ " selected >0"+i); 
+             else document.writeln("<OPTION VALUE=0" +i+ ">0"+i); 
+         }
+         
+         else{
+             if(i==this_day) document.writeln("<OPTION VALUE=" +i+ " selected } >"+i); 
+             else document.writeln("<OPTION VALUE=" +i+ ">" +i);  
+         }                     
+    }         
+ document.writeln("</select>일"); 
+   
+}
+</script>
+
+</head>
+<body>
+<!--위로가기 버튼-->
+<div id="but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></div>
+
+<% include ../top %>
+
+<div class="finance-apply" align="center">
+<img class="img-responsive" src="/page_imgs/finance_img/icon-apply.png">
+</div>
+
+<form name="fi_applyform" method="post" action="/finance/apply/insert">
+<div class="apply-input container" align="center">
+		<P class="star1" align="right">*항목은 필수로 작성해주세요.</P>
+		<div class="row" align="left">
+				<div class="name col-xs-12 col-lg-12 padding-0"><p><span class="star">*</span>신청자명</p>
+				<input type="text" name="fi_app_name" maxlength=5 style="IME-MODE: active;">
+				</div>
+				<div class="cell col-xs-12 col-lg-12 padding-0"><p><span class="star">*</span>휴대전화</p>
+				   <select id="cell" title="select cell" name="fi_app_phone1">
+       				 <option selected="selected">010</option>
+       				 <option>011</option>
+       				 <option>016</option>
+       				 <option>017</option>
+       				 <option>018</option>
+       				 <option>019</option>
+				   </select>
+    			 - <input type="text" name="fi_app_phone2" maxlength=4 style="text-align:center;IME-MODE:disabled;" onkeyPress="if ((event.keyCode<48) || (event.keyCode>57)) event.returnValue=false;" >
+    			 - <input type="text" name="fi_app_phone3" maxlength=4 style="text-align:center;IME-MODE:disabled;" onkeyPress="if ((event.keyCode<48) || (event.keyCode>57)) event.returnValue=false;" >
+				</div>
+				<div class="mail col-xs-12 col-lg-12 padding-0"><p><span class="star">*</span>이메일</p>
+				<input type="text" name="fi_app_email1" class="mail1" style="IME-MODE: disabled" maxlength=20> @ 
+				<input type="text" name="fi_app_email2" class="mail2" size="11" style="IME-MODE: disabled">
+				<select id="email" title="select email"  name="emaillist" onchange="this.form.fi_app_email2.value=this[this.selectedIndex].value;">
+       				 <option selected="selected">메일 선택</option>
+       				 <option value="naver.com">naver.com</option>
+       				 <option value="daum.net">daum.net</option>
+       				 <option value="nate.com">nate.com</option>
+       				 <option value="hotmail.com">hotmail.com</option>
+       				 <option value="yahoo.com">yahoo.com</option>
+       				 <option value="empas.com">empas.com</option>
+       				 <option value="korea.com">korea.com</option>
+       				 <option value="dreamwiz.com">dreamwiz.com</option>
+       				 <option value="gmail.com">gmail.com</option>
+       				 <option value="">직접입력</option>
+				   </select>
+				</div>
+				<div class="age col-xs-12 col-lg-12 padding-0"><p><span class="star">*</span>나이</p>
+				<input type="text" name="fi_app_age" maxlength=3 style="IME-MODE: active;"> 세
+				</div>
+				<div class="sex col-xs-12 col-lg-12 padding-0"><p><span class="star">*</span>성별</p>
+				<div class="form-group" style="display:inline;">
+    			<div class="btn-group" data-toggle="buttons">
+					<label class="btn btn-info1 active" style="padding:5px 20px;">
+						<input type="radio" name="mem_sex" value="남" id="option2" autocomplete="off">남
+					</label>
+					<label class="btn btn-info" style="padding:5px 20px;">
+						<input type="radio" name="mem_sex" value="여" id="option1" autocomplete="off">여
+					</label>
+				</div>
+				</div>
+				</div>
+				<div class="area col-xs-12 col-lg-12 padding-0"><p><span class="star">*</span>지역</p>
+				   <select id="area" name="fi_app_place">
+       				 <option selected="selected">선택</option>
+       				 <option>서울</option>
+       				 <option>경기</option>
+       				 <option>인천</option>
+       				 <option>강원</option>
+       				 <option>대전</option>
+       				 <option>광주</option>
+       				 <option>대구</option>
+       				 <option>울산</option>
+       				 <option>부산</option>
+       				 <option>충북</option>
+       				 <option>충남</option>
+       				 <option>전북</option>
+       				 <option>전남</option>
+       				 <option>경북</option>
+       				 <option>경남</option>
+       				 <option>제주</option>
+				   </select>
+				</div>
+				<div class="job col-xs-12 col-lg-12 padding-0"><p>소속 및 직무</p>
+				<input type="text" name="fi_app_job" style="IME-MODE: disabled">
+				<!--select id="email" title="select email" name="fi_app_email3">
+       				 <option selected="selected">소속 및 직무 선택</option>
+       				 <option value="직장인">직장인</option>
+       				 <option value="직장인">학생</option>
+       				 <option value="etc">기타(직접입력)</option>
+				   </select-->
+				</div>
+				<div class="route col-xs-12 col-lg-12 padding-0"><p>신청경로</p>
+				<input type="text" name="fi_app_path" style="IME-MODE: disabled">
+				</div>
+				
+				<div class="want col-xs-12 padding-0"><P>어떤 재무상담을 원하세요?</P>
+				<textarea name="fi_app_comment" style="resize: none;"></textarea>
+				</div>
+				
+				<div class="col-xs-12 col-lg-12 padding-0" align="center">
+				<a onClick="next_submit()" style="cursor:pointer"><div class="btn-apply" align="center"><h5><b>신청하기</b></h5></div></a>
+				</div>
+				
+				<div class="privacy" align="left">
+					<div class="title">*개인정보취급</div>
+					<div class="con"><p>1.수집된 개인정보는 본래의 목적 이외의 그 어떤 용도로도 사용되지 않으며 이용 목적이 변경될 시에는 사전 동의를 구하게 됩니다.</p>
+							 		 <p>2.수집된 이용자의 개인정보는 원칙적으로 처리 목적이 달성되면 즉시 파기됩니다.</p>
+					</div>
+				</div>
+		</div>		
+</div>
+</form>
+
+<% include ../bottom %>
+</body>
+</html>
+

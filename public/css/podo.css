@@ -42,6 +42,8 @@ body{font-family: 'Nanum Gothic', serif; line-height:1.8em; height:100%;}
 .alliance p{font-size:18px; margin:30px 0;}
 .alliance h4.btn-check{width:130px; height:auto; color:#fff; border:1px solid #fff; border-radius:4px; padding:10px 0;}
 .alliance h4.btn-check a{color:#fff;}
+h4.btn-apply2{margin:30px 0;width:120px; height:auto; color:#064e91; border:1px solid #064e91; border-radius:4px; padding:10px 0;}
+h4.btn-apply2 a{color:#064e91;}
 .diagnosis .bg{color:#fff; width:100%; height:150px; background-image:url("/page_imgs/podo_img/btn-background3.jpg");
 background-position:center; background-repeat:no-repeat; font-size:18px;}
 .diagnosis .bg .text{padding:50px 0;}
@@ -57,7 +59,7 @@ footer{background-color:#343434; color:#fff; padding:30px 0;}
 
 /*제휴사 검색*/
 .alliance_in{margin-top:70px; padding:60px 0 150px 0;}
-.alliance_in .search{padding:100px 80px; background-color:#fff; box-shadow:0px 0px 15px #666;}
+.alliance_in .search{width:700px; padding:10px 30px 100px 30px; background-color:#fff; box-shadow:0px 0px 15px #666;}
 .alliance_in .search .tab-content form{margin:60px 0;}
 .alliance_in .search .tab-content .form-control{width:300px;}
 .welfare{margin:60px 0;}
@@ -74,7 +76,7 @@ footer{background-color:#343434; color:#fff; padding:30px 0;}
 	padding:60px 0 0 0;
     min-height: 200px; 
 }
-.parallax5 img{width:260px; padding:40px;}
+.parallax5 img{width:280px; padding:60px 0 40px 10px}
 .parallax5 .black-box{padding:1px 0;}
 .consultation-fee .row div img{width:150px;}
 .alliance img{width:80px;}
@@ -84,7 +86,7 @@ footer{background-color:#343434; color:#fff; padding:30px 0;}
 
 /*제휴사 검색*/
 .alliance_in{margin-top:40px; padding:50px 5px;}
-.alliance_in .search{padding:40px 20px;}
+.alliance_in .search{width:100%; padding:6px 20px 40px 20px;}
 .alliance_in .search .tab-content form{margin:40px 0;}
 .alliance_in .search .tab-content .form-control{width:220px;}
 .welfare{margin:60px 0;}

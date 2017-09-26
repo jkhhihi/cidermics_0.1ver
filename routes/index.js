@@ -431,4 +431,8 @@ router.get('/podo_alliance', function(req,res,next){
 	res.render('front/podo_alliance',{});
 });
 
+router.get('/podo_alliance', function(req,res,next){
+	res.render('front/podo_apply',{});
+});
+
 module.exports = router;
