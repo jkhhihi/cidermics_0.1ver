@@ -45,6 +45,22 @@ body{font-family: 'Nanum Gothic', serif;}
 .book-recommendation .btn-purchase:hover{color:#008ffb; border:2px #008ffb solid;}
 .book-recommendation a .btn-purchase{color:#fff;}
 
+/*---------------구매하기---------------*/
+#purchase .main-banner{margin-top:70px;}
+#purchase .guide-down{margin:30px 0 20px 0;}
+#purchase .guide-down img{margin-bottom:10px;}
+#purchase .guide-up img{margin:30px 0 10px 0;}
+#purchase .online-guide{margin-top:60px;}
+#purchase .online-guide .step{margin:80px 0 20px 0;}
+#purchase .online-guide .step .title{font-size:20px; border-top:4px solid #000; padding-top:10px;}
+#purchase .online-guide .step h4{margin:30px 0;}
+#purchase p{line-height:1.8em;}
+#purchase .online-guide .step .step2-info{width:500px; margin-top:30px;}
+#purchase .online-guide .step3 {margin-top:60px; padding:60px 0 0 0; width:100%; height:auto; background-color:#dbc8c5;}
+#purchase .step3 .step3-info{width:500px; margin-top:30px;}
+#purchase .notice{width:100%; height:auto; background-color:#f2f2f2; padding:30px 0;}
+#purchase .online-guide{display:none;}
+
 @media all and (max-width:1024px) {
 .line{margin:30px 0 40px 0;}
 .line2{margin:30px 0 40px 0;}
@@ -70,4 +86,15 @@ h4{font-size:14px !important;}
 .book-recommendation .info{width:100%; font-size:14px;}
 .book-recommendation .info img{margin:10px 10px;}
 .book-recommendation .btn-purchase{margin-top:20px; margin-bottom:20px;}
+
+/*---------------구매하기---------------*/
+#purchase .main-banner{margin-top:50px;}
+#purchase .online-guide .step{width:96%;}
+#purchase .online-guide .step .step2-info{width:95%;}
+#purchase .online-guide .step3{padding:30px 0 0 0}
+#purchase .step3 .step3-info{width:95%;}
+#purchase .step3 img{width:180px;}
+#purchase .online-guide .notice{padding:30px 5px;}
+
+
 }

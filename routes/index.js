@@ -423,6 +423,14 @@ router.get('/finbook', function(req,res,next){
 	res.render('front/finbook',{});
 });
 
+router.get('/finbook_pur', function(req,res,next){
+	res.render('front/finbook_purchase',{});
+});
+
+router.get('/finbook_ch', function(req,res,next){
+	res.render('front/finbook_ch_purchase',{});
+});
+
 router.get('/podo', function(req,res,next){
 	res.render('front/podo',{});
 });
