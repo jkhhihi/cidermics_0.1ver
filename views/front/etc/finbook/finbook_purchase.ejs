@@ -88,6 +88,48 @@ $(document).ready(function(){
 		<div class="guide-up" style="cursor:pointer"><img alt="" class="img-responsive" src="/page_imgs/finbook_img/fin_step2/click-up.png"><p>"검사안내 접기"</p></div>			
 	</div>
 </div>
+<div id="select-pay">
+	<div class="title-box">
+	<div class="container">
+		<span class="title"><b>구매하기</b></span>
+	</div>
+	</div>
+	<div class="select-pay-in container" align="center">
+		<div class="user-def"><img alt="" class="img-responsive" src="/page_imgs/finbook_img/fin_step2/user-definition.jpg"></div>
+		<h4 class="how-pay" align="left"><span style="color:#1b87c9; margin-right:5px;">■</span><b>구매방법</b></h4>
+		<div class="select-box row" align="center">
+			<div class="col-sm-3 col-xs-6">
+			<label style="cursor:pointer;"><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> 신용카드</label>
+			</div>
+			<div class="col-sm-3 col-xs-6">
+			<label style="cursor:pointer"><input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> 실시간계좌이체</label>
+			</div>
+			<div class="col-sm-3 col-xs-6">
+			<label style="cursor:pointer"><input type="radio" name="optionsRadios" id="optionsRadios3" value="option3"> 핸드폰결제</label>
+			</div>
+			<div class="col-sm-3 col-xs-6">
+			<label style="cursor:pointer"><input type="radio" name="optionsRadios" id="optionsRadios4" value="option4"> 무통장입금</label>
+			</div>
+		</div>
+		<div class="check-amount row">
+			<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important;">
+				<div class="title">상품금액</div>
+				<div class="amount">50,000 원</div>
+			</div>
+			<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important; border-left:1px solid #ddd; border-right:1px solid #ddd;">
+				<div class="title">할인금액</div>
+				<div class="amount">-0 원</div>
+			</div>
+			<div class="col-xs-6" style="padding-left:0 !important; padding-right:0 !important;">
+				<div class="title">총 주문금액</div>
+				<div class="amount">=<span style="color:#ff0000">50,000</span> 원</div>
+			</div>
+		</div>
+		<div class="payment-btn" align="right">
+			<a href="/finbook_ch"><span class="payment">결제하기</span></a><a href=""><span class="back">돌아가기</span></a>
+		</div>
+	</div>
+</div>
 
 <% include ../../bottom %>
 
