@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>사이다경제</title>
+<meta charset=utf-8>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+<link href="/css/cid_discuss.css" rel="stylesheet">
+<link href="/css/swiper.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/css/component.css" />
+<script src="/js/modernizr.custom.js"></script>
+
+<script src="/js/gotoup.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script>
+function listcheck_up(){
+    var popUrl = "../listcheck?idx=<%= rows[0].idx %>&set=update&memid=<%= mem_id %>";    //팝업창에 출력될 페이지 URL
+    var popOption = "width=370, height=360, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
+        window.open(popUrl,"",popOption);
+        window.focus();
+}
+</script>
+<script>
+function listcheck_del(){
+    var popUrl = "../listcheck?idx=<%= rows[0].idx %>&set=delete&memid=<%= mem_id %>";    //팝업창에 출력될 페이지 URL
+    var popOption = "width=370, height=360, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
+        window.open(popUrl,"",popOption);
+        window.focus();
+}
+</script>
+<!--글자수 제한 스크립트 -->
+<script type="text/javascript">
+    function chkword(obj, maxByte) {
+ 
+        var strValue = obj.value;
+        var strLen = strValue.length;
+        var totalByte = 0;
+        var len = 0;
+        var oneChar = "";
+        var str2 = "";
+ 
+        for (var i = 0; i < strLen; i++) {
+            oneChar = strValue.charAt(i);
+            if (escape(oneChar).length > 4) {
+                totalByte += 2;
+            } else {
+                totalByte++;
+            }
+ 
+            // 입력한 문자 길이보다 넘치면 잘라내기 위해 저장
+            if (totalByte <= maxByte) {
+                len = i + 1;
+            }
+        }
+ 
+        // 넘어가는 글자는 자른다.
+        if (totalByte > maxByte) {
+            alert(maxByte + "자를 초과 입력 할 수 없습니다.");
+            str2 = strValue.substr(0, len);
+            obj.value = str2;
+            chkword(obj, 4000);
+        }
+    }
+</script>
+
+<!--- 댓글 ,대댓글 등록제한 스크립트 -->
+<script type="text/javascript"> 
+function comt_submit(){
+	if(document.comtInsert.comt_writer.value==""){
+	 alert("작성자명을 입력해 주세요.");
+	document.comtInsert.comt_writer.focus();
+	  return;
+	}
+	if(document.comtInsert.comt_pw.value==""){
+	 alert("비밀번호를 입력해 주세요.");
+	document.comtInsert.comt_pw.focus();
+	  return;
+	}
+	if(document.comtInsert.comt_text.value==""){
+	 alert("댓글 내용을 입력해 주세요.");
+	document.comtInsert.comt_text.focus();
+	  return;
+	}
+	alert("댓글이 등록되었습니다.");
+	 	document.comtInsert.submit();
+}
+/* 대댓글 스크립트 */
+function comtco_submit(id){
+var vv = document.getElementById("form-inline"+id);
+
+	for(i=0; i<vv.length; i++){
+		if(vv[2].value ==""){
+			alert("작성자를 입력해주세요.");
+			vv[2].value.focus();
+		}
+		if(vv[3].value==""){
+			alert("비밀번호를 입력해주세요.");
+			vv[3].value.focus();
+		}
+		if(vv[4].value==""){
+			alert("내용을 입력해주세요.");
+			vv[4].value.focus();
+		}
+		//vv.action="/discuss/detail/"+vv[0].value;
+		vv.submit();
+		}
+		//location.reload();
+//vv.focus();
+ // document.getElementById("form-inline"+id).focus();
+
+}
+</script>
+<!--댓글 삭제 -->
+<script type="text/javascript">
+	function deleteComt(id){
+		//alert(id);
+		var sdc = "#showDeleteComt"+id;
+		$(sdc).toggle(100);
+		deleteComtSmt(id);
+		//deleteComtShow(id);
+		location.reload();
+	}
+
+	function deleteComtSmt(id)
+	{
+		var aaa = document.getElementById("showDeleteComt"+id);
+		//alert(aaa[0].value);
+
+
+		if(aaa[0].value ==""){
+			aaa[0].value.focus();
+		}
+		var ida = id;
+		var pwNum = aaa[0].value;
+
+		$.ajax({
+			url : '/read/deleteComt/'+ida+'&'+pwNum,
+			method : 'get',
+			success : function(data){
+				if(data.fail == 1){
+				alert("비밀번호가 틀렸습니다.");
+				}else{
+					//alert("성공~");
+					location.reload();
+				}
+			}
+		})
+	}
+	
+</script>
+<!-- 대댓글 삭제 -->
+<script type="text/javascript">
+	function deleteComtco(id){
+		//alert(id);
+		var sdcc = "#showDeleteComtco"+id;
+		$(sdcc).toggle(100);
+		deleteComtcoSmt(id);
+		//location.reload();
+	}
+
+	function deleteComtcoSmt(id)
+	{
+		var aaa = document.getElementById("showDeleteComtco"+id);
+
+		//alert(aaa[0]);
+		if(aaa[0].value ==""){
+			aaa[0].value.focus();
+		}
+		var ida = id;
+		var pwNum = aaa[0].value;
+		//alert(pwNum);
+
+		$.ajax({
+			url : '/read/deleteComtco/'+ida+'&'+pwNum,
+			method : 'get',
+			success : function(data){
+				if(data.fail == 1){
+				alert("비밀번호가 틀렸습니다.");
+				}else{
+					//alert("성공~");
+					location.reload();
+				}
+			}
+		})
+	}
+	
+</script>
+
+<!-- show 코멘트 toggle 및 ajax로 대댓글 불러오기 -->
+<script type="text/javascript">
+function showJs(id) {
+   var chk="#showComt"+id;
+    $(chk).toggle(200);
+    showComtco(id);
+}
+
+function showComtco(id)
+{
+	var idx = id;
+   $.ajax({
+			url : '/boardcmt/'+idx,
+			method : 'get',
+			success : function(data){
+				var ht="";
+				$.each(data.ddd, function (index, value){
+					ht += "<form method='get' action='/read/declaration2' style='margin:5px 0 0 5px'><table class='table table-condensed'><tr class='active'><td class='primary re-comment'><h6><b>┖ </b>"+value.comtco_writer+" | "+ value.comtco_date+"<input type='hidden' name='declar_comtco_no' value='"+value.comtco_no+"'> | <button type='submit' class='btn-declaration'>신고</button> | <span class='glyphicon glyphicon-remove-circle' id='deleteComtco"+value.comtco_no+"' onclick='deleteComtco("+value.comtco_no+")'></span></form><form class='showDeleteComtco' id='showDeleteComtco"+value.comtco_no+"' value='"+value.comtco_no+"' style='display: none; padding:5px 0 10px 0'>비밀번호 : <input type='password' name='delectPw' maxlength='4' value=''><a onclick='deleteComtcoSmt("+value.comtco_no+")' style='cursor:pointer'><span class='glyphicon glyphicon-trash'>삭제</span></a></button></form></h6>"+value.comtco_text+"</td></tr></table>";
+					var shco_no = value.comt_no;
+					document.getElementById('showComtco'+shco_no).innerHTML = ht;
+				});
+				
+			}
+		});
+};
+</script>
+
+<script type="text/javascript">
+	var pageNum = 1;
+	var list = 50;
+	var b_pageNum_list = 10;
+	var block = ceil(pageNum/b_pageNum_list);
+	var b_start_page = ((block -1))
+</script>
+<style type="text/css">
+	.btn btn-success btn-width{font-size: 12px !important;}
+</style>
+<!--버튼 색상 스크립트-->
+<style type="text/css">
+	.btn btn-success btn-width{font-size: 12px !important;}
+	.btn span.glyphicon {
+	opacity: 0.2;				
+	}
+	.btn.active span.glyphicon {
+	opacity: 1;
+	}
+	.btn span{color:#fff;}
+	.btn-warning,
+	.btn-warning:focus,
+	.btn-warning:hover,
+	.btn-warning:visited,
+	.btn-warning.active {
+    background-color: #3ad78b;
+    border-color: #3ad78b;
+	}
+
+	.btn-danger,
+	.btn-danger:focus,
+	.btn-danger:hover,
+	.btn-danger:visited,
+	.btn-danger.active {
+    background-color: #d73a75;
+    border-color: #d73a75;
+	}
+
+	.btn-success,
+	.btn-success:focus,
+	.btn-success:hover,
+	.btn-success:visited,
+	.btn-success.active {
+    background-color: #3a99d7;
+    border-color: #3a99d7;
+	}
+
+	.btn-info,
+	.btn-info:focus,
+	.btn-info:hover,
+	.btn-info:visited,
+	.btn-info.active {
+    background-color: #fff;
+    border-color: #3a99d7;
+    color: #000;
+	}
+</style>
+<!-- //버튼색상 스크립트 -->
+</head>
+<body>
+
+<% include ../top %>
+<div class="container" style="margin-top:70px">
+
+	<div class="row">
+	<table class="table table-striped">
+		<tr>
+			<td colspan="3"><p>제목 : <%= rows[0].title %></p></a></td>
+		</tr>
+		<tr>
+			<td><p><%= mem_name %>순번 : <%= rows[0].idx %></p></td>
+			<td><p><%= mem_id %>작성자 : <%= rows[0].userid %></p></td>
+			<td><p>작성일 : <%= rows[0].ymd %></p></td></td>
+		</tr>
+		<tr>
+			<td colspan="3"><p><%- rows[0].content %></p></td>  
+		</tr>
+	</table>
+	<button type="button" class="btn btn-default"><a href="/board/list/1">목록보기</a></button>
+	<button type="button" class="btn btn-default" onClick="listcheck_up()" onMouseOver="this.style.cursor='hand';">수정하기</a></button>
+	<button type="button" class="btn btn-default" onClick="listcheck_del()" onMouseOver="this.style.cursor='hand';">삭제하기</a></button>
+	</div>
+
+	<div class="row">
+	<!-- 댓글 쓰기 -->
+		<div class="row margin-lr0">
+			<div class="col-xs-12" style="padding-left:5px; padding-right:5px;">
+			<table class="table table-condensed">
+				<% for(var i =0; i< comt.length; i++){ %>
+				<tr class="default">
+					<td class="primary padding-10">
+					<br>
+					<h6 style="margin-bottom:5px;">
+					<form method="get" action="/read/declaration" name="declaration" style="margin:5px 0 0 5px">
+					<%= comt[i].comt_writer %> | <%= comt[i].comt_regdate %>
+
+					<!--img class="img-responsive" src="/page_imgs/discuss_img/discuss-icon-siren.svg" style="display:inline; width:10px; margin-bottom:5px;"-->
+					<input type="hidden" name="declar_comt_no" value="<%= comt[i].comt_no%>">|
+					<input type="hidden" name="idx" value="<%= rows[0].idx %>">
+					<button type="submit" class="btn-declaration">신고</button>
+					<!--a onclick="declarationSb()" style="cursor:pointer;">신고</a-->
+
+
+					 | <span class="glyphicon glyphicon-remove-circle" id="deleteComt<%= comt[i].comt_no%>" onclick="deleteComt(<%= comt[i].comt_no%>)"></span>
+
+
+					</form>
+
+					<!-- 450줄 onclick했을때 가져오는것. 456~458이 열림.-->
+					<form class="showDeleteComt" value="<%= comt[i].comt_no%>" id="showDeleteComt<%= comt[i].comt_no%>" style="display: none; padding:5px 0 10px 0">
+					비밀번호 : <input type="password" name="delectPw" maxlength="4" value=""><a onclick="deleteComtSmt(<%= comt[i].comt_no%>)" style="cursor:pointer"><span class="glyphicon glyphicon-trash">삭제</span></a></button>
+					</form>
+					
+					</h6>
+					<%= comt[i].comt_text %>
+					
+					<br>
+
+					<!--button value="<%= comt[i].comt_no%>" onclick="shComt()">답글</button-->
+					
+					<button class="btn btn-info btncomt" id="d<%= comt[i].comt_no%>" value="<%= comt[i].comt_no%>" onclick="showJs(<%= comt[i].comt_no%>)" style="margin-top:15px; padding:5px 10px !important;">
+					<h6 style="margin:0 !important;">답글
+					<!--span style="color: red"><%= comtCount[0].comt_no %></span--></h6>
+					</button>
+
+					<div class="showComt" value="<%= comt[i].comt_no%>" id="showComt<%= comt[i].comt_no%>" style="display: none;">
+					
+						<form class="form-inline" method="post" action="/read/comtcomtPush" name="comtcoInsert" id="form-inline<%= comt[i].comt_no%>" target="_self">
+						<input type="hidden" name="idx" value=""> 
+						<input type="hidden" name="comt_no" value="<%= comt[i].comt_no%>">
+							<div class="row">
+								<div class="form-group col-xs-12 padding-1">
+								    <input type="text" class="form-control1" id="exampleInputName1" placeholder=" 작성자" name="comt_writer" maxlength="20" onkeyup="chkword(this, 20)">
+								    <input type="password" class="form-control1" id="exampleInputPw" placeholder=" 비밀번호" name="comt_pw" maxlength="4" onkeyup="chkword(this, 22)">
+							  	</div>
+							</div>
+
+							<div class="row">
+							    <!-- div class="form-group col-xs-0 col-lg-0"></div -->
+							    <div class="form-group col-xs-12">
+								  	<textarea class="form-control2" rows="3" name="comt_text" maxlength="100" placeholder="주제와 무관한 댓글, 악플, 욕설, 비하 등은 삭제될 수 있습니다. 건전한 토론을 하는 지식인이 됩시다. 내용 *100자 이하" onkeyup="chkword(this, 100)") style="resize:none;"></textarea></div>
+							    <!-- div class="form-group col-xs-0 col-lg-0"></div -->
+						    </div> 
+
+					  			<button type="button" id="submit<%= comt[i].comt_no%>" value="<%= comt[i].comt_no%>" class="btn btn-primary" onClick="comtco_submit(<%= comt[i].comt_no%>)"
+					  			style="margin-bottom:10px; padding:5px 10px !important; font-size:12px !important; background-color:#1b87c9; border:1px solid #ececec !important;">등록</button>
+					  			<!--button type="button" class="btn btn-primary" onClick="comtco_submit(<%= comt[i].comt_no%>)">등록</button-->
+					  	</form>
+						
+
+					<div id="showComtco<%= comt[i].comt_no%>"></div>
+					</div>
+
+					</td>
+				</tr>
+				<% } %>
+
+			</table>
+			</div>
+			<!-- 댓글 작성 -->
+			<div id="comtImgShow">
+				<form class="form-inline" method="post" action="/read/comtPush" name="comtInsert" target="_self">
+					<input type="hidden" name="idx" value="<%= rows[0].idx %>">
+				<div class="row">
+					<div class="form-group col-lg-12 padding-1">
+					    <input type="text" class="form-control1" id="exampleInputName" maxlength="20" placeholder=" 작성자" name="comt_writer" onkeyup="chkword(this, 20)">
+					    <input type="password" class="form-control1" id="exampleInputPw" maxlength="4" placeholder=" 비밀번호" name="comt_pw" onkeyup="chkword(this, 22)">
+				  	</div>
+				</div>
+				<div class="row">
+				    <div class="form-group col-xs-12">
+					  	<textarea class="form-control2" rows="3" name="comt_text" maxlength="100" placeholder="주제와 무관한 댓글, 악플, 욕설, 비하 등은 삭제될 수 있습니다. 건전한 토론을 하는 지식인이 됩시다. 내용 *100자 이하" onkeyup="chkword(this, 100)" style="resize:none;")></textarea>
+					</div>
+			    </div>
+				<div class="col-xs-12">
+					<button type="button" class="btn btn-primary btn-width1" onClick="comt_submit()">등록</button>
+				</div>
+				</form>
+			</div>
+			<!-- //댓글 작성 -->
+		</div>
+
+
+</div>
+<% include ../bottom %>
+</body>
+</html>

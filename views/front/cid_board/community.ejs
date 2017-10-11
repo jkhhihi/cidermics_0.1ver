@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title></title>
+<meta charset=utf-8>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<table class="table table-striped">
+	<tr>
+		<td><p>제목</p></td>
+		<td><p>제목</p></td>
+		<td><p>작성자</p></td>
+		<td><p>작성일</p></td>
+	</tr>
+<% for (var i=0; i < rows.length; i++){ %>
+    <tr>
+        <td><p><%= rows[i].idx %></p></td>
+        <td><a href ="/board/read/<%=rows[i].idx%>"><p><%= rows[i].title %></p></a></td>
+        <td><p><%= rows[i].userid %></p></td>
+        <td><p><%= rows[i].ymd %></p></td>
+    </tr>
+<% } %>
+</table>
+
+<button type="button" class="btn btn-default"><a href="/board/write">글쓰기</a></button>
+
+</body>
+</html>

@@ -37,6 +37,7 @@ var project = require('./routes/project');
 var podcast = require('./routes/podcast');
 var books = require('./routes/books');
 var cid2_idx = require('./routes/main_v2/index');
+var board = require('./routes/board');
 
 // all environments
 app.set('port', process.env.PORT || 80);
@@ -77,6 +78,7 @@ app.use('/cid_project',express.static(__dirname+'/views/cid_project'));
 app.use('/cid_podcast',express.static(__dirname+'/views/cid_podcast'));
 app.use('/cid_books',express.static(__dirname+'/views/cid_books'));
 app.use('/cid_main_v2',express.static(__dirname+'/views/cid_main_v2'));
+app.use('/cid_board',express.static(__dirname+'/views/cid_board'));
 app.use(flash());
 
 app.use(bodyParser.json({limit: '1000mb'}));
@@ -107,6 +109,7 @@ app.use('/',project);
 app.use('/',podcast);
 app.use('/',books);
 app.use('/',cid2_idx);
+app.use('/',board);
 
 //passportFB.use('fbLogin', new LocalStrategy({
 passportFB.use( new FacebookStrategy({

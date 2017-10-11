@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>사이다경제</title>
+<meta charset=utf-8>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	<link href="/css/board.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<body>
+
+<style type="text/css">
+	.form-control{
+		width:100% !important;
+	}
+</style>
+
+<% include ../top %>
+<div class="container" style="margin-top:70px">
+	<div class="row">
+		<div class="board col-md-12">
+			<table class="table table-striped">
+				<tr>
+					<td align="center" width="10%"><p>순번</p></td>
+					<td align="center" width="50%"><p>제목</p></td>
+					<td align="center" width="20%"><p>작성자</p></td>
+					<td align="center" width="20%"><p>작성일</p></td>
+				</tr>
+			<% for (var i=0; i < data.length; i++) { %>
+			    <tr>
+			        <td align="center"><p><%= data[i].idx %></p></td>
+			        <td align="center"><a href ="/board/read/<%=data[i].idx%>"><p><%= data[i].title %></p></a></td>
+			        <td align="center"><p><%= data[i].userid %></p></td>
+			        <td align="center"><p><%= data[i].ymd %></p></td>
+			    </tr>
+			<% } %>
+			<% if(data.length == 0) { %>
+				<tr>
+					<td align="center"><p>검색 결과가 없습니다.</p></td>
+				</tr>
+
+			<% } %>
+			</table>
+		</div>
+	</div>
+
+	<div class="row">
+		<form method ="get" action="/board/list/1" class="form-horizontal">
+			<div class="col-xs-12 col-sm-6 col-md-4">
+				<select class="form-control" name="opt">
+				  <option value="userid">글쓴이</option>
+				  <option value="title">제목</option>
+				</select>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-4">
+				<input type="text" class="form-control" name="seval" placeholder="검색어" size="15" maxlength="15">
+			</div>
+			<div class="col-xs-12 col-md-4">
+				<input type="submit" class="form-control" value="검색">
+			</div>
+		</form>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<ul class="pagination">
+			    <% if (currentPage > 1) { %>
+			        <li><a href="/board/list/1">&laquo;</a></li>
+			    <% } %>
+			    <% var i = 1;
+			    if (currentPage > 5) {
+			        i = currentPage - 4;
+			    } %>
+			    <% if (i !== 1) { %>
+			        <li class="disabled"><a href="#">...</a></li>
+			    <% } %>
+			    <% for (i; i<=pageCount; i++) { %>
+			        <% if (currentPage == i) { %>
+			            <li class="active"><a href="/board/list/<%= i %>"><span><%= i %> <span class="sr-only">(current)</span></span></a></li>
+			        <% } else { %>
+			            <li><a href="/board/list/<%= i %>"><%= i %></a></li>
+			        <% } %>
+			        <% if (i == (currentPage + 4)) { %>
+			            <li class="disabled"><a href="#">...</a></li>
+			        <% break; } %>
+			    <% } %>
+			    <% if (currentPage != pageCount) { %>
+			        <li><a href="/board/list/<%= pageCount %>">&raquo;</a></li>
+			    <% } %>
+			</ul>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<button type="button" class="btn btn-primary"><a href="/board/write">글쓰기</a></button>
+		</div>
+	</div>
+</div>
+<% include ../bottom %>
+
+</body>
+</html>

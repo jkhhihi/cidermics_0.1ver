@@ -2,6 +2,49 @@ var express = require('express');
 var router = express.Router();
 var mysql = require("./model/mysql");
 
+function getWorldTime(tzOffset) { // 24시간제
+	  var now = new Date();
+	  var tz = now.getTime() + (now.getTimezoneOffset() * 60000) + (tzOffset * 3600000);
+	  now.setTime(tz);
+
+
+	  var s =
+	    leadingZeros(now.getFullYear(), 4) + '-' +
+	    leadingZeros(now.getMonth() + 1, 2) + '-' +
+	    leadingZeros(now.getDate(), 2) + ' ' +
+
+	    leadingZeros(now.getHours(), 2) + ':' +
+	    leadingZeros(now.getMinutes(), 2) + ':' +
+	    leadingZeros(now.getSeconds(), 2);
+
+	  return s;
+}
+
+function rdate() {
+	var _tot;
+	var now = new Date();
+	var _year= now.getFullYear();
+	var _mon = now.getMonth()+1;
+	 _mon=""+_mon;
+		if (_mon.length < 2 )
+		{
+		_mon="0"+_mon;
+		}
+	 _tot=_year+""+_mon;
+	return _tot;
+}
+
+function leadingZeros(n, digits) {
+	  var zero = '';
+	  n = n.toString();
+
+	  if (n.length < digits) {
+	    for (i = 0; i < digits - n.length; i++)
+	      zero += '0';
+	  }
+	  return zero + n;
+	}
+
 function releaseTime(){
 	 var now = new Date();
 	 var _year= now.getFullYear();
@@ -394,7 +437,7 @@ router.get('/topLogin', function(req, res, next) {
 		}
 
 
-		/*
+		/* 페북, 로그인 세션 테스트
 		console.log(sess.passport.user.length);
 		console.log(sess.passport.user.photos[0].value);
 		if(sess.passport.user.photos[0].value != null){
@@ -419,28 +462,83 @@ router.get('/alarm', function(req,res,next){
 	res.render('front/alarm',{});
 });
 
+
+// 핀북 랜딩 페이지
 router.get('/finbook', function(req,res,next){
-	res.render('front/finbook',{});
+	res.render('front/etc/finbook/finbook',{});
 });
 
 router.get('/finbook_pur', function(req,res,next){
-	res.render('front/finbook_purchase',{});
+	res.render('front/etc/finbook/finbook_purchase',{});
 });
 
 router.get('/finbook_ch', function(req,res,next){
-	res.render('front/finbook_ch_purchase',{});
+	res.render('front/etc/finbook/finbook_ch_purchase',{});
 });
 
+
+// 포도 재무설계 페이지
 router.get('/podo', function(req,res,next){
-	res.render('front/podo',{});
+	res.render('front/etc/podo/podo',{});
 });
 
 router.get('/podo_alliance', function(req,res,next){
-	res.render('front/podo_alliance',{});
+	var pdnm = req.query.podoname;
+
+	sql = 'SELECT * from cider.podoalliance where podoname like \'%'+pdnm+'%\' order by podono desc';
+    mysql.select(sql, function(err, data) {
+        if (err) throw err;
+        console.log(data);
+	res.render('front/etc/podo/podo_alliance',{data:data});
+	});
 });
 
-router.get('/podo_alliance', function(req,res,next){
-	res.render('front/podo_apply',{});
+router.get('/podo_apply', function(req,res,next){
+	res.render('front/etc/podo/podo_apply',{});
+});
+
+//포도 재무신청 (우리 재무폼 그대로 가져옴. + 라디오 버튼 추가)
+router.post('/podo_apply/insert', function(req, res, next) {
+	var pd_no = req.body.fi_app_no;
+	var pd_cate = req.body.fi_app_cate;
+	var pd_name = req.body.fi_app_name;
+	var phone1 = req.body.fi_app_phone1;
+	var phone2 = req.body.fi_app_phone2;
+	var phone3 = req.body.fi_app_phone3;
+	var email1 = req.body.fi_app_email1;
+	var email2 = req.body.fi_app_email2;
+	var pd_job = req.body.fi_app_job;
+	var pd_path = req.body.fi_app_path;
+	var pd_comment = req.body.fi_app_comment;
+	var pd_age = req.body.fi_app_age;
+	var pd_place = req.body.fi_app_place;
+	var pd_whatuwnt = req.body.whatuwnt;
+	
+	var pd_email = email1 + "@" + email2;
+	var pd_phone = phone1 + "-" + phone2 + "-" + phone3;
+	
+	var pd_sex = req.body.mem_sex;
+	
+	var date = getWorldTime(+9);
+
+	var pd_cate= rdate();
+	
+	var row;
+	var sets = {pd_cate : pd_cate, pd_name : pd_name, pd_phone : pd_phone, pd_email : pd_email, pd_sex:pd_sex, pd_job : pd_job, pd_path : pd_path, pd_whatuwnt:pd_whatuwnt, pd_comment : pd_comment, pd_regDate : date, pd_age:pd_age, pd_place:pd_place};
+	
+	mysql.insert('insert into cider.podo_apply set ?', sets, function (err, data){
+		if(err){
+			res.redirect('back');
+		}
+		//2016년 12월 16일 수정 사항(재무 테스트용)=====
+		 setTimeout(function() {
+         }, 3000);
+		 //=============================================
+		mysql.select('select * from cider.podo_apply where pd_phone ="'+pd_phone+'" and pd_name = "'+pd_name+'"', function (err, data2){
+		//res.redirect('/lecture/done');
+		res.render('front/etc/podo/podo_done', {row : data2});
+		});
+	 });
 });
 
 module.exports = router;

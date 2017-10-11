@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>사이다경제</title>
+<meta charset=utf-8>
+</head>
+<body>
+	<p>패스워드를 입력해주세요.</p>
+	<form action="listcheck" method="post" name="pcheck">
+		<input type="password" name="passwd" size="10" maxlength="4">
+		<input type="hidden" name="idx" value="<%= idx %>">
+		<input type="hidden" name="set" value="<%= set %>">
+	<%
+		if(flag==0) {
+	%> 
+		<p>패스워드를 확인해주세요</p>
+	<%
+		}
+	%>
+		<input type="submit" value="확인">
+	</form>
+	<%
+		if(flag==1) {
+	%> 
+		<script type="text/javascript">
+			opener.location.href='<%= set %>/<%= idx %>/<%= passwd %>'; 
+			window.close();
+		</script>
+	<%
+		}
+	%>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<!-- 네이버 -->
+<meta name="naver-site-verification" content="083657cb98aa9a4a9c62dedeffddfb2490545da0"/>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>사이다경제 | 포도재무</title>
+<link href="/css/podo.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/component.css" />
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+<link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+<link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+<script src="/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div class="header" align="center"><a href="/podo"><img class="img-responsive" src="/page_imgs/podo_img/podo-logo.jpg"></a></div>
+
+<div class="alliance_in" style="background-color:#efefef;" align="center">
+<h4 style="color:#ffc000"><b>제휴사 확인</b></h4>
+<div style="width:40px; height:2px; background-color:#ffc000; margin:20px 0;"></div>
+		<div class="search container">
+		<div class="row">	
+			<ul class="nav nav-tabs row" style="margin-right:0; margin-left:0;">
+		    	<li class="active col-xs-6"><a data-toggle="tab" href="#home_1" style="padding:10px 1px; color:#333;"><h5>제휴사 검색</h5></a></li>
+		    	<li class="col-xs-6"><a data-toggle="tab" href="#menu_1" style="padding:10px 1px; color:#333;"><h5>복지몰 확인</h5></a></li>
+		  	</ul>
+		</div>
+		<div class="tab-content">
+		 	<div id="home_1" class="tab-pane fade in active">
+				<form method ="get" action="/podo_alliance">
+				    <input type="alliance" class="form-control" name="podoname" style="display:inline-block; border:1px solid #ffc000;" id="alliance" placeholder="제휴사를 입력하세요 :)">
+				  	<button type="submit" class="btn btn-default" style="display:inline-block; background-color:#ffc000; color:#fff; border:1px solid #ffc000;">검색</button>
+				</form>
+				<% if(data.length == 0) { %>
+				<div class="">
+					<p>띄어쓰기 공백없이 입력해주세요.</p>
+					<p>예 ) LG화학, 신한금융그룹</p>
+				</div>
+
+				<% }else{ %>
+				<div class="">
+					<% for( var i = 0 ; i< data.length; i++) { %>
+					<p><%=data[i].podoname%></p>
+					<% } %>
+				</div>
+				<% } %>
+		    </div>
+		    <div id="menu_1" class="tab-pane fade">
+				<div class="welfare col-xs-6">
+					<p><img src="/page_imgs/podo_img/podo_alliance_logo_2.jpg"></p>
+					<p><img src="/page_imgs/podo_img/podo_alliance_logo_3.jpg"></p>
+					<p><img src="/page_imgs/podo_img/podo_alliance_logo_4.jpg"></p>
+					<p><img src="/page_imgs/podo_img/podo_alliance_logo_5.jpg"></p>
+					<p><img src="/page_imgs/podo_img/podo_alliance_logo_1.jpg"></p>
+				</div>
+				<div class="welfare col-xs-6" style="line-height: 38px;">
+					<p><a href="http://www.humandynamic.co.kr/">휴먼다이나믹</p>
+					<p><a href="http://www.seinmnf.com/">(주)스트레스앤여가/세인M&F</p>
+					<p><a href="http://www.keapa.co.kr/">(사)한국EAP협회</p>
+					<p><a href="https://www.workdream.net/">근로복지넷</p>
+					<p><a href="http://www.eapkorea.co.kr/">(주)다인</a></p>
+				</div>
+		    </div>
+		</div>
+		</div>
+</div>
+
+<div class="sns" align="center">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3"><a href="http://www.podofp.com/support/branch/index.php" target="_blank"><img class="img-responsive" src="/page_imgs/podo_img/sns-icon1.png"></a></div>
+			<div class="col-sm-3"><a href="https://www.facebook.com/podofp/" target="_blank"><img class="img-responsive" src="/page_imgs/podo_img/sns-icon2.png"></a></div>
+			<div class="col-sm-3"><a href="http://plus.kakao.com/home/i9scw0nq" target="_blank"><img class="img-responsive" src="/page_imgs/podo_img/sns-icon3.png"></a></div>
+			<div class="col-sm-3"><a href="http://blog.naver.com/bestplan4you" target="_blank"><img class="img-responsive" src="/page_imgs/podo_img/sns-icon4.png"></a></div>
+		</div>
+	</div>
+</div>
+<footer align="center">
+	<h4><b>바른사람들 포도</b></h4>
+	<p style="color:#aaa;"><b>주소 : 서울 강남구 논현로 417 (역삼동, 회원빌딩<br>
+대표전화 : 02-2088-8800<br>
+사업자 등록번호 : 610-81-47927<br>
+대표자 : 라의형</b></p>
+</footer>
+</body>
+</html>
