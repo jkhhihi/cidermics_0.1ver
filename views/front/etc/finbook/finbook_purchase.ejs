@@ -16,6 +16,13 @@
 <script src="/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script> 
+//결제 tabs
+$('#myTab a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+//tabs 끝
+
 $(document).ready(function(){
     $(".guide-down").click(function(){
         $(".online-guide").slideDown("slow");
@@ -31,10 +38,174 @@ $(document).ready(function(){
     });
 });
 </script>
+
+
+<script type="text/javascript">
+
+//신용카드,휴대폰결제,실시간계좌 DB submit
+var dbinsert;
+var actUrl;
+function cardSubmit(){
+	dbinsert = document.frmConfirm;
+
+	actUrl = "/cardOrder";
+	dbinsert.action = actUrl;
+	dbinsert.method ="post";
+	dbinsert.submit();
+}
+function mobileSubmit(){
+	dbinsert = document.payForm;
+
+	actUrl = "/mobileOrder";
+	dbinsert.action = actUrl;
+	dbinsert.method ="post";
+	dbinsert.submit();
+}
+
+// 다우페이 결제 스크립트
+var pf;
+var pm;
+
+function init() {
+	pf = document.frmConfirm;
+	pm = document.payForm;
+	pf.ORDERNO.value= getTimeStamp();
+	pm.ORDERNO.value= getTimeStamp();
+}
+
+//모바일 결제
+function pay() {
+	//var paytype = pm.paytype.value;
+	var fileName;
+	fileName = "https://ssltest.daoupay.com/m/mobile_webview/DaouMobileMng.jsp";
+	//fileName = "http://ssltest.daoupay.com/2.0/mobile/DaouMobileMng.jsp";
+	/*if (paytype == "") {
+		alert("결제방법을 선택하여 주십시오");
+		return;
+	}
+    if (paytype == "mobile") {
+	fileName = "https://ssltest.daoupay.com/m/mobile_webview/DaouMobileMng.jsp";
+	}*/
+
+	//DAOUPAY = window.open("", "DAOUPAY", "width=468,height=750");
+	//DAOUPAY.focus();
+
+	pm.target = "_self";
+	pm.action = fileName;
+	pm.method = "post";
+	pm.submit();
+}
+
+//신용카드 결제
+function fnSubmit() {
+	var fileName;
+	//fileName = "https://ssltest.daoupay.com/card/DaouCardMng.jsp";
+	fileName = "https://ssltest.daoupay.com/m/card_webview/DaouCardMng.jsp";
+	
+	pf = document.frmConfirm
+	
+	
+	/*var UserAgent = navigator.userAgent;
+	
+	if (UserAgent.match(/iPhone|iPod|iPad|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null){
+		DAOUPAY = window.open("", "DAOUPAY", "fullscreen");
+		DAOUPAY.focus();
+		pf.target = "DAOUPAY";
+	}else{
+		DAOUPAY = window.open("", "DAOUPAY", "width=579,height=527");
+		DAOUPAY.focus();
+		pf.target = "DAOUPAY";
+	}*/
+	pf.target ="_self";
+	pf.action = fileName;
+	pf.method = "post";
+	pf.submit();
+}
+
+
+function fnCheck() {	
+
+	var frm = document.frmConfirm;
+	
+	//주문번호
+	if(trim(frm.ORDERNO.value) == "" || getByteLen(frm.ORDERNO.value) > 50) {
+		alert("주문번호 (ORDERNO) 를 입력해주세요. (최대:50byte, 현재:" + getByteLen(frm.ORDERNO.value) + ")");
+		return;
+	}
+	//상품구분
+	if(trim(frm.PRODUCTTYPE.value) == "" || getByteLen(frm.PRODUCTTYPE.value) > 2) {
+		alert("상품구분 (PRODUCTTYPE) 를 입력해주세요. (최대:2byte, 현재:" + getByteLen(frm.PRODUCTTYPE.value) + ")");
+		return;
+	}
+	//과금유형
+	if(trim(frm.BILLTYPE.value) == "" || getByteLen(frm.BILLTYPE.value) > 2) {
+		alert("과금유형 (BILLTYPE) 를 입력해주세요. (최대:2byte, 현재:" + getByteLen(frm.BILLTYPE.value) + ")");
+		return;
+	}
+	//결제금액
+	if(trim(frm.AMOUNT.value) == "" || getByteLen(frm.AMOUNT.value) > 10) {
+		alert("결제금액 (AMOUNT) 를 입력해주세요. (최대:10byte, 현재:" + getByteLen(frm.AMOUNT.value) + ")");
+		return;
+		
+	}
+	/********************  필수 입력 체크 끝  ***/
+}
+
+	   
+function trim(txt) {
+	while (txt.indexOf(' ') >= 0) {
+		txt = txt.replace(' ','');
+	}
+	return txt;
+}
+
+function getTimeStamp() {
+	var d = new Date();
+	var month = d.getMonth() + 1;
+	var date = d.getDate();
+	var hour = d.getHours();
+	var minute = d.getMinutes();
+	var second = d.getSeconds();
+
+	month = (month < 10 ? "0" : "") + month;
+	date = (date < 10 ? "0" : "") + date;
+	hour = (hour < 10 ? "0" : "") + hour;
+	minute = (minute < 10 ? "0" : "") + minute;
+	second = (second < 10 ? "0" : "") + second;
+	var random = Math.floor(Math.random() * 100) + 1;
+
+	var s = d.getFullYear() + month + date + hour + minute + second+random;
+
+	return s;
+}
+
+
+function getByteLen(p_val) {
+	var onechar;
+	var tcount = 0;
+	
+	for(i = 0; i < p_val.length; i++) {
+		onechar = p_val.charAt(i);
+		if(escape(onechar).length > 4)
+			tcount += 2;
+		else if(onechar != '\r')
+			tcount++;
+	}
+	return tcount;
+}
+
+function fnNumCheck() {
+	if(event.keyCode >= 48 && event.keyCode <= 57)
+		event.returnValue = true;
+	else
+		event.returnValue = false;
+}
+
+</script>
 		
 </head>
 
-<body>
+<body onLoad="init();">
 
 <% include ../../top %>
 
@@ -94,10 +265,108 @@ $(document).ready(function(){
 		<span class="title"><b>구매하기</b></span>
 	</div>
 	</div>
-	<div class="select-pay-in container" align="center">
+	<div class="select-pay-in container">
 		<div class="user-def"><img alt="" class="img-responsive" src="/page_imgs/finbook_img/fin_step2/user-definition.jpg"></div>
 		<h4 class="how-pay" align="left"><span style="color:#1b87c9; margin-right:5px;">■</span><b>구매방법</b></h4>
-		<div class="select-box row" align="center">
+
+
+		<div role="tabpanel">
+
+		  <!-- Nav tabs -->
+		  <ul class="nav nav-tabs" role="tablist">
+		    <li role="presentation" class="active"><a href="#creditcard" aria-controls="creditcard" role="tab" data-toggle="tab">신용카드</a></li>
+		    <li role="presentation"><a href="#realaccount" aria-controls="realaccount" role="tab" data-toggle="tab">실시간계좌이체</a></li>
+		    <li role="presentation"><a href="#mobile" aria-controls="mobile" role="tab" data-toggle="tab">핸드폰결제</a></li>
+		    <li role="presentation"><a href="#account" aria-controls="account" role="tab" data-toggle="tab">무통장입금</a></li>
+		  </ul>
+
+		  <!-- Tab panes -->
+		  <div class="tab-content">
+		    <div role="tabpanel" class="tab-pane fade in active" id="creditcard">
+				<form name="frmConfirm" action="">결제방법 : 신용카드 결제<br><br>
+				<br>
+				<!-- CPID CSK20384 -->
+				CPID : <input type="text" name="CPID" size="50" maxlength="50" value="CSK20384" style="IME-MODE:disabled"><br>
+				주문번호 : <input type="text" name="ORDERNO" size="50" maxlength="50" value="" style="IME-MODE:disabled"><br>
+				상품구분 : <input type="text" name="PRODUCTTYPE" size="10" maxlength="2" value="1" style="IME-MODE:disabled"><br>
+				과금유형 : <input type="text" name="BILLTYPE" size="10" maxlength="2"  value="1" style="IME-MODE:disabled"><br>
+				결제금액 : <input type="text" name="AMOUNT" size="10" maxlength="10" value="50000" style="IME-MODE:disabled" onkeypress="fnNumCheck();"><br>
+				할부개월수 : <input type="text" name="CPQUOTA" size="20" value="0:2:3:4:5:6:7:8:9:10:11:12" style="IME-MODE:disabled">(형식 : 2:3:4:5....:12)<br>
+				고객 E-MAIL : <input type="text" name="EMAIL" size="100" maxlength="100" value=""><br>
+				고객아이디 : <input type="text" name="USERID" size="30" maxlength="30" value=""><font color="red"><b>(자신의 ID를 직접 넣어주세요.)</b></font><br>
+				고객명 : <input type="text" name="USERNAME" size="50" maxlength="50" value="테스터"><br>
+				상품코드 : <input type="text" name="PRODUCTCODE" size="10" value="201701"><br>
+				상품명 : <input type="text" name="PRODUCTNAME" size="50" value="핀북"><br>
+				예약항목1 : <input type="text" name="RESERVEDINDEX1" size="20" value="RESERVEDATA1"><br>
+				예약항목2 : <input type="text" name="RESERVEDINDEX2" size="20" value="RESERVEDATA2"><br>
+				예약항목:<input type="text" name="RESERVEDSTRING" size="100" value="RESERVESTRING"><br>
+				RETURNURL:<input type=text name=RETURNURL value="http://cidermics.com/finbook_pur"><br>
+				HOMEURL:<input type=text name=HOMEURL value="http://cidermics.com/finbook_done"><br>
+				DIRECTRESULTFLAG:<input type=text name=DIRECTRESULTFLAG value="Y"><br>
+				CARDLIST : <input type=text name=CARDLIST value=""><br>
+				HIDECARDLIST : <input type=text name=HIDECARDLIST value=""><br>
+				비과세결제유무(과세 테스트 <font color='blue'>00</font>, 비과세 테스트 : <font color='red'>01</font>):<input type=text name=TAXFREECD value="00"><br>
+				환금성(웹하드,SMS업종등)or게임사인경우만 사용:<input type=”hidden” name=”POPUPTYPE” value=""> A=게임사, B=충전식(환금성)<br>
+				CLOSEURL:<input type=text name=CLOSEURL value="http://cidermics.com/finbook_pur"><br>
+				FAILURL:<input type=text name=FAILURL value="http://cidermics.com/finbook_pur"><br>
+				APPURL:<input type=text name=APPURL value="http://cidermics.com/finbook"><br>
+				<br><br>
+
+				<input name="insertdb" type="button" value="카드정보DB등록하기" onclick="cardSubmit()"><br><br><br>
+
+				<input name="btnSubmit" type="button" value="주문하기" onclick="fnSubmit()" ><br>
+				</form>
+
+		    </div>
+		    <div role="tabpanel" class="tab-pane fade" id="realaccount">..ㅇㅇ.</div>
+		    <div role="tabpanel" class="tab-pane fade" id="mobile">
+		    <form name="payForm" action="">
+
+			상품명 <input type=text name=PRODUCTNAME size=20 value="핀북"><br>
+			상품가격 <input type=text name=AMOUNT size=20 value="10"><br>
+			전자우편 <input type=text name=EMAIL size=20 value=""><br><br>
+
+			<input name="insertdb" type="button" value="모바일결제정보DB등록하기" onclick="mobileSubmit()"><br><br><br>
+
+			<input type=button value="결제하기" onClick="pay()" width="63" height="25"><br><br>
+
+			상점아이디:<input type=text name=CPID  value="CSK20384"><br>
+
+			주문번호:<input type=text name=ORDERNO value=""><br>
+
+			상품구분:<input type=text name=PRODUCTTYPE value="1"><br>
+
+			과금유형:<input type=text name=BILLTYPE value="1"><br>
+
+			고객아이디:<input type=text name=USERID value="hongildong"><br>
+
+			고객이름:<input type=text name=USERNAME value="홍길동"><br>
+
+			상품코드:<input type=text name=PRODUCTCODE value="10001"><br>
+
+			예약항목1:<input type=text name=RESERVEDINDEX1 value="예약어1"><br>
+
+			예약항목2:<input type=text name=RESERVEDINDEX2 value="예약어2"><br>
+
+			예약스트링:<input type=text name=RESERVEDSTRING value="예약스트링"><br>
+
+			HOMEURL:<input type=text name=HOMEURL value="http://cidermics.com/finbook_done"><br>
+			DIRECTRESULTFLAG:<input type=text name=DIRECTRESULTFLAG value="http://cidermics.com/finbook_done"><br>
+			CLOSEURL:<input type=text name=CLOSEURL value="http://cidermics.com/finbook_pur"><br>
+			FAILURL:<input type=text name=FAILURL value="http://cidermics.com/finbook_pur">
+			APPURL:<input type=text name=APPURL value="http://cidermics.com/finbook"><br>
+
+			<input type=hidden name=TAXFREECD value="00">
+
+
+			</form>
+
+		    </div>
+		    <div role="tabpanel" class="tab-pane fade" id="account">.ㅂㅂㅂ..</div>
+		  </div>
+
+		</div>
+		<!--div class="select-box row" align="center">
 			<div class="col-sm-3 col-xs-6">
 			<label style="cursor:pointer;"><input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked> 신용카드</label>
 			</div>
@@ -110,8 +379,8 @@ $(document).ready(function(){
 			<div class="col-sm-3 col-xs-6">
 			<label style="cursor:pointer"><input type="radio" name="optionsRadios" id="optionsRadios4" value="option4"> 무통장입금</label>
 			</div>
-		</div>
-		<div class="check-amount row">
+		</div-->
+		<div class="check-amount row" align="center">
 			<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important;">
 				<div class="title">상품금액</div>
 				<div class="amount">50,000 원</div>
@@ -130,6 +399,9 @@ $(document).ready(function(){
 		</div>
 	</div>
 </div>
+
+
+
 
 <% include ../../bottom %>
 

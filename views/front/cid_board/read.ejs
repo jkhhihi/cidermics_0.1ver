@@ -56,7 +56,7 @@ function listcheck_del(){
  
         // 넘어가는 글자는 자른다.
         if (totalByte > maxByte) {
-            alert(maxByte + "자를 초과 입력 할 수 없습니다.");
+            alert(totalByte + "ddd" +maxByte + "자를 초과 입력 할 수 없습니다.");
             str2 = strValue.substr(0, len);
             obj.value = str2;
             chkword(obj, 4000);
@@ -317,7 +317,7 @@ function showComtco(id)
 					<!--a onclick="declarationSb()" style="cursor:pointer;">신고</a-->
 
 
-					 | <span class="glyphicon glyphicon-remove-circle" id="deleteComt<%= comt[i].comt_no%>" onclick="deleteComt(<%= comt[i].comt_no%>)"></span>
+					 | <span class="glyphicon glyphicon-remove-circle" id="deleteComt<%= comt[i].comt_no%>" onclick="deleteComt(<%= comt[i].comt_no%>)">대댓글수[<%= comt[i].count_no %>]</span>
 
 
 					</form>
@@ -335,7 +335,7 @@ function showComtco(id)
 					<!--button value="<%= comt[i].comt_no%>" onclick="shComt()">답글</button-->
 					
 					<button class="btn btn-info btncomt" id="d<%= comt[i].comt_no%>" value="<%= comt[i].comt_no%>" onclick="showJs(<%= comt[i].comt_no%>)" style="margin-top:15px; padding:5px 10px !important;">
-					<h6 style="margin:0 !important;">답글
+					<h6 style="margin:0 !important;">답글 <%= comt[i].count_no %>
 					<!--span style="color: red"><%= comtCount[0].comt_no %></span--></h6>
 					</button>
 

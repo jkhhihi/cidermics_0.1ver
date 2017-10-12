@@ -476,6 +476,92 @@ router.get('/finbook_ch', function(req,res,next){
 	res.render('front/etc/finbook/finbook_ch_purchase',{});
 });
 
+//card결제
+router.post('/cardOrder', function(req, res, next) {
+	var CPID = req.body.CPID;
+	var ORDERNO = req.body.ORDERNO;
+	var PRODUCTTYPE = req.body.PRODUCTTYPE;
+	var BILLTYPE = req.body.BILLTYPE;
+	var TAXFREECD = req.body.TAXFREECD;
+	var AMOUNT = req.body.AMOUNT;
+	var CPQUOTA = req.body.CPQUOTA;
+	var EMAIL = req.body.EMAIL;
+	var USERID = req.body.USERID;
+	var USERNAME = req.body.USERNAME;
+	var PRODUCTCODE = req.body.PRODUCTCODE;
+	var PRODUCTNAME = req.body.PRODUCTNAME;
+	var RESERVEDINDEX1 = req.body.RESERVEDINDEX1;
+	var RESERVEDINDEX2 = req.body.RESERVEDINDEX2;
+	var RESERVEDSTRING = req.body.RESERVEDSTRING;
+	var CLOSEURL = req.body.CLOSEURL;
+	var FAILURL = req.body.FAILURL;
+	var APPURL = req.body.APPURL;
+	var HOMEURL = req.body.HOMEURL;
+	var DIRECTRESULTFLAG = req.body.DIRECTRESULTFLAG;
+	var CARDLIST = req.body.CARDLIST;
+	var HIDECARDLIST = req.body.HIDECARDLIST;
+	var POPUPTYPE = req.body.POPUPTYPE;
+	var MOBILECOMPANYLIST = req.body.MOBILECOMPANYLIST;
+	var sets = {CPID : CPID, ORDERNO : ORDERNO, PRODUCTTYPE : PRODUCTTYPE, BILLTYPE : BILLTYPE, AMOUNT:AMOUNT, CPQUOTA : CPQUOTA, EMAIL : EMAIL, USERID : USERID, USERNAME : USERNAME,
+		PRODUCTCODE : PRODUCTCODE, PRODUCTNAME:PRODUCTNAME, RESERVEDINDEX1:RESERVEDINDEX1, RESERVEDINDEX2 : RESERVEDINDEX2, RESERVEDSTRING : RESERVEDSTRING, 
+		CLOSEURL : CLOSEURL,FAILURL : FAILURL,APPURL : APPURL, HOMEURL : HOMEURL, DIRECTRESULTFLAG : DIRECTRESULTFLAG, CARDLIST : CARDLIST,HIDECARDLIST:HIDECARDLIST, TAXFREECD : TAXFREECD, POPUPTYPE : POPUPTYPE,
+		MOBILECOMPANYLIST:MOBILECOMPANYLIST};
+	mysql.insert('insert into cider.accountOrder set ?', sets, function (err, data){
+		if(err){
+			res.redirect('back');
+		}
+	mysql.select('select * from cider.accountOrder where ORDERNO ="'+ORDERNO+'"', function (err, data2){
+		console.log(data);
+	res.render('front/etc/finbook/finbook_success',{data:data2});
+	});
+  });
+});
+
+//휴대폰 결제
+router.post('/mobileOrder', function(req, res, next) {
+	var CPID = req.body.CPID;
+	var ORDERNO = req.body.ORDERNO;
+	var PRODUCTTYPE = req.body.PRODUCTTYPE;
+	var BILLTYPE = req.body.BILLTYPE;
+	var TAXFREECD = req.body.TAXFREECD; // 모바일은 db테이블에 없음.
+	var AMOUNT = req.body.AMOUNT;
+	var PRODUCTNAME = req.body.PRODUCTNAME;
+	var HOMEURL = req.body.HOMEURL;
+	var CLOSEURL = req.body.CLOSEURL;
+	var FAILURL = req.body.FAILURL;
+	var APPURL = req.body.APPURL; // 모바일은 db테이블에 없음.
+
+	//var CPQUOTA = req.body.CPQUOTA;
+	var EMAIL = req.body.EMAIL;
+	var USERID = req.body.USERID;
+	var USERNAME = req.body.USERNAME;
+	var PRODUCTCODE = req.body.PRODUCTCODE;
+	var RESERVEDINDEX1 = req.body.RESERVEDINDEX1;
+	var RESERVEDINDEX2 = req.body.RESERVEDINDEX2;
+	var RESERVEDSTRING = req.body.RESERVEDSTRING;
+	var DIRECTRESULTFLAG = req.body.DIRECTRESULTFLAG;
+
+	var MOBILECOMPANYLIST = req.body.MOBILECOMPANYLIST;
+
+	var sets = {CPID : CPID, ORDERNO : ORDERNO, PRODUCTTYPE : PRODUCTTYPE, BILLTYPE : BILLTYPE, AMOUNT:AMOUNT, PRODUCTNAME:PRODUCTNAME, EMAIL : EMAIL, USERID : USERID, USERNAME : USERNAME,
+		PRODUCTCODE : PRODUCTCODE, RESERVEDINDEX1:RESERVEDINDEX1, RESERVEDINDEX2 : RESERVEDINDEX2, RESERVEDSTRING : RESERVEDSTRING, 
+		CLOSEURL : CLOSEURL,FAILURL : FAILURL,APPURL : APPURL, HOMEURL : HOMEURL, DIRECTRESULTFLAG : DIRECTRESULTFLAG, TAXFREECD : TAXFREECD,MOBILECOMPANYLIST:MOBILECOMPANYLIST};
+	mysql.insert('insert into cider.accountOrder set ?', sets, function (err, data){
+		if(err){
+			res.redirect('back');
+		}
+	mysql.select('select * from cider.accountOrder where ORDERNO ="'+ORDERNO+'"', function (err, data2){
+		console.log(data);
+	res.render('front/etc/finbook/finbook_success',{data:data2});
+	});
+  });
+});
+
+router.get('/finbook_done', function(req,res,next){
+	res.render('front/etc/finbook/finbook_done',{});
+});
+
+
 
 // 포도 재무설계 페이지
 router.get('/podo', function(req,res,next){

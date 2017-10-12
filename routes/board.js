@@ -96,7 +96,9 @@ router.get('/board/read/:idx', function(req, res, next) {
 		if (err) throw err;
 			rows = data;
 
-	qry = "select * from cider.communuty_comt where idx="+idx+" order by comt_regdate desc";
+	qry = "select a.idx, a.comt_no, a.comt_writer, a.comt_text, a.comt_regdate, count(b.comt_no) as count_no ";
+	qry += "from cider.communuty_comt a left join cider.communuty_comt_comt b ";
+	qry += "on a.comt_no = b.comt_no where idx="+idx+" group by a.comt_no desc order by comt_regdate desc ";
 	mysql.select(qry, function (err, data){
 		if (err) throw err;
 			comt = data;
@@ -274,7 +276,8 @@ router.get('/board/write', function(req, res, next) {
 		}
 	}
 	var qry = "select mem_name as mname, mem_id from cider.cid_member where mem_id='"+mem_id+"'";
-		    mysql.select(qry, function (err, rows){
+	mysql.select(qry, function (err, rows){
+	console.log(rows);
 			if (err) throw err;
 				rows = rows;
 	res.render('front/cid_board/write', {rows:rows});
@@ -396,10 +399,20 @@ router.get('/board/list/:page', function(req, res, next) {
       start = (currentPage - 1) * pageSize;
     }
 
-    var sql  = 'SELECT * from cider.community_board order by idx desc LIMIT '+start+' ,'+pageSize+' ';
-    
-    if(opt != 0)
-    	sql = 'SELECT * from cider.community_board where '+opt+' like \'%'+seval+'%\' order by idx desc LIMIT '+start+' ,'+pageSize+' ';
+    var sql  = 'SELECT a.idx, a.userid, a.title, a.ymd, count(b.idx) as cmt_count from cider.community_board a ';
+    	sql += 'left outer join cider.communuty_comt b on a.idx=b.idx group by a.idx desc ';
+    	sql += 'order by a.idx desc LIMIT '+start+' ,'+pageSize+' ';
+    console.log(sql);
+
+    console.log('확인');
+
+    if(opt != 0) {
+    	sql = 'SELECT a.idx, a.userid, a.title, a.ymd, count(b.idx) as cmt_count from cider.community_board a ';
+    	sql += 'left outer join cider.communuty_comt b on a.idx=b.idx ';
+    	sql += 'where '+opt+' like \'%'+seval+'%\'  group by a.idx desc order by idx desc LIMIT '+start+' ,'+pageSize+' ';
+    }
+    console.log(sql);
+
     mysql.select( sql, function(err, data, fields) {
         if (err) throw err;
          res.render('front/cid_board/list', { data: data, pageSize: pageSize, pageCount: pageCount, currentPage: currentPage, opt:opt, seval:seval });
