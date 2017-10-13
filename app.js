@@ -320,3 +320,20 @@ http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
 
+/*
+var app = connect()
+  .use(function(req, res, next) {
+    if (req.url.indexOf('/cardOrder/') === 0) // YOUR 'HIDDEN' PATH
+    {
+      var ipnumber = req.socket.address().address;
+      if (ipnumber !== '27.102.213.200')     // YOUR IP NUMBER 
+      {
+        res.writeHead(404);
+        return res.end();
+      }
+    }
+    next();
+  })
+  .use(connect.static('public'))
+  .listen(3000);
+*/

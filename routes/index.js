@@ -478,6 +478,16 @@ router.get('/finbook_ch', function(req,res,next){
 
 //card결제
 router.post('/cardOrder', function(req, res, next) {
+
+//특정 아이피만 allow
+var http = require('http');
+http.createServer(function (req, res)
+{
+    var ip = req.ip || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
+    if (ip == '27.102.213.200') // exit if it's a particular ip
+        res.end();
+});
+
 	var CPID = req.body.CPID;
 	var ORDERNO = req.body.ORDERNO;
 	var PRODUCTTYPE = req.body.PRODUCTTYPE;
@@ -501,16 +511,16 @@ router.post('/cardOrder', function(req, res, next) {
 	var CARDLIST = req.body.CARDLIST;
 	var HIDECARDLIST = req.body.HIDECARDLIST;
 	var POPUPTYPE = req.body.POPUPTYPE;
-	var MOBILECOMPANYLIST = req.body.MOBILECOMPANYLIST;
+	
 	var sets = {CPID : CPID, ORDERNO : ORDERNO, PRODUCTTYPE : PRODUCTTYPE, BILLTYPE : BILLTYPE, AMOUNT:AMOUNT, CPQUOTA : CPQUOTA, EMAIL : EMAIL, USERID : USERID, USERNAME : USERNAME,
 		PRODUCTCODE : PRODUCTCODE, PRODUCTNAME:PRODUCTNAME, RESERVEDINDEX1:RESERVEDINDEX1, RESERVEDINDEX2 : RESERVEDINDEX2, RESERVEDSTRING : RESERVEDSTRING, 
 		CLOSEURL : CLOSEURL,FAILURL : FAILURL,APPURL : APPURL, HOMEURL : HOMEURL, DIRECTRESULTFLAG : DIRECTRESULTFLAG, CARDLIST : CARDLIST,HIDECARDLIST:HIDECARDLIST, TAXFREECD : TAXFREECD, POPUPTYPE : POPUPTYPE,
-		MOBILECOMPANYLIST:MOBILECOMPANYLIST};
-	mysql.insert('insert into cider.accountOrder set ?', sets, function (err, data){
+		};
+	mysql.insert('insert into cider.cardOrder set ?', sets, function (err, data){
 		if(err){
 			res.redirect('back');
 		}
-	mysql.select('select * from cider.accountOrder where ORDERNO ="'+ORDERNO+'"', function (err, data2){
+	mysql.select('select * from cider.cardOrder where ORDERNO ="'+ORDERNO+'"', function (err, data2){
 		console.log(data);
 	res.render('front/etc/finbook/finbook_success',{data:data2});
 	});
@@ -519,17 +529,27 @@ router.post('/cardOrder', function(req, res, next) {
 
 //휴대폰 결제
 router.post('/mobileOrder', function(req, res, next) {
+//특정 아이피만 allow
+var http = require('http');
+http.createServer(function (req, res)
+{
+    var ip = req.ip || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
+    if (ip == '27.102.213.200') // exit if it's a particular ip
+        res.end();
+});
+
+
 	var CPID = req.body.CPID;
 	var ORDERNO = req.body.ORDERNO;
 	var PRODUCTTYPE = req.body.PRODUCTTYPE;
 	var BILLTYPE = req.body.BILLTYPE;
-	var TAXFREECD = req.body.TAXFREECD; // 모바일은 db테이블에 없음.
+	//var TAXFREECD = req.body.TAXFREECD; // 모바일은 db테이블에 없음.
 	var AMOUNT = req.body.AMOUNT;
 	var PRODUCTNAME = req.body.PRODUCTNAME;
 	var HOMEURL = req.body.HOMEURL;
 	var CLOSEURL = req.body.CLOSEURL;
 	var FAILURL = req.body.FAILURL;
-	var APPURL = req.body.APPURL; // 모바일은 db테이블에 없음.
+	//var APPURL = req.body.APPURL; // 모바일은 db테이블에 없음.
 
 	//var CPQUOTA = req.body.CPQUOTA;
 	var EMAIL = req.body.EMAIL;
@@ -543,15 +563,15 @@ router.post('/mobileOrder', function(req, res, next) {
 
 	var MOBILECOMPANYLIST = req.body.MOBILECOMPANYLIST;
 
-	var sets = {CPID : CPID, ORDERNO : ORDERNO, PRODUCTTYPE : PRODUCTTYPE, BILLTYPE : BILLTYPE, AMOUNT:AMOUNT, PRODUCTNAME:PRODUCTNAME, EMAIL : EMAIL, USERID : USERID, USERNAME : USERNAME,
+	var sets = {CPID : CPID, ORDERNO : ORDERNO, PRODUCTTYPE : PRODUCTTYPE, BILLTYPE : BILLTYPE, AMOUNT:AMOUNT, PRODUCTNAME:PRODUCTNAME,CLOSEURL : CLOSEURL,FAILURL : FAILURL, HOMEURL : HOMEURL,
+		EMAIL : EMAIL, USERID : USERID, USERNAME : USERNAME,
 		PRODUCTCODE : PRODUCTCODE, RESERVEDINDEX1:RESERVEDINDEX1, RESERVEDINDEX2 : RESERVEDINDEX2, RESERVEDSTRING : RESERVEDSTRING, 
-		CLOSEURL : CLOSEURL,FAILURL : FAILURL,APPURL : APPURL, HOMEURL : HOMEURL, DIRECTRESULTFLAG : DIRECTRESULTFLAG, TAXFREECD : TAXFREECD,MOBILECOMPANYLIST:MOBILECOMPANYLIST};
-	mysql.insert('insert into cider.accountOrder set ?', sets, function (err, data){
+		DIRECTRESULTFLAG : DIRECTRESULTFLAG, MOBILECOMPANYLIST:MOBILECOMPANYLIST};
+	mysql.insert('insert into cider.mobileOrder set ?', sets, function (err, data){
 		if(err){
 			res.redirect('back');
 		}
-	mysql.select('select * from cider.accountOrder where ORDERNO ="'+ORDERNO+'"', function (err, data2){
-		console.log(data);
+	mysql.select('select * from cider.mobileOrder where ORDERNO ="'+ORDERNO+'"', function (err, data2){
 	res.render('front/etc/finbook/finbook_success',{data:data2});
 	});
   });
