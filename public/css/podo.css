@@ -63,6 +63,8 @@ footer{background-color:#343434; color:#fff; padding:30px 0;}
 .alliance_in .search .tab-content form{margin:60px 0;}
 .alliance_in .search .tab-content .form-control{width:300px;}
 .welfare{margin:60px 0;}
+.welfare .col-xs-6{height:60px;}
+.welfare-ex{margin:60px 0;}
 /*-----------------------*/
 
 @media all and (max-width:1024px) {
