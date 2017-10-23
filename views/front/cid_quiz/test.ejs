@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="EUC-KR">
   <!-- Google Tag Manager -->
 <!--script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -33,6 +34,23 @@ eventLabel: 'name' //카테고리명
 });
 });
     </script-->
+<script type="text/javascript" charset="EUC-KR"
+document.characterSet="EUC-KR";>
+
+function pay() {
+  var pm = document.payForm;
+  document.charset ="EUC-KR";
+
+  pm.target = "_self";
+  pm.action = "/test3";
+  pm.method = "get";
+  pm.submit();
+
+  if (document.charset) {
+  document.charset = "utf-8";
+  } 
+}
+</script>
   </head>
   <body>
   <!-- Google Tag Manager (noscript) -->
@@ -45,5 +63,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript-
     <li class="category-item"><a href="/" onclick="ga('send','event','전집','링크클릭','전집1','1')">전집</a></li>
     <li class="category-item"><a href="/discuss" onclick="ga('send','event','유아책','링크클릭','유아책1','1')">유아책</a></li>
 </ul>
+
+<form action="/test3" method="get">
+  <input type="text" name="test12">
+  <button type="submit">보내기</button>
+</form>
+<form name="payForm" action=""  accept-charset="EUC-KR">
+  <input type="text" name="test1">
+  <input type="text" name="test12">
+  <input type=button value="결제하기" onClick="pay()" width="63" height="25"><br><br>
+</form>
   </body>
 </html>

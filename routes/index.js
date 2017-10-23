@@ -1,6 +1,143 @@
-var express = require('express');
+//var express = require('express');
+var express = require('express'), ipfilter = require('express-ipfilter').IpFilter;
 var router = express.Router();
 var mysql = require("./model/mysql");
+
+//var Iconv = require('iconv').Iconv;
+//var iconv = new Iconv('EUC-KR', 'UTF-8//TRANSLIT//IGNORE');
+
+var urlencode = require('urlencode');
+var assert = require('assert');
+
+var qs = require('querystring');
+
+var request = require("request");
+var cheerio = require("cheerio");
+var iconv  = require('iconv-lite');
+
+request({
+encoding: null,
+uri: 'http://localhost/test3',
+}, function (err, response, body) {
+      var Utf8String = iconv.decode(new Buffer(body), "euc-kr");
+      console.log(body);
+});
+
+
+
+
+/*인서트 테스트 코드*/
+router.get('/test', function(req, res, next) {
+	var row;
+	var year = req.body.year;
+	var _tot = releaseTime();
+	 
+	 qry="select con_no, con_photo, con_title, if (a.con_upDate > DATE_ADD(now(),INTERVAL -1 DAY) ,'/page_imgs/main_img/new_mark4.svg','/page_imgs/main_img/new_mark1px.png') as chkDat from cider.cid_contents a where a.con_release <= '"+_tot+"' order by a.con_no desc limit 0,4";
+	mysql.select(qry, function (err, data){
+		if (err) throw err;
+		 row = data;
+	res.render('front/cid_quiz/test', { contents : row});
+});
+});
+
+//let url = `http://localhost/test3?test12=${qs.escape('apple 쥬스')}`; 
+
+router.get('/test3', function(req, res, next) {
+
+	console.log(req.url);
+	var test12 = req.query.test12;
+	console.log(qs.escape(test12));
+	console.log(qs.unescape(req.query.test12));
+
+	console.log(encodeURIComponent(req.query));
+
+	var decodedUrl = qs.unescape(req.url);
+	/*request({url:"/test3",encoding:'binary'}, function(error,response, body){
+		if(!error){
+			var convertedCon = new Buffer(body, 'binary')
+			iconv = new Iconv('euc-kr','UTF8');
+			convertedCon = iconv.convert(convertedCon).toString();
+			var $ = cheerio.load(convertedCon);
+			linkTable = new Array();
+		}
+	})*/
+
+	//res.set({ 'content-type': 'application/json; charset=euc-kr' });
+	//res.header("Content-Type", "application/json; charset=EUC-KR");
+	//res.setEncoding('utf8');
+	//res.on('data',function(chunk){ body_data += chunk; });
+	//res.on('data',function(chunk){ body_data += iconv.convert(chunk).toString('UTF-8'); });
+
+
+	//console.log("All query strings: " + JSON.stringify(req.query));
+	//res.charset = 'EUC-KR';
+	//res.set({ 'content-type': 'application/json; charset=euc-kr' });
+	//res.header("Content-Type", "application/json; charset=EUC-KR");
+	//console.log(req.query);
+	var test12 = req.query.test12;
+	qs.unescape(test12);
+
+	var en1 = qs.escape(test12);
+	var en = qs.unescape(en1);
+	console.log(en1);
+	console.log(en);
+	console.log("------");
+	//console.log(encodeURL(test12));
+
+	console.log(test12);
+	console.log(urlencode('ㅇㅇ','EUC-KR'));
+	test1 = '\''+ test12 + '\'';
+	console.log(test1);
+	console.log(urlencode.parse('test12='+test12+'',{charset:'EUC-KR'}));
+
+
+	console.log(test12);
+
+	// parse gbk querystring 
+var asas = urlencode.parse('test12='+test12+'', {charset: 'EUC-KR'}); // {nick: '苏千'}
+console.log(asas.test12);
+console.log("실화?");
+var as = urlencode.stringify(asas, {charset: 'EUC-KR'}); // {nick: '苏千'}
+console.log(as);
+
+//console.log(encodeURIComponent(JSON.stringify(asas)));
+
+//urlencode.stringify(obj, {charset: 'EUC-KR'});
+ 
+ //stringify obj with gbk encoding 
+//var str = 'test12=' + urlencode(test12, 'EUC-KR'); // x[y][0][v][w]=%CE%ED%BF%D5 
+//var obj =  {'test12' : test12};
+var str = urlencode('雾空', 'gbk'); // x[y][0][v][w]=%CE%ED%BF%D5 
+var obj =  {'w' : 'ㅇㅇ'};
+console.log(obj);
+var as1 = urlencode.stringify(obj, {charset: 'EUC-KR'});
+console.log(as1);
+
+
+
+
+	//var sets = {quiz_options : test12 };
+	//mysql.insert('insert into cider.cid_quiz set ?', sets,  function (err, data){
+	res.send(req.query.test12);
+//});
+});
+
+
+router.post('/insert', function(req, res, next) {
+	
+	var in1 = req.body.in1;
+	
+	var sets = {quiz_options : in1 };
+	
+	mysql.insert('insert into cider.cid_quiz set ?', sets,  function (err, data){
+		
+    	res.redirect('/test');
+    });
+});
+
+
+
+
 
 function getWorldTime(tzOffset) { // 24시간제
 	  var now = new Date();
@@ -396,35 +533,6 @@ router.get('/top', function(req, res, next) {
 });
 
 
-
-
-/*인서트 테스트 코드*/
-router.get('/test', function(req, res, next) {
-	var row;
-	var year = req.body.year;
-	var _tot = releaseTime();
-	 
-	 qry="select con_no, con_photo, con_title, if (a.con_upDate > DATE_ADD(now(),INTERVAL -1 DAY) ,'/page_imgs/main_img/new_mark4.svg','/page_imgs/main_img/new_mark1px.png') as chkDat from cider.cid_contents a where a.con_release <= '"+_tot+"' order by a.con_no desc limit 0,4";
-	mysql.select(qry, function (err, data){
-		if (err) throw err;
-		 row = data;
-	res.render('front/cid_quiz/test', { contents : row});
-});
-	 
-});
-router.post('/insert', function(req, res, next) {
-	
-	var in1 = req.body.in1;
-	
-	var sets = {quiz_options : in1 };
-	
-	mysql.insert('insert into cider.cid_quiz set ?', sets,  function (err, data){
-		
-    	res.redirect('/test');
-    });
-});
-
-
 router.get('/topLogin', function(req, res, next) {
 
 	var sePass = req.session.passport;
@@ -463,6 +571,17 @@ router.get('/alarm', function(req,res,next){
 });
 
 
+
+router.get('/personalinfo', function(req,res,next){
+	res.render('front/personalinfo',{});
+});
+
+
+
+
+
+
+
 // 핀북 랜딩 페이지
 router.get('/finbook', function(req,res,next){
 	res.render('front/etc/finbook/finbook',{});
@@ -476,19 +595,48 @@ router.get('/finbook_ch', function(req,res,next){
 	res.render('front/etc/finbook/finbook_ch_purchase',{});
 });
 
-//card결제
-router.post('/cardOrder', function(req, res, next) {
+router.get('/finbook_noamount', function(req,res,next){
+	res.render('front/etc/finbook/finbook_noamount',{});
+});
+
 
 //특정 아이피만 allow
-var http = require('http');
+/*var http = require('http');
 http.createServer(function (req, res)
 {
     var ip = req.ip || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
     if (ip == '27.102.213.200') // exit if it's a particular ip
         res.end();
-});
+});*/
 
-	var CPID = req.body.CPID;
+//ip filter
+//var testers = ['27.102.213.200','27.102.213.209'];
+//var testers = [['27.102.213.200','27.102.213.209']];
+//var testers = [['192.168.0.1','192.168.0.185']];
+//var testers = ['::ffff:127.0.0.1'];
+var testers = ['127.0.0.1/24'];
+
+//ip허용
+var ips = [['27.102.213.200','27.102.213.209']];
+//var ips = ['::ffff:127.0.0.1'];
+var ipss = ['::1','::ffff:127.0.0.1'];
+
+ 
+// Create the server 
+//router.use('/cardOrder',ipfilter(ips));
+
+//card결제
+//router.post('/cardOrder', function(req, res, next) {
+//router.post('/cardOrder', ipfilter(testers,{mode:'allow'}), function(req, res, next) {
+//router.get('/cardOrder', ipfilter(ips, {mode: 'allow'}), function(req, res) {
+//router.use('/cardOrder',ipfilter(ips, {})); // the ipfilter only applies to the routes below
+//router.get('/cardOrder', ipfilter(ips, {mode: 'allow'}), function(req, res) {
+
+router.get('/cardOrder',ipfilter(ips,ipss, {mode: 'allow'}), function(req, res) {
+
+	console.log(ips);
+	console.log(ipss);
+/*	var CPID = req.body.CPID;
 	var ORDERNO = req.body.ORDERNO;
 	var PRODUCTTYPE = req.body.PRODUCTTYPE;
 	var BILLTYPE = req.body.BILLTYPE;
@@ -510,60 +658,91 @@ http.createServer(function (req, res)
 	var DIRECTRESULTFLAG = req.body.DIRECTRESULTFLAG;
 	var CARDLIST = req.body.CARDLIST;
 	var HIDECARDLIST = req.body.HIDECARDLIST;
-	var POPUPTYPE = req.body.POPUPTYPE;
-	
-	var sets = {CPID : CPID, ORDERNO : ORDERNO, PRODUCTTYPE : PRODUCTTYPE, BILLTYPE : BILLTYPE, AMOUNT:AMOUNT, CPQUOTA : CPQUOTA, EMAIL : EMAIL, USERID : USERID, USERNAME : USERNAME,
+	var POPUPTYPE = req.body.POPUPTYPE;*/
+	var CPID = req.query.CPID;
+	var ORDERNO = req.query.ORDERNO;
+	var PRODUCTTYPE = req.query.PRODUCTTYPE;
+	var BILLTYPE = req.query.BILLTYPE;
+	var TAXFREECD = req.query.TAXFREECD;
+	var AMOUNT = req.query.AMOUNT;
+	var CPQUOTA = req.query.CPQUOTA;
+	var EMAIL = req.query.EMAIL;
+	var USERID = req.query.USERID;
+	var USERNAME = req.query.USERNAME;
+	var PRODUCTCODE = req.query.PRODUCTCODE;
+	var PRODUCTNAME = req.query.PRODUCTNAME;
+	var RESERVEDINDEX1 = req.query.RESERVEDINDEX1;
+	var RESERVEDINDEX2 = req.query.RESERVEDINDEX2;
+	var RESERVEDSTRING = req.query.RESERVEDSTRING;
+	var CLOSEURL = req.query.CLOSEURL;
+	var FAILURL = req.query.FAILURL;
+	var APPURL = req.query.APPURL;
+	var HOMEURL = req.query.HOMEURL;
+	var DIRECTRESULTFLAG = req.query.DIRECTRESULTFLAG;
+	var CARDLIST = req.query.CARDLIST;
+	var HIDECARDLIST = req.query.HIDECARDLIST;
+	var POPUPTYPE = req.query.POPUPTYPE;
+
+	console.log(PRODUCTNAME);
+
+	var sets = {CPID : CPID, ORDERNO : ORDERNO, PRODUCTTYPE : "2", BILLTYPE : "1", AMOUNT:AMOUNT, CPQUOTA : CPQUOTA, EMAIL : EMAIL, USERID : USERID, USERNAME : USERNAME,
 		PRODUCTCODE : PRODUCTCODE, PRODUCTNAME:PRODUCTNAME, RESERVEDINDEX1:RESERVEDINDEX1, RESERVEDINDEX2 : RESERVEDINDEX2, RESERVEDSTRING : RESERVEDSTRING, 
-		CLOSEURL : CLOSEURL,FAILURL : FAILURL,APPURL : APPURL, HOMEURL : HOMEURL, DIRECTRESULTFLAG : DIRECTRESULTFLAG, CARDLIST : CARDLIST,HIDECARDLIST:HIDECARDLIST, TAXFREECD : TAXFREECD, POPUPTYPE : POPUPTYPE,
+		CLOSEURL : "http://cidermics.com/finbook_pur",FAILURL : "http://cidermics.com/finbook_pur", HOMEURL : "http://cidermics.com/finbook_ch", APPURL : "http://cidermics.com/finbook",
+		DIRECTRESULTFLAG : DIRECTRESULTFLAG, CARDLIST : CARDLIST,HIDECARDLIST:HIDECARDLIST, TAXFREECD : "00", POPUPTYPE : POPUPTYPE,
 		};
 	mysql.insert('insert into cider.cardOrder set ?', sets, function (err, data){
 		if(err){
 			res.redirect('back');
 		}
-	mysql.select('select * from cider.cardOrder where ORDERNO ="'+ORDERNO+'"', function (err, data2){
-		console.log(data);
-	res.render('front/etc/finbook/finbook_success',{data:data2});
+	//res.redirect('/cardOrder');
+	//mysql.select('select * from cider.cardOrder where ORDERNO ="'+ORDERNO+'"', function (err, data2){
+	//	console.log(data);
+	res.render('front/etc/finbook/finbook_success',{});
 	});
   });
-});
+//});
+
 
 //휴대폰 결제
-router.post('/mobileOrder', function(req, res, next) {
-//특정 아이피만 allow
-var http = require('http');
-http.createServer(function (req, res)
-{
-    var ip = req.ip || req.connection.remoteAddress || req.socket.remoteAddress || req.connection.socket.remoteAddress;
-    if (ip == '27.102.213.200') // exit if it's a particular ip
-        res.end();
-});
+//router.use('/mobileOrder',ipfilter(ips, {})); // the ipfilter only applies to the routes below
+//router.get('/mobileOrder', function(req, res) {
+//router.get('/mobileOrder', ipfilter(ips, {mode: 'allow'}), function(req, res) {
+//router.use('/mobileOrder', ipfilter(testers, {}));
+//router.get('/mobileOrder', ipfilter(testers,{mode:'allow'}), function(req, res, next) {
+//router.get('/mobileOrder', function(req, res, next) {
 
+router.get('/mobileOrder',ipfilter(ips,ipss, {mode: 'allow'}), function(req, res) {
 
-	var CPID = req.body.CPID;
-	var ORDERNO = req.body.ORDERNO;
-	var PRODUCTTYPE = req.body.PRODUCTTYPE;
-	var BILLTYPE = req.body.BILLTYPE;
+	console.log(ips);
+	console.log(ipss);
+
+	var CPID = req.query.CPID;
+	var ORDERNO = req.query.ORDERNO;
+	var PRODUCTTYPE = req.query.PRODUCTTYPE;
+	var BILLTYPE = req.query.BILLTYPE;
 	//var TAXFREECD = req.body.TAXFREECD; // 모바일은 db테이블에 없음.
-	var AMOUNT = req.body.AMOUNT;
-	var PRODUCTNAME = req.body.PRODUCTNAME;
-	var HOMEURL = req.body.HOMEURL;
-	var CLOSEURL = req.body.CLOSEURL;
-	var FAILURL = req.body.FAILURL;
+	var AMOUNT = req.query.AMOUNT;
+	var PRODUCTNAME = req.query.PRODUCTNAME;
+	var HOMEURL = req.query.HOMEURL;
+	var CLOSEURL = req.query.CLOSEURL;
+	var FAILURL = req.query.FAILURL;
 	//var APPURL = req.body.APPURL; // 모바일은 db테이블에 없음.
 
 	//var CPQUOTA = req.body.CPQUOTA;
-	var EMAIL = req.body.EMAIL;
-	var USERID = req.body.USERID;
-	var USERNAME = req.body.USERNAME;
-	var PRODUCTCODE = req.body.PRODUCTCODE;
-	var RESERVEDINDEX1 = req.body.RESERVEDINDEX1;
-	var RESERVEDINDEX2 = req.body.RESERVEDINDEX2;
-	var RESERVEDSTRING = req.body.RESERVEDSTRING;
-	var DIRECTRESULTFLAG = req.body.DIRECTRESULTFLAG;
+	var EMAIL = req.query.EMAIL;
+	var USERID = req.query.USERID;
+	var USERNAME = req.query.USERNAME;
+	var PRODUCTCODE = req.query.PRODUCTCODE;
+	var RESERVEDINDEX1 = req.query.RESERVEDINDEX1;
+	var RESERVEDINDEX2 = req.query.RESERVEDINDEX2;
+	var RESERVEDSTRING = req.query.RESERVEDSTRING;
+	var DIRECTRESULTFLAG = req.query.DIRECTRESULTFLAG;
+	var MOBILECOMPANYLIST = req.query.MOBILECOMPANYLIST;
 
-	var MOBILECOMPANYLIST = req.body.MOBILECOMPANYLIST;
+	console.log(USERNAME);
+	console.log(PRODUCTNAME);
 
-	var sets = {CPID : CPID, ORDERNO : ORDERNO, PRODUCTTYPE : PRODUCTTYPE, BILLTYPE : BILLTYPE, AMOUNT:AMOUNT, PRODUCTNAME:PRODUCTNAME,CLOSEURL : CLOSEURL,FAILURL : FAILURL, HOMEURL : HOMEURL,
+	var sets = {CPID : CPID, ORDERNO : ORDERNO, PRODUCTTYPE : "2", BILLTYPE : "1", AMOUNT:AMOUNT, PRODUCTNAME:PRODUCTNAME,CLOSEURL : "http://cidermics.com/finbook_pur",FAILURL : "http://cidermics.com/finbook_pur", HOMEURL : "http://cidermics.com/finbook_ch",
 		EMAIL : EMAIL, USERID : USERID, USERNAME : USERNAME,
 		PRODUCTCODE : PRODUCTCODE, RESERVEDINDEX1:RESERVEDINDEX1, RESERVEDINDEX2 : RESERVEDINDEX2, RESERVEDSTRING : RESERVEDSTRING, 
 		DIRECTRESULTFLAG : DIRECTRESULTFLAG, MOBILECOMPANYLIST:MOBILECOMPANYLIST};
@@ -571,15 +750,17 @@ http.createServer(function (req, res)
 		if(err){
 			res.redirect('back');
 		}
-	mysql.select('select * from cider.mobileOrder where ORDERNO ="'+ORDERNO+'"', function (err, data2){
-	res.render('front/etc/finbook/finbook_success',{data:data2});
-	});
+	//res.redirect('/mobileOrder');
+	res.render('front/etc/finbook/finbook_success',{});
   });
 });
+
 
 router.get('/finbook_done', function(req,res,next){
 	res.render('front/etc/finbook/finbook_done',{});
 });
+
+
 
 
 

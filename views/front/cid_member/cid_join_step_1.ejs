@@ -15,22 +15,6 @@
 
 <script type="text/javascript">
 
-function test(){
-	 if(document.f1.c1.value=="1"){
-	 alert("true");
-	 document.f1.c1.focus();
-	  return;
-	}
-	
-	else{
-		alert("아이디를 입력해 주세요.");
-	document.f1.c1.focus();
-	  return;
-		
-	}
-		document.f1.submit(); 	
-}
-
 
 function agreeSendit() 
 { 
@@ -41,10 +25,10 @@ function agreeSendit()
         }else if (form.checkbox1.checked){ 
         	if(!form.checkbox2.checked){ 
                 alert("개인정보 수집 및 이용 동의하셔야 회원가입이 가능합니다."); 
-               }
-               else if (form.checkbox2.checked){
-               	location.href="/join_step_2"; 
-               }
+        }
+        else if (form.checkbox2.checked){
+        	location.href="/join_step_2"; 
+        }
         
 
         } else { 
