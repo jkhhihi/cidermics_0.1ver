@@ -53,8 +53,11 @@ function init() {
 	document.charset ="EUC-KR";
 	pf = document.frmConfirm;
 	pm = document.payForm;
-	pf.ORDERNO.value= getTimeStamp();
-	pm.ORDERNO.value= getTimeStamp();
+	pf.ORDERNO.value = getTimeStamp();
+	pm.ORDERNO.value = getTimeStamp();
+
+	pm.HOMEURL.value = 'http://cidermics.com/finbook_ch/'+ pm.ORDERNO.value;
+	pf.HOMEURL.value = 'http://cidermics.com/finbook_ch/'+ pf.ORDERNO.value;
 }
 
 //모바일 결제
@@ -305,6 +308,7 @@ function fnNumCheck() {
 				<span class="width-80 name_title">이메일<span class="star">*</span></span> : <input type="text" name="EMAIL" size="20" maxlength="100" value=""><br>
 				고객ID<span class="star">*</span> : <input type="text" name="USERID" size="" maxlength="30" value=""><br>
 				고객명<span class="star">*</span> : <input type="text" name="USERNAME" size="" maxlength="50" value=""><br>
+				휴대번호<span class="star">*</span> : <input type="text" name="TELNO" size="" maxlength="50" value=""><br>
 				<input type="checkbox" id="cb1" name="checkbox1">서비스 이용약관 동의<span class="star">*</span><br>
 				<input type="checkbox" id="cb2" name="checkbox2">개인정보 수집 및 이용 동의<span class="star">*</span>
 				<br>
@@ -314,7 +318,7 @@ function fnNumCheck() {
 				<input type="hidden" name="RESERVEDINDEX2" size="20" value="RESERVEDATA2">
 				<input type="hidden" name="RESERVEDSTRING" size="100" value="RESERVESTRING">
 				<input type="hidden" name=RETURNURL value="http://cidermics.com/finbook_pur">
-				<input type="hidden" name=HOMEURL value="http://cidermics.com/finbook_ch">
+				<input type="hidden" name=HOMEURL value="">
 				<input type="hidden" name=DIRECTRESULTFLAG value="N">
 				<input type="hidden" name=CARDLIST value="">
 				<input type="hidden" name=HIDECARDLIST value="">
@@ -348,6 +352,8 @@ function fnNumCheck() {
 				</form>
 
 		    </div>
+
+		    <!--mobile -->
 		    <div role="tabpanel" class="tab-pane fade" id="mobile">
 			    <form name="payForm" action=""  accept-charset="EUC-KR">
 			    <br>
@@ -363,14 +369,14 @@ function fnNumCheck() {
 				<input type="hidden" name=AMOUNT size=20 value="50000">
 				<input type="hidden" name=CPID  value="CTS14732">
 				<input type="hidden" name=ORDERNO value="">
-				<input type="hidden" name=PRODUCTTYPE value="1">
+				<input type="hidden" name=PRODUCTTYPE value="2">
 				<input type="hidden" name=BILLTYPE value="1">
 				<input type="hidden" name=PRODUCTCODE value="201701">
 				<input type="hidden" name=RESERVEDINDEX1 value="예약어1">
 				<input type="hidden" name=RESERVEDINDEX2 value="예약어2">
 				<input type="hidden" name=RESERVEDSTRING value="예약스트링">
-				<input type="hidden" name=HOMEURL value="http://cidermics.com/finbook_ch">
-				<input type="hidden" name=DIRECTRESULTFLAG value="http://cidermics.com/finbook_ch">
+				<input type="hidden" name=HOMEURL value="">
+				<input type="hidden" name=DIRECTRESULTFLAG value="http://cidermics.com/finbook">
 				<input type="hidden" name=CLOSEURL value="http://cidermics.com/finbook_pur">
 				<input type="hidden" name=FAILURL value="http://cidermics.com/finbook_pur">
 

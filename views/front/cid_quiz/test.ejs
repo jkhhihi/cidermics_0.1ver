@@ -37,6 +37,18 @@ eventLabel: 'name' //카테고리명
 <script type="text/javascript" charset="EUC-KR"
 document.characterSet="EUC-KR";>
 
+function init() {
+  charset="EUC-KR";
+  document.charset ="EUC-KR";
+  pm = document.payForm;
+  
+  pm.ORDERNO.value = getTimeStamp();
+
+  pm.HOMEURL.value = 'http://cidermics.com/finbook_ch/'+ pm.ORDERNO.value;
+
+  
+}
+
 function pay() {
   var pm = document.payForm;
   document.charset ="EUC-KR";
@@ -50,9 +62,29 @@ function pay() {
   document.charset = "utf-8";
   } 
 }
+
+function getTimeStamp() {
+  var d = new Date();
+  var month = d.getMonth() + 1;
+  var date = d.getDate();
+  var hour = d.getHours();
+  var minute = d.getMinutes();
+  var second = d.getSeconds();
+
+  month = (month < 10 ? "0" : "") + month;
+  date = (date < 10 ? "0" : "") + date;
+  hour = (hour < 10 ? "0" : "") + hour;
+  minute = (minute < 10 ? "0" : "") + minute;
+  second = (second < 10 ? "0" : "") + second;
+  var random = Math.floor(Math.random() * 100) + 1;
+
+  var s = d.getFullYear() + month + date + hour + minute + second+random;
+
+  return s;
+}
 </script>
   </head>
-  <body>
+  <body onLoad="init();">
   <!-- Google Tag Manager (noscript) -->
 <!--noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KZ5KCJV"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript-->
@@ -71,6 +103,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript-
 <form name="payForm" action=""  accept-charset="EUC-KR">
   <input type="text" name="test1">
   <input type="text" name="test12">
+  <input type="text" name="ORDERNO" size="50" maxlength="50" value="" style="IME-MODE:disabled">
+  <input type="text" name= HOMEURL value="">
+  <a href="/finbook_ch">아아</a>
+ 
   <input type=button value="결제하기" onClick="pay()" width="63" height="25"><br><br>
 </form>
   </body>

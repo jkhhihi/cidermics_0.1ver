@@ -7,22 +7,22 @@ var mysql = require("./model/mysql");
 //var iconv = new Iconv('EUC-KR', 'UTF-8//TRANSLIT//IGNORE');
 
 var urlencode = require('urlencode');
-var assert = require('assert');
+//var assert = require('assert');
 
-var qs = require('querystring');
+//var qs = require('querystring');
 
-var request = require("request");
-var cheerio = require("cheerio");
-var iconv  = require('iconv-lite');
+//var request = require("request");
+//var cheerio = require("cheerio");
+//var iconv  = require('iconv-lite');
 
-request({
+/*request({
 encoding: null,
 uri: 'http://localhost/test3',
 }, function (err, response, body) {
       var Utf8String = iconv.decode(new Buffer(body), "euc-kr");
       console.log(body);
 });
-
+*/
 
 
 
@@ -44,14 +44,14 @@ router.get('/test', function(req, res, next) {
 
 router.get('/test3', function(req, res, next) {
 
-	console.log(req.url);
-	var test12 = req.query.test12;
-	console.log(qs.escape(test12));
-	console.log(qs.unescape(req.query.test12));
+	//console.log(req.url);
+	//var test12 = req.query.test12;
+	//console.log(qs.escape(test12));
+	//console.log(qs.unescape(req.query.test12));
 
-	console.log(encodeURIComponent(req.query));
+	//console.log(encodeURIComponent(req.query));
 
-	var decodedUrl = qs.unescape(req.url);
+	//var decodedUrl = qs.unescape(req.url);
 	/*request({url:"/test3",encoding:'binary'}, function(error,response, body){
 		if(!error){
 			var convertedCon = new Buffer(body, 'binary')
@@ -75,30 +75,32 @@ router.get('/test3', function(req, res, next) {
 	//res.header("Content-Type", "application/json; charset=EUC-KR");
 	//console.log(req.query);
 	var test12 = req.query.test12;
-	qs.unescape(test12);
+	var test1 = req.query.test1;
+	//qs.unescape(test12);
 
-	var en1 = qs.escape(test12);
-	var en = qs.unescape(en1);
-	console.log(en1);
-	console.log(en);
-	console.log("------");
+	//var en1 = qs.escape(test12);
+	//var en = qs.unescape(en1);
+	//console.log(en1);
+	//console.log(en);
+	//console.log("------");
 	//console.log(encodeURL(test12));
 
-	console.log(test12);
-	console.log(urlencode('ㅇㅇ','EUC-KR'));
-	test1 = '\''+ test12 + '\'';
-	console.log(test1);
-	console.log(urlencode.parse('test12='+test12+'',{charset:'EUC-KR'}));
+	//console.log(test12);
+	//console.log(urlencode('ㅇㅇ','EUC-KR'));
+	//test1 = '\''+ test12 + '\'';
+	//console.log(test1);
+	//console.log(urlencode.parse('test12='+test12+'',{charset:'EUC-KR'}));
 
 
-	console.log(test12);
+	//console.log(test12);
 
 	// parse gbk querystring 
 var asas = urlencode.parse('test12='+test12+'', {charset: 'EUC-KR'}); // {nick: '苏千'}
 console.log(asas.test12);
-console.log("실화?");
-var as = urlencode.stringify(asas, {charset: 'EUC-KR'}); // {nick: '苏千'}
-console.log(as);
+var asa = urlencode.parse('test1='+test1+'', {charset: 'EUC-KR'}); // {nick: '苏千'}
+console.log(asa.test1);
+//var as = urlencode.stringify(asas, {charset: 'EUC-KR'}); // {nick: '苏千'}
+//console.log(as);
 
 //console.log(encodeURIComponent(JSON.stringify(asas)));
 
@@ -107,18 +109,21 @@ console.log(as);
  //stringify obj with gbk encoding 
 //var str = 'test12=' + urlencode(test12, 'EUC-KR'); // x[y][0][v][w]=%CE%ED%BF%D5 
 //var obj =  {'test12' : test12};
-var str = urlencode('雾空', 'gbk'); // x[y][0][v][w]=%CE%ED%BF%D5 
-var obj =  {'w' : 'ㅇㅇ'};
-console.log(obj);
-var as1 = urlencode.stringify(obj, {charset: 'EUC-KR'});
-console.log(as1);
-
-
-
-
-	//var sets = {quiz_options : test12 };
+//var str = urlencode('雾空', 'gbk'); // x[y][0][v][w]=%CE%ED%BF%D5 
+//var obj =  {'w' : 'ㅇㅇ'};
+//console.log(obj);
+//var as1 = urlencode.stringify(obj, {charset: 'EUC-KR'});
+//console.log(as1);
+var ORDERNO = req.query.ORDERNO;
+console.log(ORDERNO);
+var HOMEURL = req.query.HOMEURL;
+console.log(HOMEURL);
+var date = getWorldTime(+9);
+console.log(date);
+	//var sets = {quiz_options : asas.test12 };
 	//mysql.insert('insert into cider.cid_quiz set ?', sets,  function (err, data){
-	res.send(req.query.test12);
+	//res.send(asas.test12);
+	res.render('front/etc/finbook/finbook_ch_purchase',{});
 //});
 });
 
@@ -591,9 +596,21 @@ router.get('/finbook_pur', function(req,res,next){
 	res.render('front/etc/finbook/finbook_purchase',{});
 });
 
-router.get('/finbook_ch', function(req,res,next){
+router.get('/finbook_ch/:ORDERNO', function(req,res,next){
+	var ORDERNO = req.params.ORDERNO;
+
+	var date = getWorldTime(+9);
+
+	console.log(ORDERNO);
+	//mysql.select('select * from cider.cardOrder where ORDERNO ="'+ORDERNO+'"', function (err, data){
+	res.render('front/etc/finbook/finbook_ch_purchase',{ORDERNO:ORDERNO, date:date});
+//});
+});
+
+router.get('/finbook_ch/', function(req,res,next){
 	res.render('front/etc/finbook/finbook_ch_purchase',{});
 });
+
 
 router.get('/finbook_noamount', function(req,res,next){
 	res.render('front/etc/finbook/finbook_noamount',{});
@@ -683,13 +700,27 @@ router.get('/cardOrder',ipfilter(ips,ipss, {mode: 'allow'}), function(req, res) 
 	var HIDECARDLIST = req.query.HIDECARDLIST;
 	var POPUPTYPE = req.query.POPUPTYPE;
 
-	console.log(PRODUCTNAME);
+	/*var PAYMETHOD = req.query.PAYMETHOD;
+	var SETTDATE = req.query.SETTDATE;
+	var AUTHNO = req.query.AUTHNO;
+	var CARDCODE = req.query.CARDCODE;
+	var CARDNAME = req.query.CARDNAME;
+	var CARDNO = req.query.CARDNO;*/
 
-	var sets = {CPID : CPID, ORDERNO : ORDERNO, PRODUCTTYPE : "2", BILLTYPE : "1", AMOUNT:AMOUNT, CPQUOTA : CPQUOTA, EMAIL : EMAIL, USERID : USERID, USERNAME : USERNAME,
-		PRODUCTCODE : PRODUCTCODE, PRODUCTNAME:PRODUCTNAME, RESERVEDINDEX1:RESERVEDINDEX1, RESERVEDINDEX2 : RESERVEDINDEX2, RESERVEDSTRING : RESERVEDSTRING, 
+
+	var date = getWorldTime(+9);
+
+	var enPdnm = urlencode.parse('PRODUCTNAME='+PRODUCTNAME+'', {charset: 'EUC-KR'}); // {nick: '苏千'}
+	console.log(enPdnm.PRODUCTNAME);
+	var enUsernm = urlencode.parse('USERNAME='+USERNAME+'', {charset: 'EUC-KR'}); // {nick: '苏千'}
+	console.log(enUsernm.USERNAME);
+
+	var sets = {CPID : CPID, ORDERNO : ORDERNO, PRODUCTTYPE : "2", BILLTYPE : "1", AMOUNT:AMOUNT, CPQUOTA : CPQUOTA, EMAIL : EMAIL, USERID : USERID, USERNAME : enUsernm.USERNAME,
+		PRODUCTCODE : PRODUCTCODE, PRODUCTNAME:enPdnm.PRODUCTNAME, RESERVEDINDEX1:RESERVEDINDEX1, RESERVEDINDEX2 : RESERVEDINDEX2, RESERVEDSTRING : RESERVEDSTRING, 
 		CLOSEURL : "http://cidermics.com/finbook_pur",FAILURL : "http://cidermics.com/finbook_pur", HOMEURL : "http://cidermics.com/finbook_ch", APPURL : "http://cidermics.com/finbook",
-		DIRECTRESULTFLAG : DIRECTRESULTFLAG, CARDLIST : CARDLIST,HIDECARDLIST:HIDECARDLIST, TAXFREECD : "00", POPUPTYPE : POPUPTYPE,
+		DIRECTRESULTFLAG : DIRECTRESULTFLAG, CARDLIST : CARDLIST,HIDECARDLIST:HIDECARDLIST, TAXFREECD : "00", POPUPTYPE : POPUPTYPE, date:date
 		};
+	//, PAYMETHOD:PAYMETHOD, SETTDATE:SETTDATE, AUTHNO:AUTHNO,CARDCODE:CARDCODE, CARDNAME:CARDNAME, CARDNO:CARDNO, date:date
 	mysql.insert('insert into cider.cardOrder set ?', sets, function (err, data){
 		if(err){
 			res.redirect('back');
@@ -739,13 +770,17 @@ router.get('/mobileOrder',ipfilter(ips,ipss, {mode: 'allow'}), function(req, res
 	var DIRECTRESULTFLAG = req.query.DIRECTRESULTFLAG;
 	var MOBILECOMPANYLIST = req.query.MOBILECOMPANYLIST;
 
-	console.log(USERNAME);
-	console.log(PRODUCTNAME);
+	var date = getWorldTime(+9);
 
-	var sets = {CPID : CPID, ORDERNO : ORDERNO, PRODUCTTYPE : "2", BILLTYPE : "1", AMOUNT:AMOUNT, PRODUCTNAME:PRODUCTNAME,CLOSEURL : "http://cidermics.com/finbook_pur",FAILURL : "http://cidermics.com/finbook_pur", HOMEURL : "http://cidermics.com/finbook_ch",
-		EMAIL : EMAIL, USERID : USERID, USERNAME : USERNAME,
+	var enPdnm = urlencode.parse('PRODUCTNAME='+PRODUCTNAME+'', {charset: 'EUC-KR'}); // {nick: '苏千'}
+	console.log(enPdnm.PRODUCTNAME);
+	var enUsernm = urlencode.parse('USERNAME='+USERNAME+'', {charset: 'EUC-KR'}); // {nick: '苏千'}
+	console.log(enUsernm.USERNAME);
+
+	var sets = {CPID : CPID, ORDERNO : ORDERNO, PRODUCTTYPE : "2", BILLTYPE : "1", AMOUNT:AMOUNT, PRODUCTNAME:enPdnm.PRODUCTNAME,CLOSEURL : "http://cidermics.com/finbook_pur",FAILURL : "http://cidermics.com/finbook_pur", HOMEURL : "http://cidermics.com/finbook_ch",
+		EMAIL : EMAIL, USERID : USERID, USERNAME : enUsernm.USERNAME,
 		PRODUCTCODE : PRODUCTCODE, RESERVEDINDEX1:RESERVEDINDEX1, RESERVEDINDEX2 : RESERVEDINDEX2, RESERVEDSTRING : RESERVEDSTRING, 
-		DIRECTRESULTFLAG : DIRECTRESULTFLAG, MOBILECOMPANYLIST:MOBILECOMPANYLIST};
+		DIRECTRESULTFLAG : DIRECTRESULTFLAG, MOBILECOMPANYLIST:MOBILECOMPANYLIST, date:date};
 	mysql.insert('insert into cider.mobileOrder set ?', sets, function (err, data){
 		if(err){
 			res.redirect('back');
