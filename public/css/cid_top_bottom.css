@@ -182,9 +182,9 @@ html.open {
 .mob-header .input input{display:none;}
 .mob-header .input input{
 	position: fixed;
-	top:7px;
-	right:85px;
-	height:40px;
+	top:4px;
+	right:76px;
+	height:38px;
 	width:60%;
 	border-radius:20px;
 	border: solid 1px #1b87c9;
@@ -192,20 +192,20 @@ html.open {
 }
 .mob-header .input a{
 	position: fixed;
-	right:50px;
-	top:20px;
+	right:44px;
+	top:15px;
 	color:#1b87c9;
 }
 .web-footer{display:none;}
 .mob-footer{display:block;}
-.mob-header{position:fixed; width:100%;display:block; height:55px; background-color:#fff; margin-top:0px; z-index:99;
+.mob-header{position:fixed; width:100%;display:block; height:46px; background-color:#fff; margin-top:0px; z-index:99;
 box-shadow: 0px -5px 20px #222; top:0;}
 .mob-header .mob-menu{width:20%;}
 .mob-header .mob-logo{width:60%;}
 .mob-header .mob-search{width:20%;}
-.mob-header .mob-menu img{height:23px; margin:15px 0 0 10px;}
-.mob-header .mob-logo img{height:46px; margin:4px;}
-.mob-header .mob-search img{margin:16px;}
+.mob-header .mob-menu img{height:22px; margin:12px 0 0 10px;}
+.mob-header .mob-logo img{height:46px;}
+.mob-header .mob-search img{height:24px; margin:12px 10px 0 0;}
 .mob-footer{width:100%; height:auto; background-color:#ececec; padding:30px 0;}
 .mob-footer .logo img{height:50px; margin-bottom:20px;}
 .mob-footer p{font-family: 'Nanum Gothic', serif; text-align:center; line-height:1.8em; color:#82878b;}
@@ -240,9 +240,9 @@ padding:5px;
 
 /* 2017년 5월 16일 TOP - 정기훈 수정 css 추가*/
 .loginwrap{
-      padding-top: 20px;
+      padding-top: 14px; padding-right:0;
     }
 #login1{
-      padding-top: 0px;
+      padding-top: 6px;
       padding-right:10px;
     }
