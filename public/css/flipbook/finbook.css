@@ -45,8 +45,19 @@ body{font-family: 'Nanum Gothic', serif;}
 .book-recommendation .btn-purchase:hover{color:#008ffb; border:2px #008ffb solid;}
 .book-recommendation a .btn-purchase{color:#fff;}
 
-/*---------------êµ¬ë§¤í•˜ê¸°---------------*/
-#purchase .main-banner{margin-top:70px;}
+/*---------------±¸¸ÅÇÏ±â---------------*/
+
+/*form½ºÅ¸ÀÏ*/
+#pur-form input.input-style1{border: 1px solid #eee; padding: 5px; margin:0 0 0 10px;}
+#pur-form span.star{color:#ff0000;}
+#pur-form .form-box{height:350px;}
+#pur-form .form-box .form-style{background-color:#fff; padding:30px 10px; border-bottom:1px solid #ddd; height:350px;}
+#pur-form .col-xs-12{margin:10px 0 0 0;}
+#pur-form .col-xs-12 p.title{display:inline-block; width:80px;}
+#pur-form .btn-style1{font-size:12px; display:inline-block; background-color:#f6f6f6; border:1px solid #ddd; border-radius:4px; padding:2px 4px; margin:0 0 0 6px; cursor:pointer}
+
+
+#purchase .main-banner{margin-top:60px;}
 #purchase .guide-down{margin:30px 0 20px 0;}
 #purchase .guide-down img{margin-bottom:10px;}
 #purchase .guide-up img{margin:30px 0 10px 0;}
@@ -67,7 +78,7 @@ body{font-family: 'Nanum Gothic', serif;}
 #select-pay .user-def{margin:80px 0 50px 0;}
 #select-pay .select-pay-in{width:650px; padding-bottom:80px;}
 #select-pay .select-box{background-color:#fff; padding:15px 0; margin-top:20px;}
-#select-pay .check-amount{background-color:#fff; border:2px solid #ddd; margin:20px 0;}
+#select-pay .check-amount{background-color:#fff; border:2px solid #ddd; margin:20px 0 30px 0;}
 #select-pay .check-amount .title{background-color:#1b87c9; color:#fff; padding:10px 0;}
 #select-pay .check-amount .amount{padding:15px 0;}
 #select-pay .payment-btn .payment{background-color:#ff0000; border-radius:4px; padding:10px 20px; color:#fff; margin-right:5px;}
@@ -109,8 +120,13 @@ h4{font-size:14px !important;}
 .book-recommendation .info img{margin:10px 10px;}
 .book-recommendation .btn-purchase{margin-top:20px; margin-bottom:20px;}
 
-/*---------------êµ¬ë§¤í•˜ê¸°---------------*/
-#purchase .main-banner{margin-top:50px;}
+/*---------------±¸¸ÅÇÏ±â---------------*/
+
+/*form½ºÅ¸ÀÏ*/
+#pur-form .form-box{height:320px;}
+#pur-form .form-box .form-style{padding:15px 5px; height:320px;}
+
+#purchase .main-banner{margin-top:46px;}
 #purchase .online-guide .step{width:96%;}
 #purchase .online-guide .step .step2-info{width:95%;}
 #purchase .online-guide .step3{padding:30px 0 0 0}

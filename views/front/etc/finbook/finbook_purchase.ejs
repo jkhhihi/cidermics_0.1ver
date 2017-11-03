@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
 <!-- 네이버 -->
@@ -293,10 +293,10 @@ function fnNumCheck() {
 		  </ul>
 
 		  <!-- Tab panes -->
-		  <div class="tab-content">
+		  <div id="pur-form" class="tab-content">
 		    <div role="tabpanel" class="tab-pane fade in active" id="creditcard">
 				<form name="frmConfirm" action="" accept-charset="EUC-KR">
-				<br>
+				<div class="form-box">
 				<!-- CPID CSK20384 , CTS14732 -->
 				<input type="hidden" name="CPID" size="50" maxlength="50" value="CTS14732" style="IME-MODE:disabled">
 				<input type="hidden" name="ORDERNO" size="50" maxlength="50" value="" style="IME-MODE:disabled">
@@ -304,14 +304,17 @@ function fnNumCheck() {
 				<input type="hidden" name="BILLTYPE" size="10" maxlength="2"  value="1" style="IME-MODE:disabled">
 				<input type="hidden" name="AMOUNT" size="10" maxlength="10" value="50000" style="IME-MODE:disabled" onkeypress="fnNumCheck();">
 				<input type="hidden" name="CPQUOTA" size="20" value="0:2:3:4:5:6:7:8:9:10:11:12" style="IME-MODE:disabled">
-				상품명 : 핀북(finbook)<br>
-				<span class="width-80 name_title">이메일<span class="star">*</span></span> : <input type="text" name="EMAIL" size="20" maxlength="100" value=""><br>
-				고객ID<span class="star">*</span> : <input type="text" name="USERID" size="" maxlength="30" value=""><br>
-				고객명<span class="star">*</span> : <input type="text" name="USERNAME" size="" maxlength="50" value=""><br>
-				휴대번호<span class="star">*</span> : <input type="text" name="TELNO" size="" maxlength="50" value=""><br>
-				<input type="checkbox" id="cb1" name="checkbox1">서비스 이용약관 동의<span class="star">*</span><br>
-				<input type="checkbox" id="cb2" name="checkbox2">개인정보 수집 및 이용 동의<span class="star">*</span>
-				<br>
+				<div class="row form-style">
+					<div class="col-xs-12"><p class="title">상품명</p> : <span style="margin:0 0 0 10px">핀북(finbook)</span></div>
+					<div class="col-xs-12"><p class="title">이메일<span class="star"> * </span></p> : <input class="input-style1" type="text" name="EMAIL" size="20" maxlength="100" value=""></div>
+					<div class="col-xs-12"><p class="title">고객ID<span class="star"> * </span></p> : <input class="input-style1" type="text" name="USERID" size="" maxlength="30" value=""></div>
+					<div class="col-xs-12"><p class="title">고객명<span class="star"> * </span></p> : <input class="input-style1" type="text" name="USERNAME" size="" maxlength="50" value=""></div>
+					<div class="col-xs-12"><p class="title">휴대번호<span class="star"> * </span></p> : <input class="input-style1" type="text" name="TELNO" size="" maxlength="50" value=""></div>
+					<div class="col-xs-12" style="margin:20px 0 0 0;"><input type="checkbox" id="cb1" name="checkbox1" style="margin-right:10px; cursor:pointer">서비스 이용약관 동의<span class="star"> * </span>
+					<div class="btn-style1" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">내용보기</div></div>
+					<div class="col-xs-12"><input type="checkbox" id="cb2" name="checkbox2" style="margin-right:10px; cursor:pointer">개인정보 수집 및 이용 동의<span class="star"> * </span>
+					<div class="btn-style1" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs--modal-lg">내용보기</div></div>
+				</div>
 				<input type="hidden" name="PRODUCTNAME" size="30" value="핀북"><br>
 				<input type="hidden" name="PRODUCTCODE" size="10" value="201701"><br>
 				<input type="hidden" name="RESERVEDINDEX1" size="20" value="RESERVEDATA1">
@@ -327,7 +330,7 @@ function fnNumCheck() {
 				<input type="hidden" name=CLOSEURL value="http://cidermics.com/finbook_pur">
 				<input type="hidden" name=FAILURL value="http://cidermics.com/finbook_pur">
 				<input type="hidden" name=APPURL value="http://cidermics.com/finbook">
-				<br><br>
+				</div>
 
 				<!--input name="btnSubmit" type="button" value="주문하기" onclick="fnSubmit()" ><br-->
 
@@ -356,14 +359,17 @@ function fnNumCheck() {
 		    <!--mobile -->
 		    <div role="tabpanel" class="tab-pane fade" id="mobile">
 			    <form name="payForm" action=""  accept-charset="EUC-KR">
-			    <br>
-				상품명 : 핀북(finbook)<br>
-				이메일 : <input type=text name=EMAIL size=20 value=""><br>
-				고객ID : <input type=text name=USERID value=""><br>
-				고객명 : <input type=text name=USERNAME value=""><br>
-				<input type="checkbox" id="cb1" name="checkbox1">서비스 이용약관 동의<span class="star">*</span><br>
-				<input type="checkbox" id="cb2" name="checkbox2">개인정보 수집 및 이용 동의<span class="star">*</span>
-				<br>
+				<div class="form-box">
+			    <div class="row form-style">
+					<div class="col-xs-12"><p class="title">상품명</p> : <span style="margin:0 0 0 10px">핀북(finbook)</span></div>
+					<div class="col-xs-12"><p class="title">이메일 </p> : <input class="input-style1" type=text name=EMAIL size=20 value=""></div>
+					<div class="col-xs-12"><p class="title">고객ID</p> : <input class="input-style1" type=text name=USERID value=""></div>
+					<div class="col-xs-12"><p class="title">고객명</p> : <input class="input-style1" type=text name=USERNAME value=""></div>
+					<div class="col-xs-12" style="margin:20px 0 0 0;"><input type="checkbox" id="cb1" name="checkbox1" style="margin-right:10px; cursor:pointer">서비스 이용약관 동의<span class="star"> * </span>
+					<div class="btn-style1" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">내용보기</div></div>
+					<div class="col-xs-12"><input type="checkbox" id="cb2" name="checkbox2" style="margin-right:10px; cursor:pointer">개인정보 수집 및 이용 동의<span class="star"> * </span>
+					<div class="btn-style1" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs--modal-lg">내용보기</div></div>
+				</div>
 				<!--input type=button value="결제하기" onClick="pay()" width="63" height="25"><br-->
 				<input type="hidden" name=PRODUCTNAME size=20 value="핀북"><br>
 				<input type="hidden" name=AMOUNT size=20 value="50000">
@@ -379,7 +385,8 @@ function fnNumCheck() {
 				<input type="hidden" name=DIRECTRESULTFLAG value="http://cidermics.com/finbook">
 				<input type="hidden" name=CLOSEURL value="http://cidermics.com/finbook_pur">
 				<input type="hidden" name=FAILURL value="http://cidermics.com/finbook_pur">
-
+				</div>
+				
 				<div class="check-amount row" align="center">
 					<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important;">
 						<div class="title">상품금액</div>
@@ -418,15 +425,20 @@ function fnNumCheck() {
 				</div>
 			</div-->
 		    <div role="tabpanel" class="tab-pane fade" id="account">
-		    	<br>
-				상품명 : 핀북(finbook)<br>
-				이메일 : <input type=text name=EMAIL size=20 value=""><br>
-				고객ID : <input type=text name=USERID value=""><br>
-				고객명 : <input type=text name=USERNAME value=""><br>
-				<input type="checkbox" id="cb1" name="checkbox1">서비스 이용약관 동의<span class="star">*</span><br>
-				<input type="checkbox" id="cb2" name="checkbox2">개인정보 수집 및 이용 동의<span class="star">*</span>
-				<br>
-
+				<div class="form-box">
+		    	<div class="row form-style">
+					<div class="col-xs-12"><p class="title">상품명</p> : <span style="margin:0 0 0 10px">핀북(finbook)</span></div>
+					<div class="col-xs-12"><p class="title">이메일</p> : <input class="input-style1" type=text name=EMAIL size=20 value=""></div>
+					<div class="col-xs-12"><p class="title">고객ID</p> : <input class="input-style1" type=text name=USERID value=""></div>
+					<div class="col-xs-12"><p class="title">고객명</p> : <input class="input-style1" type=text name=USERNAME value=""></div>
+					<div class="col-xs-12" style="margin:20px 0 0 0;"><input type="checkbox" id="cb1" name="checkbox1" style="margin-right:10px; cursor:pointer">서비스 이용약관 동의<span class="star"> * </span>
+					<div class="btn-style1" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">내용보기</div></div>
+					<div class="col-xs-12"><input type="checkbox" id="cb2" name="checkbox2" style="margin-right:10px; cursor:pointer">개인정보 수집 및 이용 동의<span class="star"> * </span>
+					<div class="btn-style1" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs--modal-lg">내용보기</div></div>
+				</div>
+				</div>
+				
+				
 		    	<div class="check-amount row" align="center">
 					<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important;">
 						<div class="title">상품금액</div>
@@ -450,21 +462,18 @@ function fnNumCheck() {
 
 		</div>
 
-		<style type="text/css">
-			.btn
-		</style>
 
 		<!-- Button trigger modal -->
-<span>서비스 이용 약관 </span>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg" style="padding: 1px 8px; font-size: 13px;" >보기</button>
+<!-- span>서비스 이용 약관 </span>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg" style="padding: 1px 8px; font-size: 13px;" >보기</button-->
 
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
     	<div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel">서비스 이용 약관 </h4>
+        <h4 class="modal-title" id="myModalLabel" align="center">서비스 이용 약관 </h4>
     	</div>
-     <textarea style="resize: none; width: 100%; height: 500px;" readonly="readonly">제 1 조 (목적)
+     <textarea style="resize: none; width: 100%; height: 500px; padding:20px; line-height:1.5em; border:hidden" readonly="readonly">제 1 조 (목적)
 
 본 약관은 사이다경제(이하 '회사')가 제공하는 회사 및 회사 관련 제반 서비스의 이용과 관련하여 회사와 회원과의 권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.
 제 2 조 (용어의 정의)
@@ -617,16 +626,16 @@ function fnNumCheck() {
 </div>
 
 <!-- Small modal -->
-<span>개인정보 수집 및 이용 동의 </span><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs--modal-lg" style="padding: 1px 8px; font-size: 13px;">보기</button>
+<!-- span>개인정보 수집 및 이용 동의 </span><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs--modal-lg" style="padding: 1px 8px; font-size: 13px;">보기</button-->
 
 <div class="modal fade bs--modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
 
     <div class="modal-content">
     	<div class="modal-header">
-        <h4 class="modal-title" id="myModalLabel">개인정보 수집 및 이용 동의 </h4>
+        <h4 class="modal-title" id="myModalLabel" align="center">개인정보 수집 및 이용 동의 </h4>
     	</div>
-      <textarea style="resize: none; width: 100%; height: 500px;" readonly="readonly"><사이다경제>('http://www.cidermics.com'이하 '사이다경제')은(는) 개인정보보호법에 따라 이용자의 개인정보 보호 및 권익을 보호하고 개인정보와 관련한 이용자의 고충을 원활하게 처리할 수 있도록 다음과 같은 처리방침을 두고 있습니다.
+      <textarea style="resize: none; width: 100%; height: 500px; padding:20px; line-height:1.5em; border:hidden;" readonly="readonly"><사이다경제>('http://www.cidermics.com'이하 '사이다경제')은(는) 개인정보보호법에 따라 이용자의 개인정보 보호 및 권익을 보호하고 개인정보와 관련한 이용자의 고충을 원활하게 처리할 수 있도록 다음과 같은 처리방침을 두고 있습니다.
 
 <사이다경제>('사이다경제') 은(는) 회사는 개인정보처리방침을 개정하는 경우 웹사이트 공지사항(또는 개별공지)을 통하여 공지할 것입니다.
 
