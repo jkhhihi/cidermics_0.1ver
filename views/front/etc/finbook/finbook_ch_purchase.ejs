@@ -24,17 +24,17 @@
 <div id="check-purchase">
 	<div class="title-box">
 	<div class="container">
-		<span class="title"><b>구매내역 확인</b></span>
+		<span class="title"><b>주문번호 확인</b></span>
 	</div>
 	</div>
 	<div class="check-purchase-in container" align="center">
-		<span> 주문번호 <%=ORDERNO%></span>
+		<p><b>당신의 주문번호는</b> <span style="color:#1b87c9; font-size:18px;"><b> "<%=ORDERNO%>" </b></span><p>
 		<div class="check-pincode row">
-			<div class="col-xs-4" style="padding-left:0 !important; padding-right:0 !important;">
+			<div class="col-xs-5" style="padding-left:0 !important; padding-right:0 !important;">
 				<div class="title">주문일</div>
 				<div class="amount"><%=date%></div>
 			</div>
-			<div class="col-xs-6" style="padding-left:0 !important; padding-right:0 !important; border-left:1px solid #ddd; border-right:1px solid #ddd;">
+			<div class="col-xs-5" style="padding-left:0 !important; padding-right:0 !important; /*border-left:1px solid #ddd; border-right:1px solid #ddd;*/">
 				<div class="title">핀코드</div>
 				<div class="amount">32C7FB5144</div>
 			</div>
@@ -50,9 +50,9 @@
 		</div-->
 		<form method="get" action="/finbook_ch_code/<%=ORDERNO%>">
 		<div class="inspection-btn">
-			<a href="/finbook_ch_code/"><span><b>핀코드 받기</b></span></a>
+			<button type="submit"><b>핀코드 받기</b></button>
+			<!-- a href="/finbook_ch_code/"><span><b>핀코드 받기</b></span></a -->
 		</div>
-		<button type="submit">asdsa</button>
 		</form>
 	</div>	
 </div>

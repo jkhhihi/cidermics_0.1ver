@@ -622,10 +622,12 @@ router.get('/finbook_ch_code/:ORDERNO', function(req,res,next){
 });
 });
 
+router.get('/finbook_search_fin', function(req,res,next){
+	res.render('front/etc/finbook/finbook_search',{});
+});
+ 
 
 //무통장 입금
-
-
 router.get('/finbook_noamount', function(req,res,next){
 	res.render('front/etc/finbook/finbook_noamount',{});
 });

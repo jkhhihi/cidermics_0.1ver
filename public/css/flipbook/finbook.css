@@ -2,7 +2,7 @@ body{font-family: 'Nanum Gothic', serif;}
 .line{width:50px; height:2px; background-color:#000; margin:30px 0 70px 0;}
 .line2{width:50px; height:2px; background-color:#fff; margin:30px 0 70px 0;}
 .book-line{width:35px; height:2px; background-color:#000; margin:20px 0;}
-.flip-book{margin-top:70px; width:100%; height:auto; padding:20px 0 50px 0; background-image:url("/page_imgs/finbook_img/bg-flip-book.jpg"); background-repeat: no-repeat;}
+.flip-book{margin-top:60px; width:100%; height:auto; padding:20px 0 50px 0; background-image:url("/page_imgs/finbook_img/bg-flip-book.jpg"); background-repeat: no-repeat;}
 .parallax3 {
 	padding:60px 0;
     background-image:url("/page_imgs/finbook_img/finbook-main-img.jpg");
@@ -15,7 +15,7 @@ body{font-family: 'Nanum Gothic', serif;}
 .parallax3 .text-img img{width:350px;}
 .parallax4 {
 	padding:60px 0;
-    background-image:url("/page_imgs/finbook_img/finbook-img2.jpg");
+    background-image:url("/page_imgs/finbook_img/finbook-img2.jpg"); 
     min-height: 500px; 
     background-attachment: fixed;
 	background-position: center;
@@ -58,21 +58,21 @@ body{font-family: 'Nanum Gothic', serif;}
 
 
 #purchase .main-banner{margin-top:60px;}
-#purchase .guide-down{margin:30px 0 20px 0;}
+/*#purchase .guide-down{margin:30px 0 20px 0;}
 #purchase .guide-down img{margin-bottom:10px;}
-#purchase .guide-up img{margin:30px 0 10px 0;}
+#purchase .guide-up img{margin:30px 0 10px 0;}    검사방법설명*/
 #purchase .online-guide{margin-top:60px;}
 #purchase .online-guide .step{margin:80px 0 20px 0;}
 #purchase .online-guide .step .title{font-size:20px; border-top:4px solid #000; padding-top:10px;}
-#purchase .online-guide .step h4{margin:30px 0;}
+#purchase .online-guide .step h4{margin:30px 0; line-height:1.8em;}
 #purchase p{line-height:1.8em;}
 #purchase .online-guide .step .step2-info{width:500px; margin-top:30px;}
 #purchase .online-guide .step3 {margin-top:60px; padding:60px 0 0 0; width:100%; height:auto; background-color:#dbc8c5;}
 #purchase .step3 .step3-info{width:500px; margin-top:30px;}
 #purchase .notice{width:100%; height:auto; background-color:#f2f2f2; padding:30px 0;}
-#purchase .online-guide{display:none;}
+/*#purchase .online-guide{display:none;}     검사방법설명*/
 
-#select-pay{background-color:#f6f6f6; width:100%; height:auto; margin-top:20px;}
+#select-pay{background-color:#f6f6f6; width:100%; height:auto; /*margin-top:20px;   검사방법설명*/}
 #select-pay .title-box{background-color:#333; width:100%; height:auto; padding:25px 0;}
 #select-pay .title-box .title{border-left:2px solid #fff; color:#fff; padding-left:5px; font-size:18px;}
 #select-pay .user-def{margin:80px 0 50px 0;}
@@ -84,22 +84,34 @@ body{font-family: 'Nanum Gothic', serif;}
 #select-pay .payment-btn .payment{background-color:#ff0000; border-radius:4px; padding:10px 20px; color:#fff; margin-right:5px;}
 #select-pay .payment-btn .back{background-color:#999; border-radius:4px; padding:10px 20px; color:#fff;}
 
-#check-purchase{background-color:#f6f6f6; width:100%; height:auto; margin-top:70px;}
+#check-purchase{background-color:#f6f6f6; width:100%; height:auto; margin-top:60px;}
 #check-purchase .title-box{background-color:#333; width:100%; height:auto; padding:25px 0;}
 #check-purchase .title-box .title{border-left:2px solid #fff; color:#fff; padding-left:5px; font-size:18px;}
-#check-purchase .check-purchase-in{width:650px; padding:100px 0;}
+#check-purchase .check-purchase-in{width:650px; padding:150px 0;}
 #check-purchase .check-purchase-in .way{margin:50px 0 80px 0;}
-#check-purchase .check-pincode{background-color:#fff; border:2px solid #ddd; margin:20px 0;}
+#check-purchase .check-pincode{background-color:#fff; border:2px solid #ddd; margin:30px 0 0 0;}
 #check-purchase .check-pincode .title{background-color:#1b87c9; color:#fff; padding:10px 0;}
-#check-purchase .check-pincode .amount{padding:15px 0;}
-#check-purchase .inspection-btn span{border:2px solid #212121; border-radius:4px; padding:10px 30px; color:#212121; font-size:18px;}
+#check-purchase .check-pincode .amount{padding:15px 0; line-height:1.5em;}
+#check-purchase .inspection-btn{margin:30px 0 0 0;}
+#check-purchase .inspection-btn button{background-color:inherit; border:2px solid #212121; border-radius:4px; padding:10px 0; color:#212121; font-size:18px; width:150px; margin:0 5px;}
+#check-purchase .inspec-notice{color:#ff0000; margin:30px 0 0 0;}
+
+/*---------------핀코드 찾기---------------*/
+/*form스타일*/
+#code-search input.input-style2{border-top:none; border-left:none; border-right:none; border-bottom: 1px solid #212121; padding: 5px; margin:0 0 0 10px;}
+#code-search .form-style2{background-color:#fff; padding:80px 0; border-radius:4px;  width:600px; height:auto;}
+#code-search .col-xs-12{margin:10px 0 0 0;}
+#code-search .col-xs-12 p.title{display:inline-block; width:80px;}
+#code-search .btn-style2{border: 2px solid #212121; border-radius: 4px; padding: 10px 0; color: #212121; font-size: 18px; width: 150px; margin: 0 5px; cursor:pointer; margin-top:30px;}
+
+#code-search{background-color:background-color:#f6f6f6; width:100%; height:auto; padding:60px 0;}
 
 @media all and (max-width:1024px) {
 .line{margin:30px 0 40px 0;}
 .line2{margin:30px 0 40px 0;}
 h3{font-size:20px !important; line-height:1.5em !important;}
 h4{font-size:14px !important;}
-.flip-book{margin-top:50px; padding:5px 0 35px 0;}
+.flip-book{margin-top:45px; padding:5px 0 35px 0;}
 .parallax3{padding:30px 0; min-height: 200px;}
 .parallax3 .text-img img{width:200px;}
 .parallax4{padding:30px 0; min-height: 200px;}
@@ -127,22 +139,32 @@ h4{font-size:14px !important;}
 #pur-form .form-box .form-style{padding:15px 5px; height:320px;}
 
 #purchase .main-banner{margin-top:46px;}
-#purchase .online-guide .step{width:96%;}
+#purchase .online-guide .step{width:96%; margin:60px 0 20px 0;}
 #purchase .online-guide .step .step2-info{width:95%;}
 #purchase .online-guide .step3{padding:30px 0 0 0}
 #purchase .step3 .step3-info{width:95%;}
 #purchase .step3 img{width:180px;}
 #purchase .online-guide .notice{padding:30px 5px;}
+#purchase .online-guide{margin-top:40px;}
 
 #select-pay .title-box .title{margin-left:10px; font-size:14px;}
 #select-pay .user-def{margin:30px 0 40px 0;}
-#select-pay .user-def img{width:90%;}
+#select-pay .user-def img{width:100%;}
 #select-pay .select-pay-in{width:98%; padding-bottom:40px;}
 #select-pay .select-box{text-align:left;}
 
-#check-purchase{margin-top:50px;}
+#check-purchase{margin-top:45px;}
 #check-purchase .title-box .title{margin-left:10px; font-size:14px;}
-#check-purchase .check-purchase-in{width:98%; padding:0 0 60px 0;}
+#check-purchase .inspection-btn button{padding:8px 0; font-size:16px; width:140px; margin:0 5px;}
+#check-purchase .check-purchase-in{width:98%; padding:60px 0 60px 0;}
 #check-purchase .check-purchase-in .way{margin:30px 0 60px 0}
+
+
+/*---------------핀코드 찾기---------------*/
+/*form스타일*/
+#code-search .form-style2{padding:40px 0; width:310px; height:auto;}
+#code-search .col-xs-12 p.title{width:60px;}
+#code-search .btn-style2{padding: 8px 0; font-size: 16px; width: 140px;}
+#code-search{padding:5px 0;}
 
 }
