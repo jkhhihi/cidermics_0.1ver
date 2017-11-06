@@ -600,16 +600,30 @@ router.get('/finbook_ch/:ORDERNO', function(req,res,next){
 	var ORDERNO = req.params.ORDERNO;
 
 	var date = getWorldTime(+9);
-
-	console.log(ORDERNO);
+	var sets = {ORDERNO : ORDERNO};
+	mysql.insert('insert into cider.fin_order set ?', sets,  function (err, data){
+	//mysql.update('update cider.fin_code set ORDERNO = ?,  date = ? where con_no = ?', [category,title,contents,photo,date,userNo,userText,writer,rdate,no], function (err, data){
+    //res.redirect('/adm/contents');
 	//mysql.select('select * from cider.cardOrder where ORDERNO ="'+ORDERNO+'"', function (err, data){
 	res.render('front/etc/finbook/finbook_ch_purchase',{ORDERNO:ORDERNO, date:date});
-//});
+});
 });
 
-router.get('/finbook_ch/', function(req,res,next){
+/*router.get('/finbook_ch/', function(req,res,next){
 	res.render('front/etc/finbook/finbook_ch_purchase',{});
+});*/
+
+router.get('/finbook_ch_code/:ORDERNO', function(req,res,next){
+	var ORDERNO = req.params.ORDERNO;
+	console.log(ORDERNO);
+
+	mysql.select('SELECT cider.fin_order.ORDERNO, cider.fin_code.fcode, cider.fin_code.date FROM cider.fin_order INNER JOIN cider.fin_code ON cider.fin_order.idx=cider.fin_code.idx where cider.fin_order.ORDERNO = '+'ORDERNO'+';', function(err,data){
+	res.render('front/etc/finbook/finbook_ch_code',{data:data});
 });
+});
+
+
+//무통장 입금
 
 
 router.get('/finbook_noamount', function(req,res,next){
