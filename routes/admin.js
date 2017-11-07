@@ -1130,4 +1130,157 @@ function ensureAuthenticated(req, res, next) {
     res.redirect('/adm');
 }
 
+
+
+
+// **********************  admin finbook
+// ************ 핀북 
+
+router.get('/finbook', ensureAuthenticated, function(req,res,next){
+	var CP = 6;
+		res.render('admin/finbook/index', { CP : CP });
+});
+
+router.get('/finbook/insert', ensureAuthenticated, function(req,res,next){
+	var CP = 6;
+	mysql.select('select * from cider.fin_code order by idx desc', function (err, data){
+		mysql.select('select count(*)  AS num  from cider.fin_code order by idx desc', function (err, data2){
+
+
+		res.render('admin/finbook/codeInsert', { CP : CP, finbook:data, count:data2 });
+	});
+	});
+});
+
+
+//**************** 쿠폰 번호 등록 **************
+
+router.post('/finbook/insert', ensureAuthenticated, function(req,res,next){
+	var CP = 6;
+	var regi = req.body.regi;
+	var codeNum = req.body.codeNum;
+	var date = getWorldTime(+9);
+	
+	var sets = {fcode : codeNum, registrant:regi, date : date};
+	//console.log('insert into cider.cid_consulting set ? '+sets);
+	mysql.insert('insert into cider.fin_code set ?', sets,  function (err, data){
+		
+		console.log(err);
+		console.log(data);
+		res.send('<script>alert("쿠폰 등록 완료 감사합니다");location.href="/adm/finbook/insert";</script>');
+    	//res.redirect('/adm/finbook');
+    	if (err){
+    		res.redirect('/adm/finbook/insert');
+    	}
+    });
+});
+
+//**************** 코드번호 삭제 **************
+
+router.get('/finbook/cdDelete/:idx', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 1;
+	var no = req.params.idx;
+	
+	mysql.del('delete from cider.fin_code where idx = '+ no +'', function (err, data){
+		if(err){
+			res.redirect('/adm/finbook/insert');
+		}else{
+			res.redirect('/adm/finbook/insert');
+		}
+    });
+});
+
+//**************** 구매자 목록 **************
+
+router.get('/finbook/customer', ensureAuthenticated, function(req,res,next){
+	var CP = 6;
+	mysql.select('SELECT * FROM cider.mobileOrder order by date desc', function (err, data){
+		mysql.select('SELECT * FROM cider.cardOrder order by date desc;', function (err, data2){
+
+
+		res.render('admin/finbook/customer', { CP : CP, mobile:data, card:data2 });
+	});
+	});
+});
+
+//**************** 주문자 상세 보기 **************
+
+router.get('/finbook/orderDetail/:ORDERNO', ensureAuthenticated, function(req,res,next){
+	var CP = 6;
+	var no = req.params.ORDERNO;
+
+	mysql.select('SELECT * FROM cider.mobileOrder where ORDERNO= '+ no +' order by date desc', function (err, data){
+		mysql.select('SELECT * FROM cider.cardOrder where ORDERNO= '+ no +' order by date desc;', function (err, data2){
+
+
+		res.render('admin/finbook/orderDetail', { CP : CP, mobile:data, card:data2 });
+	});
+	});
+});
+
+
+
+//**************** 주문 번호 검색 **************
+router.get('/finbook/ORDERNO/', ensureAuthenticated, function(req,res,next){
+	var CP = 6;
+	var ORDERNO = req.query.ORDERNO;
+
+	mysql.select('(SELECT ORDERNO, USERNAME, EMAIL, date FROM cider.cardOrder where ORDERNO = '+ORDERNO+') UNION (SELECT ORDERNO, USERNAME, EMAIL, date FROM cider.mobileOrder where ORDERNO = '+ORDERNO+');', function(err,data){
+	//mysql.select('(SELECT dis_no,comt_no,"" as comtco_no,comt_writer,comt_regdate from cider.cid_dis_comt) UNION (SELECT "",comt_no,comtco_no as comtco_no,comtco_writer,comtco_date FROM cider.cid_dis_comt_comt)order by comt_regdate desc;', function (err, data){
+	
+	//res.send(ORDERNO);
+	res.render('admin/finbook/orderno', { CP : CP, search:data });
+	});
+});
+
+//**************** 성명으로 검색 **************
+router.get('/finbook/USERNAME/', ensureAuthenticated, function(req,res,next){
+	var CP = 6;
+	var USERNAME = req.query.USERNAME;
+
+	mysql.select('(SELECT ORDERNO, USERNAME, EMAIL, date FROM cider.cardOrder where USERNAME =  \''+USERNAME+'\') UNION (SELECT ORDERNO, USERNAME, EMAIL, date FROM cider.mobileOrder where USERNAME = \''+USERNAME+'\');', function(err,data){
+	//mysql.select('(SELECT dis_no,comt_no,"" as comtco_no,comt_writer,comt_regdate from cider.cid_dis_comt) UNION (SELECT "",comt_no,comtco_no as comtco_no,comtco_writer,comtco_date FROM cider.cid_dis_comt_comt)order by comt_regdate desc;', function (err, data){
+	
+	//res.send(ORDERNO);
+	res.render('admin/finbook/username', { CP : CP, search:data });
+	});
+});
+
+
+
+//**************** 카드 주문 삭제 **************
+router.get('/finbook/cardDelete/:ORDERNO', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 1;
+	var no = req.params.ORDERNO;
+	
+	mysql.del('delete from cider.cardOrder where ORDERNO = '+ no +'', function (err, data){
+		if(err){
+			res.redirect('/adm/finbook/customer');
+		}else{
+			res.redirect('/adm/finbook/customer');
+		}
+    });
+});
+
+//**************** 모바일 주문 삭제 **************
+router.get('/finbook/mobileDelete/:ORDERNO', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 1;
+	var no = req.params.ORDERNO;
+	
+	mysql.del('delete from cider.mobileOrder where ORDERNO = '+ no +'', function (err, data){
+		if(err){
+			res.redirect('/adm/finbook/customer');
+		}else{
+			res.redirect('/adm/finbook/customer');
+		}
+    });
+});
+
+
+
+
+
 module.exports = router;

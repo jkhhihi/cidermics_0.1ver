@@ -66,8 +66,13 @@ function init() {
 function pay() {
 	//var paytype = pm.paytype.value;
 	var fileName;
-	//fileName = "https://ssltest.daoupay.com/m/mobile_webview/DaouMobileMng.jsp";
-	fileName = "http://ssltest.daoupay.com/2.0/mobile/DaouMobileMng.jsp";
+
+	//test url
+	//fileName = "http://ssltest.daoupay.com/2.0/mobile/DaouMobileMng.jsp";
+
+	//service url
+	fileName = "http://ssl.daoupay.com/2.0/mobile/DaouMobileMng.jsp";
+
 	/*if (paytype == "") {
 		alert("결제방법을 선택하여 주십시오");
 		return;
@@ -102,7 +107,13 @@ function pay() {
 //신용카드 결제
 function fnSubmit() {
 	var fileName;
-	fileName = "https://ssltest.daoupay.com/card/DaouCardMng.jsp";
+
+	//test url
+	//fileName = "https://ssltest.daoupay.com/card/DaouCardMng.jsp";
+
+	//service url
+	fileName = "https://ssl.daoupay.com/card/DaouCardMng.jsp";
+
 	//fileName = "https://ssltest.daoupay.com/m/card_webview/DaouCardMng.jsp";
 
 
@@ -299,12 +310,12 @@ function fnNumCheck() {
 		    <div role="tabpanel" class="tab-pane fade in active" id="creditcard">
 				<form name="frmConfirm" action="" accept-charset="EUC-KR">
 				<div class="form-box">
-				<!-- CPID CSK20384 , CTS14732 -->
-				<input type="hidden" name="CPID" size="50" maxlength="50" value="CTS14732" style="IME-MODE:disabled">
+				<!-- CPID 초기 CSK20384 , CTS14732 --> <!-- test CTS14732 -->
+				<input type="hidden" name="CPID" size="50" maxlength="50" value="CSK20384" style="IME-MODE:disabled">
 				<input type="hidden" name="ORDERNO" size="50" maxlength="50" value="" style="IME-MODE:disabled">
 				<input type="hidden" name="PRODUCTTYPE" size="10" maxlength="1" value="2" style="IME-MODE:disabled">
 				<input type="hidden" name="BILLTYPE" size="10" maxlength="2"  value="1" style="IME-MODE:disabled">
-				<input type="hidden" name="AMOUNT" size="10" maxlength="10" value="50000" style="IME-MODE:disabled" onkeypress="fnNumCheck();">
+				<input type="hidden" name="AMOUNT" size="10" maxlength="10" value="50" style="IME-MODE:disabled" onkeypress="fnNumCheck();">
 				<input type="hidden" name="CPQUOTA" size="20" value="0:2:3:4:5:6:7:8:9:10:11:12" style="IME-MODE:disabled">
 				<div class="row form-style">
 					<div class="col-xs-12"><p class="title">상품명</p> : <span style="margin:0 0 0 10px">핀북(finbook)</span></div>
@@ -375,8 +386,8 @@ function fnNumCheck() {
 				</div>
 				<!--input type=button value="결제하기" onClick="pay()" width="63" height="25"><br-->
 				<input type="hidden" name=PRODUCTNAME size=20 value="핀북"><br>
-				<input type="hidden" name=AMOUNT size=20 value="50000">
-				<input type="hidden" name=CPID  value="CTS14732">
+				<input type="hidden" name=AMOUNT size=20 value="50">
+				<input type="hidden" name=CPID  value="CSK20384">
 				<input type="hidden" name=ORDERNO value="">
 				<input type="hidden" name=PRODUCTTYPE value="2">
 				<input type="hidden" name=BILLTYPE value="1">
