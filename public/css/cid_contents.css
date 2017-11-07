@@ -5,15 +5,16 @@ br{line-height:1.5em;}
 .padding-lr0{padding-left:0 !important; padding-right:0 !important;}
 .margin-lr0{margin-left:0 !important; margin-right:0 !important;}
 
-.menu{margin-top:70px;}
+.menu{margin-top:60px;}
 
 .appbanner-bg{position:relative; background-image:url(/page_imgs/main_img/bg-appbanner2.jpg); background-repeat:no-repeat; background-size:100%; width:100%; height:auto; max-width:2000px; max-height:700px;}
 .appbanner-bg .ul-place{width:100%; height:auto; position:absolute; z-index:100; right:12%; bottom:6%;}
 .appbanner-bg ul li{ width:22%; text-align:center; float:right; list-style:none;}
 .appbanner-bg ul li img{width:100%; max-width:427px;}
 
+.con-title{border-bottom:1px solid #000; padding:15px 0}
 
-/*ê²€ìƒ‰ ë¶€ë¶„*/
+/*°Ë»ö ºÎºĞ*/
 .contents .con-search{margin:120px 0;}
 .contents .con-search .search-title p{
 	padding: 10px 0;
@@ -23,20 +24,20 @@ br{line-height:1.5em;}
 	}
     
 
-/*ì¸ê¸°*/
-.main-contents{background-color:#ffffff; box-shadow:0 8px 10px rgba(0, 0, 0, 0.8); padding-top:50px;}
+/*ÀÎ±â*/
+.main-contents{background-color:#ffffff; box-shadow:0 8px 10px rgba(0, 0, 0, 0.8); margin-top:50px;}
 .main-contents .contents-menu .menu img{margin:0 15px 20px 15px;}
 .main-contents .contents{font-size:14px; text-align:center; }
 .main-contents .contents div div p{margin-top:20px;}
 .main-contents .contents .icon-plus_con{margin:60px 0 50px 0;}
 .main-contents .contents-mob_menu{display:none;}
-.contents .popular-title p{padding:10px 0; margin:30px 0 20px 0; font-size:16px;
-color:#212121; border-bottom:3px solid #ececec; font-weight:900;}
+.contents .popular-title p{padding:5px 0; margin:30px 0 20px 0; font-size:16px;
+color:#212121; border-bottom:2px solid #212121; font-weight:900; width:150px}
 /*.con-img{background-color:#000;}*/
 .main-contents .con-img img{width:100%;}
 .icon-plus_con img{width:30px; margin-bottom:80px;}
 
-/*ì½˜í…ì¸  ë””í…Œì¼ ë¶€ë¶„*/
+/*ÄÜÅÙÃ÷ µğÅ×ÀÏ ºÎºĞ*/
 .mob-header{display:none;} 
 .ad{width:100%; height:8px; background-color:#ececec;}
 
@@ -57,7 +58,7 @@ color:#212121; border-bottom:3px solid #ececec; font-weight:900;}
 .parallax3 .info{font-size:16px; width:100%; height:auto; position:absolute; z-index:3; bottom:2%;}
 .contents{width:85% !important;}
 .contents .contents-in{margin-top:30px; padding:0 15px;}
-.contents .contents-in img{width:50%;}/*img ë¹¼ê¸°*/
+.contents .contents-in img{width:50%;}/*img »©±â*/
 .editor-introduce{margin-top:30px; width:85% !important;}
 .editor-introduce .line-1px{width:100%; height:1px; background-color:#1b87c9;}
 .mob-editor-con{display:none;}
@@ -87,8 +88,8 @@ color:#212121; border-bottom:4px solid #ececec;}
 /*.con-img{background-color:#000;}*/
 .con-img img{width:100%;}
 
-/*íŒŸìºìŠ¤íŠ¸*/
-.podcast-main{margin-top:70px; /*font-family:'BM JUA','ë°°ë‹¬ì˜ë¯¼ì¡± ì£¼ì•„',sans-serif;*/}
+/*ÆÌÄ³½ºÆ®*/
+.podcast-main{margin-top:70px; /*font-family:'BM JUA','¹è´ŞÀÇ¹ÎÁ· ÁÖ¾Æ',sans-serif;*/}
 .podcast .padcast-title{font-size:18px; color:#212121; border-bottom:4px solid #ececec; margin:20px 0; }
 .podcast .padcast-title img{margin:20px 0;}
 .podcast-con{margin:20px 0;}
@@ -103,7 +104,7 @@ border:4px solid #ececec; border-radius:10px; color:#fff; font-size:18px; paddin
 .podcast-con .pod-radio img{margin-bottom:5px;}
 .podcast-con .pod-radio a p:hover{color:#ff574a;}
 
-/*ê¸°íš ì½˜í…ì¸ */
+/*±âÈ¹ ÄÜÅÙÃ÷*/
 .project-main{margin:60px 0;}
 .project-title{border-bottom:4px solid #ececec; font-size:18px; color:#212121; margin:20px 0;}
 .project-title img{margin:20px 0;}
@@ -124,7 +125,7 @@ border:4px solid #1b87c9; border-radius:10px; color:#1b87c9; font-size:18px; pad
 }
 .project-in .con-in a:hover{color:#1b87c9;}
 
-/*ì±… ì½˜í…ì¸ */
+/*Ã¥ ÄÜÅÙÃ÷*/
 .books-main{margin:50px 0;}
 .books-title{border-bottom:4px solid #ececec; font-size:18px; color:#212121; margin:20px 0;}
 .books-title img{margin:20px 0;}
@@ -132,21 +133,21 @@ border:4px solid #1b87c9; border-radius:10px; color:#1b87c9; font-size:18px; pad
 @media all and (max-width:1024px) {
 .menu{margin-top:0;}	
 	
-/*ê²€ìƒ‰ ë¶€ë¶„*/
+/*°Ë»ö ºÎºĞ*/
 .contents .con-search{margin:30px 0 50px 0;}
 .contents .con-search .search-title p{width:95%; margin: 30px 0 20px 0;}
 
-/*ì¸ê¸°*/
-.main-contents{padding-top:60px;}	
+/*ÀÎ±â*/
+/*.main-contents{padding-top:60px;}*/	
 .main-contents .contents-menu{display:none;}
 .main-contents .contents .icon-plus_con{margin:10px 0 30px 0;}
 .main-contents .contents .icon-plus_con img{height:80px;}
 .main-contents .contents .row .col-sm-4, .col-xs-6{padding:0 5px 0 5px;}
 .main-contents .contents-mob_menu{display:block;}
-.contents .popular-title p{margin:0 0 20px 0; width:95%;}
+.contents .popular-title p{margin:0 0 20px 0;}
 .icon-plus_con img{width:35px; margin-bottom:40px;}
 
-/*ì½˜í…ì¸  ë””í…Œì¼ ë¶€ë¶„*/
+/*ÄÜÅÙÃ÷ µğÅ×ÀÏ ºÎºĞ*/
 .mob-bg-blue{background-color:#1b87c9; height:100%;}
 .mob-bg-gray{background-color:#f4f4f4; height:100%;}
 .mob-bg-white{background-color:#fff; width:95%; box-shadow:0 0 20px rgba(0, 0, 0, 0.8); margin-bottom:10px; border-radius: 0px;}
@@ -158,7 +159,7 @@ border:4px solid #1b87c9; border-radius:10px; color:#1b87c9; font-size:18px; pad
 .contents .contents-in{padding:0 8px;}
 .contents{width:100% !important;}	
 .contents_detail-mob_menu {display:block;}
-.contents .contents-in img{width:100% !important;}/*img ë¹¼ê¸°*/
+.contents .contents-in img{width:100% !important;}/*img »©±â*/
 .web-editor-con{display:none;}
 .mob-editor-con{display:block;}
 .editor-introduce{width:100% !important;}
@@ -187,7 +188,7 @@ border:4px solid #1b87c9; border-radius:10px; color:#1b87c9; font-size:18px; pad
 .contents .row .col-sm-4, .col-xs-6{padding:0 5px 0 5px;}
 .contents iframe{height:100% !important;}
 
-/*íŒŸìºìŠ¤íŠ¸*/
+/*ÆÌÄ³½ºÆ®*/
 .podcast-main{margin-top:50px;}
 .podcast .padcast-title{margin-bottom:10px; font-size:16px;} 
 .podcast .padcast-title img{margin:10px 0; width:100px;}
@@ -197,7 +198,7 @@ border:4px solid #1b87c9; border-radius:10px; color:#1b87c9; font-size:18px; pad
 .podcast-con .pod-radio{margin-bottom:10px; font-size:12px;}
 .podcast-con .pod-radio img{width:20px;}
 
-/*ê¸°íš ì½˜í…ì¸ */
+/*±âÈ¹ ÄÜÅÙÃ÷*/
 .project-main{margin:40px 0;}
 .project-title{font-size:16px;}
 .project-title img{margin:10px 0; width:80px;}
@@ -209,7 +210,7 @@ border:4px solid #1b87c9; border-radius:10px; color:#1b87c9; font-size:18px; pad
 .project-in .con-in .col-xs-6{padding:0 5px;}
 .project-in .con-in .con-title{font-size:12px;}
 
-/*ì±… ì½˜í…ì¸ */
+/*Ã¥ ÄÜÅÙÃ÷*/
 .books-main{margin:40px 0;}
 .books-title{font-size:16px;}
 .books-title img{margin:10px 0; width:100px;}
