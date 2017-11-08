@@ -176,6 +176,8 @@ function rdate() {
 	return _tot;
 }
 
+
+
 function leadingZeros(n, digits) {
 	  var zero = '';
 	  n = n.toString();
@@ -219,6 +221,29 @@ function releaseTime(){
 
 	return _tot;
 }
+
+
+function aaaa(){
+	 var now = new Date();
+	 var _year= now.getFullYear();
+	 var _mon = now.getMonth()+1;
+	 _mon=""+_mon;
+	 if (_mon.length < 2 )
+	 {
+	    _mon="0"+_mon;
+	 }
+	 var _date=now.getDate();
+	 //var _date = now.setDate(now.getDate() -1);
+	 _date =""+_date;
+     if (_date.length < 2 )
+	 {
+	    _date="0"+_date;
+	 }
+	var _tot =_year+"-"+_mon+"-"+_date;
+
+	return _tot;
+}
+
 
 
 //예전버젼 메인
@@ -615,8 +640,6 @@ router.get('/finbook_ch/:ORDERNO', function(req,res,next){
 
 router.get('/finbook_ch_code/:ORDERNO', function(req,res,next){
 	var ORDERNO = req.params.ORDERNO;
-	console.log(ORDERNO);
-
 	mysql.select('SELECT cider.fin_order.ORDERNO, cider.fin_code.fcode, cider.fin_code.date FROM cider.fin_order INNER JOIN cider.fin_code ON cider.fin_order.idx=cider.fin_code.idx where cider.fin_order.ORDERNO = '+'ORDERNO'+';', function(err,data){
 	res.render('front/etc/finbook/finbook_ch_code',{data:data});
 });
@@ -627,9 +650,20 @@ router.get('/finbook_search_fin', function(req,res,next){
 });
  
 
+
 //무통장 입금
 router.get('/finbook_noamount', function(req,res,next){
-	res.render('front/etc/finbook/finbook_noamount',{});
+	var USERNAME = req.query.USERNAME;
+	var EMAIL = req.query.EMAIL;
+	var TELNO = req.query.TELNO;
+
+	console.log(USERNAME);
+	console.log(EMAIL);
+	//var date = getWorldTime(+9);
+
+	var limdate = aaaa();
+	//console.log(limdate);
+	res.render('front/etc/finbook/finbook_noamount',{limdate:limdate, USERNAME:USERNAME, EMAIL:EMAIL, TELNO:TELNO});
 });
 
 
@@ -715,6 +749,7 @@ router.get('/cardOrder',ipfilter(ips,ipss, {mode: 'allow'}), function(req, res) 
 	var CARDLIST = req.query.CARDLIST;
 	var HIDECARDLIST = req.query.HIDECARDLIST;
 	var POPUPTYPE = req.query.POPUPTYPE;
+	var PHONENO = req.query.PHONENO;
 
 	/*var PAYMETHOD = req.query.PAYMETHOD;
 	var SETTDATE = req.query.SETTDATE;

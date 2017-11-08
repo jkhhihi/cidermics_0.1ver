@@ -36,7 +36,22 @@
 		</span>
 	</div>
 	<div class="check-purchase-in container" align="center" style="padding: 35px !important;">
-		
+		<div class="check-pincode row">
+			<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important;">
+				<div class="title">입금자명</div>
+				<div class="amount"><span><%= USERNAME %></span></div>
+			</div>
+			<div class="col-xs-6" style="padding-left:0 !important; padding-right:0 !important; border-left:1px solid #ddd; border-right:1px solid #ddd;">
+				<div class="title">이메일주소</div>
+				<div class="amount"><%= EMAIL %></div>
+			</div>
+			<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important;">
+				<div class="title">휴대폰 번호</div>
+				<div class="amount"><%= TELNO %></div>
+			</div>
+		</div>
+	</div>
+	<div class="check-purchase-in container" align="center" style="padding: 35px !important;">
 		<div class="check-pincode row">
 			<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important;">
 				<div class="title">입금 금액</div>
@@ -48,7 +63,7 @@
 			</div>
 			<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important;">
 				<div class="title">입금기한</div>
-				<div class="amount">2017-10-24(화)까지</div>
+				<div class="amount"><%= limdate %>부터<br>1주일까지</div>
 			</div>
 		</div>
 		<div class="way" align="left">
