@@ -49,12 +49,14 @@
 /*.header{height: 70px; margin:0; width:100%; position: fixed; background-color:white;
 z-index: 999; box-shadow: 0px -5px 20px #222; top:0;}*//* 2017년 5월 16일 TOP - 정기훈 수정 css 수정*/
 
-.header{width:100%; position: fixed; background-color:white; z-index:99; box-shadow: 0px -5px 20px #222; top:0;}
+a{color:#000; text-decoration:none;}
+a:hover{color:#999;}
 
+.header{width:100%; position: fixed; background-color:white; z-index:99; box-shadow: 0px -5px 20px #222; top:0;}
 .padding-0{padding:0;}
 .padding-lr-0{padding-left:0; padding-right:0;}
 #menu{display:none;}
-a{color:#333; text-decoration:none;}
+
 .a-white{color:#fff;}
 .mob-header{display:none;}
 

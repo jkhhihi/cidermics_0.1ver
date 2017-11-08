@@ -1,8 +1,9 @@
 ﻿body{/*font-family: 'Nanum Gothic', serif;*/}
 .padding-5lr{padding-left:5px !important; padding-right:5px !important;}
+.margin-0lr{margin-left:0 !important; margin-right:0 !important;}
+
 .parallax {
     background-image: url("https://i.imgur.com/h2ylZGA.jpg");
- 
     min-height: 400px; 
     background-attachment: fixed;
     background-position: center;
@@ -13,16 +14,24 @@
 .parallax .parallax-in{padding-top:160px; color:#fff; text-shadow: #444 0 1px 1px; font-weight:bold; font-size:20px;}
 .parallax .parallax-in img{width:120px; margin-bottom:20px;}
 
-.service-menu div div.row{background-color:#f8f8f8; width:100%; margin-left:0; margin-right:0; box-shadow:3px 3px 4px #999;}
-.service-menu>div{margin-top:20px; padding-left:5px;}
-.service-menu .menu1-bar{background-color:#1fa4ad; height:6px;}
-.service-menu .menu2-bar{background-color:#d4444f; height:6px;}
-.service-menu .menu3-bar{background-color:#6fae43; height:6px;}
-.service-menu .menu4-bar{background-color:#e1b824; height:6px;}
-.service-menu .title{padding-left:0; padding-right:0;}
-.service-menu .title img{width:180px; padding:20px 0 0 30px}
-.service-menu .icon{padding:40px 20px 20px 0}
-.service-menu .icon img{width:145px;}
+#service-menu div a div.row{background-color:#f8f8f8; width:100%; padding:20px 0 0 15px; box-shadow:3px 3px 4px #999; color:#fff; margin-top:10px;}
+.title-e p{font-size:24px; font-weight:600;}
+.title-k{margin:0 0 10px 0;}
+/*서비스:event,open,hit*/
+.con-hit{background-color:#1bafba;  padding:6px 8px; border-radius:4px;}
+.sch-open{background-color:#d4434e; padding:6px 8px; border-radius:4px;}
+.finb-event{background-color:#63b72c; padding:6px 8px; border-radius:4px;}
+.fin-event{background-color:#f0c525; padding:6px 8px; border-radius:4px;}
+/*서비스 배경화면*/
+.menu-contents{width:100%; height:300px; background-image: url("https://i.imgur.com/4pORsKu.jpg"); background-size:cover;}
+.menu-school{width:100%; height:300px; background-image: url("https://i.imgur.com/0fm4TOR.jpg"); background-size:cover;}
+.menu-finbook{width:100%; height:300px; background-image: url("https://i.imgur.com/BElhYX3.jpg"); background-size:cover;}
+.menu-finance{width:100%; height:300px; background-image: url("https://i.imgur.com/M7GNPUW.jpg"); background-size:cover;}
+
+#service-info{margin-top:20px;}
+#service-info .title-mark{margin:0 0 20px 0; font-size:18px;}
+#service-info .info{font-size:18px; border-bottom:2px solid #ccc; padding-bottom:2px;}
+#service-info .title-mark .con-hit, .sch-open, .finb-event, .fin-event{color:#fff; margin:0 10px 0 0; padding:8px 16px;}
 
 .new-contents{margin:20px 0 0 0;}
 .new-contents .title{font-size:16px; height:30px; padding-top:8px;}
@@ -37,16 +46,29 @@
 @media all and (max-width:1024px) {
 .parallax{display:none;}
 
-.service-menu{margin-top:46px;}
-.service-menu div div.row{}
-.service-menu>div{margin-top:5px; padding-left:2px; padding-right:2px;}
-.service-menu .menu1-bar{height:4px;}
-.service-menu .menu2-bar{height:4px;}
-.service-menu .menu3-bar{height:4px;}
-.service-menu .menu4-bar{height:4px;}
-.service-menu .title img{width:76px; padding:8px 0 0 5px}
-.service-menu .icon{padding:34px 5px 5px 0}
-.service-menu .icon img{width:40px;}
+.padding-5lr{padding-left:2px !important; padding-right:2px !important;}
+
+#service-menu{margin-top:45px;}
+#service-menu div a div.row{padding:8px 0 0 0; margin-top:5px;}
+.title-e {padding-left:10px !important;}
+.title-e p{font-size:16px; line-height:1.0em; font-weight:500;}
+.title-k{margin:0 0 10px 0; font-size:12px; padding-left:10px !important;}
+.title-mark{padding-left:10px !important;}
+/*서비스:event,open,hit*/
+.con-hit{font-size:10px; padding:4px 6px; border-radius:2px;}
+.sch-open{font-size:10px; padding:4px 6px; border-radius:2px;}
+.finb-event{font-size:10px; padding:4px 6px; border-radius:2px;}
+.fin-event{font-size:10px; padding:4px 6px; border-radius:2px;}
+/*서비스 배경화면*/
+.menu-contents{height:110px;}
+.menu-school{height:110px;}
+.menu-finbook{height:110px;}
+.menu-finance{height:110px;}
+
+#service-info{margin-top:10px;}
+#service-info .title-mark{margin:0 0 5px 0;}
+#service-info .info{font-size:12px; border-bottom:1px solid #ccc;}
+#service-info .title-mark .con-hit, .sch-open, .finb-event, .fin-event{margin:0 5px 0 0}
 
 .new-contents{margin:10px 0 0 0;}
 .new-contents .title{font-size:12px; height:auto; padding-top:2px;}
@@ -58,7 +80,6 @@
 .con-list .con-plus-btn{margin:25px 0; width:35px;}
 
 .col-xs-4{padding-right:2 !important; padding-left:2px !important;}
-.container{padding-right:15 !important; padding-left:15px !important;}
 
 .error img.logo{margin-top:50px;}
 }
