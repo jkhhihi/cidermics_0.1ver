@@ -257,6 +257,31 @@ router.post('/clipping_del/:id&:no', function(req, res, next) {
 });
 
 
+// main2 addmore
+router.get('/addMore3/:idx', function(req, res, next) {
+   
+   var idx = req.params.idx;
+   var qry="";
+   
+  var _tot = releaseTime();
+
+   var lang = req.params.lang;
+   var start = (idx - 1) * 14;
+   console.log(idx);
+   console.log(start);
+   //var start= start +1;
+   //var end = idx * 12;
+   var end = 10;
+   
+    qry="select con_no, con_photo, con_title  from cider.cid_contents where con_release <= '"+_tot+"' order by con_no desc limit "+ start +", "+ end +"";
+
+   mysql.select(qry, function (err, data){
+
+       if (err) throw err;
+       res.send({ contents : data });
+   });
+   
+});
 
 
 router.get('/addMore/:idx', function(req, res, next) {

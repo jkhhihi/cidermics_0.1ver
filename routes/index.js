@@ -253,7 +253,7 @@ router.get('/main_old', function(req, res, next) {
 	var _tot = releaseTime();
 
 	 
-	 qry="select con_no, con_photo, con_title, if (a.con_upDate > DATE_ADD(now(),INTERVAL -1 DAY) ,'/page_imgs/main_img/new_mark4.svg','/page_imgs/main_img/new_mark1px.png') as chkDat from cider.cid_contents a where a.con_release <= '"+_tot+"' order by a.con_no desc limit 0,12";
+	qry="select con_no, con_photo, con_title, if (a.con_upDate > DATE_ADD(now(),INTERVAL -1 DAY) ,'/page_imgs/main_img/new_mark4.svg','/page_imgs/main_img/new_mark1px.png') as chkDat from cider.cid_contents a where a.con_release <= '"+_tot+"' order by a.con_no desc limit 0,12";
 	mysql.select(qry, function (err, data){
 		if (err) throw err;
 		 row = data;
@@ -263,6 +263,40 @@ router.get('/main_old', function(req, res, next) {
 });
 
 router.get('/', function(req, res, next) {
+	var row;
+	var row2;
+	var _tot = releaseTime();
+
+
+	var now = new Date();
+	var _year=  now.getFullYear();
+	var _mon =   now.getMonth()+1;
+	_mon=""+_mon;
+	if (_mon.length < 2 )
+	{
+	_mon="0"+_mon;
+	}
+	var _totmon = _year+""+_mon;
+
+	//최신 콘텐츠 qry
+	var qry="select con_no, con_photo, con_title, if (a.con_upDate > DATE_ADD(now(),INTERVAL -5 DAY) ,'/page_imgs/main_img/new_mark4.svg','/page_imgs/main_img/new_mark1px.png') as chkDat from cider.cid_contents a where a.con_release <= '"+_tot+"' order by a.con_release desc limit 0,3";
+	var qry2="select con_no, con_photo, con_title, if (a.con_upDate > DATE_ADD(now(),INTERVAL -1 DAY) ,'/page_imgs/main_img/new_mark4.svg','/page_imgs/main_img/new_mark1px.png') as chkDat from cider.cid_contents a where a.con_release <= '"+_tot+"' order by a.con_release desc limit 3,12";
+	mysql.select(qry, function (err, data){
+		if (err) throw err;
+		 row = data;
+
+		 mysql.select(qry2, function (err, data){
+		if (err) throw err;
+		 row2 = data;
+
+
+		res.render('front/cid_main2', { contents : row, allcontents:row2});
+		});
+	});
+});
+
+
+router.get('/1', function(req, res, next) {
 	var row;
 	var popular;
 	var podcast;
@@ -326,16 +360,8 @@ router.get('/', function(req, res, next) {
 									mysql.select("select con_no, con_photo, con_title from cider.cid_contents where con_category = '1' and con_release <= '"+_tot+"' order by con_no desc limit 0,2", function (err, data){
 									if(err){ res.redirect('back'); }
 									economics = data;
-										mysql.select("select dis_no,dis_title,dis_thum from cider.cid_dis_reg where dis_release <= '"+_tot+"' order by dis_no desc limit 0,2", function(err,data){
-											discuss = data;
-											//mysql.select("select dis_no,dis_title,dis_thum from cider.cid_dis_reg where dis_release <= '"+_tot+"' order by dis_no desc limit 0,2", function(err,data){
 
-												//mysql.select("select count(*) from cider.cid_dis_comt where dis_no = '2'", function(err,data){
-													mysql.select("select r.dis_no as rno , c.dis_no as cno from cider.cid_dis_reg as r left join cider.cid_dis_comt as c on r.dis_no = c.dis_no", function(err,data){
-														discussCnt = data;
-
-
-		    		res.render('front/cid_main2', { contents : row, popular: popular,books:books,podcast:podcast,project:project,rev:data2,stock:stock,company:company,finance:finance,economics:economics,discuss:discuss,discussCnt:discussCnt,stock1:stock1});
+		    		res.render('front/cid_main1', { contents : row, popular: popular,books:books,podcast:podcast,project:project,rev:data2,stock:stock,company:company,finance:finance,economics:economics,stock1:stock1});
 		    });
 	       });
 	      });
@@ -348,91 +374,7 @@ router.get('/', function(req, res, next) {
    });
   });
  });
-});
-});
-router.get('/3', function(req, res, next) {
-	var row;
-	var popular;
-	var podcast;
-	var _tot = releaseTime();
 
-
-	var now = new Date();
-	var _year=  now.getFullYear();
-	var _mon =   now.getMonth()+1;
-	_mon=""+_mon;
-	if (_mon.length < 2 )
-	{
-	_mon="0"+_mon;
-	}
-	var _totmon = _year+""+_mon;
-
-	//최신 콘텐츠 qry
-	var qry="select con_no, con_photo, con_title, if (a.con_upDate > DATE_ADD(now(),INTERVAL -5 DAY) ,'/page_imgs/main_img/new_mark4.svg','/page_imgs/main_img/new_mark1px.png') as chkDat from cider.cid_contents a where a.con_release <= '"+_tot+"' order by a.con_release desc limit 0,6";
-	mysql.select(qry, function (err, data){
-		if (err) throw err;
-		 row = data;
-		 mysql.select("select con_no, con_photo, con_title from cider.cid_contents where con_category = '4' and con_release <= '"+_tot+"' order by con_no desc limit 0,3", function (err, data){
-		 //mysql.select('SELECT * from cider.cid_contents where con_pop = 1 order by con_release desc limit 0,6;', function (err, data){
-		 //mysql.select("SELECT * FROM cider.cid_contents where con_release between "+_totmon+"010000 and "+_tot+" order by con_viewCount desc limit 0,16;", function (err, data){
-		//mysql.select("SELECT con_no, con_photo, con_title FROM cider.cid_contents where con_release between "+_totmon+"010000 and "+_tot+" order by con_viewCount desc limit 0,6;", function (err, data){ 
-		  if (err) throw err;
-			popular = data;
-
-		  mysql.select("select con_no, con_photo, con_title from cider.cid_contents where con_category = '7' and con_release <= '"+_tot+"' order by con_no desc limit 0,3", function (err, data){
-			if(err){ res.redirect('back'); }
-
-			books = data;
-
-			mysql.select("select con_no, con_photo, con_title from cider.cid_contents where con_category = '6' and con_release <= '"+_tot+"' order by con_no desc limit 0,3", function (err, data){
-				if(err){ res.redirect('back'); }
-
-				podcast = data;
-
-				mysql.select("select con_no, con_photo, con_title from cider.cid_contents where con_category = '5' and con_release <= '"+_tot+"' order by con_no desc limit 0,3", function (err, data){
-				if(err){ res.redirect('back'); }
-
-				project = data;
-
-					mysql.select('SELECT rev_title,rev_QA1 FROM cider.cid_fi_review order by rev_no desc limit 1,3;', function (err, data2){
-
-
-						mysql.select("select con_no, con_photo, con_title from cider.cid_contents where con_category = '4' and con_release <= '"+_tot+"' order by con_no desc limit 0,2", function (err, data){
-							if(err){ res.redirect('back'); }
-							stock = data;
-							
-							mysql.select("select con_no, con_photo, con_title from cider.cid_contents where con_category = '3' and con_release <= '"+_tot+"' order by con_no desc limit 0,2", function (err, data){
-							if(err){ res.redirect('back'); }
-							company = data;
-								mysql.select("select con_no, con_photo, con_title from cider.cid_contents where con_category = '2' and con_release <= '"+_tot+"' order by con_no desc limit 0,2", function (err, data){
-								if(err){ res.redirect('back'); }
-								finance = data;
-									mysql.select("select con_no, con_photo, con_title from cider.cid_contents where con_category = '1' and con_release <= '"+_tot+"' order by con_no desc limit 0,2", function (err, data){
-									if(err){ res.redirect('back'); }
-									economics = data;
-										mysql.select("select dis_no,dis_title,dis_thum from cider.cid_dis_reg where dis_release <= '"+_tot+"' order by dis_no desc limit 0,2", function(err,data){
-											discuss = data;
-											//mysql.select("select dis_no,dis_title,dis_thum from cider.cid_dis_reg where dis_release <= '"+_tot+"' order by dis_no desc limit 0,2", function(err,data){
-
-												//mysql.select("select count(*) from cider.cid_dis_comt where dis_no = '2'", function(err,data){
-													mysql.select("select r.dis_no as rno , c.dis_no as cno from cider.cid_dis_reg as r left join cider.cid_dis_comt as c on r.dis_no = c.dis_no", function(err,data){
-														discussCnt = data;
-
-
-		    		res.render('front/cid_main3', { contents : row, popular: popular,books:books,podcast:podcast,project:project,rev:data2,stock:stock,company:company,finance:finance,economics:economics,discuss:discuss,discussCnt:discussCnt});
-		    });
-	       });
-	      });
-	 	 });
-		});
-	   });
-	  });
-	 });
-	});
-   });
-  });
- });
-});
 
 router.get('/maincon_include', function(req,res,next){
 	var arr = []

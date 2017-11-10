@@ -42,6 +42,16 @@ function openWinKA(){
 .menu-wrap::-webkit-scrollbar { 
     display: none; 
 }
+
+
+.grid li {
+	display: block;
+	float: left;
+	padding:10px;
+	width: 33.33%;
+	opacity: 0;
+}
+
 </style>
 
 </head>
@@ -172,7 +182,7 @@ function openWinKA(){
 <div class="container">
 	<div id="service-menu" class="row margin-0lr">
 		<div class="col-xs-7 padding-5lr">
-			<a href="/contents/all">
+			<a href="/1">
 			<div class="menu-contents margin-0lr row">
 				<div class="col-xs-12 title-e"><p>CONTENTS</p></div>
 				<div class="col-xs-12 title-k"><b><span style="border-top:2px solid #1bafba; padding-top:5px;">콘텐츠</span></b></div>
@@ -187,19 +197,20 @@ function openWinKA(){
 				<div class="col-xs-12 title-e"><p>FINANCE<br>SCHOOL</p></div>
 				<div class="col-xs-12 title-k"><b><span style="border-top:2px solid #d4434e; padding-top:5px;">금융스쿨</span></b></div>
 				<!-- 금융스쿨 OPEN -->
-				<div class="col-xs-12 title-mark"><b><span class="sch-open">OPEN</span></b></div>
+				<!--div class="col-xs-12 title-mark"><b><span class="sch-open">OPEN</span></b></div-->
 			</div>	
 			</a>	
 		</div>
 		<div class="col-xs-5 padding-5lr">
-			<a href="/finbook">
+			<a href="/contents/detail/1297">
 			<div class="menu-finbook margin-0lr row">
 				<div class="col-xs-12 title-e"><p>FINBOOK</p></div>
 				<div class="col-xs-12 title-k"><b><span style="border-top:2px solid #63b72c; padding-top:5px;">핀북</span></b></div>
 				<!-- 핀북 EVENT -->
-				<div class="col-xs-12 title-mark"><b><span class="finb-event">EVENT</span></b></div>
-			</div>	
-			</a>	
+				<div class="col-xs-12 title-mark"><b><span class="finb-event">NEW</span></b></div>
+				<div class="col-xs-12 d-day" align="center"><b>D-5</b></div>
+			</div>
+			</a>
 		</div>
 		<div class="col-xs-7 padding-5lr">
 			<a href="/finance">
@@ -214,22 +225,22 @@ function openWinKA(){
 	</div>
 	<div id="service-info">
 		<div class="row margin-0lr">
-			<a href="/">
+			<a href="/1">
 				<div class="col-xs-12 title-mark"><b><span class="con-hit">HIT</span></b>
 					<span class="info"><b>이 콘텐츠를 읽으면 내 머릿속에서 톡톡!!</b></span>
 				</div>
 			</a>
-			<a href="/">
+			<!--a href="/">
 				<div class="col-xs-12 title-mark"><b><span class="sch-open">OPEN</span></b>
 					<span class="info"><b>강의 오픈!! 일단 한번 들어봐~ 혹시 알아??</b></span>
 				</div>
-			</a>
-			<a href="/">
-				<div class="col-xs-12 title-mark"><b><span class="finb-event">EVENT</span></b>
-					<span class="info"><b>인생에 이런 책 한 권 정도는 있어야 할걸?</b></span>
+			</a-->
+			<a href="/contents/detail/1297">
+				<div class="col-xs-12 title-mark"><b><span class="finb-event">NEW</span></b>
+					<span class="info"><b>5일 뒤 공개됩니다!</b></span>
 				</div>
 			</a>
-			<a href="/">
+			<a href="/finance">
 				<div class="col-xs-12 title-mark"><b><span class="fin-event">EVENT</span></b>
 					<span class="info"><b>12월! 무료 재무 상담 오픈!!</b></span>
 				</div>
@@ -237,6 +248,7 @@ function openWinKA(){
 		</div>
 	</div>
 </div>
+
 
 <div class="container">
 	<div class="new-contents">
@@ -247,72 +259,109 @@ function openWinKA(){
 			<div class="col-xs-12 title-bar"></div>
 		</div>
 		<div class="row margin-0lr" align="center">
+
+			<!--재무 오픈 시 -->
+			<!--div class="col-xs-4">
+				<div class="thumnail">
+				<a href="/contents/detail">
+					<div class="con-img"><img class="img-responsive" src="https://i.imgur.com/4NzofWD.jpg"></div>
+					<div class="con-title">2017년 11월, 사이다재무상담 오픈!</div>
+				</a>
+				</div>
+			</div-->
+
+			<% for(var i=0; i < contents.length; i++) { %>
 			<div class="col-xs-4">
 				<div class="thumnail">
-					<a href="/contents/detail">
-					<div class="con-img"><img class="img-responsive" src="https://i.imgur.com/4NzofWD.jpg"></div>
-					<div class="con-title"><b>2017년 11월, 사이다재무상담 오픈!</b></div>
+					<a href="/contents/detail/<%= contents[i].con_no %>">
+					<!--div class="con-img"><img class="img-responsive" src="<%= contents[i].chkDat%>"></div-->
+					<div class="con-img"><img class="img-responsive" src="<%= contents[i].con_photo%>"></div>
+					<div class="con-title"><%= contents[i].con_title %></div>
 					</a>
 				</div>	
 			</div>
-			<div class="col-xs-4">
-				<div class="thumnail">
-				<a href="/contents/detail">
-					<div class="con-img"><img class="img-responsive" src="https://i.imgur.com/4NzofWD.jpg"></div>
-					<div class="con-title">2017년 11월, 사이다재무상담 오픈!</div>
-				</a>
-				</div>	
-			</div>
-			<div class="col-xs-4">
-				<div class="thumnail">
-				<a href="/contents/detail">
-					<div class="con-img"><img class="img-responsive" src="https://i.imgur.com/4NzofWD.jpg"></div>
-					<div class="con-title">2017년 11월, 사이다재무상담 오픈!</div>
-				</a>
-				</div>
-			</div>			
+			<% } %>
+
+
+
+						
 		</div>		
 	</div>
-</div>		
-	
-	<!-- 핀북 배너 -->	
-	<div id="banner" align="center"><a href="/finbook"><img class="finbook-mob img-responsive" src="https://i.imgur.com/7yxz2nk.jpg"></a></div>	
-<div class="container">	
-	<div id="banner" align="center"><a href="/finbook"><img class="finbook img-responsive" src="https://i.imgur.com/7yxz2nk.jpg"></a></div>
-</div>
-	
-	<!-- 콘텐츠 뿌림 -->	
-<div class="container">		
-	<div class="con-list" align="center">	
-		<div class="row margin-0lr">
-			<div class="col-xs-4">
-				<div class="thumnail">
-				<a href="/contents/detail">
-					<div class="con-img"><img class="img-responsive" src="https://i.imgur.com/4NzofWD.jpg"></div>
-					<div class="con-title">2017년 11월, 사이다재무상담 오픈!</div>
-				</a>
-				</div>
-			</div>
-			<div class="col-xs-4">
-				<div class="thumnail">
-				<a href="/contents/detail">
-					<div class="con-img"><img class="img-responsive" src="https://i.imgur.com/4NzofWD.jpg"></div>
-					<div class="con-title">2017년 11월, 사이다재무상담 오픈!</div>
-				</a>
-				</div>	
-			</div>
-			<div class="col-xs-4">
-				<div class="thumnail">
-				<a href="/contents/detail">
-					<div class="con-img"><img class="img-responsive" src="https://i.imgur.com/4NzofWD.jpg"></div>
-					<div class="con-title">2017년 11월, 사이다재무상담 오픈!</div>
-				</a>
-				</div>	
-			</div>			
-		</div>
-		<div class="con-plus-btn"><a href="#"><img class="img-responsive" src="/page_imgs/fixed_img/btn-plus.png"></a></div>
+</div>	
+
+
+<!-- 임시 배너 -->
+<br>
+<div class="carousel-inner" role="listbox" align="center">	
+	<div class="item active">
+	      <a href="/finance"><img class="img-responsive" src="/page_imgs/fixed_img/banner/consulting.jpg"></a>
 	</div>
 </div>
+<br>
+
+<!-- 핀북 배너 -->	
+<!--div id="banner" align="center">
+	<a href="/finbook">
+	<img class="finbook-mob img-responsive" src="https://i.imgur.com/7yxz2nk.jpg"></a>
+</div>	
+<div class="container">	
+	<div id="banner" align="center"><a href="/finbook"><img class="finbook img-responsive" src="https://i.imgur.com/7yxz2nk.jpg"></a></div>
+</div-->
+
+
+	<!-- 콘텐츠 뿌림 -->	
+<div class="container">
+	<div class="con-list" align="center">
+		<div class="row margin-0lr" id="con-list">
+			<% for(var i=0; i < allcontents.length; i++) { %>
+			<div class="col-xs-4">
+				<div class="thumnail">
+					<a href="/contents/detail/<%= allcontents[i].con_no %>">
+					<div class="con-img"><img class="img-responsive" src="<%= allcontents[i].chkDat%>"></div>
+					<div class="con-img"><img class="img-responsive" src="<%= allcontents[i].con_photo%>"></div>
+					<div class="con-title"><%= allcontents[i].con_title %></div>
+					</a>
+				</div>	
+			</div>
+			<% } %>
+		</div>
+		<div class="con-plus-btn" align="center" onclick="addMore()"><img class="img-responsive" src="/page_imgs/fixed_img/btn-plus2.png" ></div>
+	</div>
+</div>
+
+<script>
+		var idx = 2;
+		function addMore (){
+			var contents = '';
+			$.ajax({
+				url : '/addMore3/'+idx,
+				method : 'get',
+				success : function(data){
+					if (data.contents.length == 0){
+						alert('마지막 콘텐츠입니다.');
+						return;
+					}
+					idx ++;
+					$.each(data.contents, function (index, value){
+						contents += '<div class="col-xs-4"> ' +
+							 			'<div class="thumnail"> ' + 
+												'<a href="/contents/detail/'+value.con_no+'"> ' +
+													'<div class="con-img"> ' +
+														'<img class="img-responsive" src="'+value.con_photo+'"/> ' + 
+													'</div> ' +
+													'<div class="con-title">' + value.con_title +'</div>' +
+												'</a> ' +
+							 			'</div> '+
+							 		'</div> ';
+							
+					});
+					$('#con-list').append(contents);
+					
+				}
+			});
+		}
+		
+	</script>
 
 <% include bottom %>
 </body>
