@@ -3,7 +3,7 @@
 .margin-0lr{margin-left:0 !important; margin-right:0 !important;}
 
 .parallax {
-    background-image: url("https://i.imgur.com/h2ylZGA.jpg");
+    background-image: url("https://i.imgur.com/KbxScv2.jpg");
     min-height: 400px; 
     background-attachment: fixed;
     background-position: center;
@@ -23,11 +23,11 @@
 .finb-event{background-color:#63b72c; padding:6px 8px; border-radius:4px;}
 .fin-event{background-color:#f0c525; padding:6px 8px; border-radius:4px;}
 /*서비스 배경화면*/
-.menu-contents{width:100%; height:300px; background-image: url("https://i.imgur.com/4pORsKu.jpg"); background-size:cover;}
-.menu-school{width:100%; height:300px; background-image: url("https://i.imgur.com/0fm4TOR.jpg"); background-size:cover;}
-.menu-finbook{width:100%; height:300px; background-image: url("https://i.imgur.com/BElhYX3.jpg"); background-size:cover;}
+.menu-contents{width:100%; height:300px; background-image: url("https://i.imgur.com/zNkYwX4.jpg"); background-size:cover;}
+.menu-school{width:100%; height:300px; background-image: url("https://i.imgur.com/REmiuPJ.jpg"); background-size:cover;}
+.menu-finbook{width:100%; height:300px; background-image: url("https://i.imgur.com/Po9lWS7.jpg"); background-size:cover;}
 .menu-finbook .d-day{font-size:60px;}
-.menu-finance{width:100%; height:300px; background-image: url("https://i.imgur.com/M7GNPUW.jpg"); background-size:cover;}
+.menu-finance{width:100%; height:300px; background-image: url("https://i.imgur.com/WqL2bH7.jpg"); background-size:cover;}
 
 #service-info{margin-top:20px;}
 #service-info .title-mark{margin:0 0 20px 0; font-size:18px;}
@@ -39,7 +39,8 @@
 .new-contents .plus-btn img{width:26px;}
 .new-contents .title-bar{width:100%; height:2px; background-color:#000; margin:5px 0 15px 0;}
 .thumnail{margin-bottom:20px;}
-.thumnail .con-title{border-bottom:1px solid #000; padding:15px 0; font-size:16px; height:80px;}
+.thumnail .con-title{border-bottom:1px solid #000; padding:15px 0; font-size:16px; height:70px;}
+.con-img img{width:100%;}
 #banner .finbook{display:block; margin:40px 0;}
 #banner .finbook-mob{display:none;}
 .con-list .con-plus-btn{margin:50px 0;}
@@ -77,8 +78,7 @@
 .new-contents .title{font-size:12px; height:auto; padding-top:2px;}
 .new-contents .plus-btn img{width:18px;}
 .new-contents .title-bar{margin:5px 0 5px 0;}
-.thumnail{margin-bottom:10px;}
-.thumnail .con-title{padding:10px 0; font-size:12px;}
+.thumnail .con-title{padding:10px 0; font-size:12px; height:65px;}
 #banner .finbook-mob{display:block; margin:10px 0;}
 #banner .finbook{display:none;}
 .con-list .con-plus-btn{margin:25px 0; width:120px;}
