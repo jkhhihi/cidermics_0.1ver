@@ -791,7 +791,6 @@ router.get('/finbook_done', function(req,res,next){
 
 
 
-
 // 포도 재무설계 페이지
 router.get('/podo', function(req,res,next){
 	res.render('front/etc/podo/podo',{});
