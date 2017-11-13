@@ -33,13 +33,14 @@
 		document.getcode.TELNO.focus();
 		  return;
 		}
-		for (i=0; i<document.getcode.EMAIL.value.length; i++)
+		for (i=0; i<document.getcode.TELNO.value.length; i++)
         {
-         var ch = document.getcode.EMAIL.value.charAt(i);//문자를 반환(정수형), 범위 검사 가능
-		if ( ( ch < "a" || ch > "z") && (ch < "A" || ch > "Z") )
+         var ch = document.getcode.TELNO.value.charAt(i);//문자를 반환(정수형), 범위 검사 가능
+		//if ( ( ch < "a" || ch > "z") || (ch < "A" || ch > "Z") || (ch < "0" || ch > "9" ) )
+		if (ch < "0" || ch > "9" )
 	    	{
-	            alert("이메일 주소는 영문, 숫자만 입력 가능 합니다!");
-	            document.getcode.EMAIL.focus();
+	            alert("휴대폰 번호는 숫자만 입력 가능 합니다!");
+	            document.getcode.TELNO.focus();
 	            return;
 	         }
 		}
@@ -93,7 +94,7 @@
 					<span class="star"> * 정보 입력 후 하단 핀코드 발급 받기 버튼을 클릭하세요.</span>
 					<div class="col-xs-12"><p class="title">검사자 성명<span class="star"> * </span></p> : <input class="input-style1" type=text name=USERNAME value=""></div>
 					<div class="col-xs-12"><p class="title">이메일<span class="star"> * </span></p> : <input class="input-style1" type=text name=EMAIL size=20 value="" placeholder="예)cider@cider.com"></div>
-					<div class="col-xs-12"><p class="title">휴대번호<span class="star"> * </span></p> : <input class="input-style1" type="text" name="TELNO" size="" maxlength="11" value="" placeholder="-(하이픈), 공백없이">예)01012345678</div>					
+					<div class="col-xs-12"><p class="title">휴대번호<span class="star"> * </span></p> : <input class="input-style1" type="text" name="TELNO" size="" maxlength="11" value="" placeholder="'-', 공백없이">예)01012345678</div>					
 				</div>
 
 
