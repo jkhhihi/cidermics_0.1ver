@@ -31,6 +31,7 @@ body{font-family: 'Nanum Gothic', serif;}
 /*.book-info .btn-purchase{width:200px; height:auto; border:2px #333 solid; border-radius:5px; padding:15px 0; margin-top:80px; font-size:16px;}
 .book-info .btn-purchase:hover{color:#008ffb; border:2px #008ffb solid;}*/
 .book-Sales{padding:80px 0 0 0; line-height:1.5em; width:800px !important;}
+.book-Sales .web img{margin-top:50px;}
 .book-Sales .mob{display:none;}
 .book-Sales .btn-purchase{width:200px; height:auto; background-color:#008ffb; color:#fff; border:2px #008ffb solid; border-radius:5px; padding:15px 0; font-size:16px;}
 .book-Sales .btn-purchase:hover{background-color:#fff; color:#008ffb; border:2px #008ffb solid;}
@@ -124,7 +125,7 @@ h4{font-size:14px !important;}
 /*.book-info .btn-purchase{margin-top:40px; margin-bottom:20px;}*/
 .book-Sales{padding:50px 0 0 0; width:100% !important;}
 .book-Sales .mob{display:block;}
-.book-Sales .mob img{width:70%; margin-bottom:20px;}
+.book-Sales .mob img{height:200px; margin-bottom:20px;}
 .book-Sales .web{display:none;}
 .book-process{padding:30px 0;}
 .book-process div img{width:30px; margin-top:20px;}
