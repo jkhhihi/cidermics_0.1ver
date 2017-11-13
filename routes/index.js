@@ -567,12 +567,17 @@ router.get('/finbook_ch/:ORDERNO', function(req,res,next){
 	var ORDERNO = req.params.ORDERNO;
 
 	var date = getWorldTime(+9);
-	var sets = {ORDERNO : ORDERNO};
+	var sets = {ORDERNO : ORDERNO, payDate:date, flag:'Y'};
+	console.log(ORDERNO);
+	console.log(date);
+
 	mysql.insert('insert into cider.fin_order set ?', sets,  function (err, data){
-	//mysql.update('update cider.fin_code set ORDERNO = ?,  date = ? where con_no = ?', [category,title,contents,photo,date,userNo,userText,writer,rdate,no], function (err, data){
-    //res.redirect('/adm/contents');
-	//mysql.select('select * from cider.cardOrder where ORDERNO ="'+ORDERNO+'"', function (err, data){
+		if(err){
+			res.redirect('back');
+		}
+
 	res.render('front/etc/finbook/finbook_ch_purchase',{ORDERNO:ORDERNO, date:date});
+
 });
 });
 
@@ -580,9 +585,25 @@ router.get('/finbook_ch/:ORDERNO', function(req,res,next){
 	res.render('front/etc/finbook/finbook_ch_purchase',{});
 });*/
 
+router.post('/finbook_ch_code/:ORDERNO', function(req, res, next) {
+	
+	var ORDERNO = req.body.ORDERNO;
+	var USERNAME = req.body.USERNAME;
+	var EMAIL = req.body.EMAIL;
+	var TELNO = req.body.TELNO;
+
+	
+	var sets = {ORDERNO : ORDERNO, USERNAME : USERNAME, EMAIL:EMAIL , TELNO:TELNO};
+	mysql.update('update cider.fin_order set USERNAME = ?,  EMAIL = ?, TELNO = ? where ORDERNO = ?', [USERNAME,EMAIL,TELNO,ORDERNO], function (err, data){
+
+    	res.redirect('/finbook_ch_code/'+ORDERNO+'');
+    });
+});
+
 router.get('/finbook_ch_code/:ORDERNO', function(req,res,next){
 	var ORDERNO = req.params.ORDERNO;
-	mysql.select('SELECT cider.fin_order.ORDERNO, cider.fin_code.fcode, cider.fin_code.date FROM cider.fin_order INNER JOIN cider.fin_code ON cider.fin_order.idx=cider.fin_code.idx where cider.fin_order.ORDERNO = '+'ORDERNO'+';', function(err,data){
+
+	mysql.select('SELECT cider.fin_order.ORDERNO, cider.fin_order.USERNAME, cider.fin_order.EMAIL, cider.fin_order.TELNO, cider.fin_order.payDate, cider.fin_code.fcode FROM cider.fin_order INNER JOIN cider.fin_code ON cider.fin_order.idx=cider.fin_code.idx where cider.fin_order.ORDERNO = '+'ORDERNO'+';', function(err,data){
 	res.render('front/etc/finbook/finbook_ch_code',{data:data});
 });
 });

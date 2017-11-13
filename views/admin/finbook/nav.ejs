@@ -1,4 +1,4 @@
-  <div class="section no-pad-bot" id="index-banner">
+  <div class="section no-pad-bot" id="index-banner"  style="padding-top:0; padding-bottom:0;">
     <div class="container">
       <br>
       <h3 class="header center blue-text">핀북 관리자 페이지</h3>
@@ -13,11 +13,16 @@
     </div>
   </div>
 
+<style>
+h2{
+  line-height:0%;
+}
+</style>
 
   <div class="container">
-    <div class="section">
+    <div class="section" style="padding-top:0; padding-bottom:0;">
       <!--   Icon Section   -->
-      <div class="row">
+      <div class="row" style="margin-bottom:0px;">
         <div class="col s12 m4">
           <div class="icon-block">
             <h2 class="center light-blue-text"><i class="material-icons">border_color</i></h2>
@@ -60,28 +65,29 @@
 
       <div class="row">
         <form method="get" action="/adm/finbook/ORDERNO/">
-          <div class="input-field col s12">
+          <div class="input-field col s6">
               <i class="material-icons prefix">border_color</i>
               <input id="icon_prefix" type="text" class="validate" name="ORDERNO">
               <label for="icon_prefix">주문 번호 입력</label>
+              <button class="btn waves-effect waves-light blue lighten-2" type="submit" name="action">검색
+                <i class="material-icons blue lighten-2 right">send</i>
+              </button>
           </div>
-          <button class="btn waves-effect waves-light blue lighten-2" type="submit" name="action">검색
-            <i class="material-icons blue lighten-2 right">send</i>
-          </button>
+          
         </form>
         <form method="get" action="/adm/finbook/USERNAME/">
-          <div class="input-field col s12">
+          <div class="input-field col s6">
               <i class="material-icons prefix">border_color</i>
               <input id="icon_prefix" type="text" class="validate" name="USERNAME">
               <label for="icon_prefix">성명으로 검색</label>
+              <button class="btn waves-effect waves-light blue lighten-2" type="submit" name="action">검색
+                <i class="material-icons blue lighten-2 right">send</i>
+              </button>
           </div>
-          <button class="btn waves-effect waves-light blue lighten-2" type="submit" name="action">검색
-            <i class="material-icons blue lighten-2 right">send</i>
-          </button>
+          
         </form>
         <!--h5 class="header col s12 light">사이다경제 X 핀북</h5-->
       </div>
 
     </div>
-    <br><br>
   </div>

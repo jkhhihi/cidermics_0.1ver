@@ -84,7 +84,11 @@ function pay() {
 	//DAOUPAY = window.open("", "DAOUPAY", "width=468,height=750");
 	//DAOUPAY.focus();
 
-	if(!pm.checkbox1.checked){
+	if(pf.USERNAME.value==""){
+	 alert("결제자 성명을 입력해주세요.");
+	pf.USERNAME.focus();
+	  return;
+	}else if(!pm.checkbox1.checked){
 		alert("서비스 이용약관에 동의하셔야 회원가입이 가능합니다."); 
 	}else if(pm.checkbox1.checked){
         	if(!pm.checkbox2.checked){
@@ -116,13 +120,18 @@ function fnSubmit() {
 
 	//fileName = "https://ssltest.daoupay.com/m/card_webview/DaouCardMng.jsp";
 
-
-	if(!pf.checkbox1.checked){
+	if(pf.USERNAME.value==""){
+	 alert("결제자 성명을 입력해주세요.");
+	pf.USERNAME.focus();
+	  return;
+	}else if(!pf.checkbox1.checked){
 		alert("서비스 이용약관에 동의하셔야 회원가입이 가능합니다."); 
 	}else if(pf.checkbox1.checked){
         	if(!pf.checkbox2.checked){
                 alert("개인정보 수집 및 이용 동의하셔야 회원가입이 가능합니다."); 
+                
             }else if (pf.checkbox2.checked){
+            	
     charset="EUC-KR";
 	document.characterSet="EUC-KR";
 	pf.target ="_self";
@@ -149,7 +158,29 @@ function fnSubmit() {
 
 //무통장 
 function nosmt(){
+
+	if(document.nonamount.USERNAME.value==""){
+	 alert("입금자 성명을 입력해주세요.");
+	document.nonamount.USERNAME.focus();
+	  return;
+	}else if(document.nonamount.EMAIL.value==""){
+		alert("이메일 주소를 입력해주세요."); 
+	}else if(document.nonamount.TELNO.value==""){
+		alert("휴대전화 번호를 입력해주세요."); 
+	}else if(!document.nonamount.checkbox1.checked){
+		alert("서비스 이용약관에 동의하셔야 회원가입이 가능합니다."); 
+	}else if(document.nonamount.checkbox1.checked){
+        	if(!document.nonamount.checkbox2.checked){
+                alert("개인정보 수집 및 이용 동의하셔야 회원가입이 가능합니다."); 
+                
+            }else if (document.nonamount.checkbox2.checked){
+            	
 	document.nonamount.submit();
+    }
+	}else{
+		alert("관리자에게 연락바랍니다."); 
+	}
+	
 }
 
 
@@ -320,19 +351,25 @@ function fnNumCheck() {
 				<input type="hidden" name="ORDERNO" size="50" maxlength="50" value="" style="IME-MODE:disabled">
 				<input type="hidden" name="PRODUCTTYPE" size="10" maxlength="1" value="2" style="IME-MODE:disabled">
 				<input type="hidden" name="BILLTYPE" size="10" maxlength="2"  value="1" style="IME-MODE:disabled">
+
+				<!-- 결제금액 -->
 				<input type="hidden" name="AMOUNT" size="10" maxlength="10" value="50" style="IME-MODE:disabled" onkeypress="fnNumCheck();">
+
 				<input type="hidden" name="CPQUOTA" size="20" value="0:2:3:4:5:6:7:8:9:10:11:12" style="IME-MODE:disabled">
 				<div class="row form-style">
 					<div class="col-xs-12"><p class="title">상품명</p> : <span style="margin:0 0 0 10px">핀북(finbook)</span></div>
-					<div class="col-xs-12"><p class="title">이메일<span class="star"> * </span></p> : <input class="input-style1" type="text" name="EMAIL" size="20" maxlength="100" value="" placeholder="예)cider@cider.com"></div>
-					<input type="hidden" name="USERID" value="anonymous">
-					<div class="col-xs-12"><p class="title">고객명<span class="star"> * </span></p> : <input class="input-style1" type="text" name="USERNAME" size="" maxlength="50" value=""></div>
-					<div class="col-xs-12"><p class="title">휴대번호<span class="star"> * </span></p> : <input class="input-style1" type="text" name="TELNO" size="" maxlength="11" value="" placeholder="-(하이픈), 공백없이">예)01012345678</div>
+					
+					
+					<div class="col-xs-12"><p class="title">결제자 성명<span class="star"> * </span></p> : <input class="input-style1" type="text" name="USERNAME" size="" maxlength="50" value=""></div>
+					
 					<div class="col-xs-12" style="margin:20px 0 0 0;"><input type="checkbox" id="cb1" name="checkbox1" style="margin-right:10px; cursor:pointer">서비스 이용약관 동의<span class="star"> * </span>
 					<div class="btn-style1" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">내용보기</div></div>
 					<div class="col-xs-12"><input type="checkbox" id="cb2" name="checkbox2" style="margin-right:10px; cursor:pointer">개인정보 수집 및 이용 동의<span class="star"> * </span>
 					<div class="btn-style1" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs--modal-lg">내용보기</div></div>
 				</div>
+
+				<input type="hidden" name="EMAIL" value="">
+				<input type="hidden" name="USERID" value="anonymous">
 				<input type="hidden" name="PRODUCTNAME" size="30" value="핀북"><br>
 				<input type="hidden" name="PRODUCTCODE" size="10" value="201701"><br>
 				<input type="hidden" name="RESERVEDINDEX1" size="20" value="RESERVEDATA1">
@@ -379,19 +416,23 @@ function fnNumCheck() {
 			    <form name="payForm" action=""  accept-charset="EUC-KR">
 				<div class="form-box">
 			    <div class="row form-style">
+
+			    	<!-- 결제 금액 -->
+			    	<input type="hidden" name=AMOUNT size=20 value="50">
+
 					<div class="col-xs-12"><p class="title">상품명</p> : <span style="margin:0 0 0 10px">핀북(finbook)</span></div>
-					<div class="col-xs-12"><p class="title">이메일<span class="star"> * </span></p> : <input class="input-style1" type=text name=EMAIL size=20 value="" placeholder="예)cider@cider.com"></div>
-					<input class="input-style1" type=hidden name=USERID value="anonymous">
-					<div class="col-xs-12"><p class="title">고객명<span class="star"> * </span></p> : <input class="input-style1" type=text name=USERNAME value=""></div>
-					<div class="col-xs-12"><p class="title">휴대번호<span class="star"> * </span></p> : <input class="input-style1" type="text" name="TELNO" size="" maxlength="11" value="" placeholder="-(하이픈), 공백없이">예)01012345678</div>
+					
+					<div class="col-xs-12"><p class="title">결제자 성명<span class="star"> * </span></p> : <input class="input-style1" type=text name=USERNAME value=""></div>
+					
 					<div class="col-xs-12" style="margin:20px 0 0 0;"><input type="checkbox" id="cb1" name="checkbox1" style="margin-right:10px; cursor:pointer">서비스 이용약관 동의<span class="star"> * </span>
 					<div class="btn-style1" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">내용보기</div></div>
 					<div class="col-xs-12"><input type="checkbox" id="cb2" name="checkbox2" style="margin-right:10px; cursor:pointer">개인정보 수집 및 이용 동의<span class="star"> * </span>
 					<div class="btn-style1" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs--modal-lg">내용보기</div></div>
 				</div>
 				<!--input type=button value="결제하기" onClick="pay()" width="63" height="25"><br-->
+				<input type="hidden" name="EMAIL" value="">
+				<input type="hidden" name="USERID" value="anonymous">
 				<input type="hidden" name=PRODUCTNAME size=20 value="핀북"><br>
-				<input type="hidden" name=AMOUNT size=20 value="50">
 				<input type="hidden" name=CPID  value="CSK20384">
 				<input type="hidden" name=ORDERNO value="">
 				<input type="hidden" name=PRODUCTTYPE value="2">
@@ -450,9 +491,9 @@ function fnNumCheck() {
 				<div class="form-box">
 		    	<div class="row form-style">
 					<div class="col-xs-12"><p class="title">상품명</p> : <span style="margin:0 0 0 10px">핀북(finbook)</span></div>
+					<div class="col-xs-12"><p class="title">입금자 성명<span class="star"> * </span></p> : <input class="input-style1" type=text name=USERNAME value=""></div>
 					<div class="col-xs-12"><p class="title">이메일<span class="star"> * </span></p> : <input class="input-style1" type=text name=EMAIL size=20 value="" placeholder="예)cider@cider.com"></div>
 					<input class="input-style1" type=hidden name=USERID value="anonymous">
-					<div class="col-xs-12"><p class="title">고객명<span class="star"> * </span></p> : <input class="input-style1" type=text name=USERNAME value=""></div>
 					<div class="col-xs-12"><p class="title">휴대번호<span class="star"> * </span></p> : <input class="input-style1" type="text" name="TELNO" size="" maxlength="11" value="" placeholder="-(하이픈), 공백없이">예)01012345678</div>
 					<div class="col-xs-12" style="margin:20px 0 0 0;"><input type="checkbox" id="cb1" name="checkbox1" style="margin-right:10px; cursor:pointer">서비스 이용약관 동의<span class="star"> * </span>
 					<div class="btn-style1" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">내용보기</div></div>
@@ -687,7 +728,7 @@ function fnNumCheck() {
 2. 개인정보 파일 현황
 
 1. 개인정보 파일명 : 사이다경제 개인정보처리방침
-- 개인정보 항목 : 이메일, 비밀번호, 로그인ID, 성별, 생년월일, 이름
+- 개인정보 항목 : 이메일, 비밀번호, 로그인ID, 성별, 생년월일, 이름, 휴대전화번호
 - 수집방법 : 홈페이지
 - 보유근거 : 사이다경제
 - 보유기간 : 준영구
@@ -716,7 +757,7 @@ function fnNumCheck() {
 
 1. <사이다경제>
 - 개인정보를 제공받는 자 : 사이다경제
-- 제공받는 자의 개인정보 이용목적 : 이메일, 성별, 생년월일, 이름
+- 제공받는 자의 개인정보 이용목적 : 이메일, 성별, 생년월일, 이름, 휴대전화번호
 - 제공받는 자의 보유.이용기간: 1년
 
 
