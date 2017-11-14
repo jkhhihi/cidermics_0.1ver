@@ -84,9 +84,9 @@ function pay() {
 	//DAOUPAY = window.open("", "DAOUPAY", "width=468,height=750");
 	//DAOUPAY.focus();
 
-	if(pf.USERNAME.value==""){
+	if(pm.USERNAME.value==""){
 	 alert("결제자 성명을 입력해주세요.");
-	pf.USERNAME.focus();
+	pm.USERNAME.focus();
 	  return;
 	}else if(!pm.checkbox1.checked){
 		alert("서비스 이용약관에 동의하셔야 회원가입이 가능합니다."); 
@@ -489,38 +489,38 @@ function fnNumCheck() {
 			<!-- 무통장 입금 -->
 		    <div role="tabpanel" class="tab-pane fade" id="account">
 		    	<form name="nonamount" method="get" action="/finbook_noamount">
-				<div class="form-box">
-		    	<div class="row form-style">
-					<div class="col-xs-12"><p class="title">상품명</p> : <span style="margin:0 0 0 10px">핀북(finbook)</span></div>
-					<div class="col-xs-12"><p class="title">입금자 성명<span class="star"> * </span></p> : <input class="input-style1" type=text name=USERNAME value=""></div>
-					<div class="col-xs-12"><p class="title">이메일<span class="star"> * </span></p> : <input class="input-style1" type=text name=EMAIL size=20 value="" placeholder="예)cider@cider.com"></div>
-					<input class="input-style1" type=hidden name=USERID value="anonymous">
-					<div class="col-xs-12"><p class="title">휴대번호<span class="star"> * </span></p> : <input class="input-style1" type="text" name="TELNO" size="" maxlength="11" value="" placeholder="-(하이픈), 공백없이"> 예)01012345678</div>
-					<div class="col-xs-12" style="margin:20px 0 0 0;"><input type="checkbox" id="cb1" name="checkbox1" style="margin-right:10px; cursor:pointer">서비스 이용약관 동의<span class="star"> * </span>
-					<div class="btn-style1" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">내용보기</div></div>
-					<div class="col-xs-12"><input type="checkbox" id="cb2" name="checkbox2" style="margin-right:10px; cursor:pointer">개인정보 수집 및 이용 동의<span class="star"> * </span>
-					<div class="btn-style1" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs--modal-lg">내용보기</div></div>
-				</div>
-				</div>
-				
-				
-		    	<div class="check-amount row" align="center">
-					<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important;">
-						<div class="title">상품금액</div>
-						<div class="amount">50,000 원</div>
+					<div class="form-box">
+			    	<div class="row form-style">
+						<div class="col-xs-12"><p class="title">상품명</p> : <span style="margin:0 0 0 10px">핀북(finbook)</span></div>
+						<div class="col-xs-12"><p class="title">입금자 성명<span class="star"> * </span></p> : <input class="input-style1" type=text name=USERNAME value=""></div>
+						<div class="col-xs-12"><p class="title">이메일<span class="star"> * </span></p> : <input class="input-style1" type=text name=EMAIL size=20 value="" placeholder="예)cider@cider.com"></div>
+						<input class="input-style1" type=hidden name=USERID value="anonymous">
+						<div class="col-xs-12"><p class="title">휴대번호<span class="star"> * </span></p> : <input class="input-style1" type="text" name="TELNO" size="" maxlength="11" value="" placeholder="-(하이픈), 공백없이"> 예)01012345678</div>
+						<div class="col-xs-12" style="margin:20px 0 0 0;"><input type="checkbox" id="cb1" name="checkbox1" style="margin-right:10px; cursor:pointer">서비스 이용약관 동의<span class="star"> * </span>
+						<div class="btn-style1" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">내용보기</div></div>
+						<div class="col-xs-12"><input type="checkbox" id="cb2" name="checkbox2" style="margin-right:10px; cursor:pointer">개인정보 수집 및 이용 동의<span class="star"> * </span>
+						<div class="btn-style1" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs--modal-lg">내용보기</div></div>
 					</div>
-					<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important; border-left:1px solid #ddd; border-right:1px solid #ddd;">
-						<div class="title">할인금액</div>
-						<div class="amount">-0 원</div>
 					</div>
-					<div class="col-xs-6" style="padding-left:0 !important; padding-right:0 !important;">
-						<div class="title">총 주문금액</div>
-						<div class="amount">=<span style="color:#ff0000">50,000</span> 원</div>
+					
+					
+			    	<div class="check-amount row" align="center">
+						<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important;">
+							<div class="title">상품금액</div>
+							<div class="amount">50,000 원</div>
+						</div>
+						<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important; border-left:1px solid #ddd; border-right:1px solid #ddd;">
+							<div class="title">할인금액</div>
+							<div class="amount">-0 원</div>
+						</div>
+						<div class="col-xs-6" style="padding-left:0 !important; padding-right:0 !important;">
+							<div class="title">총 주문금액</div>
+							<div class="amount">=<span style="color:#ff0000">50,000</span> 원</div>
+						</div>
 					</div>
-				</div>
-				<div class="payment-btn" align="right">
-					<span class="payment" name="btnSubmit" onClick="nosmt()" style="cursor:pointer">결제하기</span><a href=""><span class="back">돌아가기</span></a>
-				</div>
+					<div class="payment-btn" align="right">
+						<span class="payment" name="btnSubmit" onClick="nosmt()" style="cursor:pointer">결제하기</span><a href=""><span class="back">돌아가기</span></a>
+					</div>
 				</form>
 		    </div>
 		  </div>
