@@ -97,10 +97,9 @@ window.location=requiredfrom2;
 
 			<form method="post" action="/finbook_ch_code/<%=ORDERNO%>" name="getcode">
 			<input type="hidden" name="ORDERNO" value="<%=ORDERNO%>">
-			<div class="form-box" style="height: 220px;">
-				<div class="row form-style" style="height: 220px;">
-					<span class="star"> * 결제 완료 후 핀코드 발급을 받으셔야 진행이 가능합니다.</span><br>
-					<span class="star"> * 정보 입력 후 하단 핀코드 발급 받기 버튼을 클릭하세요.</span>
+			<div class="form-box">
+				<div class="row form-style">
+					<span class="star"> * 결제 완료 후 핀코드 발급을 받으셔야 진행이 가능합니다.<br>* 정보 입력 후 하단 핀코드 발급 받기 버튼을 클릭하세요.</span>
 					<div class="col-xs-12"><p class="title">검사자 성명<span class="star"> * </span></p> : <input class="input-style1" type=text name=USERNAME value=""></div>
 					<div class="col-xs-12"><p class="title">이메일<span class="star"> * </span></p> : <input class="input-style1" type=text name=EMAIL size=20 value="" placeholder="예)cider@cider.com"></div>
 					<div class="col-xs-12"><p class="title">휴대번호<span class="star"> * </span></p> : <input class="input-style1" type="text" name="TELNO" size="" maxlength="11" value="" placeholder="'-', 공백없이">예)01012345678</div>					
@@ -112,7 +111,10 @@ window.location=requiredfrom2;
 
 				<div class="inspection-btn" style="background-color: #fff; height: 80px;">
 
-					<div class="col-xs-6 next padding-lr-0" ><a onClick="getCode()" style="cursor:pointer"><img src="/page_imgs/finbook_img/fincodebtn.jpg"></a></div>
+					<div class="col-xs-6 next padding-lr-0" >
+					<button class="fincode-btn" onClick="nosmt()"><b>핀코드 발급 받기</b></button>
+					<!-- >a onClick="getCode()" style="cursor:pointer"><img src="/page_imgs/finbook_img/fincodebtn.jpg"></a-->
+					</div>
 
 					<!--button onClick="nosmt()"><b>핀코드 발급 받기</b></button-->
 					<!-- a href="/finbook_ch_code/"><span><b>핀코드 받기</b></span></a -->

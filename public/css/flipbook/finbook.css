@@ -50,7 +50,7 @@ body{font-family: 'Nanum Gothic', serif;}
 
 /*form스타일*/
 #pur-form input.input-style1{border: 1px solid #eee; padding: 5px; margin:0 0 0 10px;}
-#pur-form span.star{color:#ff0000;}
+#pur-form span.star{color:#ff0000; line-height:1.5em;}
 #pur-form .form-box{height:350px;}
 #pur-form .form-box .form-style{background-color:#fff; padding:30px 10px; border-bottom:1px solid #ddd; height:350px;}
 #pur-form .col-xs-12{margin:10px 0 0 0;}
@@ -94,8 +94,10 @@ body{font-family: 'Nanum Gothic', serif;}
 #check-purchase .check-pincode .title{background-color:#1b87c9; color:#fff; padding:10px 0;}
 #check-purchase .check-pincode .amount{padding:15px 0; line-height:1.5em;}
 #check-purchase .inspection-btn{padding: 10px;}
-#check-purchase .inspection-btn button{background-color:inherit; border:2px solid #212121; border-radius:4px; padding:10px 0; color:#212121; font-size:18px; width:150px; margin:0 5px;}
 #check-purchase .inspec-notice{color:#ff0000; margin:30px 0 0 0;}
+
+button.fincode-btn{height:auto; background-color:#008ffb; color:#fff; border:2px #008ffb solid; border-radius:5px; padding:15px 20px; font-size:16px;}
+button.fincode-btn:hover{background-color:#fff; color:#008ffb; border:2px #008ffb solid;}
 
 /*---------------핀코드 찾기---------------*/
 /*form스타일*/
