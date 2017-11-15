@@ -176,10 +176,10 @@
 }
 
 /*�뙘�뾽李� */
-.button-checkbox .btn{height:45px; padding:0 10px; background-color:#b30221; color:#fff !important;; font-size:14px; border-radius:2px;}
-.button-checkbox .btn:hover{background-color:#ececec !important; color:#b30221 !important;}
-.button-close .btn{height:45px; padding:0 10px; background-color:#ececec; color:#b30221 !important; font-size:14px; border-radius:2px;}
-.button-close .btn:focus, .btn:hover{background-color:#b30221 !important; color:#fff !important;}
+.button-checkbox .btn{height:45px; padding:0 10px; background-color:#222; color:#fff !important;; font-size:14px; border-radius:2px;}
+.button-checkbox .btn:hover{background-color:#ececec !important; color:#222 !important;}
+.button-close .btn{height:45px; padding:0 10px; background-color:#ececec; color:#222 !important; font-size:14px; border-radius:2px;}
+.button-close .btn:focus, .btn:hover{background-color:#222 !important; color:#fff !important;}
 #pop{
     width: 90%;
     height:auto;
