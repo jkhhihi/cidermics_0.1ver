@@ -233,7 +233,7 @@ function getTimeStamp() {
 	hour = (hour < 10 ? "0" : "") + hour;
 	minute = (minute < 10 ? "0" : "") + minute;
 	second = (second < 10 ? "0" : "") + second;
-	var random = Math.floor(Math.random() * 100) + 1;
+	var random = Math.floor(Math.random() * 1000) + 1;
 
 	var s = d.getFullYear() + month + date + hour + minute + second+random;
 
@@ -354,7 +354,7 @@ function fnNumCheck() {
 				<input type="hidden" name="BILLTYPE" size="10" maxlength="2"  value="1" style="IME-MODE:disabled">
 
 				<!-- 결제금액 -->
-				<input type="hidden" name="AMOUNT" size="10" maxlength="10" value="50" style="IME-MODE:disabled" onkeypress="fnNumCheck();">
+				<input type="hidden" name="AMOUNT" size="10" maxlength="10" value="50000" style="IME-MODE:disabled" onkeypress="fnNumCheck();">
 
 				<input type="hidden" name="CPQUOTA" size="20" value="0:2:3:4:5:6:7:8:9:10:11:12" style="IME-MODE:disabled">
 				<div class="row form-style">
@@ -419,7 +419,7 @@ function fnNumCheck() {
 			    <div class="row form-style">
 
 			    	<!-- 결제 금액 -->
-			    	<input type="hidden" name=AMOUNT size=20 value="50">
+			    	<input type="hidden" name=AMOUNT size=20 value="50000">
 
 					<div class="col-xs-12"><p class="title">상품명</p> : <span style="margin:0 0 0 10px">핀북(finbook)</span></div>
 					

@@ -601,8 +601,10 @@ router.post('/finbook_ch_code/:ORDERNO', function(req, res, next) {
 
 router.get('/finbook_ch_code/:ORDERNO', function(req,res,next){
 	var ORDERNO = req.params.ORDERNO;
+	console.log(ORDERNO);
 
 	mysql.select('SELECT cider.fin_order.ORDERNO, cider.fin_order.USERNAME, cider.fin_order.EMAIL, cider.fin_order.TELNO, cider.fin_order.payDate, cider.fin_code.fcode FROM cider.fin_order INNER JOIN cider.fin_code ON cider.fin_order.idx=cider.fin_code.idx where cider.fin_order.ORDERNO = '+ORDERNO+';', function(err,data){
+	console.log(data);
 	res.render('front/etc/finbook/finbook_ch_code',{oinfo:data});
 });
 });

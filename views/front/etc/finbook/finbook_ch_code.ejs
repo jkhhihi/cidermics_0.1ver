@@ -15,13 +15,17 @@
 
 <script src="/js/bootstrap.min.js"></script>
 
-<!--script type="text/javascript">
-var requiredfrom = "/finbook_ch"; // required prev. page 
-if (document.referrer.indexOf(requiredfrom) == -1) { 
-alert("잘못된 접근입니다."); 
-window.location=requiredfrom; 
+<script type="text/javascript">
+var requiredfrom = "/finbook_ch"; // required prev. page
+var requiredfrom2 = "/finbook_send_email"; // required prev. page 
+
+if (document.referrer.indexOf(requiredfrom) == -1 && document.referrer.indexOf(requiredfrom2) == -1) { 
+//if (document.referrer.indexOf(requiredfrom) == -1) { 
+alert("잘못된 접근입니다.");
+window.location=requiredfrom && requiredfrom2;// && window.location=requiredfrom2; 
 }
-</script-->
+
+</script>
 
 <script type="text/javascript">
 function PrintElem(elem)
@@ -136,7 +140,7 @@ border: 2px solid #3882be;
 	</div>
 	<div class="check-purchase-in container" align="center">
 		<div class="row step">
-		<div class="col-xs-5 text" align="left"><b><span style="color:#333;">주문번호 </span>"<%=ORDERNO%>" </b></div>
+		<div class="col-xs-5 text" align="left"><b><span style="color:#333;">주문번호 </span>"<%=oinfo[0].ORDERNO%>" </b></div>
 		<div class="col-xs-7 img" align="right"><img class="stepimg img-responsive" src="/page_imgs/finbook_img/img-step3.png"></div>
 		</div>
 		<!-- p><b>당신의 핀코드는</b><p>
@@ -148,7 +152,7 @@ border: 2px solid #3882be;
 			</div -->
 			<div class="col-xs-10" style="padding-left:0 !important; padding-right:0 !important; border-left:1px solid #ddd; border-right:1px solid #ddd;">
 				<div class="title">핀코드</div>
-				<div class="amount"><%=oinfo[0].fcode%></div>
+				<div class="amount"><b style="font-size: 22px;"><%=oinfo[0].fcode%></b></div>
 			</div>
 			<div class="col-xs-2" style="padding-left:0 !important; padding-right:0 !important;">
 				<div class="title">수량</div>
@@ -160,11 +164,11 @@ border: 2px solid #3882be;
 				<div class="title">검사자 성명</div>
 				<div class="amount"><%=oinfo[0].USERNAME%></div>
 			</div>
-			<div class="col-xs-6" style="padding-left:0 !important; padding-right:0 !important; border-left:1px solid #ddd; border-right:1px solid #ddd;">
+			<div class="col-xs-5" style="padding-left:0 !important; padding-right:0 !important; border-left:1px solid #ddd; border-right:1px solid #ddd;">
 				<div class="title">이메일주소</div>
 				<div class="amount"><%=oinfo[0].EMAIL%></div>
 			</div>
-			<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important;">
+			<div class="col-xs-4" style="padding-left:0 !important; padding-right:0 !important;">
 				<div class="title">휴대번호</div>
 				<div class="amount"><%=oinfo[0].TELNO%></div>
 			</div>
