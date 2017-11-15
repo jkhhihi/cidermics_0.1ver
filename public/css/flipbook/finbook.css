@@ -26,15 +26,15 @@ body{font-family: 'Nanum Gothic', serif;}
 .book-info .web-info{display:block;}
 .book-info .mob-info{display:none;}
 .book-info{background-color:#f7f7f7; width:100%; height:auto; padding:100px 0; line-height:1.5em;}
-.book-info h3 span{color:#008ffb;}
+.book-info h3 span{color:#3682be;}
 .book-info .web-info div .left{padding-right:60px !important;}
 .book-info .web-info div .right{padding-left:60px !important;}
-.book-info .btn-purchase{width:200px; height:auto; background-color:#008ffb; color:#fff; border:2px #008ffb solid; border-radius:5px; padding:15px 0; font-size:16px; margin-top:80px;}
-.book-info .btn-purchase:hover{background-color:#f7f7f7; color:#008ffb; border:2px #008ffb solid;}
+.book-info .btn-purchase{width:200px; height:auto; background-color:#3682be; color:#fff; border:2px #3682be solid; border-radius:5px; padding:15px 0; font-size:16px; margin-top:80px;}
+.book-info .btn-purchase:hover{background-color:#f7f7f7; color:#3682be; border:2px #3682be solid;}
 .book-Sales{padding:80px 0; line-height:1.5em; width:800px !important;}
 .book-Sales .mob{display:none;}
-.book-Sales .btn-purchase{width:200px; height:auto; background-color:#008ffb; color:#fff; border:2px #008ffb solid; border-radius:5px; padding:15px 0; font-size:16px;}
-.book-Sales .btn-purchase:hover{background-color:#fff; color:#008ffb; border:2px #008ffb solid;}
+.book-Sales .btn-purchase{width:200px; height:auto; background-color:#3682be; color:#fff; border:2px #3682be solid; border-radius:5px; padding:15px 0; font-size:16px;}
+.book-Sales .btn-purchase:hover{background-color:#fff; color:#3682be; border:2px #3682be solid;}
 .book-process{width:100%; height:auto; padding:50px 0;}
 .book-process h6{line-height:1.5em;}
 .book-process div img{width:40px; margin-bottom:15px;}
@@ -43,16 +43,21 @@ body{font-family: 'Nanum Gothic', serif;}
 .book-recommendation .info{width:50%; font-size:18px;}
 .book-recommendation .info img{width:20px; margin:20px 10px;}
 .book-recommendation .btn-purchase{width:200px; height:auto; border:2px #fff solid; border-radius:5px; padding:15px 0; margin-top:50px; font-size:16px;}
-.book-recommendation .btn-purchase:hover{color:#008ffb; border:2px #008ffb solid;}
+.book-recommendation .btn-purchase:hover{color:#3682be; border:2px #3682be solid;}
 .book-recommendation a .btn-purchase{color:#fff;}
+.book-interview{padding:50px 0;}
+.book-interview .title{font-size:20px; background-color:#3682be; border-radius:6px; padding:20px 40px; margin:60px 0 20px 0; color:#fff;}
+.book-interview .info{font-size:18px; line-height:1.8em; padding:0 40px;}
 
-/*---------------±¸¸ÅÇÏ±â---------------*/
+/*---------------ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½---------------*/
 
-/*form½ºÅ¸ÀÏ*/
+/*formï¿½ï¿½Å¸ï¿½ï¿½*/
 #pur-form input.input-style1{border: 1px solid #eee; padding: 5px; margin:0 0 0 10px;}
-#pur-form span.star{color:#ff0000;}
+#pur-form span.star{color:#f7293c; line-height:1.8em;}
 #pur-form .form-box{height:350px;}
 #pur-form .form-box .form-style{background-color:#fff; padding:30px 10px; border-bottom:1px solid #ddd; height:350px;}
+#pur-form .form-box .form-style1{background-color:#fff; padding:30px 20px; border:2px solid #ddd; margin:20px 0 0 0;}
+#pur-form .form-box .form-style1 p.care{color:#f7293c; line-height:1.8em;}
 #pur-form .col-xs-12{margin:10px 0 0 0;}
 #pur-form .col-xs-12 p.title{display:inline-block; width:90px;}
 #pur-form .btn-style1{font-size:12px; display:inline-block; background-color:#f6f6f6; border:1px solid #ddd; border-radius:4px; padding:2px 4px; margin:0 0 0 6px; cursor:pointer}
@@ -61,7 +66,7 @@ body{font-family: 'Nanum Gothic', serif;}
 #purchase .main-banner{margin-top:60px;}
 /*#purchase .guide-down{margin:30px 0 20px 0;}
 #purchase .guide-down img{margin-bottom:10px;}
-#purchase .guide-up img{margin:30px 0 10px 0;}    °Ë»ç¹æ¹ý¼³¸í*/
+#purchase .guide-up img{margin:30px 0 10px 0;}    ï¿½Ë»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 #purchase .online-guide{margin-top:60px;}
 #purchase .online-guide .step{margin:80px 0 20px 0;}
 #purchase .online-guide .step .title{font-size:20px; border-top:4px solid #000; padding-top:10px;}
@@ -71,40 +76,43 @@ body{font-family: 'Nanum Gothic', serif;}
 #purchase .online-guide .step3 {margin-top:60px; padding:60px 0 0 0; width:100%; height:auto; background-color:#dbc8c5;}
 #purchase .step3 .step3-info{width:500px; margin-top:30px;}
 #purchase .notice{width:100%; height:auto; background-color:#f2f2f2; padding:30px 0;}
-/*#purchase .online-guide{display:none;}     °Ë»ç¹æ¹ý¼³¸í*/
+/*#purchase .online-guide{display:none;}     ï¿½Ë»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 
-#select-pay{background-color:#f6f6f6; width:100%; height:auto; /*margin-top:20px;   °Ë»ç¹æ¹ý¼³¸í*/}
+#select-pay{background-color:#f6f6f6; width:100%; height:auto; /*margin-top:20px;   ï¿½Ë»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/}
 #select-pay .title-box{background-color:#333; width:100%; height:auto; padding:25px 0;}
 #select-pay .title-box .title{border-left:2px solid #fff; color:#fff; padding-left:5px; font-size:18px;}
 #select-pay .user-def{margin:80px 0 50px 0;}
 #select-pay .select-pay-in{width:650px; padding-bottom:80px;}
 #select-pay .select-box{background-color:#fff; padding:15px 0; margin-top:20px;}
 #select-pay .check-amount{background-color:#fff; border:2px solid #ddd; margin:20px 0 30px 0;}
-#select-pay .check-amount .title{background-color:#1b87c9; color:#fff; padding:10px 0;}
+#select-pay .check-amount .title{background-color:#3882be; color:#fff; padding:10px 0;}
 #select-pay .check-amount .amount{padding:15px 0;}
-#select-pay .payment-btn .payment{background-color:#ff0000; border-radius:4px; padding:10px 20px; color:#fff; margin-right:5px;}
+#select-pay .payment-btn .payment{background-color:#f7293c; border-radius:4px; padding:10px 20px; color:#fff; margin-right:5px;}
 #select-pay .payment-btn .back{background-color:#999; border-radius:4px; padding:10px 20px; color:#fff;}
 
 #check-purchase{background-color:#f6f6f6; width:100%; height:auto; margin-top:60px;}
 #check-purchase .title-box{background-color:#333; width:100%; height:auto; padding:25px 0;}
 #check-purchase .title-box .title{border-left:2px solid #fff; color:#fff; padding-left:5px; font-size:18px;}
-#check-purchase .check-purchase-in{width:650px; padding:150px 0;}
+#check-purchase .check-purchase-in{width:650px; padding:40px 0 150px 0;}
+#check-purchase .check-purchase-in .stepimg{width:150px; margin-bottom:40px;}
 #check-purchase .check-purchase-in .way{margin:50px 0 80px 0;}
-#check-purchase .check-pincode{background-color:#fff; border:2px solid #ddd; margin:30px 0 0 0;}
-#check-purchase .check-pincode .title{background-color:#1b87c9; color:#fff; padding:10px 0;}
+#check-purchase .check-pincode{background-color:#fff; border:2px solid #ddd; margin:20px 0 0 0;}
+#check-purchase .check-pincode .title{background-color:#3882be; color:#fff; padding:10px 0;}
 #check-purchase .check-pincode .amount{padding:15px 0; line-height:1.5em;}
 #check-purchase .inspection-btn{padding: 10px;}
-#check-purchase .inspection-btn button{background-color:inherit; border:2px solid #212121; border-radius:4px; padding:10px 0; color:#212121; font-size:18px; width:150px; margin:0 5px;}
-#check-purchase .inspec-notice{color:#ff0000; margin:30px 0 0 0;}
+#check-purchase .inspec-notice{color:#f7293c; margin:30px 0 0 0;}
 
-/*---------------ÇÉÄÚµå Ã£±â---------------*/
-/*form½ºÅ¸ÀÏ*/
+button.fincode-btn{height:auto; background-color:#3682be; color:#fff; border:2px #3682be solid; border-radius:5px; padding:15px 20px; font-size:16px; margin-top:20px;}
+button.fincode-btn:hover{background-color:#fff; color:#3682be; border:2px #3682be solid;}
+
+/*---------------ï¿½ï¿½ï¿½Úµï¿½ Ã£ï¿½ï¿½---------------*/
+/*formï¿½ï¿½Å¸ï¿½ï¿½*/
 #code-search input.input-style2{border-top:none; border-left:none; border-right:none; border-bottom: 1px solid #212121; padding: 5px; margin:0 0 0 10px;}
 #code-search .form-style2{background-color:#fff; padding:80px 0; border-radius:4px;  width:600px; height:auto;}
 #code-search .col-xs-12{margin:10px 0 0 0;}
 #code-search .col-xs-12 p.title{display:inline-block; width:80px;}
-#code-search .btn-style2{border: 2px solid #212121; border-radius: 4px; padding: 10px 0; color: #212121; font-size: 18px; width: 150px; margin: 0 5px; cursor:pointer; margin-top:30px;}
-
+#code-search .btn-style2{width:200px; height:auto; background-color:#eee; color:#666; border:2px #eee solid; border-radius:5px; padding:15px 20px; font-size:16px; cursor:pointer; margin-top:30px;}
+#code-search .btn-style2:hover{background-color:#fff; color:#666; border:2px #666 solid;}
 #code-search{background-color:background-color:#f6f6f6; width:100%; height:auto; padding:60px 0;}
 
 @media all and (max-width:1024px) {
@@ -133,12 +141,17 @@ h4{font-size:14px !important;}
 .book-recommendation .info{width:100%; font-size:14px;}
 .book-recommendation .info img{margin:10px 10px;}
 .book-recommendation .btn-purchase{margin-top:20px; margin-bottom:20px;}
+.book-interview .title{font-size:16px; padding:14px 16px; margin:20px 0 10px 0; line-height:1.8em;}
+.book-interview .info{font-size:14px; padding:0 10px;}
+.book-interview .icon-interview{width:80px;}
 
-/*---------------±¸¸ÅÇÏ±â---------------*/
+/*---------------ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½---------------*/
 
-/*form½ºÅ¸ÀÏ*/
+/*formï¿½ï¿½Å¸ï¿½ï¿½*/
 #pur-form .form-box{height:320px;}
 #pur-form .form-box .form-style{padding:15px 5px; height:320px;}
+#pur-form .form-box .form-style1{padding:10px 10px 20px 10px;}
+#pur-form .col-xs-12{padding-left:0 !important; padding-right:0 !important}
 
 #purchase .main-banner{margin-top:46px;}
 #purchase .online-guide .step{width:96%; margin:60px 0 20px 0;}
@@ -158,12 +171,13 @@ h4{font-size:14px !important;}
 #check-purchase{margin-top:45px;}
 #check-purchase .title-box .title{margin-left:10px; font-size:14px;}
 #check-purchase .inspection-btn button{padding:8px 0; font-size:16px; width:140px; margin:0 5px;}
-#check-purchase .check-purchase-in{width:98%; padding:60px 0 60px 0;}
+#check-purchase .check-purchase-in{width:98%; padding:20px 0 60px 0;}
 #check-purchase .check-purchase-in .way{margin:30px 0 60px 0}
+#check-purchase .check-purchase-in .stepimg{width:120px; margin-right:10px;}
 
 
-/*---------------ÇÉÄÚµå Ã£±â---------------*/
-/*form½ºÅ¸ÀÏ*/
+/*---------------ï¿½ï¿½ï¿½Úµï¿½ Ã£ï¿½ï¿½---------------*/
+/*formï¿½ï¿½Å¸ï¿½ï¿½*/
 #code-search .form-style2{padding:40px 0; width:310px; height:auto;}
 #code-search .col-xs-12 p.title{width:60px;}
 #code-search .btn-style2{padding: 8px 0; font-size: 16px; width: 140px;}
