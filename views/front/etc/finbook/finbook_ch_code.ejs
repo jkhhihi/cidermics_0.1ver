@@ -105,7 +105,23 @@ background: #1987c9;
 border: 1px solid #fff;
 }
 
-
+input.MyButton1 {
+width: 220px;
+padding: 10px;
+cursor: pointer;
+font-weight: bold;
+background: #1987c9;
+font-size:18px;
+color: #fff;
+border: 1px solid #1987c9;
+border: 1px solid #fff;
+border-radius: 3px;
+}
+input.MyButton1:hover {
+color: #333;
+background: #ffffff;
+border: 1px solid #1987c9;
+}
 </style>
 		
 </head>
@@ -159,11 +175,12 @@ border: 1px solid #fff;
 			<p>비회원 구매시 : >></p>
 		</div-->
 
-		<form name="sendemail" action="/finbook_send_email" method="post">
+		<form name="sendemail" action="/finbook_send_email" method="post" id="frm">
 		<input type="hidden" name="EMAIL" value="<%=oinfo[0].EMAIL%>">
 		<div class="inspection-btn">
 			<input class="MyButton" type="button" value="검사 바로가기" onclick="window.location.href='http://onlinetest.thecubemind.co.kr/cidermics'" />
-			<button type="submit" style="width: 200px; background-color:#1987c9; color:#ffffff; border:2px solid #eaeaea;"><b>내 이메일로 코드전송</b></button>
+			<input class="MyButton1" type="button" value="내 이메일로 코드전송"  onclick="document.getElementById('frm').submit();" />
+			<!--button type="submit" style="width: 200px; background-color:#1987c9; color:#ffffff; border:2px solid #eaeaea;"><b>내 이메일로 코드전송</b></button-->
 		</div>
 		</form>
 
