@@ -135,19 +135,22 @@ border: 2px solid #3882be;
 	</div>
 	</div>
 	<div class="check-purchase-in container" align="center">
-		<div align="right"><img class="stepimg img-responsive" src="/page_imgs/finbook_img/img-step3.png"></div>
+		<div class="row step">
+		<div class="col-xs-5 text" align="left"><b><span style="color:#333;">주문번호 </span>"<%=ORDERNO%>" </b></div>
+		<div class="col-xs-7 img" align="right"><img class="stepimg img-responsive" src="/page_imgs/finbook_img/img-step3.png"></div>
+		</div>
 		<!-- p><b>당신의 핀코드는</b><p>
 		<h1 style="color:#1b87c9; margin-top:10px;"><b> <%=oinfo[0].fcode%> </b></h1-->
 		<div class="check-pincode row">
-			<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important;">
+			<!-- div class="col-xs-10" style="padding-left:0 !important; padding-right:0 !important;">
 				<div class="title">주문번호</div>
 				<div class="amount"><%=oinfo[0].ORDERNO%></div>
-			</div>
-			<div class="col-xs-6" style="padding-left:0 !important; padding-right:0 !important; border-left:1px solid #ddd; border-right:1px solid #ddd;">
+			</div -->
+			<div class="col-xs-10" style="padding-left:0 !important; padding-right:0 !important; border-left:1px solid #ddd; border-right:1px solid #ddd;">
 				<div class="title">핀코드</div>
 				<div class="amount"><%=oinfo[0].fcode%></div>
 			</div>
-			<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important;">
+			<div class="col-xs-2" style="padding-left:0 !important; padding-right:0 !important;">
 				<div class="title">수량</div>
 				<div class="amount">1</div>
 			</div>

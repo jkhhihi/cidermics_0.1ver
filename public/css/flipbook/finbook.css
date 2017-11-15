@@ -94,10 +94,11 @@
 #check-purchase .title-box{background-color:#333; width:100%; height:auto; padding:25px 0;}
 #check-purchase .title-box .title{border-left:2px solid #fff; color:#fff; padding-left:5px; font-size:18px;}
 #check-purchase .check-purchase-in{width:650px; padding:40px 0 50px 0;}
-#check-purchase .check-purchase-in .step{height:100px;}
-#check-purchase .check-purchase-in .stepimg{}
+#check-purchase .check-purchase-in .step .text{margin-top:55px; line-height:1.5em; color:#1b87c9; font-size:14px; padding-left:2px !important; padding-right:2px !important;}
+#check-purchase .check-purchase-in .step .img{padding-left:2px !important; padding-right:2px !important;}
+#check-purchase .check-purchase-in .stepimg{height:80px;}
 #check-purchase .check-purchase-in .way{margin:50px 0 80px 0;}
-#check-purchase .check-pincode{background-color:#fff; border:2px solid #ddd;}
+#check-purchase .check-pincode{background-color:#fff; border:2px solid #ddd; margin-bottom:10px;}
 #check-purchase .check-pincode .title{background-color:#3882be; color:#fff; padding:10px 0;}
 #check-purchase .check-pincode .amount{padding:15px 0; line-height:1.5em;}
 #check-purchase .inspection-btn{padding: 10px;}
@@ -172,9 +173,11 @@ h4{font-size:14px !important;}
 #check-purchase{margin-top:45px;}
 #check-purchase .title-box .title{margin-left:10px; font-size:14px;}
 #check-purchase .inspection-btn button{padding:8px 0; font-size:16px; width:140px; margin:0 5px;}
-#check-purchase .check-purchase-in{width:98%; padding:20px 0 50px 0;}
+#check-purchase .check-purchase-in{width:98%; padding:0 0 50px 0;}
 #check-purchase .check-purchase-in .way{margin:30px 0 60px 0}
-#check-purchase .check-purchase-in .stepimg{width:200px; margin-right:10px;}
+#check-purchase .check-purchase-in .step .text{margin-top:30px; font-size:12px; padding-left:2px !important; padding-right:2px !important;}
+#check-purchase .check-purchase-in .step .img{padding-left:2px !important; padding-right:2px !important;}
+#check-purchase .check-purchase-in .stepimg{height:50px; margin-top:15px;}
 
 
 /*---------------���ڵ� ã��---------------*/
