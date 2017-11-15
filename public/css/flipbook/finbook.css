@@ -93,14 +93,14 @@
 #check-purchase{background-color:#f6f6f6; width:100%; height:auto; margin-top:60px;}
 #check-purchase .title-box{background-color:#333; width:100%; height:auto; padding:25px 0;}
 #check-purchase .title-box .title{border-left:2px solid #fff; color:#fff; padding-left:5px; font-size:18px;}
-#check-purchase .check-purchase-in{width:650px; padding:40px 0 150px 0;}
+#check-purchase .check-purchase-in{width:650px; padding:40px 0 50px 0;}
 #check-purchase .check-purchase-in .stepimg{width:150px; margin-bottom:40px;}
 #check-purchase .check-purchase-in .way{margin:50px 0 80px 0;}
 #check-purchase .check-pincode{background-color:#fff; border:2px solid #ddd; margin:20px 0 0 0;}
 #check-purchase .check-pincode .title{background-color:#3882be; color:#fff; padding:10px 0;}
 #check-purchase .check-pincode .amount{padding:15px 0; line-height:1.5em;}
 #check-purchase .inspection-btn{padding: 10px;}
-#check-purchase .inspec-notice{color:#dc2536; margin:30px 0 0 0;}
+#check-purchase .inspec-notice{color:#c12126; margin:30px 0 0 0;}
 
 /*button.fincode-btn{height:auto; background-color:#3682be; color:#fff; border:2px #3682be solid; border-radius:5px; padding:15px 20px; font-size:16px; margin-top:20px;}
 button.fincode-btn:hover{background-color:#fff; color:#3682be; border:2px #3682be solid;}*/
