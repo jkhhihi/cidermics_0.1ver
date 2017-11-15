@@ -624,6 +624,19 @@ router.get('/finbook_noamount', function(req,res,next){
 	res.render('front/etc/finbook/finbook_noamount',{limdate:limdate, USERNAME:USERNAME, EMAIL:EMAIL, TELNO:TELNO});
 });
 
+router.post('/finbook_noamount', function(req,res,next){
+	var USERNAME = req.body.USERNAME;
+	var EMAIL = req.body.EMAIL;
+	var TELNO = req.body.TELNO;
+
+	console.log(USERNAME);
+	console.log(EMAIL);
+	//var date = getWorldTime(+9);
+
+	var limdate = aaaa();
+	//console.log(limdate);
+	//res.render('front/etc/finbook/finbook_noamount',{limdate:limdate, USERNAME:USERNAME, EMAIL:EMAIL, TELNO:TELNO});
+});
 
 router.get('/finbook_search_fin', function(req,res,next){
 	res.render('front/etc/finbook/finbook_search',{});
