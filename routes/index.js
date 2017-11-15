@@ -629,13 +629,17 @@ router.post('/finbook_noamount', function(req,res,next){
 	var EMAIL = req.body.EMAIL;
 	var TELNO = req.body.TELNO;
 
-	console.log(USERNAME);
-	console.log(EMAIL);
-	//var date = getWorldTime(+9);
 
 	var limdate = aaaa();
-	//console.log(limdate);
-	//res.render('front/etc/finbook/finbook_noamount',{limdate:limdate, USERNAME:USERNAME, EMAIL:EMAIL, TELNO:TELNO});
+
+	var sets = {USERNAME : USERNAME, EMAIL:EMAIL, TELNO:TELNO, regDate:limdate};
+
+	mysql.insert('insert into cider.fin_nonaccount set ?', sets,  function (err, data){
+		if(err){
+			res.redirect('back');
+		}
+	res.render('front/etc/finbook/finbook_noamount',{limdate:limdate, USERNAME:USERNAME, EMAIL:EMAIL, TELNO:TELNO});
+});
 });
 
 router.get('/finbook_search_fin', function(req,res,next){
@@ -649,6 +653,9 @@ router.post('/finbook_search_fin', function(req, res, next) {
 
 	mysql.select('SELECT cider.fin_order.EMAIL, cider.fin_code.fcode FROM cider.fin_order INNER JOIN cider.fin_code ON cider.fin_order.idx=cider.fin_code.idx where cider.fin_order.EMAIL = \''+email+'\';', function(err,data){
 	var codeRandom = data[0].fcode;
+	if(err){
+		res.redirect('back');
+	}
 
 	var smtpTransport = nodemailer.createTransport({  
     
