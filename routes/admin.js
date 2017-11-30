@@ -1197,11 +1197,14 @@ router.get('/finbook/customer', ensureAuthenticated, function(req,res,next){
 	var CP = 6;
 	mysql.select('SELECT * FROM cider.mobileOrder order by date desc', function (err, data){
 		mysql.select('SELECT * FROM cider.cardOrder order by date desc;', function (err, data2){
+			mysql.select('SELECT cider.fin_order.ORDERNO, cider.fin_order.USERNAME, cider.fin_order.EMAIL, cider.fin_order.TELNO, cider.fin_order.payDate, cider.fin_code.fcode FROM cider.fin_order INNER JOIN cider.fin_code ON cider.fin_order.idx=cider.fin_code.idx;', function (err, data3){
 
 
-		res.render('admin/finbook/customer', { CP : CP, mobile:data, card:data2 });
+
+		res.render('admin/finbook/customer', { CP : CP, mobile:data, card:data2, code:data3 });
+	 });
 	});
-	});
+  });
 });
 
 //**************** 주문자 상세 보기 **************
@@ -1212,10 +1215,10 @@ router.get('/finbook/orderDetail/:ORDERNO', ensureAuthenticated, function(req,re
 
 	mysql.select('SELECT * FROM cider.mobileOrder where ORDERNO= '+ no +' order by date desc', function (err, data){
 		mysql.select('SELECT * FROM cider.cardOrder where ORDERNO= '+ no +' order by date desc;', function (err, data2){
-
+			
 
 		res.render('admin/finbook/orderDetail', { CP : CP, mobile:data, card:data2 });
-	});
+	  });
 	});
 });
 
@@ -1252,7 +1255,7 @@ router.get('/finbook/USERNAME/', ensureAuthenticated, function(req,res,next){
 //**************** 카드 주문 삭제 **************
 router.get('/finbook/cardDelete/:ORDERNO', ensureAuthenticated, function(req, res, next) {
 	
-	var CP = 1;
+	var CP = 6;
 	var no = req.params.ORDERNO;
 	
 	mysql.del('delete from cider.cardOrder where ORDERNO = '+ no +'', function (err, data){
@@ -1267,7 +1270,7 @@ router.get('/finbook/cardDelete/:ORDERNO', ensureAuthenticated, function(req, re
 //**************** 모바일 주문 삭제 **************
 router.get('/finbook/mobileDelete/:ORDERNO', ensureAuthenticated, function(req, res, next) {
 	
-	var CP = 1;
+	var CP = 6;
 	var no = req.params.ORDERNO;
 	
 	mysql.del('delete from cider.mobileOrder where ORDERNO = '+ no +'', function (err, data){
@@ -1279,7 +1282,30 @@ router.get('/finbook/mobileDelete/:ORDERNO', ensureAuthenticated, function(req, 
     });
 });
 
+//**************** 무통장 목록 **************
 
+router.get('/finbook/bankbook', ensureAuthenticated, function(req,res,next){
+	var CP = 6;
+	mysql.select('SELECT * FROM cider.fin_nonaccount order by regDate desc', function (err, data){
+
+		res.render('admin/finbook/bankbook', { CP : CP, bank:data });
+	});
+});
+
+//**************** 무통장 수정 **************
+router.post('/finbook/bank_up', ensureAuthenticated, function(req, res, next) {
+	var CP = 6;
+	var idx = req.body.idx;
+	var state = req.body.state;
+	console.log(state);
+	var codeNum = req.body.codeNum;
+	var sets = { state : state, codeNum : codeNum,idx:idx };
+	mysql.update('update cider.fin_nonaccount set state = ?, codeNum = ?  where idx = ?', [state,codeNum,idx], function (err, data){
+		
+    	res.redirect('/adm/finbook/bankbook');
+    	
+    });
+});
 
 
 

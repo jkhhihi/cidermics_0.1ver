@@ -25,7 +25,7 @@
                 <th>이메일 주소</th>
                 <th>구매자 성명</th>
                 <th>구매 날짜</th>
-                <th>삭제</th>
+                <!--th>삭제</th-->
             </tr>
           </thead>
             
@@ -37,7 +37,7 @@
               <td><%= card[i].EMAIL %></td>
               <td><%= card[i].USERNAME %></td>
               <td><%= card[i].date %></td>
-              <td><a href="/adm/finbook/cardDelete/<%= card[i].ORDERNO %>">삭제</a></td>
+              <!--td><a href="/adm/finbook/cardDelete/<%= card[i].ORDERNO %>">삭제</a></td-->
             </tr>
           <% } %>
           <% for(var i = 0; i< mobile.length; i++) { %>
@@ -46,7 +46,7 @@
               <td><%= mobile[i].EMAIL %></td>
               <td><%= mobile[i].USERNAME %></td>
               <td><%= mobile[i].date %></td>
-              <td><a href="/adm/finbook/mobileDelete/<%= mobile[i].ORDERNO %>">삭제</a></td>
+              <!--td><a href="/adm/finbook/mobileDelete/<%= mobile[i].ORDERNO %>">삭제</a></td-->
             </tr>
           <% } %>
           </tbody>
