@@ -3,15 +3,16 @@
 .margin-0lr{margin-left:0 !important; margin-right:0 !important;}
 
 .parallax {
-    background-image: url("https://i.imgur.com/KbxScv2.jpg");
-    min-height: 400px; 
+    background-image: url("https://i.imgur.com/A7h8Zvu.jpg");
+    width:100%;
+    min-height: 500px; 
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     margin-bottom:20px;
 }
-.parallax .parallax-in{padding-top:160px; color:#fff; text-shadow: #444 0 1px 1px; font-weight:bold; font-size:20px;}
+.parallax .parallax-in{padding-top:200px; color:#fff; text-shadow: #444 0 1px 1px; font-weight:bold; font-size:20px;}
 .parallax .parallax-in img{width:120px; margin-bottom:20px;}
 
 #service-menu div a div.row{background-color:#f8f8f8; width:100%; padding:20px 0 0 15px; box-shadow:3px 3px 4px #999; color:#fff; margin-top:10px;}
