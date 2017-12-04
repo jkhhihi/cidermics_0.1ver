@@ -1309,4 +1309,48 @@ router.post('/finbook/bank_up', ensureAuthenticated, function(req, res, next) {
 
 
 
+//**            포도 재무설계              **/
+// podo admin
+
+
+router.get('/podo', ensureAuthenticated, function(req, res, next) {
+	var CP = 7;
+		mysql.select('SELECT * from cider.podo_apply order by pd_no desc;', function (err, data){
+			 res.render('admin/podo/podo_index', { CP : CP, podo : data });	    	
+		});
+});
+
+router.get('/podo/detail/:pd_no', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 7;
+	var pd_no = req.params.pd_no;
+	
+		mysql.select('select * from cider.podo_apply where pd_no = '+ pd_no +'', function (err, data){
+			if(err){
+				res.redirect('back');
+			}
+			res.render('admin/podo/podo_detail', {CP : CP, podo : data});
+		});
+    });
+
+
+router.get('/podo/delete/:pd_no', function(req, res, next) {
+	
+	var CP = 7;
+	var pd_no = req.params.pd_no;
+	
+	mysql.del('delete from cider.podo_apply where pd_no = '+ pd_no +'', function (err, data){
+		if(err){
+			res.redirect('/adm/podopod');
+		}else{
+			res.redirect('/adm/podo');
+		}
+    });
+});
+
+
+
+
+
+
 module.exports = router;
