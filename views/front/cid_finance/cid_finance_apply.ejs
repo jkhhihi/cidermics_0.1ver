@@ -29,6 +29,16 @@ function numberWithCommas(lec_price) {
 
 	
 function next_submit(){
+	for (i=0; i<document.fi_applyform.fi_app_email1.value.length; i++)
+        {
+         var ch = document.fi_applyform.fi_app_email1.value.charAt(i);//문자를 반환(정수형), 범위 검사 가능
+	if ( ( ch < "a" || ch > "z") && (ch < "A" || ch > "_") && (ch < "-" || ch > "9" ))
+    	{
+            alert("이메일은 영문 및 숫자로만 입력 가능 합니다!");
+            document.fi_applyform.fi_app_email1.focus();
+            return;
+         } 
+		}
 	if(document.fi_applyform.fi_app_name.value==""){
 	 alert("신청자명을 입력해 주세요.");
 	document.fi_fi_applyform.fi_app_name.focus();
@@ -77,16 +87,7 @@ function next_submit(){
 		  return;
 	}
 	
-	for (i=0; i<document.fi_applyform.fi_app_email1.value.length; i++)
-        {
-         var ch = document.fi_applyform.fi_app_email1.value.charAt(i);//문자를 반환(정수형), 범위 검사 가능
-	if ( ( ch < "a" || ch > "z") && (ch < "A" || ch > "Z") && (ch < "0" || ch > "9" ) )
-    	{
-            alert("이메일은 영문 및 숫자로만 입력 가능 합니다!");
-            document.fi_applyform.fi_app_email1.focus();
-            return;
-         }
-		}
+	
 	
 	
 	for (i=0; i<document.fi_applyform.fi_app_phone2.value.length; i++)

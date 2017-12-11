@@ -330,14 +330,14 @@ router.get('/finance/review', function(req, res, next) {
 	var rev;
 	var fi_app_cate = rdate();
 	var rd = fi_app_cate[2]+fi_app_cate[3]+fi_app_cate[4]+fi_app_cate[5]-2;
-	console.log(rd);
+	//console.log(rd);
 	mysql.select("SELECT COUNT(*) AS appno FROM cider.cid_fi_applyform where fi_app_cate="+fi_app_cate+";", function (err, data){
 		
 		mysql.select('SELECT * FROM cider.cid_fi_review order by rev_no desc;', function (err, data2){
 
-			mysql.select('SELECT rev_title FROM cider.cid_fi_review where rev_intDate = '+rd+' order by rev_no desc;', function (err, data3){
+			mysql.select('SELECT rev_title, rev_intDate FROM cider.cid_fi_review where rev_intDate = '+rd+' order by rev_no desc;', function (err, data3){
 		
-	res.render('front/cid_finance/cid_finance_review', {finance : data, rev:data2, rev2:data3});
+	res.render('front/cid_finance/cid_finance_review', {finance : data, rev:data2, rev2:data3, rd:rd});
 	});
    });
  });

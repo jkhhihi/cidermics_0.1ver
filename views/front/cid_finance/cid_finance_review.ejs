@@ -41,16 +41,19 @@ body{padding-right:0px !important;}
 <div class="container">
 	<div align="center">
 	<select onchange="review(this)" style="background-color:#fff; border:2px solid #ececec; margin:20px 0 0 0">
-		<option>날짜를 선택하세요.</option>
-		<option value="1611">2016년 11월</option>
-		<option value="1612">2016년 12월</option>
-		<option value="1701">2017년 01월</option>
-		<option value="1702">2017년 02월</option>
-		<option value="1703">2017년 03월</option>
-		<option value="1704">2017년 04월</option>
-		<option value="1705">2017년 05월</option>
-		<option value="1706">2017년 06월</option>
+		<option value="0">날짜를 선택하세요.</option>
+		<option value="1710">2017년 10월</option>
+		<option value="1709">2017년 09월</option>
 		<option value="1708">2017년 08월</option>
+		<option value="1707">2017년 07월</option>
+		<option value="1706">2017년 06월</option>
+		<option value="1705">2017년 05월</option>
+		<option value="1704">2017년 04월</option>
+		<option value="1703">2017년 03월</option>
+		<option value="1702">2017년 02월</option>
+		<option value="1701">2017년 01월</option>
+		<option value="1612">2016년 12월</option>
+		<option value="1611">2016년 11월</option>
 	</select>
 </div>
 
@@ -110,7 +113,7 @@ body{padding-right:0px !important;}
     		    </div>
 <% } %>
 <!--콘텐츠 들어갈 자리-->
-
+<!--<% if (rev2[0].rev_intDate == 17) { %>
 			<div class="grid effect-2" id="grid1">
 				<% for(var i=0; i< rev2.length; i++) { %>
 				<li>
@@ -122,7 +125,8 @@ body{padding-right:0px !important;}
 				</div>
 				</li>
 				<% } %>
-			</div>		
+			</div>
+<% }else{} %>-->	
 </div>
 		<script src="/js/contents_js/masonry.pkgd.min.js"></script>
 		<script src="/js/contents_js/imagesloaded.js"></script>
