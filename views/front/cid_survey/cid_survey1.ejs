@@ -8,7 +8,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="/css/cid_survey.css" rel="stylesheet">
 <link href="/css/materialize.css" rel="stylesheet">
-<script src="/js/materialize.min.js"></script>
 
 <script type="text/javascript">
 	function surveyGo()
@@ -38,22 +37,25 @@
 	 	alert("설문에 참여해 주셔서 감사합니다.")
 	 	document.surveyGoform.submit();
 	}
+	
 </script>
-
-
 </head>
 
 
 <body>
 
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/materialize.min.js"></script>
+
+
 <div class="" align="center">
-	<a href="/"><p class="btn-home">홈으로</p></a>
+	<a href="/"><img class="home-btn" src="/page_imgs/fixed_img/home-btn.png"></a>
 	<div class="main-banner">
 		<img src="/page_imgs/main_img/survey-icon.svg">
 		<p style="margin-bottom:0 !important;">
-			오프라인 강의 콘텐츠 제작에 앞서<br>
-			구독자분들이 관심 있는 분야를 알기 위해<br>
-			온라인 설문을 준비해보았습니다.
+2017년 한 해 동안 사이다경제가 제공했던<br>
+콘텐츠와 서비스에 대한<br>
+여러분의 평가를 기다립니다.
 		</p>
 	</div>
 
@@ -61,202 +63,578 @@
 		<form action="/surveyGo" method="post" name="surveyGoform">
 		<p class="event" align="left">
 			<span style="color:#ff574a;">*</span>
-			아메리카노 쿠폰도 준비했으니 <br>
-			많은 참여 부탁드리겠습니다~~! (총 10개)<br>
-			<span style="display:block; margin-top:10px;">▶ 설문기간 : 4월 18일 ~ 4월 23일<br>
-			▶ 당첨자 발표 : 4월 24일 (당첨자 개별 문자 발송)</span>
+참여하신 분들 중 20분을 추첨하여<br>
+따뜻한 커피를 드실 수 있는<br>
+쿠폰을 선물로 드리니 많은 관심 부탁드립니다.
+			<span style="display:block; margin-top:10px;">▶ 설문기간 : 12월 15일 ~ 12월 21일<br>
+			▶ 당첨자 발표 : 12월 26일 (당첨자 개별 문자 발송)</span>
 		</p>
 		<div class="survey">
-			<p class="title"> < 오프라인 강의 분야 설문조사 > </p>
+			<p class="title"><b>사이다경제 1년을 마무리하는<br>"20문 20답"</b></p>
+			
+		<p class="big-title">1. 애독해주시는 여러분이 어떤 분인지 궁금합니다. [독자조사] </p>
 			<div class="q1" align="left">
+
 				<p>01. 연령대를 선택해주세요.</p>
 				 
 			     	<p>
-			     		<input class="with-gap" name="group1" type="radio" id="1-a1" value="20" />
-			     		<label for="1-a1">20대</label>
+			     		<input class="with-gap" name="group1" type="radio" id="1-a1"  />
+			     		<label for="1-a1">10대</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group1" type="radio" id="1-a2" value="30" />
-			     		<label for="1-a2">30대</label>
+			     		<input class="with-gap" name="group1" type="radio" id="1-a2" />
+			     		<label for="1-a2">20대</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group1" type="radio" id="1-a3" value="40" />
-			     		<label for="1-a3">40대</label>
+			     		<input class="with-gap" name="group1" type="radio" id="1-a3" />
+			     		<label for="1-a3">30대</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group1" type="radio" id="1-a4" value="50" />
-			     		<label for="1-a4">50대</label>
+			     		<input class="with-gap" name="group1" type="radio" id="1-a4"  />
+			     		<label for="1-a4">40대</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group1" type="radio" id="1-a5" value="60" />
-			     		<label for="1-a5">60대 이상</label>
+			     		<input class="with-gap" name="group1" type="radio" id="1-a5" />
+			     		<label for="1-a5">50대 이상</label>
 			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group1" type="radio" id="1-a5"  />
+			     		<label for="1-a6">60대 이상</label>
+			     	</p>			     	
 			     
 			</div>
 			<div class="q2" align="left">
 				<p>02. 직업을 선택해주세요!</p>
 				 
 			     	<p>
-			     		<input class="with-gap" name="group2" type="radio" id="2-a1" value="1"  />
+			     		<input class="with-gap" name="group2" type="radio" id="2-a1"  />
 			     		<label for="2-a1">회사원</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group2" type="radio" id="2-a2" value="2" />
+			     		<input class="with-gap" name="group2" type="radio" id="2-a2" />
 			     		<label for="2-a2">사업소득자(자영업자포함)</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group2" type="radio" id="2-a3" value="3" />
+			     		<input class="with-gap" name="group2" type="radio" id="2-a3" />
 			     		<label for="2-a3">공무원</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group2" type="radio" id="2-a4" value="4" />
+			     		<input class="with-gap" name="group2" type="radio" id="2-a4" />
 			     		<label for="2-a4">학생</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group2" type="radio" id="2-a5"  value="5"/>
+			     		<input class="with-gap" name="group2" type="radio" id="2-a5" />
 			     		<label for="2-a5">프리랜서</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group2" type="radio" id="2-a6" value="6" />
+			     		<input class="with-gap" name="group2" type="radio" id="2-a6" />
 			     		<label for="2-a6">주부</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group2" type="radio" id="2-a7" value="7" />
+			     		<input class="with-gap" name="group2" type="radio" id="2-a7" />
 			     		<label for="2-a7">기타</label>
 			     	</p>
             		<input placeholder="기타  내용을 입력해주세요:)" name="etc2" id="2-a7" type="text" class="validate">
 			     
 			</div>
 			<div class="q3" align="left">
-				<p>03. 효율적인 돈 관리 방법 중 관심있는 분야는 어떤건가요? </p>
+				<p>03. 경제 생활 참여 정도를 선택해주세요.</p>
 				 
 			     	<p>
-			     		<input class="with-gap" name="group3" type="radio" id="3-a1" value="1" />
-			     		<label for="3-a1">수입과 지출의 관리</label>
+			     		<input class="with-gap" name="group3" type="radio" id="3-a1" />
+			     		<label for="3-a1">상식을 쌓는 것에 관심이 있다</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group3" type="radio" id="3-a2" value="2" />
-			     		<label for="3-a2">효율적인 계좌 관리</label>
+			     		<input class="with-gap" name="group3" type="radio" id="3-a2" />
+			     		<label for="3-a2">재테크나 투자를 하려고 공부하고 있다</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group3" type="radio" id="3-a3" value="3" />
-			     		<label for="3-a3">비상예비자금 마련방법</label>
+			     		<input class="with-gap" name="group3" type="radio" id="3-a3" />
+			     		<label for="3-a3">저축이나 연금, 보험 등에 스스로 가입했다</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group3" type="radio" id="3-a4" value="4" />
-			     		<label for="3-a4">부채상환계획</label>
+			     		<input class="with-gap" name="group3" type="radio" id="3-a4" />
+			     		<label for="3-a4">주식이나 부동산 투자를 직접 하고 있다</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group3" type="radio" id="3-a5" value="5" />
-			     		<label for="3-a5">흔들리지 않는 투자원칙</label>
+			     		<input class="with-gap" name="group3" type="radio" id="3-a5" />
+			     		<label for="3-a5">솔직히 경제에 별로 관심이 없다</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group3" type="radio" id="3-a6" value="6" />
-			     		<label for="3-a6">복잡한 보험 정리하기</label>
-			     	</p>
-			     	<p>
-			     		<input class="with-gap" name="group3" type="radio" id="3-a7" value="7" />
-			     		<label for="3-a7">기타</label>
+			     		<input class="with-gap" name="group3" type="radio" id="3-a6" />
+			     		<label for="3-a6">기타</label>
 			     	</p>
         			<input placeholder="기타 내용을 입력해주세요:)" name="etc3" id="etc" type="text" class="validate">
 			     
 			</div>
 			<div class="q4" align="left">
-				<p>04. 알쏭달쏭 세금이야기 중 관심있는 분야는 어떤건가요? </p>
+				<p>04. 사이다경제에 방문하는 횟수를 골라주세요.</p>
 				 
 			     	<p>
-			     		<input class="with-gap 4a" name="group4" type="radio" id="4-a1" value="1" />
-			     		<label for="4-a1">연말정산(소득공제)</label>
+			     		<input class="with-gap" name="group4" type="radio" id="4-a1" />
+			     		<label for="4-a1">1주일에 1~3회 방문</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap 4a" name="group4" type="radio" id="4-a2" value="2" />
-			     		<label for="4-a2">연금저축계좌 (신탁, 보험, 펀드)</label>
+			     		<input class="with-gap" name="group4" type="radio" id="4-a2" />
+			     		<label for="4-a2">1주일에 4~6회 방문</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap 4a" name="group4" type="radio" id="4-a3" value="3" />
-			     		<label for="4-a3">퇴직연금 (DB형, DC형, IRP)</label>
+			     		<input class="with-gap" name="group4" type="radio" id="4-a3" />
+			     		<label for="4-a3">매일 방문</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap 4a" name="group4" type="radio" id="4-a4" value="4" />
-			     		<label for="4-a4">부가가치세 신고</label>
+			     		<input class="with-gap" name="group4" type="radio" id="4-a4" />
+			     		<label for="4-a4">하루 2회 이상 방문</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap 4a" name="group4" type="radio" id="4-a5" value="5" />
-			     		<label for="4-a5">종합소득세 신고</label>
-			     	</p>
-			     	<p>
-			     		<input class="with-gap 4a" name="group4" type="radio" id="4-a6" value="6" />
-			     		<label for="4-a6">기타</label>
+			     		<input class="with-gap" name="group4" type="radio" id="4-a5" />
+			     		<label for="4-a5">기타</label>
 			     	</p>
         			<input placeholder="기타 내용을 입력해주세요:)" name="etc4" id="etc" type="text" class="validate">
 			     
 			</div>
 			<div class="q5" align="left">
-				<p>05. 재무적 이슈에 따른 관심사는 어떤건가요? </p>
-				 
+				<p>05. 사이다경제를 처음 접한 경로를 골라주세요.</p>
+				
 			     	<p>
-			     		<input class="with-gap" name="group5" type="radio" id="5-a1" value="1" />
-			     		<label for="5-a1">결혼자금 마련</label>
+			     		<input class="with-gap" name="group5" type="radio" id="5-a1" />
+			     		<label for="5-a1">경제 관련 이슈 검색을 통해서</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group5" type="radio" id="5-a2" value="2" />
-			     		<label for="5-a2">자녀 결혼자금 마련</label>
+			     		<input class="with-gap" name="group5" type="radio" id="5-a2" />
+			     		<label for="5-a2">네이버나 다음카카오 페이지를 통해서</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group5" type="radio" id="5-a3" value="3" />
-			     		<label for="5-a3">전세자금마련</label>
+			     		<input class="with-gap" name="group5" type="radio" id="5-a3" />
+			     		<label for="5-a3">페이스북 피드를 통해서</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group5" type="radio" id="5-a4" value="4" />
-			     		<label for="5-a4">주택 구입자금 마련</label>
+			     		<input class="with-gap" name="group5" type="radio" id="5-a4" />
+			     		<label for="5-a4">팟캐스트 방송으로 통해서</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group5" type="radio" id="5-a5" value="5" />
-			     		<label for="5-a5">자녀교육자금 마련</label>
+			     		<input class="with-gap" name="group5" type="radio" id="5-a5" />
+			     		<label for="5-a5">지인의 추천을 통해서</label>
 			     	</p>
 			     	<p>
-			     		<input class="with-gap" name="group5" type="radio" id="5-a6" value="6" />
-			     		<label for="5-a6">은퇴자금 마련</label>
-			     	</p>
-			     	<p>
-			     		<input class="with-gap" name="group5" type="radio" id="5-a7" value="7" />
-			     		<label for="5-a7">상속 및 증여</label>
-			     	</p>
-			     	<p>
-			     		<input class="with-gap" name="group5" type="radio" id="5-a8" value="8" />
-			     		<label for="5-a8">기타</label>
+			     		<input class="with-gap" name="group5" type="radio" id="5-a6" />
+			     		<label for="5-a6">기타</label>
 			     	</p>			     	
         			<input placeholder="기타 내용을 입력해주세요:)" name="etc5" id="etc" type="text" class="validate">
 			     
 			</div>
 			<div class="q6" align="left">
-				<p>06. 사이다경제에게 바라는 점?</p>
+				<p>06. 사이다경제 플랫폼 중에서 주로 이용하는 것을 골라주세요.</p>
 				 
-				 	<textarea placeholder="사이다경제에게 하고싶은말!!" name="group6" id="hope" class="materialize-textarea"></textarea>
+				 	<p>
+			     		<input class="with-gap" name="group6" type="radio" id="6-a1" />
+			     		<label for="6-a1">앱</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group6" type="radio" id="6-a2" />
+			     		<label for="6-a2">웹사이트</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group6" type="radio" id="6-a3" />
+			     		<label for="6-a3">네이버 포스트</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group6" type="radio" id="6-a4" />
+			     		<label for="6-a4">페이스북 콘텐츠</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group6" type="radio" id="6-a5" />
+			     		<label for="6-a5">다음카카오 1boon</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group6" type="radio" id="6-a6" />
+			     		<label for="6-a6">티스토리 블로그</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group6" type="radio" id="6-a7" />
+			     		<label for="6-a7">팟캐스트</label>
+			     	</p>			     				     	
+			     	<p>
+			     		<input class="with-gap" name="group6" type="radio" id="6-a8" />
+			     		<label for="6-a8">기타</label>
+			     	</p>			     	
+        			<input placeholder="기타 내용을 입력해주세요:)" name="etc6" id="etc" type="text" class="validate">
 				 
 			</div>
-			<p class="thanks">설문에 참여해 주셔서 감사합니다 :)</p>
+			
+		<p class="big-title">2. 콘텐츠에 대한 의견이 궁금합니다. [콘텐츠조사] </p>
+			<div class="q7" align="left">
+
+				<p>01. 가장 관심 있는 분야를 골라주세요.</p>
+				 
+			     	<p>
+			     		<input class="with-gap" name="group7" type="radio" id="7-a1" />
+			     		<label for="7-a1">[시사경제상식] - 경제 용어 </label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group7" type="radio" id="7-a2"  />
+			     		<label for="7-a2">[시사경제상식] - 시사 뉴스</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group7" type="radio" id="7-a3" />
+			     		<label for="7-a3">[투자] – 주식</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group7" type="radio" id="7-a4" />
+			     		<label for="7-a4">[투자] – 부동산</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group7" type="radio" id="7-a5" />
+			     		<label for="7-a5">[재무관리] – 저축 연금 보험</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group7" type="radio" id="7-a5"/>
+			     		<label for="7-a6">[재무관리] – 세무 및 회계</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group7" type="radio" id="7-a7"/>
+			     		<label for="7-a7">기타</label>
+			     	</p>
+            		<input placeholder="기타  내용을 입력해주세요:)" name="etc7" id="7-a7" type="text" class="validate">			     				     	
+			     
+			</div>
+			<div class="q8" align="left">
+				<p>02. 제일 선호하는 콘텐츠 형식을 골라주세요.</p>
+				 
+			     	<p>
+			     		<input class="with-gap" name="group8" type="radio" id="8-a1" />
+			     		<label for="8-a1">일반 텍스트</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group8" type="radio" id="8-a2" />
+			     		<label for="8-a2">카드 이미지</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group8" type="radio" id="8-a3" />
+			     		<label for="8-a3">오디오(팟캐스트)</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group8" type="radio" id="8-a4" />
+			     		<label for="8-a4">동영상</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group8" type="radio" id="8-a5" />
+			     		<label for="8-a5">캐릭터 혹은 웹툰</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group8" type="radio" id="8-a6" />
+			     		<label for="8-a6">기타</label>
+			     	</p>
+            		<input placeholder="기타  내용을 입력해주세요:)" name="etc8" id="8-a7" type="text" class="validate">
+			     
+			</div>
+			<div class="q9" align="left">
+				<p>03. 콘텐츠를 고르는 주된 기준은 무엇인가요?</p>
+				 
+			     	<p>
+			     		<input class="with-gap" name="group9" type="radio" id="9-a1" />
+			     		<label for="9-a1">제목</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group9" type="radio" id="9-a2" />
+			     		<label for="9-a2">주제</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group9" type="radio" id="9-a3" />
+			     		<label for="9-a3">표지 이미지</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group9" type="radio" id="9-a4" />
+			     		<label for="9-a4">에디터</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group9" type="radio" id="9-a5" />
+			     		<label for="9-a5">기타</label>
+			     	</p>
+        			<input placeholder="기타 내용을 입력해주세요:)" name="etc9" id="etc" type="text" class="validate">
+			     
+			</div>
+			<div class="q10" align="left">
+				<p>04. 다른 매체가 아닌 사이다경제 콘텐츠를 보는 이유를 골라주세요.</p>
+				 
+			     	<p>
+			     		<input class="with-gap" name="group10" type="radio" id="10-a1" />
+			     		<label for="10-a1">쉬워서</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group10" type="radio" id="10-a2" />
+			     		<label for="10-a2">다양해서</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group10" type="radio" id="10-a3" />
+			     		<label for="10-a3">보기 편해서 (디자인, 레이아웃 등)</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group10" type="radio" id="10-a4" />
+			     		<label for="10-a4">재밌어서</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group10" type="radio" id="10-a5" />
+			     		<label for="10-a5">푸시 알림이 떠서 </label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group10" type="radio" id="10-a6" />
+			     		<label for="10-a6">기타</label>
+			     	</p>
+        			<input placeholder="기타 내용을 입력해주세요:)" name="etc10" id="etc" type="text" class="validate">
+			     
+			</div>
+			<div class="q11" align="left">
+				<p>05. 사이다경제 콘텐츠에 불만인 점은 무엇인가요?</p>
+				
+			     	<p>
+			     		<input class="with-gap" name="group11" type="radio" id="11-a1" />
+			     		<label for="11-a1">흥미롭지 않다(재미가 없다)</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group11" type="radio" id="11-a2" />
+			     		<label for="11-a2">깊이가 없다</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group11" type="radio" id="11-a3" />
+			     		<label for="11-a3">다양하지 않다</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group11" type="radio" id="11-a4" />
+			     		<label for="11-a4">신뢰가 가지 않는다</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group11" type="radio" id="11-a5" />
+			     		<label for="11-a5">원하는 정보가 없다</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group11" type="radio" id="11-a6" />
+			     		<label for="11-a6">기타</label>
+			     	</p>			     	
+        			<input placeholder="기타 내용을 입력해주세요:)" name="etc11" id="etc" type="text" class="validate">
+			     
+			</div>
+			
+		<p class="big-title">3. 사이다경제가 오픈한 서비스에 대한 의견이 궁금합니다. [서비스조사] </p>
+			<div class="q12" align="left">
+
+				<p>01. 가장 관심이 가는 서비스는 무엇인가요?</p>
+				 
+			     	<p>
+			     		<input class="with-gap" name="group12" type="radio" id="12-a1" />
+			     		<label for="12-a1">재무상담</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group12" type="radio" id="12-a2"  />
+			     		<label for="12-a2">강의 및 스터디</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group12" type="radio" id="12-a3" />
+			     		<label for="12-a3">토론 커뮤니티</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group12" type="radio" id="12-a4" />
+			     		<label for="12-a4">경제 퀴즈 게임</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group12" type="radio" id="12-a5" />
+			     		<label for="12-a5">책 추천</label>
+			     	</p>		     				     	
+			     
+			</div>
+			<div class="q13" align="left">
+				<p>02. 사이다경제가 오픈했으면 하는 서비스가 있다면 적어주세요.</p>
+				 
+					<textarea placeholder="사이다경제에게 원하는 서비스!!" name="group13" id="hope" class="materialize-textarea"></textarea>
+			     
+			</div>
+			<div class="q14" align="left">
+				<p>03. 사이다경제가 최근 서비스를 시작한 ‘핀북’을 알고 계신가요?</p>
+				 
+			     	<p>
+			     		<input class="with-gap" name="group14" type="radio" id="14-a1" />
+			     		<label for="14-a1">그렇다</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group14" type="radio" id="14-a2" />
+			     		<label for="14-a2">아니다</label>
+			     	</p>
+			     
+			</div>
+			<div class="q15" align="left">
+				<p>04. 사이가경제가 강의 또는 스터디를 오픈한다면 참여할 의사가 있으신가요?</p>
+				 
+			     	<p>
+			     		<input class="with-gap" name="group15" type="radio" id="15-a1" />
+			     		<label for="15-a1">그렇다</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group15" type="radio" id="15-a2" />
+			     		<label for="15-a2">아니다</label>
+			     	</p>
+			     
+			</div>
+			<div class="q16" align="left">
+				<p>05. 아래의 주제 중 가장 관심이 가는 스터디 콘셉트는?</p>
+				
+			     	<p>
+			     		<input class="with-gap" name="group16" type="radio" id="16-a1" />
+			     		<label for="16-a1">가난탈출</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group16" type="radio" id="16-a2" />
+			     		<label for="16-a2">월급관리</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group16" type="radio" id="16-a3" />
+			     		<label for="16-a3">미래준비</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group16" type="radio" id="16-a4" />
+			     		<label for="16-a4">기타</label>
+			     	</p>			     	
+        			<input placeholder="기타 내용을 입력해주세요:)" name="etc16" id="etc" type="text" class="validate">
+			     
+			</div>			
+
+		<p class="big-title">4. 사이다경제 이용이 편리하신지 궁금합니다. [운영방식 조사] </p>
+			<div class="q17" align="left">
+
+				<p>01. 사이다경제 앱/웹사이트에 대한 전반적인 만족도는 어떠한가요?</p>
+				 
+			     	<p>
+			     		<input class="with-gap" name="group17" type="radio" id="17-a1" />
+			     		<label for="17-a1">상</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group17" type="radio" id="17-a2"  />
+			     		<label for="17-a2">중</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group17" type="radio" id="17-a3" />
+			     		<label for="17-a3">하</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group17" type="radio" id="17-a4" />
+			     		<label for="17-a4">기타</label>
+			     	</p>			     	
+        			<input placeholder="기타 내용을 입력해주세요:)" name="etc17" id="etc" type="text" class="validate">		     				     	
+			     
+			</div>
+			<div class="q18" align="left">
+				<p>02. 새로 바뀐 사이다경제 앱/웹사이트 디자인은 어떠한가요?</p>
+			     	<p>
+			     		<input class="with-gap" name="group18" type="radio" id="18-a1" />
+			     		<label for="18-a1">긍정적이다</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group18" type="radio" id="18-a2"  />
+			     		<label for="18-a2">보통이다</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group18" type="radio" id="18-a3" />
+			     		<label for="18-a3">조금 더 개선이 필요하다</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group18" type="radio" id="18-a4" />
+			     		<label for="18-a4">예전이 더 나은 것 같다</label>
+			     	</p>			     	
+			     	<p>
+			     		<input class="with-gap" name="group18" type="radio" id="18-a5" />
+			     		<label for="18-a5">기타</label>
+			     	</p>			     	
+        			<input placeholder="기타 내용을 입력해주세요:)" name="etc18" id="etc" type="text" class="validate">					 
+			     
+			</div>
+			<div class="q19" align="left">
+				<p>03. 사이다경제 푸시 알림에 대해 어떻게 생각하시나요?</p>
+				 
+			     	<p>
+			     		<input class="with-gap" name="group19" type="radio" id="19-a1" />
+			     		<label for="19-a1">불편해서 끄고 있다</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group19" type="radio" id="19-a2" />
+			     		<label for="19-a2">현재 수준(1일 최대 2회)이 적당하다</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group19" type="radio" id="19-a3" />
+			     		<label for="19-a3">더 많이 했으면 좋겠다</label>
+			     	</p>
+			     	<p>
+			     		<input class="with-gap" name="group19" type="radio" id="19-a4" />
+			     		<label for="19-a4">기타</label>
+			     	</p>			     	
+        			<input placeholder="기타 내용을 입력해주세요:)" name="etc19" id="etc" type="text" class="validate">					     				     	
+			     
+			</div>
+			<div class="q20" align="left">
+				<p>04. 끝으로 사이다경제 앱과 웹사이트에서 개선했으면 하는 점이나<br>사이다경제에 하고 싶은 말이 있다면 작성해주세요.</p>
+				 
+					<textarea placeholder="사이다경제에게 하고 싶은 말!!" name="group20" id="hope" class="materialize-textarea"></textarea>
+			     
+			</div>
+
+			
+			<p class="thanks">긴 설문에 끝까지 응답해주셔서 정말 감사합니다.<br>
+지난 한 해 동안 사이다경제를 지켜봐주신 여러분께<br>
+보답할 수 있도록 더 나은 모습으로 발전하는<br>
+사이다경제가 되겠습니다. :)<br><br>
+
+올 한 해 수고 많으셨던 여러분 모두<br>
+행복한 연말연시 보내세요~!
+</p>
 		</div>
 
+		
+		<div>
+		<p>
+	      <input type="checkbox" id="check1"/>
+	      <label for="check1">서비스 이용약관 동의 <span style="color:#ff2f1f;">*</span>  <a class="modal-trigger" href="#modal1"><span class="info-see"> 내용보기</span></a></label>
+	   
+	<!-- 모달창 열림 -->
+	<div id="modal1" class="modal">
+	    <div class="modal-content">
+	      <h4>Modal Header</h4>
+	      <p>A bunch of text</p>
+	    </div>
+	    <div class="modal-footer">
+	      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+	    </div>
+	</div>
+	   
+	    </p>
+		<p>
+	     <input type="checkbox" id="check2"/>
+	      <label for="check2">개인정보 수집 및 이용 동의 <span style="color:#ff2f1f;">*</span>  <a class="modal-trigger" href="#modal2"><span class="info-see"> 내용보기</span></a></label>
+	
+	<!-- 모달창 열림 -->
+	<div id="modal2" class="modal">
+	    <div class="modal-content">
+	      <h4>Modal Header</h4>
+	      <p>A bunch of text</p>
+	    </div>
+	    <div class="modal-footer">
+	      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+	    </div>
+	</div>		    
+	    
+	    </p>
+	    </div>
 		<div class="submit">
 			<input placeholder="이름" id="name" type="text" class="validate" name="name">
 			<input placeholder="휴대폰 번호" id="callnum" type="text" class="validate" name="phone" style="margin-bottom:5px;">
 			<p align="left" style="margin:0; font-size:14px;">
 				<span style="color:#ff574a;">*</span>'-'표시 없이 입력해주세요.
 			</p>
-		</div>
-			<!--button class="btn waves-effect btn-submit" style="background-color: #ff574a;" onclick="surveyGo()">제출하기
-			    <i class="material-icons right">send</i>
-			</button-->
-			<p class="btn-submit"><a style="cursor:pointer; color: #fff;" onclick="surveyGo()">제출하기</a></p>
+		</div>	    
 	</form>
 	</div>
-			<p style="color:#ff2f1f; font-size:14px; margin-top:20px;">
-				위 개인정보는 이벤트에만 활용되며,<br>목적 이외의 그 어떤 용도로 사용되지 않습니다.<br>
-				개인정보는 설문조사 종료 후 일괄 삭제됩니다.
-			</p>
+			
 
-	<a href="/"><p class="btn-home">홈으로</p></a>	
+			<p class="btn-submit"><a style="cursor:pointer; color: #fff;" onclick="surveyGo()">제출하기</a></p>
+
+	<a href="/"><img class="home-btn" src="/page_imgs/fixed_img/home-btn.png"></a>
 </div>
 
 </body>
