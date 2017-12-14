@@ -453,7 +453,7 @@ router.get('/appdown3', function(req, res, next) {
 
 router.get('/survey', function(req, res, next) {
 
-	res.render('front/cid_survey', { });
+	res.render('front/cid_survey/cid_survey', { });
 
 });
 
@@ -488,6 +488,24 @@ router.post('/surveyGo', function(req, res, next) {
 	});
 });
 
+
+router.get('/survey1', function(req, res, next) {
+
+	res.render('front/cid_survey/cid_survey1', { });
+
+});
+
+router.get('/survey2', function(req, res, next) {
+
+	res.render('front/cid_survey/cid_survey2', { });
+
+});
+
+router.get('/survey3', function(req, res, next) {
+
+	res.render('front/cid_survey/cid_survey3', { });
+
+});
 
 
 router.get('/top', function(req, res, next) {
