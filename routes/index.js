@@ -281,8 +281,8 @@ router.get('/', function(req, res, next) {
 	var _totmon = _year+""+_mon;
 
 	//최신 콘텐츠 qry
-	var qry="select con_no, con_photo, con_title, if (a.con_upDate > DATE_ADD(now(),INTERVAL -5 DAY) ,'/page_imgs/main_img/new_mark4.svg','/page_imgs/main_img/new_mark1px.png') as chkDat from cider.cid_contents a where a.con_release <= '"+_tot+"' order by a.con_release desc limit 0,3";
-	var qry2="select con_no, con_photo, con_title, if (a.con_upDate > DATE_ADD(now(),INTERVAL -1 DAY) ,'/page_imgs/main_img/new_mark4.svg','/page_imgs/main_img/new_mark1px.png') as chkDat from cider.cid_contents a where a.con_release <= '"+_tot+"' order by a.con_release desc limit 3,12";
+	var qry="select con_no, con_photo, con_title, if (a.con_upDate > DATE_ADD(now(),INTERVAL -5 DAY) ,'/page_imgs/main_img/new_mark4.svg','/page_imgs/main_img/new_mark1px.png') as chkDat from cider.cid_contents a where a.con_release <= '"+_tot+"' order by a.con_release desc limit 0,2";
+	var qry2="select con_no, con_photo, con_title, if (a.con_upDate > DATE_ADD(now(),INTERVAL -1 DAY) ,'/page_imgs/main_img/new_mark4.svg','/page_imgs/main_img/new_mark1px.png') as chkDat from cider.cid_contents a where a.con_release <= '"+_tot+"' order by a.con_release desc limit 2,12";
 	mysql.select(qry, function (err, data){
 		if (err) throw err;
 		 row = data;
@@ -544,6 +544,8 @@ router.post('/survey1Go', function(req, res, next) {
 	var name = req.body.name;
 	var phone = req.body.phone;
 
+	var date = getWorldTime(+9);
+
 	//var sets = {sry_cate:1,sry_group2:g2};
 
 	//mysql.insert('insert into cider.cid_survey (sry_group3) values('+g3+')', function (err, data){
@@ -553,7 +555,7 @@ router.post('/survey1Go', function(req, res, next) {
 		,sry_group14:g14,sry_group15:g15,sry_group16:g16,sry_group17:g17,sry_group18:g18,sry_group19:g19,sry_group20:g20
 		,sry_etc1:etc1,sry_etc2:etc2,sry_etc3:etc3,sry_etc4:etc4,sry_etc5:etc5,sry_etc6:etc6,sry_etc7:etc7,sry_etc8:etc8,sry_etc9:etc9,sry_etc10:etc10
 		,sry_etc11:etc11,sry_etc12:etc12,sry_etc13:etc13,sry_etc14:etc14,sry_etc15:etc15,sry_etc16:etc16,sry_etc17:etc17,sry_etc18:etc18,sry_etc19:etc19
-		,sry_etc20:etc20
+		,sry_etc20:etc20, date:date
 	};
 	mysql.insert('insert into cider.cid_survey set ?', sets,  function (err, data){
 		res.redirect('/');
