@@ -46,26 +46,36 @@
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="/js/materialize.min.js"></script>
-
+<script type="text/javascript">
+$(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+     $('.modal-trigger').leanModal({
+          opacity: .5, // Opacity of modal background
+          in_duration: 300, // Transition in duration
+          out_duration: 200, // Transition out duratio
+        }
+      );
+  });
+</script>
 
 <div class="" align="center">
 	<a href="/"><img class="home-btn" src="/page_imgs/fixed_img/home-btn.png"></a>
 	<div class="main-banner">
 		<img src="/page_imgs/main_img/survey-icon.svg">
-		<p style="margin-bottom:0 !important;">
-2017년 한 해 동안 사이다경제가 제공했던<br>
-콘텐츠와 서비스에 대한<br>
-여러분의 평가를 기다립니다.
-		</p>
+		<p style="margin-bottom:0 !important;"><b>
+		2017년 한 해 동안 사이다경제가 제공했던<br>
+		콘텐츠와 서비스에 대한<br>
+		여러분의 평가를 기다립니다.
+		</b></p>
 	</div>
 
 	<div class="container">
 		<form action="/surveyGo" method="post" name="surveyGoform">
 		<p class="event" align="left">
 			<span style="color:#ff574a;">*</span>
-참여하신 분들 중 20분을 추첨하여<br>
-따뜻한 커피를 드실 수 있는<br>
-쿠폰을 선물로 드리니 많은 관심 부탁드립니다.
+			참여하신 분들 중 20분을 추첨하여<br>
+			따뜻한 커피를 드실 수 있는<br>
+			쿠폰을 선물로 드리니 많은 관심 부탁드립니다.
 			<span style="display:block; margin-top:10px;">▶ 설문기간 : 12월 15일 ~ 12월 21일<br>
 			▶ 당첨자 발표 : 12월 26일 (당첨자 개별 문자 발송)</span>
 		</p>
@@ -576,51 +586,50 @@
 			</div>
 
 			
-			<p class="thanks">긴 설문에 끝까지 응답해주셔서 정말 감사합니다.<br>
-지난 한 해 동안 사이다경제를 지켜봐주신 여러분께<br>
-보답할 수 있도록 더 나은 모습으로 발전하는<br>
-사이다경제가 되겠습니다. :)<br><br>
-
-올 한 해 수고 많으셨던 여러분 모두<br>
-행복한 연말연시 보내세요~!
-</p>
+			<p class="thanks">
+			긴 설문에 끝까지 응답해주셔서 정말 감사합니다.<br>
+			지난 한 해 동안 사이다경제를 지켜봐주신 여러분께<br>
+			보답할 수 있도록 더 나은 모습으로 발전하는<br>
+			사이다경제가 되겠습니다. :)<br><br>
+			
+			올 한 해 수고 많으셨던 여러분 모두<br>
+			행복한 연말연시 보내세요~!
+			</p>
 		</div>
 
 		
-		<div>
+	<div>
 		<p>
 	      <input type="checkbox" id="check1"/>
-	      <label for="check1">서비스 이용약관 동의 <span style="color:#ff2f1f;">*</span>  <a class="modal-trigger" href="#modal1"><span class="info-see"> 내용보기</span></a></label>
-	   
-	<!-- 모달창 열림 -->
-	<div id="modal1" class="modal">
-	    <div class="modal-content">
-	      <h4>Modal Header</h4>
-	      <p>A bunch of text</p>
-	    </div>
-	    <div class="modal-footer">
-	      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-	    </div>
-	</div>
-	   
-	    </p>
+	      <label for="check1">서비스 이용약관 동의 <span style="color:#ff2f1f;">*</span></label>  <a class="modal-trigger" href="#modal1"><span class="info-see"> 내용보기</span></a>
+	    </p>	   
+			<!-- 모달창 열림 -->
+			<div id="modal1" class="modal modal-fixed-footer">
+			    <div class="modal-content">
+			      <h6><b>서비스 이용약관 동의</b></h6>
+			      <p>A bunch of text</p>
+			    </div>
+			    <div class="modal-footer">
+			      <a href="#!" class="modal-action modal-close btn-flat">확인</a>
+			    </div>
+			</div>
 		<p>
 	     <input type="checkbox" id="check2"/>
-	      <label for="check2">개인정보 수집 및 이용 동의 <span style="color:#ff2f1f;">*</span>  <a class="modal-trigger" href="#modal2"><span class="info-see"> 내용보기</span></a></label>
-	
-	<!-- 모달창 열림 -->
-	<div id="modal2" class="modal">
-	    <div class="modal-content">
-	      <h4>Modal Header</h4>
-	      <p>A bunch of text</p>
-	    </div>
-	    <div class="modal-footer">
-	      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-	    </div>
-	</div>		    
+	      <label for="check2">개인정보 수집 및 이용 동의 <span style="color:#ff2f1f;">*</span></label>  <a class="modal-trigger" href="#modal2"><span class="info-see"> 내용보기</span></a>
+	    </p>	
+			<!-- 모달창 열림 -->
+			<div id="modal2" class="modal modal-fixed-footer">
+			    <div class="modal-content">
+			      <h6><b>개인정보 수집 및 이용 동의</b></h6>
+			      <p>A bunch of text</p>
+			    </div>
+			    <div class="modal-footer">
+			      <a href="#!" class="modal-action modal-close btn-flat">확인</a>
+			    </div>
+			</div>		    
+	</div>
 	    
-	    </p>
-	    </div>
+	    
 		<div class="submit">
 			<input placeholder="이름" id="name" type="text" class="validate" name="name">
 			<input placeholder="휴대폰 번호" id="callnum" type="text" class="validate" name="phone" style="margin-bottom:5px;">
