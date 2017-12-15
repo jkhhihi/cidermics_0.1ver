@@ -495,6 +495,72 @@ router.get('/survey1', function(req, res, next) {
 
 });
 
+router.post('/survey1Go', function(req, res, next) {
+
+	var g1 = req.body.group1;
+	var g2 = req.body.group2;
+	var g3 = req.body.group3;
+	var g4 = req.body.group4;
+	var g5 = req.body.group5;
+	var g6 = req.body.group6;
+	var g7 = req.body.group7;
+	var g8 = req.body.group8;
+	var g9 = req.body.group9;
+	var g10 = req.body.group10;
+	var g11 = req.body.group11;
+	var g12 = req.body.group12;
+	var g13 = req.body.group13;
+	var g14 = req.body.group14;
+	var g15 = req.body.group15;
+	var g16 = req.body.group16;
+	var g17 = req.body.group17;
+	var g18 = req.body.group18;
+	var g19 = req.body.group19;
+	var g20 = req.body.group20;
+
+
+	var etc1 = req.body.etc1;
+	var etc2 = req.body.etc2;
+	var etc3 = req.body.etc3;
+	var etc4 = req.body.etc4;
+	var etc5 = req.body.etc5;
+	var etc6 = req.body.etc6;
+	var etc7 = req.body.etc7;
+	var etc8 = req.body.etc8;
+	var etc9 = req.body.etc9;
+	var etc10 = req.body.etc10;
+	var etc11 = req.body.etc11;
+	var etc12 = req.body.etc12;
+	var etc13 = req.body.etc13;
+	var etc14 = req.body.etc14;
+	var etc15 = req.body.etc15;
+	var etc16 = req.body.etc16;
+	var etc17 = req.body.etc17;
+	var etc18 = req.body.etc18;
+	var etc19 = req.body.etc19;
+	var etc20 = req.body.etc20;
+
+
+	var name = req.body.name;
+	var phone = req.body.phone;
+
+	//var sets = {sry_cate:1,sry_group2:g2};
+
+	//mysql.insert('insert into cider.cid_survey (sry_group3) values('+g3+')', function (err, data){
+
+	var sets = {sry_cate: 2 , sry_name : name , sry_phone : phone , sry_group1:g1,sry_group2:g2,sry_group3:g3,
+		sry_group4:g4,sry_group5:g5,sry_group6:g6,sry_group7:g7,sry_group8:g8,sry_group9:g9,sry_group10:g10,sry_group11:g11,sry_group12:g12,sry_group13:g13
+		,sry_group14:g14,sry_group15:g15,sry_group16:g16,sry_group17:g17,sry_group18:g18,sry_group19:g19,sry_group20:g20
+		,sry_etc1:etc1,sry_etc2:etc2,sry_etc3:etc3,sry_etc4:etc4,sry_etc5:etc5,sry_etc6:etc6,sry_etc7:etc7,sry_etc8:etc8,sry_etc9:etc9,sry_etc10:etc10
+		,sry_etc11:etc11,sry_etc12:etc12,sry_etc13:etc13,sry_etc14:etc14,sry_etc15:etc15,sry_etc16:etc16,sry_etc17:etc17,sry_etc18:etc18,sry_etc19:etc19
+		,sry_etc20:etc20
+	};
+	mysql.insert('insert into cider.cid_survey set ?', sets,  function (err, data){
+		res.redirect('/');
+		//res.send('<script>alert("참여해주셔서 감사합니다");location.href="/";</script>');
+	});
+});
+
 router.get('/survey2', function(req, res, next) {
 
 	res.render('front/cid_survey/cid_survey2', { });
