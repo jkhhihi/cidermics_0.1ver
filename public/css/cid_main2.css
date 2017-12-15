@@ -1,4 +1,5 @@
 ﻿body{/*font-family: 'Nanum Gothic', serif;*/}
+#pdtop{margin-bottom:2px;}
 .padding-5lr{padding-left:5px !important; padding-right:5px !important;}
 .margin-0lr{margin-left:0 !important; margin-right:0 !important;}
 
@@ -197,7 +198,7 @@
     padding:10px 10px;
 }
 .close1 div{float:left; text-align:right; }
-#pdtop{padding-top:10px;}
+#pdtop{padding-top:10px; margin-bottom:0px;}
 
 @media(max-width: 760px){
 #pop{
