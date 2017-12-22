@@ -569,11 +569,66 @@ router.get('/survey2', function(req, res, next) {
 
 });
 
+router.post('/survey2Go', function(req, res, next) {
+
+	var g1 = req.body.group1;
+	var g2 = req.body.group2;
+
+	var g6 = req.body.group6;
+	var g7 = req.body.group7;
+	var g8 = req.body.group8;
+
+	var etc1 = req.body.etc1;
+	var etc2 = req.body.etc2;
+	var etc3 = req.body.etc3;
+	var etc4 = req.body.etc4;
+	var etc5 = req.body.etc5;
+	var etc6 = req.body.etc6;
+
+
+	var name = req.body.name;
+	var phone = req.body.phone;
+
+	//var sets = {sry_cate:1,sry_group2:g2};
+
+	//mysql.insert('insert into cider.cid_survey (sry_group3) values('+g3+')', function (err, data){
+
+	var sets = {sry_cate: 3 , sry_name : name , sry_phone : phone ,  sry_group1:g1,sry_group2:g2,sry_group6:g6,
+		sry_group7:g7,sry_group8:g8,sry_etc1:etc1,sry_etc2:etc2,sry_etc3:etc3,sry_etc4:etc4,sry_etc5:etc5,sry_etc6:etc6};
+	mysql.insert('insert into cider.cid_survey set ?', sets,  function (err, data){
+		res.redirect('/');
+		//res.send('<script>alert("참여해주셔서 감사합니다");location.href="/";</script>');
+	});
+});
+
+
 router.get('/survey3', function(req, res, next) {
 
 	res.render('front/cid_survey/cid_survey3', { });
 
 });
+
+
+
+router.post('/survey3Go', function(req, res, next) {
+
+	var g1 = req.body.group1;
+
+
+	var name = req.body.name;
+	var phone = req.body.phone;
+
+	//var sets = {sry_cate:1,sry_group2:g2};
+
+	//mysql.insert('insert into cider.cid_survey (sry_group3) values('+g3+')', function (err, data){
+
+	var sets = {sry_cate: 4 , sry_name : name , sry_phone : phone , sry_group13:g1};
+	mysql.insert('insert into cider.cid_survey set ?', sets,  function (err, data){
+		res.redirect('/');
+		//res.send('<script>alert("참여해주셔서 감사합니다");location.href="/";</script>');
+	});
+});
+
 
 
 router.get('/top', function(req, res, next) {
