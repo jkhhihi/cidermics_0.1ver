@@ -43,7 +43,8 @@ form{width:60%;}
 .info-see{background-color:#f6f6f6; border:1px solid #ddd; border-radius:4px; padding:2px; color:#2d2d2d}
 .big-title{font-size:18px; font-weight:bold; margin:40px 0 20px 0;}
 
-.main-banner3{width:100%; height:auto; background-image:url("/page_imgs/fixed_img/survey1-bg.png"); background-repeat: no-repeat; background-size:cover; color:#fff; font-size:18px; padding:50px 0;}
+.main-banner3{width:100%; height:auto; background-image:url("/page_imgs/fixed_img/survey3-bg3.png"); background-repeat: no-repeat; background-size:cover; color:#fff; font-size:18px; padding:50px 0;}
+.btn-submit3{width:300px; height:auto; background-color:#0c5f33; border-radius:6px; color:#fff; padding:8px; margin:0; text-align:center; margin:40px 0;}
 .survey3{height:auto; border:2px solid #ececec; padding:10px 20px 10px 20px; margin:20px 0 0 0;}
 .survey3 .title{color:#1b87c9; font-size:20px;}
 .big-title3{font-size:18px; font-weight:bold; margin:10px 0 20px 0;}
