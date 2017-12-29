@@ -1,10 +1,11 @@
 ﻿body{/*font-family: 'Nanum Gothic', serif;*/}
+.ad-team-recruiting{margin-top:20px;}/*팀원모집배너*/
 #pdtop{margin-bottom:2px;}
 .padding-5lr{padding-left:5px !important; padding-right:5px !important;}
 .margin-0lr{margin-left:0 !important; margin-right:0 !important;}
 
 .parallax {
-    background-image: url("/page_imgs/main_img/bg-12-christmas.jpg");
+    background-image: url("/page_imgs/main_img/bg-201701.jpg");
     width:100%;
     min-height: 500px; 
     background-attachment: fixed;
@@ -50,6 +51,7 @@
 
 
 @media all and (max-width:1024px) {
+.ad-team-recruiting{margin-top:10px;}/*팀원모집배너*/
 .parallax{display:none;}
 
 .padding-5lr{padding-left:2px !important; padding-right:2px !important;}
