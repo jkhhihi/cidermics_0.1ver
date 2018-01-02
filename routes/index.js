@@ -584,6 +584,7 @@ router.post('/survey2Go', function(req, res, next) {
 	var etc4 = req.body.etc4;
 	var etc5 = req.body.etc5;
 	var etc6 = req.body.etc6;
+	var etc7 = req.body.etc7;
 
 	var date = getWorldTime(+9);
 
@@ -596,7 +597,7 @@ router.post('/survey2Go', function(req, res, next) {
 	//mysql.insert('insert into cider.cid_survey (sry_group3) values('+g3+')', function (err, data){
 
 	var sets = {sry_cate: 3 , sry_name : name , sry_phone : phone ,  sry_group1:g1,sry_group2:g2,sry_group6:g6,
-		sry_group7:g7,sry_group8:g8,sry_etc1:etc1,sry_etc2:etc2,sry_etc3:etc3,sry_etc4:etc4,sry_etc5:etc5,sry_etc6:etc6, date:date};
+		sry_group7:g7,sry_group8:g8,sry_etc1:etc1,sry_etc2:etc2,sry_etc3:etc3,sry_etc4:etc4,sry_etc5:etc5,sry_etc6:etc6,sry_etc7:etc7, date:date};
 	mysql.insert('insert into cider.cid_survey set ?', sets,  function (err, data){
 		res.redirect('/');
 		//res.send('<script>alert("참여해주셔서 감사합니다");location.href="/";</script>');

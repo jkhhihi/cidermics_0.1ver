@@ -42,6 +42,7 @@ body{padding-right:0px !important;}
 	<div align="center">
 	<select onchange="review(this)" style="background-color:#fff; border:2px solid #ececec; margin:20px 0 0 0">
 		<option value="0">날짜를 선택하세요.</option>
+		<option value="1711">2017년 11월</option>
 		<option value="1710">2017년 10월</option>
 		<option value="1709">2017년 09월</option>
 		<option value="1708">2017년 08월</option>
@@ -112,21 +113,7 @@ body{padding-right:0px !important;}
         		 </div>
     		    </div>
 <% } %>
-<!--콘텐츠 들어갈 자리-->
-<!--<% if (rev2[0].rev_intDate == 17) { %>
-			<div class="grid effect-2" id="grid1">
-				<% for(var i=0; i< rev2.length; i++) { %>
-				<li>
-				<div align="center">	
-					<img class="img-responsive" src="<%= rev[i].rev_img %>" data-toggle="modal" data-target="#coupon-modal<%=rev[i].rev_no%>" >	
-				</div>
-				<div class="con row">	
-					<span><center><%=rev2[i].rev_title%></center></span></p>
-				</div>
-				</li>
-				<% } %>
-			</div>
-<% }else{} %>-->	
+
 </div>
 		<script src="/js/contents_js/masonry.pkgd.min.js"></script>
 		<script src="/js/contents_js/imagesloaded.js"></script>
