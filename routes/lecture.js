@@ -261,4 +261,8 @@ router.get('/lecture/detail/4', function(req, res, next) {
 });
 
 
+/*핀북 스터디1:'내 월급으로 집 사기'프로젝트*/
+router.get('/lecture/detail/5', function(req, res, next) {
+	res.render('front/cid_lecture2/cid_lecture_detail_5', { });
+});
 module.exports = router;
