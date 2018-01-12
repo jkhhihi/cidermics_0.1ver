@@ -34,6 +34,7 @@ p.main-title{display:none;}
 
 /*디테일 페이지 부분*/
 .btn-finbook{margin:50px 0 0 0;}
+.finimg{margin-bottom:80px;}
 .like{margin:0 0 50px 0;}
 
 .lecture{margin-top:70px;}
@@ -189,6 +190,7 @@ p.main-title{
 
 /*디테일 페이지 부분*/
 .btn-finbook{margin:30px 0 0 0;}
+.finimg{margin-bottom:30px;}
 .like{margin:0 0 30px 0;}
 
 .lecture{margin-top:0;}
