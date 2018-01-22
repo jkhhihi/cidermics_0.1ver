@@ -17,7 +17,7 @@
 <link rel="stylesheet" type="text/css" href="/css/component.css" />
 
 <!-- JS -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script-->
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/modernizr.custom.js"></script>
 <script src="/js/gotoup.js"></script>
@@ -166,13 +166,14 @@
 				<div class="con_border">
 					<a href="/contents/detail/<%= contents[i].con_no %>" style="margin-top:0;">
 					<div class="con-img" align="center"><img class="img-responsive" src="<%= contents[i].con_photo %>"></div>
-					<div class="con-title"><%= contents[i].con_title %></div>
+					<div class="con-title" data-toggle="modal" data-target="#myModal"><%= contents[i].con_title %></div>
 					</a>	
 				</div>
 			</li>
 			<% } %>
 		</ul>
 </div>
+
 
 <div class="icon-plus_con" align="center" onclick="addMore()"><img class="img-responsive" src="/page_imgs/fixed_img/icon_plus_con.svg"></div>
 
@@ -196,6 +197,8 @@
 
 
 <script>
+
+
 		var idx = 3;
 		var p=2;
 		

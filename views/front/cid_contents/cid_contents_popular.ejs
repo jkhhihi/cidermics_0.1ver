@@ -12,7 +12,7 @@
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/cid_contents.css" rel="stylesheet">
 <link href="/css/swiper.css" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script-->
 <script src="/js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" type="text/css" href="/css/component.css" />
@@ -87,20 +87,135 @@
 	<div class="popular-title" align="center">
 	<p>인기 콘텐츠</p>
 	</div>
-			<ul class="grid effect-2" id="grid">
-				
-				<% for(var i=0; i< contents.length; i++) { %>
-				<li>
-				<div class="con_border">
-					<a href="/contents/detail/<%= contents[i].con_no %>" style="margin-top: 0px;">
-					<div class="con-img" align="center"><img class="img-responsive" src="<%= contents[i].con_photo %>"></div>
-					<div class="con-title"><%= contents[i].con_title %></div>
-					</a>	
-				</div>
+		<ul class="grid effect-2" id="grid">
+			
+			<% for(var i=0; i< contents.length; i++) { %>
+			<li>
+			<div class="con_border">
+				<!--a href="/contents/detail/<%= contents[i].con_no %>" style="margin-top: 0px;"-->
+				<div class="con-img" align="center"><img class="img-responsive" src="<%= contents[i].con_photo %>"></div>
+				<div class="con-title" data-toggle="modal" data-target="#myModal<%=contents[i].con_no%>"><%= contents[i].con_title %></div>
+				<!--/a-->	
+			</div>
 			</li>
 			<% } %>
-			</ul>
+		</ul>
 </div>
+
+<!-- Button trigger modal -->
+
+
+
+<script type="text/javascript" src="/js/clipboard.min.js"></script>
+<!-- Modal -->
+<% for(var i=0; i< cond.length; i++) { %>
+<div class="modal fade" id="myModal<%=cond[i].con_no%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><%= cond[i].con_title %></h4>
+      </div>
+      <div class="modal-body">
+
+
+        <div class="row margin-lr0">
+			<div class="parallax3" style="margin-top: 0px; min-height: 200px;">
+				<div class="col-xs-12 padding-lr0">
+					<div class="conthum-black-box padding-lr0" style="height: 150px;">
+						<div class="row margin-lr0">
+							<div class="col-xs-12 info" align="right">
+							
+
+							<span class="date"><%= cond[i].con_upDate %></span><br>
+							<span class="cate_name"><%= cond[i].cate_name %></span><br>
+							<span class="write">written by <%=cond[i].con_writer%></span><br>
+
+							</div>
+						</div>
+					</div>
+			    </div>
+			</div>
+		</div>
+		<div class="contents container">
+			<div class="row">
+				<div class="col-xs-12 contents-in">
+					<%- cond[i].con_content %>
+				</div>
+			</div>
+		</div>
+
+		<div class="entry fix" style="padding: 0 5px; border: solid 1px #fff; text-align: center;">
+			<a id="clipURL<%= cond[i].con_no%>" style="font-size: 9pt">www.cidermics.com/contents/detail/<%= cond[i].con_no%></a>
+			<button type="button" id="btnCopyClip<%= cond[i].con_no%>" data-clipboard-action="copy" data-clipboard-target="#clipURL<%= cond[i].con_no%>" style="width: 80px;height: 30px;text-align: center; border-radius: 5px; border: 1px solid #fff; font-size: 10pt">URL복사</button>
+		</div>
+			<br>
+			<span id="txtCopyClip" style="display: none;">URL을 길게 누르면 복사하실 수 있습니다.</span>
+
+			<script type="text/javascript">
+			$(document).ready(function(){
+			 
+			  var clipboardSupport = true;
+			 
+			  try {
+			    $.browser.chrome = /chrom(e|ium)/.test(navigator.userAgent.toLowerCase());
+			 
+			    var version = $.browser.version;
+			    version = new Number(version.substring(0, version.indexOf(".")));
+			 
+			    //모바일 접속인지 확인
+			    if ((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent.match(/iPad/i)) || (navigator.userAgent.match(/Android/i))) {
+			      //클립보드 복사기능이 될경우 (크롬 42+)
+			      if ($.browser.chrome == true && version >= 42) {
+			        clipboardSupport = true;
+			      } else {
+			        clipboardSupport = false;
+			      }
+			    }
+			  } catch(e) {
+			  }
+			 
+			  if (clipboardSupport) {
+			    $("#btnCopyClip").show();
+			    $("#txtCopyClip").hide();
+			  } else {
+			    $("#btnCopyClip").hide();
+			    $("#txtCopyClip").show();
+			  }
+			 
+			  var clipboard = new Clipboard('#btnCopyClip<%= cond[i].con_no%>');
+			  clipboard.on('success', function(e) {
+			    alert("주소가 복사되었습니다.\n\n원하는 곳에 붙여넣기 해주세요.");
+			  });
+			  clipboard.on('error', function(e) {
+			    alert("접속중인 기기및 브라우저에서는\n클립보드 복사를 지원하지 않습니다.\nURL을 길게 누르면 복사하실 수 있습니다.");
+			  });
+			 
+			});
+			</script>
+
+
+
+
+
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<% } %>
+
+
+
+
+
+
+
 
 </div>
 </div>
