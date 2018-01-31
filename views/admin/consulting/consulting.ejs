@@ -32,6 +32,17 @@
           </tr>
         </thead>
         <tbody>
+        <script type="text/javascript">
+          function deletechk(no){
+            var con_test = confirm("삭제하시겠습니까?");
+            if(con_test == true){
+              location.href="/adm/consulting/delete/"+no;
+            }
+            else if(con_test == false){
+              histroy.back(-1);
+            }
+          }
+        </script>
             
         <% for(var i = 0; i<consulting.length; i++) { %>
             <tr>
@@ -39,7 +50,8 @@
                 <td><a href="/adm/consulting/detail/<%= consulting[i].cons_no %>"><%= consulting[i].cons_name %></a></td>
                 <td><%= consulting[i].cons_regDate %></td>
                 <td><%= consulting[i].cons_viewCount %></td>
-                <td><a href="/adm/consulting/delete/<%= consulting[i].cons_no %>">삭제</a></td>
+                <td><button onclick="deletechk(<%= consulting[i].cons_no %>)">삭제</button></td>
+                <td><a href="/adm/consulting/delete/<%= consulting[i].cons_no %>" onclick="deletechk()">삭제</a></td>
             </tr>
         <% } %> 
         </tbody>

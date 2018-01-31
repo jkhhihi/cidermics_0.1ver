@@ -1,0 +1,60 @@
+
+<!--JS-->
+<script src="/js/materialize.js"></script>
+<script type="text/javascript">
+  (function($){
+  $(function(){
+
+    $('.button-collapse').sideNav();
+    $('.parallax').parallax();
+
+  }); // end of document ready
+})(jQuery); // end of jQuery name space
+
+  $('.fixed-action-btn').openFAB();
+  $('.fixed-action-btn').closeFAB();
+  $('.fixed-action-btn.toolbar').openToolbar();
+  $('.fixed-action-btn.toolbar').closeToolbar();
+</script>
+
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a href="/" class="button-collapse-home"><i class="material-icons" style="font-size: 2.7rem;">home</i></a>
+      <a id="logo-container" href="/study" class="brand-logo"><img class="img-responsive" src="/page_imgs/fixed_img/bg-no-logo.svg" width="60" style="padding-top: 10px;"></a>
+      <a id="logo-container" href="/study" class="brand-logo2"><img class="img-responsive" src="/page_imgs/fixed_img/bg-no-logo.svg" width="54" style="padding-top: 5px;"></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/study/intro">경이로움이란?</a></li>
+        <li><a href="#">멤버십 신청</a></li>
+        <li><a href="/study/list">스터디</a></li>
+        <li><a href="#">이벤트</a></li>
+        <li><a href="/study/cal">일정표</a></li>
+        <li><a href="/study/faq">Q&A</a></li>
+      </ul>
+      
+
+      <ul id="nav-mobile" class="side-nav">
+        <div class="user-view">
+        <div class="background">
+        <img src="/page_imgs/study_img/background1.jpg">
+        </div>
+        <a href="#!user"><img class="circle" src="/page_imgs/fixed_img/logo.svg"></a>
+        <!--a href="#!name"><span class="white-text name">John Doe</span></a-->
+        <a href="#!email"><span class="white-text site">경제 스터디 경이로움</span></a>
+        </div>
+        <li><a href="/study/intro">경이로움이란?</a></li>
+        <div class="divider"></div>
+        <li><a href="#">멤버십 신청</a></li>
+        <div class="divider"></div>
+        <li><a href="/study/list">스터디</a></li>
+        <div class="divider"></div>
+        <li><a href="#">이벤트</a></li>
+        <div class="divider"></div>
+        <li><a href="/study/cal">일정표</a></li>
+        <div class="divider"></div>
+        <li><a href="/study/faq">Q&A</a></li>
+        <div class="divider"></div>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      
+    </div>
+  </nav>

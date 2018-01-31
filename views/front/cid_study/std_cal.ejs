@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta name="naver-site-verification" content="083657cb98aa9a4a9c62dedeffddfb2490545da0"/>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+  <link href='/css/calendar/fullcalendar.min.css' rel='stylesheet' />
+  <link href='/css/calendar/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+  <script src='/js/calendar/moment.min.js'></script>
+  <script src='/js/calendar/fullcalendar.min.js'></script>
+  <script src='/js/calendar/locale-all.js'></script>
+
+      <!--CSS -->
+    <link rel='stylesheet' href='/css/materialize.css' />
+    <link href="/css/std_style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <!-- icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+    <link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+
+
+  <script>
+
+  $(document).ready(function() {
+    var initialLocaleCode = 'ko';
+
+    $('#calendar').fullCalendar({
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'listDay,listWeek,month'
+      },
+
+      // customize the button names,
+      // otherwise they'd all just say "list"
+      views: {
+        listDay: { buttonText: '일간' },
+        listWeek: { buttonText: '주간' },
+        month: { buttonText: '월간' }
+      },
+      locale: initialLocaleCode,
+
+      defaultView: 'month',
+      defaultDate: '2017-12-12',
+      navLinks: true, // can click day/week names to navigate views
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+      events: [
+        {
+          title: '스터디 기획 회의',
+          start: '2018-01-29T17:00:00',
+          end: '2018-01-29T19:00:00'
+        },
+        {
+          title: 'Long Event',
+          start: '2017-12-07',
+          end: '2017-12-10'
+        },
+        {
+          id: 999,
+          title: 'Repeating Event',
+          start: '2017-12-09T16:00:00'
+        },
+        {
+          id: 999,
+          title: 'Repeating Event',
+          start: '2017-12-16T16:00:00'
+        },
+        {
+          title: '회의',
+          start: '2017-12-11',
+          end: '2017-12-13'
+        },
+        {
+          title: 'Meeting',
+          start: '2017-12-12T10:30:00',
+          end: '2017-12-12T12:30:00'
+        },
+        {
+          title: 'Lunch',
+          start: '2017-12-12T12:00:00'
+        },
+        {
+          title: 'Meeting',
+          start: '2017-12-12T14:30:00'
+        },
+        {
+          title: 'Happy Hour',
+          start: '2017-12-12T17:30:00'
+        },
+        {
+          title: 'Dinner',
+          start: '2017-12-12T20:00:00'
+        },
+        {
+          title: '행복한 파티',
+          start: '2017-12-13T07:00:00'
+        },
+        {
+          title: 'Click for 사이다경제',
+          url: 'http://cidermics.com/',
+          start: '2017-12-28'
+        }
+      ]
+    });
+
+  });
+
+</script>
+<style>
+
+
+  #calendar {
+    max-width: 1280px;
+    margin: 30px auto;
+  }
+
+  .fc-scroller{
+    height: auto !important;
+  }
+
+</style>
+</head>
+<body>
+
+  <% include std_top %>
+    <div id='calendar'></div>
+</body>
+</html>

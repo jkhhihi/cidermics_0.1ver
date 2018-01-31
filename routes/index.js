@@ -569,6 +569,7 @@ router.get('/survey2', function(req, res, next) {
 
 });
 
+
 router.post('/survey2Go', function(req, res, next) {
 
 	var g1 = req.body.group1;
