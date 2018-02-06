@@ -27,9 +27,9 @@
 .fin-event{background-color:#f0c525; padding:6px 8px; border-radius:4px;}
 /*서비스 배경화면*/
 .menu-contents{width:100%; height:300px; background-image: url("https://i.imgur.com/zNkYwX4.jpg"); background-size:cover;}
-.menu-school{width:100%; height:300px; background-image: url("https://i.imgur.com/REmiuPJ.jpg"); background-size:cover;}
-.menu-finbook{width:100%; height:300px; background-image: url("https://i.imgur.com/Po9lWS7.jpg"); background-size:cover;}
-.menu-finbook .d-day{font-size:60px;}
+.menu-school{width:100%; height:300px; background-image: url("https://i.imgur.com/Y55GAHP.jpg"); background-size:cover;}
+.menu-study{width:100%; height:300px; background-image: url("https://i.imgur.com/REmiuPJ.jpg"); background-size:cover;}
+.menu-study .d-day{font-size:60px; margin-top:10px;}
 .menu-finance{width:100%; height:300px; background-image: url("https://i.imgur.com/WqL2bH7.jpg"); background-size:cover;}
 
 #service-info{margin-top:20px;}
@@ -70,8 +70,8 @@
 /*서비스 배경화면*/
 .menu-contents{height:110px;}
 .menu-school{height:110px;}
-.menu-finbook{height:110px;}
-.menu-finbook .d-day{font-size:24px;}
+.menu-study{height:110px;}
+.menu-study .d-day{font-size:22px; line-height:1.0em; margin-top:-2px;}
 .menu-finance{height:110px;}
 
 #service-info{margin-top:10px;}
