@@ -115,6 +115,17 @@ nav .brand-logo2{
   opacity: 0; 
 }
 
+/* main study list more btn center */
+div #cent { position:relative; }
+      #cm { position:absolute; }
+      .hc { width:200px; left:0; right:0; margin-left:auto; margin-right:auto; } /* 가로 중앙 정렬 */
+      .vc { height:40px; top: 0; bottom:130px; margin-top:auto; margin-bottom:auto; } /* 세로 중앙 정렬 */
+
+@media only screen and (max-width : 600px) {
+  .hc {left:40px;} /* 가로 중앙 정렬 */
+  .vc {bottom:40px;}
+}
+
 
 
 /* side menu css */
@@ -215,3 +226,20 @@ footer.page-footer {
 .collapsible-body{
   padding:20px;
 }
+   .input-field input[type=text]:focus + label {
+     color: #0288d1;
+   }
+      /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #0288d1;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* label focus color */
+   .input-field input[type=email]:focus + label {
+     color: #0288d1;
+   }
+      /* label underline focus color */
+   .input-field input[type=email]:focus {
+     border-bottom: 1px solid #0288d1;
+     box-shadow: 0 1px 0 0 #000;
+   }
