@@ -265,4 +265,26 @@ router.get('/lecture/detail/4', function(req, res, next) {
 router.get('/lecture/detail/5', function(req, res, next) {
 	res.render('front/cid_lecture2/cid_lecture_detail_5', { });
 });
+
+/*핀북 세미나2*/
+router.get('/lecture/detail/7', function(req, res, next) {
+	res.render('front/cid_lecture2/cid_lecture_detail_7', { });
+});
+
+
+/*누보리치 세미나*/
+router.get('/lecture/detail/6', function(req, res, next) {
+	res.render('front/cid_lecture2/cid_lecture_detail_6', { });
+});
+
+
+/*경이로움 세미나 */
+router.get('/seminar', function(req, res, next) {
+	res.render('front/cid_seminar/seminar', { });
+});
+
+router.get('/seminar/detail', function(req, res, next) {
+	res.render('front/cid_seminar/seminar_detail', { });
+});
+
 module.exports = router;

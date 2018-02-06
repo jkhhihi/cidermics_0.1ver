@@ -69,8 +69,10 @@ router.post('/study/ask', function(req, res, next) {
 router.get('/study/top', function(req, res, next) {
 	res.render('front/cid_study/std_top', { });
 });
+
 router.get('/study/bottom', function(req, res, next) {
 	res.render('front/cid_study/std_bottom', { });
 });
+
 
 module.exports = router;
