@@ -41,6 +41,8 @@
 .menu-contents{width:100%; height:320px;}
 .menu-school{width:100%; height:320px;}
 .menu-study{width:100%; height:320px;}
+.menu-study .coming{display:table; width:98%; height:320px; position:absolute; font-size:45px; background-color: rgba( 0, 0, 0, 0.4 ); color:fff; z-index:9;}
+.menu-study .coming p{display:table-cell; vertical-align:middle;}
 .menu-study .d-day{font-size:30px; margin-top:10px; color:#63b72c}
 .menu-finance{width:100%; height:320px;}
 .service-img img{height:55%; padding-right:50px;}
@@ -73,8 +75,8 @@
 #service-menu div a div.row{margin-top:5px;}
 .title-mark{padding-left:5px !important; margin-left:0; margin-top:5px;}
 .title-e {padding-left:5px !important;}
-.title-e p{font-size:12px;  margin:8px 0 10px 0; font-weight:500;}
-.title-k{margin:0 0 0 0; font-size:10px; padding-left:5px !important;}
+.title-e p{font-size:12px;  margin:10px 0 10px 6px; font-weight:500;}
+.title-k{margin:0 0 0 6px; font-size:10px; padding-left:5px !important;}
 /*서비스라인*/
 .line1, .line2, .line3, .line4{height:4px;}
 /*서비스:event,open,hit*/
@@ -86,6 +88,7 @@
 .menu-contents{height:110px;}
 .menu-school{height:110px;}
 .menu-study{height:110px;}
+.menu-study .coming{width:98%; height:110px; font-size:16px;}
 .menu-study .d-day{font-size:22px; line-height:1.0em; margin-top:-2px;}
 .menu-finance{height:110px;}
 .service-img{padding-right:10px !important; margin-top:-12px !important;}
@@ -94,7 +97,7 @@
 #service-info{margin-top:10px;}
 #service-info .title-mark{margin:0 0 5px 0;}
 #service-info .info{font-size:12px; border-bottom:1px solid #ccc;}
-#service-info .title-mark .con-hit, .sch-open, .finb-event, .fin-event{margin:0 5px 0 0}
+#service-info .title-mark .con-hit, .sch-open, .finb-event, .fin-event{margin:0 5px 0 6px}
 
 .new-contents{margin:10px 0 0 0;}
 .new-contents .title{font-size:12px; height:auto; padding-top:2px; padding-left:10px;}
