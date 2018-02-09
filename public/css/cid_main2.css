@@ -42,7 +42,7 @@
 .menu-school{width:100%; height:320px;}
 .menu-study{width:100%; height:320px;}
 .menu-study .coming{display:table; width:98%; height:320px; position:absolute; font-size:45px; background-color: rgba( 0, 0, 0, 0.4 ); color:fff; z-index:9;}
-.menu-study .coming p{display:table-cell; vertical-align:middle;}
+.menu-study .coming p{display:table-cell; text-align:center; vertical-align:middle;}
 .menu-study .d-day{font-size:30px; margin-top:10px; color:#63b72c}
 .menu-finance{width:100%; height:320px;}
 .service-img img{height:55%; padding-right:50px;}
