@@ -37,6 +37,10 @@ router.get('/study/intro', function(req, res, next) {
 	res.render('front/cid_study/std_intro', { });
 });
 
+router.get('/study/memship', function(req, res, next) {
+	res.render('front/cid_study/std_memship', { });
+});
+
 router.get('/study/list', function(req, res, next) {
 	res.render('front/cid_study/std_list', { });
 });

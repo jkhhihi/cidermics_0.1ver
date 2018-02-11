@@ -171,10 +171,8 @@ function nosmt(){
 		alert("서비스 이용약관에 동의하셔야 회원가입이 가능합니다."); 
 	}else if(document.nonamount.checkbox1.checked){
         	if(!document.nonamount.checkbox2.checked){
-                alert("개인정보 수집 및 이용 동의하셔야 회원가입이 가능합니다."); 
-                
+                alert("개인정보 수집 및 이용 동의하셔야 회원가입이 가능합니다.");
             }else if (document.nonamount.checkbox2.checked){
-            	
 	document.nonamount.submit();
     }
 	}else{
@@ -207,7 +205,6 @@ function fnCheck() {
 	if(trim(frm.AMOUNT.value) == "" || getByteLen(frm.AMOUNT.value) > 10) {
 		alert("결제금액 (AMOUNT) 를 입력해주세요. (최대:10byte, 현재:" + getByteLen(frm.AMOUNT.value) + ")");
 		return;
-		
 	}
 	/********************  필수 입력 체크 끝  ***/
 }

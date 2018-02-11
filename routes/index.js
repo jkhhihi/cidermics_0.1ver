@@ -737,7 +737,6 @@ router.post('/finbook_ch_code/:ORDERNO', function(req, res, next) {
 	var USERNAME = req.body.USERNAME;
 	var EMAIL = req.body.EMAIL;
 	var TELNO = req.body.TELNO;
-
 	
 	var sets = {ORDERNO : ORDERNO, USERNAME : USERNAME, EMAIL:EMAIL , TELNO:TELNO};
 	mysql.update('update cider.fin_order set USERNAME = ?,  EMAIL = ?, TELNO = ? where ORDERNO = ?', [USERNAME,EMAIL,TELNO,ORDERNO], function (err, data){
@@ -909,32 +908,19 @@ http.createServer(function (req, res)
 });*/
 
 //ip filter
-//var testers = ['27.102.213.200','27.102.213.209'];
-//var testers = [['27.102.213.200','27.102.213.209']];
-//var testers = [['192.168.0.1','192.168.0.185']];
-//var testers = ['::ffff:127.0.0.1'];
+
 var testers = ['127.0.0.1/24'];
 
 //ip허용
 var ips = [['27.102.213.200','27.102.213.209']];
-//var ips = ['::ffff:127.0.0.1'];
+
 var ipss = ['::1','::ffff:127.0.0.1'];
 
- 
-// Create the server 
-//router.use('/cardOrder',ipfilter(ips));
-
 //card결제
-//router.post('/cardOrder', function(req, res, next) {
-//router.post('/cardOrder', ipfilter(testers,{mode:'allow'}), function(req, res, next) {
-//router.get('/cardOrder', ipfilter(ips, {mode: 'allow'}), function(req, res) {
-//router.use('/cardOrder',ipfilter(ips, {})); // the ipfilter only applies to the routes below
-//router.get('/cardOrder', ipfilter(ips, {mode: 'allow'}), function(req, res) {
 
 router.get('/cardOrder',ipfilter(ips,ipss, {mode: 'allow'}), function(req, res) {
 
-	console.log(ips);
-	console.log(ipss);
+
 /*	var CPID = req.body.CPID;
 	var ORDERNO = req.body.ORDERNO;
 	var PRODUCTTYPE = req.body.PRODUCTTYPE;
@@ -1018,17 +1004,12 @@ router.get('/cardOrder',ipfilter(ips,ipss, {mode: 'allow'}), function(req, res) 
 
 
 //휴대폰 결제
-//router.use('/mobileOrder',ipfilter(ips, {})); // the ipfilter only applies to the routes below
-//router.get('/mobileOrder', function(req, res) {
-//router.get('/mobileOrder', ipfilter(ips, {mode: 'allow'}), function(req, res) {
-//router.use('/mobileOrder', ipfilter(testers, {}));
-//router.get('/mobileOrder', ipfilter(testers,{mode:'allow'}), function(req, res, next) {
-//router.get('/mobileOrder', function(req, res, next) {
 
-router.get('/mobileOrder',ipfilter(ips,ipss, {mode: 'allow'}), function(req, res) {
+//router.get('/mobileOrder',ipfilter(ips,ipss, {mode: 'allow'}), function(req, res) {
+router.get('/mobileOrder', function(req, res) {
 
-	console.log(ips);
-	console.log(ipss);
+	console.log("하이");
+
 
 	var CPID = req.query.CPID;
 	var ORDERNO = req.query.ORDERNO;
@@ -1068,7 +1049,6 @@ router.get('/mobileOrder',ipfilter(ips,ipss, {mode: 'allow'}), function(req, res
 		if(err){
 			res.redirect('back');
 		}
-	//res.redirect('/mobileOrder');
 	res.render('front/etc/finbook/finbook_success',{});
   });
 });

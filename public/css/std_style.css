@@ -123,7 +123,7 @@ div #cent { position:relative; }
 
 @media only screen and (max-width : 600px) {
   .hc {left:40px;} /* 가로 중앙 정렬 */
-  .vc {bottom:40px;}
+  .vc {bottom:50px;}
 }
 
 
