@@ -4,19 +4,20 @@ body{/*font-family: 'Nanum Gothic', serif;*/}
 .main-lecture .grid li{width:100%;}
 .main-lecture ul.lecture-width{width:60%;}
 .main-lecture ul .con{margin-bottom:60px; /*border-left:#999999 1px solid; border-right:#999999 1px solid;*/  border-bottom:#000 1px solid; padding:10px 0;}
-.main-lecture ul .con .money p{border:2px solid #1b87c9; width:110px; height:66px; border-radius:6px; color:#1b87c9;}
+.main-lecture ul .con .money p{border:1px solid #333; width:120px; height:38px;border-radius:6px; color:#333; font-size:18px;}
+.main-lecture ul .con .date p{margin-top:10px; font-size:14px;}
 .con p{font-size:18px; line-height:1.8em;}
 p.main-title{display:none;}
-/*.banner{margin-top:70px;}*/
+.banner{margin-top:70px;}
 .parallax2 {
 	margin-top:60px;
-	padding:10px 0;
+	padding:120px 0;
     /* The image used */
     /*background-image:url("/page_imgs/lecture_img/lecture-banner-bg.jpg");*/
-    background-image:url("/page_imgs/lecture_img/lecture-main-bg.png");
+    /*background-image:url("https://i.imgur.com/S0kjbHh.png");*/
 
     /* Set a specific height */
-    min-height: 200px; 
+    min-height: 350px; 
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -40,6 +41,7 @@ p.main-title{display:none;}
 .lecture{margin-top:70px;}
 .lecture .title p{margin-top:60px; font-size:28px; font-weight:bold;}
 .lecture .line1{background-color:#1b87c9; width:300px; height:2px; margin-top:20px;}
+.lecture .line2{background-color:#1b87c9; width:50px; height:4px; margin-top:20px;}
 .lecture .contents{margin:40px 0; line-height:2.5em; font-family: "BMD";}
 .lecture .contents .con{font-family: 'Nanum Gothic', serif; color:#212121; font-size:16px; font-weight:600; margin-top:20px; width:80%; height:auto; border-radius:10px; padding:30px 0;}
 .lecture .contents .qcon{font-family: 'Nanum Gothic', serif; color:#fff; font-size:19px; font-weight:600; margin-top:20px; width:70%; height:auto; border-radius:10px; padding:5px 0;}
@@ -73,12 +75,14 @@ p.main-title{display:none;}
 /*----*/
 
 .lecture .btn-coupon{background-color:#1b87c9; width:200px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px; margin:20px 0;}
-.lecture .apply{border:#ececec 4px solid; width:60%; padding:30px 15px 15px 15px; font-size:16px; font-weight:bold; margin-bottom:100px;}
+.lecture .apply{border:#ececec 4px solid; width:60%; padding:40px 20px 20px 20px; font-size:16px; font-weight:bold; margin-bottom:100px;}
 .lecture .apply .apply-place .map{border:#1b87c9 2px solid;}
-.lecture .apply .line2{background-color:#1b87c9; width:150px; height:1px; margin:15px 0;}
-.lecture .apply .line3{border-top:2px #ececec solid; margin:20px 0;}
-.lecture .apply .apply-deposit p{background-color:#1b87c9; width:200px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px;}
-.lecture .apply .apply-question p{background-color:#fce000; color:#212121 !important; width:200px; height:60px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:10px;}
+.lecture .apply .line2{background-color:#1b87c9; width:25px; height:2px; margin:5px 0 25px 2px;}
+.lecture .apply .line3{border-top:1px #ececec solid; margin:25px 0;}
+.lecture .apply .apply-deposit p{border:2px solid #1b87c9; background-color:#1b87c9; color:#fff; width:200px; height:auto; border-radius:40px; font-weight:bold; font-size:18px; padding:15px 0;}
+.lecture .apply .apply-deposit p:hover{border:2px solid #1b87c9; background-color:#fff; color:#212121;}
+.lecture .apply .apply-question p{border:2px solid #fce000; background-color:#fce000; color:#212121 !important; width:200px; height:auto; border-radius:40px; color:#fff; font-weight:bold; font-size:18px; padding:10px 0;}
+.lecture .apply .apply-question p:hover{border:2px solid #fce000; background-color:#fff; color:#212121 !important;}
 .lecture .apply .apply-question p span{font-size:14px;}
 .lecture .apply .btn-apply-cancle p{background-color:#ff7d7d; color:#efefef !important; width:200px; height:50px; border-radius:30px; color:#fff; font-weight:bold; font-size:18px; padding-top:12px;}
 .font-color-666{color:#666;}
@@ -163,7 +167,7 @@ p.main-title{display:none;}
 
 @media all and (max-width:1024px) {
 body{font-family: 'Nanum Gothic', serif;}
-/*.banner{margin-top:0;}
+.banner{margin-top:45px;}
 p.main-title{
 	display:block;
 	font-family: "BMD", sans-serif;
@@ -171,7 +175,7 @@ p.main-title{
     color: #1b87c9;
     margin:70px 0 5px 5px;
     }*/
-.parallax2 {margin-top:45px; padding:15px 5px;}
+.parallax2 {margin-top:45px; padding:50px 0; min-height:180px; }
 /*.lecture-banner-in{border:2px solid #fff; padding:20px 0;}
 .lecture-banner-in img{width:50px;}
 .lecture-banner-in .title1{margin:10px 0; padding-bottom:10px; font-size:14px; border-bottom:2px solid #fff;}
@@ -184,8 +188,8 @@ p.main-title{
 .main-lecture ul .con{margin-bottom:20px;}
 .main-lecture ul .con .date{padding:5px;}
 .main-lecture ul .con .money{padding:16px 5px 0 0;}
-.main-lecture ul .con .date p{margin-top:5px; font-size:16px;}
-.main-lecture ul .con .money p{width:95px; height:auto; margin-top:0; margin-bottom:0; font-size:16px;}
+.main-lecture ul .con .date p{margin-top:20px; font-size:12px;}
+.main-lecture ul .con .money p{width:95px; height:auto; margin-top:0; margin-bottom:0; font-size:14px;}
 .main-lecture .row .col-sm-4, .col-xs-6{padding:0 5px 0 5px;}
 
 /*디테일 페이지 부분*/

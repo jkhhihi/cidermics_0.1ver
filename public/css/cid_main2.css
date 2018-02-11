@@ -17,25 +17,40 @@
 .parallax .parallax-in{padding-top:200px; color:#fff; text-shadow: #444 0 1px 1px; font-weight:bold; font-size:20px;}
 .parallax .parallax-in img{width:120px; margin-bottom:20px;}
 
-#service-menu div a div.row{background-color:#f8f8f8; width:100%; padding:20px 0 0 15px; box-shadow:3px 3px 4px #999; color:#fff; margin-top:10px;}
-.title-e p{font-size:24px; font-weight:600;}
-.title-k{margin:0 0 10px 0;}
+#service-menu div a div.row{background-color:#f8f8f8; width:100%; box-shadow:3px 3px 4px #999; color:#333; margin-top:10px;}
+.title-mark{margin-left:20px;}
+.title-e p{font-size:24px; font-weight:600; margin:30px 0 0 20px; line-height:1.0em;}
+.title-k{margin:20px 0 10px 20px;}
+/*서비스라인*/
+.line1{background-color:#1bafba; width:100%; height:6px;}
+.line2{background-color:#d4434e; width:100%; height:6px;}
+.line3{background-color:#63b72c; width:100%; height:6px;}
+.line4{background-color:#f0c525; width:100%; height:6px;}
 /*서비스:event,open,hit*/
 .con-hit{background-color:#1bafba; padding:6px 8px; border-radius:4px;}
 .sch-open{background-color:#d4434e; padding:6px 8px; border-radius:4px;}
 .finb-event{background-color:#63b72c; padding:6px 8px; border-radius:4px;}
 .fin-event{background-color:#f0c525; padding:6px 8px; border-radius:4px;}
-/*서비스 배경화면*/
+/*서비스 배경화면
 .menu-contents{width:100%; height:300px; background-image: url("https://i.imgur.com/zNkYwX4.jpg"); background-size:cover;}
-.menu-school{width:100%; height:300px; background-image: url("https://i.imgur.com/REmiuPJ.jpg"); background-size:cover;}
-.menu-finbook{width:100%; height:300px; background-image: url("https://i.imgur.com/Po9lWS7.jpg"); background-size:cover;}
-.menu-finbook .d-day{font-size:60px;}
-.menu-finance{width:100%; height:300px; background-image: url("https://i.imgur.com/WqL2bH7.jpg"); background-size:cover;}
+.menu-school{width:100%; height:300px; background-image: url("https://i.imgur.com/Y55GAHP.jpg"); background-size:cover;}
+.menu-study{width:100%; height:300px; background-image: url("https://i.imgur.com/REmiuPJ.jpg"); background-size:cover;}
+.menu-study .d-day{font-size:60px; margin-top:10px;}
+.menu-finance{width:100%; height:300px; background-image: url("https://i.imgur.com/WqL2bH7.jpg"); background-size:cover;}*/
+
+.menu-contents{width:100%; height:320px;}
+.menu-school{width:100%; height:320px;}
+.menu-study{width:100%; height:320px;}
+.menu-study .coming{display:table; width:98%; height:320px; position:absolute; font-size:45px; background-color: rgba( 0, 0, 0, 0.4 ); color:fff; z-index:9;}
+.menu-study .coming p{display:table-cell; text-align:center; vertical-align:middle;}
+.menu-study .d-day{font-size:30px; margin-top:10px; color:#63b72c}
+.menu-finance{width:100%; height:320px;}
+.service-img img{height:55%; padding-right:50px;}
 
 #service-info{margin-top:20px;}
 #service-info .title-mark{margin:0 0 20px 0; font-size:18px;}
 #service-info .info{font-size:16px; border-bottom:2px solid #ccc; padding-bottom:2px;}
-#service-info .title-mark .con-hit, .sch-open, .finb-event, .fin-event{color:#fff; margin:0 10px 0 0;}
+/*#service-info .title-mark .con-hit, .sch-open, .finb-event, .fin-event{color:#fff; margin:0 10px 0 0;}*/
 
 .new-contents{margin:20px 0 0 0;}
 .new-contents .title{font-size:16px; height:30px; padding-top:8px;}
@@ -57,11 +72,13 @@
 .padding-5lr{padding-left:2px !important; padding-right:2px !important;}
 
 #service-menu{margin-top:45px;}
-#service-menu div a div.row{padding:8px 0 0 0; margin-top:5px;}
-.title-e {padding-left:10px !important;}
-.title-e p{font-size:16px; line-height:1.0em; font-weight:500;}
-.title-k{margin:0 0 10px 0; font-size:12px; padding-left:10px !important;}
-.title-mark{padding-left:10px !important;}
+#service-menu div a div.row{margin-top:5px;}
+.title-mark{padding-left:5px !important; margin-left:0; margin-top:5px;}
+.title-e {padding-left:5px !important;}
+.title-e p{font-size:12px;  margin:10px 0 10px 6px; font-weight:500;}
+.title-k{margin:0 0 0 6px; font-size:10px; padding-left:5px !important;}
+/*서비스라인*/
+.line1, .line2, .line3, .line4{height:4px;}
 /*서비스:event,open,hit*/
 .con-hit{font-size:10px; padding:4px 6px; border-radius:2px;}
 .sch-open{font-size:10px; padding:4px 6px; border-radius:2px;}
@@ -70,14 +87,17 @@
 /*서비스 배경화면*/
 .menu-contents{height:110px;}
 .menu-school{height:110px;}
-.menu-finbook{height:110px;}
-.menu-finbook .d-day{font-size:24px;}
+.menu-study{height:110px;}
+.menu-study .coming{width:98%; height:110px; font-size:16px;}
+.menu-study .d-day{font-size:22px; line-height:1.0em; margin-top:-2px;}
 .menu-finance{height:110px;}
+.service-img{padding-right:10px !important; margin-top:-12px !important;}
+.service-img img{height:55%; padding-right:0;}
 
 #service-info{margin-top:10px;}
 #service-info .title-mark{margin:0 0 5px 0;}
 #service-info .info{font-size:12px; border-bottom:1px solid #ccc;}
-#service-info .title-mark .con-hit, .sch-open, .finb-event, .fin-event{margin:0 5px 0 0}
+#service-info .title-mark .con-hit, .sch-open, .finb-event, .fin-event{margin:0 5px 0 6px}
 
 .new-contents{margin:10px 0 0 0;}
 .new-contents .title{font-size:12px; height:auto; padding-top:2px; padding-left:10px;}
