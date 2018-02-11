@@ -131,10 +131,20 @@ function openSNSFB(){
 						<p class="font-color-666">*개별 문자 발송</p>
 				</div>
 				
+
+				</script>
 				<div class="line3"></div>
 
 				<div class="apply-deposit">
-				<a href="http://www.balanceinvest.co.kr/new/bbs/book_request.php" onclick="ga('send','event','삼박자투자법','버튼클릭','삼박자신청2' );"><p>신청하기</p></a>
+				<form action="/pay" name="apply" method="get">
+					<input type="hidden" name="subject" value="누보리치">
+					<input type="hidden" name="cate" value="1">
+					<input type="hidden" name="detailCate" value="1">
+					<input type="hidden" name="price" value="50">
+					<button type="submit">신청하기</button>
+				<a href="/pay"><p>신청하기</p></a>
+
+				</form>
 				<div class="line3"></div>
 				<div class="apply-question">
 				<a href="#" onClick="javascript:openWinKA();"><p>카톡문의<br><span>옐로우ID:@사이다경제</span></p></a>

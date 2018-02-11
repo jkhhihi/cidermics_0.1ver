@@ -78,7 +78,7 @@
 #purchase .notice{width:100%; height:auto; background-color:#f2f2f2; padding:30px 0;}
 /*#purchase .online-guide{display:none;}     �˻�������*/
 
-#select-pay{background-color:#f6f6f6; width:100%; height:auto; /*margin-top:20px;   �˻�������*/}
+#select-pay{background-color:#f6f6f6; width:100%; height:auto;}
 #select-pay .title-box{background-color:#333; width:100%; height:auto; padding:25px 0;}
 #select-pay .title-box .title{border-left:2px solid #fff; color:#fff; padding-left:5px; font-size:18px;}
 #select-pay .user-def{margin:40px 0 50px 0;}
@@ -90,7 +90,7 @@
 #select-pay .payment-btn .payment{background-color:#f7293c; border-radius:4px; padding:10px 20px; color:#fff; margin-right:5px;}
 #select-pay .payment-btn .back{background-color:#999; border-radius:4px; padding:10px 20px; color:#fff;}
 
-#check-purchase{background-color:#f6f6f6; width:100%; height:auto; margin-top:60px;}
+#check-purchase{background-color:#f6f6f6; width:100%; height:auto; margin-top:70px;}
 #check-purchase .title-box{background-color:#333; width:100%; height:auto; padding:25px 0;}
 #check-purchase .title-box .title{border-left:2px solid #fff; color:#fff; padding-left:5px; font-size:18px;}
 #check-purchase .check-purchase-in{width:650px; padding:40px 0 50px 0;}
@@ -170,7 +170,7 @@ h4{font-size:14px !important;}
 #select-pay .select-pay-in{width:98%; padding-bottom:40px;}
 #select-pay .select-box{text-align:left;}
 
-#check-purchase{margin-top:45px;}
+#check-purchase{margin-top:47px;}
 #check-purchase .title-box .title{margin-left:10px; font-size:14px;}
 #check-purchase .inspection-btn button{padding:8px 0; font-size:16px; width:140px; margin:0 5px;}
 #check-purchase .check-purchase-in{width:98%; padding:0 0 50px 0;}

@@ -39,6 +39,7 @@ var books = require('./routes/books');
 var cid2_idx = require('./routes/main_v2/index');
 var board = require('./routes/board');
 var std = require('./routes/study');
+var pay = require('./routes/pay');
 
 // all environments
 app.set('port', process.env.PORT || 80);
@@ -81,6 +82,7 @@ app.use('/cid_books',express.static(__dirname+'/views/cid_books'));
 app.use('/cid_main_v2',express.static(__dirname+'/views/cid_main_v2'));
 app.use('/cid_board',express.static(__dirname+'/views/cid_board'));
 app.use('/cid_study',express.static(__dirname+'/views/cid_study'));
+app.use('/pay',express.static(__dirname+'/views/pay'));
 app.use(flash());
 
 app.use(bodyParser.json({limit: '1000mb'}));
@@ -113,6 +115,7 @@ app.use('/',books);
 app.use('/',cid2_idx);
 app.use('/',board);
 app.use('/',std);
+app.use('/',pay);
 
 //passportFB.use('fbLogin', new LocalStrategy({
 passportFB.use( new FacebookStrategy({
