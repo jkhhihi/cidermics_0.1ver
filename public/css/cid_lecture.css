@@ -38,11 +38,13 @@ p.main-title{display:none;}
 .finimg{margin-bottom:80px;}
 .like{margin:0 0 50px 0;}
 
-.lecture{margin-top:70px;}
+.lecture{margin-top:30px;}
 .lecture .title p{margin-top:60px; font-size:28px; font-weight:bold;}
 .lecture .line1{background-color:#1b87c9; width:300px; height:2px; margin-top:20px;}
 .lecture .line2{background-color:#1b87c9; width:50px; height:4px; margin-top:20px;}
 .lecture .contents{margin:40px 0; line-height:2.5em; font-family: "BMD";}
+.lecture .contents .mob-img{display:none;}
+.lecture .contents .web-img{display:block;}
 .lecture .contents .con{font-family: 'Nanum Gothic', serif; color:#212121; font-size:16px; font-weight:600; margin-top:20px; width:80%; height:auto; border-radius:10px; padding:30px 0;}
 .lecture .contents .qcon{font-family: 'Nanum Gothic', serif; color:#fff; font-size:19px; font-weight:600; margin-top:20px; width:70%; height:auto; border-radius:10px; padding:5px 0;}
 
@@ -79,8 +81,8 @@ p.main-title{display:none;}
 .lecture .apply .apply-place .map{border:#1b87c9 2px solid;}
 .lecture .apply .line2{background-color:#1b87c9; width:25px; height:2px; margin:5px 0 25px 2px;}
 .lecture .apply .line3{border-top:1px #ececec solid; margin:25px 0;}
-.lecture .apply .apply-deposit p{border:2px solid #1b87c9; background-color:#1b87c9; color:#fff; width:200px; height:auto; border-radius:40px; font-weight:bold; font-size:18px; padding:15px 0;}
-.lecture .apply .apply-deposit p:hover{border:2px solid #1b87c9; background-color:#fff; color:#212121;}
+.lecture .apply .apply-deposit button {border:2px solid #1b87c9; background-color:#1b87c9; color:#fff; width:200px; height:auto; border-radius:40px; font-weight:bold; font-size:18px; padding:15px 0 10px 0;}
+.lecture .apply .apply-deposit button:hover{border:2px solid #1b87c9; background-color:#fff; color:#212121;}
 .lecture .apply .apply-question p{border:2px solid #fce000; background-color:#fce000; color:#212121 !important; width:200px; height:auto; border-radius:40px; color:#fff; font-weight:bold; font-size:18px; padding:10px 0;}
 .lecture .apply .apply-question p:hover{border:2px solid #fce000; background-color:#fff; color:#212121 !important;}
 .lecture .apply .apply-question p span{font-size:14px;}
@@ -201,7 +203,9 @@ p.main-title{
 .lecture .title p.finished{margin-top:80px;}
 .lecture .title p{font-size:20px; line-height:1.8em; margin-top:20px;}
 .lecture .line1{margin-top:0;}
-.lecture .contents{margin:40px 0; line-height:2.0em;}
+.lecture .contents{margin:45px 0; line-height:2.0em;}
+.lecture .contents .mob-img{display:block;}
+.lecture .contents .web-img{display:none;}
 .lecture .contents .con{font-size:14px; font-weight:900; width:98%; margin-top:0; padding:30px 0;}
 .lecture .contents .q1{padding:40px 0;}
 .lecture .contents .q1 .title{font-size:18px;}

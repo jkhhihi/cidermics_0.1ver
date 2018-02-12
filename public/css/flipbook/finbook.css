@@ -82,7 +82,7 @@
 #select-pay .title-box{background-color:#333; width:100%; height:auto; padding:25px 0;}
 #select-pay .title-box .title{border-left:2px solid #fff; color:#fff; padding-left:5px; font-size:18px;}
 #select-pay .user-def{margin:40px 0 50px 0;}
-#select-pay .select-pay-in{width:650px; padding-bottom:80px;}
+#select-pay .select-pay-in{width:650px; padding-bottom:80px; margin-top:50px;}
 #select-pay .select-box{background-color:#fff; padding:15px 0; margin-top:20px;}
 #select-pay .check-amount{background-color:#fff; border:2px solid #ddd; margin:20px 0 30px 0;}
 #select-pay .check-amount .title{background-color:#3882be; color:#fff; padding:10px 0;}
