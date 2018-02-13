@@ -1,8 +1,22 @@
 <!DOCTYPE html>
-<html lang="ko">
-  <head>
-    <title>사이다경제 스터디</title>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>사이다경제 스터디</title>
+  <!-- 메인 문구 -->
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css'>
+
+  <!-- 네이버 -->
+    <meta name="naver-site-verification" content="083657cb98aa9a4a9c62dedeffddfb2490545da0"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
+    <!-- favicon -->
+    <link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+    <link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+
     <!--CSS -->
     <link rel='stylesheet' href='/css/materialize.css' />
     <link href="/css/std_style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -13,61 +27,98 @@
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <!--script src="/js/materialize.js"></script-->
 
-    <!-- 메인 문구 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-
-
-    <!-- 네이버 -->
-    <meta name="naver-site-verification" content="083657cb98aa9a4a9c62dedeffddfb2490545da0"/>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <!-- favicon -->
-    <link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
-    <link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
 
-    <style type="text/css">
-      p{
-        line-height: 2rem;
-      }
+<style type="text/css">
+    /* just for jsfiddle */
 
-      .detail2{
-        background-color: #fbfbfb;
-        width: 100%;
-        max-width:1700px;
-        padding: 40px 0 20px;
-      }
+  .material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -moz-font-feature-settings: 'liga';
+  -moz-osx-font-smoothing: grayscale;
+  }
 
-      .divider2{
-        height: 5px; overflow: hidden; background-color: #039be5;
-      }
+  .middle-indicator{
+   position:absolute;
+   top:50%;
+   }
+  .middle-indicator-text{
+   font-size: 4.2rem;
+  }
+  a.middle-indicator-text{
+    color:white !important;
+  }
+  .content-indicator{
+    width: 64px;
+    height: 64px;
+    background: none;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px; 
+  }
 
-      .textfont{
-        font-family: seoulhangangregular !important;
-        font-weight: normal;
-        font-size: 2.2rem;
-        letter-spacing: 2px;
-      }
-      .textfont2{
-        font-family: seoulhangangregular !important;
-        font-weight: 550;
-        font-size: 1.8rem;
-        letter-spacing: 2px;
-      }
-      .textfont3{
-        font-family: seoulhangangregular !important;
-        font-weight: 500;
-        font-size: 1.3rem;
-        letter-spacing: 1px;
-      }
-    </style>
+  .indicators{
+    visibility: hidden;
+  }
 
- 
+  p{
+    line-height: 2rem;
+  }
 
-  </head>
-  <body>
-  <% include std_top %>
+  .detail2{
+    background-color: #fbfbfb;
+    width: 100%;
+    max-width:1700px;
+    padding: 40px 0 20px;
+  }
+
+  .divider2{
+    height: 5px; overflow: hidden; background-color: #039be5;
+  }
+  .divider3{
+    margin-top: 3px;
+    height: 1px; overflow: hidden; background-color: #039be5;
+  }
+
+  .textfont{
+    font-family: seoulhangangregular !important;
+    font-weight: normal;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+  }
+
+  .textfont2{
+    font-family: seoulhangangregular !important;
+    font-weight: 550;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+
+  .textfont3{
+    font-family: seoulhangangregular !important;
+    font-weight: 500;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+  }
+
+</style>
+
+  
+</head>
+
+<body>
+
+    <% include std_top %>
 
   <div class="parallax-container valign-wrapper" style="min-height: 500px;">
     <div class="section no-pad-bot" style="padding-top:0px;">
@@ -84,7 +135,6 @@
   </div>
 
 
-
 <div class="container" style="margin: 50px auto;">
   <div class="row">
     <div class="col s12">
@@ -98,6 +148,14 @@
           <h5 class="textfont2">경제신문 바로 읽기</h5>
           <p class="light textfont3">경제 지식을 바로 읽고 뜯고 즐기면서 재미있게 즐길 수 있는 경제 신문 바로 읽기!</p>
         </div>
+  </div>
+  <div class="row">
+      <div class="col s12">
+          <p class="textfont2" style="line-height: 0rem;">스터디 세줄 소개 <span style="font-size: 1.4rem; letter-spacing: 0px;">3 lines</span></p>
+      </div>
+      <div class="col s12 m4"><p class="light textfont3">1. 특별합니다. 새로운 즐거움 만세는 확장성에 맞지 않는다.</p><div class="divider" style="width: 50%;"></div></div>
+      <div class="col s12 m4"><p class="light textfont3">2. 아침 점심 저녁 먹고 룰루랄라 경이로움 모임 아이오아이 평범하고 일상 숲과 같은</p><div class="divider" style="width: 50%;"></div></div>
+      <div class="col s12 m4"><p class="light textfont3">3. 컨텐츠 접근제어 문제 쇼핑몰 플러그인 무겁고, 향후 컨텐츠 비즈니스 모델이다.</p><div class="divider" style="width: 50%;"></div></div>
   </div>
   <div class="row">
       <div class="col s12">
@@ -117,6 +175,72 @@
       </div>
   </div>
 </div>
+
+
+<div class="container" style="margin: 0px auto 50px;">
+  <div class="carousel carousel-slider center " data-indicators="true">
+    <div class="carousel-fixed-item center middle-indicator">
+     <div class="left">
+      <a href="Previo" class="movePrevCarousel middle-indicator-text waves-effect waves-light content-indicator"><i class="material-icons left  middle-indicator-text">chevron_left</i></a>
+     </div>
+     
+     <div class="right">
+     <a href="Siguiente" class=" moveNextCarousel middle-indicator-text waves-effect waves-light content-indicator"><i class="material-icons right middle-indicator-text">chevron_right</i></a>
+     </div>
+    </div>
+
+
+    <style type="text/css">
+      .a1{
+        background:url("/page_imgs/study_img/detailbg1.jpg") no-repeat center top;
+        background-size:auto 100%;
+      }
+    </style>
+
+    <div class="carousel-item a1 white-text" href="#one!">
+      <h2>First Panel</h2>
+      <p class="white-text">This is your first panel</p>
+
+    </div>
+    <div class="carousel-item amber white-text" href="#two!">
+      <h2>Second Panel</h2>
+      <p class="white-text">This is your second panel</p>
+    </div>
+    <div class="carousel-item green white-text" href="#three!">
+      <h2>Third Panel</h2>
+      <p class="white-text">This is your third panel</p>
+    </div>
+    <div class="carousel-item blue white-text" href="#four!">
+      <h2>Fourth Panel</h2>
+      <p class="white-text">This is your fourth panel</p>
+    </div>
+  
+  </div>
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js'></script>
+
+<script type="text/javascript">
+$(function(){ $('.carousel.carousel-slider').carousel({fullWidth: true,
+      indicators: false}); });
+
+
+
+
+   // move next carousel
+   $('.moveNextCarousel').click(function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      $('.carousel').carousel('next');
+   });
+
+   // move prev carousel
+   $('.movePrevCarousel').click(function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      $('.carousel').carousel('prev');
+   });
+</script>
 
 <div class="divider"></div>
 
@@ -145,168 +269,24 @@
   </div>
 </div>
 
-<script type="text/javascript">
-$(function(){ $('.carousel.carousel-slider').carousel({full_width: true}); });
-autoplay()   
-function autoplay() {
-    $('.carousel').carousel('next');
-    setTimeout(autoplay, 5000);
-}
 
 
-</script>
-
-<style type="text/css">
-      .carousel-slider {
-        height: 500px !important;
-      }
-
-</style>
-<div class="container">
-  <div class="carousel carousel-slider center" data-indicators="true">
-    <div class="carousel-item red white-text" href="#one!">
-      <img src="/page_imgs/study_img/1234.jpg">
-    </div>
-    <div class="carousel-item amber white-text" href="#two!">
-      <h2>Second Panel</h2>
-      <p class="white-text">This is your second panel</p>
-    </div>
-    <div class="carousel-item green white-text" href="#three!">
-      <h2>Third Panel</h2>
-      <p class="white-text">This is your third panel</p>
-    </div>
-    <div class="carousel-item blue white-text" href="#four!">
-      <h2>Fourth Panel</h2>
-      <p class="white-text">This is your fourth panel</p>
+<div class="parallax-container valign-wrapper">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <div class="row center">
+        <h5 class="header col s12 light"><b>내 삶이 경이로워지는 순간</b></h5>
+        <h4 class="header col s12 light"><b>"경이로움"</b></h4>
+      </div>
     </div>
   </div>
+  <div class="parallax"><img src="/page_imgs/study_img/background2.jpg" alt="Unsplashed background img 2"></div>
 </div>
 
 
-<div class="container">
-  <div class="row">
-    <div class="col s12 m4">
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light" >
-          <a href="/studymore/1"><img src="/page_imgs/study_img/1234.jpg"></a>
-          <span class="card-btn"><a class="waves-effect waves-light btn light-blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;">18시즌 2</a></span>
-          <span class="card-title" style="bottom: 30px;"><b>경제신문 바로 읽기</b></span>
-          <span class="card-name">모임장 임현우</span>
-          
-        </div>
-        <div class="card-content">
-          <p><i class="material-icons left">today</i>2018년 4월 21일 토요일</p>
-          <div class="divider"></div>
-          <p>아무렇게나 읽는 거 아냐! 경제신문, 제대로 읽어야 '내 것'이 된다. '경제신문' 이름만 들어도 왠지 어려울 것 같고, 거부감이 느껴진다면 주목!</p>
-          <p><a class="waves-effect waves-light btn light-blue darken-2" onclick="Materialize.toast('현재 '+a+'명의 구독자가 이 글을 확인 중입니다.', 1000,'',function(){window.location='/studymore/1';})">MORE</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="col s12 m4">
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light" >
-          <img src="/page_imgs/study_img/123.jpg">
-          <span class="card-btn"><a class="waves-effect waves-light btn light-blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;">18시즌 2</a></span>
-          <span class="card-title" style="bottom: 30px;"><b>전자공시로 주식하기</b></span>
-          <span class="card-name">모임장 이래학</span>
-          
-        </div>
-        <div class="card-content">
-          <p><i class="material-icons left">today</i>2018년 4월 21일 토요일</p>
-          <div class="divider"></div>
-          <p>주식투자, 전자공시부터 똑바로 보자! (DART 분석) 공시 속에 기업의 본심이 숨어 있다. 핵심 내용만 쉽게 풀어 쓴, 주식투자자를 위한 전자공시 활용법</p>
-          <p><a class="waves-effect waves-light btn light-blue darken-2" onclick="Materialize.toast('현재 '+a+'명의 구독자가 이 글을 확인 중입니다.', 1000,'',function(){window.location='#';})">MORE</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="col s12 m4">
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light" >
-          <img src="/page_imgs/study_img/12345.jpg">
-          <span class="card-btn"><a class="waves-effect waves-light btn light-blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;">18시즌 2</a></span>
-          <span class="card-title" style="bottom: 30px;"><b>사회초년생 재테크</b></span>
-          <span class="card-name">모임장 이성헌</span>
-          
-        </div>
-        <div class="card-content">
-          <p><i class="material-icons left">today</i>2018년 4월 21일 토요일</p>
-          <div class="divider"></div>
-          <p> 재테크의 가장 손쉬운 시작이 적금이란 것은 잘 안다. 하지만 너무나 깨기 쉽다는 것은 함정. 적금 한번 타본 적 없어도 가입할 때는 여기저기 은행</p>
-          <p><a class="waves-effect waves-light btn light-blue darken-2" onclick="Materialize.toast('현재 '+a+'명의 구독자가 이 글을 확인 중입니다.', 1000,'',function(){window.location='#';})">MORE</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col s12 m4">
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light" >
-          <img src="/page_imgs/study_img/123455.jpg">
-          <span class="card-btn"><a class="waves-effect waves-light btn light-blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;">18시즌 2</a></span>
-          <span class="card-title" style="bottom: 30px;"><b>빌딩 투자</b></span>
-          <span class="card-name">모임장 김윤수</span>
-          
-        </div>
-        <div class="card-content">
-          <p><i class="material-icons left">today</i>2018년 4월 21일 토요일</p>
-          <div class="divider"></div>
-          <p>대한민국에서 빌딩의 지위는 특별하다. 흔히 입버릇처럼 저승에 가더라도 평생 굶지 않도록 해주기 위해 부모가 물려줘야 하는 항목 1순위는 생활력이나 삶의 혜안이 아닌 '빌딩 한 채'라는 이야기</p>
-          <p><a class="waves-effect waves-light btn light-blue darken-2" onclick="Materialize.toast('현재 '+a+'명의 구독자가 이 글을 확인 중입니다.', 1000,'',function(){window.location='#';})">MORE</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="col s12 m4">
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light" >
-          <img src="/page_imgs/study_img/1234555.jpg">
-          <span class="card-btn"><a class="waves-effect waves-light btn light-blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;">18시즌 2</a></span>
-          <span class="card-title" style="bottom: 30px;"><b>차트로 주식하기</b></span>
-          <span class="card-name">모임장 이지연</span>
-          
-        </div>
-        <div class="card-content">
-          <p><i class="material-icons left">today</i>2018년 4월 21일 토요일</p>
-          <div class="divider"></div>
-          <p>월스트리트의 위대한 금융거래인이 들려주는 주식투자의 지혜! '갠 이론(Gann Theory)'으로 유명한 윌리엄 D. 갠. 그는 20세기 초 전설적인 금융계의 예언자로 금융거래인들 사이에서 큰 명성을 얻었다. </p>
-          <p><a class="waves-effect waves-light btn light-blue darken-2" onclick="Materialize.toast('현재 '+a+'명의 구독자가 이 글을 확인 중입니다.', 1000,'',function(){window.location='#';})">MORE</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="col s12 m4">
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light" >
-          <img src="/page_imgs/study_img/12345555.jpg">
-          <span class="card-btn"><a class="waves-effect waves-light btn light-blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;">18시즌 2</a></span>
-          <span class="card-title" style="bottom: 30px;"><b>주식 중급</b></span>
-          <span class="card-name">모임장 이동규</span>
-          
-        </div>
-        <div class="card-content">
-          <p><i class="material-icons left">today</i>2018년 4월 21일 토요일</p>
-          <div class="divider"></div>
-          <p>돈이 움직이는 주식시장에서는 희망 과 공포 등으로 인해 자신의 원칙을 지키기가 생각보다 어 렵다. 그래서 중급 이하의 실력이라면 무조건 원칙을 기계 적으로 따라야 한다.</p>
-          <p><a class="waves-effect waves-light btn light-blue darken-2" onclick="Materialize.toast('현재 '+a+'명의 구독자가 이 글을 확인 중입니다.', 1000,'',function(){window.location='#';})">MORE</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light"><b>내 삶이 경이로워지는 순간</b></h5>
-          <h4 class="header col s12 light"><b>"경이로움"</b></h4>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="/page_imgs/study_img/background2.jpg" alt="Unsplashed background img 2"></div>
-  </div>
+<% include std_bottom %>
 
 
 
-  <% include std_bottom %>
-
+</body>
 </html>

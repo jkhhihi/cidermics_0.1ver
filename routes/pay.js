@@ -46,7 +46,18 @@ router.get('/paygo/:ORDERNO/:PRODUCTCATE/:PRODUCTDETAILCATE/:AMOUNT', function(r
 	var AMOUNT = req.params.AMOUNT;
 	var date = getWorldTime(+9);
 
-	res.render('front/pay/pay_pur',{ORDERNO:ORDERNO, PRODUCTCATE:PRODUCTCATE, PRODUCTDETAILCATE:PRODUCTDETAILCATE, AMOUNT:AMOUNT, date:date });
+	res.render('front/pay/pay_go',{ORDERNO:ORDERNO, PRODUCTCATE:PRODUCTCATE, PRODUCTDETAILCATE:PRODUCTDETAILCATE, AMOUNT:AMOUNT, date:date });
+
+});
+
+router.get('/paydone/:ORDERNO/:PRODUCTCATE/:PRODUCTDETAILCATE/:AMOUNT', function(req,res,next){
+	var ORDERNO = req.params.ORDERNO;
+	var PRODUCTCATE = req.params.PRODUCTCATE;
+	var PRODUCTDETAILCATE = req.params.PRODUCTDETAILCATE;
+	var AMOUNT = req.params.AMOUNT;
+	var date = getWorldTime(+9);
+
+	res.render('front/pay/pay_done',{ORDERNO:ORDERNO, PRODUCTCATE:PRODUCTCATE, PRODUCTDETAILCATE:PRODUCTDETAILCATE, AMOUNT:AMOUNT, date:date });
 
 });
 
@@ -65,6 +76,41 @@ router.get('/paygo/:ORDERNO/:PRODUCTCATE/:PRODUCTDETAILCATE/:AMOUNT', function(r
 	});
 });
 */
+
+/* Nuborich */
+
+router.get('/paynubo', function(req, res, next) {
+
+	var subject = req.query.subject;
+	var cate = req.query.cate;
+	var detailCate = req.query.detailCate;
+	var price = req.query.price;
+
+	res.render('front/pay/nubo_pay_idx', {subject:subject, cate:cate, detailCate:detailCate, price:price});
+});
+
+
+router.get('/paygonubo/:ORDERNO/:PRODUCTCATE/:PRODUCTDETAILCATE/:AMOUNT', function(req,res,next){
+	var ORDERNO = req.params.ORDERNO;
+	var PRODUCTCATE = req.params.PRODUCTCATE;
+	var PRODUCTDETAILCATE = req.params.PRODUCTDETAILCATE;
+	var AMOUNT = req.params.AMOUNT;
+	var date = getWorldTime(+9);
+
+	res.render('front/pay/nubo_pay_go',{ORDERNO:ORDERNO, PRODUCTCATE:PRODUCTCATE, PRODUCTDETAILCATE:PRODUCTDETAILCATE, AMOUNT:AMOUNT, date:date });
+});
+
+router.get('/paydone/:ORDERNO/:PRODUCTCATE/:PRODUCTDETAILCATE/:AMOUNT', function(req,res,next){
+	var ORDERNO = req.params.ORDERNO;
+	var PRODUCTCATE = req.params.PRODUCTCATE;
+	var PRODUCTDETAILCATE = req.params.PRODUCTDETAILCATE;
+	var AMOUNT = req.params.AMOUNT;
+	var date = getWorldTime(+9);
+
+	res.render('front/pay/nubo_pay_done',{ORDERNO:ORDERNO, PRODUCTCATE:PRODUCTCATE, PRODUCTDETAILCATE:PRODUCTDETAILCATE, AMOUNT:AMOUNT, date:date });
+});
+
+
 
 
 module.exports = router;

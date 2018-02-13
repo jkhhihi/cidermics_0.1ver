@@ -787,7 +787,7 @@ router.post('/finbook_noamount', function(req,res,next){
 			res.redirect('back');
 		}
 	res.render('front/etc/finbook/finbook_noamount',{limdate:limdate, USERNAME:USERNAME, EMAIL:EMAIL, TELNO:TELNO});
-});
+	});
 });
 
 router.get('/finbook_search_fin', function(req,res,next){
