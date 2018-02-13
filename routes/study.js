@@ -45,6 +45,10 @@ router.get('/study/list', function(req, res, next) {
 	res.render('front/cid_study/std_list', { });
 });
 
+router.get('/studymore/1', function(req, res, next) {
+	res.render('front/cid_study/std_more', { });
+});
+
 router.get('/study/cal', function(req, res, next) {
 	res.render('front/cid_study/std_cal', { });
 });
