@@ -1195,12 +1195,9 @@ router.get('/finbook/cdDelete/:idx', ensureAuthenticated, function(req, res, nex
 
 router.get('/finbook/customer', ensureAuthenticated, function(req,res,next){
 	var CP = 6;
-	mysql.select('SELECT * FROM cider.mobileOrder order by date desc', function (err, data){
-		mysql.select('SELECT * FROM cider.cardOrder order by date desc;', function (err, data2){
-			mysql.select('SELECT cider.fin_order.ORDERNO, cider.fin_order.USERNAME, cider.fin_order.EMAIL, cider.fin_order.TELNO, cider.fin_order.payDate, cider.fin_code.fcode FROM cider.fin_order INNER JOIN cider.fin_code ON cider.fin_order.idx=cider.fin_code.idx;', function (err, data3){
-
-
-
+	mysql.select("SELECT * FROM cider.mobileOrder where PRODUCTNAME ='핀북' order by date desc", function (err, data){
+		mysql.select("SELECT * FROM cider.cardOrder where PRODUCTNAME ='핀북' order by date desc;", function (err, data2){
+			mysql.select('SELECT cider.fin_order.ORDERNO, cider.fin_order.USERNAME, cider.fin_order.EMAIL, cider.fin_order.TELNO, cider.fin_order.payDate, cider.fin_code.fcode, cider.fin_order.flag FROM cider.fin_order INNER JOIN cider.fin_code ON cider.fin_order.idx=cider.fin_code.idx  where cider.fin_order.flag= "Y";', function (err, data3){
 		res.render('admin/finbook/customer', { CP : CP, mobile:data, card:data2, code:data3 });
 	 });
 	});

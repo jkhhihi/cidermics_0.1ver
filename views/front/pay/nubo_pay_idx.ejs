@@ -52,7 +52,7 @@ var pm;
 
 function init() {
 	charset="EUC-KR";
-	document.charset ="EUC-KR";
+	document.charset ="EUC-KR";	
 	pf = document.frmConfirm;
 	pm = document.payForm;
 	pf.ORDERNO.value = getTimeStamp();
@@ -66,8 +66,8 @@ function init() {
 	pm.AMOUNT.value;
 
 	
-	pf.HOMEURL.value = 'http://cidermics.com/paypurnudo/'+ pf.ORDERNO.value +'/'+ pf.PRODUCTCATE.value+'/'+pf.PRODUCTDETAILCATE.value+'/'+pf.AMOUNT.value;
-	pm.HOMEURL.value = 'http://cidermics.com/paypurnudo/'+ pm.ORDERNO.value +'/'+ pm.PRODUCTCATE.value+'/'+pm.PRODUCTDETAILCATE.value+'/'+pm.AMOUNT.value;
+	pf.HOMEURL.value = 'http://cidermics.com/paygonubo/'+ pf.ORDERNO.value +'/'+ pf.PRODUCTCATE.value+'/'+pf.PRODUCTDETAILCATE.value+'/'+pf.AMOUNT.value;
+	pm.HOMEURL.value = 'http://cidermics.com/paygonubo/'+ pm.ORDERNO.value +'/'+ pm.PRODUCTCATE.value+'/'+pm.PRODUCTDETAILCATE.value+'/'+pm.AMOUNT.value;
 }
 
 //모바일 결제
@@ -366,7 +366,7 @@ function fnNumCheck() {
 				<input type="hidden" name="PRODUCTCATE" size="30" value="<%= cate %>"><br>
 				<input type="hidden" name="PRODUCTDETAILCATE" size="30" value="<%= detailCate %>"><br>
 
-				<input type="hidden" name="PRODUCTCODE" size="10" value="201701"><br>
+				<input type="hidden" name="PRODUCTCODE" size="10" value="<%= cate %>"><br>
 				<input type="hidden" name="RESERVEDINDEX1" size="20" value="RESERVEDATA1">
 				<input type="hidden" name="RESERVEDINDEX2" size="20" value="RESERVEDATA2">
 				<input type="hidden" name="RESERVEDSTRING" size="100" value="RESERVESTRING">
@@ -387,15 +387,15 @@ function fnNumCheck() {
 				<div class="check-amount row" align="center">
 					<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important;">
 						<div class="title">상품금액</div>
-						<div class="amount"><%=price%></div>
+						<div style="margin: 20px;"><span class="amount"><%=price%></span>원</div>
 					</div>
 					<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important; border-left:1px solid #ddd; border-right:1px solid #ddd;">
 						<div class="title">할인금액</div>
-						<div class="amount">-0</div>
+						<div style="margin: 20px;"><span class="amount">-0</span>원</div>
 					</div>
 					<div class="col-xs-6" style="padding-left:0 !important; padding-right:0 !important;">
 						<div class="title">총 주문금액</div>
-						<div class="amount" style="color:#ff0000; font-weight: 700;"><%=price%></div>
+						<div style="margin: 20px;"><span class="amount" style="color:#ff0000; font-weight: 700;"><%=price%></span>원</div>
 					</div>
 				</div>
 				<div class="payment-btn" align="right">
@@ -437,7 +437,7 @@ function fnNumCheck() {
 				<input type="hidden" name=ORDERNO value="">
 				<input type="hidden" name=PRODUCTTYPE value="2">
 				<input type="hidden" name=BILLTYPE value="1">
-				<input type="hidden" name=PRODUCTCODE value="201701">
+				<input type="hidden" name=PRODUCTCODE value="<%= cate %>">
 				<input type="hidden" name=RESERVEDINDEX1 value="예약어1">
 				<input type="hidden" name=RESERVEDINDEX2 value="예약어2">
 				<input type="hidden" name=RESERVEDSTRING value="예약스트링">
@@ -450,15 +450,15 @@ function fnNumCheck() {
 				<div class="check-amount row" align="center">
 					<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important;">
 						<div class="title">상품금액</div>
-						<div class="amount"><%=price%></div>
+						<div style="margin: 20px;"><span class="amount"><%=price%></span>원</div>
 					</div>
 					<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important; border-left:1px solid #ddd; border-right:1px solid #ddd;">
 						<div class="title">할인금액</div>
-						<div class="amount">-0</div>
+						<div style="margin: 20px;"><span class="amount">-0</span>원</div>
 					</div>
 					<div class="col-xs-6" style="padding-left:0 !important; padding-right:0 !important;">
 						<div class="title">총 주문금액</div>
-						<div class="amount" style="color:#ff0000; font-weight: 700;"><%=price%></div>
+						<div style="margin: 20px;"><span class="amount" style="color:#ff0000; font-weight: 700;"><%=price%></span>원</div>
 					</div>
 				</div>
 				<div class="payment-btn" align="right">
@@ -487,7 +487,15 @@ function fnNumCheck() {
 
 			<!-- 무통장 입금 -->
 		    <div role="tabpanel" class="tab-pane fade" id="account">
-		    	<form name="nonamount" method="post" action="/finbook_noamount">
+		    	<form name="nonamount" method="post" action="/pay_noamount">
+
+		    		<input type="hidden" name=PRODUCTNAME size=20 value="<%= subject %>">
+
+					<!--카드사 API에 없는거 직접 만듬 -->
+					<input type="hidden" name="PRODUCTCATE" size="30" value="<%= cate %>">
+					<input type="hidden" name="PRODUCTDETAILCATE" size="30" value="<%= detailCate %>">
+
+
 					<div class="form-box">
 			    	<div class="row form-style">
 						<div class="col-xs-12"><p class="title">상품명</p> : <span style="margin:0 0 0 10px; font-weight: 700;"><%=subject%></span></div>
@@ -506,15 +514,15 @@ function fnNumCheck() {
 			    	<div class="check-amount row" align="center">
 						<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important;">
 							<div class="title">상품금액</div>
-							<div class="amount"><%=price%></div>
+							<div style="margin: 20px;"><span class="amount"><%=price%></span>원</div>
 						</div>
 						<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important; border-left:1px solid #ddd; border-right:1px solid #ddd;">
 							<div class="title">할인금액</div>
-							<div class="amount">-0</div>
+							<div style="margin: 20px;"><span class="amount">-0</span>원</div>
 						</div>
 						<div class="col-xs-6" style="padding-left:0 !important; padding-right:0 !important;">
 							<div class="title">총 주문금액</div>
-							<div class="amount" style="color:#ff0000; font-weight: 700;"><%=price%></div>
+							<div style="margin: 20px;"><span class="amount" style="color:#ff0000; font-weight: 700;"><%=price%></span>원</div>
 						</div>
 					</div>
 					<div class="payment-btn" align="right">

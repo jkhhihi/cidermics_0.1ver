@@ -15,12 +15,14 @@
 
 <script src="/js/bootstrap.min.js"></script>
 
+
+
 <script type="text/javascript">
 
 function getCode(){
 
 	if(document.getcode.USERNAME.value==""){
-	 alert("검사자 성명을 입력해 주세요.");
+	 alert("성명을 입력해 주세요.");
 	document.getcode.USERNAME.focus();
 	  return;
 	}
@@ -63,7 +65,7 @@ function getCode(){
 function nosmt(){
 
 	if(document.nonamount.USERNAME.value==""){
-	 alert("입금자 성명을 입력해주세요.");
+	 alert("성명을 입력해주세요.");
 	document.nonamount.USERNAME.focus();
 	  return;
 	}else if(document.nonamount.EMAIL.value==""){
@@ -130,51 +132,51 @@ border: 2px solid #3882be;
 			<div class="col-xs-7 img" align="right"><img class="stepimg img-responsive" src="/page_imgs/pay_img/img-step_2.png"></div>
 		</div>
 		<div class="check-pincode row">
-			<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important;">
+			<div class="col-xs-6" style="padding-left:0 !important; padding-right:0 !important;">
 				<div class="title">주문번호</div>
 				<div class="amount"><%=ORDERNO%></div>
 			</div>
-			<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important;">
+			<div class="col-xs-6" style="padding-left:0 !important; padding-right:0 !important;">
 				<div class="title">주문일</div>
-				<div class="amount"></div>
+				<div class="amount"><%=date%></div>
 			</div>
-			<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important;">
+		</div>
+		<div class="check-pincode row">
+			<div class="col-xs-6" style="padding-left:0 !important; padding-right:0 !important;">
 				<div class="title">주문 금액</div>
 				<div class="amount"><%=AMOUNT%></div>
 			</div>
-			<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important;">
+			<div class="col-xs-6" style="padding-left:0 !important; padding-right:0 !important;">
 				<div class="title">결제 현황</div>
 				<div class="amount">완료</div>
 			</div>
 		</div>
-		<!--div class="way" align="left">
-			<p>※ 구매내역 확인 방법</p>
-			<p>회원 구매시 : >></p>
-			<p>비회원 구매시 : >></p>
-		</div-->
 		
 		<div id="pur-form" align="left">
 
-			<form method="post" action="/finbook_ch_code/<%=ORDERNO%>" name="getcode">
-				<input type="hidden" name="">
+			<form method="post" action="/payinsertnubo" name="getcode">
 				<input type="hidden" name="ORDERNO" value="<%=ORDERNO%>">
+				<input type="hidden" name="AMOUNT" value="<%=AMOUNT%>">
+				<input type="hidden" name="PRODUCTCATE" value="<%=PRODUCTCATE%>">
+				<input type="hidden" name="PRODUCTDETAILCATE" value="<%=PRODUCTDETAILCATE%>">
+
 				<div class="form-box">
 					<div class="row form-style1">
 						<div class="col-xs-12"><p class="care"> * 결제 완료 후 반드시 신청서를 작성하셔야 진행이 가능합니다.<br>* 각 항목을 빠짐없이 정확하게 입력주세요.</p>
-							<div class="col-xs-12"><p class="title">신청자 성명<span class="star"> * </span></p> : <input class="input-style1" type=text name="USERNAME" value=""></div>
+							<div class="col-xs-12"><p class="title">신청자 성명<span class="star"> * </span></p> : <input class="input-style1" type=text name="USERNAME" value="" maxlength="6"></div>
 							<div class="col-xs-12"><p class="title">이메일<span class="star"> * </span></p> : <input class="input-style1" type=text name="EMAIL" size=20 value="" placeholder="예) cider@cider.com"></div>
 							<div class="col-xs-12"><p class="title">휴대번호<span class="star"> * </span></p> : <input class="input-style1" type="text" name="TELNO" size="" maxlength="11" value="" placeholder="'-', 공백없이"><br><p style="margin-left:116px;">예) 01012345678</p></div>
-							<div class="col-xs-12"><p class="title">생년월일</p> : <input class="input-style1" type=text name="birth" value="" placeholder="19890101"></div>
+							<div class="col-xs-12"><p class="title">나이</p> : <input class="input-style1" type=text name="birth" value="" placeholder="" size="8" maxlength="3">세</div>
 							<div class="col-xs-12"><p class="title">성별</p> : 
 								<label class="radio-inline" style="margin-left: 10px;">
-							      <input type="radio" name="optsex">남
+							      <input type="radio" name="optsex" value="남">남
 							    </label>
 							    <label class="radio-inline">
-							      <input type="radio" name="optsex">여
+							      <input type="radio" name="optsex" value="여">여
 							    </label>
 							</div>
-							<div class="col-xs-12"><p class="title">주식 투자 경력</p> : <input class="input-style1" type=text name="career" value="" placeholder="1년2개월"></div>
-							<div class="col-xs-12"><p class="title">주식 투자 금액</p> : <input class="input-style1" size="8" type=text name="investprice" value="" placeholder="100">만원</div>
+							<div class="col-xs-12"><p class="title">주식 투자 경력</p> : <input class="input-style1" type=text name="career" value="" placeholder="1년2개월" maxlength="8"></div>
+							<div class="col-xs-12"><p class="title">주식 투자 금액</p> : <input class="input-style1" size="8" type=text name="investprice" value="" placeholder="100" maxlength="8">만원</div>
 
 							<div class="col-xs-12" style="margin:20px 0 0 0;">
 								<input type="checkbox" id="cb1" name="checkbox1" style="margin-right:10px; cursor:pointer">서비스 이용약관 동의<span class="star"> * </span>

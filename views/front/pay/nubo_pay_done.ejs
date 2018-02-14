@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<!-- 네이버 -->
+<meta name="naver-site-verification" content="083657cb98aa9a4a9c62dedeffddfb2490545da0"/>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>사이다경제 | 구매내역</title>
+<link href="/css/flipbook/finbook.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/component.css" />
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+<link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+
+<script src="/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+var requiredfrom = "/paygonubo/"; // required prev. page
+var requiredfrom2 = "/pay_send_email"; // required prev. page 
+
+if (document.referrer.indexOf(requiredfrom) == -1 && document.referrer.indexOf(requiredfrom2) == -1) { 
+alert("잘못된 접근입니다.");
+window.location=requiredfrom && requiredfrom2;// && window.location=requiredfrom2; 
+}
+
+</script>
+
+<script type="text/javascript">
+function PrintElem(elem)
+{
+Popup($(elem).html());
+}
+function Popup(data)
+{
+var mywindow = window.open('', 'my div', 'height=800,width=800');
+mywindow.document.write('<html><head><title>사이다경제 세미나 거래 내역서</title>');
+mywindow.document.write('</head><body>');
+mywindow.document.write('<br>');
+mywindow.document.write('<div class="check-purchase-in container" align="center">');
+mywindow.document.write('<div class="title">주문번호</div>');
+mywindow.document.write('<div class="amount"><%=oinfo[0].orderno%></div>');
+mywindow.document.write('<br>');
+mywindow.document.write('</div>');
+mywindow.document.write('<div class="col-xs-6" style="padding-left:0 !important; padding-right:0 !important; border-left:1px solid #ddd; border-right:1px solid #ddd;">');
+
+mywindow.document.write('<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important;">');
+mywindow.document.write('<div class="title">수량</div>');
+mywindow.document.write('<div class="amount">1</div>');
+mywindow.document.write('<div class="title">구매 금액</div>');
+mywindow.document.write('<div class="amount"><%=oinfo[0].amount%>원</div>');
+mywindow.document.write('<br>');
+mywindow.document.write('</div>');
+mywindow.document.write('</div>');
+mywindow.document.write('<div class="check-pincode row">');
+mywindow.document.write('<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important;">');
+mywindow.document.write('<div class="title">성명</div>');
+mywindow.document.write('<div class="amount"><%=oinfo[0].name%></div>');
+mywindow.document.write('<br>');
+mywindow.document.write('</div>');
+mywindow.document.write('<div class="col-xs-6" style="padding-left:0 !important; padding-right:0 !important; border-left:1px solid #ddd; border-right:1px solid #ddd;">');
+mywindow.document.write('<div class="title">이메일주소</div>');
+mywindow.document.write('<div class="amount"><%=oinfo[0].email%></div>');
+mywindow.document.write('<br>');
+mywindow.document.write('</div>');
+mywindow.document.write('<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important;">');
+mywindow.document.write('<div class="title">휴대번호</div>');
+mywindow.document.write('<div class="amount"><%=oinfo[0].phone%></div>');
+mywindow.document.write('<br>');
+mywindow.document.write('</div>');
+mywindow.document.write('</div>');
+mywindow.document.write('<p>자세한 사항은</p>');
+mywindow.document.write('<p><b>http://www.cidermics.com/</b></p>');
+mywindow.document.write('<p>에서 확인하세요!</p>');
+mywindow.document.write('<br>');
+mywindow.document.write('<p><b>Contact</b></p>');
+mywindow.document.write('<p>contact@cidermics.com</p>');
+mywindow.document.write('<p>02)2088-5754(월~금 09:00~18:00)</p>');
+mywindow.document.write('<p>카카오톡 문의</p>');
+mywindow.document.write('<p>ID 검색: 사이다경제</p>');
+mywindow.document.write('</body></html>');
+mywindow.document.close(); // IE >= 10에 필요
+mywindow.focus(); // necessary for IE >= 10
+mywindow.print();
+mywindow.close();
+return true;
+}
+</script>
+
+<style>
+input.MyButton {
+padding: 10px 15px;
+cursor: pointer;
+font-weight: bold;
+background: #f6f6f6;
+font-size:18px;
+color: #333;
+border: 2px solid #3882be;
+border-radius: 3px;
+}
+input.MyButton:hover {
+color: #fff;
+background: #3882be;
+border: 2px solid #3882be;
+}
+
+input.MyButton1 {
+padding: 10px 15px;
+cursor: pointer;
+font-weight: bold;
+background: #3882be;
+font-size:18px;
+color: #fff;
+border: 2px solid #3882be;
+border-radius: 3px;
+}
+input.MyButton1:hover {
+color: #333;
+background: #f6f6f6;
+border: 2px solid #3882be;
+}
+</style>
+		
+</head>
+
+<body>
+
+<% include ../top %>
+
+<div id="check-purchase">
+	
+	<div class="title-box">
+	<div class="container">
+		<span class="title"><b>신청 완료</b></span>
+	</div>
+	</div>
+	<div class="check-purchase-in container" align="center">
+		<div class="row step">
+		<div class="col-xs-5 text" align="left"><b><span style="color:#333;">주문번호 </span>"<%=oinfo[0].orderno%>" </b></div>
+		<div class="col-xs-7 img" align="right"><img class="stepimg img-responsive" src="/page_imgs/pay_img/img-step_3.png"></div>
+		</div>
+		<div class="check-pincode row">
+			<div class="col-xs-10" style="padding-left:0 !important; padding-right:0 !important; border-left:1px solid #ddd; border-right:1px solid #ddd;">
+				<div class="title">세미나 명</div>
+				<div class="amount"><b style="font-size: 19px;">금리 인상에도 돈버는 주식투자법</b></div>
+			</div>
+			<div class="col-xs-2" style="padding-left:0 !important; padding-right:0 !important;">
+				<div class="title">구매 금액</div>
+				<div class="amount"><%=oinfo[0].amount%>원</div>
+			</div>
+		</div>
+		<div class="check-pincode row">
+			<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important;">
+				<div class="title">성명</div>
+				<div class="amount"><%=oinfo[0].name%></div>
+			</div>
+			<div class="col-xs-5" style="padding-left:0 !important; padding-right:0 !important; border-left:1px solid #ddd; border-right:1px solid #ddd;">
+				<div class="title">이메일주소</div>
+				<div class="amount"><%=oinfo[0].email%></div>
+			</div>
+			<div class="col-xs-4" style="padding-left:0 !important; padding-right:0 !important;">
+				<div class="title">휴대번호</div>
+				<div class="amount"><%=oinfo[0].phone%></div>
+			</div>
+		</div>
+		<div align="right"><a onclick="PrintElem()" style="cursor: pointer;"><img style="margin:10px 5px 0 0" alt="" class="img-responsive" src="/page_imgs/finbook_img/printicon.png" width="45" height="45"><b>내용 인쇄</b></a></div>
+
+		<form name="sendemail" action="/pay_send_email" method="post" id="frm">
+		<input type="hidden" name="EMAIL" value="<%=oinfo[0].email%>">
+		<div class="inspection-btn">
+			<input class="MyButton1" type="button" value="내 이메일로 내역 전송"  onclick="document.getElementById('frm').submit();" />
+			<!--button type="submit" style="width: 200px; background-color:#1987c9; color:#ffffff; border:2px solid #eaeaea;"><b>내 이메일로 코드전송</b></button-->
+		</div>
+		</form>
+
+		<style type="text/css">
+		.apply-question p{
+			border : 2px solid #1b87c9;
+			background-color : #1b87c9;
+			color : #fff;
+			width : 200px;
+			height: auto;;
+			border-radius: 40px;
+			font-weight: bold;
+			font-size: 12px;
+			padding: 10px 0;
+		}
+		.apply-question1{
+			border : 2px solid #fce000;
+			background-color :#fce000;
+			color : #212121;
+			width : 200px;
+			height: auto;;
+			border-radius: 40px;
+			font-weight: bold;
+			font-size: 12px;
+			padding: 10px 0;
+		}
+		</style>
+
+		<p><img style="margin:20px 0 0 0" alt="" class="img-responsive" src="/page_imgs/finbook_img/arrow-bottom.png" width="45"></p>	
+		<div class="apply-question">
+			<p>일반문의<br><span>contact@cidermics.com</span></p>
+		</div>
+		<br>
+		<div class="apply-question1">
+			<a href="http://plus.kakao.com/home/@%EC%82%AC%EC%9D%B4%EB%8B%A4%EA%B2%BD%EC%A0%9C" target="_blank"><p>카톡문의<br><span>옐로우ID:@사이다경제</span></p></a>
+		</div>
+	</div>
+</div>
+
+
+
+<% include ../bottom %>
+
+</body>
+</html>
