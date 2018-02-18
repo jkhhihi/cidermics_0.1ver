@@ -154,57 +154,57 @@
             <br>
 
             <div class="row">
-              <div class="col s3 m2">리더</div>
-              <div class="col s7 m4" style="text-align: left;"><b>임현우</b></div>
-              <div class="col s2 m6"></div>
+              <div class="col s3 m3">리더</div>
+              <div class="col s7 m5" style="text-align: left;"><b>임현우</b></div>
+              <div class="col s2 m4"></div>
             </div>
 
             <div class="row">
-              <div class="col s3 m2">기간</div>
-              <div class="col s6 m4" style="text-align: left;"><b>18년 4월(3개월)</b></div>
-              <div class="col s3 m6"></div>
+              <div class="col s3 m3">기간</div>
+              <div class="col s6 m5" style="text-align: left;"><b>18년 4월(3개월)</b></div>
+              <div class="col s3 m4"></div>
             </div>
 
             <div class="row">
-              <div class="col s3 m2">일정</div>
+              <div class="col s3 m3">일정</div>
               <div class="col s7 m6" style="text-align: left;"><b>4/24(토) 10:00~12:30<br>4/24(토) 10:00~12:30<br>4/24(토) 10:00~12:30</b></div>
-              <div class="col s2 m4"></div>
+              <div class="col s2 m3"></div>
             </div>
 
             <div class="row">
-              <div class="col s3 m2">장소</div>
+              <div class="col s3 m3">장소</div>
               <div class="col s7 m6" style="text-align: left;"><b>삼성역 5번 출구 하나금융투자</b><p><a href="#">약도 (클릭)</a></p></div>
-              <div class="col s2 m4"></div>
+              <div class="col s2 m3"></div>
             </div>
 
             <div class="row">
-              <div class="col s3 m2">금액</div>
+              <div class="col s3 m3">금액</div>
               <div class="col s7 m6" style="text-align: left;"><b>299,000원</b></div>
-              <div class="col s2 m4"></div>
+              <div class="col s2 m3"></div>
             </div>
 
             <div class="row">
-              <div class="col s3 m2">모집 인원</div>
+              <div class="col s3 m3">모집 인원</div>
               <div class="col s7 m6" style="text-align: left;"><b>5~15명</b></div>
-              <div class="col s2 m4"></div>
+              <div class="col s2 m3"></div>
             </div>
 
             <div class="row">
-              <div class="col s3 m2">포함 혜택</div>
+              <div class="col s3 m3">포함 혜택</div>
               <div class="col s7 m6" style="text-align: left;"><b>릴레이 세미나 무료 + 경이로움 더하기 + 사모임 + BIG소셜파티</b></div>
-              <div class="col s2 m4"></div>
+              <div class="col s2 m3"></div>
             </div>
 
             <div class="row">
-              <div class="col s3 m2">준비사항</div>
+              <div class="col s3 m3">준비사항</div>
               <div class="col s7 m6" style="text-align: left;"><b>모임 전 과제</b></div>
-              <div class="col s2 m4"></div>
+              <div class="col s2 m3"></div>
             </div>
 
             <div class="row">
-              <div class="col s3 m2">담당자</div>
+              <div class="col s3 m3">담당자</div>
               <div class="col s7 m6" style="text-align: left;"><b>김의현 010-8834-5754</b></div>
-              <div class="col s2 m4"></div>
+              <div class="col s2 m3"></div>
             </div>
 
             <style type="text/css">
@@ -215,21 +215,52 @@
               }
               .apply-form button{
                 border:2px solid #1b87c9;
+                background-color:#1b87c9;
+                color:#fff;
+                width:200px;
+                height:auto;
+                border-radius:40px;
+                font-weight:bold;
+                font-size: 18px;
+                padding:10px 0 10px 0;
+              }
+              .apply-form2 button:hover{
+                border:2px solid #1b87c9;
+                background-color:#dcdcdc;
+                color:#fff;
+              }
+              .apply-form2 button{
+                border:2px solid #1b87c9;
                 background-color:#fff;
-                color:#212121;
+                color:#1b87c9;
+                width:200px;
+                height:auto;
+                border-radius:40px;
+                font-weight:bold;
+                font-size: 18px;
+                padding:10px 0 10px 0;
               }
               
             </style>
 
-            <div class="apply-form">
-              <form action="/paynubo" name="apply" method="get">
-                <input type="hidden" name="subject" value="금리 인상에도 돈버는 주식투자법">
-                <input type="hidden" name="cate" value="1">
-                <input type="hidden" name="detailCate" value="1">
-                <input type="hidden" name="price" value="45000">
-                <button type="submit"><p>신청하기</p></button>
-              </form>
+          <div class="row">
+            <div class="col s12 m6">
+              <div class="apply-form">
+                <form action="/paynubo" name="apply" method="get">
+                  <input type="hidden" name="subject" value="금리 인상에도 돈버는 주식투자법">
+                  <input type="hidden" name="cate" value="1">
+                  <input type="hidden" name="detailCate" value="1">
+                  <input type="hidden" name="price" value="45000">
+                  <button type="submit">신청하기</button>
+                </form>
+              </div>
             </div>
+            <div class="col s12 m6">
+              <div class="apply-form2">
+                  <button type="button" onclick="location.href='/study/faq'"><a href="/study/faq" style="color:#1b87c9;">문의하기</a></button>
+              </div>
+            </div>
+          </div>
 
 
         </div>
