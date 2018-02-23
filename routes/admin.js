@@ -6,17 +6,17 @@ var router = express.Router();
 var fs = require('fs');
 var multer = require('multer');
 
-/*의미없는 코드
-var storage = multer.diskStorage({
+/*의미없는 코드 */
+/*var storage = multer.diskStorage({
 	destination: function (req, file, callback) {
-		callback(null, './public/uploads');
+		callback(null, './public/std');
 	},
 	filename: function (req, file, callback) {
 		callback(null, file.originalname);
 	}
 });
-var upload = multer({ storage : storage});
-*/
+var upload = multer({ storage : storage});*/
+
 
 var formidable = require('formidable');
 var dir = require('node-dir');
@@ -221,8 +221,7 @@ router.get('/contents/files/:page', ensureAuthenticated, function(req, res, next
 router.post('/contents/insert/upload', ensureAuthenticated, function(req, res, next) {
 	
 	var form = new formidable.IncomingForm();
-	console.log(req.file);
-	
+
 	form.parse(req);
 //	form.on("fileBegin", function (name, file){
 //		console.log('upload come on3');
@@ -230,8 +229,6 @@ router.post('/contents/insert/upload', ensureAuthenticated, function(req, res, n
     form.on("file", function (name, file){
         fs.readFile(file.path, function(error, data){
         	var filePath = __dirname + '/../public/uploads/' + file.name;
-        	console.log(filePath);
-        	console.log(file);
         	
         	fs.writeFile(filePath, data, function(error){
         		if(error){
@@ -260,10 +257,7 @@ router.post('/discuss/insert/upload', ensureAuthenticated, function(req, res, ne
     form.on("file", function (name, file){
         fs.readFile(file.path, function(error, data){
         	var filePath = __dirname + '/../public/discuss_imgs/' + file.name;
-        	console.log(filePath);
-        	console.log(file);
-			
-        	
+
         	fs.writeFile(filePath, data, function(error){
         		if(error){
         		}else {
@@ -377,19 +371,14 @@ router.get('/contents/detail/:no', ensureAuthenticated, function(req, res, next)
 					res.redirect('back');
 				}
 				mysql.select('select * from cider.cid_user where user_level="2"', function (err, data3){
-					if(err){
-						res.redirect('back');
-					}
-					user = data3;
-					console.log(user);
-					res.render('admin/contents/update', {contents : data2, CP : CP, cate : data, user : user});
-					
-			    });
-				
+				if(err){
+					res.redirect('back');
+				}
+				user = data3;
+				res.render('admin/contents/update', {contents : data2, CP : CP, cate : data, user : user});
 			});
-		
+		});
     });
-	
 });
 
 
@@ -767,7 +756,6 @@ router.get('/discuss/files/:page', ensureAuthenticated, function(req, res, next)
 	var end = page * 12 -1;
 	
 	var dir = __dirname + "/../public/discuss_imgs/";
-	console.log(dir);
 	var files = fs.readdirSync(dir)
 	    .map(function(v) {
 	        return { name:v,
@@ -1195,8 +1183,8 @@ router.get('/finbook/cdDelete/:idx', ensureAuthenticated, function(req, res, nex
 
 router.get('/finbook/customer', ensureAuthenticated, function(req,res,next){
 	var CP = 6;
-	mysql.select("SELECT * FROM cider.mobileOrder where PRODUCTNAME ='핀북' order by date desc", function (err, data){
-		mysql.select("SELECT * FROM cider.cardOrder where PRODUCTNAME ='핀북' order by date desc;", function (err, data2){
+	mysql.select("SELECT * FROM cider.mobileOrder      order by date desc", function (err, data){
+		mysql.select("SELECT * FROM cider.cardOrder      order by date desc;", function (err, data2){
 			mysql.select('SELECT cider.fin_order.ORDERNO, cider.fin_order.USERNAME, cider.fin_order.EMAIL, cider.fin_order.TELNO, cider.fin_order.payDate, cider.fin_code.fcode, cider.fin_order.flag FROM cider.fin_order INNER JOIN cider.fin_code ON cider.fin_order.idx=cider.fin_code.idx  where cider.fin_order.flag= "Y";', function (err, data3){
 		res.render('admin/finbook/customer', { CP : CP, mobile:data, card:data2, code:data3 });
 	 });
@@ -1347,7 +1335,224 @@ router.get('/podo/delete/:pd_no', function(req, res, next) {
 
 
 
+/* 스터디 */
+
+router.get('/study', ensureAuthenticated, function(req, res, next) {
+	var CP = 8;
+	res.render('admin/study/std_index', { CP : CP});
+});
+
+router.get('/studyin', ensureAuthenticated, function(req, res, next) {
+	var CP = 8;
+	res.render('admin/study/std_insert', { CP : CP});
+});
+
+//스터디 이미지 업로드 등록
+router.post('/study/insert/upload', ensureAuthenticated, function(req, res, next) {
+	var form = new formidable.IncomingForm();	
+
+	form.parse(req);
+    form.on("file", function (name, file){
+        fs.readFile(file.path, function(error, data){
+
+        	var filePath = __dirname + '/../public/std/' + file.name;
 
 
+        	fs.writeFile(filePath, data, function(error){
+        		if(error){
+        		}else {
+        		}
+        	});
+        });
+    });
+    form.on("end", function() {
+		  res.redirect('back');
+		});
+});
+
+
+router.post('/study/insert', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 8;
+
+	var cate = '182'; // 18년 시즌2
+
+	var decate = req.body.decate;
+	var recentdate = req.body.recentdate;
+	var subject = req.body.subject;
+	var subject2 = req.body.subject2;
+	var bgimg1 = req.body.bgimg1;
+	var thum = req.body.thum;
+	var thum2 = req.body.thum2;
+	var leader = req.body.leader;
+	var period = req.body.period;
+	var sche1 = req.body.sche1;
+	var sche2 = req.body.sche2;
+	var sche3 = req.body.sche3;
+	var location = req.body.location;
+	var price = req.body.price;
+	var people = req.body.people;
+	var line1 = req.body.line1;
+	var line2 = req.body.line2;
+	var line3 = req.body.line3;
+	var value1 = req.body.value1;
+	var value2 = req.body.value2;
+	var value3 = req.body.value3;
+	var slimg1 = req.body.slimg1;
+	var slimg2 = req.body.slimg2;
+	var slimg3 = req.body.slimg3;
+	var slimg4 = req.body.slimg4;
+	var lepro1 = req.body.lepro1;
+	var lepro2 = req.body.lepro2;
+	var lepro3 = req.body.lepro3;
+	var lepro4 = req.body.lepro4;
+	var appt1 = req.body.appt1;
+	var appc1 = req.body.appc1;
+	var appt2 = req.body.appt2;
+	var appc2 = req.body.appc2;
+	var appt3 = req.body.appt3;
+	var appc3 = req.body.appc3;
+	var step1 = req.body.step1;
+	var stepc1 = req.body.stepc1;
+	var step2 = req.body.step2;
+	var stepc2 = req.body.stepc2;
+	var step3 = req.body.step3;
+	var stepc3 = req.body.stepc3;
+	var flag='';
+
+	var date = getWorldTime(+9);
+	var rdate = req.body.rdate;
+
+	var sets = {cate:cate,recentdate:recentdate,decate:decate,subject : subject, subject2 : subject2, bgimg1 : bgimg1, thum : thum, thum2 : thum2, leader:leader, period : period, sche1 : sche1, sche2 : sche2,
+		sche3 : sche3, location : location, price : price, people : people, line1 : line1, line2 : line2, line3 : line3, value1 : value1,
+	 value2 : value2, value3 : value3, slimg1 : slimg1, slimg2 : slimg2, slimg3 : slimg3, slimg4 : slimg4, lepro1 : lepro1,
+	 lepro2 : lepro2, lepro3 : lepro3, lepro4 : lepro4, appt1 : appt1, appc1 : appc1, appt2 : appt2, appc2 : appc2, appt3 : appt3, appc3 : appc3,
+	 step1 : step1, stepc1 : stepc1, step2:step2,stepc2:stepc2,step3:step3,stepc3:stepc3, regdate:date, flag:'N'};
+	
+	mysql.insert('insert into cider.std_more set ?', sets,  function (err, data){
+    	res.redirect('/adm/study');
+    });
+});
+
+router.post('/study/update', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 8;
+	
+	var idx = req.body.idx;
+	var recentdate = req.body.recentdate;
+	var decate = req.body.decate;
+	var subject = req.body.subject;
+	var subject2 = req.body.subject2;
+	var bgimg1 = req.body.bgimg1;
+	var thum = req.body.thum;
+	var thum2 = req.body.thum2;
+	var leader = req.body.leader;
+	var period = req.body.period;
+	var sche1 = req.body.sche1;
+	var sche2 = req.body.sche2;
+	var sche3 = req.body.sche3;
+	var location = req.body.location;
+	var price = req.body.price;
+	var people = req.body.people;
+	var line1 = req.body.line1;
+	var line2 = req.body.line2;
+	var line3 = req.body.line3;
+	var value1 = req.body.value1;
+	var value2 = req.body.value2;
+	var value3 = req.body.value3;
+	var slimg1 = req.body.slimg1;
+	var slimg2 = req.body.slimg2;
+	var slimg3 = req.body.slimg3;
+	var slimg4 = req.body.slimg4;
+	var lepro1 = req.body.lepro1;
+	var lepro2 = req.body.lepro2;
+	var lepro3 = req.body.lepro3;
+	var lepro4 = req.body.lepro4;
+	var appt1 = req.body.appt1;
+	var appc1 = req.body.appc1;
+	var appt2 = req.body.appt2;
+	var appc2 = req.body.appc2;
+	var appt3 = req.body.appt3;
+	var appc3 = req.body.appc3;
+	var step1 = req.body.step1;
+	var stepc1 = req.body.stepc1;
+	var step2 = req.body.step2;
+	var stepc2 = req.body.stepc2;
+	var step3 = req.body.step3;
+	var stepc3 = req.body.stepc3;
+	var flag=req.body.flag;
+
+	var rdate   = req.body.rdate;
+	var modate = getWorldTime(+9);
+	
+	var sets = {flag:flag,recentdate:recentdate,decate:decate,subject : subject, subject2 : subject2, bgimg1 : bgimg1, thum : thum, thum2 : thum2, leader:leader, period : period, sche1 : sche1, sche2 : sche2,
+		sche3 : sche3, location : location, price : price, people : people, line1 : line1, line2 : line2, line3 : line3, value1 : value1,
+	 value2 : value2, value3 : value3, slimg1 : slimg1, slimg2 : slimg2, slimg3 : slimg3, slimg4 : slimg4, lepro1 : lepro1,
+	 lepro2 : lepro2, lepro3 : lepro3, lepro4 : lepro4, appt1 : appt1, appc1 : appc1, appt2 : appt2, appc2 : appc2, appt3 : appt3, appc3 : appc3,
+	 step1 : step1, stepc1 : stepc1, step2:step2,stepc2:stepc2,step3:step3,stepc3:stepc3,modate:modate};
+
+//mysql.update('update cider.std_more set subject = ?, subject2 = ?, bgimg1 = ?,thum=?,leader = ? ,period = ?,sche1 = ?, sche2 = ? ,sche3= ? where idx = ?', [subject,subject2,bgimg1,thum,leader,period,sche1,sche2,sche3,idx], function (err, data){
+    
+	mysql.update('update cider.std_more set flag=?,recentdate=?,decate=?,subject = ?, subject2 = ?, bgimg1 = ?, thum = ?, thum2=?, leader = ?, period = ?, sche1 = ?, sche2 = ? ,sche3= ? ,location= ?,price= ? ,people= ? ,line1= ? ,line2= ? ,line3= ? ,value1= ? ,value2= ? ,value3= ? ,slimg1= ? ,slimg2= ? ,slimg3= ? ,slimg4= ? ,lepro1= ?,lepro2= ?,lepro3= ?  ,lepro4= ?  ,appt1= ?  ,appc1= ?  ,appt2= ?  ,appc2= ?  ,appt3= ?  ,appc3= ?  ,step1= ?  ,stepc1= ?,step2= ?  ,stepc2= ?,step3= ?  ,stepc3= ? , modate= ? where idx = ?', [flag,recentdate,decate,subject,subject2,bgimg1,thum,thum2,leader,period,sche1,sche2,sche3,location,price,people,line1,line2,line3,value1,value2,value3,slimg1,slimg2,slimg3,slimg4,lepro1,lepro2,lepro3,lepro4,appt1,appc1,appt2,appc2,appt3,appc3,step1,stepc1,step2,stepc2,step3,stepc3,modate,idx], function (err, data){
+    	res.redirect('/adm/study/list');
+    	
+    });
+});
+
+
+router.get('/study/list', ensureAuthenticated, function(req, res, next) {
+	var CP = 8;
+	var stdlist;
+	mysql.select('SELECT * from cider.std_more order by idx desc;', function (err, data){
+		stdlist = data;
+		res.render('admin/study/std_list', { CP : CP, stdlist : data });
+	});
+});
+
+router.get('/study/detail/:idx', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 8;
+	var idx = req.params.idx;
+	var std;
+
+	mysql.select('select * from cider.std_more where idx = '+idx+'', function (err, data){
+		if(err){
+			res.redirect('back');
+		}
+		std = data;
+		res.render('admin/study/std_upd', {std : data, CP : CP});
+	});
+});
+
+
+//**************** 구매자 목록 **************
+
+router.get('/study/customer', ensureAuthenticated, function(req,res,next){
+	var CP = 8;
+	mysql.select("SELECT * FROM cider.mobileOrder where PRODUCTCODE = '2' order by date desc", function (err, data){
+		mysql.select("SELECT * FROM cider.cardOrder where PRODUCTCODE = '2' order by date desc;", function (err, data2){
+			mysql.select('SELECT * FROM cider.pay_appform;', function (err, data3){
+				mysql.select('SELECT * FROM cider.fin_nonaccount order by idx desc', function (err, data4){
+		res.render('admin/study/std_customer', { CP : CP, mobile:data, card:data2, code:data3, non:data4 });
+	 });
+	});
+  });
+});
+});
+
+//**************** 무통장 수정 **************
+router.post('/study/customer_up', ensureAuthenticated, function(req, res, next) {
+	var CP = 8;
+	var idx = req.body.idx;
+	var state = req.body.state;
+	console.log(state);
+	var codeNum = req.body.codeNum;
+	var sets = { state : state, codeNum : codeNum,idx:idx };
+	mysql.update('update cider.fin_nonaccount set state = ?, codeNum = ?  where idx = ?', [state,codeNum,idx], function (err, data){
+		
+    	res.redirect('/adm/study/customer');
+    	
+    });
+});
 
 module.exports = router;

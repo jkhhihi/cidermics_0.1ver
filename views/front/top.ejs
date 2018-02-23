@@ -29,8 +29,14 @@
   ga('send', 'pageview');
 
 </script>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/cid_top_bottom.js"></script>
+
+<!-- top include w3data -->
+<script src="https://www.w3schools.com/lib/w3data.js"></script>
+
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -50,24 +56,12 @@ $(document).ready(function() {
     }); 
 });
 document.oncontextmenu=function(){return false;} // 우클릭 방지
-document.onselectstart=function(){return false;} // 드래그 방지
+//document.onselectstart = function(){return false;} // 드래그 방지
 document.ondragstart=function(){return false;} // 선택 방지
-//document.onmousedown=function(){return false;}
+
 
 
 $(document).ready(function(){
-/*    $('#search').click(function(){ // ID가 toggleButton인 요소를 클릭하면
-        var state = $('.web-search-box').css('display'); // state 변수에 ID가 moreMenu인 요소의 display의 속성을 '대입'
-        if(state == 'none'){ // state가 none 상태일경우 
-            $('.web-search-box').show(); // ID가 moreMenu인 요소를 show();
-            $('.web-search-box-img').show();
-        }else{ // 그 외에는
-            $('.web-search-box').hide();
-            $('.web-search-box-img').hide(); // ID가 moreMenu인 요소를 hide();         
-        }
-    });*/
-    
-    
     $('#mob-search1').click(function(){ // ID가 toggleButton인 요소를 클릭하면
         var state = $('.mob-search-box1').css('display'); // state 변수에 ID가 moreMenu인 요소의 display의 속성을 '대입'
         var state2 = $('.mob-search-box-img1').css('display'); // state 변수에 ID가 moreMenu인 요소의 display의 속성을 '대입'
@@ -173,11 +167,6 @@ padding:20px 0 20px 10px;
 }
 </style>
 
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/cid_top_bottom.js"></script>
-
-<!-- top include w3data -->
-<script src="https://www.w3schools.com/lib/w3data.js"></script>
 
 <body>
 <div class="mob-header">

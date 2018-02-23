@@ -1029,6 +1029,7 @@ router.get('/mobileOrder',ipfilter(ips,ipss, {mode: 'allow'}), function(req, res
 	var RESERVEDSTRING = req.query.RESERVEDSTRING;
 	var DIRECTRESULTFLAG = req.query.DIRECTRESULTFLAG;
 	var MOBILECOMPANYLIST = req.query.MOBILECOMPANYLIST;
+	var MOBILENO = req.query.MOBILENO;
 
 	var date = getWorldTime(+9);
 
@@ -1039,7 +1040,7 @@ router.get('/mobileOrder',ipfilter(ips,ipss, {mode: 'allow'}), function(req, res
 	var sets = {CPID : CPID, ORDERNO : ORDERNO, PRODUCTTYPE : "2", BILLTYPE : "1", AMOUNT:AMOUNT, PRODUCTNAME:enPdnm.PRODUCTNAME,CLOSEURL : "http://cidermics.com/finbook_pur",FAILURL : "http://cidermics.com/finbook_pur", HOMEURL : "http://cidermics.com/finbook_ch",
 		EMAIL : EMAIL, USERID : USERID, USERNAME : enUsernm.USERNAME,
 		PRODUCTCODE : PRODUCTCODE, RESERVEDINDEX1:RESERVEDINDEX1, RESERVEDINDEX2 : RESERVEDINDEX2, RESERVEDSTRING : RESERVEDSTRING, 
-		DIRECTRESULTFLAG : DIRECTRESULTFLAG, MOBILECOMPANYLIST:MOBILECOMPANYLIST, date:date};
+		DIRECTRESULTFLAG : DIRECTRESULTFLAG, MOBILECOMPANYLIST:MOBILECOMPANYLIST, date:date, MOBILENO:MOBILENO};
 	mysql.insert('insert into cider.mobileOrder set ?', sets, function (err, data){
 		if(err){
 			res.redirect('back');

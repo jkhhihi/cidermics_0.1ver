@@ -42,11 +42,19 @@ router.get('/study/memship', function(req, res, next) {
 });
 
 router.get('/study/list', function(req, res, next) {
-	res.render('front/cid_study/std_list', { });
+	var stdlist;
+	mysql.select('SELECT idx,subject,subject2,decate,recentdate,thum,leader,sche1 from cider.std_more where flag="Y" order by idx desc;', function (err, data){
+		stdlist = data;
+	res.render('front/cid_study/std_list', {stdlist : data});
+  });
 });
 
-router.get('/studymore/1', function(req, res, next) {
-	res.render('front/cid_study/std_more', { });
+router.get('/studymore/:idx', function(req, res, next) {
+	var idx = req.params.idx;
+	mysql.select('SELECT * from cider.std_more where idx = '+idx+';', function (err, data){
+	if (err) throw err;
+	res.render('front/cid_study/std_more', {md:data});
+  });
 });
 
 
@@ -83,5 +91,11 @@ router.get('/study/bottom', function(req, res, next) {
 	res.render('front/cid_study/std_bottom', { });
 });
 
+router.get('/study/event', function(req, res, next) {
+	res.render('front/cid_study/std_event', { });
+});
+router.get('/study/map', function(req, res, next) {
+	res.render('front/cid_study/std_map', { });
+});
 
 module.exports = router;

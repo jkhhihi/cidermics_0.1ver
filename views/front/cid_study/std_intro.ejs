@@ -15,7 +15,6 @@
 
     <!-- 메인 문구 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    <script>var ml = { timelines: {}};</script>
 
     <!-- 네이버 -->
     <meta name="naver-site-verification" content="083657cb98aa9a4a9c62dedeffddfb2490545da0"/>
@@ -33,19 +32,27 @@
   <body>
   <% include std_top %>
 
-  <style type="text/css">
-    .screen-container1{height:600px;background:url(/page_imgs/study_img/introback1.jpg) no-repeat center top;background-size:auto 100%;}
-    .screen-container2{height:600px;background:url(/page_imgs/study_img/introback2.jpg) no-repeat center top;background-size:auto 100%;}
-    .screen-container3{height:600px;background:url(/page_imgs/study_img/introback3.jpg) no-repeat center top;background-size:auto 100%;}
+<style type="text/css">
     .screen-container4{background-color:#333; text-align:center; color: #fff; padding: 50px;}
-    .screen-container5{background:url(/page_imgs/study_img/introback4.jpg) repeat center top; text-align:center; padding: 10px;}
     .section2{padding-top: 12rem; font-family:seoulhangangregular !important;}
   @media only screen and (max-width : 600px) {
     #h4title {
     font-size: 1.45rem !important;
      }
     }
-  </style>
+
+  @media(max-width: 992px){
+    #memshipweb{
+      display: none;
+    }
+  }
+  @media(min-width: 992px){
+    #memshipmob{
+      display: none;
+    }
+  }
+
+</style>
 
 
 
@@ -64,67 +71,41 @@
     <div class="parallax"><img src="/page_imgs/study_img/background8.jpg" alt="Unsplashed background img 1"></div>
   </div>
 
-  <div class="screen-container1">
-    <div class="section2 no-pad-bot">
-      <div class="container">
-        <div class="row">
-          <img src="/page_imgs/study_img/bookread1.png" width="90">
-          <h5 class="header col s12 light" style="font-size: 1.3rem; color: #44bdf9; letter-spacing:1px;"><b>언제까지 경제 지식,‘눈으로 보기’만 할 건가요?</b></h5>
-          <h4 class="header col s12 light" id="h4title" style="line-height: 150%; color: #fff; font-size: 1.95rem;">딱딱한 경제 지식을 보고 듣기만 하는 것이 아니라,소통하고 싶은 전문가와 함께 경제 지식을 물고 뜯고 맛보고 즐기며
-          내 것으로 만드는 놀이터와 같은 공동체에 참여하세요
-          </h4>
-        </div>
-      </div>
+
+
+
+  <div class="container" id="memshipweb">
+    <div class="row center" style="margin:60px 0 60px;">
+        <img class="responsive-img" src="/page_imgs/study_img/membgwebimg1.jpg">
+        <a class="waves-effect waves-light btn light-blue darken-2">일정표 보기</a>
+        <img class="responsive-img" src="/page_imgs/study_img/membgwebimg2.jpg">
     </div>
   </div>
-
-  <div class="screen-container2">
-    <div class="section2 no-pad-bot">
-      <div class="container">
-        <div class="row">
-          <img src="/page_imgs/study_img/bookread2.png" width="90">
-          <h5 class="header col s12 light" style="font-size: 1.3rem; color: #44bdf9; letter-spacing:1px;"><b>언제까지 어려운 선생님과 어렵게 공부할 건가요?</b></h5>
-          <h4 class="header col s12 light" id="h4title" style="line-height: 150%; color: #fff; font-size: 1.9rem;">누구나 평등한 분위기에서 자유롭게 이야기 나눌 수 있는
-경제 셀럽과의 친밀한 스터디를 경험하세요.
-          </h4>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="screen-container3">
-    <div class="section2 no-pad-bot">
-      <div class="container">
-        <div class="row">
-          <img src="/page_imgs/study_img/bookread3.png" width="90">
-          <h5 class="header col s12 light" style="font-size: 1.3rem; color: #44bdf9; letter-spacing:1px;"><b>경제는 정말 어렵고 쓸모 없을까요?</b></h5>
-          <h4 class="header col s12 light" id="h4title" style="line-height: 150%; color: #fff; font-size: 1.85rem;">투자의 귀재 워런 버핏이 투자할 기업을 고르는 첫 번째 조건은
-‘사업내용이 단순해서 이해하기 쉬워야 한다’는 것입니다.
-유용한 지식은 단순하고 쉽습니다.
-알아두면 정말 쓸데 있는 지식을 색다르게 공유합시다!
-
-          </h4>
-        </div>
-      </div>
+  <div class="container" id="memshipmob">
+    <div class="row center" style="margin:60px 0 60px;">
+        <img class="responsive-img" src="/page_imgs/study_img/membgmobimg1.jpg">
+        <a class="waves-effect waves-light btn light-blue darken-2">일정표 보기</a>
+        <img class="responsive-img" src="/page_imgs/study_img/membgmobimg2.jpg">
     </div>
   </div>
 
 
-  <!--div class="screen-container4">
-    <div class="row center">
-      <div class="col s4" style="margin: 30px auto;">
-        <div class="divider"></div>
-        <div>핵심가치</div>
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot" style="top:20%;">
+      <div class="container">
+        <div class="row center">
+          <h4 class="header col s12 light"><b>경이로움 운영방식</b></h4>
+          <h6 class="header col s12 light" style="font-size: 1.4rem; line-height: 160%;">1. 3개월 단위 시즌제로 운영됩니다. ‘스터디’에 신청하면 시즌 멤버십과 함께 추가 스터디 참여권과 릴레이 세미나 수강 기회가 무료로 제공됩니다.</h6>
+          <h6 class="header col s12 light" style="font-size: 1.4rem; line-height: 160%;">2. 모든 멤버십 회원들은 ‘사모임’과 BIG 소셜파티 등에 참석해 특별한 네트워킹을 만들 수 있습니다.</h6>
+        </div>
       </div>
-      <div class="col s4">This div is 12-columns wide on all screen sizes
-      </div>
-      <div class="col s4">This div is 12-columns wide on all screen sizes
-      </div>
-      </h4>
     </div>
-  </div-->
+    <div class="parallax"><img src="/page_imgs/study_img/introback4.jpg" alt="Unsplashed background img 2"></div>
+  </div>
 
-<div class="screen-container4">
+
+
+<!--div class="screen-container4">
   <div class="row">
     <div class="col s12 m4">
       <div><h4>핵심 가치</h4></div>
@@ -159,164 +140,7 @@
       </div>
     </div>
   </div>
-</div>
-
-<!--div class="screen-container5">
-  <div class="row">
-    <div class="col s12">
-      <div><h4>운영방식</h4></div>
-      <div class="divider"></div>
-      
-      <div class="icon-block">
-        <p class="light">3개월 기준으로 분기별 멤버십을 운영하고 있습니다.</p>
-        <p class="light">멤버십에 가입하면 3개월 동안 총 3번의 스터디 모임과</p>
-        <p class="light">2번의 사사로운 모임, 그리고 1번의 BIG 소셜파티에 참여하실 수 있습니다.</p>
-        <p class="light">*매주 1회 진행되는 오픈 세미나 참석도 무료!</p>
-      </div>
-    </div>
-
-  </div>
 </div-->
-
-<div class="screen-container5">
-  <div class="container">
-    <div class="row center" style="margin:60px 0 60px;">
-        <img class="responsive-img" src="/page_imgs/study_img/intro_manage.png">
-    </div>
-  </div>
-</div>
-
-
-      
-
-<!--div class="container" style="margin: 50px auto;">
-  <div class="row">
-        <div class="col s12 center">
-          <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4>STUDY GROUPS</h4>
-          <p class="center-align light">경제 지식을 물고 뜯고 맛보고 즐기며 내 것으로 만드는 놀이터! 경이로운 스터디 모임</p>
-        </div>
-  </div>
-  <div class="row">
-    <div class="col s12 m4">
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light" >
-          <img src="/page_imgs/study_img/1234.jpg">
-          <span class="card-btn"><a class="waves-effect waves-light btn light-blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;">18시즌 2</a></span>
-          <span class="card-title" style="bottom: 30px;"><b>경제신문 바로 읽기</b></span>
-          <span class="card-name">모임장 임현우</span>
-          
-        </div>
-        <div class="card-content">
-          <p><i class="material-icons left">today</i>2018년 4월 21일 토요일</p>
-          <div class="divider"></div>
-          <p>아무렇게나 읽는 거 아냐! 경제신문, 제대로 읽어야 '내 것'이 된다. '경제신문' 이름만 들어도 왠지 어려울 것 같고, 거부감이 느껴진다면 주목!</p>
-          <p><a class="waves-effect waves-light btn light-blue darken-2" onclick="Materialize.toast('현재 '+a+'명의 구독자가 이 글을 확인 중입니다.', 1000,'',function(){window.location='#';})">MORE</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="col s12 m4">
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light" >
-          <img src="/page_imgs/study_img/123.jpg">
-          <span class="card-btn"><a class="waves-effect waves-light btn light-blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;">18시즌 2</a></span>
-          <span class="card-title" style="bottom: 30px;"><b>전자공시로 주식하기</b></span>
-          <span class="card-name">모임장 이래학</span>
-          
-        </div>
-        <div class="card-content">
-          <p><i class="material-icons left">today</i>2018년 4월 21일 토요일</p>
-          <div class="divider"></div>
-          <p>주식투자, 전자공시부터 똑바로 보자! (DART 분석) 공시 속에 기업의 본심이 숨어 있다. 핵심 내용만 쉽게 풀어 쓴, 주식투자자를 위한 전자공시 활용법</p>
-          <p><a class="waves-effect waves-light btn light-blue darken-2" onclick="Materialize.toast('현재 '+a+'명의 구독자가 이 글을 확인 중입니다.', 1000,'',function(){window.location='#';})">MORE</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="col s12 m4">
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light" >
-          <img src="/page_imgs/study_img/12345.jpg">
-          <span class="card-btn"><a class="waves-effect waves-light btn light-blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;">18시즌 2</a></span>
-          <span class="card-title" style="bottom: 30px;"><b>사회초년생 재테크</b></span>
-          <span class="card-name">모임장 이성헌</span>
-          
-        </div>
-        <div class="card-content">
-          <p><i class="material-icons left">today</i>2018년 4월 21일 토요일</p>
-          <div class="divider"></div>
-          <p> 재테크의 가장 손쉬운 시작이 적금이란 것은 잘 안다. 하지만 너무나 깨기 쉽다는 것은 함정. 적금 한번 타본 적 없어도 가입할 때는 여기저기 은행</p>
-          <p><a class="waves-effect waves-light btn light-blue darken-2" onclick="Materialize.toast('현재 '+a+'명의 구독자가 이 글을 확인 중입니다.', 1000,'',function(){window.location='#';})">MORE</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col s12 m4">
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light" >
-          <img src="/page_imgs/study_img/123455.jpg">
-          <span class="card-btn"><a class="waves-effect waves-light btn light-blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;">18시즌 2</a></span>
-          <span class="card-title" style="bottom: 30px;"><b>빌딩 투자</b></span>
-          <span class="card-name">모임장 김윤수</span>
-          
-        </div>
-        <div class="card-content">
-          <p><i class="material-icons left">today</i>2018년 4월 21일 토요일</p>
-          <div class="divider"></div>
-          <p>대한민국에서 빌딩의 지위는 특별하다. 흔히 입버릇처럼 저승에 가더라도 평생 굶지 않도록 해주기 위해 부모가 물려줘야 하는 항목 1순위는 생활력이나 삶의 혜안이 아닌 '빌딩 한 채'라는 이야기</p>
-          <p><a class="waves-effect waves-light btn light-blue darken-2" onclick="Materialize.toast('현재 '+a+'명의 구독자가 이 글을 확인 중입니다.', 1000,'',function(){window.location='#';})">MORE</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="col s12 m4">
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light" >
-          <img src="/page_imgs/study_img/1234555.jpg">
-          <span class="card-btn"><a class="waves-effect waves-light btn light-blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;">18시즌 2</a></span>
-          <span class="card-title" style="bottom: 30px;"><b>차트로 주식하기</b></span>
-          <span class="card-name">모임장 이지연</span>
-          
-        </div>
-        <div class="card-content">
-          <p><i class="material-icons left">today</i>2018년 4월 21일 토요일</p>
-          <div class="divider"></div>
-          <p>월스트리트의 위대한 금융거래인이 들려주는 주식투자의 지혜! '갠 이론(Gann Theory)'으로 유명한 윌리엄 D. 갠. 그는 20세기 초 전설적인 금융계의 예언자로 금융거래인들 사이에서 큰 명성을 얻었다. </p>
-          <p><a class="waves-effect waves-light btn light-blue darken-2" onclick="Materialize.toast('현재 '+a+'명의 구독자가 이 글을 확인 중입니다.', 1000,'',function(){window.location='#';})">MORE</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="col s12 m4">
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light" >
-          <img src="/page_imgs/study_img/12345555.jpg">
-          <span class="card-btn"><a class="waves-effect waves-light btn light-blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;">18시즌 2</a></span>
-          <span class="card-title" style="bottom: 30px;"><b>주식 중급</b></span>
-          <span class="card-name">모임장 이동규</span>
-          
-        </div>
-        <div class="card-content">
-          <p><i class="material-icons left">today</i>2018년 4월 21일 토요일</p>
-          <div class="divider"></div>
-          <p>돈이 움직이는 주식시장에서는 희망 과 공포 등으로 인해 자신의 원칙을 지키기가 생각보다 어 렵다. 그래서 중급 이하의 실력이라면 무조건 원칙을 기계 적으로 따라야 한다.</p>
-          <p><a class="waves-effect waves-light btn light-blue darken-2" onclick="Materialize.toast('현재 '+a+'명의 구독자가 이 글을 확인 중입니다.', 1000,'',function(){window.location='#';})">MORE</a></p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div-->
-
-  <!--div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s12 light"><b>내 삶이 경이로워지는 순간</b></h5>
-          <h4 class="header col s12 light"><b>"경이로움"</b></h4>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="/page_imgs/study_img/background2.jpg" alt="Unsplashed background img 2"></div>
-  </div-->
 
 
 
