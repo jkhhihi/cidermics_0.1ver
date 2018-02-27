@@ -1526,7 +1526,7 @@ router.get('/study/detail/:idx', ensureAuthenticated, function(req, res, next) {
 
 
 //**************** 구매자 목록 **************
-
+/*
 router.get('/study/customer', ensureAuthenticated, function(req,res,next){
 	var CP = 8;
 	mysql.select("SELECT * FROM cider.mobileOrder where PRODUCTCODE = '2' order by date desc", function (err, data){
@@ -1539,7 +1539,7 @@ router.get('/study/customer', ensureAuthenticated, function(req,res,next){
   });
 });
 });
-
+*/
 //**************** 무통장 수정 **************
 router.post('/study/customer_up', ensureAuthenticated, function(req, res, next) {
 	var CP = 8;
