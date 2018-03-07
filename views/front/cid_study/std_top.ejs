@@ -1,6 +1,8 @@
 
 <!--JS-->
+
 <script src="/js/materialize.js"></script>
+
 <script type="text/javascript">
   (function($){
   $(function(){
@@ -11,24 +13,33 @@
   }); // end of document ready
 })(jQuery); // end of jQuery name space
 
-  $('.fixed-action-btn').openFAB();
-  $('.fixed-action-btn').closeFAB();
-  $('.fixed-action-btn.toolbar').openToolbar();
-  $('.fixed-action-btn.toolbar').closeToolbar();
+ // $('.fixed-action-btn').openFAB();
+ // $('.fixed-action-btn').closeFAB();
+ // $('.fixed-action-btn.toolbar').openToolbar();
+ // $('.fixed-action-btn.toolbar').closeToolbar();
 </script>
+
+<style>
+@media only screen and (min-width: 601px){
+nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i{
+  line-height:63px;
+}
+}
+</style>
 
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
-      <a href="/" class="button-collapse-home"><i class="material-icons" style="font-size: 2.7rem;">home</i></a>
+      <a href="/" class="button-collapse-home" style="line-height:0px;"><i class="material-icons center" style="font-size: 1.8rem; height:37px; line-height:42px;">home</i><span style="font-size:11px;">사이다경제 홈</span></a>
       <a id="logo-container" href="/study" class="brand-logo"><img class="img-responsive" src="/page_imgs/fixed_img/bg-no-logo.svg" width="60" style="padding-top: 10px;"></a>
       <a id="logo-container" href="/study" class="brand-logo2"><img class="img-responsive" src="/page_imgs/fixed_img/bg-no-logo.svg" width="54" style="padding-top: 5px;"></a>
       <ul class="right hide-on-med-and-down">
+        <li><a href="/study/">홈</a></li>
         <li><a href="/study/intro">경이로움이란?</a></li>
         <li><a href="/study/memship">멤버십 신청방법</a></li>
         <li><a href="/study/list">스터디</a></li>
         <li><a href="/study/event">이벤트</a></li>
         <li><a href="/study/cal">일정표</a></li>
-        <li><a href="/study/faq">Q&A</a></li>
+        <li><a href="/study/faq">QA문의</a></li>
       </ul>
       
 
@@ -38,9 +49,9 @@
         <img src="/page_imgs/study_img/background9.jpg">
         </div>
         <div align="center">
-        <a href="#!user"><img class="circle" src="/page_imgs/fixed_img/logo.svg"></a>
+        <a href="/"><img class="circle" src="/page_imgs/fixed_img/logo.svg" style="border-radius:10%;"></a>
         <!--a href="#!name"><span class="white-text name">John Doe</span></a-->
-        <a href="#!email"><span class="white-text site">경제 스터디 <b>경이로움</b></span></a>
+        <a href="#" style="padding:0px 15px; height:75px; line-height:95px;"><span class="white-text site">경제 스터디 <b>경이로움</b></span></a>
         </div>
         </div>
         <li><a href="/study/intro"><b>경이로움이란?</b></a></li>
@@ -53,10 +64,10 @@
         <div class="divider"></div>
         <li><a href="/study/cal"><b>일정표</b></a></li>
         <div class="divider"></div>
-        <li><a href="/study/faq">Q&A</a></li>
+        <li><a href="/study/faq"><b>QA문의</b></a></li>
         <div class="divider"></div>
       </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      <a href="#" data-activates="nav-mobile" class="button-collapse" style="margin:0px;"><i class="material-icons">menu</i></a>
       
     </div>
   </nav>

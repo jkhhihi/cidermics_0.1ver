@@ -31,6 +31,8 @@
   }
 .white{
   background-color: #0e0e0e !important;
+  position: fixed;
+  z-index: 1000;
 }
 
 nav ul a,
@@ -39,7 +41,9 @@ nav .brand-logo {
 }
 
 .side-nav a{
-  padding: 0 15px;
+  padding: 0 30px;
+  height: 50px;
+  line-height:50px;
 }
 
 p {
@@ -181,35 +185,35 @@ div #cent { position:relative; }
   .carousel-btn{
     color: #fff;
     position: absolute;
-    top: 20px;
+    top: 15px;
     right:10px;
   }
   .carousel-more{
     color: #fff;
     position: absolute;
-    bottom: 10px;
+    bottom: 15px;
     right:10px;
   }
   .carousel-title{
     color: #fff;
     position: absolute;
-    top: 10px;
+    top: 25px;
     left: 0px;
     padding: 20px;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 300;
   }
   .carousel-name{
     color: #fff;
     position: absolute;
-    top: 60px;
+    top: 95px;
     left:0px;
     padding: 20px;
   }
   .carousel-date{
     color: #fff;
     position: absolute;
-    top: 100px;
+    top: 125px;
     left:0px;
     padding: 20px;
   }
@@ -250,3 +254,32 @@ footer.page-footer {
      border-bottom: 1px solid #0288d1;
      box-shadow: 0 1px 0 0 #000;
    }
+
+
+/* study intro */
+
+@media(max-width: 992px){
+  #memshipweb{
+    display: none;
+  }
+}
+@media(min-width: 992px){
+  #memshipmob{
+    display: none;
+  }
+}
+
+
+
+
+
+.gototop {
+  padding:3px;
+  display: block;
+  z-index: 2;
+  position: fixed;
+  bottom: 25px;
+  right: 5%;
+  height: 50px;
+  width: 50px;
+}

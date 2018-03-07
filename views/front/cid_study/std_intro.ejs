@@ -28,8 +28,11 @@
 
  
 
+  <script src="/js/gotoup.js"></script>
   </head>
   <body>
+
+  <div id="but_top"><a class="btn btn-floating  blue-grey darken-4"><i class="material-icons">arrow_upward</i></a></div>
   <% include std_top %>
 
 <style type="text/css">
@@ -40,18 +43,6 @@
     font-size: 1.45rem !important;
      }
     }
-
-  @media(max-width: 992px){
-    #memshipweb{
-      display: none;
-    }
-  }
-  @media(min-width: 992px){
-    #memshipmob{
-      display: none;
-    }
-  }
-
 </style>
 
 
@@ -95,7 +86,8 @@
       <div class="container">
         <div class="row center">
           <h4 class="header col s12 light"><b>경이로움 운영방식</b></h4>
-          <h6 class="header col s12 light" style="font-size: 1.4rem; line-height: 160%;">1. 3개월 단위 시즌제로 운영됩니다. ‘스터디’에 신청하면 시즌 멤버십과 함께 추가 스터디 참여권과 릴레이 세미나 수강 기회가 무료로 제공됩니다.</h6>
+          <h6 class="header col s12 light" style="font-size: 1.4rem; line-height: 160%;">1. 3개월 단위 시즌제로 운영됩니다. </h6>
+          <h6 class="header col s12 light" style="font-size: 1.4rem; line-height: 160%;">‘스터디’에 신청하면 시즌 멤버십과 함께 추가 스터디 참여권과 릴레이 세미나 수강 기회가 무료로 제공됩니다.</h6>
           <h6 class="header col s12 light" style="font-size: 1.4rem; line-height: 160%;">2. 모든 멤버십 회원들은 ‘사모임’과 BIG 소셜파티 등에 참석해 특별한 네트워킹을 만들 수 있습니다.</h6>
         </div>
       </div>
@@ -145,5 +137,7 @@
 
 
   <% include std_bottom %>
+
+</body>
 
 </html>

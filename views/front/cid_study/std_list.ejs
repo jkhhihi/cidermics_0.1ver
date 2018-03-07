@@ -29,20 +29,24 @@
 
  
 
+  <script src="/js/gotoup.js"></script>
   </head>
   <body>
+
+  <div id="but_top"><a class="btn btn-floating blue-grey darken-4"><i class="material-icons">arrow_upward</i></a></div>
   <% include std_top %>
 
 
   <div class="parallax-container valign-wrapper" style="min-height: 200px;">
-    <div class="section no-pad-bot" style="padding-top:0px;">
+    <div class="section no-pad-bot" style="padding-top:75px; top:5%;">
       <div class="container" >
         <div class="row center">
           <h5 class="header col s12 light" style="font-weight: 500; font-size: 1.4rem;">한 달에 한 번 나는 경이롭게 달라진다</h5>
+          <h4 class="header col s12 light" style="font-weight: 500; font-size: 1.4rem;">경이로움 스터디</h4>
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="/page_imgs/study_img/background4.jpg" alt="Unsplashed background img 1"></div>
+    <div class="parallax"><img src="/page_imgs/study_img/background6.jpg" alt="Unsplashed background img 1"></div>
   </div>
 
 
@@ -69,7 +73,7 @@
         <div class="card-image waves-effect waves-block waves-light" >
           <a href="/studymore/<%=stdlist[i].idx%>"><img src="<%=stdlist[i].thum%>"></a>
           <span class="card-btn"><a class="waves-effect waves-light btn light-blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;"><%=stdlist[i].decate%></a></span>
-          <span class="card-title" style="bottom: 30px;"><b><%=stdlist[i].subject%></b></span>
+          <span class="card-title" style="bottom: 30px;"><a href="/studymore/<%=stdlist[i].idx%>" style="color: #fff;"><b><%=stdlist[i].subject%></b></a></span>
           <span class="card-name">리더 <%=stdlist[i].leader%></span>
           
         </div>
@@ -102,4 +106,5 @@
 
   <% include std_bottom %>
 
+</body>
 </html>

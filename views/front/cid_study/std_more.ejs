@@ -163,10 +163,11 @@
     background:url("<%=md[0].slimg4%>") no-repeat center top;
     background-size:auto 100%;
   }
+
 </style>
 
 <script type="text/javascript">
-  function commaNum(num) {  
+  function commaNum(num) {
       var len, point, str;  
       num = num + "";  
       point = num.length % 3  
@@ -191,9 +192,11 @@
 </script>
 
   
-</head>
+  <script src="/js/gotoup.js"></script>
+  </head>
+  <body>
 
-<body>
+  <div id="but_top"><a class="btn btn-floating  blue-grey darken-4"><i class="material-icons">arrow_upward</i></a></div>
 
   <% include std_top %>
 
@@ -325,7 +328,7 @@
         <div class="col s12">
           <h3><i class="mdi-content-send brown-text"></i></h3>
           <h5 class="textfont2"><%=md[0].subject%></h5>
-          <p class="light textfont3"><%=md[0].subject2%></p>
+          <!--p class="light textfont3"><%=md[0].subject2%></p-->
         </div>
   </div>
 
@@ -433,27 +436,27 @@
   <div class="carousel carousel-slider center " data-indicators="true">
     <div class="carousel-fixed-item center middle-indicator" style="left: 5px; right:5px;">
      <div class="left">
-      <a href="Previo" class="movePrevCarousel middle-indicator-text waves-effect waves-light content-indicator"><i class="material-icons left  middle-indicator-text">chevron_left</i></a>
+      <a href="Previo" class="movePrevCarousel middle-indicator-text  content-indicator"><i class="material-icons left  middle-indicator-text">chevron_left</i></a>
      </div>
      <div class="right">
-     <a href="Siguiente" class=" moveNextCarousel middle-indicator-text waves-effect waves-light content-indicator"><i class="material-icons right middle-indicator-text">chevron_right</i></a>
+     <a href="Siguiente" class=" moveNextCarousel middle-indicator-text content-indicator"><i class="material-icons right middle-indicator-text">chevron_right</i></a>
      </div>
     </div>
 
 <!-- 스터디 슬라이더 -->
 
     <div class="carousel-item slider1 white-text" href="#one!">
-      <h2><%=md[0].subject%></h2>
+      <h2 class="textfont2" style="font-size: 1.4rem; letter-spacing: 1px; padding: 10px;"><%=md[0].subject%></h2>
       <!--p class="white-text">This is your first panel</p-->
     </div>
     <div class="carousel-item slider2 white-text" href="#two!">
-      <h2><%=md[0].line1%></h2>
+      <h2 class="textfont2" style="font-size: 1.4rem; letter-spacing: 1px; padding: 10px;"><%=md[0].line1%></h2>
     </div>
     <div class="carousel-item slider3 white-text" href="#three!">
-      <h2><%=md[0].line2%></h2>
+      <h2 class="textfont2" style="font-size: 1.4rem; letter-spacing: 1px; padding: 10px;"><%=md[0].line2%></h2>
     </div>
     <div class="carousel-item slider4 white-text" href="#four!">
-      <h2><%=md[0].line3%></h2>
+      <h2 class="textfont2" style="font-size: 1.4rem; letter-spacing: 1px; padding: 10px;"><%=md[0].line3%></h2>
     </div>
 
   </div>
@@ -599,8 +602,9 @@
         <h5 class="textfont2" style="color: #1b87c9;">모임 전</h5>
       </div>
       <div class="col s12 m8">
-        <h5 class="textfont2">Insert Coin</h5>
-        <p class="textfont3">코인처럼 과제를 제출해야만 수업 참석 가능</p>
+        <h5 class="textfont2">Insert Your Homework</h5>
+        <p class="textfont3">우리의 즐거운 모임은 과제를 해야만 참석이 가능해요!</p>
+        <p class="textfont3">과제를 제출해주세요. 그리고 사이다경제의 스터디를 즐기세요!</p>
       </div>
       <div class="divider3" style="width: 80%"></div>
     </div>
@@ -611,7 +615,8 @@
         </div>
         <div class="col s12 m8">
             <h5 class="textfont2">Stage 1 우리는 아는 사이다</h5>
-            <p class="light textfont3">자기소개 시간</p>
+            <p class="light textfont3">사이다경제가 준비한 친구되기 프로그램을 하면 우리는 모두 아는 사이가 될 수 있어요!</p>
+            <p class="light textfont3">어색한 사이에서 친구가 되기까지! 모임을 시작하기 전에 함께 즐겨보아요!</p>
         </div>
         <div class="divider" style="width: 80%"></div>
     </div>
@@ -621,7 +626,8 @@
         </div>
         <div class="col s12 m8">
             <h5 class="textfont2">Stage 2 스터디장 필리버스터</h5>
-            <p class="light textfont3">시간 제약 없이 자유롭게 이야기하는 시간</p>
+            <p class="light textfont3">스터디의 리더가 시간제약 없이 자유롭게 이야기하는 시간이에요!</p>
+            <p class="light textfont3">강의, 참여토론 등 방식은 다양해요. 리더와의 친근한 소통으로 궁금했던 것들을 속 시원히 풀어봐요!</p>
         </div>
         <div class="divider" style="width: 80%"></div>
     </div>
@@ -632,13 +638,97 @@
         <div class="col s12 m8">
             <h5 class="textfont2">Stage 3 소.심.한 우리들</h5>
             <p class="light textfont3">소규모 심층토론 한마디</p>
-            <p class="light"></p>
+            <p class="light textfont3">함께 심층토론 해봐요. 우리는 누구나 소심해요. 나만 그런 거는 아니에요. 지금 모른다고 창피한 것이 아니에요. 함께 이야기하고 배워보고 발전해봐요!</p>
+        </div>
+        <div class="divider3" style="width: 80%"></div>
+    </div>
+
+    <div class="row">
+      <div class="col s12 m4">
+        <h5 class="textfont2" style="color: #1b87c9;">모임 후</h5>
+      </div>
+      <div class="col s12 m8">
+        <h5 class="textfont2">사이다경제의 사적인 모임</h5>
+        <p class="textfont3">모임 마지막 시간에 사이다모임장을 한 명 뽑아요. 그리고 모임장이 모두가 즐길 수 있는 것으로 골라 사적인 모임을 만듭니다.</p>
+        <p class="textfont3">스터디원들과 함께 더 친해지는 시간을 가져봐요!</p>
+      </div>
+      <div class="divider" style="width: 80%"></div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m4">
+        </div>
+        <div class="col s12 m8">
+            <h5 class="textfont2">리더와의 사적인 연락</h5>
+            <p class="light textfont3">스터디의 리더가 시간제약 없이 자유롭게 이야기하는 시간이에요!</p>
+            <p class="light textfont3">모르는 것이 있다면, 궁금한 것이 있다면 리더에게 직접 물어보세요! 함께 공부하는 리더가 훌륭한 코치가 되어줄 것입니다!</p>
+        </div>
+        <div class="divider" style="width: 80%"></div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m4">
+        </div>
+        <div class="col s12 m8">
+            <h5 class="textfont2">과제를 합시다.</h5>
+            <p class="light textfont3">다음 모임에 참석하기 위해서는, 그리고 최대 6번의 스터디를 참석하기 위해서는 꼭 과제를 해야해요!</p>
+            <p class="light textfont3">리더가 엄선한 과제를 하면서 더 성장할 수 있는 당신의 모습을 발견해 보세요!</p>
         </div>
         <div class="divider" style="width: 80%"></div>
     </div>
 
   </div>
 </div>
+
+
+
+
+<div class="container" style="margin: 50px auto;">
+  
+  <div class="row">
+      <div class="col s12 center">
+        <h3><i class="mdi-content-send brown-text"></i></h3>
+        <h4>추천 스터디</h4>
+      </div>
+  </div>
+
+  
+  <div class="row">
+    <% var a = Math.floor(Math.random() * (12-0+1)) + 0; for(var i=a; i < a+3; i++) {  %>
+    <div class="col s12 m4">
+      <div class="card">
+        <div class="card-image " >
+          <a href="/studymore/<%=stdlist[i].idx%>"><img src="<%=stdlist[i].thum%>"></a>
+          <span class="card-btn"><a class="waves-effect waves-light btn light-blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;"><%=stdlist[i].decate%></a></span>
+          <span class="card-title" style="bottom: 30px;"><a href="/studymore/<%=stdlist[i].idx%>" style="color: #fff;"><b><%=stdlist[i].subject%></b></a></span>
+          <span class="card-name">리더 <%=stdlist[i].leader%></span>
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+
+</div>
+
+
+
+<!--스터디 혜택 -->
+
+  <div class="container" id="memshipweb">
+    <div class="row center" style="margin:60px 30px 60px;">
+        <img class="responsive-img" src="/page_imgs/study_img/membgwebimg1.jpg">
+        <a href="/study/event" class="waves-effect waves-light btn light-blue darken-2">일정표 보기</a>
+        <img class="responsive-img" src="/page_imgs/study_img/membgwebimg2.jpg">
+    </div>
+  </div>
+  <div class="container" id="memshipmob">
+    <div class="row center" style="margin:60px 0 60px;">
+        <img class="responsive-img" src="/page_imgs/study_img/membgmobimg1.jpg">
+        <a href="/study/event" class="waves-effect waves-light btn light-blue darken-2">일정표 보기</a>
+        <img class="responsive-img" src="/page_imgs/study_img/membgmobimg2.jpg">
+    </div>
+  </div>
+
 
 
 

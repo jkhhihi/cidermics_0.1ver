@@ -60,6 +60,7 @@ function leadingZeros(n, digits) {
 	  return zero + n;
 	}
 
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	
@@ -606,21 +607,18 @@ var CP = 1;
 var now = new Date();
 var _year= now.getFullYear();
 var _mon = now.getMonth()+2;
-  console.log(_mon);
  _mon=""+_mon;
  if (_mon.length < 2 )
  {
     _mon="0"+_mon;
  }
   var _date=now.getDate();
-  console.log(_date);
   _date =""+_date;
   if (_date.length < 2 )
 	 {
 	    _date="0"+_date;
 	 }
   var _hor = now.getHours() +2;
-  console.log(_hor);
  _hor =""+_hor;
  if (_hor.length < 2 )
  {
@@ -1339,7 +1337,31 @@ router.get('/podo/delete/:pd_no', function(req, res, next) {
 
 router.get('/study', ensureAuthenticated, function(req, res, next) {
 	var CP = 8;
-	res.render('admin/study/std_index', { CP : CP});
+	var now = new Date();
+	var _year= now.getFullYear();
+	var _mon = now.getMonth()+1;
+	 _mon=""+_mon;
+	 if (_mon.length < 2 )
+	 {
+	    _mon="0"+_mon;
+	 }
+	  var _date=now.getDate();
+	  _date =""+_date;
+	  if (_date.length < 2 )
+		 {
+		    _date="0"+_date;
+		 }
+	 
+	var _tot=_year+"-"+_mon+"-"+_date;
+
+	mysql.select("SELECT count(*) as inq FROM cider.std_ask where stda_regdate like  \'%"+_tot+"%\' ", function (err, data){
+		mysql.select("SELECT count(*) as app FROM cider.pay_appform where regdate like  \'%"+_tot+"%\' ", function (err, data2){
+			mysql.select("SELECT count(*) as nonac FROM cider.fin_nonaccount where regDate like  \'%"+_tot+"%\' ", function (err, data3){
+
+	res.render('admin/study/std_index', { CP : CP, inq:data, app:data2, nonac:data3});
+	  });
+	});
+  });
 });
 
 router.get('/studyin', ensureAuthenticated, function(req, res, next) {
@@ -1526,7 +1548,7 @@ router.get('/study/detail/:idx', ensureAuthenticated, function(req, res, next) {
 
 
 //**************** 구매자 목록 **************
-/*
+
 router.get('/study/customer', ensureAuthenticated, function(req,res,next){
 	var CP = 8;
 	mysql.select("SELECT * FROM cider.mobileOrder where PRODUCTCODE = '2' order by date desc", function (err, data){
@@ -1539,7 +1561,7 @@ router.get('/study/customer', ensureAuthenticated, function(req,res,next){
   });
 });
 });
-*/
+
 //**************** 무통장 수정 **************
 router.post('/study/customer_up', ensureAuthenticated, function(req, res, next) {
 	var CP = 8;
@@ -1553,6 +1575,22 @@ router.post('/study/customer_up', ensureAuthenticated, function(req, res, next) 
     	res.redirect('/adm/study/customer');
     	
     });
+});
+
+
+router.get('/study/inquiry', ensureAuthenticated, function(req, res, next) {
+	var CP = 8;
+	mysql.select("SELECT * FROM cider.std_ask order by stda_no desc", function (err, data){
+	res.render('admin/study/std_inquiry', { CP : CP, inq:data});
+	});
+});
+
+router.get('/study/inquiryd/:idx', ensureAuthenticated, function(req, res, next) {
+	var CP = 8;
+	var idx = req.params.idx;
+	mysql.select('SELECT * FROM cider.std_ask where stda_no = '+idx+'', function (err, data){
+	res.render('admin/study/std_inquiry_detail', { CP : CP, inq:data});
+	});
 });
 
 module.exports = router;
