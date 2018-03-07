@@ -67,11 +67,20 @@ p {
 
 	/*희아가추가*/
 	.map-title img{margin-top:80px; margin-bottom:30px;}
+	.event h5{line-height:2.0em;}
+	.schedule .img1{width:60%; margin-top:50px;}
+	.schedule .img2{margin-bottom:50px;}
+	.img-event{margin:50px 0 50px 0; width:100%;}
+	.header1{margin-top:60px;}
 
 @media only screen and (max-width : 992px) {
 
 	/*희아가추가*/
 	.map-title img{width:50%; margin-top:30px; margin-bottom:15px;}
+	.event h5{line-height:2.0em; font-size:16px;}
+	.schedule .img1{width:100%; margin-top:30px;}
+	.img-event{margin:30px 0 50px 0;}
+	.header1{margin-top:0;}
 	
   .parallax-container .section {
     position: absolute;
