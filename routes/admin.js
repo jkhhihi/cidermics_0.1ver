@@ -1551,10 +1551,10 @@ router.get('/study/detail/:idx', ensureAuthenticated, function(req, res, next) {
 
 router.get('/study/customer', ensureAuthenticated, function(req,res,next){
 	var CP = 8;
-	mysql.select("SELECT * FROM cider.mobileOrder where PRODUCTCODE = '2' order by date desc", function (err, data){
+	mysql.select("SELECT * FROM cider.mobileOrder where PRODUCTCODE = '2' order by date desc;", function (err, data){
 		mysql.select("SELECT * FROM cider.cardOrder where PRODUCTCODE = '2' order by date desc;", function (err, data2){
-			mysql.select('SELECT * FROM cider.pay_appform;', function (err, data3){
-				mysql.select('SELECT * FROM cider.fin_nonaccount order by idx desc', function (err, data4){
+			mysql.select('SELECT * FROM cider.pay_appform order by idx desc;', function (err, data3){
+				mysql.select('SELECT * FROM cider.fin_nonaccount order by idx desc;', function (err, data4){
 		res.render('admin/study/std_customer', { CP : CP, mobile:data, card:data2, code:data3, non:data4 });
 	 });
 	});
