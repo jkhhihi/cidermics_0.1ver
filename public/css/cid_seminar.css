@@ -1,0 +1,47 @@
+/*메인*/
+.col-lg-6{width:45% !important}
+.seminar-list{margin-bottom:70px;}
+.margin10{margin-left:50px;}
+.banner{background-image: url("https://i.imgur.com/o6cJ7zk.jpg"); width:100%; height:auto; margin:70px 0; color:#fff; background-size: cover;}
+.banner .title{padding:120px 0; text-shadow: 2px 2px 6px #222;}
+.thumnail{color:#fff; padding-right:0 !important; padding-left:0 !important; margin:0 20px;}
+.black-box{background-color: rgba( 0, 0, 0, 0.8 ); z-index:99; width:100%; height:auto; position: absolute; bottom:0; padding:20px 10px 10px 20px;}
+.applying .on{padding:5px 20px; background-color:#1b87c9; display:inline-block;}
+.applying .off{padding:5px 20px; background-color:#e01717; display:inline-block;}
+.date-price{margin-top:-10px;}
+.date-price-in{border:1px solid #fff; border-radius:4px; padding:5px 15px; font-size:12px; display:inline-block;}
+.black-box .title p{font-size:22px; margin-top:20px;}
+
+/*디테일*/
+.seminar-info{width:50%; border:2px solid #eee; padding:20px 80px; margin-bottom:100px;}
+.seminar-info .col-xs-4, .col-xs-8{margin:20px 0;}
+.seminar-info p.border-left{border-left:2px solid #666; padding-left:10px;}
+.btn-apply p{background-color:#1b87c9; border:2px solid #1b87c9; color:#fff; border-radius:50px; font-size:16px; width:220px; padding:20px 0; margin:50px 0 20px 0; font-weight:bold;}
+.btn-apply p:hover{background-color:#fff; border:2px solid #1b87c9; color:#000;}
+.btn-kakao-plus p{background-color:#fce000; border:2px solid #fce000; border-radius:50px; color:#000; font-size:16px; width:220px; padding:15px 0; margin:0 0 20px 0; font-weight:bold;}
+.btn-kakao-plus p:hover{background-color:#fff; border:2px solid #fce000; border-radius:50px;}
+.btn-kakao-plus p span{font-size:14px;}
+
+@media all and (max-width:1024px) {
+/*메인*/
+.col-lg-6{width:100% !important;}
+.margin10{margin:0 10px;}
+.banner{background-image: url("https://i.imgur.com/o6cJ7zk.jpg"); margin:45px 0 10px 0;}
+.banner .title{padding:40px 0;}
+.thumnail{margin:10px 0 20px 0;}
+.black-box{padding:10px 5px 5px 10px;}
+.applying .on{padding:4px 15px; font-size:12px;}
+.applying .off{padding:4px 15px; font-size:12px;}
+.date-price{margin-top:0;}
+.date-price-in{padding:4px 12px; font-size:10px;}
+.black-box .title p{font-size:16px; margin-top:10px; margin-bottom:0;}
+
+/*디테일*/
+.seminar-info{width:98%; padding:20px 5px 10px 5px;}
+.seminar-info .col-xs-4, .col-xs-8{margin:10px 0;}
+.btn-apply p{font-size:14px; padding:15px 0; margin:20px 0 10px 0;}
+.btn-kakao-plus p{font-size:14px; padding:10px 0;}
+.btn-kakao-plus p span{font-size:12px;}
+
+
+}

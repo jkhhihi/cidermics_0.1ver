@@ -1,392 +1,99 @@
-<!--<!DOCTYPE html>-->
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-
 <meta charset="utf-8">
+
 <!-- 네이버 -->
 <meta name="naver-site-verification" content="083657cb98aa9a4a9c62dedeffddfb2490545da0"/>
-<!--페이스북 관련 -->
-<meta property="fb:admins" content="{jkhhihi@naver.com}"/><!--페이스북 슈퍼아이디-->
-<!--공유 meta tags-->
-<meta name="title" content="사이다경제" />
-<meta property="og:image"  content="http://www.cidermics.com/page_imgs/fixed_img/thum_img.jpg" />
-<meta property="og:title"  content="사이다경제" />	
-<meta property="og:site_name"  content="사이다경제"/ >
-<meta property="og:type"  content="article">
-<meta property="og:url"  content="http://www.cidermics.com/" />
-<meta property="og:description" content="경제/금융을 쉽고 시원하게 풀어드리겠습니다!" />
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>사이다경제</title>
-
-<link href="/css/cid_main2.css" rel="stylesheet">
-<link href="/css/swiper.css" rel="stylesheet">
+<title>사이다경제 | 세미나</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/cid_seminar.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/component.css" />
 <link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
 <link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/css/component.css" />
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 <script src="/js/modernizr.custom.js"></script>
-<script language="javascript" type="text/javascript">
-function openWinFB(){
-    window.open("https://www.facebook.com/cidermics");
-}
-function openWinKA(){
-    window.open("http://plus.kakao.com/home/@%EC%82%AC%EC%9D%B4%EB%8B%A4%EA%B2%BD%EC%A0%9C");  
-}
-</script>
+<script src="/js/gotoup.js"></script>
 
-<style>
-.menu-wrap::-webkit-scrollbar { 
-    display: none; 
-}
-
-
-.grid li {
-	display: block;
-	float: left;
-	padding:10px;
-	width: 33.33%;
-	opacity: 0;
-}
-
-</style>
+<!--공유 meta tags-->
+<meta name="title" content="사이다경제 | 세미나" />
+<meta property="og:image" content="" />
+<meta property="og:title" content="사이다경제" />	
+<meta property="og:site_name" content="사이다경제" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.cidermics.com/lecture/" />
+<meta property="og:description" content="사이다경제 세미나" />
 
 </head>
 
 <body>
+<!--위로가기 버튼-->
+<div id="but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></div>
 <% include ../top %>
-<script type="text/javascript">
-  function setCookie( name, value, expiredays ) { 
-   var todayDate = new Date(); 
-    todayDate.setDate( todayDate.getDate() + expiredays ); 
-    document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";" 
-   }
-  function closePop() { 
-   if ( document.pop_form.chkbox.checked ){ 
-    setCookie( "maindiv", "done" , 1 ); 
-   } 
-   document.all['pop'].style.visibility = "hidden";
-   document.all['info-wrap'].style.visibility = "hidden";
-  }
-  
-  $(function () {
-    $('.button-checkbox').each(function () {
 
-        // Settings
-        var $widget = $(this),
-            $button = $widget.find('button'),
-            $checkbox = $widget.find('input:checkbox'),
-            color = $button.data('color'),
-            settings = {
-                on: {
-                    icon: 'glyphicon glyphicon-check'
-                },
-                off: {
-                    icon: 'glyphicon glyphicon-unchecked'
-                }
-            };
-
-        // Event Handlers
-        $button.on('click', function () {
-            $checkbox.prop('checked', !$checkbox.is(':checked'));
-            $checkbox.triggerHandler('change');
-            updateDisplay();
-        });
-        $checkbox.on('change', function () {
-            updateDisplay();
-        });
-
-        // Actions
-        function updateDisplay() {
-            var isChecked = $checkbox.is(':checked');
-
-            // Set the button's state
-            $button.data('state', (isChecked) ? "on" : "off");
-
-            // Set the button's icon
-            $button.find('.state-icon')
-                .removeClass()
-                .addClass('state-icon ' + settings[$button.data('state')].icon);
-
-            // Update the button's color
-            if (isChecked) {
-                $button
-                    .removeClass('btn-default')
-                    .addClass('btn-' + color + ' active');
-            }
-            else {
-                $button
-                    .removeClass('btn-' + color + ' active')
-                    .addClass('btn-default');
-            }
-        }
-
-        // Initialization
-        function init() {
-
-            updateDisplay();
-
-            // Inject the icon if applicable
-            if ($button.find('.state-icon').length == 0) {
-                $button.prepend('<i class="state-icon ' + settings[$button.data('state')].icon + '"></i> ');
-            }
-        }
-        init();
-    });
-});
-</script>
-
-
-<!-- 메인 팝업 창 -->
-<div id="info-wrap">
-		<div id="pop">
-			 <div>
-				<a href="http://www.cidermics.com/finance"><img class="img-responsive" src="https://i.imgur.com/9QSMhn5.jpg"></a>
- 			 </div>
-			<div class="close1" style="opacity:.98;">
-  				<form name="pop_form" id="pdtop">
-  					<span class="button-checkbox">
-        				<button type="button" class="btn">하루동안 보지 않기</button>
-        				<input type="checkbox" name="chkbox" value="checkbox" class="hidden" checked />
-    				</span>
-    				<span class="button-close">
-        				<button type="button" class="btn" onclick="closePop();">닫기</button>
-    				</span>
-  				</form>
- 			</div>
-		</div>
-</div>
-
-<script language="Javascript">
-  cookiedata = document.cookie;    
-  if ( cookiedata.indexOf("maindiv=done") < 0 ){      
-   document.all['pop'].style.visibility = "visible";  
-   } 
-   else {
-    document.all['pop'].style.visibility = "hidden";
-    document.all['info-wrap'].style.visibility = "hidden";
-  }
-</script>
-
-<!-- 메인이미지 -->
-
-<div class="parallax" style="margin-bottom:0;">
-	<div class="parallax-in container" align="center">
-		<img src="/page_imgs/fixed_img/bg-no-logo.png" style="border-radius:6px;">
-		<p>경제의 첫걸음,사이다경제와 함께!</p>
+<div class="banner" align="center">
+	<div class="title">
+		<h3>사이다경제 세미나</h3>
+		<p>세미나를 통한 당신의 새로워짐을 경험해보세요!</p>
 	</div>
 </div>
 
-<div class="container">
-	<div id="service-menu" class="row margin-0lr">
-		<div class="col-xs-7 padding-5lr">
-			<a href="/1">
-			<div class="menu-contents margin-0lr row">
-				<div class="col-xs-12 title-e"><p>CONTENTS</p></div>
-				<div class="col-xs-12 title-k"><b><span style="border-top:2px solid #1bafba; padding-top:5px;">콘텐츠</span></b></div>
-				<!-- 콘텐츠 HIT -->
-				<!-- div class="col-xs-12 title-mark"><b><span class="con-hit">HIT</span></b></div-->
-			</div>	
-			</a>
-		</div>
-		<div class="col-xs-5 padding-5lr">
-			<a href="/lecture">
-			<div class="menu-school margin-0lr row">
-				<div class="col-xs-12 title-e"><p>FINANCE<br>SCHOOL</p></div>
-				<div class="col-xs-12 title-k"><b><span style="border-top:2px solid #d4434e; padding-top:5px;">금융스쿨</span></b></div>
-				<!-- 금융스쿨 OPEN -->
-				<div class="col-xs-12 title-mark"><b><span class="sch-open">OPEN</span></b></div>
-			</div>	
-			</a>	
-		</div>
-		<div class="col-xs-5 padding-5lr">
-			<a href="/finbook">
-			<div class="menu-finbook margin-0lr row">
-				<div class="col-xs-12 title-e"><p>FINBOOK</p></div>
-				<div class="col-xs-12 title-k"><b><span style="border-top:2px solid #63b72c; padding-top:5px;">핀북</span></b></div>
-				<!-- 핀북 EVENT >
-				<div class="col-xs-12 title-mark"><b><span class="finb-event">NEW</span></b></div>
-				<div class="col-xs-12 d-day" align="center"><b>OPEN</b></div -->
-			</div>
-			</a>
-		</div>
-		<div class="col-xs-7 padding-5lr">
-			<a href="/finance">
-			<div class="menu-finance margin-0lr row">
-				<div class="col-xs-12 title-e"><p>FINANCE<br>CONSULTING</B></p></div>
-				<div class="col-xs-12 title-k"><b><span style="border-top:2px solid #f0c525; padding-top:5px;">재무상담</span></b></div>
-				<!-- 재무 event -->
-				<div class="col-xs-12 title-mark"><b><span class="fin-event">EVENT</span></b></div>
-			</div>	
-			</a>	
-		</div>			
-	</div>
+<!-- 세미나 리스트 뿌림 -->
+<div class="seminar-list container">
+	<div class="row margin10">
 	
-	<!-- 에디터 모집 배너 >
-	<div class="ad-team-recruiting">
-	<a href=" http://cidermics.com/contents/detail/1375"><img class="img-responsive" src="https://i.imgur.com/2kaj36T.jpg"></a>
-	</div  -->
-	
-	<!-- div id="service-info">
-		<div class="row margin-0lr">
-			<!-- a href="/1">
-				<div class="col-xs-12 title-mark"><b><span class="con-hit">HIT</span></b>
-					<span class="info"><b>이 콘텐츠를 읽으면 내 머릿속에서 톡톡!!</b></span>
-				</div>
-			</a>
-			<!--a href="/lecture">
-				<div class="col-xs-12 title-mark"><b><span class="sch-open">OPEN</span></b>
-					<span class="info"><b>강의 오픈!! 일단 한번 들어봐~ 혹시 알아??</b></span>
-				</div>
-			</a>
-			<!-- a href="/finbook">
-				<div class="col-xs-12 title-mark"><b><span class="finb-event">NEW</span></b>
-					<span class="info"><b>사이다경제 X 핀북 OPEN!</b></span>
-				</div>
-			</a>
-			<a href="/finance">
-				<div class="col-xs-12 title-mark"><b><span class="fin-event">EVENT</span></b>
-					<span class="info"><b>12월! 선착순 50명 무료 재무 상담!</b></span>
-				</div>
-			</a>
-		</div>
-	</div -->
-</div>
-
-
-<div class="container">
-	<div class="new-contents">
-	<!-- 최신 콘텐츠 -->
-		<div class="row margin-0lr">
-			<div class="col-xs-6 title padding-5lr" style="color:#000;"><span><b>최신콘텐츠</b></span></div>
-			<div class="col-xs-6 plus-btn padding-5lr" align="right"><a href="/contents/all"><span><b>+더보기</b></span><!-- img class="img-responsive" src="/page_imgs/fixed_img/btn-plus.png"></a--></div>
-			<div class="col-xs-12 title-bar"></div>
-		</div>
-		<div class="row margin-0lr" align="center">
-
-			<!--강의 오픈 시 -->
-			<!-- div class="col-xs-4">
-				<div class="thumnail">
-				<a href="http://www.cidermics.com/lecture/detail/5">
-					<div class="con-img"><img class="img-responsive" src="https://i.imgur.com/rEPB4mp.jpg"></div>
-					<div class="con-title">[강의 OPEN] "일은 하는데 왜 항상 돈이 없을까?"</div>
-				</a>
-				</div>
-			</div-->
-
-			<!-- 재무 오픈 시-->
-			<div class="col-xs-4">
-				<div class="thumnail">
-				<a href="/finance">
-					<div class="con-img"><img class="img-responsive" src="https://i.imgur.com/9QSMhn5.jpg"></div>
-					<div class="con-title">2018년 2월, 사이다재무상담 오픈!</div>
-				</a>
-				</div>
+		<a href="/seminar/detail">
+		<div class="col-lg-6 col-xs-12 thumnail">
+			<div class="img">
+				<img class="img-responsive" src="https://i.imgur.com/J6hmYIX.jpg">
 			</div>
-			
-			<!-- 설문조사 시>
-			<div class="col-xs-4">
-				<div class="thumnail">
-					<a href="/survey3">
-					<div class="con-img"><img class="img-responsive" src="https://i.imgur.com/HYRaOkF.jpg"></div>
-					<div class="con-title"><b>[스터디 OPEN]</b>  '미래준비'가 고민이라면 신청하자!</div>
-					</a>
-				</div>
-			</div -->			
-			
-			<% for(var i=0; i < contents.length; i++) { %>
-			<div class="col-xs-4">
-				<div class="thumnail">
-					<a href="/contents/detail/<%= contents[i].con_no %>">
-					<!--div class="con-img"><img class="img-responsive" src="<%= contents[i].chkDat%>"></div-->
-					<div class="con-img"><img class="img-responsive" src="<%= contents[i].con_photo%>"></div>
-					<div class="con-title"><%= contents[i].con_title %></div>
-					</a>
-				</div>	
+			<div class="black-box">
+					<div class="applying"><span class="on">신청중</span></div>
+					<div class="title"><p><b>암호화폐 '비트코인'</b></p></div>
+					<div class="date-price" align="right"><span class="date-price-in"><span>3월 1일(목)</span> | <span>\30,000</span></span></div>
 			</div>
-			<% } %>
-					
-		</div>		
-	</div>
-</div>	
-
-
-<!-- 임시 배너 -->
-<!--div class="carousel-inner" role="listbox" align="center">	
-	<div class="item active">
-	      <a href="/finance"><img class="img-responsive" src="/page_imgs/fixed_img/banner/consulting.jpg"></a>
-	</div>
-</div>
-<br-->
-
-<!-- 핀북 배너 -->	
-<div id="banner" align="center">
-	<a href="/finbook">
-	<img class="finbook-mob img-responsive" src="https://i.imgur.com/7yxz2nk.jpg"></a>
-</div>	
-<div class="container">	
-	<div id="banner" align="center"><a href="/finbook"><img class="finbook img-responsive" src="https://i.imgur.com/7yxz2nk.jpg"></a></div>
-</div>
-<br>
-
-
-	<!-- 콘텐츠 뿌림 -->	
-<div class="container">
-	<div class="con-list" align="center">
-		<div class="row margin-0lr" id="con-list">
-			<% for(var i=0; i < allcontents.length; i++) { %>
-			<div class="col-xs-4">
-				<div class="thumnail">
-					<a href="/contents/detail/<%= allcontents[i].con_no %>">
-					<!-- div class="con-img"><img class="img-responsive" src="<%= allcontents[i].chkDat%>"></div-->
-					<div class="con-img"><img class="img-responsive" src="<%= allcontents[i].con_photo%>"></div>
-					<div class="con-title"><%= allcontents[i].con_title %></div>
-					</a>
-				</div>	
-			</div>
-			<% } %>
 		</div>
-		<div class="con-plus-btn" align="center" onclick="addMore()"><img class="img-responsive" src="/page_imgs/fixed_img/btn-plus2.png" ></div>
+		</a>
+		<a href="/seminar/detail">
+		<div class="col-lg-6 col-xs-12 thumnail">
+			<div class="img">
+				<img class="img-responsive" src="https://i.imgur.com/J6hmYIX.jpg">
+			</div>
+			<div class="black-box">
+					<div class="applying"><span class="off">신청마감</span></div>
+					<div class="title"><p><b>암호화폐 '비트코인'</b></p></div>
+					<div class="date-price" align="right"><span class="date-price-in"><span>3월 1일(목)</span> | <span>\30,000</span></span></div>
+			</div>
+		</div>
+		</a>	
 	</div>
 </div>
 
-<script>
-		var idx = 2;
-		function addMore (){
-			var contents = '';
-			$.ajax({
-				url : '/addMore3/'+idx,
-				method : 'get',
-				success : function(data){
-					if (data.contents.length == 0){
-						alert('마지막 콘텐츠입니다.');
-						return;
-					}
-					idx ++;
-					$.each(data.contents, function (index, value){
-						contents += '<div class="col-xs-4"> ' +
-							 			'<div class="thumnail"> ' + 
-												'<a href="/contents/detail/'+value.con_no+'"> ' +
-													'<div class="con-img"> ' +
-														'<img class="img-responsive" src="'+value.con_photo+'"/> ' + 
-													'</div> ' +
-													'<div class="con-title">' + value.con_title +'</div>' +
-												'</a> ' +
-							 			'</div> '+
-							 		'</div> ';
-							
-					});
-					$('#con-list').append(contents);
-					
-				}
-			});
-		}
-		
-	</script>
+
+
+
+
+
+
+		<script src="/js/contents_js/masonry.pkgd.min.js"></script>
+		<script src="/js/contents_js/imagesloaded.js"></script>
+		<script src="/js/contents_js/classie.js"></script>
+		<script src="/js/contents_js/AnimOnScroll.js"></script>
+		<script>
+			new AnimOnScroll( document.getElementById( 'grid' ), {
+				minDuration : 0.4,
+				maxDuration : 0.7,
+				viewportFactor : 0.2
+			} );
+		</script>
 
 <% include ../bottom %>
+
 </body>
 </html>
