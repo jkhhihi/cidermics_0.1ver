@@ -109,7 +109,7 @@ p.main-title{display:none;}
 
 /*신청 페이지 부분*/
 .padding-0{padding:0 !important;}
-.main-apply{background-color:#f4f4f4; width:100%; height:auto; padding:80px 0; margin-top:70px;}
+.main-apply{background-color:#f4f4f4; width:100%; height:auto; padding:50px 0; margin-top:70px;}
 .main-apply .title p{font-size:24px; font-weight:bold;}
 .main-apply .line1{background-color:#1b87c9; width:300px; height:2px; margin-top:20px; margin-bottom:20px;}
 .main-apply .price{font-size:36px; font-weight:bold; color:#FF0000;}
@@ -253,7 +253,7 @@ p.main-title{
 .modal-lg{width:95%}
 .modal-body{padding:2px !important;}
 .modal-body input{width:220px;}
-.main-apply{margin-top:55px;}
+.main-apply{margin-top:45px;}
 .main-apply .deposit-account{padding:0 10px 0 10px; font-size:22px;}
 .main-apply .price{font-size:30px; font-weight:bold; color:#FF0000;}
 /*.apply .price input{width:200px;}*/
