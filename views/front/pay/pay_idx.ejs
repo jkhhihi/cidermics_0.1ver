@@ -42,6 +42,18 @@ $(document).ready(function(){
 */
 </script>
 
+<!--구글 애널리틱스 -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-82643610-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
 
 <script type="text/javascript" charset="EUC-KR" document.characterSet="EUC-KR";>
 
@@ -293,13 +305,7 @@ function fnNumCheck() {
 
 </script>
 
-<style type="text/css">
-@media (max-width: 1024px){
-	#select-pay{
-		margin-top: 45px !important;
-	}
-}
-</style>
+
 		
 </head>
 
@@ -329,14 +335,14 @@ function fnNumCheck() {
 		    <div role="tabpanel" class="tab-pane fade in active" id="creditcard">
 				<form name="frmConfirm" action="" accept-charset="EUC-KR">
 				<div class="form-box">
-				<!-- CPID 초기 CSK20384 , CTS14732 --> <!-- test CTS14732 -->
-				<input type="hidden" name="CPID" size="50" maxlength="50" value="CSK20384" style="IME-MODE:disabled">
+				<!-- CPID 사이다경제 - CSK20384 , CTS14732 --> <!-- test CTS14732 -->
+				<input type="hidden" name="CPID" size="50" maxlength="50" value="CFT22677" style="IME-MODE:disabled">
 				<input type="hidden" name="ORDERNO" size="50" maxlength="50" value="" style="IME-MODE:disabled">
 				<input type="hidden" name="PRODUCTTYPE" size="10" maxlength="1" value="2" style="IME-MODE:disabled">
 				<input type="hidden" name="BILLTYPE" size="10" maxlength="2"  value="1" style="IME-MODE:disabled">
 
-				<!-- 결제금액 -->
-				<input type="hidden" name="AMOUNT" size="10" maxlength="10" value="<%= price %>" style="IME-MODE:disabled" onkeypress="fnNumCheck();">
+				<!-- 결제금액 --><%var minvalue = 29900 %><% var happice = price - minvalue%>
+				<input type="hidden" name="AMOUNT" size="10" maxlength="10" value="<%=happice%>" style="IME-MODE:disabled" onkeypress="fnNumCheck();">
 
 				<input type="hidden" name="CPQUOTA" size="20" value="0:2:3:4:5:6:7:8:9:10:11:12" style="IME-MODE:disabled">
 				<div class="row form-style">
@@ -382,7 +388,6 @@ function fnNumCheck() {
 				<!--input name="btnSubmit" type="button" value="주문하기" onclick="fnSubmit()" ><br-->
 
 
-
 				<div class="check-amount row" align="center">
 					<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important;">
 						<div class="title">상품금액</div>
@@ -393,8 +398,8 @@ function fnNumCheck() {
 						<div class="amount">-29900</div>
 					</div>
 					<div class="col-xs-6" style="padding-left:0 !important; padding-right:0 !important;">
-						<div class="title">총 주문금액</div><%var a = 29900 %>
-						<div class="amount" style="color:#ff0000; font-weight: 700;"><%= price - a%></div>
+						<div class="title">총 주문금액</div>
+						<div class="amount" style="color:#ff0000; font-weight: 700;"><%= price - minvalue%></div>
 					</div>
 				</div>
 				<div class="payment-btn" align="right">
@@ -412,7 +417,7 @@ function fnNumCheck() {
 			    <div class="row form-style">
 
 			    	<!-- 결제 금액 -->
-			    	<input type="hidden" name=AMOUNT size=20 value="<%= price %>">
+			    	<input type="hidden" name=AMOUNT size=20 value="<%=happice%>">
 
 					<div class="col-xs-12"><p class="title">상품명</p> : <span style="margin:0 0 0 10px; font-weight: 700;"><%= subject %></span></div>
 					
@@ -432,7 +437,7 @@ function fnNumCheck() {
 				<input type="hidden" name="PRODUCTCATE" size="30" value="<%= cate %>"><br>
 				<input type="hidden" name="PRODUCTDETAILCATE" size="30" value="<%= idx %>"><br>
 
-				<input type="hidden" name=CPID  value="CSK20384">
+				<input type="hidden" name=CPID  value="CFT22677">
 				<input type="hidden" name=ORDERNO value="">
 				<input type="hidden" name=PRODUCTTYPE value="2">
 				<input type="hidden" name=BILLTYPE value="1">
@@ -456,8 +461,8 @@ function fnNumCheck() {
 						<div class="amount">-29900</div>
 					</div>
 					<div class="col-xs-6" style="padding-left:0 !important; padding-right:0 !important;">
-						<div class="title">총 주문금액</div><%var a = 29900 %>
-						<div class="amount" style="color:#ff0000; font-weight: 700;"><%= price - a%></div>
+						<div class="title">총 주문금액</div>
+						<div class="amount" style="color:#ff0000; font-weight: 700;"><%= price - minvalue%></div>
 					</div>
 				</div>
 				<div class="payment-btn" align="right">

@@ -262,13 +262,14 @@
 
             <div class="row">
               <div class="col s3 m3">장소</div>
-              <div class="col s7 m6" style="text-align: left;"><b><%=md[0].location%></b><p><a href="/study/map">약도 (클릭)</a></p></div>
+              <div class="col s7 m6" style="text-align: left;"><b><%=md[0].location%></b><p><!--a href="/study/map">약도 (클릭)</a--></p></div>
               <div class="col s2 m3"></div>
             </div>
 
             <div class="row">
               <div class="col s3 m3">금액</div>
-              <div class="col s7 m6" style="text-align: left;" ><b class="amount"><%=md[0].price%></b>원</div>
+              <div class="col s7 m6" style="text-align: left;" ><b class="amount"  style="text-decoration: line-through;"><%=md[0].price%></b>원 <br><b style="color: red;">269,100원</b><br>
+              *얼리버드 10% 할인 중</div>
               <div class="col s2 m3"></div>
             </div>
 
@@ -450,17 +451,19 @@
 <!-- 스터디 슬라이더 -->
 
     <div class="carousel-item slider1 white-text" href="#one!">
-      <h2 class="textfont2" style="font-size: 1.4rem; letter-spacing: 1px; padding: 10px;"><%=md[0].subject%></h2>
+      <div class="row">
+      <h2 class="textfont2" style="font-size: 1.2rem; letter-spacing: 1px; padding: 10px;"><%=md[0].subject%></h2>
+      </div>
       <!--p class="white-text">This is your first panel</p-->
     </div>
     <div class="carousel-item slider2 white-text" href="#two!">
-      <h2 class="textfont2" style="font-size: 1.4rem; letter-spacing: 1px; padding: 10px;"><%=md[0].line1%></h2>
+      <h2 class="textfont2" style="font-size: 1.2rem; letter-spacing: 1px; padding: 10px;"><%=md[0].line1%></h2>
     </div>
     <div class="carousel-item slider3 white-text" href="#three!">
-      <h2 class="textfont2" style="font-size: 1.4rem; letter-spacing: 1px; padding: 10px;"><%=md[0].line2%></h2>
+      <h2 class="textfont2" style="font-size: 1.2rem; letter-spacing: 1px; padding: 10px;"><%=md[0].line2%></h2>
     </div>
     <div class="carousel-item slider4 white-text" href="#four!">
-      <h2 class="textfont2" style="font-size: 1.4rem; letter-spacing: 1px; padding: 10px;"><%=md[0].line3%></h2>
+      <h2 class="textfont2" style="font-size: 1.2rem; letter-spacing: 1px; padding: 10px;"><%=md[0].line3%></h2>
     </div>
 
   </div>
@@ -583,7 +586,7 @@
 <div class="container">
   <div class="row">
     <div class="video-container">
-      <iframe width="600" height="400" src="https://www.youtube.com/embed/900X9fDFLc4" frameborder="0" allowfullscreen></iframe>
+      <iframe width="854" height="480" src="https://www.youtube.com/embed/tWLyCKnGu9Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
   </div>
 </div>
@@ -607,8 +610,8 @@
       </div>
       <div class="col s12 m8">
         <h5 class="textfont2">Insert Your Homework</h5>
-        <p class="textfont3">우리의 즐거운 모임은 과제를 해야만 참석이 가능해요!</p>
-        <p class="textfont3">과제를 제출해주세요. 그리고 사이다경제의 스터디를 즐기세요!</p>
+        <p class="light">우리의 즐거운 모임은 과제를 해야만 참석이 가능해요!</p>
+        <p class="light">과제를 제출해주세요. 그리고 사이다경제의 스터디를 즐기세요!</p>
       </div>
       <div class="divider3" style="width: 80%"></div>
     </div>
@@ -619,8 +622,8 @@
         </div>
         <div class="col s12 m8">
             <h5 class="textfont2">Stage 1 우리는 아는 사이다</h5>
-            <p class="light textfont3">사이다경제가 준비한 친구되기 프로그램을 하면 우리는 모두 아는 사이가 될 수 있어요!</p>
-            <p class="light textfont3">어색한 사이에서 친구가 되기까지! 모임을 시작하기 전에 함께 즐겨보아요!</p>
+            <p class="light">사이다경제가 준비한 친구되기 프로그램을 하면 우리는 모두 아는 사이가 될 수 있어요!</p>
+            <p class="light">어색한 사이에서 친구가 되기까지! 모임을 시작하기 전에 함께 즐겨보아요!</p>
         </div>
         <div class="divider" style="width: 80%"></div>
     </div>
@@ -630,8 +633,8 @@
         </div>
         <div class="col s12 m8">
             <h5 class="textfont2">Stage 2 스터디장 필리버스터</h5>
-            <p class="light textfont3">스터디의 리더가 시간제약 없이 자유롭게 이야기하는 시간이에요!</p>
-            <p class="light textfont3">강의, 참여토론 등 방식은 다양해요. 리더와의 친근한 소통으로 궁금했던 것들을 속 시원히 풀어봐요!</p>
+            <p class="light">스터디의 리더가 시간제약 없이 자유롭게 이야기하는 시간이에요!</p>
+            <p class="light">강의, 참여토론 등 방식은 다양해요. 리더와의 친근한 소통으로 궁금했던 것들을 속 시원히 풀어봐요!</p>
         </div>
         <div class="divider" style="width: 80%"></div>
     </div>
@@ -641,8 +644,8 @@
         </div>
         <div class="col s12 m8">
             <h5 class="textfont2">Stage 3 소.심.한 우리들</h5>
-            <p class="light textfont3">소규모 심층토론 한마디</p>
-            <p class="light textfont3">함께 심층토론 해봐요. 우리는 누구나 소심해요. 나만 그런 거는 아니에요. 지금 모른다고 창피한 것이 아니에요. 함께 이야기하고 배워보고 발전해봐요!</p>
+            <p class="light">소규모 심층토론 한마디</p>
+            <p class="light">함께 심층토론 해봐요. 우리는 누구나 소심해요. 나만 그런 거는 아니에요. 지금 모른다고 창피한 것이 아니에요. 함께 이야기하고 배워보고 발전해봐요!</p>
         </div>
         <div class="divider3" style="width: 80%"></div>
     </div>
@@ -653,36 +656,28 @@
       </div>
       <div class="col s12 m8">
         <h5 class="textfont2">사이다경제의 사적인 모임</h5>
-        <p class="textfont3">모임 마지막 시간에 사이다모임장을 한 명 뽑아요. 그리고 모임장이 모두가 즐길 수 있는 것으로 골라 사적인 모임을 만듭니다.</p>
-        <p class="textfont3">스터디원들과 함께 더 친해지는 시간을 가져봐요!</p>
+        <p class="light">모임 마지막 시간에 사이다모임장을 한 명 뽑아요. 그리고 모임장이 모두가 즐길 수 있는 것으로 골라 사적인 모임을 만듭니다.</p>
+        <p class="light">스터디원들과 함께 더 친해지는 시간을 가져봐요!</p>
       </div>
       <div class="divider" style="width: 80%"></div>
     </div>
 
-    <div class="row">
-        <div class="col s12 m4">
-        </div>
-        <div class="col s12 m8">
-            <h5 class="textfont2">리더와의 사적인 연락</h5>
-            <p class="light textfont3">스터디의 리더가 시간제약 없이 자유롭게 이야기하는 시간이에요!</p>
-            <p class="light textfont3">모르는 것이 있다면, 궁금한 것이 있다면 리더에게 직접 물어보세요! 함께 공부하는 리더가 훌륭한 코치가 되어줄 것입니다!</p>
-        </div>
-        <div class="divider" style="width: 80%"></div>
-    </div>
 
     <div class="row">
         <div class="col s12 m4">
         </div>
         <div class="col s12 m8">
             <h5 class="textfont2">과제를 합시다.</h5>
-            <p class="light textfont3">다음 모임에 참석하기 위해서는, 그리고 최대 6번의 스터디를 참석하기 위해서는 꼭 과제를 해야해요!</p>
-            <p class="light textfont3">리더가 엄선한 과제를 하면서 더 성장할 수 있는 당신의 모습을 발견해 보세요!</p>
+            <p class="light">다음 모임에 참석하기 위해서는, 그리고 최대 6번의 스터디를 참석하기 위해서는 꼭 과제를 해야해요!</p>
+            <p class="light">리더가 엄선한 과제를 하면서 더 성장할 수 있는 당신의 모습을 발견해 보세요!</p>
         </div>
         <div class="divider" style="width: 80%"></div>
     </div>
 
   </div>
 </div>
+
+
 
 
 
@@ -701,7 +696,7 @@
     <% var a = Math.floor(Math.random() * (12-0+1)) + 0; for(var i=a; i < a+3; i++) {  %>
     <div class="col s12 m4">
       <div class="card">
-        <div class="card-image " >
+        <div class="card-image  waves-effect waves-block waves-light">
           <a href="/studymore/<%=stdlist[i].idx%>"><img src="<%=stdlist[i].thum%>"></a>
           <span class="card-btn"><a class="waves-effect waves-light btn light-blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;"><%=stdlist[i].decate%></a></span>
           <span class="card-title" style="bottom: 30px;"><a href="/studymore/<%=stdlist[i].idx%>" style="color: #fff;"><b><%=stdlist[i].subject%></b></a></span>
@@ -713,8 +708,6 @@
   </div>
 
 </div>
-
-
 
 <!--스터디 혜택 -->
 
@@ -732,6 +725,8 @@
         <img class="responsive-img" src="/page_imgs/study_img/membgmobimg2.jpg">
     </div>
   </div>
+
+
 
 
 
