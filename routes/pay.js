@@ -65,10 +65,13 @@ router.post('/payinsert', function(req,res,next){
 	var TELNO = req.body.TELNO;
 	var birth = req.body.birth;
 	var optsex = req.body.optsex;
+	var path = req.body.path;
+	var gitar = req.body.gitar;
+
 
 	var date = getWorldTime(+9);
 
-	var sets = {orderno:ORDERNO, cate:PRODUCTCATE, decate:PRODUCTDETAILCATE, amount:AMOUNT, name : USERNAME, email:EMAIL, phone:TELNO, birth:birth, sex:optsex, regDate:date};
+	var sets = {orderno:ORDERNO, cate:PRODUCTCATE, decate:PRODUCTDETAILCATE, amount:AMOUNT, name : USERNAME, email:EMAIL, phone:TELNO, birth:birth, sex:optsex, regDate:date, path:path, gitar:gitar};
 
 	mysql.insert('insert into cider.pay_appform set ?', sets,  function (err, data){
 		if(err){
@@ -144,6 +147,8 @@ router.post('/pay_noamount', function(req,res,next){
 	var cate = req.body.PRODUCTCATE;
 	var decate = req.body.PRODUCTDETAILCATE;
 	var subject = req.body.PRODUCTNAME;
+	var path = req.body.path;
+	var gitar = req.body.gitar;
 
 	var duedate = req.body.duedate;
 
@@ -153,7 +158,7 @@ router.post('/pay_noamount', function(req,res,next){
 
 	var limdate = limtime();
 
-	var sets = {USERNAME : USERNAME, EMAIL:EMAIL, TELNO:TELNO, regDate:limdate, cate:cate, decate:decate, subject:subject, duedate:duedate, insertdate:insertdate, state:'입금대기', price:price};
+	var sets = {USERNAME : USERNAME, EMAIL:EMAIL, TELNO:TELNO, regDate:limdate, cate:cate, decate:decate, subject:subject, duedate:duedate, insertdate:insertdate, state:'입금대기', price:price, path:path, gitar:gitar};
 
 	mysql.insert('insert into cider.fin_nonaccount set ?', sets,  function (err, data){
 		if(err){

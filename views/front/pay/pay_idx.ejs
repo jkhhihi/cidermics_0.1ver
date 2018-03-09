@@ -341,7 +341,7 @@ function fnNumCheck() {
 				<input type="hidden" name="PRODUCTTYPE" size="10" maxlength="1" value="2" style="IME-MODE:disabled">
 				<input type="hidden" name="BILLTYPE" size="10" maxlength="2"  value="1" style="IME-MODE:disabled">
 
-				<!-- 결제금액 --><%var minvalue = 29900 %><% var happice = price - minvalue%>
+				<!-- 결제금액 --><% if(price == 299000){var minvalue = 29900}else{var minvalue = 59900} %><% var happice = price - minvalue%>
 				<input type="hidden" name="AMOUNT" size="10" maxlength="10" value="<%=happice%>" style="IME-MODE:disabled" onkeypress="fnNumCheck();">
 
 				<input type="hidden" name="CPQUOTA" size="20" value="0:2:3:4:5:6:7:8:9:10:11:12" style="IME-MODE:disabled">
@@ -395,7 +395,7 @@ function fnNumCheck() {
 					</div>
 					<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important; border-left:1px solid #ddd; border-right:1px solid #ddd;">
 						<div class="title">할인금액</div>
-						<div class="amount">-29900</div>
+						<div class="amount">-<%= minvalue%></div>
 					</div>
 					<div class="col-xs-6" style="padding-left:0 !important; padding-right:0 !important;">
 						<div class="title">총 주문금액</div>
@@ -458,7 +458,7 @@ function fnNumCheck() {
 					</div>
 					<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important; border-left:1px solid #ddd; border-right:1px solid #ddd;">
 						<div class="title">할인금액</div>
-						<div class="amount">-29900</div>
+						<div class="amount">-<%= minvalue%></div>
 					</div>
 					<div class="col-xs-6" style="padding-left:0 !important; padding-right:0 !important;">
 						<div class="title">총 주문금액</div>
@@ -502,6 +502,24 @@ function fnNumCheck() {
 						<div class="col-xs-12"><p class="title">휴대번호<span class="star"> * </span></p> : <input class="input-style1" type="text" name="TELNO" size="" maxlength="11" value="" placeholder="예) 01012345678"></div>
 						<div class="col-xs-12"><p class="title">입금 예정일<span class="star"> * </span></p> : <input class="input-style1" type=text name="duedate" value=""  maxlength="8" placeholder="예) 180220"></div>
 
+						<div class="col-xs-12"><p class="title">유입경로</p>
+							<label class="radio-inline">
+							  <input type="radio" name="path" id="inlineRadio1" value="사이다경제">사이다경제 앱/웹
+							</label>
+							<label class="radio-inline">
+							  <input type="radio" name="path" id="inlineRadio2" value="네이버">네이버
+							</label>
+							<label class="radio-inline">
+							  <input type="radio" name="path" id="inlineRadio3" value="다음카카오">다음카카오
+							</label>
+							<label class="radio-inline">
+							  <input type="radio" name="path" id="inlineRadio3" value="페이스북">페이스북
+							</label>
+							<label class="radio-inline">
+							  <input type="radio" name="path" id="inlineRadio3" value="기타">기타<input class="input-style1" type=text name="gitar" value=""  maxlength="10" size="4" placeholder="">
+							</label>
+						</div>
+
 						<div class="col-xs-12" style="margin:20px 0 0 0;"><input type="checkbox" id="cb1" name="checkbox1" style="margin-right:10px; cursor:pointer">서비스 이용약관 동의<span class="star"> * </span>
 						<div class="btn-style1" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">내용보기</div></div>
 						<div class="col-xs-12"><input type="checkbox" id="cb2" name="checkbox2" style="margin-right:10px; cursor:pointer">개인정보 수집 및 이용 동의<span class="star"> * </span>
@@ -516,11 +534,11 @@ function fnNumCheck() {
 						</div>
 						<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important; border-left:1px solid #ddd; border-right:1px solid #ddd;">
 							<div class="title">할인금액</div>
-							<div class="amount">-29900</div>
+							<div class="amount">-<%= minvalue%></div>
 						</div>
 						<div class="col-xs-6" style="padding-left:0 !important; padding-right:0 !important;">
-							<div class="title">총 주문금액</div><%var a = 29900 %>
-							<div class="amount" style="color:#ff0000; font-weight: 700;"><%= price - a%></div>
+							<div class="title">총 주문금액</div>
+							<div class="amount" style="color:#ff0000; font-weight: 700;"><%= price - minvalue%></div>
 						</div>
 					</div>
 					<div class="payment-btn" align="right">
@@ -531,7 +549,7 @@ function fnNumCheck() {
 					<!--카드사 API에 없는거 직접 만듬 -->
 					<input type="hidden" name="PRODUCTCATE" size="30" value="<%= cate %>"><br>
 					<input type="hidden" name="PRODUCTDETAILCATE" size="30" value="<%= idx %>"><br>
-					<input type="hidden" name="price" size="30" value="<%= price %>"><br>
+					<input type="hidden" name="price" size="30" value="<%=happice%>"><br>
 				</form>
 		    </div>
 		  </div>

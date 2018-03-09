@@ -103,4 +103,12 @@ router.get('/study/map', function(req, res, next) {
 	res.render('front/cid_study/std_map', { });
 });
 
+router.get('/study/disc', function(req, res, next) {
+	var stdlist;
+	mysql.select('SELECT idx,subject,subject2,decate,recentdate,thum,leader,sche1,cate from cider.std_more where flag="Y" order by idx desc;', function (err, data){
+		stdlist = data;
+	res.render('front/cid_study/std_disc', {stdlist : data});
+  });
+});
+
 module.exports = router;

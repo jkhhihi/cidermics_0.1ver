@@ -63,6 +63,7 @@
           <h3><i class="mdi-content-send brown-text"></i></h3>
           <h4>STUDY GROUPS</h4>
           <p class="center-align light">경제 지식을 물고 뜯고 맛보고 즐기며 내 것으로 만드는 놀이터! 경이로운 스터디 모임</p>
+          <h3>고객 20% 할인 페이지</h3>
         </div>
   </div>
   
@@ -75,13 +76,13 @@
           <span class="card-btn"><a class="waves-effect waves-light btn light-blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;"><%=stdlist[i].decate%></a></span>
           <span class="card-title" style="bottom: 30px;"><a href="/studymore/<%=stdlist[i].idx%>" style="color: #fff;"><b><%=stdlist[i].subject%></b></a></span>
           <span class="card-name">리더 <%=stdlist[i].leader%></span>
-          
         </div>
         <div class="card-content">
           <p><i class="material-icons left">today</i><%=stdlist[i].recentdate%></p>
           <div class="divider"></div>
           <p><%=stdlist[i].subject2%></p>
-          <p><a class="waves-effect waves-light btn light-blue darken-2" onclick="Materialize.toast('현재 '+a+'명의 구독자가 이 글을 확인 중입니다.', 1000,'',function(){window.location='/studymore/<%=stdlist[i].idx%>';})">스터디 내용 자세히 보기</a></p>
+          <p><a class="waves-effect waves-light btn light-blue darken-2" href="/studymore/<%=stdlist[i].idx%>">스터디 내용 자세히 보기</a></p>
+          <p><a class="waves-effect waves-light btn pink darken-2" href="/pay?subject=<%=stdlist[i].subject%>&cate=<%=stdlist[i].cate%>&idx=<%=stdlist[i].idx%>&price=298900">20% 할인으로 이 스터디 신청하기</a></p>
         </div>
       </div>
     </div>

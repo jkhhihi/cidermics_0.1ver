@@ -54,8 +54,8 @@
 /*form��Ÿ��*/
 #pur-form input.input-style1{border: 1px solid #eee; padding: 5px; margin:0 0 0 10px;}
 #pur-form span.star{color:#f7293c; line-height:1.8em;}
-#pur-form .form-box{height:350px;}
-#pur-form .form-box .form-style{background-color:#fff; padding:30px 10px; border-bottom:1px solid #ddd; height:355px;}
+#pur-form .form-box{height:370px;}
+#pur-form .form-box .form-style{background-color:#fff; padding:30px 10px; border-bottom:1px solid #ddd; height:385px;}
 #pur-form .form-box .form-style1{background-color:#fff; padding:30px 20px; border:2px solid #ddd; margin:20px 0 0 0;}
 #pur-form .form-box .form-style1 p.care{color:#f7293c; line-height:1.8em;}
 #pur-form .col-xs-12{margin:10px 0 0 0;}
@@ -150,8 +150,8 @@ h4{font-size:14px !important;}
 /*---------------�����ϱ�---------------*/
 
 /*form스타일*/
-#pur-form .form-box{height:310px;}
-#pur-form .form-box .form-style{padding:15px 5px; height:350px;}
+#pur-form .form-box{height:360px;}
+#pur-form .form-box .form-style{padding:15px 5px; height:385px;}
 #pur-form .form-box .form-style1{padding:10px 10px 20px 10px;}
 #pur-form .col-xs-12{padding-left:0 !important; padding-right:0 !important}
 

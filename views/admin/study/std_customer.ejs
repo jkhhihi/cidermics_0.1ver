@@ -37,6 +37,8 @@
                 <th>휴대폰 번호</th>
                 <th>나이</th>
                 <th>성별</th>
+                <th>경로</th>
+                <th>기타</th>
                 <th>구매 시간</th>
             </tr>
           </thead>
@@ -53,6 +55,8 @@
               <td><%= code[i].phone %></td>
               <td><%= code[i].birth %></td>
               <td><%= code[i].sex %></td>
+              <td><%= code[i].path %></td>
+              <td><%= code[i].gitar %></td>
               <td><%= code[i].regdate %></td>
             </tr>
           <% } %>
@@ -137,6 +141,8 @@
                 <th>구매자 성명</th>
                 <th>이메일 주소</th>
                 <th>휴대폰 번호</th>
+                <th>경로</th>
+                <th>기타</th>
                 <th>신청일</th>
                 <th>입금예정일</th>
                 <th>입금금액</th>
@@ -148,10 +154,12 @@
           <tbody>
           <% for(var i = 0; i< non.length; i++) { %>
             <tr>
-              <td><%= non[i].decate %></td>
+              <td><%= non[i].subject %></td>
               <td><%= non[i].USERNAME %></td>
               <td><%= non[i].EMAIL %></td>
               <td><%= non[i].TELNO %></td>
+              <td><%= non[i].path %></td>
+              <td><%= non[i].gitar %></td>
               <td><%= non[i].insertdate %></td>
               <td><%= non[i].duedate %></td>
               <td><%= non[i].price %></td>
