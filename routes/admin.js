@@ -1406,6 +1406,9 @@ router.post('/study/insert', ensureAuthenticated, function(req, res, next) {
 	var bgimg1 = req.body.bgimg1;
 	var thum = req.body.thum;
 	var thum2 = req.body.thum2;
+	var img1 = req.body.img1;
+	var img2 = req.body.img2;
+	var img3 = req.body.img3;
 	var leader = req.body.leader;
 	var period = req.body.period;
 	var sche1 = req.body.sche1;
@@ -1468,6 +1471,9 @@ router.post('/study/update', ensureAuthenticated, function(req, res, next) {
 	var bgimg1 = req.body.bgimg1;
 	var thum = req.body.thum;
 	var thum2 = req.body.thum2;
+	var img1 = req.body.img1;
+	var img2 = req.body.img2;
+	var img3 = req.body.img3;
 	var leader = req.body.leader;
 	var period = req.body.period;
 	var sche1 = req.body.sche1;

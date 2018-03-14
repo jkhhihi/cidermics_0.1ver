@@ -168,6 +168,19 @@
 
 </style>
 
+<style type="text/css">
+@media only screen and (min-width: 601px){
+  .container1{
+    width:95%;
+  }
+}
+@media only screen and (min-width: 993px){
+  .container1{
+    width:50%;
+  }
+}
+</style>
+
 <script type="text/javascript">
   function commaNum(num) {
       var len, point, str;  
@@ -243,69 +256,71 @@
             <br>
 
             <div class="row">
-              <div class="col s3 m3">리더</div>
-              <div class="col s7 m5" style="text-align: left;"><b><%=md[0].leader%></b></div>
-              <div class="col s2 m4"></div>
+              <div class="col s4 m3">리더</div>
+              <div class="col s8 m5" style="text-align: left;"><b><%=md[0].leader%></b></div>
+              <div class="col s0 m4"></div>
             </div>
 
             <div class="row">
-              <div class="col s3 m3">기간</div>
-              <div class="col s6 m5" style="text-align: left;"><b><%=md[0].period%></b></div>
-              <div class="col s3 m4"></div>
+              <div class="col s4 m3">기간</div>
+              <div class="col s8 m5" style="text-align: left;"><b><%=md[0].period%></b></div>
+              <div class="col s0 m4"></div>
             </div>
 
             <div class="row">
-              <div class="col s3 m3">일정</div>
-              <div class="col s7 m6" style="text-align: left;"><b><%=md[0].sche1%><br><%=md[0].sche2%><br><%=md[0].sche3%></b></div>
-              <div class="col s2 m3"></div>
+              <div class="col s4 m3">일정</div>
+              <div class="col s8 m6" style="text-align: left;"><b><%=md[0].sche1%><br><%=md[0].sche2%><br><%=md[0].sche3%></b></div>
+              <div class="col s0 m3"></div>
             </div>
 
             <div class="row">
-              <div class="col s3 m3">장소</div>
-              <div class="col s7 m6" style="text-align: left;"><b><%=md[0].location%></b><p><!--a href="/study/map">약도 (클릭)</a--></p></div>
-              <div class="col s2 m3"></div>
+              <div class="col s4 m3">장소</div>
+              <div class="col s8 m6" style="text-align: left;"><b><%=md[0].location%></b><p><!--a href="/study/map">약도 (클릭)</a--></p></div>
+              <div class="col s0 m3"></div>
             </div>
 
             <div class="row">
-              <div class="col s3 m3">금액</div>
-              <div class="col s7 m6" style="text-align: left;" ><b class="amount"  style="text-decoration: line-through;"><%=md[0].price%></b>원 <br><b style="color: red;">269,100원</b><br>
-              *얼리버드 10% 할인 중</div>
-              <div class="col s2 m3"></div>
+              <div class="col s4 m3">모집 인원</div>
+              <div class="col s8 m6" style="text-align: left;"><b><%=md[0].people%>명</b></div>
+              <div class="col s0 m3"></div>
             </div>
 
             <div class="row">
-              <div class="col s3 m3">모집 인원</div>
-              <div class="col s7 m6" style="text-align: left;"><b><%=md[0].people%>명</b></div>
-              <div class="col s2 m3"></div>
+              <div class="col s4 m3">준비사항</div>
+              <div class="col s8 m6" style="text-align: left;"><b>모임 전 과제</b></div>
+              <div class="col s0 m3"></div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="row" style="margin-top: 20px;">
+              <div class="col s4 m3">스터디 구성</div>
+              <div class="col s8 m6" style="text-align: left;"><b>스터디 3회 + 경이로움 더하기(다른 스터디 3회) + 12번의 릴레이 세미나 무료 + 사모임 + BIG소셜파티</b></div>
+              <div class="col s0 m3"></div>
             </div>
 
             <div class="row">
-              <div class="col s3 m3">추가 혜택</div>
-              <div class="col s7 m6" style="text-align: left;"><b>릴레이 세미나 무료 + 경이로움 더하기 + 사모임 + BIG소셜파티</b></div>
-              <div class="col s2 m3"></div>
+              <div class="col s4 m3">총 금액</div>
+              <div class="col s8 m6" style="text-align: left;" ><b class="amount"  style="text-decoration: line-through;"><%=md[0].price%></b>원 <br><b style="color: red;">269,100원</b><br>
+              *얼리버드 10% 할인 중(~17일까지)</div>
+              <div class="col s0 m3"></div>
             </div>
 
-            <div class="row">
-              <div class="col s3 m3">준비사항</div>
-              <div class="col s7 m6" style="text-align: left;"><b>모임 전 과제</b></div>
-              <div class="col s2 m3"></div>
-            </div>
-
-          <div class="row">
-            <div class="col s12 m6">
+          <div class="row center">
+            <div class="col s12 m12">
               <div class="apply-form">
                 <form action="/pay" name="apply" method="get">
                   <input type="hidden" name="subject" value="<%=md[0].subject%>">
                   <input type="hidden" name="cate" value="<%=md[0].cate%>">
                   <input type="hidden" name="idx" value="<%=md[0].idx%>">
                   <input type="hidden" name="price" value="<%=md[0].price%>">
-                  <button type="submit">신청하기</button>
+                  <button type="submit" style="width: 300px;">신청하기</button>
                 </form>
               </div>
             </div>
-            <div class="col s12 m6">
+            <div class="col s12 m12">
               <div class="apply-form2">
-                  <button type="button" onclick="location.href='/study/faq'"><a href="/study/faq" style="color:#1b87c9;">문의하기</a></button>
+                  <button  style="width: 300px;" type="button" onclick="location.href='/study/faq'"><a href="/study/faq" style="color:#1b87c9;">문의하기</a></button>
               </div>
             </div>
           </div>
@@ -580,6 +595,15 @@
 
 </div>
 
+<div class="container1" style="margin: 20px auto; font-size:0px;">
+
+  <div class="row">
+    <div class="col s12">
+      <img class="responsive-img" src="/page_imgs/study_img/benefit.jpg">
+    </div>
+  </div>
+</div>
+
 
 <!-- 스터디 유튜브 -->
 
@@ -593,6 +617,23 @@
 
 
 <div class="divider"></div>
+
+<!--스터디 혜택 -->
+<div class="container" id="memshipweb">
+  <div class="row center" style="margin:60px 0 60px;">
+      <img class="responsive-img" src="/page_imgs/study_img/membgwebimg1.jpg">
+      <a href="/study/event" class="waves-effect waves-light btn light-blue darken-2">일정표 보기</a>
+      <img class="responsive-img" src="/page_imgs/study_img/membgwebimg2.jpg">
+  </div>
+</div>
+<div class="container" id="memshipmob">
+  <div class="row center" style="margin:60px 0 60px;">
+      <img class="responsive-img" src="/page_imgs/study_img/membgmobimg1.jpg">
+      <a href="/study/event" class="waves-effect waves-light btn light-blue darken-2">일정표 보기</a>
+      <img class="responsive-img" src="/page_imgs/study_img/membgmobimg2.jpg">
+  </div>
+</div>
+
 
 <div class="detail2">
   <div class="container">
@@ -708,24 +749,6 @@
   </div>
 
 </div>
-
-<!--스터디 혜택 -->
-
-  <div class="container" id="memshipweb">
-    <div class="row center" style="margin:60px 30px 60px;">
-        <img class="responsive-img" src="/page_imgs/study_img/membgwebimg1.jpg">
-        <a href="/study/event" class="waves-effect waves-light btn light-blue darken-2">일정표 보기</a>
-        <img class="responsive-img" src="/page_imgs/study_img/membgwebimg2.jpg">
-    </div>
-  </div>
-  <div class="container" id="memshipmob">
-    <div class="row center" style="margin:60px 0 60px;">
-        <img class="responsive-img" src="/page_imgs/study_img/membgmobimg1.jpg">
-        <a href="/study/event" class="waves-effect waves-light btn light-blue darken-2">일정표 보기</a>
-        <img class="responsive-img" src="/page_imgs/study_img/membgmobimg2.jpg">
-    </div>
-  </div>
-
 
 
 

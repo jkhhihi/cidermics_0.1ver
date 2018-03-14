@@ -704,7 +704,7 @@ router.get('/personalinfo', function(req,res,next){
 
 
 // 핀북 랜딩 페이지
-router.get('/finbook', function(req,res,next){
+/*router.get('/finbook', function(req,res,next){
 	res.render('front/etc/finbook/finbook',{});
 });
 
@@ -726,10 +726,6 @@ router.get('/finbook_ch/:ORDERNO', function(req,res,next){
 	res.render('front/etc/finbook/finbook_ch_purchase',{ORDERNO:ORDERNO, date:date});
 	});
 });
-
-/*router.get('/finbook_ch/', function(req,res,next){
-	res.render('front/etc/finbook/finbook_ch_purchase',{});
-});*/
 
 router.post('/finbook_ch_code/:ORDERNO', function(req, res, next) {
 	
@@ -760,13 +756,7 @@ router.get('/finbook_noamount', function(req,res,next){
 	var USERNAME = req.query.USERNAME;
 	var EMAIL = req.query.EMAIL;
 	var TELNO = req.query.TELNO;
-
-	console.log(USERNAME);
-	console.log(EMAIL);
-	//var date = getWorldTime(+9);
-
 	var limdate = aaaa();
-	//console.log(limdate);
 	res.render('front/etc/finbook/finbook_noamount',{limdate:limdate, USERNAME:USERNAME, EMAIL:EMAIL, TELNO:TELNO});
 });
 
@@ -818,7 +808,6 @@ router.post('/finbook_search_fin', function(req, res, next) {
 	    to: email,
 
 	    subject: '[사이다경제] 핀코드',
-	    //text: "<html><head></head><body>" + '인증코드' + codeRandom + "</body></html>",
 	    html: '<table width="500" cellpadding="0" cellspacing="0" style="font-family:"나눔고딕"; font-size:12px"><tr><td height="100" colspan="2"  style="background-color:#1b87c9; color:#fff; font-size:16px"><blockquote><p style="margin-bottom:10px;"><b>사이다경제</b></p><b>"핀코드"</b></td><td></td></tr><tr><td height="150" ><blockquote><p><span><b>'+email+'</b></span> 님 안녕하세요.<br /><br />사이다경제입니다:)<br /><br />결제하신 핀코드는 <span><b style="font-size:18px; color:#2686c9;">' + codeRandom + '</b></span> 입니다.</p></blockquote></td><td align="right" style="padding-right:30px"><p><img src="http://i.imgur.com/vHA3uRr.png" height="100" /></p></td></tr><tr><td height="50" style="border-bottom:1px solid #1b87c9;" colspan="2" ><p align="right"><b>문의 : contact@cidermics.com</b></p></td><td></td></tr><tr><td height="80" colspan="2" ><blockquote><p align="center"><span style="color:#1b87c9; border:2px solid #1b87c9; border-radius:5px; padding:8px 12px;"><a style="color:#1b87c9; text-decoration:none" href="http://www.cidermics.com"><b>"사이다경제" 로 바로가기 ></b></a></span></p></blockquote></td><td></td></tr><tr><td height="80" colspan="2" ><blockquote><p align="center"><span style="color:#1b87c9; border:2px solid #1b87c9; border-radius:5px; padding:8px 12px;"><a style="color:#1b87c9; text-decoration:none" href="http://onlinetest.thecubemind.co.kr/cidermics"><b>"핀북 검사" 로 바로가기 ></b></a></span></p></blockquote></td></tr></table></body></html>'
 
 
@@ -835,13 +824,7 @@ router.post('/finbook_search_fin', function(req, res, next) {
 	});
 	req.session.valid = codeRandom;
 	req.session.valid2 = email;
-  	//res.redirect('/finbook');
-	//res.send({ user: '1234' })
 	res.send('<script>alert("이메일 전송 완료");location.href="/finbook";</script>');
-	//res.send([1,2,3]);
-	//res.redirect('/psearch2')
-
-	//res.render('front/cid_member/password_search1', { });
   });
 });
 
@@ -868,7 +851,6 @@ router.post('/finbook_send_email', function(req, res, next) {
 	    to: email,
 
 	    subject: '[사이다경제] 핀코드',
-	    //text: "<html><head></head><body>" + '인증코드' + codeRandom + "</body></html>",
 	    html: '<table width="500" cellpadding="0" cellspacing="0" style="font-family:"나눔고딕"; font-size:12px"><tr><td height="100" colspan="2"  style="background-color:#1b87c9; color:#fff; font-size:16px"><blockquote><p style="margin-bottom:10px;"><b>사이다경제</b></p><b>"핀코드"</b></td><td></td></tr><tr><td height="150" ><blockquote><p><span><b>'+email+'</b></span> 님 안녕하세요.<br /><br />사이다경제입니다:)<br /><br />결제하신 핀코드는 <span><b style="font-size:18px; color:#2686c9;">' + codeRandom + '</b></span> 입니다.</p></blockquote></td><td align="right" style="padding-right:30px"><p><img src="http://i.imgur.com/vHA3uRr.png" height="100" /></p></td></tr><tr><td height="50" style="border-bottom:1px solid #1b87c9;" colspan="2" ><p align="right"><b>문의 : contact@cidermics.com</b></p></td><td></td></tr><tr><td height="80" colspan="2" ><blockquote><p align="center"><span style="color:#1b87c9; border:2px solid #1b87c9; border-radius:5px; padding:8px 12px;"><a style="color:#1b87c9; text-decoration:none" href="http://www.cidermics.com"><b>"사이다경제" 로 바로가기 ></b></a></span></p></blockquote></td><td></td></tr><tr><td height="80" colspan="2" ><blockquote><p align="center"><span style="color:#1b87c9; border:2px solid #1b87c9; border-radius:5px; padding:8px 12px;"><a style="color:#1b87c9; text-decoration:none" href="http://onlinetest.thecubemind.co.kr/cidermics"><b>"핀북 검사" 로 바로가기 ></b></a></span></p></blockquote></td></tr></table></body></html>'
 
 
@@ -885,15 +867,9 @@ router.post('/finbook_send_email', function(req, res, next) {
 	});
 	req.session.valid = codeRandom;
 	req.session.valid2 = email;
-  	//res.redirect('/finbook');
-	//res.send({ user: '1234' })
 	res.send('<script>alert("이메일 전송 완료");location.href="/finbook_ch_code/'+data[0].ORDERNO+'";</script>');
-	//res.send([1,2,3]);
-	//res.redirect('/psearch2')
-
-	//res.render('front/cid_member/password_search1', { });
   });
-});
+});*/
 
 
 //특정 아이피만 allow

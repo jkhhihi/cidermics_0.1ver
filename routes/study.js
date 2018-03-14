@@ -63,6 +63,16 @@ router.get('/studymore/:idx', function(req, res, next) {
   });
 });
 
+router.get('/studymore1/:idx', function(req, res, next) {
+	var idx = req.params.idx;
+	var stdlist;
+	mysql.select('SELECT * from cider.std_more where idx = '+idx+';', function (err, data){
+		mysql.select('SELECT idx,subject,subject2,decate,recentdate,thum,leader,sche1 from cider.std_more where flag="Y" order by idx desc;', function (err, data1){
+	res.render('front/cid_study/std_more1', {md:data, stdlist : data1});
+  	});
+  });
+});
+
 router.get('/study/cal', function(req, res, next) {
 	res.render('front/cid_study/std_cal', { });
 });

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>사이다경제 스터디</title>
+  <!-- 메인 문구 -->
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css'>
+
+  <!-- 네이버 -->
+    <meta name="naver-site-verification" content="083657cb98aa9a4a9c62dedeffddfb2490545da0"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- favicon -->
+    <link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+    <link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+
+    <!--CSS -->
+    <link rel='stylesheet' href='/css/materialize.css' />
+    <link href="/css/std_style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <!-- icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--JS-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!--script src="/js/materialize.js"></script-->
+
+<style type="text/css">
+    /* just for jsfiddle */
+
+  .material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -moz-font-feature-settings: 'liga';
+  -moz-osx-font-smoothing: grayscale;
+  }
+
+  .middle-indicator{
+   position:absolute;
+   top:43%;
+   }
+  .middle-indicator-text{
+   font-size: 4.2rem;
+  }
+  a.middle-indicator-text{
+    color:white !important;
+  }
+  .content-indicator{
+    width: 64px;
+    height: 64px;
+    background: none;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px; 
+  }
+
+  .indicators{
+    visibility: hidden;
+  }
+
+  p{
+    line-height: 2rem;
+  }
+
+  .detail2{
+    background-color: #fbfbfb;
+    width: 100%;
+    max-width:1700px;
+    padding: 40px 0 20px;
+  }
+
+  .divider2{
+    height: 4px; overflow: hidden; background-color: #bee4f7;
+  }
+  .divider3{
+    margin-top: 3px;
+    height: 1px; overflow: hidden; background-color: #039be5;
+  }
+
+  .textfont{
+    font-family: seoulhangangregular !important;
+    font-weight: normal;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+  }
+
+  .textfont2{
+    font-family: seoulhangangregular !important;
+    font-weight: 550;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+
+  .textfont3{
+    font-family: seoulhangangregular !important;
+    font-weight: 500;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+  }
+
+</style>
+
+<style type="text/css">
+  .apply-form button:hover{
+    border:2px solid #1b87c9;
+    background-color:#fff;
+    color:#212121;
+  }
+  .apply-form button{
+    border:2px solid #1b87c9;
+    background-color:#1b87c9;
+    color:#fff;
+    width:200px;
+    height:auto;
+    border-radius:40px;
+    font-weight:bold;
+    font-size: 18px;
+    padding:10px 0 10px 0;
+    margin: 4px;
+  }
+  .apply-form2 button:hover{
+    border:2px solid #1b87c9;
+    background-color:#dcdcdc;
+    color:#fff;
+  }
+  .apply-form2 button{
+    border:2px solid #1b87c9;
+    background-color:#fff;
+    color:#1b87c9;
+    width:200px;
+    height:auto;
+    border-radius:40px;
+    font-weight:bold;
+    font-size: 18px;
+    padding:10px 0 10px 0;
+    margin: 4px;
+  }
+
+  .slider1{
+    background:url("<%=md[0].slimg1%>") no-repeat center top;
+    background-size:auto 100%;
+  }
+  .slider2{
+    background:url("<%=md[0].slimg2%>") no-repeat center top;
+    background-size:auto 100%;
+  }
+  .slider3{
+    background:url("<%=md[0].slimg3%>") no-repeat center top;
+    background-size:auto 100%;
+  }
+  .slider4{
+    background:url("<%=md[0].slimg4%>") no-repeat center top;
+    background-size:auto 100%;
+  }
+  .box1{
+  border:3px solid #fff; padding:20px 40px; display:inline-block; margin-top:50px; font-size:18px;}
+
+</style>
+
+<style type="text/css">
+@media only screen and (min-width: 601px){
+  .container1{
+    width:95%;
+  }
+}
+@media only screen and (min-width: 993px){
+  .container1{
+    width:50%;
+  }
+}
+</style>
+
+<script type="text/javascript">
+  function commaNum(num) {
+      var len, point, str;  
+      num = num + "";  
+      point = num.length % 3  
+      len = num.length;  
+   
+      str = num.substring(0, point);  
+      while (point < len) {  
+          if (str != "") str += ",";  
+          str += num.substring(point, point + 3);  
+          point += 3;  
+      }  
+      return str;  
+  }
+
+
+  $(document).ready(function(){    
+      for (i=0; i<$(".amount").length; i++){
+          $(".amount").eq(i).text(commaNum($(".amount").eq(i).html()));   
+      }
+  });
+
+</script>
+
+  
+  <script src="/js/gotoup.js"></script>
+  </head>
+  <body>
+
+  <div id="but_top"><a class="btn btn-floating  blue-grey darken-4"><i class="material-icons">arrow_upward</i></a></div>
+
+  <% include std_top %>
+
+<!--맨위 -->
+<div class="parallax-container valign-wrapper" style="min-height: 500px;">
+  <div class="section no-pad-bot" style="padding-top:0px;">
+    <div class="container">
+
+      <div class="row center">
+        <h4 class="header1 header col s12 light" style="font-weight: 500; ">"<%=md[0].subject%>"</h4>
+      </div>
+
+      <div class="row center">
+        <div class="divider"></div>
+        <span class="box1">경이로움</span>
+        <p>한 달에 한 번, 총 3회 스터디 그리고 사적인 모임</p>
+      </div>
+
+    </div>
+  </div>
+  <div class="parallax"><img src="<%=md[0].bgimg1%>"></div>
+</div>
+
+<!-- 스터디 상세 정보 -->
+
+  <div class="container" style="margin: 50px auto;">
+    <div class="row">
+      <div class="col s12 m6">
+      </div>
+      <div class="col s12 m6">
+        <h4 class="textfont"><%=md[0].subject%></h4>
+        <div class="divider"></div>
+      </div>
+    </div>
+    <div class="row">
+          <div class="col s12 m5">
+            <div><img src="<%=md[0].thum2%>" width="100%"></div>
+          </div>
+          <div class="col s12 m1">
+          </div>
+          <div class="col s12 m6">
+            <br>
+
+            <div class="row">
+              <div class="col s4 m3">리더</div>
+              <div class="col s8 m5" style="text-align: left;"><b><%=md[0].leader%></b></div>
+              <div class="col s0 m4"></div>
+            </div>
+
+            <div class="row">
+              <div class="col s4 m3">기간</div>
+              <div class="col s8 m5" style="text-align: left;"><b><%=md[0].period%></b></div>
+              <div class="col s0 m4"></div>
+            </div>
+
+            <div class="row">
+              <div class="col s4 m3">일정</div>
+              <div class="col s8 m6" style="text-align: left;"><b><%=md[0].sche1%><br><%=md[0].sche2%><br><%=md[0].sche3%></b></div>
+              <div class="col s0 m3"></div>
+            </div>
+
+            <div class="row">
+              <div class="col s4 m3">장소</div>
+              <div class="col s8 m6" style="text-align: left;"><b><%=md[0].location%></b><p><!--a href="/study/map">약도 (클릭)</a--></p></div>
+              <div class="col s0 m3"></div>
+            </div>
+
+            <div class="row">
+              <div class="col s4 m3">모집 인원</div>
+              <div class="col s8 m6" style="text-align: left;"><b><%=md[0].people%>명</b></div>
+              <div class="col s0 m3"></div>
+            </div>
+
+            <div class="row">
+              <div class="col s4 m3">준비사항</div>
+              <div class="col s8 m6" style="text-align: left;"><b>모임 전 과제</b></div>
+              <div class="col s0 m3"></div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="row" style="margin-top: 20px;">
+              <div class="col s4 m3">스터디 구성</div>
+              <div class="col s8 m6" style="text-align: left;"><b>스터디 3회 + 경이로움 더하기(다른 스터디 3회) + 12번의 릴레이 세미나 무료 + 사모임 + BIG소셜파티</b></div>
+              <div class="col s0 m3"></div>
+            </div>
+
+            <div class="row">
+              <div class="col s4 m3">총 금액</div>
+              <div class="col s8 m6" style="text-align: left;" ><b class="amount"  style="text-decoration: line-through;"><%=md[0].price%></b>원 <br><b style="color: red;">269,100원</b><br>
+              *얼리버드 10% 할인 중(~17일까지)</div>
+              <div class="col s0 m3"></div>
+            </div>
+
+          <div class="row center">
+            <div class="col s12 m12">
+              <div class="apply-form">
+                <form action="/pay" name="apply" method="get">
+                  <input type="hidden" name="subject" value="<%=md[0].subject%>">
+                  <input type="hidden" name="cate" value="<%=md[0].cate%>">
+                  <input type="hidden" name="idx" value="<%=md[0].idx%>">
+                  <input type="hidden" name="price" value="<%=md[0].price%>">
+                  <button type="submit" style="width: 300px;">신청하기</button>
+                </form>
+              </div>
+            </div>
+            <div class="col s12 m12">
+              <div class="apply-form2">
+                  <button  style="width: 300px;" type="button" onclick="location.href='/study/faq'"><a href="/study/faq" style="color:#1b87c9;">문의하기</a></button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </div>
+  </div>
+
+  <!-- 스터디 유튜브 -->
+
+<div class="container">
+  <div class="row">
+    <div class="video-container">
+      <iframe width="700" height="410" src="https://www.youtube.com/embed/tWLyCKnGu9Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+
+<!--div class="divider"></div-->
+
+
+<!-- 스터디 알고 싶어요, 세줄 소개, 핵심 가치 -->
+
+<div class="container1" style="margin: 20px auto; font-size:0px;">
+
+  <div class="row">
+    <div class="col s12">
+      <img class="responsive-img" src="<%=md[0].img1%>">
+      <img class="responsive-img" src="<%=md[0].img2%>">
+      <img class="responsive-img" src="<%=md[0].img3%>">
+      <img class="responsive-img" src="/page_imgs/study_img/benefit.jpg">
+    </div>
+  </div>
+</div>
+
+
+
+<!--스터디 혜택 -->
+<div class="container" id="memshipweb">
+  <div class="row center" style="margin:60px 0 60px;">
+      <img class="responsive-img" src="/page_imgs/study_img/membgwebimg1.jpg">
+      <a href="/study/event" class="waves-effect waves-light btn light-blue darken-2">일정표 보기</a>
+      <img class="responsive-img" src="/page_imgs/study_img/membgwebimg2.jpg">
+  </div>
+</div>
+<div class="container" id="memshipmob">
+  <div class="row center" style="margin:60px 0 60px;">
+      <img class="responsive-img" src="/page_imgs/study_img/membgmobimg1.jpg">
+      <a href="/study/event" class="waves-effect waves-light btn light-blue darken-2">일정표 보기</a>
+      <img class="responsive-img" src="/page_imgs/study_img/membgmobimg2.jpg">
+  </div>
+</div>
+
+
+<div class="detail2">
+  <div class="container">
+
+    <div class="row">
+      <div class="col s12">
+        <h4 class="textfont">#4 모임 진행 방식</h4>
+        <div class="divider2" style="width: 30%"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12 m4">
+        <h5 class="textfont2" style="color: #1b87c9;">모임 전</h5>
+      </div>
+      <div class="col s12 m8">
+        <h5 class="textfont2">Insert Your Homework</h5>
+        <p class="light">우리의 즐거운 모임은 과제를 해야만 참석이 가능해요!</p>
+        <p class="light">과제를 제출해주세요. 그리고 사이다경제의 스터디를 즐기세요!</p>
+      </div>
+      <div class="divider3" style="width: 80%"></div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m4">
+          <h5 class="textfont2" style="color: #1b87c9;">모임 참석</h5>
+        </div>
+        <div class="col s12 m8">
+            <h5 class="textfont2">Stage 1 우리는 아는 사이다</h5>
+            <p class="light">사이다경제가 준비한 친구되기 프로그램을 하면 우리는 모두 아는 사이가 될 수 있어요!</p>
+            <p class="light">어색한 사이에서 친구가 되기까지! 모임을 시작하기 전에 함께 즐겨보아요!</p>
+        </div>
+        <div class="divider" style="width: 80%"></div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m4">
+        </div>
+        <div class="col s12 m8">
+            <h5 class="textfont2">Stage 2 스터디장 필리버스터</h5>
+            <p class="light">스터디의 리더가 시간제약 없이 자유롭게 이야기하는 시간이에요!</p>
+            <p class="light">강의, 참여토론 등 방식은 다양해요. 리더와의 친근한 소통으로 궁금했던 것들을 속 시원히 풀어봐요!</p>
+        </div>
+        <div class="divider" style="width: 80%"></div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m4">
+        </div>
+        <div class="col s12 m8">
+            <h5 class="textfont2">Stage 3 소.심.한 우리들</h5>
+            <p class="light">소규모 심층토론 한마디</p>
+            <p class="light">함께 심층토론 해봐요. 우리는 누구나 소심해요. 나만 그런 거는 아니에요. 지금 모른다고 창피한 것이 아니에요. 함께 이야기하고 배워보고 발전해봐요!</p>
+        </div>
+        <div class="divider3" style="width: 80%"></div>
+    </div>
+
+    <div class="row">
+      <div class="col s12 m4">
+        <h5 class="textfont2" style="color: #1b87c9;">모임 후</h5>
+      </div>
+      <div class="col s12 m8">
+        <h5 class="textfont2">사이다경제의 사적인 모임</h5>
+        <p class="light">모임 마지막 시간에 사이다모임장을 한 명 뽑아요. 그리고 모임장이 모두가 즐길 수 있는 것으로 골라 사적인 모임을 만듭니다.</p>
+        <p class="light">스터디원들과 함께 더 친해지는 시간을 가져봐요!</p>
+      </div>
+      <div class="divider" style="width: 80%"></div>
+    </div>
+
+
+    <div class="row">
+        <div class="col s12 m4">
+        </div>
+        <div class="col s12 m8">
+            <h5 class="textfont2">과제를 합시다.</h5>
+            <p class="light">다음 모임에 참석하기 위해서는, 그리고 최대 6번의 스터디를 참석하기 위해서는 꼭 과제를 해야해요!</p>
+            <p class="light">리더가 엄선한 과제를 하면서 더 성장할 수 있는 당신의 모습을 발견해 보세요!</p>
+        </div>
+        <div class="divider" style="width: 80%"></div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+<div class="container" style="margin: 50px auto;">
+  
+  <div class="row">
+      <div class="col s12 center">
+        <h3><i class="mdi-content-send brown-text"></i></h3>
+        <h4>추천 스터디</h4>
+      </div>
+  </div>
+
+  
+  <div class="row">
+    <% var a = Math.floor(Math.random() * (12-0+1)) + 0; for(var i=a; i < a+3; i++) {  %>
+    <div class="col s12 m4">
+      <div class="card">
+        <div class="card-image  waves-effect waves-block waves-light">
+          <a href="/studymore/<%=stdlist[i].idx%>"><img src="<%=stdlist[i].thum%>"></a>
+          <span class="card-btn"><a class="waves-effect waves-light btn light-blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;"><%=stdlist[i].decate%></a></span>
+          <span class="card-title" style="bottom: 30px;"><a href="/studymore/<%=stdlist[i].idx%>" style="color: #fff;"><b><%=stdlist[i].subject%></b></a></span>
+          <span class="card-name">리더 <%=stdlist[i].leader%></span>
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+
+</div>
+
+
+
+
+
+<div class="parallax-container valign-wrapper">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <div class="row center">
+        <h5 class="header col s12 light"><b>내 삶이 경이로워지는 순간</b></h5>
+        <h4 class="header col s12 light"><b>"경이로움"</b></h4>
+      </div>
+    </div>
+  </div>
+  <div class="parallax"><img src="/page_imgs/study_img/background2.jpg" alt="Unsplashed background img 2"></div>
+</div>
+
+
+<% include std_bottom %>
+
+
+
+</body>
+</html>
