@@ -54,6 +54,34 @@ $(document).ready(function(){
 
 </script>
 
+<!--amplitude -->
+<script type="text/javascript">
+  (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script")
+  ;r.type="text/javascript";r.async=true
+  ;r.src="https://cdn.amplitude.com/libs/amplitude-4.1.0-min.gz.js"
+  ;r.onload=function(){if(e.amplitude.runQueuedFunctions){
+  e.amplitude.runQueuedFunctions()}else{
+  console.log("[Amplitude] Error: could not load SDK")}}
+  ;var i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)
+  ;function s(e,t){e.prototype[t]=function(){
+  this._q.push([t].concat(Array.prototype.slice.call(arguments,0)));return this}}
+  var o=function(){this._q=[];return this}
+  ;var a=["add","append","clearAll","prepend","set","setOnce","unset"]
+  ;for(var u=0;u<a.length;u++){s(o,a[u])}n.Identify=o;var c=function(){this._q=[]
+  ;return this}
+  ;var l=["setProductId","setQuantity","setPrice","setRevenueType","setEventProperties"]
+  ;for(var p=0;p<l.length;p++){s(c,l[p])}n.Revenue=c
+  ;var d=["init","logEvent","logRevenue","setUserId","setUserProperties","setOptOut","setVersionName","setDomain","setDeviceId","setGlobalUserProperties","identify","clearUserProperties","setGroup","logRevenueV2","regenerateDeviceId","logEventWithTimestamp","logEventWithGroups","setSessionId"]
+  ;function v(e){function t(t){e[t]=function(){
+  e._q.push([t].concat(Array.prototype.slice.call(arguments,0)))}}
+  for(var n=0;n<d.length;n++){t(d[n])}}v(n);n.getInstance=function(e){
+  e=(!e||e.length===0?"$default_instance":e).toLowerCase()
+  ;if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]}
+  ;e.amplitude=n})(window,document);
+
+  amplitude.getInstance().init("bcda8248e089fcb637408ede604e0ad7");
+</script>
+
 
 <script type="text/javascript" charset="EUC-KR" document.characterSet="EUC-KR";>
 
@@ -349,7 +377,7 @@ function fnNumCheck() {
 				<input type="hidden" name="PRODUCTTYPE" size="10" maxlength="1" value="2" style="IME-MODE:disabled">
 				<input type="hidden" name="BILLTYPE" size="10" maxlength="2"  value="1" style="IME-MODE:disabled">
 
-				<!-- 결제금액 --><% if(price == 299000){var minvalue = 29900}else{var minvalue = 59900} %><% var happice = price - minvalue%>
+				<!-- 결제금액 --><% if(price == 299000){var minvalue = 21000}else{var minvalue = 59900} %><% var happice = price - minvalue%>
 				<input type="hidden" name="AMOUNT" size="10" maxlength="10" value="<%=happice%>" style="IME-MODE:disabled" onkeypress="fnNumCheck();">
 
 				<input type="hidden" name="CPQUOTA" size="20" value="0:2:3:4:5:6:7:8:9:10:11:12" style="IME-MODE:disabled">
@@ -381,16 +409,16 @@ function fnNumCheck() {
 				<input type="hidden" name="RESERVEDINDEX1" size="20" value="RESERVEDATA1">
 				<input type="hidden" name="RESERVEDINDEX2" size="20" value="RESERVEDATA2">
 				<input type="hidden" name="RESERVEDSTRING" size="100" value="RESERVESTRING">
-				<input type="hidden" name=RETURNURL value="http://cidermics.com/study">
+				<input type="hidden" name=RETURNURL value="http://cidermics.com/study/list">
 				<input type="hidden" name=HOMEURL value="">
 				<input type="hidden" name=DIRECTRESULTFLAG value="N">
 				<input type="hidden" name=CARDLIST value="">
 				<input type="hidden" name=HIDECARDLIST value="">
 				<input type="hidden" name=TAXFREECD value="00">
 				<input type="hidden" name=POPUPTYPE value="">
-				<input type="hidden" name=CLOSEURL value="http://cidermics.com/study">
-				<input type="hidden" name=FAILURL value="http://cidermics.com/study">
-				<input type="hidden" name=APPURL value="http://cidermics.com/study">
+				<input type="hidden" name=CLOSEURL value="http://cidermics.com/study/list">
+				<input type="hidden" name=FAILURL value="http://cidermics.com/study/list">
+				<input type="hidden" name=APPURL value="http://cidermics.com/study/list">
 				</div>
 
 				<!--input name="btnSubmit" type="button" value="주문하기" onclick="fnSubmit()" ><br-->
@@ -454,9 +482,9 @@ function fnNumCheck() {
 				<input type="hidden" name=RESERVEDINDEX2 value="예약어2">
 				<input type="hidden" name=RESERVEDSTRING value="예약스트링">
 				<input type="hidden" name=HOMEURL value="">
-				<input type="hidden" name=DIRECTRESULTFLAG value="http://cidermics.com/study">
-				<input type="hidden" name=CLOSEURL value="http://cidermics.com/study">
-				<input type="hidden" name=FAILURL value="http://cidermics.com/study">
+				<input type="hidden" name=DIRECTRESULTFLAG value="http://cidermics.com/study/list">
+				<input type="hidden" name=CLOSEURL value="http://cidermics.com/study/list">
+				<input type="hidden" name=FAILURL value="http://cidermics.com/study/list">
 				</div>
 				
 				<div class="check-amount row" align="center">

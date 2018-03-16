@@ -45,6 +45,7 @@ router.get('/study/memship', function(req, res, next) {
 	res.render('front/cid_study/std_memship', { });
 });
 
+
 router.get('/study/list', function(req, res, next) {
 	var stdlist;
 	mysql.select('SELECT idx,subject,subject2,decate,recentdate,thum,leader,sche1 from cider.std_more where flag="Y" order by idx desc;', function (err, data){

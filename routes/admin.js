@@ -1552,6 +1552,25 @@ router.get('/study/detail/:idx', ensureAuthenticated, function(req, res, next) {
 	});
 });
 
+router.get('/study/memlist', ensureAuthenticated, function(req, res, next) {
+	var CP = 8;
+	var stdlist;
+	mysql.select('SELECT * from cider.std_more order by idx desc;', function (err, data){
+		stdlist = data;
+		res.render('admin/study/std_memlist', { CP : CP, stdlist : data});
+	});
+  });
+
+router.get('/study/memlist/:idx', ensureAuthenticated, function(req, res, next) {
+	var CP = 8;
+	var idx = req.params.idx;
+	mysql.select('SELECT * FROM cider.pay_appform where decate = '+idx+' order by idx desc;', function (err, data){
+		mysql.select("SELECT * FROM cider.fin_nonaccount where cate='182' and decate = "+idx+" and state='입금확인' order by idx desc;", function (err, data2){
+
+		res.render('admin/study/std_memlist_detail', { CP : CP, appfm : data , non:data2});
+	});
+  });
+});
 
 //**************** 구매자 목록 **************
 
