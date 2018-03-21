@@ -147,22 +147,6 @@
     margin: 4px;
   }
 
-  .slider1{
-    background:url("<%=md[0].slimg1%>") no-repeat center top;
-    background-size:auto 100%;
-  }
-  .slider2{
-    background:url("<%=md[0].slimg2%>") no-repeat center top;
-    background-size:auto 100%;
-  }
-  .slider3{
-    background:url("<%=md[0].slimg3%>") no-repeat center top;
-    background-size:auto 100%;
-  }
-  .slider4{
-    background:url("<%=md[0].slimg4%>") no-repeat center top;
-    background-size:auto 100%;
-  }
   .box1{
   border:3px solid #fff; padding:20px 40px; display:inline-block; margin-top:50px; font-size:18px;}
 
@@ -475,13 +459,13 @@
 
   
   <div class="row">
-    <% var a = Math.floor(Math.random() * (12-0+1)) + 0; for(var i=a; i < a+3; i++) {  %>
+    <% var a = Math.floor(Math.random() * (11-0+1)) + 0; for(var i=a; i < a+3; i++) {  %>
     <div class="col s12 m4">
       <div class="card">
         <div class="card-image  waves-effect waves-block waves-light">
-          <a href="/studymore/<%=stdlist[i].idx%>"><img src="<%=stdlist[i].thum%>"></a>
+          <a href="/studymore1/<%=stdlist[i].idx%>"><img src="<%=stdlist[i].thum%>"></a>
           <span class="card-btn"><a class="waves-effect waves-light btn light-blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;"><%=stdlist[i].decate%></a></span>
-          <span class="card-title" style="bottom: 30px;"><a href="/studymore/<%=stdlist[i].idx%>" style="color: #fff;"><b><%=stdlist[i].subject%></b></a></span>
+          <span class="card-title" style="bottom: 30px;"><a href="/studymore1/<%=stdlist[i].idx%>" style="color: #fff;"><b><%=stdlist[i].subject%></b></a></span>
           <span class="card-name">리더 <%=stdlist[i].leader%></span>
         </div>
       </div>

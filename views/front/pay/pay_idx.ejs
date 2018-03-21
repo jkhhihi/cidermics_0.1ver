@@ -116,10 +116,17 @@ function pay() {
 	var fileName;
 
 	//test url
-	//fileName = "http://ssltest.daoupay.com/2.0/mobile/DaouMobileMng.jsp";
-
-	//service url
-	fileName = "http://ssl.daoupay.com/2.0/mobile/DaouMobileMng.jsp";
+	var filter = "win16|win32|win64|mac|macintel";
+	if ( navigator.platform ) {
+		if ( filter.indexOf( navigator.platform.toLowerCase() ) < 0 ){
+		//mobile
+		fileName = "https://ssl.kiwoompay.co.kr/m/mobile/DaouMobileMng.jsp";
+		
+		} else {
+		//pc
+		fileName = "https://ssl.kiwoompay.co.kr/2.0/mobile/DaouMobileMng.jsp";
+		}
+	}
 
 	/*if (paytype == "") {
 		alert("결제방법을 선택하여 주십시오");
@@ -161,10 +168,21 @@ function fnSubmit() {
 	var fileName;
 
 	//test url
-	//fileName = "https://ssltest.daoupay.com/card/DaouCardMng.jsp";
 
 	//service url
-	fileName = "https://ssl.daoupay.com/card/DaouCardMng.jsp";
+	var filter = "win16|win32|win64|mac|macintel";
+	if ( navigator.platform ) {
+		if ( filter.indexOf( navigator.platform.toLowerCase() ) < 0 ){
+		//mobile
+		fileName = "https://ssl.kiwoompay.co.kr/m/card_webview/DaouCardMng.jsp";
+		//fileName = "https://ssl.kiwoompay.co.kr/m/card/DaouCardMng.jsp";
+		
+		} else {
+		//pc
+		fileName = "https://ssl.kiwoompay.co.kr/card/DaouCardMng.jsp";
+		}
+	}
+
 
 	//fileName = "https://ssltest.daoupay.com/m/card_webview/DaouCardMng.jsp";
 
@@ -395,6 +413,11 @@ function fnNumCheck() {
 						<input type="checkbox" id="cb2" name="checkbox2" style="margin-right:10px; cursor:pointer">개인정보 수집 및 이용 동의<span class="star"> * </span>
 						<div class="btn-style1" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs--modal-lg">내용보기</div>
 					</div>
+
+					<div class="col-xs-12">
+						<span class="star"> * </span><span style="margin:0 0 0 10px; font-weight: 700;">스마트폰 모바일을 통한 카드결제 이용 시 불편함이 있을 수 있으니 가급적 PC 웹사이트 브라우저를 통해 결제를 진행해주시기 바랍니다.</span>
+					</div>
+
 				</div>
 
 				<input type="hidden" name="EMAIL" value="">
