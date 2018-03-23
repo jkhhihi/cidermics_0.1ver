@@ -147,22 +147,6 @@
     margin: 4px;
   }
 
-  .slider1{
-    background:url("<%=md[0].slimg1%>") no-repeat center top;
-    background-size:auto 100%;
-  }
-  .slider2{
-    background:url("<%=md[0].slimg2%>") no-repeat center top;
-    background-size:auto 100%;
-  }
-  .slider3{
-    background:url("<%=md[0].slimg3%>") no-repeat center top;
-    background-size:auto 100%;
-  }
-  .slider4{
-    background:url("<%=md[0].slimg4%>") no-repeat center top;
-    background-size:auto 100%;
-  }
   .box1{
   border:3px solid #fff; padding:20px 40px; display:inline-block; margin-top:50px; font-size:18px;}
 
@@ -301,8 +285,8 @@
 
             <div class="row">
               <div class="col s4 m3">총 금액</div>
-              <div class="col s8 m6" style="text-align: left;" ><b class="amount"  style="text-decoration: line-through;"><%=md[0].price%></b>원 <br><b style="color: red;">278,000원</b><br>
-              *오픈기념 7% 할인 중(~31일까지)</div>
+              <div class="col s8 m6" style="text-align: left;" ><b class="amount"  style="text-decoration: line-through;"><%=md[0].price%></b>원 <br><b style="color: red;">239,000원</b><br>
+              *헬로펀딩 회원 선착순 5명 20% 할인(~31일까지)</div>
               <div class="col s0 m3"></div>
             </div>
 
@@ -313,7 +297,7 @@
                   <input type="hidden" name="subject" value="<%=md[0].subject%>">
                   <input type="hidden" name="cate" value="<%=md[0].cate%>">
                   <input type="hidden" name="idx" value="<%=md[0].idx%>">
-                  <input type="hidden" name="price" value="<%=md[0].price%>">
+                  <input type="hidden" name="price" value="<%=md[0].price - 200%>">
                   <button type="submit" style="width: 300px;">신청하기</button>
                 </form>
               </div>
@@ -329,294 +313,35 @@
     </div>
   </div>
 
+  <!-- 스터디 유튜브 -->
 
-<div class="divider"></div>
+<div class="container">
+  <div class="row">
+    <div class="video-container">
+      <iframe width="700" height="410" src="https://www.youtube.com/embed/tWLyCKnGu9Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+
+<!--div class="divider"></div-->
 
 
 <!-- 스터디 알고 싶어요, 세줄 소개, 핵심 가치 -->
-
-<div class="container" style="margin: 50px auto;">
-
-  <div class="row">
-    <div class="col s12">
-      <h4 class="textfont">#1 스터디를 알고 싶어요!</h4>
-      <div class="divider2" style="width: 30%"></div>
-    </div>
-  </div>
-
-  <div class="row" style="margin-bottom: 50px;">
-        <div class="col s12">
-          <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h5 class="textfont2"><%=md[0].subject%></h5>
-          <!--p class="light textfont3"><%=md[0].subject2%></p-->
-        </div>
-  </div>
-
-  <div class="row" style="margin-bottom: 50px;">
-      <div class="col s12">
-          <p class="textfont2" style="line-height: 0rem;">스터디 세줄 소개 <span style="font-size: 1.4rem; letter-spacing: 0px;">3 lines</span></p>
-      </div>
-      <div class="col s12 m4"><p class="light textfont3"><span style="color: #1b87c9;">1.</span> <%=md[0].line1%></p><div class="divider3" style="width: 100%;"></div></div>
-      <div class="col s12 m4"><p class="light textfont3"><span style="color: #1b87c9;">2.</span> <%=md[0].line2%></p><div class="divider3" style="width: 100%;"></div></div>
-      <div class="col s12 m4"><p class="light textfont3"><span style="color: #1b87c9;">3.</span> <%=md[0].line3%></p><div class="divider3" style="width: 100%;"></div></div>
-  </div>
-
-  <div class="row" style="margin-bottom: 50px;">
-      <div class="col s12">
-          <p class="textfont2">스터디 핵심 가치 <span style="font-size: 1.4rem; letter-spacing: 0px;">Points</span></p>
-      </div>
-      <div class="col s4 center">
-          <% if (md[0].value1 == 1){ %>
-          <div><img src="/page_imgs/study_img/valueicon1.jpg" width="110"></div>
-          <p>주식</p>
-          <% }else if(md[0].value1 == 2){ %>
-          <div><img src="/page_imgs/study_img/valueicon2.jpg" width="110"></div>
-          <p>부동산</p>
-          <% }else if(md[0].value1 == 3){ %>
-          <div><img src="/page_imgs/study_img/valueicon3.jpg" width="110"></div>
-          <p>투자</p>
-          <% }else if(md[0].value1 == 4){ %>
-          <div><img src="/page_imgs/study_img/valueicon4.jpg" width="110"></div>
-          <p>재테크</p>
-          <% }else if(md[0].value1 == 5){ %>
-          <div><img src="/page_imgs/study_img/valueicon5.jpg" width="110"></div>
-          <p>암호화폐</p>
-          <% }else if(md[0].value1 == 6){ %>
-          <div><img src="/page_imgs/study_img/valueicon6.jpg" width="110"></div>
-          <p>창업</p>
-          <% }else if(md[0].value1 == 7){ %>
-          <div><img src="/page_imgs/study_img/valueicon7.jpg" width="110"></div>
-          <p>기업분석</p>
-          <% }else if(md[0].value1 == 8){ %>
-          <div><img src="/page_imgs/study_img/valueicon8.jpg" width="110"></div>
-          <p>상식</p>
-          <% }else{} %>
-      </div>
-      <div class="col s4 center">
-          <% if (md[0].value2 == 1){ %>
-          <div><img src="/page_imgs/study_img/valueicon1.jpg" width="110"></div>
-          <p>주식</p>
-          <% }else if(md[0].value2 == 2){ %>
-          <div><img src="/page_imgs/study_img/valueicon2.jpg" width="110"></div>
-          <p>부동산</p>
-          <% }else if(md[0].value2 == 3){ %>
-          <div><img src="/page_imgs/study_img/valueicon3.jpg" width="110"></div>
-          <p>투자</p>
-          <% }else if(md[0].value2 == 4){ %>
-          <div><img src="/page_imgs/study_img/valueicon4.jpg" width="110"></div>
-          <p>재테크</p>
-          <% }else if(md[0].value2 == 5){ %>
-          <div><img src="/page_imgs/study_img/valueicon5.jpg" width="110"></div>
-          <p>암호화폐</p>
-          <% }else if(md[0].value2 == 6){ %>
-          <div><img src="/page_imgs/study_img/valueicon6.jpg" width="110"></div>
-          <p>창업</p>
-          <% }else if(md[0].value2 == 7){ %>
-          <div><img src="/page_imgs/study_img/valueicon7.jpg" width="110"></div>
-          <p>기업분석</p>
-          <% }else if(md[0].value2 == 8){ %>
-          <div><img src="/page_imgs/study_img/valueicon8.jpg" width="110"></div>
-          <p>상식</p>
-          <% }else{} %>
-      </div>
-      <div class="col s4 center">
-          <% if (md[0].value3 == 1){ %>
-          <div><img src="/page_imgs/study_img/valueicon1.jpg" width="110"></div>
-          <p>주식</p>
-          <% }else if(md[0].value3 == 2){ %>
-          <div><img src="/page_imgs/study_img/valueicon2.jpg" width="110"></div>
-          <p>부동산</p>
-          <% }else if(md[0].value3 == 3){ %>
-          <div><img src="/page_imgs/study_img/valueicon3.jpg" width="110"></div>
-          <p>투자</p>
-          <% }else if(md[0].value3 == 4){ %>
-          <div><img src="/page_imgs/study_img/valueicon4.jpg" width="110"></div>
-          <p>재테크</p>
-          <% }else if(md[0].value3 == 5){ %>
-          <div><img src="/page_imgs/study_img/valueicon5.jpg" width="110"></div>
-          <p>암호화폐</p>
-          <% }else if(md[0].value3 == 6){ %>
-          <div><img src="/page_imgs/study_img/valueicon6.jpg" width="110"></div>
-          <p>창업</p>
-          <% }else if(md[0].value3 == 7){ %>
-          <div><img src="/page_imgs/study_img/valueicon7.jpg" width="110"></div>
-          <p>기업분석</p>
-          <% }else if(md[0].value3 == 8){ %>
-          <div><img src="/page_imgs/study_img/valueicon8.jpg" width="110"></div>
-          <p>상식</p>
-          <% }else{} %>
-      </div>
-  </div>
-</div>
-
-
-<!-- 스터디 슬라이더 왼쪽 오른쪽 화살표 코드 -->
-
-<div class="container" style="margin: 0px auto 50px;">
-  <div class="carousel carousel-slider center " data-indicators="true">
-    <div class="carousel-fixed-item center middle-indicator" style="left: 5px; right:5px;">
-     <div class="left">
-      <a href="Previo" class="movePrevCarousel middle-indicator-text  content-indicator"><i class="material-icons left  middle-indicator-text">chevron_left</i></a>
-     </div>
-     <div class="right">
-     <a href="Siguiente" class=" moveNextCarousel middle-indicator-text content-indicator"><i class="material-icons right middle-indicator-text">chevron_right</i></a>
-     </div>
-    </div>
-
-<!-- 스터디 슬라이더 -->
-
-    <div class="carousel-item slider1 white-text" href="#one!">
-      <div class="row">
-      <h2 class="textfont2" style="font-size: 1.2rem; letter-spacing: 1px; padding: 10px;"><%=md[0].subject%></h2>
-      </div>
-      <!--p class="white-text">This is your first panel</p-->
-    </div>
-    <div class="carousel-item slider2 white-text" href="#two!">
-      <h2 class="textfont2" style="font-size: 1.2rem; letter-spacing: 1px; padding: 10px;"><%=md[0].line1%></h2>
-    </div>
-    <div class="carousel-item slider3 white-text" href="#three!">
-      <h2 class="textfont2" style="font-size: 1.2rem; letter-spacing: 1px; padding: 10px;"><%=md[0].line2%></h2>
-    </div>
-    <div class="carousel-item slider4 white-text" href="#four!">
-      <h2 class="textfont2" style="font-size: 1.2rem; letter-spacing: 1px; padding: 10px;"><%=md[0].line3%></h2>
-    </div>
-
-  </div>
-</div>
-
-<!-- 슬라이더 스크립트 -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js'></script>
-
-<script type="text/javascript">
-    $(function(){ $('.carousel.carousel-slider').carousel({fullWidth: true,
-      indicators: false}); });
-   // move next carousel
-   $('.moveNextCarousel').click(function(e){
-      e.preventDefault();
-      e.stopPropagation();
-      $('.carousel').carousel('next');
-   });
-   // move prev carousel
-   $('.movePrevCarousel').click(function(e){
-      e.preventDefault();
-      e.stopPropagation();
-      $('.carousel').carousel('prev');
-   });
-</script>
-
-<div class="divider"></div>
-
-<!-- 리더 소개, 매력 어필 -->
-
-<div class="detail2">
-  <div class="container">
-
-    <div class="row">
-      <div class="col s12">
-        <h4 class="textfont">#2 리더를 알고 싶어요!</h4>
-        <div class="divider2" style="width: 30%"></div>
-      </div>
-    </div>
-
-    <div class="row">
-          <div class="col s12 m4">
-            <h3><i class="mdi-content-send brown-text"></i></h3>
-            <h5 class="textfont2">리더 소개 <span style="font-size: 1.4rem; letter-spacing: 0px;">Introduction</span></h5>
-            <p class="light textfont3"><%=md[0].leader%></p>
-            <p style="color: #969696;"><%=md[0].lepro1%></p>
-            <p style="color: #969696;"><%=md[0].lepro2%></p>
-            <p style="color: #969696;"><%=md[0].lepro3%></p>
-            <p style="color: #969696;"><%=md[0].lepro4%></p>
-          </div>
-          <div class="col s12 m8">
-            <p class="textfont2">리더 매력어필 <span style="font-size: 1.4rem; letter-spacing: 0px;">Appeal</span></p>
-            <p class="textfont3"><%=md[0].appt1%></p>
-            <p><%=md[0].appc1%></p>
-            <br>
-            <p class="textfont3"><%=md[0].appt2%></p>
-            <p><%=md[0].appc2%></p>
-            <br>
-            <p class="textfont3"><%=md[0].appt3%></p>
-            <p><%=md[0].appc3%></p>
-        </div>
-    </div>
-
-  </div>
-</div>
-
-
-<!-- 스터디 커리큘럼 -->
-
-<div class="container" style="margin: 50px auto;">
-
-    <div class="row">
-      <div class="col s12">
-        <h4 class="textfont">#3 스터디 커리큘럼</h4>
-        <div class="divider2" style="width: 30%"></div>
-      </div>
-    </div>
-
-    <div class="row">
-          <div class="col s12 m4">
-            <img src="/page_imgs/study_img/step1.png">
-          </div>
-          <div class="col s12 m8">
-            
-            <h5 class="textfont2" style="color: #1b87c9;">STEP 1 병따기</h5>
-            <p class="textfont3"><%=md[0].step1%></p>
-            <p class="light"><%-md[0].stepc1%></p>
-          </div>
-          <div class="divider" style="width: 80%"></div>
-    </div>
-
-    <div class="row">
-        <div class="col s12 m4">
-            <img src="/page_imgs/study_img/step2.png">
-        </div>
-        <div class="col s12 m8">
-            <h5 class="textfont2" style="color: #1b87c9;">STEP 2 컵에 따르기</h5>
-            <p class="light textfont3"><%=md[0].step2%></p>
-            <p class="light"><%-md[0].stepc2%></p>
-        </div>
-        <div class="divider" style="width: 80%"></div>
-    </div>
-
-    <div class="row">
-        <div class="col s12 m4">
-            <img src="/page_imgs/study_img/step3.png">
-        </div>
-        <div class="col s12 m8">
-            <h5 class="textfont2" style="color: #1b87c9;">STEP 3 원샷하기</h5>
-            <p class="light textfont3"><%=md[0].step3%></p>
-            <p class="light"><%-md[0].stepc3%></p>
-        </div>
-        <div class="divider" style="width: 80%"></div>
-    </div>
-
-</div>
 
 <div class="container1" style="margin: 20px auto; font-size:0px;">
 
   <div class="row">
     <div class="col s12">
+      <img class="responsive-img" src="<%=md[0].img1%>">
+      <img class="responsive-img" src="<%=md[0].img2%>">
+      <img class="responsive-img" src="<%=md[0].img3%>">
       <img class="responsive-img" src="/page_imgs/study_img/benefit.png">
     </div>
   </div>
 </div>
 
 
-<!-- 스터디 유튜브 -->
-
-<div class="container">
-  <div class="row">
-    <div class="video-container">
-      <iframe width="854" height="480" src="https://www.youtube.com/embed/tWLyCKnGu9Y" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div>
-  </div>
-</div>
-
-
-<div class="divider"></div>
 
 <!--스터디 혜택 -->
 <div class="container" id="memshipweb">
@@ -738,9 +463,9 @@
     <div class="col s12 m4">
       <div class="card">
         <div class="card-image  waves-effect waves-block waves-light">
-          <a href="/studymore/<%=stdlist[i].idx%>"><img src="<%=stdlist[i].thum%>"></a>
+          <a href="/studymore1/<%=stdlist[i].idx%>"><img src="<%=stdlist[i].thum%>"></a>
           <span class="card-btn"><a class="waves-effect waves-light btn light-blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;"><%=stdlist[i].decate%></a></span>
-          <span class="card-title" style="bottom: 30px;"><a href="/studymore/<%=stdlist[i].idx%>" style="color: #fff;"><b><%=stdlist[i].subject%></b></a></span>
+          <span class="card-title" style="bottom: 30px;"><a href="/studymore1/<%=stdlist[i].idx%>" style="color: #fff;"><b><%=stdlist[i].subject%></b></a></span>
           <span class="card-name">리더 <%=stdlist[i].leader%></span>
         </div>
       </div>

@@ -29,34 +29,12 @@
 	</div>
 	<div id="purchase" align="center" style="padding-top: 30px">
 		<span style="font-size: 25px; font-weight: 700;">
-		입금해야할 금액을 확인 후 입금계좌에 송금해주세요
+		입금해야 할 금액을 확인 후 입금계좌에 송금해주세요
 		</span><br><br>
 		<span>
-		입금 확인 완료 후 이메일로 안내 내역서가 발송됩니다. 이용해주셔서 감사합니다.
+		입금 확인 완료 후 SMS 안내 발송됩니다. 이용해주셔서 감사합니다.
 		</span>
 
-	</div>
-	<div class="check-purchase-in container" align="center" style="padding: 35px !important;">
-		<div class="check-pincode row">
-			<div class="col-xs-12" style="padding-left:0 !important; padding-right:0 !important;">
-				<div class="amount"><b><%=subject%></b></div>
-			</div>
-		</div>
-		<br>
-		<div class="check-pincode row">
-			<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important;">
-				<div class="title">입금자 성명</div>
-				<div class="amount"><span><%= USERNAME %></span></div>
-			</div>
-			<div class="col-xs-6" style="padding-left:0 !important; padding-right:0 !important; border-left:1px solid #ddd; border-right:1px solid #ddd;">
-				<div class="title">이메일주소</div>
-				<div class="amount"><%= EMAIL %></div>
-			</div>
-			<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important;">
-				<div class="title">휴대폰 번호</div>
-				<div class="amount"><%= TELNO %></div>
-			</div>
-		</div>
 	</div>
 	<div class="check-purchase-in container" align="center" style="padding: 35px !important;">
 		<div class="check-pincode row">
@@ -75,10 +53,10 @@
 		</div>
 		<div class="way" align="left">
 			<p>※ 무통장 진행 절차</p>
-			<p>입금 확인 후 안내 이메일(휴대폰번호), SMS 문자 전송</p>
+			<p>입금 확인 후 안내 이메일, SMS 문자 전송</p>
 		</div>
 		<div class="inspection-btn">
-			<a href="javascript:history.back(-1)"><button class="fincode-btn" ><b>뒤로가기</b></button></a>
+			<a href="/"><button class="fincode-btn" ><b>뒤로가기</b></button></a>
 		</div>
 	</div>	
 </div>

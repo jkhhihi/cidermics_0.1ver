@@ -95,18 +95,19 @@ function init() {
 	document.charset ="EUC-KR";
 	pf = document.frmConfirm;
 	pm = document.payForm;
-	pf.ORDERNO.value;
+	pf.ORDERNO.value = getTimeStamp();
 	pf.PRODUCTCATE.value;
 	pf.PRODUCTDETAILCATE.value;
 	pf.AMOUNT.value;
 
-	pm.ORDERNO.value;
+	pm.ORDERNO.value = getTimeStamp();
 	pm.PRODUCTCATE.value;
 	pm.PRODUCTDETAILCATE.value;
 	pm.AMOUNT.value;
 	
-	pf.HOMEURL.value= 'http://cidermics.com/paydone/'+ pf.ORDERNO.value;
-	pm.HOMEURL.value= 'http://cidermics.com/paydone/'+ pm.ORDERNO.value;
+pf.HOMEURL.value= 'http://cidermics.com/paygo/'+ pf.ORDERNO.value +'/'+ pf.PRODUCTCATE.value+'/'+pf.PRODUCTDETAILCATE.value+'/'+pf.AMOUNT.value;
+pm.HOMEURL.value= 'http://cidermics.com/paygo/'+ pm.ORDERNO.value +'/'+ pm.PRODUCTCATE.value+'/'+pm.PRODUCTDETAILCATE.value+'/'+pm.AMOUNT.value;
+
 }
 
 //모바일 결제
@@ -175,6 +176,7 @@ function fnSubmit() {
 		//mobile
 		fileName = "https://ssl.kiwoompay.co.kr/m/card_webview/DaouCardMng.jsp";
 		//fileName = "https://ssl.kiwoompay.co.kr/m/card/DaouCardMng.jsp";
+		
 		} else {
 		//pc
 		fileName = "https://ssl.kiwoompay.co.kr/card/DaouCardMng.jsp";
@@ -192,8 +194,10 @@ function fnSubmit() {
 		alert("서비스 이용약관에 동의하셔야 회원가입이 가능합니다."); 
 	}else if(pf.checkbox1.checked){
         	if(!pf.checkbox2.checked){
-                alert("개인정보 수집 및 이용 동의하셔야 회원가입이 가능합니다.");
+                alert("개인정보 수집 및 이용 동의하셔야 회원가입이 가능합니다."); 
+                
             }else if (pf.checkbox2.checked){
+            	
     charset="EUC-KR";
 	document.characterSet="EUC-KR";
 	pf.target ="_self";
@@ -224,7 +228,11 @@ function nosmt(){
 	if(document.nonamount.USERNAME.value==""){
 	 alert("입금자 성명을 입력해주세요.");
 	document.nonamount.USERNAME.focus();
-	  return; 
+	  return;
+	}else if(document.nonamount.EMAIL.value==""){
+		alert("이메일 주소를 입력해주세요."); 
+	}else if(document.nonamount.TELNO.value==""){
+		alert("휴대전화 번호를 입력해주세요."); 
 	}else if(!document.nonamount.checkbox1.checked){
 		alert("서비스 이용약관에 동의하셔야 결제가 가능합니다."); 
 	}else if(document.nonamount.checkbox1.checked){
@@ -319,9 +327,9 @@ function fnNumCheck() {
 
 </script>
 <script type="text/javascript">
-	function commaNum(num) {
-	    var len, point, str;
-	    num = num + "";
+	function commaNum(num) {  
+	    var len, point, str;  
+	    num = num + "";  
 	    point = num.length % 3  
 	    len = num.length;  
 	 
@@ -383,7 +391,7 @@ function fnNumCheck() {
 				<div class="form-box">
 				<!-- CPID 사이다경제 - CSK20384 , CTS14732 --> <!-- test CTS14732 -->
 				<input type="hidden" name="CPID" size="50" maxlength="50" value="CFT22677" style="IME-MODE:disabled">
-				<input type="hidden" name="ORDERNO" size="50" maxlength="50" value="<%=ORDERNO%>" style="IME-MODE:disabled">
+				<input type="hidden" name="ORDERNO" size="50" maxlength="50" value="" style="IME-MODE:disabled">
 				<input type="hidden" name="PRODUCTTYPE" size="10" maxlength="1" value="2" style="IME-MODE:disabled">
 				<input type="hidden" name="BILLTYPE" size="10" maxlength="2"  value="1" style="IME-MODE:disabled">
 
@@ -392,6 +400,8 @@ function fnNumCheck() {
 
 				<input type="hidden" name="CPQUOTA" size="20" value="0:2:3:4:5:6:7:8:9:10:11:12" style="IME-MODE:disabled">
 				<div class="row form-style">
+					<div class="col-xs-12"><p class="title">상품명</p> : <span style="margin:0 0 0 10px; font-weight: 700;"><%= subject %></span></div>
+					
 					
 					<div class="col-xs-12"><p class="title">결제자 성명<span class="star"> * </span></p> : <input class="input-style1" type="text" name="USERNAME" size="" maxlength="50" value=""></div>
 					
@@ -405,18 +415,18 @@ function fnNumCheck() {
 					</div>
 
 					<div class="col-xs-12">
-						<span class="star"> * </span><span style="margin:0 0 0 10px; font-weight: 700;">스마트폰 모바일을 통한 카드결제 이용 시 불편함이 있을 수 있으니 가급적 PC 웹사이트 브라우저를 통해 결제를 진행해주시기 바랍니다. www.cidermics.com</span>
+						<span class="star"> * </span><span style="margin:0 0 0 10px; font-weight: 700;">스마트폰 모바일을 통한 카드결제 이용 시 불편함이 있을 수 있으니 가급적 PC 웹사이트 브라우저를 통해 결제를 진행해주시기 바랍니다.</span>
 					</div>
 
 				</div>
 
 				<input type="hidden" name="EMAIL" value="">
 				<input type="hidden" name="USERID" value="anonymous">
-				<input type="hidden" name="PRODUCTNAME" size="30" value="<%= cate %><%= decate %>"><br>
+				<input type="hidden" name="PRODUCTNAME" size="30" value="<%= subject %>"><br>
 
 				<!--카드사 API에 없는거 직접 만듬 -->
 				<input type="hidden" name="PRODUCTCATE" size="30" value="<%= cate %>"><br>
-				<input type="hidden" name="PRODUCTDETAILCATE" size="30" value="<%= decate %>"><br>
+				<input type="hidden" name="PRODUCTDETAILCATE" size="30" value="<%= idx %>"><br>
 
 				<input type="hidden" name="PRODUCTCODE" size="10" value="2"><br>
 				<input type="hidden" name="RESERVEDINDEX1" size="20" value="RESERVEDATA1">
@@ -468,6 +478,8 @@ function fnNumCheck() {
 			    	<!-- 결제 금액 -->
 			    	<input type="hidden" name=AMOUNT size=20 value="<%=happice%>">
 
+					<div class="col-xs-12"><p class="title">상품명</p> : <span style="margin:0 0 0 10px; font-weight: 700;"><%= subject %></span></div>
+					
 					<div class="col-xs-12"><p class="title">결제자 성명<span class="star"> * </span></p> : <input class="input-style1" type=text name=USERNAME value=""></div>
 					
 					<div class="col-xs-12" style="margin:20px 0 0 0;"><input type="checkbox" id="cb1" name="checkbox1" style="margin-right:10px; cursor:pointer">서비스 이용약관 동의<span class="star"> * </span>
@@ -478,14 +490,14 @@ function fnNumCheck() {
 				<!--input type=button value="결제하기" onClick="pay()" width="63" height="25"><br-->
 				<input type="hidden" name="EMAIL" value="">
 				<input type="hidden" name="USERID" value="anonymous">
-				<input type="hidden" name=PRODUCTNAME size=20 value="<%= cate %><%= decate %>"><br>
+				<input type="hidden" name=PRODUCTNAME size=20 value="<%= subject %>"><br>
 
 				<!--카드사 API에 없는거 직접 만듬 -->
 				<input type="hidden" name="PRODUCTCATE" size="30" value="<%= cate %>"><br>
-				<input type="hidden" name="PRODUCTDETAILCATE" size="30" value="<%= decate %>"><br>
+				<input type="hidden" name="PRODUCTDETAILCATE" size="30" value="<%= idx %>"><br>
 
 				<input type="hidden" name=CPID  value="CFT22677">
-				<input type="hidden" name=ORDERNO value="<%=ORDERNO%>">
+				<input type="hidden" name=ORDERNO value="">
 				<input type="hidden" name=PRODUCTTYPE value="2">
 				<input type="hidden" name=BILLTYPE value="1">
 				<input type="hidden" name=PRODUCTCODE value="2">
@@ -519,15 +531,53 @@ function fnNumCheck() {
 				</form>
 
 		    </div>
+		    <!--div role="tabpanel" class="tab-pane fade" id="realaccount"><br>준비 중입니다 ..<br>
+		    <div class="check-amount row" align="center">
+					<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important;">
+						<div class="title">상품금액</div>
+						<div class="amount">50,000 원</div>
+					</div>
+					<div class="col-xs-3" style="padding-left:0 !important; padding-right:0 !important; border-left:1px solid #ddd; border-right:1px solid #ddd;">
+						<div class="title">할인금액</div>
+						<div class="amount">-0 원</div>
+					</div>
+					<div class="col-xs-6" style="padding-left:0 !important; padding-right:0 !important;">
+						<div class="title">총 주문금액</div>
+						<div class="amount">=<span style="color:#ff0000">50,000</span> 원</div>
+					</div>
+				</div>
+			</div-->
 
 			<!-- 무통장 입금 -->
 		    <div role="tabpanel" class="tab-pane fade" id="account">
 		    	<form name="nonamount" method="post" action="/pay_noamount"  accept-charset="utf-8" onsubmit="document.charset='utf-8';">
 
-					<div class="form-box">
-			    	<div class="row form-style">
+					<div class="form-box1">
+			    	<div class="row form-style1">
+						<div class="col-xs-12"><p class="title">상품명</p> : <span style="margin:0 0 0 10px; font-weight: 700;"><%=subject%></span></div>
 						<div class="col-xs-12"><p class="title">입금자 성명<span class="star"> * </span></p> : <input class="input-style1" type=text name=USERNAME value=""></div>
+						<div class="col-xs-12"><p class="title">이메일<span class="star"> * </span></p> : <input class="input-style1" type=text name=EMAIL size=20 value="" placeholder="예) cider@cider.com"></div>
+						<input class="input-style1" type=hidden name=USERID value="anonymous">
+						<div class="col-xs-12"><p class="title">휴대번호<span class="star"> * </span></p> : <input class="input-style1" type="text" name="TELNO" size="" maxlength="11" value="" placeholder="예) 01012345678"></div>
 						<div class="col-xs-12"><p class="title">입금 예정일<span class="star"> * </span></p> : <input class="input-style1" type=text name="duedate" value=""  maxlength="8" placeholder="예) 180220"></div>
+
+						<div class="col-xs-12"><p class="title">유입경로</p>
+							<label class="radio-inline">
+							  <input type="radio" name="path" id="inlineRadio1" value="사이다경제">사이다경제 앱/웹
+							</label>
+							<label class="radio-inline">
+							  <input type="radio" name="path" id="inlineRadio2" value="네이버">네이버
+							</label>
+							<label class="radio-inline">
+							  <input type="radio" name="path" id="inlineRadio3" value="다음카카오">다음카카오
+							</label>
+							<label class="radio-inline">
+							  <input type="radio" name="path" id="inlineRadio3" value="페이스북">페이스북
+							</label>
+							<label class="radio-inline">
+							  <input type="radio" name="path" id="inlineRadio3" value="기타">기타<input class="input-style1" type=text name="gitar" value=""  maxlength="10" size="4" placeholder="">
+							</label>
+						</div>
 
 						<div class="col-xs-12" style="margin:20px 0 0 0;"><input type="checkbox" id="cb1" name="checkbox1" style="margin-right:10px; cursor:pointer">서비스 이용약관 동의<span class="star"> * </span>
 						<div class="btn-style1" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">내용보기</div></div>
@@ -553,10 +603,11 @@ function fnNumCheck() {
 					<div class="payment-btn" align="right">
 						<span class="payment" name="btnSubmit" onClick="nosmt()" style="cursor:pointer; background-color:#3782be;">결제하기</span><a href="javascript:history.back(-1)"><span class="back">돌아가기</span></a>
 					</div>
+					<input type="hidden" name=PRODUCTNAME size=20 value="<%= subject %>">
 
 					<!--카드사 API에 없는거 직접 만듬 -->
 					<input type="hidden" name="PRODUCTCATE" size="30" value="<%= cate %>"><br>
-					<input type="hidden" name="PRODUCTDETAILCATE" size="30" value="<%= decate %>"><br>
+					<input type="hidden" name="PRODUCTDETAILCATE" size="30" value="<%= idx %>"><br>
 					<input type="hidden" name="price" size="30" value="<%=happice%>"><br>
 				</form>
 		    </div>

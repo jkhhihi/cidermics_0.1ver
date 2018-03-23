@@ -34,32 +34,34 @@ function leadingZeros(n, digits) {
 /* GET home page. */
 
 
-router.get('/pay', function(req, res, next) {
+router.get('/pay/:ORDERNO/:cate/:decate/:price', function(req, res, next) {
+	var ORDERNO = req.params.ORDERNO;
+	var subject = req.params.subject;
+	var decate = req.params.decate;
+	var cate = req.params.cate;
+	var price = req.params.price;
+
+	res.render('front/pay/pay_idx', {ORDERNO:ORDERNO,subject:subject, decate:decate, cate:cate, price:price});
+});
+
+router.get('/npay', function(req, res, next) {
 
 	var subject = req.query.subject;
 	var idx = req.query.idx;
 	var cate = req.query.cate;
 	var price = req.query.price;
 
-	res.render('front/pay/pay_idx', {subject:subject, idx:idx, cate:cate, price:price});
-});
 
-router.get('/paygo/:ORDERNO/:PRODUCTCATE/:PRODUCTDETAILCATE/:AMOUNT', function(req,res,next){
-	var ORDERNO = req.params.ORDERNO;
-	var PRODUCTCATE = req.params.PRODUCTCATE;
-	var PRODUCTDETAILCATE = req.params.PRODUCTDETAILCATE;
-	var AMOUNT = req.params.AMOUNT;
-	var date = getWorldTime(+9);
-
-	res.render('front/pay/pay_go',{ORDERNO:ORDERNO, PRODUCTCATE:PRODUCTCATE, PRODUCTDETAILCATE:PRODUCTDETAILCATE, AMOUNT:AMOUNT, date:date });
+	res.render('front/pay/pay_go', {subject:subject, idx:idx, cate:cate, price:price});
 });
 
 
-router.post('/payinsert', function(req,res,next){
+router.post('/npayinsert', function(req,res,next){
 	var ORDERNO = req.body.ORDERNO;
-	var PRODUCTCATE = req.body.PRODUCTCATE;
-	var PRODUCTDETAILCATE = req.body.PRODUCTDETAILCATE;
-	var AMOUNT = req.body.AMOUNT;
+	var cate = req.body.cate;
+	var decate = req.body.decate;
+	var price = req.body.price;
+	var subject = req.body.subject;
 	var USERNAME = req.body.USERNAME;
 	var EMAIL = req.body.EMAIL;
 	var TELNO = req.body.TELNO;
@@ -71,14 +73,23 @@ router.post('/payinsert', function(req,res,next){
 
 	var date = getWorldTime(+9);
 
-	var sets = {orderno:ORDERNO, cate:PRODUCTCATE, decate:PRODUCTDETAILCATE, amount:AMOUNT, name : USERNAME, email:EMAIL, phone:TELNO, birth:birth, sex:optsex, regDate:date, path:path, gitar:gitar};
+	var sets = {orderno:ORDERNO, cate:cate, decate:decate, amount:price, name : USERNAME, email:EMAIL, phone:TELNO, birth:birth, sex:optsex, regDate:date, path:path, gitar:gitar};
 
 	mysql.insert('insert into cider.pay_appform set ?', sets,  function (err, data){
 		if(err){
 			res.redirect('back');
 		}
 
-	res.redirect('/paydone/'+ORDERNO+'');
+	res.redirect('/pay/'+ORDERNO+'/'+cate+'/'+decate+'/'+price+'');
+	});
+});
+
+router.get('/paydone/:ORDERNO', function(req,res,next){
+	var ORDERNO = req.params.ORDERNO;
+	var date = getWorldTime(+9);
+
+	mysql.select('SELECT * FROM cider.pay_appform where orderno = '+ORDERNO+';', function(err,data){
+	res.render('front/pay/pay_done',{oinfo:data});
 	});
 });
 
@@ -90,16 +101,6 @@ router.get('/nubo_pay_done/:ORDERNO', function(req,res,next){
 	});
 });
 
-
-
-router.get('/paydone/:ORDERNO', function(req,res,next){
-	var ORDERNO = req.params.ORDERNO;
-	var date = getWorldTime(+9);
-
-	mysql.select('SELECT * FROM cider.pay_appform where orderno = '+ORDERNO+';', function(err,data){
-	res.render('front/pay/pay_done',{oinfo:data});
-	});
-});
 
 
 function limtime(){
