@@ -280,11 +280,16 @@ router.get('/lecture/detail/6', function(req, res, next) {
 
 /*경이로움 세미나 */
 router.get('/seminar', function(req, res, next) {
-	res.render('front/cid_seminar/seminar', { });
+	mysql.select('select * from cider.cid_semilist', function (err, data){
+	res.render('front/cid_seminar/seminar', {semi:data});
+  });
 });
 
-router.get('/seminar/detail', function(req, res, next) {
-	res.render('front/cid_seminar/seminar_detail', { });
+router.get('/seminar/detail/:idx', function(req, res, next) {
+	var idx = req.params.idx;
+	mysql.select('SELECT * from cider.cid_semilist where idx = '+idx+';', function (err, data){
+	res.render('front/cid_seminar/seminar_detail', {semi:data});
+  });
 });
 
 module.exports = router;

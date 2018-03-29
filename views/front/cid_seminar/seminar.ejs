@@ -47,19 +47,21 @@
 <!-- 세미나 리스트 뿌림 -->
 <div class="seminar-list container">
 	<div class="row margin10">
-	
-		<a href="/seminar/detail">
+		<% for(var i=0; i < semi.length; i++) {  %> 	
+		<a href="/seminar/detail/<%=semi[i].idx%>">
 		<div class="col-lg-6 col-xs-12 thumnail">
 			<div class="img">
-				<img class="img-responsive" src="https://i.imgur.com/J6hmYIX.jpg">
+				<img class="img-responsive" src="<%=semi[i].thum%>">
 			</div>
 			<div class="black-box">
-					<div class="applying"><span class="on">신청중</span></div>
-					<div class="title"><p><b>암호화폐 '비트코인'</b></p></div>
-					<div class="date-price" align="right"><span class="date-price-in"><span>3월 1일(목)</span> | <span>\30,000</span></span></div>
+					<div class="applying"><% if(semi[i].state == 0){%><span class="on">신청중</span><%}else{%><span class="off">신청마감</span><% } %></div>
+					<div class="title"><p><b><%=semi[i].subject%></b></p></div>
+					<div class="date-price" align="right"><span class="date-price-in"><span><%=semi[i].sdate%></span> | <span>\<%=semi[i].price%></span></span></div>
 			</div>
 		</div>
 		</a>
+		<% } %>
+
 		<a href="/seminar/detail">
 		<div class="col-lg-6 col-xs-12 thumnail">
 			<div class="img">

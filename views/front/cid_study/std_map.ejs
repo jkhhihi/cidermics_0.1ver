@@ -34,9 +34,13 @@
          var Y_point         = 37.5109643;      // Y 좌표
          var X_point         = 127.0648511;      // X 좌표
 
+         var Y_point2         = 37.502979;      // Y 좌표
+         var X_point2         = 127.039322;      // X 좌표
+
          var zoomLevel      = 17;                  // 지도의 확대 레벨 : 숫자가 클수록 확대정도가 큼
 
          var markerTitle      = "하나금융투자 Club1 금융센터";            // 현재 위치 마커에 마우스를 오버을때 나타나는 정보
+         var markerTitle2      = "서울철강빌딩"; 
          var markerMaxWidth   = 300;                  // 마커를 클릭했을때 나타나는 말풍선의 최대 크기
 
          // 말풍선 내용
@@ -61,6 +65,23 @@
                                        title: markerTitle
          });
 
+
+         var myLatlng2 = new google.maps.LatLng(Y_point2, X_point2);
+         var mapOptions2 = {
+                        zoom: zoomLevel,
+                        center: myLatlng2,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+         }
+         var map2 = new google.maps.Map(document.getElementById('map_view1'), mapOptions2);
+
+         var marker2 = new google.maps.Marker({
+                                       position: myLatlng2,
+                                       map: map2,
+                                       title: markerTitle2
+         });
+
+
+
          var infowindow = new google.maps.InfoWindow(
                                           {
                                              content: contentString,
@@ -73,7 +94,7 @@
          });
          
       }
-  	</script>
+</script>
  
 
   <script src="/js/gotoup.js"></script>
@@ -98,19 +119,87 @@
   </div>
   
   	<div align="center" class="map-title">
-			<img class="responsive-img"src="/page_imgs/study_img/map-title.jpg">
-	</div>
-  	<div class="googleMap" align="center">
+			<img class="responsive-img" src="/page_imgs/study_img/map-title.jpg">
+	  </div>
+    <div align="center" ><h5>서울특별시 강남구 영동대로96길 26</h5></div>
+  <div class="googleMap" align="center">
 		<div id="map_view" style="height:350px;"></div>
 		<div align="right" style="margin:10px 10px 0 0">
-		<span>서울특별시 강남구 영동대로96길 26<br>[지번]서울특별시 강남구 삼성동 169-8</span>
+		  <span>서울특별시 강남구 영동대로96길 26<br>[지번]서울특별시 강남구 삼성동 169-8</span>
 		</div>
 	</div>
 	<div class="container">
 		<div align="center">
-			<img class="responsive-img"src="/page_imgs/study_img/map-s.jpg">
+			<img class="responsive-img" src="/page_imgs/study_img/map-s.jpg">
 		</div>
 	</div>
+
+
+<div class="container" align="center">
+  <div class="row center">
+    <h5>시설 소개</h5>
+  </div>
+  <div class="row">
+    <div class="col l3 s6"><img class="materialboxed responsive-img" data-caption="시설" src="/page_imgs/study_img/hana1.jpg"></div>
+    <div class="col l3 s6"><img class="materialboxed responsive-img" data-caption="시설" src="/page_imgs/study_img/hana8.jpg"></div>
+    <div class="col l3 s6"><img class="materialboxed responsive-img" data-caption="시설" src="/page_imgs/study_img/hana2.jpg"></div>
+    <div class="col l3 s6"><img class="materialboxed responsive-img" data-caption="시설" src="/page_imgs/study_img/hana3.jpg"></div>
+  </div>
+  <div class="row">
+    <div class="col l3 s6"><img class="materialboxed responsive-img" data-caption="시설" src="/page_imgs/study_img/hana4.jpg"></div>
+    <div class="col l3 s6"><img class="materialboxed responsive-img" data-caption="시설" src="/page_imgs/study_img/hana5.jpg"></div>
+    <div class="col l3 s6"><img class="materialboxed responsive-img" data-caption="시설" src="/page_imgs/study_img/hana6.jpg"></div>
+    <div class="col l3 s6"><img class="materialboxed responsive-img" data-caption="시설" src="/page_imgs/study_img/hana7.jpg"></div>
+  </div>
+</div>
+
+<div class="container" align="center">
+  <div class="row center">
+    <br>
+    <h5>시설 후원</h5>
+  </div>
+  <div class="row">
+    <div class="col s12"><img class="responsive-img" src="/page_imgs/study_img/hanalogo.png"></div>
+  </div>
+</div>
+
+
+<div align="center" class="map-title">
+    <img class="responsive-img" src="/page_imgs/study_img/map-title.jpg">
+</div>
+<div align="center" ><h5>서울철강빌딩</h5></div>
+<div class="googleMap" align="center">
+  <div id="map_view1" style="height:350px;"></div>
+  <div align="right" style="margin:10px 10px 0 0">
+    <span>서울시 강남구 테헤란로 33길 18, 서울빌딩 5층</span>
+  </div>
+</div>
+<div class="container">
+  <div align="center">
+    <img class="responsive-img" src="/page_imgs/study_img/map-ss.jpg">
+  </div>
+</div>
+
+
+<div class="container" align="center">
+  <div class="row center">
+    <h5>시설 소개</h5>
+  </div>
+  <div class="row">
+    <div class="col l3 s6"><img class="materialboxed responsive-img" data-caption="시설" src="/page_imgs/study_img/sb10.jpg"></div>
+    <div class="col l3 s6"><img class="materialboxed responsive-img" data-caption="시설" src="/page_imgs/study_img/sb8.jpg"></div>
+    <div class="col l3 s6"><img class="materialboxed responsive-img" data-caption="시설" src="/page_imgs/study_img/sb9.jpg"></div>
+    <div class="col l3 s6"><img class="materialboxed responsive-img" data-caption="시설" src="/page_imgs/study_img/sb7.jpg"></div>
+  </div>
+  <div class="row">
+    <div class="col l3 s6"><img class="materialboxed responsive-img" data-caption="시설" src="/page_imgs/study_img/sb6.jpg"></div>
+    <div class="col l3 s6"><img class="materialboxed responsive-img" data-caption="시설" src="/page_imgs/study_img/sb2.jpg"></div>
+    <div class="col l3 s6"><img class="materialboxed responsive-img" data-caption="시설" src="/page_imgs/study_img/sb4.jpg"></div>
+    <div class="col l3 s6"><img class="materialboxed responsive-img" data-caption="시설" src="/page_imgs/study_img/sb3.jpg"></div>
+  </div>
+</div>
+
+
 
 <div class="container" style="margin: 50px auto;">
   <div class="row">
@@ -196,8 +285,8 @@
           <div class="collapsible-header"><i class="material-icons">live_help</i>환불 신청을 어떻게 하나요?</div>
           <div class="collapsible-body"><span>위의 [문의하기]에서 '신청/환불' 카테고리를 선택하시고 환불 요청글을 남겨주세요. </span>
             <p>[경이로움 환불 규정]</p>
-          <p>1. 멤버십 시즌 오픈 3일 전: 100% 환불</p>
-          <p>2. 멤버십 시즌 오픈 2일 전 ~ 정규 스터디 2회 참여 전까지: 금액의 2/3 환불</p>
+          <p>1. 신청 스터디 오픈 3일 전: 100% 환불</p>
+          <p>2. 신청 스터디 오픈 2일 전 ~ 정규 스터디 2회 참여 전까지: 금액의 2/3 환불</p>
           <p>3. 정규 스터디 2회 참여 이후: 환불 불가 *환불 기준이 되는 스터디는 기본적으로 제공되는 정규 스터디입니다. (경이로움 더하기 참여 여부는 포함되지 않습니다.)</p>
           </div>
         </li>

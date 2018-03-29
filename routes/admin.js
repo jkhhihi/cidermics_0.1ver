@@ -426,52 +426,49 @@ router.get('/lecture/insert', ensureAuthenticated, function(req, res, next) {
 			});
 		});
 
-router.get('/lecture/files/:page', ensureAuthenticated, function(req, res, next){
-	var page;
-	if (typeof req.params.page == 'undefined'){
-		page = 1;
-	}
-	page = req.params.page;
-	var obj = [];
-	var start = (page - 1) * 9;
-	var end = page * 9 -1;
-	var dir = __dirname + "/../public/page_imgs/lecture_img/";
-	var files = fs.readdirSync(dir)
-	    .map(function(v) {
-	        return { name:v,
-	                 time:fs.statSync(dir + v).mtime.getTime()
-	               }; 
-	     })
-	     .sort(function(a, b) { return a.time - b.time; })
-	     .map(function(v) { return v.name; });
+
+
+router.post('/lecture/insert', ensureAuthenticated, function(req, res, next) {
 	
-	files.reverse();
-	for (var i = start; i < end+1; i++){
-		obj.push(files[i]);
-	}
-	var pagination = [];
-	var totalPage = Math.ceil(files.length / 9);
-	var startPage;
-	var lastPage;
-	if(page % 5 != 0){ startPage = Math.floor(page/5) * 5 + 1; lastPage = Math.ceil(page/5) * 5; }
-	else{ startPage = (page/5) * 5 - 4; lastPage = parseInt(page) };
+	var CP = 2;
+
+	var cate = '1'; // 세미나 코드
+	var decate = '2018'; // 세미나 세부코드
+	var subject = req.body.subject;
+	var thum = req.body.thum;
+	var img1 = req.body.img1;
+	var img2 = req.body.img2;
+	var leader = req.body.leader;
+	var stime = req.body.stime;
+	var sdate = req.body.sdate;
+	var sstdate = req.body.sstdate;
+	var sendate = req.body.sendate;
+	var location = req.body.location;
+	var mapX = req.body.mapX;
+	var mapY = req.body.mapY;
+
+	var price = req.body.price;
+	var people = req.body.people;
+	var state=''; // 0 신청중 1신청마감
+
+	var date = getWorldTime(+9);
+	var rdate = req.body.rdate;
+
+	var sets = {cate:cate,decate:decate,subject : subject, thum : thum, img1 : img1, img2 : img2, leader:leader, stime : stime, sdate : sdate, sstdate : sstdate,
+		sendate : sendate, location : location, mapX : mapX, mapY : mapY, price : price, people : people, regdate:date, state:'0'};
 	
-	var next = true;
-	
-	if (lastPage >= totalPage){
-		lastPage = totalPage;
-		next = false;
-	}
-	pagination.push(totalPage, startPage, lastPage, next, parseInt(page));
-	res.send({'pagination' : pagination, 'files': obj});
+	mysql.insert('insert into cider.cid_semilist set ?', sets,  function (err, data){
+    	res.redirect('/adm/lecture');
+    });
 });
+
 
 router.post('/lecture/insert/upload', ensureAuthenticated, function(req, res, next) {
 	var form = new formidable.IncomingForm();
 	form.parse(req);
     form.on("file", function (name, file){
         fs.readFile(file.path, function(error, data){
-        	var filePath = __dirname + '/../public/page_imgs/lecture_img/' + file.name;
+        	var filePath = __dirname + '/../public/semi/' + file.name;
         	fs.writeFile(filePath, data, function(error){
         		if(error){
         			//throw err;
@@ -1617,5 +1614,8 @@ router.get('/study/inquiryd/:idx', ensureAuthenticated, function(req, res, next)
 	res.render('admin/study/std_inquiry_detail', { CP : CP, inq:data});
 	});
 });
+
+
+
 
 module.exports = router;
