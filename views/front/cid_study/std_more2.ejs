@@ -220,12 +220,14 @@
 </div>
 
 <!-- 스터디 상세 정보 -->
+<% var state = md[0].state; %>
 
   <div class="container" style="margin: 50px auto;">
     <div class="row">
       <div class="col s12 m6">
       </div>
       <div class="col s12 m6">
+        <% if(state == 1){%><h4 style="color: red;"><b>*마감된 스터디입니다.</b></h4><% }else{} %>
         <h4 class="textfont"><%=md[0].subject%></h4>
         <div class="divider"></div>
       </div>
@@ -290,18 +292,32 @@
               <div class="col s0 m3"></div>
             </div>
 
+          <% var state = md[0].state; %>
+
+            <div class="row">
+              <div class="col s4 m3"></div>
+              <div class="col s8 m6" style="text-align: left;"><% if(state == 2){%><span style="background-color: #c12e2e; padding: 10px; color: #fff;">마감임박</span>
+                <%}else if(state == 1){%><span style="color: red;"><b>*마감된 스터디입니다.</b></span><% }else{} %></div>
+              <div class="col s0 m3"></div>
+            </div>
+
           <div class="row center">
             <div class="col s12 m12">
               <div class="apply-form">
+                <% if(state == 1){%>
+                <button style="width: 300px;">신청마감</button>
+                <% }else{ %>
                 <form action="/npay" name="apply" method="get">
                   <input type="hidden" name="subject" value="<%=md[0].subject%>">
                   <input type="hidden" name="cate" value="<%=md[0].cate%>">
                   <input type="hidden" name="idx" value="<%=md[0].idx%>">
-                  <input type="hidden" name="price" value="<%=md[0].price - 200%>">
+                  <input type="hidden" name="price" value="<%=md[0].price%>">
                   <button type="submit" style="width: 300px;">신청하기</button>
                 </form>
+                <% } %>
               </div>
             </div>
+
             <div class="col s12 m12">
               <div class="apply-form2">
                   <button  style="width: 300px;" type="button" onclick="location.href='/study/faq'"><a href="/study/faq" style="color:#1b87c9;">문의하기</a></button>

@@ -449,13 +449,14 @@ router.post('/lecture/insert', ensureAuthenticated, function(req, res, next) {
 
 	var price = req.body.price;
 	var people = req.body.people;
-	var state=''; // 0 신청중 1신청마감
+	var state=''; // 0 신청중 1신청마감\
+	var flag='';
 
 	var date = getWorldTime(+9);
 	var rdate = req.body.rdate;
 
 	var sets = {cate:cate,decate:decate,subject : subject, thum : thum, img1 : img1, img2 : img2, leader:leader, stime : stime, sdate : sdate, sstdate : sstdate,
-		sendate : sendate, location : location, mapX : mapX, mapY : mapY, price : price, people : people, regdate:date, state:'0'};
+		sendate : sendate, location : location, mapX : mapX, mapY : mapY, price : price, people : people, regdate:date, state:'0', flag:'N'};
 	
 	mysql.insert('insert into cider.cid_semilist set ?', sets,  function (err, data){
     	res.redirect('/adm/lecture');
@@ -483,6 +484,74 @@ router.post('/lecture/insert/upload', ensureAuthenticated, function(req, res, ne
 		  res.redirect('back');
 		});
 });
+
+router.get('/lecturelist', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 2;
+	var cate;
+	mysql.select('select * from cider.cid_semilist', function (err, data){
+		if(err){
+			res.redirect('back');
+		}
+		cate = data;
+		res.render('admin/lecture/list', {semi : cate, CP : CP});
+	});
+});
+
+router.get('/lecture/detail/:idx', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 2;
+	var idx = req.params.idx;
+	var std;
+
+	mysql.select('select * from cider.cid_semilist where idx = '+idx+'', function (err, data){
+		if(err){
+			res.redirect('back');
+		}
+		std = data;
+		res.render('admin/lecture/update', {semi : data, CP : CP});
+	});
+});
+
+
+router.post('/lecture/update', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 8;
+	
+	var idx = req.body.idx;
+
+	var subject = req.body.subject;
+	var thum = req.body.thum;
+	var img1 = req.body.img1;
+	var img2 = req.body.img2;
+	var leader = req.body.leader;
+	var stime = req.body.stime;
+	var sdate = req.body.sdate;
+	var sstdate = req.body.sstdate;
+	var sendate = req.body.sendate;
+	var location = req.body.location;
+	var mapX = req.body.mapX;
+	var mapY = req.body.mapY;
+
+	var price = req.body.price;
+	var people = req.body.people;
+	var state=req.body.state; // 0 신청중 1신청마감\
+	var flag=req.body.flag;
+
+	var regdate = getWorldTime(+9);
+
+	var sets = {subject : subject, thum : thum, img1 : img1, img2 : img2, leader:leader, stime : stime, sdate : sdate, sstdate : sstdate,
+		sendate : sendate, location : location, mapX : mapX, mapY : mapY, price : price, people : people, regdate:regdate, state:state, flag:flag};
+
+//mysql.update('update cider.std_more set subject = ?, subject2 = ?, bgimg1 = ?,thum=?,leader = ? ,period = ?,sche1 = ?, sche2 = ? ,sche3= ? where idx = ?', [subject,subject2,bgimg1,thum,leader,period,sche1,sche2,sche3,idx], function (err, data){
+    
+	mysql.update('update cider.cid_semilist set subject = ?, thum = ?, img1 = ?, img2 =?, leader =?, stime =?, sdate =?, sstdate =?, sendate =?, location =?, mapX =?, mapY =?, price =?, people =?, regdate =?, state =?, flag =?  where idx = ?', [subject,thum,img1,img2,leader,stime,sdate,sstdate,sendate,location,mapX,mapY,price,people,regdate,state,flag,idx], function (err, data){
+    	res.redirect('/adm/lecturelist');
+    	
+    });
+});
+
+
 
 router.get('/lecture/list', ensureAuthenticated, function(req, res, next) {
 	var CP = 2;
@@ -1441,6 +1510,7 @@ router.post('/study/insert', ensureAuthenticated, function(req, res, next) {
 	var step3 = req.body.step3;
 	var stepc3 = req.body.stepc3;
 	var flag='';
+	var state ='0';
 
 	var date = getWorldTime(+9);
 	var rdate = req.body.rdate;
@@ -1449,7 +1519,7 @@ router.post('/study/insert', ensureAuthenticated, function(req, res, next) {
 		sche3 : sche3, location : location, price : price, people : people, line1 : line1, line2 : line2, line3 : line3, value1 : value1,
 	 value2 : value2, value3 : value3, slimg1 : slimg1, slimg2 : slimg2, slimg3 : slimg3, slimg4 : slimg4, lepro1 : lepro1,
 	 lepro2 : lepro2, lepro3 : lepro3, lepro4 : lepro4, appt1 : appt1, appc1 : appc1, appt2 : appt2, appc2 : appc2, appt3 : appt3, appc3 : appc3,
-	 step1 : step1, stepc1 : stepc1, step2:step2,stepc2:stepc2,step3:step3,stepc3:stepc3, regdate:date, flag:'N'};
+	 step1 : step1, stepc1 : stepc1, step2:step2,stepc2:stepc2,step3:step3,stepc3:stepc3, regdate:date, flag:'N', state:state};
 	
 	mysql.insert('insert into cider.std_more set ?', sets,  function (err, data){
     	res.redirect('/adm/study');
@@ -1505,12 +1575,14 @@ router.post('/study/update', ensureAuthenticated, function(req, res, next) {
 	var stepc2 = req.body.stepc2;
 	var step3 = req.body.step3;
 	var stepc3 = req.body.stepc3;
-	var flag=req.body.flag;
+	var flag = req.body.flag;
+	var state = req.body.state;
+	console.log(state);
 
 	var rdate   = req.body.rdate;
 	var modate = getWorldTime(+9);
 	
-	var sets = {flag:flag,recentdate:recentdate,decate:decate,subject : subject, subject2 : subject2, bgimg1 : bgimg1, thum : thum, thum2 : thum2, leader:leader, period : period, sche1 : sche1, sche2 : sche2,
+	var sets = {state:state,flag:flag,recentdate:recentdate,decate:decate,subject : subject, subject2 : subject2, bgimg1 : bgimg1, thum : thum, thum2 : thum2, leader:leader, period : period, sche1 : sche1, sche2 : sche2,
 		sche3 : sche3, location : location, price : price, people : people, line1 : line1, line2 : line2, line3 : line3, value1 : value1,
 	 value2 : value2, value3 : value3, slimg1 : slimg1, slimg2 : slimg2, slimg3 : slimg3, slimg4 : slimg4, lepro1 : lepro1,
 	 lepro2 : lepro2, lepro3 : lepro3, lepro4 : lepro4, appt1 : appt1, appc1 : appc1, appt2 : appt2, appc2 : appc2, appt3 : appt3, appc3 : appc3,
@@ -1518,7 +1590,7 @@ router.post('/study/update', ensureAuthenticated, function(req, res, next) {
 
 //mysql.update('update cider.std_more set subject = ?, subject2 = ?, bgimg1 = ?,thum=?,leader = ? ,period = ?,sche1 = ?, sche2 = ? ,sche3= ? where idx = ?', [subject,subject2,bgimg1,thum,leader,period,sche1,sche2,sche3,idx], function (err, data){
     
-	mysql.update('update cider.std_more set flag=?,recentdate=?,decate=?,subject = ?, subject2 = ?, bgimg1 = ?, thum = ?, thum2=?, leader = ?, period = ?, sche1 = ?, sche2 = ? ,sche3= ? ,location= ?,price= ? ,people= ? ,line1= ? ,line2= ? ,line3= ? ,value1= ? ,value2= ? ,value3= ? ,slimg1= ? ,slimg2= ? ,slimg3= ? ,slimg4= ? ,lepro1= ?,lepro2= ?,lepro3= ?  ,lepro4= ?  ,appt1= ?  ,appc1= ?  ,appt2= ?  ,appc2= ?  ,appt3= ?  ,appc3= ?  ,step1= ?  ,stepc1= ?,step2= ?  ,stepc2= ?,step3= ?  ,stepc3= ? , modate= ? where idx = ?', [flag,recentdate,decate,subject,subject2,bgimg1,thum,thum2,leader,period,sche1,sche2,sche3,location,price,people,line1,line2,line3,value1,value2,value3,slimg1,slimg2,slimg3,slimg4,lepro1,lepro2,lepro3,lepro4,appt1,appc1,appt2,appc2,appt3,appc3,step1,stepc1,step2,stepc2,step3,stepc3,modate,idx], function (err, data){
+	mysql.update('update cider.std_more set state=?,flag=?,recentdate=?,decate=?,subject = ?, subject2 = ?, bgimg1 = ?, thum = ?, thum2=?, leader = ?, period = ?, sche1 = ?, sche2 = ? ,sche3= ? ,location= ?,price= ? ,people= ? ,line1= ? ,line2= ? ,line3= ? ,value1= ? ,value2= ? ,value3= ? ,slimg1= ? ,slimg2= ? ,slimg3= ? ,slimg4= ? ,lepro1= ?,lepro2= ?,lepro3= ?  ,lepro4= ?  ,appt1= ?  ,appc1= ?  ,appt2= ?  ,appc2= ?  ,appt3= ?  ,appc3= ?  ,step1= ?  ,stepc1= ?,step2= ?  ,stepc2= ?,step3= ?  ,stepc3= ? , modate= ? where idx = ?', [state,flag,recentdate,decate,subject,subject2,bgimg1,thum,thum2,leader,period,sche1,sche2,sche3,location,price,people,line1,line2,line3,value1,value2,value3,slimg1,slimg2,slimg3,slimg4,lepro1,lepro2,lepro3,lepro4,appt1,appc1,appt2,appc2,appt3,appc3,step1,stepc1,step2,stepc2,step3,stepc3,modate,idx], function (err, data){
     	res.redirect('/adm/study/list');
     	
     });

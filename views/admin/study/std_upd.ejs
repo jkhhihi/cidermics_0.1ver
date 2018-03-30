@@ -53,12 +53,20 @@
       <% }else{%>
       <p>현재 : <span style="color:blue">Active</span>(리스트에 게시 되어있는 상태)</p>
       <% } %>
+      <% if (std[0].state == '0'){ %>
+      <p>현재 : <span style="color:red">신청 중</span></p>
+      <% }else if(std[0].state =='2'){%>
+      <p>현재 : <span style="color:blue">마감 임박</span></p>
+      <% } else{ %>
+      <p>현재 : <span style="color:blue">신청 마감</span></p>
+      <% } %>
     </div>
 
 		<form class="col s12" action="/adm/study/update" method="post">
       <input type="hidden" value="<%= std[0].idx %>" name="idx">
       <div class="container">			
         <div class="row" style="margin-top:  2em;">
+
 
           <div class="input-field col s12">
             <select name="flag" value="<%=std[0].flag%>">
@@ -69,6 +77,15 @@
             <label></label>
           </div>
           
+          <div class="input-field col s12">
+            <select name="state" value="<%=std[0].state%>">
+              <option value="<%=std[0].state%>" selected>신청 상태 마감,임박 선택</option>
+              <option value="0">신청 가능 상태</option>
+              <option value="2">마감 임박 상태</option>
+              <option value="1">신청 마감 상태</option>
+            </select>
+            <label></label>
+          </div>
 
 					<div class="input-field col l12">
 						<input id="title" type="text" class="validate" name="subject" value="<%=std[0].subject%>">
@@ -344,7 +361,7 @@
 				</div>
       </div>
 			<div class="center-align">
-				<button class="btn waves-effect waves-light" type="submit">등록하기
+				<button class="btn waves-effect waves-light" type="submit">수정하기
 					<i class="material-icons right">send</i>
 				</button>
 			</div>
