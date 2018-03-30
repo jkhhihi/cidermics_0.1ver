@@ -516,7 +516,7 @@ router.get('/lecture/detail/:idx', ensureAuthenticated, function(req, res, next)
 
 router.post('/lecture/update', ensureAuthenticated, function(req, res, next) {
 	
-	var CP = 8;
+	var CP = 2;
 	
 	var idx = req.body.idx;
 
@@ -547,6 +547,36 @@ router.post('/lecture/update', ensureAuthenticated, function(req, res, next) {
     
 	mysql.update('update cider.cid_semilist set subject = ?, thum = ?, img1 = ?, img2 =?, leader =?, stime =?, sdate =?, sstdate =?, sendate =?, location =?, mapX =?, mapY =?, price =?, people =?, regdate =?, state =?, flag =?  where idx = ?', [subject,thum,img1,img2,leader,stime,sdate,sstdate,sendate,location,mapX,mapY,price,people,regdate,state,flag,idx], function (err, data){
     	res.redirect('/adm/lecturelist');
+    	
+    });
+});
+
+//**************** 구매자 목록 **************
+
+router.get('/lecture/customer', ensureAuthenticated, function(req,res,next){
+	var CP = 2;
+	mysql.select("SELECT * FROM cider.mobileOrder where PRODUCTCODE = '2' order by date desc;", function (err, data){
+		mysql.select("SELECT * FROM cider.cardOrder where PRODUCTCODE = '2' order by date desc;", function (err, data2){
+			mysql.select("SELECT * FROM cider.pay_appform where cate ='1' order by idx desc;", function (err, data3){
+				mysql.select("SELECT * FROM cider.fin_nonaccount where cate='1' order by idx desc;", function (err, data4){
+		res.render('admin/lecture/customer', { CP : CP, mobile:data, card:data2, code:data3, non:data4 });
+	 });
+	});
+  });
+});
+});
+
+//**************** 무통장 수정 **************
+router.post('/lecture/customer_up', ensureAuthenticated, function(req, res, next) {
+	var CP = 2;
+	var idx = req.body.idx;
+	var state = req.body.state;
+	console.log(state);
+	var codeNum = req.body.codeNum;
+	var sets = { state : state, codeNum : codeNum,idx:idx };
+	mysql.update('update cider.fin_nonaccount set state = ?, codeNum = ?  where idx = ?', [state,codeNum,idx], function (err, data){
+		
+    	res.redirect('/adm/lecture/customer');
     	
     });
 });
@@ -1647,7 +1677,7 @@ router.get('/study/customer', ensureAuthenticated, function(req,res,next){
 	var CP = 8;
 	mysql.select("SELECT * FROM cider.mobileOrder where PRODUCTCODE = '2' order by date desc;", function (err, data){
 		mysql.select("SELECT * FROM cider.cardOrder where PRODUCTCODE = '2' order by date desc;", function (err, data2){
-			mysql.select('SELECT * FROM cider.pay_appform order by idx desc;', function (err, data3){
+			mysql.select("SELECT * FROM cider.pay_appform where cate ='182' order by idx desc;", function (err, data3){
 				mysql.select("SELECT * FROM cider.fin_nonaccount where cate='182' order by idx desc;", function (err, data4){
 		res.render('admin/study/std_customer', { CP : CP, mobile:data, card:data2, code:data3, non:data4 });
 	 });

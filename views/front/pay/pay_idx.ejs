@@ -387,7 +387,7 @@ function fnNumCheck() {
 				<input type="hidden" name="PRODUCTTYPE" size="10" maxlength="1" value="2" style="IME-MODE:disabled">
 				<input type="hidden" name="BILLTYPE" size="10" maxlength="2"  value="1" style="IME-MODE:disabled">
 
-				<!-- 결제금액 --><% var minvalue; if(price == 299000){minvalue = 21000;}else if(price == 298800){minvalue = 59800;}else{minvalue = 59900;} %><% var happice = price - minvalue%>
+				<!-- 결제금액 --><% var minvalue; if(price == 299000){minvalue = 21000;}else if(price == 298800){minvalue = 59800;}else if(price == 30000){minvalue = 0;}else{minvalue = 59900;} %><% var happice = price - minvalue%>
 				<input type="hidden" name="AMOUNT" size="10" maxlength="10" value="<%=happice%>" style="IME-MODE:disabled" onkeypress="fnNumCheck();">
 
 				<input type="hidden" name="CPQUOTA" size="20" value="0:2:3:4:5:6:7:8:9:10:11:12" style="IME-MODE:disabled">
