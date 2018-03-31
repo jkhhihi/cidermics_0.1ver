@@ -4,16 +4,17 @@
 .margin10{margin-left:50px;}
 .banner{background-image: url("https://i.imgur.com/CoZ8olt.jpg"); width:100%; height:auto; margin:70px 0; color:#fff; background-size: cover;}
 .banner .title{padding:120px 0; text-shadow: 2px 2px 6px #222;}
-.thumnail{color:#fff; padding-right:0 !important; padding-left:0 !important; margin:0 20px;}
-.black-box{background-color: rgba( 0, 0, 0, 0.8 ); z-index:99; width:100%; height:auto; position: absolute; bottom:0; padding:20px 10px 10px 20px;}
+.thumnail{color:#fff; padding-right:0 !important; padding-left:0 !important; margin:20px;}
+.black-box{background-color: rgba( 0, 0, 0, 0.8 ); z-index:9; width:100%; height:auto; position: absolute; bottom:0; padding:20px 10px 10px 20px;}
 .applying .on{padding:5px 20px; background-color:#1b87c9; display:inline-block;}
 .applying .off{padding:5px 20px; background-color:#e01717; display:inline-block;}
-.date-price{margin-top:-10px;}
+.date-price{margin-top:5px;}
 .date-price-in{border:1px solid #fff; border-radius:4px; padding:5px 15px; font-size:12px; display:inline-block;}
 .black-box .title p{font-size:22px; margin-top:20px;}
 
 /*디테일*/
-.seminar-info{width:50%; border:2px solid #eee; padding:20px 80px; margin-top:80px; margin-bottom:100px;}
+.contents-img img{width:800px; margin-top:72px;}
+.seminar-info{width:800px; border:2px solid #eee; padding:20px 80px; margin-top:50px; margin-bottom:100px;}
 .seminar-info .col-xs-4, .col-xs-8{margin:20px 0;}
 .seminar-info p.border-left{border-left:2px solid #666; padding-left:10px;}
 .btn-apply button{background-color:#1b87c9; border:2px solid #1b87c9; color:#fff; border-radius:50px; font-size:16px; width:220px; padding:16px 0; margin:50px 0 20px 0; font-weight:bold;}
@@ -32,12 +33,12 @@
 .black-box{padding:10px 5px 5px 10px;}
 .applying .on{padding:4px 15px; font-size:12px;}
 .applying .off{padding:4px 15px; font-size:12px;}
-.date-price{margin-top:0;}
 .date-price-in{padding:4px 12px; font-size:10px;}
 .black-box .title p{font-size:16px; margin-top:10px; margin-bottom:0;}
 
 /*디테일*/
-.seminar-info{width:98%; padding:20px 5px 10px 5px; margin-top:40px;}
+.contents-img img{width:100%; margin-top:48px;}
+.seminar-info{width:98%; padding:20px 5px 10px 5px; margin-top:20px;}
 .seminar-info .col-xs-4, .col-xs-8{margin:10px 0;}
 .btn-apply {font-size:14px; padding:15px 0; margin:20px 0 10px 0;}
 .btn-kakao-plus p{font-size:14px; padding:10px 0;}
