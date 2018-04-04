@@ -18,16 +18,45 @@
   <body>
   	<% var data= CP; %>
     <% include ../include/nav.ejs %>
-    
-    <div class="container">
-    	<div class="button-area">
-	    	<a href="/adm/lecture/insert" class="waves-effect waves-light btn">세미나 등록</a>
-        <a href="/adm/lecturelist" class="waves-effect waves-light btn">세미나 리스트</a>
-        <a href="/adm/lecture/customer" class="waves-effect waves-light btn">결제현황</a>
-	    	<!--a href="/adm/lecture/list" class="waves-effect waves-light btn">등록 명단</a-->
-	    	<!--a href="/adm/contents/delete" class="waves-effect waves-light btn">삭제</a-->
-	    	<!--a href="/adm/contents/insert2" class="waves-effect waves-light btn">더미만들기</a>  
-    	</div-->
+
+
+    <div class="container" style="margin: 50px auto;">
+      <h4>세미나</h4>
+      <div class="row">
+        <div class="col s6">
+          <a href="/adm/lecture/insert" class="waves-effect waves-light btn">세미나 등록</a>
+        </div>
+        <div class="col s6">
+          <a href="/adm/lecturelist" class="waves-effect waves-light btn">세미나 리스트</a>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <br>
+
+      <div class="row">
+        <div class="col s6">
+          <a href="/adm/lecture/customer" class="waves-effect waves-light btn">입금 현황</a>
+          <span class="z-depth-1 yellow">신청자 <%= app[0].app %> NEW</span>
+          <span class="z-depth-1 yellow">무통장 <%= nonac[0].nonac %> NEW</span>
+        </div>
+        <div class="col s6">
+          <a class="waves-effect waves-light btn" href="/adm/lecture/applist">멤버원 현황</a>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+      <br>
+
+      <div class="row">
+        <div class="col s6">
+          <a class="waves-effect waves-light btn" href="/adm/study/inquiry">문의 현황</a>
+          <span class="z-depth-1 yellow"><%= inq[0].inq %> NEW</span>
+        </div>
+        <div class="col s6">
+        </div>
+      </div>
+
     </div>
     
     

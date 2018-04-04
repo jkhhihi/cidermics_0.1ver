@@ -14,7 +14,7 @@
     <% var data= CP; %>
     <% include ../include/nav.ejs %>
 
-    <a href="/adm/study/" class="waves-effect waves-light btn modal-trigger">뒤로가기</a>
+    <a href="/adm/lecture/" class="waves-effect waves-light btn modal-trigger">뒤로가기</a>
 
   <h5 class="header center blue-text">결제 현황</h5>
 
@@ -135,12 +135,8 @@
         <table class="centered">
           <thead>
             <tr>
-                <th>신청주제</th>
+                <th>세미나번호</th>
                 <th>구매자 성명</th>
-                <th>이메일 주소</th>
-                <th>휴대폰 번호</th>
-                <th>경로</th>
-                <th>기타</th>
                 <th>신청일</th>
                 <th>입금예정일</th>
                 <th>입금금액</th>
@@ -152,16 +148,12 @@
           <tbody>
           <% for(var i = 0; i< non.length; i++) { %>
             <tr>
-              <td><%= non[i].subject %></td>
+              <td><%= non[i].decate %></td>
               <td><%= non[i].USERNAME %></td>
-              <td><%= non[i].EMAIL %></td>
-              <td><%= non[i].TELNO %></td>
-              <td><%= non[i].path %></td>
-              <td><%= non[i].gitar %></td>
               <td><%= non[i].insertdate %></td>
               <td><%= non[i].duedate %></td>
               <td><%= non[i].price %></td>
-              <form action="/adm/study/customer_up" method="post">
+              <form action="/adm/lecture/customer_up" method="post">
                 <td><select id="stval" name="state" >
                   <option value="입금대기">입금대기</option>
                   <option value="입금확인">입금확인</option>

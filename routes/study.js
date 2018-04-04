@@ -93,7 +93,8 @@ router.get('/study/faq', function(req, res, next) {
 });
 
 router.post('/study/ask', function(req, res, next) {
-	var cate = req.body.stda_cate;
+	var cate = "1";
+	var scate = req.body.stda_cate;
 	var name = req.body.stda_name;
 	var email = req.body.stda_email;
 	var title = req.body.stda_title;
@@ -101,7 +102,7 @@ router.post('/study/ask', function(req, res, next) {
 
 	var date = getWorldTime(+9);
 
-	var sets = {stda_cate: cate , stda_name : name , stda_email : email , stda_title:title, stda_text:text, stda_regdate:date};
+	var sets = {cate:cate,stda_cate: scate , stda_name : name , stda_email : email , stda_title:title, stda_text:text, stda_regdate:date};
 	mysql.insert('insert into cider.std_ask set ?', sets,  function (err, data){
 		res.send('<script>alert("문의주셔서 감사합니다!");location.href="/study";</script>');
 		//res.redirect('/study');

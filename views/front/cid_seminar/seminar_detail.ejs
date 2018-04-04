@@ -76,6 +76,32 @@ function openWinKA(){
       }
    </script>
 
+<!-- 숫자 콤마 -->
+   <script type="text/javascript">
+	function commaNum(num) {
+	    var len, point, str;
+	    num = num + "";
+	    point = num.length % 3  
+	    len = num.length;  
+	 
+	    str = num.substring(0, point);  
+	    while (point < len) {  
+	        if (str != "") str += ",";  
+	        str += num.substring(point, point + 3);  
+	        point += 3;  
+	    }  
+	    return str;  
+	}
+
+
+	$(document).ready(function(){    
+	    for (i=0; i<$(".amount").length; i++){
+	        $(".amount").eq(i).text(commaNum($(".amount").eq(i).html()));   
+	    }
+	});
+
+</script>
+
 </head>
 <body onload="initialize()">
 <!--위로가기 버튼-->
@@ -113,7 +139,7 @@ function openWinKA(){
 		<div class="col-lg-9 col-xs-8" align="left"><p class="border-left"><%= semi[0].people %>명</p></div>
 		
 		<div class="col-lg-3 col-xs-4" align="left"><p><b>참가비</b></p></div>
-		<div class="col-lg-9 col-xs-8" align="left"><p class="border-left"><%= semi[0].price %>원</p></div>
+		<div class="col-lg-9 col-xs-8" align="left"><p class="border-left"><span class="amount"><%= semi[0].price %></span>원</p></div>
 		
 		<div class="col-lg-3 col-xs-4" align="left"><p><b>장소</b></p></div>
 		<div class="col-lg-9 col-xs-8" align="left"><p class="border-left"><%= semi[0].location %></p></div>

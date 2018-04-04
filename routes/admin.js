@@ -410,8 +410,33 @@ router.post('/pop_ck_default', ensureAuthenticated, function(req, res, next) {
 
 router.get('/lecture', ensureAuthenticated, function(req, res, next) {
 	var CP = 2;
-			 res.render('admin/lecture/lecture_index', { CP : CP });
-		});
+	var now = new Date();
+	var _year= now.getFullYear();
+	var _mon = now.getMonth()+1;
+	 _mon=""+_mon;
+	 if (_mon.length < 2 )
+	 {
+	    _mon="0"+_mon;
+	 }
+	  var _date=now.getDate();
+	  _date =""+_date;
+	  if (_date.length < 2 )
+		 {
+		    _date="0"+_date;
+		 }
+	 
+	var _tot=_year+"-"+_mon+"-"+_date;
+
+	mysql.select("SELECT count(*) as inq FROM cider.std_ask where cate = '1' and stda_regdate like  \'%"+_tot+"%\' ", function (err, data){
+		mysql.select("SELECT count(*) as app FROM cider.pay_appform where cate = '1' and regdate like  \'%"+_tot+"%\' ", function (err, data2){
+			mysql.select("SELECT count(*) as nonac FROM cider.fin_nonaccount where cate = '1' and regDate like  \'%"+_tot+"%\' ", function (err, data3){
+
+	res.render('admin/lecture/lecture_index', { CP : CP, inq:data, app:data2, nonac:data3});
+	  });
+	});
+  });
+});
+
 
 router.get('/lecture/insert', ensureAuthenticated, function(req, res, next) {
 	
@@ -571,7 +596,6 @@ router.post('/lecture/customer_up', ensureAuthenticated, function(req, res, next
 	var CP = 2;
 	var idx = req.body.idx;
 	var state = req.body.state;
-	console.log(state);
 	var codeNum = req.body.codeNum;
 	var sets = { state : state, codeNum : codeNum,idx:idx };
 	mysql.update('update cider.fin_nonaccount set state = ?, codeNum = ?  where idx = ?', [state,codeNum,idx], function (err, data){
@@ -580,6 +604,28 @@ router.post('/lecture/customer_up', ensureAuthenticated, function(req, res, next
     	
     });
 });
+
+
+router.get('/lecture/applist', ensureAuthenticated, function(req, res, next) {
+	var CP = 2;
+	var stdlist;
+	mysql.select('SELECT * from cider.cid_semilist order by idx desc;', function (err, data){
+		stdlist = data;
+		res.render('admin/lecture/applist', { CP : CP, stdlist : data});
+	});
+  });
+
+router.get('/lecture/applist/:idx', ensureAuthenticated, function(req, res, next) {
+	var CP = 2;
+	var idx = req.params.idx;
+	mysql.select('SELECT * FROM cider.pay_appform where cate = "1" and decate = '+idx+' order by idx desc;', function (err, data){
+		mysql.select("SELECT * FROM cider.fin_nonaccount where cate='1' and decate = "+idx+" and state='입금확인' order by idx desc;", function (err, data2){
+		res.render('admin/lecture/applist_detail', { CP : CP, appfm : data , non:data2});
+	});
+  });
+});
+
+
 
 
 
@@ -613,7 +659,6 @@ router.get('/lecture/detail/:app_no', ensureAuthenticated, function(req, res, ne
 
 router.post('/lecture/detail/update', ensureAuthenticated, function(req, res, next) {
 
-	
 	var CP = 2;
 	
 	var app_no = req.body.app_no;
@@ -1450,9 +1495,9 @@ router.get('/study', ensureAuthenticated, function(req, res, next) {
 	 
 	var _tot=_year+"-"+_mon+"-"+_date;
 
-	mysql.select("SELECT count(*) as inq FROM cider.std_ask where stda_regdate like  \'%"+_tot+"%\' ", function (err, data){
-		mysql.select("SELECT count(*) as app FROM cider.pay_appform where regdate like  \'%"+_tot+"%\' ", function (err, data2){
-			mysql.select("SELECT count(*) as nonac FROM cider.fin_nonaccount where regDate like  \'%"+_tot+"%\' ", function (err, data3){
+	mysql.select("SELECT count(*) as inq FROM cider.std_ask where cate = '2' and stda_regdate like  \'%"+_tot+"%\' ", function (err, data){
+		mysql.select("SELECT count(*) as app FROM cider.pay_appform where cate = '182' and regdate like  \'%"+_tot+"%\' ", function (err, data2){
+			mysql.select("SELECT count(*) as nonac FROM cider.fin_nonaccount where cate = '182' and regDate like  \'%"+_tot+"%\' ", function (err, data3){
 
 	res.render('admin/study/std_index', { CP : CP, inq:data, app:data2, nonac:data3});
 	  });

@@ -23,6 +23,17 @@
 .btn-kakao-plus p:hover{background-color:#fff; border:2px solid #fce000; border-radius:50px;}
 .btn-kakao-plus p span{font-size:14px;}
 
+
+.btn-request{border:2px solid #ececec; border-radius:5px; padding:10px; cursor:pointer; font-size:14px}
+.btn-request img{width:25px; display:inline-block;}
+.btn-request span{display:inline-block; margin-left:5px;}
+
+.form-group{margin-bottom: 0px !important;}
+.form-control1{border:#1b87c9 1px solid; width:154px; height:30px; padding:5px; font-size:12px; border-radius:2px;}
+.form-control2{border:#1b87c9 1px solid; width:312px; height:100px; padding:5px; font-size:12px; margin-bottom:0px; border-radius:2px;}
+.form-control3{border:#1b87c9 2px solid; width:100%; height:30px; padding:5px; font-size:12px; border-radius:4px; margin-bottom:10px;}
+.form-control4{border:#1b87c9 2px solid; width:100%; height:100px; padding:5px; font-size:12px; border-radius:4px; margin-bottom:10px;}
+
 @media all and (max-width:1024px) {
 /*메인*/
 .col-lg-6{width:100% !important;}
@@ -44,5 +55,13 @@
 .btn-kakao-plus p{font-size:14px; padding:10px 0;}
 .btn-kakao-plus p span{font-size:12px;}
 
+
+.btn-request{padding:8px; font-size:12px}
+.btn-request img{width:22px;}
+.btn-request span{margin-left:3px;}
+
+.modal-header .close{
+	right:10px;
+}
 
 }
