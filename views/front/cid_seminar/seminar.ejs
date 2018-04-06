@@ -50,7 +50,7 @@
 <div class="seminar-list container"  align="center">
 
 	<div class="row">
-		<div class="col-xs-12" align="right">
+		<div class="col-xs-12" align="right" id="btn-request">
 			<span data-toggle="modal" data-target="#myModal" class="btn-request"><img src="/page_imgs/discuss_img/discuss-icon-pencil.svg"><span>문의하기</span></span>
 		</div>
 	</div>
@@ -135,8 +135,8 @@
 				<img class="img-responsive" src="<%=semi[i].thum%>">
 			</div>
 			<div class="black-box">
-				<div class="applying"><% if(semi[i].state == 0){%><span class="on">신청중</span><%}else{%><span class="off">신청마감</span><% } %></div>
-				<div class="title"><p><b><%=semi[i].subject%></b></p></div>
+				<div class="applying" align="left"><% if(semi[i].state == 0){%><span class="on">신청중</span><%}else{%><span class="off">신청마감</span><% } %></div>
+				<div class="title" align="left"><p><b><%=semi[i].subject%></b></p></div>
 				<div class="date-price" align="right"><span class="date-price-in"><span><%=semi[i].sdate%></span> | <span>\<%=semi[i].price%></span></span></div>
 			</div>
 		</div>

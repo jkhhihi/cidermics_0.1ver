@@ -10,7 +10,7 @@
 .applying .off{padding:5px 20px; background-color:#e01717; display:inline-block;}
 .date-price{margin-top:5px;}
 .date-price-in{border:1px solid #fff; border-radius:4px; padding:5px 15px; font-size:12px; display:inline-block;}
-.black-box .title p{font-size:22px; margin-top:20px;}
+.black-box .title p{font-size:22px; margin-top:10px; margin-bottom:10px;}
 
 /*디테일*/
 .contents-img img{width:800px; margin-top:72px;}
@@ -23,9 +23,9 @@
 .btn-kakao-plus p:hover{background-color:#fff; border:2px solid #fce000; border-radius:50px;}
 .btn-kakao-plus p span{font-size:14px;}
 
-
-.btn-request{border:2px solid #ececec; border-radius:5px; padding:10px; cursor:pointer; font-size:14px}
-.btn-request img{width:25px; display:inline-block;}
+#btn-request{margin:20px 0 16px -40px;}
+.btn-request{border:2px solid #ececec; border-radius:5px; padding:10px 14px; cursor:pointer; font-size:14px;}
+.btn-request img{width:22px; display:inline-block; margin-bottom:4px;}
 .btn-request span{display:inline-block; margin-left:5px;}
 
 .form-group{margin-bottom: 0px !important;}
@@ -45,7 +45,7 @@
 .applying .on{padding:4px 15px; font-size:12px;}
 .applying .off{padding:4px 15px; font-size:12px;}
 .date-price-in{padding:4px 12px; font-size:10px;}
-.black-box .title p{font-size:16px; margin-top:10px; margin-bottom:0;}
+.black-box .title p{font-size:16px; margin-top:4px; margin-bottom:8px;}
 
 /*디테일*/
 .contents-img img{width:100%; margin-top:48px;}
@@ -55,8 +55,8 @@
 .btn-kakao-plus p{font-size:14px; padding:10px 0;}
 .btn-kakao-plus p span{font-size:12px;}
 
-
-.btn-request{padding:8px; font-size:12px}
+#btn-request{margin:16px 0 10px 4px;}
+.btn-request{font-size:12px;}
 .btn-request img{width:22px;}
 .btn-request span{margin-left:3px;}
 
