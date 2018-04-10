@@ -448,8 +448,8 @@ router.get('/lecture/insert', ensureAuthenticated, function(req, res, next) {
 		}
 		cate = data;
 			res.render('admin/lecture/insert', {cate : cate, CP : CP});
-			});
-		});
+	});
+});
 
 
 
@@ -599,9 +599,7 @@ router.post('/lecture/customer_up', ensureAuthenticated, function(req, res, next
 	var codeNum = req.body.codeNum;
 	var sets = { state : state, codeNum : codeNum,idx:idx };
 	mysql.update('update cider.fin_nonaccount set state = ?, codeNum = ?  where idx = ?', [state,codeNum,idx], function (err, data){
-		
     	res.redirect('/adm/lecture/customer');
-    	
     });
 });
 
@@ -624,6 +622,28 @@ router.get('/lecture/applist/:idx', ensureAuthenticated, function(req, res, next
 	});
   });
 });
+
+
+
+
+router.get('/lecture/inquiry', ensureAuthenticated, function(req, res, next) {
+	var CP = 2;
+	mysql.select("SELECT * FROM cider.std_ask where cate='1' order by stda_no desc", function (err, data){
+	res.render('admin/lecture/lecture_inquiry', { CP : CP, inq:data});
+	});
+});
+
+router.get('/lecture/inquiryd/:idx', ensureAuthenticated, function(req, res, next) {
+	var CP = 2;
+	var idx = req.params.idx;
+	mysql.select('SELECT * FROM cider.std_ask where stda_no = '+idx+'', function (err, data){
+	res.render('admin/lecture/lecture_inquiry_detail', { CP : CP, inq:data});
+	});
+});
+
+
+
+
 
 
 
@@ -691,6 +711,9 @@ router.get('/lecture/list/delete/:app_no', function(req, res, next) {
 		}
     });
 });
+
+
+
 
 
 router.get('/finance', ensureAuthenticated, function(req, res, next) {
@@ -1740,16 +1763,14 @@ router.post('/study/customer_up', ensureAuthenticated, function(req, res, next) 
 	var codeNum = req.body.codeNum;
 	var sets = { state : state, codeNum : codeNum,idx:idx };
 	mysql.update('update cider.fin_nonaccount set state = ?, codeNum = ?  where idx = ?', [state,codeNum,idx], function (err, data){
-		
     	res.redirect('/adm/study/customer');
-    	
     });
 });
 
 
 router.get('/study/inquiry', ensureAuthenticated, function(req, res, next) {
 	var CP = 8;
-	mysql.select("SELECT * FROM cider.std_ask order by stda_no desc", function (err, data){
+	mysql.select("SELECT * FROM cider.std_ask where cate = '2' order by stda_no desc", function (err, data){
 	res.render('admin/study/std_inquiry', { CP : CP, inq:data});
 	});
 });

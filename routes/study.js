@@ -93,7 +93,7 @@ router.get('/study/faq', function(req, res, next) {
 });
 
 router.post('/study/ask', function(req, res, next) {
-	var cate = "1";
+	var cate = "2";
 	var scate = req.body.stda_cate;
 	var name = req.body.stda_name;
 	var email = req.body.stda_email;
