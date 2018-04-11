@@ -759,6 +759,26 @@ router.get('/finance/delete/:fi_app_no', function(req, res, next) {
 });
 
 
+router.get('/finance/slist', ensureAuthenticated, function(req, res, next) {
+	var CP = 3;
+		mysql.select('SELECT * from cider.cid_survey where sry_cate ="5" order by sry_no desc;', function (err, data){
+			 res.render('admin/finance/finance_slist', { CP : CP, slist : data });	    	
+		});
+});
+
+router.get('/finance/detail2/:sry_no', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 3;
+	var sry_no = req.params.sry_no;
+	
+
+		mysql.select('select * from cider.cid_survey where sry_no = '+ sry_no +'', function (err, data){
+			if(err){
+				res.redirect('back');
+			}
+			res.render('admin/finance/finance_detail2', {CP : CP, slist : data});
+		});
+    });
 
 
 
@@ -1782,6 +1802,9 @@ router.get('/study/inquiryd/:idx', ensureAuthenticated, function(req, res, next)
 	res.render('admin/study/std_inquiry_detail', { CP : CP, inq:data});
 	});
 });
+
+
+
 
 
 
