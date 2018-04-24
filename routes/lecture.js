@@ -280,7 +280,7 @@ router.get('/lecture/detail/6', function(req, res, next) {
 
 /*경이로움 세미나 */
 router.get('/seminar', function(req, res, next) {
-	mysql.select('select * from cider.cid_semilist', function (err, data){
+	mysql.select('select * from cider.cid_semilist where flag="Y" order by idx desc;', function (err, data){
 	res.render('front/cid_seminar/seminar', {semi:data});
   });
 });
