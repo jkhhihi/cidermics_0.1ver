@@ -41,6 +41,8 @@ var board = require('./routes/board');
 var std = require('./routes/study');
 var pay = require('./routes/pay');
 
+var bobby = require('./routes/bobby');
+
 // all environments
 app.set('port', process.env.PORT || 80);
 app.set('views', __dirname + '/views');
@@ -83,6 +85,9 @@ app.use('/cid_main_v2',express.static(__dirname+'/views/cid_main_v2'));
 app.use('/cid_board',express.static(__dirname+'/views/cid_board'));
 app.use('/cid_study',express.static(__dirname+'/views/cid_study'));
 app.use('/pay',express.static(__dirname+'/views/pay'));
+
+app.use('/bobby',express.static(__dirname+'/views/bobby'));
+
 app.use(flash());
 
 app.use(bodyParser.json({limit: '1000mb'}));
@@ -116,6 +121,8 @@ app.use('/',cid2_idx);
 app.use('/',board);
 app.use('/',std);
 app.use('/',pay);
+
+app.use('/',bobby);
 
 //passportFB.use('fbLogin', new LocalStrategy({
 passportFB.use( new FacebookStrategy({
