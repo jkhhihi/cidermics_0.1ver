@@ -130,4 +130,12 @@ router.get('/bobby/conde', function(req, res, next) {
 	res.render('front/bobby/b_conde', { });
 });
 
+router.get('/bobby/top', function(req, res, next) {
+	res.render('front/bobby/b_top', { });
+});
+
+router.get('/bobby/bottom', function(req, res, next) {
+	res.render('front/bobby/b_bottom', { });
+});
+
 module.exports = router;
