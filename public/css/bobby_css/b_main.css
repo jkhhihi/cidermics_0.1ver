@@ -1,0 +1,61 @@
+boddy{}
+.font1{font-family:'Nanum Brush Script', serif;}
+
+/*b_top 스타일*/
+header{width:100%; padding:20px 0; background-color: rgba(255,255,255,0.9); position: fixed; z-index:99; box-shadow: 0px -5px 20px #222;}
+header a{color:#000;}
+header a:hover{color:#0794be}
+header h5 span{margin-left:40px;}
+
+/*b_bottom 스타일*/
+#bottom{width:100%; padding:50px 0; color:#fff; background-color:#333;}
+#bottom a{color:#fff;}
+#bottom .sns span{display:inline-block; width:120px; padding:5px 0; margin:40px 10px 20px 10px; border:1px solid #fff; border-radius:50px;}
+
+/*b_main 스타일*/
+.main-bg{width:100%; height:500px; padding:200px 0; background-image: url("/page_imgs/bobby_img/b-main-bg.jpg"); background-repeat:no-repeat; background-size:auto 100%;}
+.appdown-bg{width:100%; padding:50px 0; background-color:#0794be; color:#fff;}
+.appdown-bg img{height:50px;}
+.appdown-bg h5{line-height:1.5em}
+.appdown-bg h3{margin-bottom:-10px;}
+.service-info .bg-ec{background-color:#ececec}
+.service-info .info1{height:500px; padding-top:100px;}
+.service-info .info1 h3{color:#0794be; margin-top:100px}
+.service-info .info2{height:600px; padding-top:100px;}
+.service-info .info2 h3{color:#0794be; margin-top:100px}
+.service-info .info3{padding:50px 0;}
+.service-info .info3 h3{color:#0794be;}
+.service-info .info3 .balloon{
+margin-top:100px;	
+position: relative;
+width: 60%;
+height: auto;
+padding: 20px;
+background: #ececec;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 20px;
+box-shadow:5px 5px 5px #ccc}
+.service-info .info3 .balloon:after{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 10px 20px 10px 0;
+border-color: transparent #ececec;
+display: block;
+width: 0;
+z-index: 1;
+left: -20px;
+top: 50px;}
+    
+
+
+
+
+
+
+@media all and (max-width:1024px) {
+
+	
+	
+}
