@@ -66,7 +66,6 @@ function releaseTime(){
 
 router.get('/contents', function(req, res, next) {
 	var no = req.params.no;
-	console.log(no);
 	var row;
 	
 	 var now = new Date();
@@ -78,7 +77,6 @@ router.get('/contents', function(req, res, next) {
 	    _mon="0"+_mon;
 	 }
 
-	
 	var _totmon = _year+""+_mon;
 	var _tot = releaseTime();
 
@@ -87,11 +85,7 @@ router.get('/contents', function(req, res, next) {
 	var sets = {con_no : no};
 	var next = {};
 	var pre = {};
-	mysql.select("SELECT * FROM cider.cid_contents where con_pop = 1 order by con_release desc limit 0,16;", function (err, data){
-	if (err) throw err;
-		 row = data;
-
-		 mysql.select('select c.con_no, c.con_category, c.con_writer, c.con_title, c.con_content, c.con_photo, c.con_viewCount,c.con_regDate, c.con_upDate, c.con_likeCnt, c.comment_no, c.user_no, c.user_comment, c.con_release,  u.user_email, u.user_name, u.user_profile_img, u.user_sns_url, u.user_sns_icon, cate.cate_no, cate.cate_name from cider.cid_contents c left join cider.cid_user u on u.user_no = c.user_no left join cider.cid_con_cate cate on c.con_category = cate.cate_no and u.user_level = "2" where 1=1 and con_pop ="1"; ', function (err, data){
+		 mysql.select('select c.con_no, c.con_category, c.con_writer, c.con_title, c.con_content, c.con_photo, c.con_viewCount,c.con_regDate, c.con_upDate, c.con_likeCnt, c.comment_no, c.user_no, c.user_comment, c.con_release,  u.user_email, u.user_name, u.user_profile_img, u.user_sns_url, u.user_sns_icon, cate.cate_no, cate.cate_name from cider.cid_contents c left join cider.cid_user u on u.user_no = c.user_no left join cider.cid_con_cate cate on c.con_category = cate.cate_no and u.user_level = "2" where 1=1; ', function (err, data){
 			if(err){
 				res.redirect('back');
 			}
@@ -105,10 +99,8 @@ router.get('/contents', function(req, res, next) {
 
 
 		 res.render('front/cid_contents/cid_contents_popular', { contents : row, cond : contents});
-		});
 	});
- });
-
+});
 
 
 router.get('/contents/all', function(req, res, next) {
