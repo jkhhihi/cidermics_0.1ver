@@ -77,10 +77,9 @@ h4, h5, h6{line-height:1.5em}
 .t-color1{color:#999}
 .t-color2{color:#fff}
 
-#section1{padding-left:14%}
 #section1 a{color:#fff}
 #section1 span{border-radius:40px; display:inline-block; padding:2px 20px; margin-top:30px}
-#menu-le, #menu-st, #menu-bo{border:4px solid #fff; opacity:0.6; width:30%; padding:40px 0 40px 30px; margin:40px 10px 20px 10px}
+#menu-le, #menu-st, #menu-bo{border:4px solid #fff; opacity:0.6; width:30%; padding:40px 0 40px 80px; margin:40px 10px 20px 10px}
 #menu-le:hover{border:4px solid #81afdc; opacity:1.0}
 #menu-st:hover{border:4px solid #73c7a6; opacity:1.0}
 #menu-bo:hover{border:4px solid #f58f8e; opacity:1.0}
