@@ -54,7 +54,7 @@ p {
 .button-collapse-home{float: right; position: relative; z-index: 1; color: #ffffff !important; }
 
 .parallax-container {
-  min-height: 550px;
+  min-height: 500px;
   line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
@@ -67,10 +67,12 @@ p {
 
 
 
-/*스터디버젼2메인*/
+/*----------스터디버젼2메인----------*/
+.web-n{display:none}
+
 body{color:#2b323f}
 h4, h5, h6{line-height:1.5em}
-.section.no-pad-bot h1{font-family: seoulhangangregular !important;}
+.section.no-pad-bot h1{padding-bottom:100px; font-family: seoulhangangregular !important;}
 .section.no-pad-bot h6{line-height:1.5em}
 .bg-color1{background-color:#2b323f; padding:100px 0}
 .bg-color2{background-color:#f4f4f4; padding:100px 0 0 0}
@@ -79,7 +81,7 @@ h4, h5, h6{line-height:1.5em}
 
 #section1 a{color:#fff}
 #section1 span{border-radius:40px; display:inline-block; padding:2px 20px; margin-top:30px}
-#menu-le, #menu-st, #menu-bo{border:4px solid #fff; opacity:0.6; width:30%; padding:40px 0 40px 80px; margin:40px 10px 20px 10px}
+#menu-le, #menu-st, #menu-bo{border:4px solid #fff; opacity:0.6; width:31%; padding:40px 0 40px 80px; margin:40px 10px 20px 10px}
 #menu-le:hover{border:4px solid #81afdc; opacity:1.0}
 #menu-st:hover{border:4px solid #73c7a6; opacity:1.0}
 #menu-bo:hover{border:4px solid #f58f8e; opacity:1.0}
@@ -87,24 +89,93 @@ h4, h5, h6{line-height:1.5em}
 .btn-more2{border:2px solid #73c7a6;}
 .btn-more3{border:2px solid #f58f8e;}
 
+#section2 p{margin:40px 0}
+#section2 .btn-cidermain{background-color:#f4f4f4; border:2px solid #0aa0f6; padding:10px 20px; color:#0aa0f6; display:inline-block;}
+#section2 .btn-cidermain:hover{background-color:#0aa0f6; border:2px solid #0aa0f6; color:#fff;}
+#section2 .img-section2{margin:100px 0 -9px 0}
+
 #section3 a{color:#fff}
 .btn-more4{border:2px solid #fff; padding:10px 50px; display:inline-block; margin-top:30px}
 .btn-more4:hover{border:2px solid #0aa0f6;}
 .point1{background-color:#0aa0f6; color:#fff; padding:5px 8px}
 #section3 .m12 .row{margin-top:80px}
+#section3 .s12 h5.text{margin-top:80px}
 
-#section4{padding:100px 0}
+#section4, #section6{padding:100px 0}
 #section4 img{margin-top:50px;}
 
-@media only screen and (max-width : 768px) {
-	
+#section5{padding:50px 0}
+#section5 p{font-size:20px}
+#section5 h5{font-size:20px; margin-top:80px}
+#section5 img{margin:40px 0}
+
+#section6 .text{margin-top:100px}
+
+#section8 h5{margin-top:100px; line-height:2.0em}
+#section8 span{color:#fff; border:2px solid #0aa0f6; padding:10px 30px; display:inline-block; margin-top:60px}
+#section8 span:hover{background-color:#0aa0f6}
+#section8-1{padding:100px 0}
+#section8-1 .img-space4{display:none;}
+#section8-1 h5{margin-top:50px}
+
+@media only screen and (max-width : 1024px) {
+h4{font-size:24px}
+h5{font-size:18px}
+
+#section1 span{margin-top:0}
+#m-menu-st{border-top:2px solid #545964; border-bottom:2px solid #545964; padding:30px 0}
+
+#section2 .img-section2{margin:400px 0 -9px 0; opacity:0.2}
 	
 }
 
+@media only screen and (max-width : 768px) {
+.mob-n{display:none}
+.web-n{display:block}
 
+#parallax0 .parallax-container{min-height:300px;}
+#parallax0 .section.no-pad-bot{margin-top:50px;}
+#parallax0 .section.no-pad-bot h1{padding-bottom:20px; font-size:34px;}
+.bg-color1{padding:50px 0}
+.bg-color2{padding:50px 0 0 0}
 
+#section1 .s12{margin:20px 0}
 
+#section2 p{margin:20px 0}
+#section2 .img-section2{margin:350px 0 -9px 0;}
 
+#section3 .m4 img{width:120px}
+#section3 .m12 .row{margin-top:50px}
+.btn-more4{padding:5px 30px; margin-top:10px}
+#section3 .s12 h5.text{margin-top:40px;}
+
+#section4, #section6{padding:50px 0}
+#section4 img{margin-top:30px; margin-bottom:30px}
+
+#parallax1 .parallax-container{min-height:900px;}
+#parallax1 .section.no-pad-bot{margin-top:0;}
+#section5{padding:20px 0}
+#section5 p{font-size:16px}
+#section5 h5{margin-top:40px}
+#section5 img{margin:20px 0}
+#section5-1 h4{font-size:20px}
+
+#section6 .text{margin-top:50px; font-size:20px}
+
+#section8 h5{margin-top:40px}
+#section8 span{margin-top:30px}
+#section8-1{padding:40px 0}
+#section8-1 h5{margin-top:30px; font-size:16px}
+}
+
+@media only screen and (max-width : 767px) {
+#section2 .img-section2{margin:-390px 0 -9px 0;}
+
+#parallax1 .parallax-container{min-height:850px;}
+
+#section8-1 .img-space4{display:block;}	
+}
+/*------스터디버젼2메인--------끝------*/
 
 
 
@@ -126,9 +197,7 @@ h4, h5, h6{line-height:1.5em}
 	.img-event{margin:30px 0 50px 0;}
 	.header1{margin-top:0;}
 
-	.parallax-container {
-	  min-height: 450px;
-	}	
+
 	.parallax-container .section {
 	  position: absolute;
 	}
