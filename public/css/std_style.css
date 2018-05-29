@@ -141,7 +141,7 @@ h4, h5, h6{line-height:1.5em}
 #section6 .text{margin-top:100px}
 
 #section8 h5{margin-top:100px; line-height:2.0em}
-#section8 span{color:#fff; border:2px solid #0aa0f6; padding:10px 30px; display:inline-block; margin-top:60px}
+#section8 span{color:#fff; border:2px solid #0aa0f6; padding:10px 30px; display:inline-block; margin-top:40px}
 #section8 span:hover{background-color:#0aa0f6}
 #section8-1{padding:100px 0}
 #section8-1 .img-space4{display:none;}
@@ -173,7 +173,7 @@ h5{font-size:18px}
 .mob-n{display:none}
 .web-n{display:block}
 
-#parallax0 .parallax-container{min-height:300px;}
+#parallax0 .parallax-container{min-height:450px;}
 #parallax0 .section.no-pad-bot{margin-top:50px;}
 #parallax0 .section.no-pad-bot h1{padding-bottom:20px; font-size:34px;}
 .bg-color1{padding:50px 0}
