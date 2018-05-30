@@ -107,8 +107,9 @@ h4, h5, h6{line-height:1.5em}
 
 #section5{padding:50px 0}
 #section5 p{font-size:20px}
-#section5 h5{font-size:20px; margin-top:80px}
-#section5 img{margin:40px 0}
+#section5 h5{font-size:20px; margin-bottom:60px}
+#section5 img{margin:60px 0 30px 0}
+#section5-1 h5.t-color2{margin-top:100px}
 #leader-info .btn-more5{color:#fff; border:1px solid #0aa0f6; border-radius:6px; padding:10px 20px}
 #leader-info .btn-more5:hover{background-color:#0aa0f6;}
 #leader-info h5{font-size:20px; color:#0aa0f6; margin:20px 0}
@@ -143,18 +144,24 @@ h4, h5, h6{line-height:1.5em}
 #section8 h5{margin-top:100px; line-height:2.0em}
 #section8 span{color:#fff; border:2px solid #0aa0f6; padding:10px 30px; display:inline-block; margin-top:40px}
 #section8 span:hover{background-color:#0aa0f6}
-#section8-1{padding:100px 0}
+#section8-1{padding:100px 0 50px 0}
 #section8-1 .img-space4{display:none;}
 #section8-1 h5{margin-top:50px}
+
+@media only screen and (max-width : 1220px) {
+#menu-le, #menu-st, #menu-bo{padding:20px 0 20px 20px; margin:20px 5px 10px 5px}
+
+#section2 .img-section2{margin:300px 0 -9px 0}
+}
 
 @media only screen and (max-width : 1024px) {
 h4{font-size:24px}
 h5{font-size:18px}
 
 #section1 span{margin-top:0}
-#m-menu-st{border-top:2px solid #545964; border-bottom:2px solid #545964; padding:30px 0}
 
 #section2 .img-section2{margin:400px 0 -9px 0; opacity:0.2}
+
 
 /*리더소개 슬라이드*/
 .slider {
@@ -174,12 +181,16 @@ h5{font-size:18px}
 .web-n{display:block}
 
 #parallax0 .parallax-container{min-height:450px;}
-#parallax0 .section.no-pad-bot{margin-top:50px;}
+/*#parallax0 .section.no-pad-bot{margin-top:50px;}*/
 #parallax0 .section.no-pad-bot h1{padding-bottom:20px; font-size:34px;}
 .bg-color1{padding:50px 0}
 .bg-color2{padding:50px 0 0 0}
 
-#section1 .s12{margin:20px 0}
+#m-menu-le, #m-menu-st, #m-menu-bo{padding:10px 10px 25px 10px}
+#section1 #m-menu-le{background-color:#384556; border-top:1px solid #fff; margin-top:40px}
+#section1 #m-menu-st{background-color:#36484e; border-top:1px solid #fff; border-bottom:1px solid #fff;}
+#section1 #m-menu-bo{background-color:#49404b; border-bottom:1px solid #fff; margin-bottom:-70px}
+#section1 span{padding:0 20px}
 
 #section2 p{margin:20px 0}
 #section2 .img-section2{margin:350px 0 -9px 0;}
@@ -192,13 +203,16 @@ h5{font-size:18px}
 #section4, #section6{padding:50px 0}
 #section4 img{margin-top:30px; margin-bottom:30px}
 
-#parallax1 .parallax-container{min-height:900px;}
+#parallax1 .parallax-container{min-height:1150px;}
 #parallax1 .section.no-pad-bot{margin-top:0;}
-#section5{padding:20px 0}
+
 #section5 p{font-size:16px}
 #section5 h5{margin-top:40px}
 #section5 img{margin:20px 0}
+#section5 img.web-n{width:40%}
 #section5-1 h4{font-size:20px}
+#section5-1 h5.t-color2{margin-top:50px}
+#leader-info{height:450px}
 #leader-info h6{margin-bottom:30px}
 #leader-info .btn-more5{font-size:14px;}
 
@@ -219,14 +233,14 @@ h5{font-size:18px}
 
 #section8 h5{margin-top:40px}
 #section8 span{margin-top:30px}
-#section8-1{padding:40px 0}
+#section8-1{padding:40px 0 20px 0}
 #section8-1 h5{margin-top:30px; font-size:16px}
 }
 
 @media only screen and (max-width : 767px) {
 #section2 .img-section2{margin:-390px 0 -9px 0;}
 
-#parallax1 .parallax-container{min-height:850px;}
+#section5 img.web-n{width:70%}
 
 #section8-1 .img-space4{display:block;}	
 
@@ -241,6 +255,7 @@ h5{font-size:18px}
 .slide {
   width: 150px;
 }
+
 
 }
 /*------스터디버젼2메인--------끝------*/
