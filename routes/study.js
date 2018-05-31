@@ -140,4 +140,19 @@ router.get('/study/disc', function(req, res, next) {
   });
 });
 
+router.get('/study/review', function(req, res, next) {
+	var review;
+	mysql.select('SELECT cons_no,cons_name,cons_img,cons_title from cider.cid_consulting order by cons_no desc;', function (err, data){
+		review = data;
+	res.render('front/cid_study/std_review', {review : data});
+  });
+});
+
+router.get('/stdreview/:cons_no', function(req, res, next) {
+	var idx = req.params.cons_no;
+	var stdreview;
+		mysql.select('SELECT * from cider.cid_consulting order by cons_no desc;', function (err, data){
+	res.render('front/cid_study/std_review_detail', { stdreview : data});
+  	});
+  });
 module.exports = router;

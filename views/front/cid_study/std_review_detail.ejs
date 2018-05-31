@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>사이다경제 스터디</title>
+  <!-- 메인 문구 -->
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css'>
+
+  <!-- 네이버 -->
+    <meta name="naver-site-verification" content="083657cb98aa9a4a9c62dedeffddfb2490545da0"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- favicon -->
+    <link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+    <link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+
+    <!--CSS -->
+    <link rel='stylesheet' href='/css/materialize.css' />
+    <link href="/css/std_style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <!-- icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--JS-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!--script src="/js/materialize.js"></script-->
+  
+  <script src="/js/gotoup.js"></script>
+  </head>
+
+  <body>
+
+  <div id="but_top"><a class="btn btn-floating  blue-grey darken-4"><i class="material-icons">arrow_upward</i></a></div>
+
+  <% include std_top %>
+
+<!--맨위 -->
+<div class="parallax-container valign-wrapper" style="min-height: 500px; color: #000;">
+  <div class="section no-pad-bot" style="padding-top:0px;">
+    <div class="container">
+
+      <div class="row center">
+        <h4 class="header1 header col s12 light" style="font-weight: 500; ">"<%=stdreview[0].cons_title%>"</h4>
+      </div>
+      <div class="divider"></div>
+      <div class="row">
+        <%- stdreview[0].cons_content%>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="parallax-container valign-wrapper">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <div class="row center">
+        <h5 class="header col s12 light"><b>내 삶이 경이로워지는 순간</b></h5>
+        <h4 class="header col s12 light"><b>"경이로움"</b></h4>
+      </div>
+    </div>
+  </div>
+  <div class="parallax"><img src="/page_imgs/study_img/background2.jpg" alt="Unsplashed background img 2"></div>
+</div>
+
+
+<% include std_bottom %>
+
+
+
+</body>
+</html>

@@ -476,12 +476,13 @@ router.post('/lecture/insert', ensureAuthenticated, function(req, res, next) {
 	var people = req.body.people;
 	var state=''; // 0 신청중 1신청마감\
 	var flag='';
+	var orderurl = req.body.orderurl;
 
 	var date = getWorldTime(+9);
 	var rdate = req.body.rdate;
 
 	var sets = {cate:cate,decate:decate,subject : subject, thum : thum, img1 : img1, img2 : img2, leader:leader, stime : stime, sdate : sdate, sstdate : sstdate,
-		sendate : sendate, location : location, mapX : mapX, mapY : mapY, price : price, people : people, regdate:date, state:'0', flag:'N'};
+		sendate : sendate, location : location, mapX : mapX, mapY : mapY, price : price, people : people, regdate:date, state:'0', flag:'N',orderurl:orderurl};
 	
 	mysql.insert('insert into cider.cid_semilist set ?', sets,  function (err, data){
     	res.redirect('/adm/lecture');
@@ -562,17 +563,18 @@ router.post('/lecture/update', ensureAuthenticated, function(req, res, next) {
 	var people = req.body.people;
 	var state=req.body.state; // 0 신청중 1신청마감\
 	var flag=req.body.flag;
+	var orderurl = req.body.orderurl;
+	console.log(orderurl);
 
 	var regdate = getWorldTime(+9);
 
 	var sets = {subject : subject, thum : thum, img1 : img1, img2 : img2, leader:leader, stime : stime, sdate : sdate, sstdate : sstdate,
-		sendate : sendate, location : location, mapX : mapX, mapY : mapY, price : price, people : people, regdate:regdate, state:state, flag:flag};
+		sendate : sendate, location : location, mapX : mapX, mapY : mapY, price : price, people : people, regdate:regdate, state:state, flag:flag, orderurl:orderurl};
 
 //mysql.update('update cider.std_more set subject = ?, subject2 = ?, bgimg1 = ?,thum=?,leader = ? ,period = ?,sche1 = ?, sche2 = ? ,sche3= ? where idx = ?', [subject,subject2,bgimg1,thum,leader,period,sche1,sche2,sche3,idx], function (err, data){
     
-	mysql.update('update cider.cid_semilist set subject = ?, thum = ?, img1 = ?, img2 =?, leader =?, stime =?, sdate =?, sstdate =?, sendate =?, location =?, mapX =?, mapY =?, price =?, people =?, regdate =?, state =?, flag =?  where idx = ?', [subject,thum,img1,img2,leader,stime,sdate,sstdate,sendate,location,mapX,mapY,price,people,regdate,state,flag,idx], function (err, data){
+	mysql.update('update cider.cid_semilist set subject = ?, thum = ?, img1 = ?, img2 =?, leader =?, stime =?, sdate =?, sstdate =?, sendate =?, location =?, mapX =?, mapY =?, price =?, people =?, regdate =?, state =?, flag =?, orderurl =?  where idx = ?', [subject,thum,img1,img2,leader,stime,sdate,sstdate,sendate,location,mapX,mapY,price,people,regdate,state,flag,orderurl,idx], function (err, data){
     	res.redirect('/adm/lecturelist');
-    	
     });
 });
 
@@ -1218,7 +1220,7 @@ router.post('/consulting/insert',  function(req, res, next) {
 	var photo = req.body.photo;
 	var date = getWorldTime(+9);
 	
-	var sets = {cons_name : name, cons_img : photo, cons_site_url : url, cons_content : contents, cons_regDate : date, cons_upDate : date };
+	var sets = {cons_title : name, cons_img : photo, cons_name : url, cons_content : contents, cons_regDate : date, cons_upDate : date };
 	//console.log('insert into cider.cid_consulting set ? '+sets);
 	mysql.insert('insert into cider.cid_consulting set ?', sets,  function (err, data){
 		
@@ -1270,9 +1272,9 @@ router.post('/consulting/update', ensureAuthenticated, function(req, res, next) 
 	var url = req.body.url;
 	var date = getWorldTime(+9);
 	
-	var sets = {cons_no : no, cons_name : name, cons_content : contents, cons_img : img, cons_site_url : url, cons_upDate : date };
+	var sets = {cons_no : no, cons_title : name, cons_content : contents, cons_img : img, cons_name : url, cons_upDate : date };
 	//mysql.update('update cider.cid_consulting set cons_name = :cons_name,  cons_img = :cons_img, cons_site_url = :cons_site_url, cons_content = :cons_content,  cons_upDate = :cons_upDate where cons_no = :cons_no', sets, function (err, data){
-	mysql.update('update cider.cid_consulting set cons_name = ?,  cons_img = ?, cons_site_url = ?, cons_content = ?,  cons_upDate = ? where cons_no = ?', [name,img,url,contents,date,no], function (err, data){
+	mysql.update('update cider.cid_consulting set cons_title = ?,  cons_img = ?, cons_name = ?, cons_content = ?,  cons_upDate = ? where cons_no = ?', [name,img,url,contents,date,no], function (err, data){
     	res.redirect('/adm/consulting');
     	
     });

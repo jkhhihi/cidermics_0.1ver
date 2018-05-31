@@ -50,14 +50,14 @@
 
                     <div class="input-field col l12">
                         
-                        <input id="name" type="text" class="validate" value="<%= consulting[0].cons_name %>">
-                        <label for="회사명">회사명</label>
+                        <input id="name" type="text" class="validate" value="<%= consulting[0].cons_title %>">
+                        <label for="제목">제목</label>
                         
                     </div> 
                     
                     <div class="input-field col l12">
-                        <input id="url" type="text" class="validate" value="<%= consulting[0].cons_site_url %>">
-                        <label for="사이트URL">사이트URL</label>
+                        <input id="url" type="text" class="validate" value="<%= consulting[0].cons_name %>">
+                        <label for="성함">후기 인터뷰해주신 분 성함</label>
                     </div>
                         
                         <!-- Modal Trigger -->
@@ -109,9 +109,6 @@
                             
                 </div>
                 
-                <div class="input-field col l12">
-                <p>Date: <input type="text" id="datepicker" name="datepicker"></p>
-                </div>
                 
                 <input type="hidden" name="contents">
                 <input type="hidden" name="name">

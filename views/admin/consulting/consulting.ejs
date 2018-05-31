@@ -25,7 +25,8 @@
         <thead>
           <tr>
               <th data-field="no">번호</th>
-              <th data-field="title">회사</th>
+              <th data-field="title">후기 성함</th>
+              <th data-field="title">후기 제목</th>
               <th data-field="date">날짜</th>
               <th data-field="viewCount">조회수</th>
               <th data-field=""></th>
@@ -48,10 +49,11 @@
             <tr>
                 <td><%= consulting[i].cons_no %></td>
                 <td><a href="/adm/consulting/detail/<%= consulting[i].cons_no %>"><%= consulting[i].cons_name %></a></td>
+                <td><a href="/adm/consulting/detail/<%= consulting[i].cons_no %>"><%= consulting[i].cons_title %></a></td>
                 <td><%= consulting[i].cons_regDate %></td>
                 <td><%= consulting[i].cons_viewCount %></td>
                 <td><button onclick="deletechk(<%= consulting[i].cons_no %>)">삭제</button></td>
-                <td><a href="/adm/consulting/delete/<%= consulting[i].cons_no %>" onclick="deletechk()">삭제</a></td>
+                <!--td><a href="/adm/consulting/delete/<%= consulting[i].cons_no %>" onclick="deletechk()">삭제</a></td-->
             </tr>
         <% } %> 
         </tbody>

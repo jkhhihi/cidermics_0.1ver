@@ -153,20 +153,17 @@ function openWinKA(){
 		</div>
 		</div>
 
-
-
-
-
 		<% var state = semi[0].state; %>
 		<% if(state == 0){%>
-		<form name="apply" method="get" action="/npay">
+		<!--form name="apply" method="get" action="/npay">
 			<input type="hidden" name="subject" value="<%= semi[0].subject %>">
 			<input type="hidden" name="cate" value="<%= semi[0].cate %>">
 			<input type="hidden" name="detailCate" value="<%= semi[0].decate %>">
 			<input type="hidden" name="idx" value="<%=semi[0].idx%>">
 			<input type="hidden" name="price" value="<%= semi[0].price %>">
 			<div class="btn-apply"><button type="submit">신청하기</button></div>
-		</form>
+		</form-->
+		<div class="btn-apply"><a href="<%= semi[0].orderurl %>"><button>신청하기</button></a></div>
 		<% }else{ %>
 		<div class="btn-apply"><button>신청마감</button></div>
 		<% } %>
