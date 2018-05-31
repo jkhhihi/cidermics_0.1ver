@@ -148,6 +148,9 @@ h4, h5, h6{line-height:1.5em}
 #section8-1 .img-space4{display:none;}
 #section8-1 h5{margin-top:50px}
 
+#section10 h5{font-size:20px}
+
+
 @media only screen and (max-width : 1220px) {
 #menu-le, #menu-st, #menu-bo{padding:20px 0 20px 20px; margin:20px 5px 10px 5px}
 

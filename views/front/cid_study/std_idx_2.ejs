@@ -53,6 +53,76 @@ function showDivs(n) {
 }
 </script>
 
+<!-- 구글맵 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApL28eYOAjGJwdSdWc90TGTQtQ0PZuov4" type="text/javascript"></script>
+<script>
+      function initialize() {
+
+         var Y_point         = 37.5042191;      // Y 좌표
+         var X_point         = 127.0384090;      // X 좌표
+
+         var Y_point2         = 37.5109643;      // Y 좌표
+         var X_point2         = 127.0648511;      // X 좌표
+
+         var zoomLevel      = 17;                  // 지도의 확대 레벨 : 숫자가 클수록 확대정도가 큼
+
+         var markerTitle      = "혜성빌딩";            // 현재 위치 마커에 마우스를 오버을때 나타나는 정보
+         var markerTitle2      = "하나금융투자 Club1 금융센터"; 
+         var markerMaxWidth   = 300;                  // 마커를 클릭했을때 나타나는 말풍선의 최대 크기
+
+         // 말풍선 내용
+         //var contentString   = '<div>' +
+         //'<h5>경이로움 스터디</h5>'+
+         //'<span>사이다경제가 운영하는 스터디를 통해<br />' +
+         //   '경제로 놀고 말하고 즐겨보세요!</span><br /><br />' +
+         //'<a href="http://www.cidermics.com/study" target="_blank">http://www.cidermics.com/study</a>'+ //링크도 넣을 수 있음
+         //'</div>';
+
+         var myLatlng = new google.maps.LatLng(Y_point, X_point);
+         var mapOptions = {
+                        zoom: zoomLevel,
+                        center: myLatlng,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+         }
+         var map = new google.maps.Map(document.getElementById('map_view'), mapOptions);
+
+         var marker = new google.maps.Marker({
+                                       position: myLatlng,
+                                       map: map,
+                                       title: markerTitle
+         });
+
+
+         var myLatlng2 = new google.maps.LatLng(Y_point2, X_point2);
+         var mapOptions2 = {
+                        zoom: zoomLevel,
+                        center: myLatlng2,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+         }
+         var map2 = new google.maps.Map(document.getElementById('map_view1'), mapOptions2);
+
+         var marker2 = new google.maps.Marker({
+                                       position: myLatlng2,
+                                       map: map2,
+                                       title: markerTitle2
+         });
+
+
+
+         var infowindow = new google.maps.InfoWindow(
+                                          {
+                                             content: contentString,
+                                             maxWidth: markerMaxWidth
+                                          }
+         );
+
+         google.maps.event.addListener(marker, 'click', function() {
+            infowindow.open(map, marker);
+         });
+         
+      }
+</script>
 
 <style type="text/css">
 #info-wrap {
@@ -451,13 +521,48 @@ function showDivs(n) {
 		</div>	
 		<div id="section8-1" align="center">
 			<div class="row">
-				<div class="col m4 col s6"><img class="responsive-img" src="/page_imgs/study_img/img-section8-sp3.jpg"></div>
-				<div class="col m4 col s6"><img class="responsive-img" src="/page_imgs/study_img/img-section8-sp2.jpg"></div>
-				<div class="col m4 col s6"><img class="responsive-img" src="/page_imgs/study_img/img-section8-sp3.jpg"></div>
+				<div class="col m4 s6"><img class="responsive-img" src="/page_imgs/study_img/img-section8-sp3.jpg"></div>
+				<div class="col m4 s6"><img class="responsive-img" src="/page_imgs/study_img/img-section8-sp2.jpg"></div>
+				<div class="col m4 s6"><img class="responsive-img" src="/page_imgs/study_img/img-section8-sp3.jpg"></div>
 				<div class="img-space4 col s6"><img class="responsive-img" src="/page_imgs/study_img/img-section8-sp2.jpg"></div>	
 			</div>
 			<h5 style="color:#fff">이 <b>모든 혜택</b>을 여러분께 제공합니다!</h5>
 		</div>			
+	</div>
+</div>
+
+
+<div class="bg-color2">
+	<div class="container">
+		<div id="section10" align="center">
+			<div><img class="responsive-img" src="/page_imgs/study_img/img-map-icon.jpg"></div>
+			<h4>오시는길</h4>
+			<div class="row">
+				<div class="col m6 s12">
+					<img class="responsive-img" src="/page_imgs/study_img/img-section10-title1.jpg">
+					<h5>서울특별시 강남구 테헤란로 33길 39 혜성빌딩</h5>
+					<div class="googleMap" align="center">
+						<div id="map_view" style="height:350px;"></div>
+						<div align="right" style="margin:10px 10px 0 0">
+						<span>서울특별시 강남구 테헤란로 33길 39 혜성빌딩<br>[지번]서울특별시 강남구 역삼동 671-32</span>
+						</div>
+					</div>
+					<img class="responsive-img" src="/page_imgs/study_img/">					
+				</div>
+			</div>
+				<div class="col m6 s12">
+					<img class="responsive-img" src="/page_imgs/study_img/img-section10-title2.jpg">
+					<h5>서울특별시 강남구 영동대로96길 26</h5>
+					<div class="googleMap" align="center">
+						<div id="map_view1" style="height:350px;"></div>
+						<div align="right" style="margin:10px 10px 0 0">
+						<span>서울특별시 강남구 영동대로96길 26<br>[지번]서울특별시 강남구 삼성동 169-8</span>
+						</div>
+					</div>
+					<img class="responsive-img" src="/page_imgs/study_img/">					
+				</div>
+			</div>			
+		</div>
 	</div>
 </div>
 
