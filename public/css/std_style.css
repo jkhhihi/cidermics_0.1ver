@@ -150,6 +150,10 @@ h4, h5, h6{line-height:1.5em}
 #section8-1 .img-space4{display:none;}
 #section8-1 h5{margin-top:50px}
 
+#section9{padding:100px 0}
+#section9 h4{margin-bottom:100px}
+#section9 span{border:2px solid #0aa0f6; border-radius:5px; padding:20px 40px; display:inline-block; margin-top:100px}
+
 #section10 h4{margin-bottom:60px}
 #section10 .margin1{margin:0 0 20px 0}
 #section10 .m6{padding:0 20px}
@@ -243,6 +247,11 @@ h5{font-size:18px}
 #section8 span{margin-top:30px}
 #section8-1{padding:40px 0 20px 0}
 #section8-1 h5{margin-top:30px; font-size:16px}
+
+#section9{padding:50px 0}
+#section9 h4{margin-bottom:40px}
+#section9 span{font-weight:bold; padding:15px 35px; display:inline-block; margin-top:20px}
+#section9 img{margin-bottom:10px;}
 
 #section10 .width1{height:80px}
 #section10 h4{margin-bottom:30px; margin-top:-5px}
