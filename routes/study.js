@@ -52,6 +52,10 @@ router.get('/study/memship', function(req, res, next) {
 	res.render('front/cid_study/std_memship', { });
 });
 
+router.get('/study/process', function(req, res, next) {
+	res.render('front/cid_study/std_process', { });
+});
+
 
 router.get('/study/list', function(req, res, next) {
 	var stdlist;
