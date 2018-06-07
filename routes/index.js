@@ -1031,6 +1031,10 @@ router.get('/finbook_done', function(req,res,next){
 });
 
 
+//하나 페이지
+router.get('/hana', function(req,res,next){
+	res.render('front/etc/hana/hana',{});
+});
 
 
 // 포도 재무설계 페이지

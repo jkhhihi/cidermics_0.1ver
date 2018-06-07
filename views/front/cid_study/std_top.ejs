@@ -27,6 +27,35 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i{
 }
 </style>
 
+<script>
+$(function(){
+    $("ul.sub").hide();
+	 $("ul.menu li").hover(function(){
+	    $("ul:not(:animated)",this).slideDown("fast");
+		},
+		function(){
+		   $("ul",this).slideUp("fast");
+
+		});
+});	
+ 
+
+$(document).ready(function(){
+$('.community_menu').click(function(e){
+      e.preventDefault();
+      if($(this).is('.on')){
+         $(this).removeClass('on');
+         $('.community_sub_menu').slideDown();
+         $('.community_menu').attr("src","/page_imgs/fixed_img/mob-menu-icons/mob-menu-down.png");
+      }else{
+         $(this).addClass('on');
+         $('.community_sub_menu').slideUp();
+         $('.community_menu').attr("src","/page_imgs/fixed_img/mob-menu-icons/mob-menu-up.png");  
+      }
+});
+});
+</script>
+
 <!--구글 애널리틱스 -->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -66,21 +95,30 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i{
 
   amplitude.getInstance().init("bcda8248e089fcb637408ede604e0ad7");
 </script>
+	
+	
 
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
       <a href="/" class="button-collapse-home" style="line-height:0px;"><i class="material-icons center" style="font-size: 1.8rem; height:37px; line-height:42px;">home</i><span style="font-size:11px;">사이다경제 홈</span></a>
-      <a id="logo-container" href="/study" class="brand-logo"><img class="img-responsive" src="/page_imgs/fixed_img/bg-no-logo.svg" width="60" style="padding-top: 10px;"></a>
-      <a id="logo-container" href="/study" class="brand-logo2"><img class="img-responsive" src="/page_imgs/fixed_img/bg-no-logo.svg" width="54" style="padding-top: 5px;"></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="/study/">홈</a></li>
-        <li><a href="/study/intro">경이로움이란?</a></li>
-        <li><a href="/study/memship">멤버십 신청방법</a></li>
+      <a id="logo-container" href="/studym" class="brand-logo"><img class="img-responsive" src="/page_imgs/hana_img/logo-hana.svg" width="80" style="padding-top:8px;"></a>
+      <a id="logo-container" href="/studym" class="brand-logo2"><img class="img-responsive" src="/page_imgs/hana_img/logo-hana.svg" width="65" style="padding-top:6px;"></a>
+      <ul class="menu right hide-on-med-and-down">
+        <li><a href="/studym/">경이로움이란?</a></li>
+        <!-- li><a href="/study/intro">경이로움이란?</a></li>
+        <li><a href="/study/memship">멤버십 신청방법</a></li -->    	
+        <li><a href="/study/process">경이로움 구성</a></li>
+        <li><a href="/study/">강의</a></li>
         <li><a href="/study/list">스터디</a></li>
-        <li><a href="/study/event">이벤트</a></li>
-        <li><a href="/study/cal">일정표</a></li>
-        <li><a href="/study/faq">QA문의</a></li>
-      </ul>
+        <li><a href="/study/">독서클럽</a></li>
+        <li style="width:120px"><a class="menu">커뮤니티</a>
+        	<ul class="sub">
+        	   <li><p><a href="/study/event">이벤트</a></p></li>
+			   <li><p><a href="/study/cal">일정표</a></p></li>
+			   <li><p><a href="/study/faq">QA문의</a></p></li>
+        	</ul>
+        </li>
+	  </ul>
       
 
       <ul id="nav-mobile" class="side-nav">
@@ -94,17 +132,29 @@ nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i{
         <a href="#" style="padding:0px 0px; height:75px; line-height:95px;"><span class="white-text site">프리미엄 스터디 <b>경이로움</b></span></a>
         </div>
         </div>
-        <li><a href="/study/intro"><b>경이로움이란?</b></a></li>
+        <!-- li><a href="/study/intro"><b>경이로움이란?</b></a></li>
         <div class="divider"></div>
-        <li><a href="/study/memship"><b>멤버십 신청방법</b></a></li>
+        <li><a href="/study/memship"><b>멤버십 신청방법</b></a></li -->
+        <li><a href="/studym/"><b>경이로움이란?</b></a></li>
+        <div class="divider"></div>
+        <li><a href="/study/process"><b>경이로움 구성</b></a></li>
+        <div class="divider"></div>
+        <li><a href="/study/list"><b>강의</b></a></li>
         <div class="divider"></div>
         <li><a href="/study/list"><b>스터디</b></a></li>
         <div class="divider"></div>
-        <li><a href="/study/event"><b>이벤트</b></a></li>
+        <li><a href="/study/list"><b>독서클럽</b></a></li>
         <div class="divider"></div>
-        <li><a href="/study/cal"><b>일정표</b></a></li>
-        <div class="divider"></div>
-        <li><a href="/study/faq"><b>QA문의</b></a></li>
+        <li><a><b>커뮤니티</b>
+        <img class="community_menu" style="cursor:pointer; margin-left:10px; width:12px; display:inline-block" src="/page_imgs/fixed_img/mob-menu-icons/mob-menu-down.png">
+        </a></li>
+			<div class="community_sub_menu">
+				<ul>
+	        	   <li><p><a href="/study/event">이벤트</a></p></li>
+				   <li><p><a href="/study/cal">일정표</a></p></li>
+				   <li><p><a href="/study/faq">QA문의</a></p></li>
+				</ul>
+		   </div>
         <div class="divider"></div>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse" style="margin:0px;"><i class="material-icons">menu</i></a>

@@ -25,31 +25,19 @@
     <link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
     <link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
 	
-	<!-- 구글맵 -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApL28eYOAjGJwdSdWc90TGTQtQ0PZuov4" type="text/javascript"></script>
-   	<script>
+<!-- 구글맵 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApL28eYOAjGJwdSdWc90TGTQtQ0PZuov4" type="text/javascript"></script>
+<script>
       function initialize() {
+
+         var Y_point2        = 37.5042191;      // Y 좌표
+         var X_point2        = 127.0384090;      // X 좌표
 
          var Y_point         = 37.5109643;      // Y 좌표
          var X_point         = 127.0648511;      // X 좌표
 
-         var Y_point2         = 37.502979;      // Y 좌표
-         var X_point2         = 127.039322;      // X 좌표
-
          var zoomLevel      = 17;                  // 지도의 확대 레벨 : 숫자가 클수록 확대정도가 큼
-
-         var markerTitle      = "하나금융투자 Club1 금융센터";            // 현재 위치 마커에 마우스를 오버을때 나타나는 정보
-         var markerTitle2      = "서울철강빌딩"; 
-         var markerMaxWidth   = 300;                  // 마커를 클릭했을때 나타나는 말풍선의 최대 크기
-
-         // 말풍선 내용
-         var contentString   = '<div>' +
-         '<h5>경이로움 스터디</h5>'+
-         '<span>사이다경제가 운영하는 스터디를 통해<br />' +
-            '경제로 놀고 말하고 즐겨보세요!</span><br /><br />' +
-         '<a href="http://www.cidermics.com/study" target="_blank">http://www.cidermics.com/study</a>'+ //링크도 넣을 수 있음
-         '</div>';
 
          var myLatlng = new google.maps.LatLng(Y_point, X_point);
          var mapOptions = {
@@ -107,56 +95,59 @@
 
 
   <div class="parallax-container valign-wrapper" style="min-height: 200px;">
-    <div class="section no-pad-bot" style="padding-top:75px; top:5%;">
+    <div class="section no-pad-bot" style="padding-top:65px; top:5%;">
       <div class="container" >
         <div class="row center">
-          <h5 class="header col s12 light" style="font-weight: 500; font-size: 1.4rem;">한 달에 한 번 나는 경이롭게 달라진다</h5>
-          <h4 class="header col s12 light" style="font-weight: 500; font-size: 1.4rem;">경이로움 스터디</h4>
+          <h4 class="header col s12 light" style="font-weight:500;">오시는길</h4>
+          <h6 class="header col s12 light">- 경이로움 -</h6>
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="/page_imgs/study_img/background4.jpg" alt="Unsplashed background img 1"></div>
+    <div class="parallax"><img src="/page_imgs/study_img/backgroundm3.jpg" alt="Unsplashed background img 1"></div>
   </div>
   
+ <div class="map-bg"> 
   	<div align="center" class="map-title">
-			<img class="responsive-img" src="/page_imgs/study_img/map-title.jpg">
-	  </div>
-    <div align="center" ><h5>서울특별시 강남구 영동대로96길 26</h5></div>
+		<div><img class="responsive-img width1" src="/page_imgs/study_img/img-map-icon.jpg"></div>
+		<h4>오시는길</h4>
+	 </div>
+	 
+	<div align="center">
+		<img class="responsive-img mob-n margin1" src="/page_imgs/study_img/img-section10-title2.jpg">
+		<img class="responsive-img web-n margin1 margin2" src="/page_imgs/study_img/m-img-section10-title2.jpg">
+	</div>	 
   <div class="googleMap" align="center">
-		<div id="map_view" style="height:350px;"></div>
+		<div id="map_view" style="height:400px;"></div>
 		<div align="right" style="margin:10px 10px 0 0">
 		  <span>서울특별시 강남구 영동대로96길 26<br>[지번]서울특별시 강남구 삼성동 169-8</span>
 		</div>
 	</div>
 	<div class="container">
 		<div align="center">
-			<img class="responsive-img" src="/page_imgs/study_img/map-s.jpg">
+			<img class="responsive-img padding1 map-margin1" src="/page_imgs/study_img/img-section10-2.jpg">
 		</div>
 	</div>
 
 
 <div class="container" align="center">
   <div class="row center">
-    <h5>시설 소개</h5>
+    <h5 class="place1">시설 소개</h5>
   </div>
-  <div class="row">
+  <div class="row place" style="margin-bottom:0">
     <div class="col l3 s6"><img class="materialboxed responsive-img" data-caption="시설" src="/page_imgs/study_img/hana1.jpg"></div>
     <div class="col l3 s6"><img class="materialboxed responsive-img" data-caption="시설" src="/page_imgs/study_img/hana8.jpg"></div>
     <div class="col l3 s6"><img class="materialboxed responsive-img" data-caption="시설" src="/page_imgs/study_img/hana2.jpg"></div>
     <div class="col l3 s6"><img class="materialboxed responsive-img" data-caption="시설" src="/page_imgs/study_img/hana3.jpg"></div>
-  </div>
-  <div class="row">
     <div class="col l3 s6"><img class="materialboxed responsive-img" data-caption="시설" src="/page_imgs/study_img/hana4.jpg"></div>
     <div class="col l3 s6"><img class="materialboxed responsive-img" data-caption="시설" src="/page_imgs/study_img/hana5.jpg"></div>
     <div class="col l3 s6"><img class="materialboxed responsive-img" data-caption="시설" src="/page_imgs/study_img/hana6.jpg"></div>
-    <div class="col l3 s6"><img class="materialboxed responsive-img" data-caption="시설" src="/page_imgs/study_img/hana7.jpg"></div>
+    <div class="col l3 s6"><img class="materialboxed responsive-img" data-caption="시설" src="/page_imgs/study_img/hana7.jpg"></div> 
   </div>
 </div>
-
 <div class="container" align="center">
-  <div class="row center">
+  <div class="row center" style="margin-bottom:0">
     <br>
-    <h5>시설 후원</h5>
+    <h5 style="margin-bottom:0">시설 후원</h5>
   </div>
   <div class="row">
     <div class="col s12"><img class="responsive-img" src="/page_imgs/study_img/hanalogo.png"></div>
@@ -164,26 +155,30 @@
 </div>
 
 
-<div align="center" class="map-title">
-    <img class="responsive-img" src="/page_imgs/study_img/map-title.jpg">
-</div>
-<div align="center" ><h5>서울철강빌딩</h5></div>
+  	<div align="center" class="map-title">
+		<div><img class="responsive-img width1" src="/page_imgs/study_img/img-map-icon.jpg"></div>
+		<h4>오시는길</h4>
+	 </div>
+  <div align="center">
+		<img class="responsive-img mob-n margin1" src="/page_imgs/study_img/img-section10-title1.jpg">
+		<img class="responsive-img web-n margin1" src="/page_imgs/study_img/m-img-section10-title1.jpg">
+  </div>
 <div class="googleMap" align="center">
-  <div id="map_view1" style="height:350px;"></div>
+  <div id="map_view1" style="height:400px;"></div>
   <div align="right" style="margin:10px 10px 0 0">
-    <span>서울시 강남구 테헤란로 33길 18, 서울빌딩 5층</span>
+    <span>서울특별시 강남구 테헤란로 33길 39 혜성빌딩<br>[지번]서울특별시 강남구 역삼동 671-32</span>
   </div>
 </div>
 <div class="container">
   <div align="center">
-    <img class="responsive-img" src="/page_imgs/study_img/map-ss.jpg">
+		<img class="responsive-img padding1 map-margin1" src="/page_imgs/study_img/img-section10-1.jpg">
   </div>
 </div>
 
 
-<div class="container" align="center">
+<!-- div class="container" align="center">
   <div class="row center">
-    <h5>시설 소개</h5>
+    <h5 class="place1">시설 소개</h5>
   </div>
   <div class="row">
     <div class="col l3 s6"><img class="materialboxed responsive-img" data-caption="시설" src="/page_imgs/study_img/sb10.jpg"></div>
@@ -197,8 +192,8 @@
     <div class="col l3 s6"><img class="materialboxed responsive-img" data-caption="시설" src="/page_imgs/study_img/sb4.jpg"></div>
     <div class="col l3 s6"><img class="materialboxed responsive-img" data-caption="시설" src="/page_imgs/study_img/sb3.jpg"></div>
   </div>
+</div -->
 </div>
-
 
 
 <div class="container" style="margin: 50px auto;">
@@ -257,7 +252,6 @@
 </div>
 
 
-
   <div class="container">
     <div class="input-field col s12">FAQ</div>
     <div class="row">
@@ -304,10 +298,8 @@
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="/page_imgs/study_img/background2.jpg" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img src="/page_imgs/study_img/background3.jpg" alt="Unsplashed background img 2"></div>
   </div>
-
-
 
   <% include std_bottom %>
 

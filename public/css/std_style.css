@@ -63,6 +63,10 @@ p {
     width: 100%;
   }
 
+/*----------스터디버젼2top----------*/
+ul.sub li{width:120px; background-color:#000;}
+ul.sub li:hover{background-color:#272d39;}
+nav ul a:hover{background-color:rgba(0,0,0,0)}
 
 
 /*----------스터디버젼2메인----------*/
@@ -289,7 +293,12 @@ h5{font-size:18px}
 
 
 	/*희아가추가*/
-	.map-title img{margin-top:80px; margin-bottom:30px;}
+	.map-bg{background-color:#f4f4f4; padding-bottom:100px}
+	.map-title img{margin-top:80px;}
+	.map-title h4{margin:0 0 50px 0}
+	.place img{margin-bottom:20px}
+	.place1{margin-top:50px}
+	.map-margin1{margin:50px 0 30px 0}
 	.event h5{line-height:2.0em;}
 	.schedule .img1{width:60%; margin-top:50px;}
 	.schedule .img2{margin-bottom:50px;}
@@ -299,7 +308,10 @@ h5{font-size:18px}
 @media only screen and (max-width : 992px) {
 
 	/*희아가추가*/
-	.map-title img{width:50%; margin-top:30px; margin-bottom:15px;}
+	.map-bg{padding-bottom:50px}
+	.map-title img{height:80px; margin-top:30px;}
+	.map-title h4{margin:0 0 30px 0}
+	.map-margin1{margin:30px 0 0 0}
 	.event h5{line-height:2.0em; font-size:16px;}
 	.schedule .img1{width:100%; margin-top:30px;}
 	.img-event{margin:30px 0 50px 0;}
