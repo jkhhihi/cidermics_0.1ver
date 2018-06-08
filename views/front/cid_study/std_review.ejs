@@ -38,15 +38,15 @@
 
 
   <div class="parallax-container valign-wrapper" style="min-height: 200px;">
-    <div class="section no-pad-bot" style="padding-top:75px; top:5%;">
+    <div class="section no-pad-bot" style="padding-top:65px; top:5%;">
       <div class="container" >
         <div class="row center">
-          <h5 class="header col s12 light" style="font-weight: 500; font-size: 1.4rem;">한 달에 한 번 나는 경이롭게 달라진다</h5>
-          <h4 class="header col s12 light" style="font-weight: 500; font-size: 1.4rem;">경이로움 스터디</h4>
+          <h5 class="header col s12 light" style="font-weight:500;">경이로움 후기</h5>
+          <h6 class="header col s12 light">경이로움 멤버원들의 진솔한 후기 인터뷰</h6>
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="/page_imgs/study_img/background6.jpg" alt="Unsplashed background img 1"></div>
+    <div class="parallax"><img src="/page_imgs/study_img/backgroundm4.jpg" alt="Unsplashed background img 1"></div>
   </div>
 
 
@@ -55,17 +55,15 @@
     var a = Math.floor(Math.random() * 3) + 1;
   </script>
       
+<style>
+	.review{margin:100px auto;}
+	@media only screen and (max-width : 1024px) {
+	.review{margin:30px auto;}
+	}
+</style>
 
-<div class="container" style="margin: 50px auto;">
-  
-  <div class="row">
-        <div class="col s12 center">
-          <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4>경이로움 후기</h4>
-          <p class="center-align light">경이로움 멤버원들의 진솔한 후기 인터뷰</p>
-        </div>
-  </div>
-  
+<div class="container review">
+ 
   <div class="row">
     <% for(var i=0; i < review.length; i++) {  %> 
     <div class="col s12 m6 l4">
@@ -73,7 +71,7 @@
         <div class="card-image waves-effect waves-block waves-light" >
           <a href="/stdreview/<%=review[i].cons_no%>"><img src="<%=review[i].cons_img%>"></a>
           <span class="card-title" style="bottom: 30px;"><a href="/stdreview/<%=review[i].cons_no%>" style="color: #fff;"><b><%=review[i].cons_title%></b></a></span>
-          <span class="card-name">Interviewee <%=review[i].cons_name%></span>
+          <span class="card-name"><%=review[i].cons_name%></span>
           
         </div>
         <div class="card-content">
@@ -95,7 +93,7 @@
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="/page_imgs/study_img/background2.jpg" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img src="/page_imgs/study_img/backgroundm4.jpg" alt="Unsplashed background img 2"></div>
   </div>
 
 

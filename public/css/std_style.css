@@ -312,6 +312,7 @@ h5{font-size:18px}
 	.map-title img{height:80px; margin-top:30px;}
 	.map-title h4{margin:0 0 30px 0}
 	.map-margin1{margin:30px 0 0 0}
+	.review .card .card-title{font-size:20px;} /*후기*/
 	.event h5{line-height:2.0em; font-size:16px;}
 	.schedule .img1{width:100%; margin-top:30px;}
 	.img-event{margin:30px 0 50px 0;}

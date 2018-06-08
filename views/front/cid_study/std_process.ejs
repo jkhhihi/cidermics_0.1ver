@@ -50,12 +50,16 @@
   <% include std_top %>
 
   <style type="text/css">
-
   #scrollspy{
     position: fixed;
     z-index: 2;
-    right: 5%;
+    right: -4%;
   }
+  @media only screen and (max-width : 1024px) {
+   #scrollspy{
+    display:none
+  }
+  .process{width:100%}
 
   @media(max-width: 992px){
     #memshipweb{
@@ -70,25 +74,52 @@
   </style>
 
 
+<script>
+$(document).ready(function(){
+    $('.modal-trigger').leanModal();
+});
+</script>
 
+<style>
+	.modal{width:400px;}
+	.modal .modal-footer{background-color:#0aa0f5; padding-top:12px; color:#fff}
+	.btn-more1, .btn-more2, .btn-more3{padding:0 20px; border-radius:40px; display:inline-block; margin-top:10px; color:#2b323f;}
+	.proimg1 img{margin-top:100px;}
+	@media(max-width: 760px){
+	.row{margin-bottom:0}
+	.modal{width:90%;}
+	.proimg1 img{margin-top:10px; width:150px;}
+	.proimg2 img{width:90%;}
+	}
+</style>
 
 
 
   <div class="parallax-container valign-wrapper" style="min-height: 200px;">
-    <div class="section no-pad-bot" style="padding-top:75px; top:5%;">
+    <div class="section no-pad-bot" style="padding-top:65px; top:5%;">
       <div class="container" >
         <div class="row center">
-          <h5 class="header col s12 light" style="font-weight: 500; font-size: 1.4rem;">한 달에 한 번 나는 경이롭게 달라진다</h5>
-          <h4 class="header col s12 light" style="font-weight: 500; font-size: 1.4rem;">경이로움 스터디</h4>
+          <h5 class="header col s12 light" style="font-weight:500;">경이로워지는 순간</h5>
+          <h6 class="header col s12 light">다양한 경이로움을 한눈에 파악하고 <br class="web-n">스터디를 보다 흥미롭게 즐겨보세요</h6>
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="/page_imgs/study_img/background5.jpg" alt="Unsplashed background img 1"></div>
+    <div class="parallax"><img src="/page_imgs/study_img/backgroundm6.jpg" alt="Unsplashed background img 1"></div>
   </div>
 
+				<!-- 준비중 모달 -->
+				  <!-- Modal Structure -->
+				  <div id="modal1" class="modal" align="center">
+				    <div class="modal-content">
+				      <p>죄송해요 :( <br> 7월 중 오픈 예정이니 <br> 조금만 기다려주세요 :)</p>
+				    </div>
+				    <a href="#!" class="modal-close">
+				    	<div class="modal-footer">닫기</div>
+				    </a>
+				  </div>
 
 
-
+<div class="container process">
   <div class="row">
     <div class="col s12 m9 l12">
       <div id="introduction" class="section scrollspy">
@@ -99,11 +130,12 @@
             </div>
           </div>
 
-        <div class="row">
-          <div class="col s6">
-            <img class="responsive-img" src="/page_imgs/study_img/memi_1.jpg">
+        <div class="row" align="center">
+          <div class="col s12 m5 proimg1">
+            <img class="responsive-img" src="/page_imgs/study_img/process-icon-le.png"><br>
+            <a href="#modal1" class="modal-trigger"><span class="btn-more1"><b>자세히보기</b></span></a>
           </div>
-          <div class="col s6">
+          <div class="col s12 m7 proimg2">
             <img class="responsive-img" src="/page_imgs/study_img/n_web1.png">
           </div>
         </div>
@@ -111,22 +143,24 @@
       </div>
 
       <div id="structure" class="section scrollspy" style="background: #f4f4f4;">
-        <div class="row">
-          <div class="col s6">
-            <img class="responsive-img" src="/page_imgs/study_img/memi_1.jpg">
+        <div class="row" align="center">
+          <div class="col s12 m5 proimg1">
+            <img class="responsive-img" src="/page_imgs/study_img/process-icon-st.png"><br>
+            <a href="/study/list"><span class="btn-more2"><b>자세히보기</b></span></a>
           </div>
-          <div class="col s6">
+          <div class="col s12 m7 proimg2">
             <img class="responsive-img" src="/page_imgs/study_img/n_web2.png">
           </div>
         </div>
       </div>
 
       <div id="initialization" class="section scrollspy">
-        <div class="row">
-          <div class="col s6">
-            <img class="responsive-img" src="/page_imgs/study_img/memi_1.jpg">
+        <div class="row" align="center">
+          <div class="col s12 m5 proimg1">
+            <img class="responsive-img" src="/page_imgs/study_img/process-icon-bo.png"><br>
+            <a href="#modal1" class="modal-trigger"><span class="btn-more3"><b>자세히보기</b></span></a>
           </div>
-          <div class="col s6">
+          <div class="col s12 m7 proimg2">
             <img class="responsive-img" src="/page_imgs/study_img/n_web3.png">
           </div>
         </div>
@@ -213,11 +247,11 @@
 
 
 
-  <div class="container" id="memshipmob">
+  <div id="memshipmob">
 
-    <div class="row center">
+    <div class="row center" style="margin-bottom:0">
       <div class="col s12">
-        <img class="responsive-img" src="/page_imgs/study_img/memi_img1m.jpg">
+        <img class="responsive-img" src="/page_imgs/study_img/n_web4.png">
       </div>
     </div>
 
@@ -286,7 +320,7 @@
     </div>
 
   </div>
-
+</div>
 
 
 
@@ -299,7 +333,7 @@
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="/page_imgs/study_img/background2.jpg" alt="Unsplashed background img 2"></div>
+    <div class="parallax"><img src="/page_imgs/study_img/backgroundm6.jpg" alt="Unsplashed background img 2"></div>
   </div>
 
 
