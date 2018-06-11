@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>사이다경제 스터디</title>
+  <title>사이다경제 경이로움 후기</title>
   <!-- 메인 문구 -->
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css'>
 
@@ -37,23 +37,17 @@
   <% include std_top %>
 
 <!--맨위 -->
-<div class="parallax-container valign-wrapper" style="min-height: 500px; color: #000;">
-  <div class="section no-pad-bot" style="padding-top:0px;">
-    <div class="container">
-
-      <div class="row center">
-        <h4 class="header1 header col s12 light" style="font-weight: 500; ">"<%=stdreview[0].cons_title%>"</h4>
-      </div>
-      <div class="divider"></div>
-      <div class="row">
-        <%- stdreview[0].cons_content%>
-      </div>
-
-
-    </div>
-  </div>
+<div id="review-de" class="container">
+     <div class="row center">
+       <h4 class="header1 header col s12 light" style="font-weight: 500; ">"<%=stdreview[0].cons_title%>"</h4>
+     </div>
+     <div class="divider"></div>
+     <div class="row">
+     	<div class="col s 12">
+       		<%- stdreview[0].cons_content%>
+       	</div>	
+     </div>
 </div>
-
 
 
 
@@ -66,7 +60,7 @@
       </div>
     </div>
   </div>
-  <div class="parallax"><img src="/page_imgs/study_img/background2.jpg" alt="Unsplashed background img 2"></div>
+  <div class="parallax"><img src="/page_imgs/study_img/backgroundm4.jpg" alt="Unsplashed background img 2"></div>
 </div>
 
 
