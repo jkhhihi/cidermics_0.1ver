@@ -155,7 +155,7 @@ router.get('/study/review', function(req, res, next) {
 router.get('/stdreview/:cons_no', function(req, res, next) {
 	var idx = req.params.cons_no;
 	var stdreview;
-		mysql.select('SELECT * from cider.cid_consulting order by cons_no desc;', function (err, data){
+		mysql.select('SELECT * from cider.cid_consulting where cons_no='+idx+' order by cons_no desc;', function (err, data){
 	res.render('front/cid_study/std_review_detail', { stdreview : data});
   	});
   });

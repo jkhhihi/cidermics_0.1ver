@@ -36,16 +36,32 @@
 
   <% include std_top %>
 
+  <div class="parallax-container valign-wrapper" style="min-height: 200px;">
+    <div class="section no-pad-bot" style="padding-top:65px; top:5%;">
+      <div class="container" >
+        <div class="row center">
+          <h5 class="header col s12 light" style="font-weight:500;">경이로움 후기 인터뷰</h5>
+          <h6 class="header col s12 light">한 달에 한 번 나는 경이롭게 달라진다</h6>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="/page_imgs/study_img/background12.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
 <!--맨위 -->
 <div id="review-de" class="container">
      <div class="row center">
+       <div class="col s12"><img src="<%=stdreview[0].cons_img%>" width="90%"></div>
        <h4 class="header1 header col s12 light" style="font-weight: 500; ">"<%=stdreview[0].cons_title%>"</h4>
      </div>
      <div class="divider"></div>
      <div class="row">
-     	<div class="col s 12">
+     	<div class="col s12">
        		<%- stdreview[0].cons_content%>
-       	</div>	
+      </div>
+      <div class="col s12">
+<a href="/study/review"><h5><span>☞ 후기 목록으로 돌아가기</span></h5></a>
+      </div>
      </div>
 </div>
 
