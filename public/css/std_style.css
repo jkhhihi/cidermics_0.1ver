@@ -409,6 +409,14 @@ div #cent { position:relative; }
   padding: 10px;
 }
 
+.card-btn2{
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  left:10px;
+  padding: 10px;
+}
+
 /*study index page list */
   .carousel{
     height: 500px;
