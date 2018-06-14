@@ -68,6 +68,23 @@ ul.sub li{width:120px; background-color:#000;}
 ul.sub li:hover{background-color:#272d39;}
 nav ul a:hover{background-color:rgba(0,0,0,0)}
 
+/*----------스터디버젼2morenew----------*/
+#study-new{font-family: 'seoulhangangregular';}
+#study-new .divider1{margin-top:3px; height:1px; overflow:hidden; background-color:#73c7a6}
+#study-new .line1{width:350px; height:4px; background-color:#73c7a6; margin-bottom:30px}
+#study-new .section0{padding:80px 0}
+#study-new .section0 p{font-size:20px; line-height:1.8em}
+#study-new .section0 span{color:#73c7a6}
+#study-new .section0 .title{margin:40px 0 60px 0}
+#study-new .section0 .title1{margin:60px 0 0 0}
+#study-new .section0 .info{margin-bottom:50px}
+#study-new .section0 .info2{margin-top:80px}
+#study-new .section0 .info1 p, .info2 p {margin-top:50px; line-height:1.8em}
+#study-new .section1{background-color:#2b313f; padding:80px 0}
+#study-new .section1 h4{color:#fff}
+#study-new .section1 img{width:80%}
+#study-new .section2{background-color:#f4f4f4; padding:80px 0}
+
 
 /*----------스터디버젼2메인----------*/
 .web-n{display:none}
@@ -186,6 +203,19 @@ h5{font-size:18px}
 .slide {
   width: 300px;
 }
+
+
+/*----------스터디버젼2morenew----------*/
+#study-new .line1{width:250px; margin-bottom:20px}
+#study-new .section0{padding:50px 0}
+#study-new .section0 p{font-size:16px;}
+#study-new .section0 .title{margin:30px 0 40px 0}
+#study-new .section0 .title1{margin:40px 0 0 0}
+#study-new .section0 .info2{margin-top:60px}
+#study-new .section0 .info1 p, .info2 p {margin-top:30px;}
+#study-new .section1{padding:50px 0}
+#study-new .section1 img{width:100%}
+#study-new .section2{padding:50px 0}
 
 }
 
