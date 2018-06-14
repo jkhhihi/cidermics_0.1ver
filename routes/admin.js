@@ -1578,6 +1578,47 @@ router.post('/study/insert/upload', ensureAuthenticated, function(req, res, next
 		});
 });
 
+router.get('/study/files/:page', ensureAuthenticated, function(req, res, next){
+	var page;
+	if (typeof req.params.page == 'undefined'){
+		page = 1;
+	}
+	page = req.params.page;
+	var obj = [];
+	var start = (page - 1) * 12;
+	var end = page * 12 -1;
+	
+	var dir = __dirname + "/../public/std/";
+	var files = fs.readdirSync(dir)
+	    .map(function(v) {
+	        return { name:v,
+	                 time:fs.statSync(dir + v).mtime.getTime()
+	               }; 
+	     })
+	     .sort(function(a, b) { return a.time - b.time; })
+	     .map(function(v) { return v.name; });
+	
+	files.reverse();
+	for (var i = start; i < end+1; i++){
+		obj.push(files[i]);
+	}
+	var pagination = [];
+	var totalPage = Math.ceil(files.length / 12);
+	var startPage;
+	var lastPage;
+	if(page % 5 != 0){ startPage = Math.floor(page/5) * 5 + 1; lastPage = Math.ceil(page/5) * 5; }
+	else{ startPage = (page/5) * 5 - 4; lastPage = parseInt(page) };
+	
+	var next = true;
+	
+	if (lastPage >= totalPage){
+		lastPage = totalPage;
+		next = false;
+	}
+	pagination.push(totalPage, startPage, lastPage, next, parseInt(page));
+	res.send({'pagination' : pagination, 'files': obj});
+});
+
 
 router.post('/study/insert', ensureAuthenticated, function(req, res, next) {
 	

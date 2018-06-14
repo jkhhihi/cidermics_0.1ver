@@ -43,11 +43,24 @@ $(document).ready(function (){
 		} // Callback for Modal close
 	});
 
+//스터디 후기 이미지 설정 버튼
+	$('.modal-trigger3').leanModal({
+		dismissible: true, // Modal can be dismissed by clicking outside of the modal
+		opacity: .5, // Opacity of modal background
+		in_duration: 300, // Transition in duration
+		out_duration: 200, // Transition out duration
+		ready: function() { 
+			fileList2('thumb', 1); 
+		}, // Callback for Modal open
+		complete: function() {
+		} // Callback for Modal close
+	});
+
 
 	//썸네일 이미지 등록
 	$('.btn-thumb').click(function(){
 		if($('.img-selected').length > 1){
-			alert('하나만 선택해주세요~');
+			alert('하나만 선택해주세요~!!!');
 			return;
 		}
 		var src = $('.img-selected').find('img').attr('src');
@@ -225,6 +238,57 @@ function fileList1(type, page){
 	});
 }
 
+
+//토론 이미지 설정 버튼
+function fileList2(type, page){
+	var pages = '';
+	$.ajax({
+		url : '/adm/study/files/'+ page,
+		method : 'GET',
+		success : function(data){
+			var totalPage = data.pagination[0];
+			var startPage = data.pagination[1];
+			var lastPage = data.pagination[2];
+			var next = data.pagination[3];
+			var currentPage = data.pagination[4];
+//			console.log(totalPage, startPage, lastPage, next, currentPage);
+			var img = '<div class="row"> ';
+			$.each(data.files, function(idx, val){
+				if (idx % 3 == 0) {
+					img += '</div>';
+					img += '<div class="row">';
+				}
+				img += '<div class="col m4 center-align img-select"> ' +
+							'<img class="responsive-img" src="/std/'+val+'"/> ' +
+							'<div class="fileName"> '+val+'</div>' + 
+					   '</div>';
+				if (idx == 8){
+					img += '</div>';
+				}
+			});
+			
+			$('.images').html(img);
+			var paging = '<li ' +disabled(currentPage)+'><a class="pageGo" href="javascript:pageGo2('+ (currentPage - 1)+')"><i class="material-icons">chevron_left</i></a></li> ';
+			for (var i = startPage; i < lastPage + 1; i++){
+				paging += '<li '+ active(currentPage, i) +'><a class="pageGo" href="javascript:pageGo2('+i+')">'+i+'</a></li>';
+			}
+			if(next){
+				paging += '<li class="waves-effect"><a class="pageGo" href="javascript:pageGo2('+ (currentPage+1) +')"><i class="material-icons">chevron_right</i></a></li>';					
+			}
+			$('.pagination').html(paging);
+			$('.img-select').click(function(){
+				var hasClass = $(this).hasClass('img-selected');
+				if(hasClass){
+					$(this).removeClass('img-selected');
+				}else{
+					$(this).addClass('img-selected');
+				}
+				var img = $(this).find('img').attr('src');
+			});
+		}
+	});
+}
+
 //콘텐츠 이미지 설정 버튼 
 function pageGo(page) {
 	fileList(1,page);
@@ -233,6 +297,11 @@ function pageGo(page) {
 //토론 이미지 설정 버튼 페이지
 function pageGo1(page) {
 	fileList1(1,page);
+}
+
+//토론 이미지 설정 버튼 페이지
+function pageGo2(page) {
+	fileList2(1,page);
 }
 
 function disabled (currentPage){
@@ -571,6 +640,7 @@ $(document).ready(function(){
 			
 		});
 	});
+
 	
 	
 });
