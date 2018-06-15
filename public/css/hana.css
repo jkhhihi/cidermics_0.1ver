@@ -6,15 +6,18 @@ body{font-family: 'Nanum Gothic', serif; line-height:1.8em; height:100%;}
 
 .bg-banner img{width:100%;}
 
-.consultation-fee{width:100%; height:auto; background-color:#efefef; padding:60px 0; margin-top:-500px;}
-.consultation-fee h3{color:#fff}
+.consultation-fee #menu{width:700px}
+.consultation-fee{width:100%; height:auto; background-color:#fff; padding:60px 0; margin-top:-400px;}
+.consultation-fee h3{color:#fff;}
 .consultation-fee h3 span{font-size:16px; display:inline-block; margin-top:20px; line-height:1.5em;}
-.consultation-fee .row div img{padding:10px 0;}
-.consultation-fee .info{background-color:#fff; padding:50px 0 50px 100px;}
-.consultation-fee .w3-card-4{width:700px}
-
+.consultation-fee .info{background-color:#fff; padding:50px 0 50px 60px; height:370px}
+.consultation-fee .w3-card-4{background-color:#f4f4f4; margin-top:10px}
+.consultation-fee .w3-card-4 img{width:350px;}
+.consultation-fee .menu{padding:0 5px}
+.consultation-fee .col-xs-3{padding:0 5px}
 
 .img1{margin-top:50px;}
+.img1 .col-xs-12{padding:0 5px}
 
 .Telegram .bg{background-color:#47b0d3; padding:20px 0}
 .Telegram .bg .text{margin-bottom:20px;}
@@ -24,12 +27,19 @@ body{font-family: 'Nanum Gothic', serif; line-height:1.8em; height:100%;}
 @media all and (max-width:1024px) {
 .line2{margin:0 0 30px 6px}
 
-.bg-banner img{margin-top:60px;}
+.bg-banner img{display:none}
 
-.consultation-fee{padding:20px 0 40px 0; margin-top:0}
-.consultation-fee h3{color:#333}
+.consultation-fee #menu{width:100%}
+.consultation-fee{padding:20px 0 0 0; margin-top:70px}
+.consultation-fee h3{color:#333;}
 .consultation-fee h3 span{font-size:12px; margin-top:10px;}
+.consultation-fee .info{padding:20px; height:350px}
+.consultation-fee .w3-card-4{margin-top:2px}
+.consultation-fee .w3-card-4 img{width:350px;}
+.consultation-fee .menu{padding:0 2px}
+.consultation-fee .col-xs-3{padding:0 2px}
 
 .img1{margin-top:20px;}
+.img1 .col-xs-12{padding:0}
 
 }

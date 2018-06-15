@@ -28,37 +28,50 @@
   ga('send', 'pageview');
 
 </script>
-
 </head>
 
 <body>
 
 <div class="header" align="center"><a href="/hana"><img class="img-responsive" src="/page_imgs/hana_img/logo1.jpg"></a></div>
 <div class="bg-banner" align="center">
-<img class="img-responsive" src="/page_imgs/hana_img/bg3.jpg" style="margin-top:60px">
+<img class="img-responsive" src="/page_imgs/hana_img/bg3.jpg" style="margin-top:70px">
 </div>
 <div class="consultation-fee" align="center">
 	<h3>SIGNATURE TEAM<br><span>시그니처팀은 국내주식부터 해외주식의<br>모든 솔루션과 데이터를 제공합니다.<br>상장주식뿐만 아니라 비상장주식, CB, BW 등<br>모든 주식분야에서 투자기회를<br>함께 할 수 있습니다.</span></h3>
 	<div class="line1"></div>
 	<div class="line2"></div>
-	<div class="container">
+	<div id="menu" class="container">
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col-xs-3" onclick="openCity('menu1')">
+			<img class="w3-card img-responsive" src="/page_imgs/hana_img/menu1.jpg">
+		</div>
+		<div class="col-xs-3" onclick="openCity('menu2')">
+			<img class="w3-card img-responsive" src="/page_imgs/hana_img/menu2.jpg">
+		</div>
+		<div class="col-xs-3" onclick="openCity('menu3')">
+			<img class="w3-card img-responsive" src="/page_imgs/hana_img/menu3.jpg">
+		</div>
+		<div class="col-xs-3" onclick="openCity('menu4')">
+			<img class="w3-card img-responsive" src="/page_imgs/hana_img/menu4.jpg">
+		</div>				
+	</div>	
+	<div class="row">
+		<div id="menu1" class="col-xs-12 menu">
 			<div class="w3-card-4">
-			  <img src="img_snowtops.jpg">
+			  <img class="img-responsive" src="/page_imgs/hana_img/hana-profile1.png">
 			  <div class="info" align="left">
 			  	<h5><b>이동규</b></h5><br>
 			    <p>> 하나금융투자 club1 금융센터 퀀트분석, 투자심사 담당<br><br>
 			    > SIGNATURE 2X Wrap 운용역<br><br>
 			    > 사이다경제 주식투자 스터디 리더<br><br>
-			    > 前 한가람투자자문 운용역
+			    > 前 한가람투자자문 운용역<br><br>
 			    > 前 밸류시스템투자자문 주식 리서치</p>
 			  </div>
 			</div>
 		</div>
-		<div class="col-xs-12">
+		<div id="menu2" class="col-xs-12 menu" style="display:none">
 			<div class="w3-card-4">
-			  <img src="img_snowtops.jpg">
+			  <img class="img-responsive" src="/page_imgs/hana_img/hana-profile2.png">
 			  <div class="info" align="left">
 			  	<h5><b>한동엽</b></h5><br>
 			    <p>> 하나금융투자 club1 금융센터 일본/미국 주식 담당<br><br>
@@ -68,9 +81,9 @@
 			  </div>
 			</div>
 		</div>
-		<div class="col-xs-12">
+		<div id="menu3" class="col-xs-12 menu" style="display:none">
 			<div class="w3-card-4">
-			  <img src="img_snowtops.jpg">
+			  <img class="img-responsive" src="/page_imgs/hana_img/hana-profile3.png">
 			  <div class="info" align="left">
 			  	<h5><b>김재호</b></h5><br>
 			    <p>> 국내 주식, 파생상품, 비상장기업<br><br>
@@ -79,9 +92,9 @@
 			  </div>
 			</div>
 		</div>
-		<div class="col-xs-12">
+		<div id="menu4" class="col-xs-12 menu" style="display:none">
 			<div class="w3-card-4">
-			  <img src="img_snowtops.jpg">
+			  <img class="img-responsive" src="/page_imgs/hana_img/hana-profile4.png">
 			  <div class="info" align="left">
 			  	<h5><b>이범호</b></h5><br>
 			    <p>> 총괄팀장<br><br>
@@ -96,6 +109,16 @@
 	</div>
 </div>
 
+<script>
+function openCity(cityName) {
+    var i;
+    var x = document.getElementsByClassName("menu");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none"; 
+    }
+    document.getElementById(cityName).style.display = "block"; 
+}
+</script>
 
 
 <div class="Telegram" align="center">
