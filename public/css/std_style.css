@@ -172,6 +172,7 @@ h4, h5, h6{line-height:1.5em}
 #section9{padding:100px 0}
 #section9 h4{margin-bottom:100px}
 #section9 span{border:2px solid #0aa0f6; border-radius:5px; padding:20px 40px; display:inline-block; margin-top:100px}
+#section9 img{padding:0 20px 10px 20px}
 
 #section10 h4{margin-bottom:60px}
 #section10 .margin1{margin:0 0 20px 0}
@@ -210,7 +211,7 @@ h5{font-size:18px}
 #study-new .section0{padding:50px 0}
 #study-new .section0 p{font-size:16px;}
 #study-new .section0 .title{margin:30px 0 40px 0}
-#study-new .section0 .title1{margin:40px 0 0 0}
+#study-new .section0 .title1{margin:40px 0 0 0;}
 #study-new .section0 .info2{margin-top:60px}
 #study-new .section0 .info1 p, .info2 p {margin-top:30px;}
 #study-new .section1{padding:50px 0}
@@ -282,7 +283,7 @@ h5{font-size:18px}
 #section9{padding:50px 0}
 #section9 h4{margin-bottom:40px}
 #section9 span{font-weight:bold; padding:15px 35px; display:inline-block; margin-top:20px}
-#section9 img{margin-bottom:10px;}
+#section9 img{padding:0 0 10px 0}
 
 #section10 .width1{height:80px}
 #section10 h4{margin-bottom:30px; margin-top:-5px}

@@ -10,6 +10,9 @@ body{font-family: 'Nanum Gothic', serif; line-height:1.8em; height:100%;}
 .consultation-fee h3{color:#fff}
 .consultation-fee h3 span{font-size:16px; display:inline-block; margin-top:20px; line-height:1.5em;}
 .consultation-fee .row div img{padding:10px 0;}
+.consultation-fee .info{background-color:#fff; padding:50px 0 50px 100px;}
+.consultation-fee .w3-card-4{width:700px}
+
 
 .img1{margin-top:50px;}
 
