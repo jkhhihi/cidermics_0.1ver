@@ -1644,9 +1644,18 @@ router.post('/study/insert', ensureAuthenticated, function(req, res, next) {
 	var location = req.body.location;
 	var price = req.body.price;
 	var people = req.body.people;
+	var linesub1 = req.body.linesub1;
+	var linesub2 = req.body.linesub2;
+	var linesub3 = req.body.linesub3;
 	var line1 = req.body.line1;
 	var line2 = req.body.line2;
 	var line3 = req.body.line3;
+	var recommend1 = req.body.recommend1;
+	var recommend2 = req.body.recommend2;
+	var recommend3 = req.body.recommend3;
+	var changed1 = req.body.changed1;
+	var changed2 = req.body.changed2;
+	var changed3 = req.body.changed3;
 	var value1 = req.body.value1;
 	var value2 = req.body.value2;
 	var value3 = req.body.value3;
@@ -1676,8 +1685,8 @@ router.post('/study/insert', ensureAuthenticated, function(req, res, next) {
 	var date = getWorldTime(+9);
 	var rdate = req.body.rdate;
 
-	var sets = {cate:cate,recentdate:recentdate,decate:decate,subject : subject, subject2 : subject2, bgimg1 : bgimg1, thum : thum, thum2 : thum2, leader:leader, period : period, sche1 : sche1, sche2 : sche2,
-		sche3 : sche3, location : location, price : price, people : people, line1 : line1, line2 : line2, line3 : line3, value1 : value1,
+	var sets = {cate:cate,recentdate:recentdate,decate:decate,subject : subject, subject2 : subject2, bgimg1 : bgimg1, thum : thum, thum2 : thum2,img1:img1,img2:img2,img3:img3, leader:leader, period : period, sche1 : sche1, sche2 : sche2,
+		sche3 : sche3, location : location, price : price, people : people,linesub1:linesub1,linesub2:linesub2,linesub3:linesub3, line1 : line1, line2 : line2, line3 : line3, recommend1:recommend1, recommend2:recommend2, recommend3:recommend3, changed1:changed1, changed2:changed2, changed3:changed3, value1 : value1,
 	 value2 : value2, value3 : value3, slimg1 : slimg1, slimg2 : slimg2, slimg3 : slimg3, slimg4 : slimg4, lepro1 : lepro1,
 	 lepro2 : lepro2, lepro3 : lepro3, lepro4 : lepro4, appt1 : appt1, appc1 : appc1, appt2 : appt2, appc2 : appc2, appt3 : appt3, appc3 : appc3,
 	 step1 : step1, stepc1 : stepc1, step2:step2,stepc2:stepc2,step3:step3,stepc3:stepc3, regdate:date, flag:'N', state:state};
@@ -1710,9 +1719,18 @@ router.post('/study/update', ensureAuthenticated, function(req, res, next) {
 	var location = req.body.location;
 	var price = req.body.price;
 	var people = req.body.people;
+	var linesub1 = req.body.linesub1;
+	var linesub2 = req.body.linesub2;
+	var linesub3 = req.body.linesub3;
 	var line1 = req.body.line1;
 	var line2 = req.body.line2;
 	var line3 = req.body.line3;
+	var recommend1 = req.body.recommend1;
+	var recommend2 = req.body.recommend2;
+	var recommend3 = req.body.recommend3;
+	var changed1 = req.body.changed1;
+	var changed2 = req.body.changed2;
+	var changed3 = req.body.changed3;
 	var value1 = req.body.value1;
 	var value2 = req.body.value2;
 	var value3 = req.body.value3;
@@ -1738,20 +1756,20 @@ router.post('/study/update', ensureAuthenticated, function(req, res, next) {
 	var stepc3 = req.body.stepc3;
 	var flag = req.body.flag;
 	var state = req.body.state;
-	console.log(state);
+	console.log(img1);
 
 	var rdate   = req.body.rdate;
 	var modate = getWorldTime(+9);
 	
-	var sets = {state:state,flag:flag,recentdate:recentdate,decate:decate,subject : subject, subject2 : subject2, bgimg1 : bgimg1, thum : thum, thum2 : thum2, leader:leader, period : period, sche1 : sche1, sche2 : sche2,
-		sche3 : sche3, location : location, price : price, people : people, line1 : line1, line2 : line2, line3 : line3, value1 : value1,
+	var sets = {state:state,flag:flag,recentdate:recentdate,decate:decate,subject : subject, subject2 : subject2, bgimg1 : bgimg1, thum : thum, thum2 : thum2,img1:img1,img2:img2,img3:img3, leader:leader, period : period, sche1 : sche1, sche2 : sche2,
+		sche3 : sche3, location : location, price : price, people : people,linesub1,linesub2,linesub3, line1 : line1, line2 : line2, line3 : line3,  recommend1:recommend1, recommend2:recommend2, recommend3:recommend3, changed1:changed1, changed2:changed2, changed3:changed3, value1 : value1,
 	 value2 : value2, value3 : value3, slimg1 : slimg1, slimg2 : slimg2, slimg3 : slimg3, slimg4 : slimg4, lepro1 : lepro1,
 	 lepro2 : lepro2, lepro3 : lepro3, lepro4 : lepro4, appt1 : appt1, appc1 : appc1, appt2 : appt2, appc2 : appc2, appt3 : appt3, appc3 : appc3,
 	 step1 : step1, stepc1 : stepc1, step2:step2,stepc2:stepc2,step3:step3,stepc3:stepc3,modate:modate};
 
 //mysql.update('update cider.std_more set subject = ?, subject2 = ?, bgimg1 = ?,thum=?,leader = ? ,period = ?,sche1 = ?, sche2 = ? ,sche3= ? where idx = ?', [subject,subject2,bgimg1,thum,leader,period,sche1,sche2,sche3,idx], function (err, data){
     
-	mysql.update('update cider.std_more set state=?,flag=?,recentdate=?,decate=?,subject = ?, subject2 = ?, bgimg1 = ?, thum = ?, thum2=?, leader = ?, period = ?, sche1 = ?, sche2 = ? ,sche3= ? ,location= ?,price= ? ,people= ? ,line1= ? ,line2= ? ,line3= ? ,value1= ? ,value2= ? ,value3= ? ,slimg1= ? ,slimg2= ? ,slimg3= ? ,slimg4= ? ,lepro1= ?,lepro2= ?,lepro3= ?  ,lepro4= ?  ,appt1= ?  ,appc1= ?  ,appt2= ?  ,appc2= ?  ,appt3= ?  ,appc3= ?  ,step1= ?  ,stepc1= ?,step2= ?  ,stepc2= ?,step3= ?  ,stepc3= ? , modate= ? where idx = ?', [state,flag,recentdate,decate,subject,subject2,bgimg1,thum,thum2,leader,period,sche1,sche2,sche3,location,price,people,line1,line2,line3,value1,value2,value3,slimg1,slimg2,slimg3,slimg4,lepro1,lepro2,lepro3,lepro4,appt1,appc1,appt2,appc2,appt3,appc3,step1,stepc1,step2,stepc2,step3,stepc3,modate,idx], function (err, data){
+	mysql.update('update cider.std_more set state=?,flag=?,recentdate=?,decate=?,subject = ?, subject2 = ?, bgimg1 = ?, thum = ?, thum2=?, img1=?,img2=?,img3=?,leader = ?, period = ?, sche1 = ?, sche2 = ? ,sche3= ? ,location= ?,price= ? ,people= ? ,linesub1=?,linesub2=?,linesub3=?, line1= ? ,line2= ? ,line3= ?, recommend1=?, recommend2=?, recommend3=?, changed1=?, changed2=?, changed3=?, value1= ? ,value2= ? ,value3= ? ,slimg1= ? ,slimg2= ? ,slimg3= ? ,slimg4= ? ,lepro1= ?,lepro2= ?,lepro3= ?  ,lepro4= ?  ,appt1= ?  ,appc1= ?  ,appt2= ?  ,appc2= ?  ,appt3= ?  ,appc3= ?  ,step1= ?  ,stepc1= ?,step2= ?  ,stepc2= ?,step3= ?  ,stepc3= ? , modate= ? where idx = ?', [state,flag,recentdate,decate,subject,subject2,bgimg1,thum,thum2,img1,img2,img3,leader,period,sche1,sche2,sche3,location,price,people,linesub1,linesub2,linesub3,line1,line2,line3,recommend1,recommend2,recommend3,changed1,changed2,changed3,value1,value2,value3,slimg1,slimg2,slimg3,slimg4,lepro1,lepro2,lepro3,lepro4,appt1,appc1,appt2,appc2,appt3,appc3,step1,stepc1,step2,stepc2,step3,stepc3,modate,idx], function (err, data){
     	res.redirect('/adm/study/list');
     	
     });
