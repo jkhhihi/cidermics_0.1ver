@@ -15,7 +15,7 @@
 <link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!--구글 애널리틱스 -->
 <script>
@@ -26,7 +26,57 @@
 
   ga('create', 'UA-82643610-1', 'auto');
   ga('send', 'pageview');
-
+</script>
+<script>
+var state = 0;
+function chgimg1(){
+	if (state == 0){
+		document.menuimg1.src = "/page_imgs/hana_img/menu1_on.jpg"
+		document.menuimg2.src = "/page_imgs/hana_img/menu2_off.jpg"
+		document.menuimg3.src = "/page_imgs/hana_img/menu3_off.jpg"
+		document.menuimg4.src = "/page_imgs/hana_img/menu4_off.jpg"
+		state = 0;
+	} else{
+		document.menuimg1.src = "/page_imgs/hana_img/menu1_off.jpg"
+		state = 0;
+	}
+}
+function chgimg2(){
+	if (state == 0){
+		document.menuimg2.src = "/page_imgs/hana_img/menu2_on.jpg"
+		document.menuimg1.src = "/page_imgs/hana_img/menu1_off.jpg"
+		document.menuimg3.src = "/page_imgs/hana_img/menu3_off.jpg"
+		document.menuimg4.src = "/page_imgs/hana_img/menu4_off.jpg"
+		state = 0;
+	} else{
+		document.menuimg2.src = "/page_imgs/hana_img/menu2_off.jpg"
+		state = 0;
+	}
+}
+function chgimg3(){
+	if (state == 0){
+		document.menuimg3.src = "/page_imgs/hana_img/menu3_on.jpg"
+		document.menuimg1.src = "/page_imgs/hana_img/menu1_off.jpg"
+		document.menuimg2.src = "/page_imgs/hana_img/menu2_off.jpg"
+		document.menuimg4.src = "/page_imgs/hana_img/menu4_off.jpg"
+		state = 0;
+	} else{
+		document.menuimg3.src = "/page_imgs/hana_img/menu3_off.jpg"
+		state = 0;
+	}
+}
+function chgimg4(){
+	if (state == 0){
+		document.menuimg4.src = "/page_imgs/hana_img/menu4_on.jpg"
+		document.menuimg1.src = "/page_imgs/hana_img/menu1_off.jpg"
+		document.menuimg2.src = "/page_imgs/hana_img/menu2_off.jpg"
+		document.menuimg3.src = "/page_imgs/hana_img/menu3_off.jpg"
+		state = 0;
+	} else{
+		document.menuimg4.src = "/page_imgs/hana_img/menu4_off.jpg"
+		state = 0;	
+	}
+}
 </script>
 </head>
 
@@ -43,63 +93,37 @@
 	<div id="menu" class="container">
 	<div class="row">
 		<div class="col-xs-3" onclick="openCity('menu1')">
-			<img class="w3-card img-responsive" src="/page_imgs/hana_img/menu1.jpg">
+			<img name="menuimg1" class="w3-card img-responsive" src="/page_imgs/hana_img/menu1_on.jpg" onclick="chgimg1();">
 		</div>
 		<div class="col-xs-3" onclick="openCity('menu2')">
-			<img class="w3-card img-responsive" src="/page_imgs/hana_img/menu2.jpg">
+			<img name="menuimg2" class="w3-card img-responsive" src="/page_imgs/hana_img/menu2_off.jpg" onclick="chgimg2();">
 		</div>
 		<div class="col-xs-3" onclick="openCity('menu3')">
-			<img class="w3-card img-responsive" src="/page_imgs/hana_img/menu3.jpg">
+			<img name="menuimg3"  class="w3-card img-responsive" src="/page_imgs/hana_img/menu3_off.jpg" onclick="chgimg3();">
 		</div>
 		<div class="col-xs-3" onclick="openCity('menu4')">
-			<img class="w3-card img-responsive" src="/page_imgs/hana_img/menu4.jpg">
+			<img name="menuimg4"  class="w3-card img-responsive" src="/page_imgs/hana_img/menu4_off.jpg" onclick="chgimg4();">
 		</div>				
 	</div>	
 	<div class="row">
 		<div id="menu1" class="col-xs-12 menu">
-			<div class="w3-card-4">
+			<div class="w3-card">
 			  <img class="img-responsive" src="/page_imgs/hana_img/hana-profile1.png">
-			  <div class="info" align="left">
-			  	<h5><b>이동규</b></h5><br>
-			    <p>> 하나금융투자 club1 금융센터 퀀트분석, 투자심사 담당<br><br>
-			    > SIGNATURE 2X Wrap 운용역<br><br>
-			    > 사이다경제 주식투자 스터디 리더<br><br>
-			    > 前 한가람투자자문 운용역<br><br>
-			    > 前 밸류시스템투자자문 주식 리서치</p>
-			  </div>
 			</div>
 		</div>
 		<div id="menu2" class="col-xs-12 menu" style="display:none">
-			<div class="w3-card-4">
+			<div class="w3-card">
 			  <img class="img-responsive" src="/page_imgs/hana_img/hana-profile2.png">
-			  <div class="info" align="left">
-			  	<h5><b>한동엽</b></h5><br>
-			    <p>> 하나금융투자 club1 금융센터 일본/미국 주식 담당<br><br>
-			    > SIGNATURE 2X Wrap 운용역<br><br>
-			    > Crypto Research Seoul 연구원<br><br>
-			    > 2013-2016 삼성증권
-			  </div>
 			</div>
 		</div>
 		<div id="menu3" class="col-xs-12 menu" style="display:none">
-			<div class="w3-card-4">
+			<div class="w3-card">
 			  <img class="img-responsive" src="/page_imgs/hana_img/hana-profile3.png">
-			  <div class="info" align="left">
-			  	<h5><b>김재호</b></h5><br>
-			    <p>> 국내 주식, 파생상품, 비상장기업<br><br>
-			    > 한가람투자자문 주식운용기업(국민연금, 리테일 운용)<br><br>
-			    > KTB증권 고유자산운용
-			  </div>
 			</div>
 		</div>
 		<div id="menu4" class="col-xs-12 menu" style="display:none">
-			<div class="w3-card-4">
+			<div class="w3-card">
 			  <img class="img-responsive" src="/page_imgs/hana_img/hana-profile4.png">
-			  <div class="info" align="left">
-			  	<h5><b>이범호</b></h5><br>
-			    <p>> 총괄팀장<br><br>
-			    > 금융IT
-			  </div>
 			</div>
 		</div>
 	</div>
@@ -117,6 +141,7 @@ function openCity(cityName) {
         x[i].style.display = "none"; 
     }
     document.getElementById(cityName).style.display = "block"; 
+    
 }
 </script>
 
