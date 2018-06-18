@@ -89,6 +89,7 @@
 .menu-contents{height:110px;}
 .menu-school{height:110px;}
 .menu-study{height:110px;}
+.menu-study .service-img img{height:46%; margin-top:-10px}
 .menu-study .coming{width:98%; height:110px; font-size:16px;}
 .menu-study .d-day{font-size:22px; line-height:1.0em; margin-top:-2px;}
 .menu-finance{height:110px;}
