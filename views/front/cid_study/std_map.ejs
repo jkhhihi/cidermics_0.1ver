@@ -31,13 +31,25 @@
 <script>
       function initialize() {
 
-         var Y_point2        = 37.5042191;      // Y 좌표
-         var X_point2        = 127.0384090;      // X 좌표
-
          var Y_point         = 37.5109643;      // Y 좌표
          var X_point         = 127.0648511;      // X 좌표
 
+         var Y_point2         = 37.5042191;      // Y 좌표
+         var X_point2         = 127.0384090;      // X 좌표
+
          var zoomLevel      = 17;                  // 지도의 확대 레벨 : 숫자가 클수록 확대정도가 큼
+
+         var markerTitle      = "혜성빌딩";            // 현재 위치 마커에 마우스를 오버을때 나타나는 정보
+         var markerTitle2      = "하나금융투자 Club1 금융센터"; 
+         var markerMaxWidth   = 300;                  // 마커를 클릭했을때 나타나는 말풍선의 최대 크기
+
+         // 말풍선 내용
+         //var contentString   = '<div>' +
+         //'<h5>경이로움 스터디</h5>'+
+         //'<span>사이다경제가 운영하는 스터디를 통해<br />' +
+         //   '경제로 놀고 말하고 즐겨보세요!</span><br /><br />' +
+         //'<a href="http://www.cidermics.com/study" target="_blank">http://www.cidermics.com/study</a>'+ //링크도 넣을 수 있음
+         //'</div>';
 
          var myLatlng = new google.maps.LatLng(Y_point, X_point);
          var mapOptions = {
