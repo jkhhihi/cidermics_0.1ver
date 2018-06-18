@@ -132,7 +132,7 @@ h4, h5, h6{line-height:1.5em}
 #section5 p{font-size:20px}
 #section5 h5{font-size:20px; margin-bottom:60px}
 #section5 img{margin:60px 0 30px 0}
-#section5-1 h5.t-color2{margin-top:100px}
+#section5-1 h5.t-color2{margin-top:100px; margin-bottom:40px}
 #leader-info .btn-more5{color:#fff; border:1px solid #0aa0f6; border-radius:6px; padding:10px 20px}
 #leader-info .btn-more5:hover{background-color:#0aa0f6;}
 #leader-info h5{font-size:20px; color:#0aa0f6; margin:20px 0}
@@ -142,7 +142,7 @@ h4, h5, h6{line-height:1.5em}
 
 /*리더소개 슬라이드*/
 #leader-info .m2{height:600px; padding-top:250px}
-.slider {
+/*.slider {
   width: 500px;
   height: auto;
   overflow: hidden;
@@ -158,7 +158,8 @@ h4, h5, h6{line-height:1.5em}
   padding:20px 0;
   margin-top:40px;
   transition: transform 0.5s ease;
-}
+}*/
+#leader-info .carousel-item img{width:435px}
 
 #section6 .text{margin-top:100px}
 
@@ -255,7 +256,7 @@ h5{font-size:18px}
 #section5 img{margin:20px 0}
 #section5 img.web-n{width:40%}
 #section5-1 h4{font-size:20px}
-#section5-1 h5.t-color2{margin-top:50px}
+#section5-1 h5.t-color2{margin-top:50px; margin-bottom:-20px}
 #leader-info{height:450px}
 #leader-info h6{margin-bottom:30px}
 #leader-info .btn-more5{font-size:14px;}
@@ -301,6 +302,7 @@ h5{font-size:18px}
 #section8-1 .img-space4{display:block;}	
 
 /*리더소개 슬라이드*/
+#leader-info{height:400px}
 #leader-info .m2{height:400px; padding-top:180px}
 .slider {
   width: 150px;
@@ -311,7 +313,6 @@ h5{font-size:18px}
 .slide {
   width: 150px;
 }
-
 
 }
 /*------스터디버젼2메인--------끝------*/
@@ -460,7 +461,7 @@ div #cent { position:relative; }
       width: 300px;
     }
     .carousel{
-     height: 300px;
+     height: 380px;
     }
   }
   .carousel-content{
