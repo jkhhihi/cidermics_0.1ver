@@ -281,7 +281,7 @@
 
             <div class="row" style="margin-top: 20px;">
               <div class="col s4 m3">스터디 구성</div>
-              <div class="col s8 m6" style="text-align: left;"><b>스터디 3회 + 사모임 2회 + 12번의 릴레이 세미나 무료</b></div>
+              <div class="col s8 m6" style="text-align: left;"><b><%=md[0].composition %></b></div>
               <div class="col s0 m3"></div>
             </div>
 
@@ -307,13 +307,14 @@
                 <% if(state == 1){%>
                 <button style="width: 280px;">신청마감</button>
                 <% }else{ %>
-                <form action="/npay" name="apply" method="get">
+                <div class="btn-apply"><a href="<%= md[0].naverpay %>"><button style="width: 280px;">신청하기</button></a></div>
+                <!--form action="/npay" name="apply" method="get">
                   <input type="hidden" name="subject" value="<%=md[0].subject%>">
                   <input type="hidden" name="cate" value="<%=md[0].cate%>">
                   <input type="hidden" name="idx" value="<%=md[0].idx%>">
                   <input type="hidden" name="price" value="<%=md[0].price%>">
                   <button type="submit" style="width: 280px;">신청하기</button>
-                </form>
+                </form-->
                 <% } %>
               </div>
             </div>

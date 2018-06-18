@@ -1646,6 +1646,7 @@ router.post('/study/insert', ensureAuthenticated, function(req, res, next) {
 	var sche6 = req.body.sche6;
 	var location = req.body.location;
 	var price = req.body.price;
+	var composition = req.body.composition;
 	var people = req.body.people;
 	var linesub1 = req.body.linesub1;
 	var linesub2 = req.body.linesub2;
@@ -1690,7 +1691,7 @@ router.post('/study/insert', ensureAuthenticated, function(req, res, next) {
 	var rdate = req.body.rdate;
 
 	var sets = {cate:cate,recentdate:recentdate,decate:decate,subject : subject, subject2 : subject2, bgimg1 : bgimg1, thum : thum, thum2 : thum2,img1:img1,img2:img2,img3:img3, leader:leader, period : period, sche1 : sche1, sche2 : sche2,
-		sche3 : sche3,sche4 : sche4,sche5 : sche5,sche6 : sche6, location : location, price : price, people : people,linesub1:linesub1,linesub2:linesub2,linesub3:linesub3, line1 : line1, line2 : line2, line3 : line3, recommend1:recommend1, recommend2:recommend2, recommend3:recommend3, changed1:changed1, changed2:changed2, changed3:changed3, value1 : value1,
+		sche3 : sche3,sche4 : sche4,sche5 : sche5,sche6 : sche6, location : location, price : price, composition:composition, people : people,linesub1:linesub1,linesub2:linesub2,linesub3:linesub3, line1 : line1, line2 : line2, line3 : line3, recommend1:recommend1, recommend2:recommend2, recommend3:recommend3, changed1:changed1, changed2:changed2, changed3:changed3, value1 : value1,
 	 value2 : value2, value3 : value3, slimg1 : slimg1, slimg2 : slimg2, slimg3 : slimg3, slimg4 : slimg4, lepro1 : lepro1,
 	 lepro2 : lepro2, lepro3 : lepro3, lepro4 : lepro4, appt1 : appt1, appc1 : appc1, appt2 : appt2, appc2 : appc2, appt3 : appt3, appc3 : appc3,
 	 step1 : step1, stepc1 : stepc1, step2:step2,stepc2:stepc2,step3:step3,stepc3:stepc3, regdate:date, flag:'N', state:state, naverpay:naverpay};
@@ -1725,6 +1726,7 @@ router.post('/study/update', ensureAuthenticated, function(req, res, next) {
 	var sche6 = req.body.sche6;
 	var location = req.body.location;
 	var price = req.body.price;
+	var composition = req.body.composition;
 	var people = req.body.people;
 	var linesub1 = req.body.linesub1;
 	var linesub2 = req.body.linesub2;
@@ -1769,14 +1771,14 @@ router.post('/study/update', ensureAuthenticated, function(req, res, next) {
 	var modate = getWorldTime(+9);
 	
 	var sets = {state:state,flag:flag,recentdate:recentdate,decate:decate,subject : subject, subject2 : subject2, bgimg1 : bgimg1, thum : thum, thum2 : thum2,img1:img1,img2:img2,img3:img3, leader:leader, period : period, sche1 : sche1, sche2 : sche2,
-		sche3 : sche3, sche4 : sche4,sche5 : sche5,sche6 : sche6, location : location, price : price, people : people,linesub1,linesub2,linesub3, line1 : line1, line2 : line2, line3 : line3,  recommend1:recommend1, recommend2:recommend2, recommend3:recommend3, changed1:changed1, changed2:changed2, changed3:changed3, value1 : value1,
+		sche3 : sche3, sche4 : sche4,sche5 : sche5,sche6 : sche6, location : location, price : price, composition:composition, people : people,linesub1,linesub2,linesub3, line1 : line1, line2 : line2, line3 : line3,  recommend1:recommend1, recommend2:recommend2, recommend3:recommend3, changed1:changed1, changed2:changed2, changed3:changed3, value1 : value1,
 	 value2 : value2, value3 : value3, slimg1 : slimg1, slimg2 : slimg2, slimg3 : slimg3, slimg4 : slimg4, lepro1 : lepro1,
 	 lepro2 : lepro2, lepro3 : lepro3, lepro4 : lepro4, appt1 : appt1, appc1 : appc1, appt2 : appt2, appc2 : appc2, appt3 : appt3, appc3 : appc3,
 	 step1 : step1, stepc1 : stepc1, step2:step2,stepc2:stepc2,step3:step3,stepc3:stepc3,modate:modate, naverpay:naverpay};
 
 //mysql.update('update cider.std_more set subject = ?, subject2 = ?, bgimg1 = ?,thum=?,leader = ? ,period = ?,sche1 = ?, sche2 = ? ,sche3= ? where idx = ?', [subject,subject2,bgimg1,thum,leader,period,sche1,sche2,sche3,idx], function (err, data){
     
-	mysql.update('update cider.std_more set state=?,flag=?,recentdate=?,decate=?,subject = ?, subject2 = ?, bgimg1 = ?, thum = ?, thum2=?, img1=?,img2=?,img3=?,leader = ?, period = ?, sche1 = ?, sche2 = ? ,sche3= ?,sche4= ?,sche5= ?,sche6= ? ,location= ?,price= ? ,people= ? ,linesub1=?,linesub2=?,linesub3=?, line1= ? ,line2= ? ,line3= ?, recommend1=?, recommend2=?, recommend3=?, changed1=?, changed2=?, changed3=?, value1= ? ,value2= ? ,value3= ? ,slimg1= ? ,slimg2= ? ,slimg3= ? ,slimg4= ? ,lepro1= ?,lepro2= ?,lepro3= ?  ,lepro4= ?  ,appt1= ?  ,appc1= ?  ,appt2= ?  ,appc2= ?  ,appt3= ?  ,appc3= ?  ,step1= ?  ,stepc1= ?,step2= ?  ,stepc2= ?,step3= ?  ,stepc3= ? , modate= ?, naverpay=? where idx = ?', [state,flag,recentdate,decate,subject,subject2,bgimg1,thum,thum2,img1,img2,img3,leader,period,sche1,sche2,sche3,sche4,sche5,sche6,location,price,people,linesub1,linesub2,linesub3,line1,line2,line3,recommend1,recommend2,recommend3,changed1,changed2,changed3,value1,value2,value3,slimg1,slimg2,slimg3,slimg4,lepro1,lepro2,lepro3,lepro4,appt1,appc1,appt2,appc2,appt3,appc3,step1,stepc1,step2,stepc2,step3,stepc3,modate,naverpay,idx], function (err, data){
+	mysql.update('update cider.std_more set state=?,flag=?,recentdate=?,decate=?,subject = ?, subject2 = ?, bgimg1 = ?, thum = ?, thum2=?, img1=?,img2=?,img3=?,leader = ?, period = ?, sche1 = ?, sche2 = ? ,sche3= ?,sche4= ?,sche5= ?,sche6= ? ,location= ?,price= ?, composition=?,people= ? ,linesub1=?,linesub2=?,linesub3=?, line1= ? ,line2= ? ,line3= ?, recommend1=?, recommend2=?, recommend3=?, changed1=?, changed2=?, changed3=?, value1= ? ,value2= ? ,value3= ? ,slimg1= ? ,slimg2= ? ,slimg3= ? ,slimg4= ? ,lepro1= ?,lepro2= ?,lepro3= ?  ,lepro4= ?  ,appt1= ?  ,appc1= ?  ,appt2= ?  ,appc2= ?  ,appt3= ?  ,appc3= ?  ,step1= ?  ,stepc1= ?,step2= ?  ,stepc2= ?,step3= ?  ,stepc3= ? , modate= ?, naverpay=? where idx = ?', [state,flag,recentdate,decate,subject,subject2,bgimg1,thum,thum2,img1,img2,img3,leader,period,sche1,sche2,sche3,sche4,sche5,sche6,location,price,composition,people,linesub1,linesub2,linesub3,line1,line2,line3,recommend1,recommend2,recommend3,changed1,changed2,changed3,value1,value2,value3,slimg1,slimg2,slimg3,slimg4,lepro1,lepro2,lepro3,lepro4,appt1,appc1,appt2,appc2,appt3,appc3,step1,stepc1,step2,stepc2,step3,stepc3,modate,naverpay,idx], function (err, data){
     	res.redirect('/adm/study/list');
     	
     });
