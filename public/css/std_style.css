@@ -138,7 +138,8 @@ h4, h5, h6{line-height:1.5em}
 #leader-info h5{font-size:20px; color:#0aa0f6; margin:20px 0}
 #leader-info h5 span{font-size:26px; font-weight:bold}
 #leader-info h6{color:#fff; margin-bottom:50px}
-
+#leader-info a span{color:#fff; border:2px solid #0aa0f6; padding:15px 30px}
+#leader-info a span:hover{background-color:#0aa0f6;}
 
 /*리더소개 슬라이드*/
 #leader-info .m2{height:600px; padding-top:250px}
