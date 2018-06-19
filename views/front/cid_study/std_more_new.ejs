@@ -147,10 +147,30 @@
     margin: 4px;
   }
 
+  .slider1{
+    background:url("<%=md[0].slimg1%>") no-repeat center top;
+    background-size:auto 100%;
+  }
+  .slider2{
+    background:url("<%=md[0].slimg2%>") no-repeat center top;
+    background-size:auto 100%;
+  }
+  .slider3{
+    background:url("<%=md[0].slimg3%>") no-repeat center top;
+    background-size:auto 100%;
+  }
+  .slider4{
+    background:url("<%=md[0].slimg4%>") no-repeat center top;
+    background-size:auto 100%;
+  }
+
   .box1{
   border:3px solid #fff; padding:20px 40px; display:inline-block; margin-top:50px; font-size:18px;}
 
 </style>
+
+
+
 
 <style type="text/css">
 @media only screen and (min-width: 601px){
@@ -367,8 +387,55 @@
 		<h4>#3 스터디 리더소개</h4>
 		<div class="line1"></div>
 		<img class="responsive-img" src="<%=md[0].img3%>">
+      <div class="carousel carousel-slider center " data-indicators="true">
+        <div class="carousel-fixed-item center middle-indicator" style="left: 5px; right:5px;">
+         <div class="left">
+          <a href="Previo" class="movePrevCarousel middle-indicator-text  content-indicator"><i class="material-icons left  middle-indicator-text">chevron_left</i></a>
+         </div>
+         <div class="right">
+         <a href="Siguiente" class=" moveNextCarousel middle-indicator-text content-indicator"><i class="material-icons right middle-indicator-text">chevron_right</i></a>
+         </div>
+        </div>
+
+    <!-- 스터디 슬라이더 -->
+
+        <div class="carousel-item slider1 white-text" href="#one!">
+        </div>
+        <div class="carousel-item slider2 white-text" href="#two!">
+        </div>
+        <div class="carousel-item slider3 white-text" href="#three!">
+        </div>
+        <div class="carousel-item slider4 white-text" href="#four!">
+        </div>
+
+      </div>
 	</div>
 </div>
+
+
+<!-- 슬라이더 스크립트 -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js'></script>
+
+<script type="text/javascript">
+    $(function(){ $('.carousel.carousel-slider').carousel({fullWidth: true,
+      indicators: false}); });
+   // move next carousel
+   $('.moveNextCarousel').click(function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      $('.carousel').carousel('next');
+   });
+   // move prev carousel
+   $('.movePrevCarousel').click(function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      $('.carousel').carousel('prev');
+   });
+</script>
+
+<div class="divider"></div>
+
+
 <div class="section0">
 	<div class="container">
 		<h4>#4 경이로워지는 시간</h4>
@@ -425,9 +492,9 @@
 	    <div class="col s12 m4">
 	      <div class="card">
 	        <div class="card-image  waves-effect waves-block waves-light">
-	          <a href="/studymore1/<%=stdlist[i].idx%>"><img src="<%=stdlist[i].thum%>"></a>
+	          <a href="/studymorenew/<%=stdlist[i].idx%>"><img src="<%=stdlist[i].thum%>"></a>
 	          <span class="card-btn"><a class="waves-effect waves-light btn light-blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;"><%=stdlist[i].decate%></a></span>
-	          <span class="card-title" style="bottom: 30px;"><a href="/studymore1/<%=stdlist[i].idx%>" style="color: #fff;"><b><%=stdlist[i].subject%></b></a></span>
+	          <span class="card-title" style="bottom: 30px;"><a href="/studymorenew/<%=stdlist[i].idx%>" style="color: #fff;"><b><%=stdlist[i].subject%></b></a></span>
 	          <span class="card-name">리더 <%=stdlist[i].leader%></span>
 	        </div>
 	      </div>
