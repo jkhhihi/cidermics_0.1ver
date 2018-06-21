@@ -60,10 +60,36 @@
        		<%- stdreview[0].cons_content%>
       </div>
       <div class="col s12">
-<a href="/study/list"><h5><span>☞ 스터디 목록 보러가기</span></h5></a><div></div>
+
 <a href="/study/review"><h5><span>☞ 후기 목록으로 돌아가기</span></h5></a>
       </div>
      </div>
+</div>
+<div class="section2">
+  <div class="container">
+    <div class="row">
+        <div class="col s12 center">
+          <h4>추천 스터디</h4>
+        </div>
+    </div>
+  
+    <div class="row">
+      <% var a = Math.floor(Math.random() * (4-0+1)) + 0; for(var i=a; i < a+3; i++) {  %>
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-image  waves-effect waves-block waves-light">
+            <a href="/studymorenew/<%=stdlist[i].idx%>"><img src="<%=stdlist[i].thum%>"></a>
+            <span class="card-btn"><a class="waves-effect waves-light btn light-blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;"><%=stdlist[i].decate%></a></span>
+            <span class="card-title" style="bottom: 30px;"><a href="/studymorenew/<%=stdlist[i].idx%>" style="color: #fff;"><b><%=stdlist[i].subject%></b></a></span>
+            <span class="card-name">리더 <%=stdlist[i].leader%></span>
+          </div>
+        </div>
+      </div>
+      <% } %>
+      <a href="/study/list"><h5><span>☞ 전체 스터디 목록 보러가기</span></h5></a><div></div>
+    </div>
+  
+  </div>
 </div>
 
 
