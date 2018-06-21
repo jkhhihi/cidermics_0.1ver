@@ -1541,8 +1541,8 @@ router.get('/study', ensureAuthenticated, function(req, res, next) {
 	var _tot=_year+"-"+_mon+"-"+_date;
 
 	mysql.select("SELECT count(*) as inq FROM cider.std_ask where cate = '2' and stda_regdate like  \'%"+_tot+"%\' ", function (err, data){
-		mysql.select("SELECT count(*) as app FROM cider.pay_appform where cate = '182' and regdate like  \'%"+_tot+"%\' ", function (err, data2){
-			mysql.select("SELECT count(*) as nonac FROM cider.fin_nonaccount where cate = '182' and regDate like  \'%"+_tot+"%\' ", function (err, data3){
+		mysql.select("SELECT count(*) as app FROM cider.pay_appform where  regdate like  \'%"+_tot+"%\' ", function (err, data2){
+			mysql.select("SELECT count(*) as nonac FROM cider.fin_nonaccount where  regDate like  \'%"+_tot+"%\' ", function (err, data3){
 
 	res.render('admin/study/std_index', { CP : CP, inq:data, app:data2, nonac:data3});
 	  });
@@ -1624,7 +1624,7 @@ router.post('/study/insert', ensureAuthenticated, function(req, res, next) {
 	
 	var CP = 8;
 
-	var cate = '182'; // 18년 시즌2
+	var cate = req.body.cate; // 카테고리
 
 	var decate = req.body.decate;
 	var recentdate = req.body.recentdate;
@@ -1704,7 +1704,7 @@ router.post('/study/insert', ensureAuthenticated, function(req, res, next) {
 router.post('/study/update', ensureAuthenticated, function(req, res, next) {
 	
 	var CP = 8;
-	
+	var cate = req.body.cate; // 카테고리
 	var idx = req.body.idx;
 	var recentdate = req.body.recentdate;
 	var decate = req.body.decate;
@@ -1770,7 +1770,7 @@ router.post('/study/update', ensureAuthenticated, function(req, res, next) {
 	var rdate   = req.body.rdate;
 	var modate = getWorldTime(+9);
 	
-	var sets = {state:state,flag:flag,recentdate:recentdate,decate:decate,subject : subject, subject2 : subject2, bgimg1 : bgimg1, thum : thum, thum2 : thum2,img1:img1,img2:img2,img3:img3, leader:leader, period : period, sche1 : sche1, sche2 : sche2,
+	var sets = {cate:cate,state:state,flag:flag,recentdate:recentdate,decate:decate,subject : subject, subject2 : subject2, bgimg1 : bgimg1, thum : thum, thum2 : thum2,img1:img1,img2:img2,img3:img3, leader:leader, period : period, sche1 : sche1, sche2 : sche2,
 		sche3 : sche3, sche4 : sche4,sche5 : sche5,sche6 : sche6, location : location, price : price, composition:composition, people : people,linesub1,linesub2,linesub3, line1 : line1, line2 : line2, line3 : line3,  recommend1:recommend1, recommend2:recommend2, recommend3:recommend3, changed1:changed1, changed2:changed2, changed3:changed3, value1 : value1,
 	 value2 : value2, value3 : value3, slimg1 : slimg1, slimg2 : slimg2, slimg3 : slimg3, slimg4 : slimg4, lepro1 : lepro1,
 	 lepro2 : lepro2, lepro3 : lepro3, lepro4 : lepro4, appt1 : appt1, appc1 : appc1, appt2 : appt2, appc2 : appc2, appt3 : appt3, appc3 : appc3,
@@ -1778,7 +1778,7 @@ router.post('/study/update', ensureAuthenticated, function(req, res, next) {
 
 //mysql.update('update cider.std_more set subject = ?, subject2 = ?, bgimg1 = ?,thum=?,leader = ? ,period = ?,sche1 = ?, sche2 = ? ,sche3= ? where idx = ?', [subject,subject2,bgimg1,thum,leader,period,sche1,sche2,sche3,idx], function (err, data){
     
-	mysql.update('update cider.std_more set state=?,flag=?,recentdate=?,decate=?,subject = ?, subject2 = ?, bgimg1 = ?, thum = ?, thum2=?, img1=?,img2=?,img3=?,leader = ?, period = ?, sche1 = ?, sche2 = ? ,sche3= ?,sche4= ?,sche5= ?,sche6= ? ,location= ?,price= ?, composition=?,people= ? ,linesub1=?,linesub2=?,linesub3=?, line1= ? ,line2= ? ,line3= ?, recommend1=?, recommend2=?, recommend3=?, changed1=?, changed2=?, changed3=?, value1= ? ,value2= ? ,value3= ? ,slimg1= ? ,slimg2= ? ,slimg3= ? ,slimg4= ? ,lepro1= ?,lepro2= ?,lepro3= ?  ,lepro4= ?  ,appt1= ?  ,appc1= ?  ,appt2= ?  ,appc2= ?  ,appt3= ?  ,appc3= ?  ,step1= ?  ,stepc1= ?,step2= ?  ,stepc2= ?,step3= ?  ,stepc3= ? , modate= ?, naverpay=? where idx = ?', [state,flag,recentdate,decate,subject,subject2,bgimg1,thum,thum2,img1,img2,img3,leader,period,sche1,sche2,sche3,sche4,sche5,sche6,location,price,composition,people,linesub1,linesub2,linesub3,line1,line2,line3,recommend1,recommend2,recommend3,changed1,changed2,changed3,value1,value2,value3,slimg1,slimg2,slimg3,slimg4,lepro1,lepro2,lepro3,lepro4,appt1,appc1,appt2,appc2,appt3,appc3,step1,stepc1,step2,stepc2,step3,stepc3,modate,naverpay,idx], function (err, data){
+	mysql.update('update cider.std_more set cate=?,state=?,flag=?,recentdate=?,decate=?,subject = ?, subject2 = ?, bgimg1 = ?, thum = ?, thum2=?, img1=?,img2=?,img3=?,leader = ?, period = ?, sche1 = ?, sche2 = ? ,sche3= ?,sche4= ?,sche5= ?,sche6= ? ,location= ?,price= ?, composition=?,people= ? ,linesub1=?,linesub2=?,linesub3=?, line1= ? ,line2= ? ,line3= ?, recommend1=?, recommend2=?, recommend3=?, changed1=?, changed2=?, changed3=?, value1= ? ,value2= ? ,value3= ? ,slimg1= ? ,slimg2= ? ,slimg3= ? ,slimg4= ? ,lepro1= ?,lepro2= ?,lepro3= ?  ,lepro4= ?  ,appt1= ?  ,appc1= ?  ,appt2= ?  ,appc2= ?  ,appt3= ?  ,appc3= ?  ,step1= ?  ,stepc1= ?,step2= ?  ,stepc2= ?,step3= ?  ,stepc3= ? , modate= ?, naverpay=? where idx = ?', [cate,state,flag,recentdate,decate,subject,subject2,bgimg1,thum,thum2,img1,img2,img3,leader,period,sche1,sche2,sche3,sche4,sche5,sche6,location,price,composition,people,linesub1,linesub2,linesub3,line1,line2,line3,recommend1,recommend2,recommend3,changed1,changed2,changed3,value1,value2,value3,slimg1,slimg2,slimg3,slimg4,lepro1,lepro2,lepro3,lepro4,appt1,appc1,appt2,appc2,appt3,appc3,step1,stepc1,step2,stepc2,step3,stepc3,modate,naverpay,idx], function (err, data){
     	res.redirect('/adm/study/list');
     	
     });

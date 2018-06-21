@@ -64,9 +64,8 @@
 
 		<form class="col s12" action="/adm/study/update" method="post">
       <input type="hidden" value="<%= std[0].idx %>" name="idx">
-      <div class="container">			
+      <div class="container">
         <div class="row" style="margin-top:  2em;">
-
 
           <div class="input-field col s12">
             <select name="flag" value="<%=std[0].flag%>">
@@ -83,6 +82,19 @@
               <option value="0">신청 가능 상태</option>
               <option value="2">마감 임박 상태</option>
               <option value="1">신청 마감 상태</option>
+            </select>
+            <label></label>
+          </div>
+
+          <div class="input-field col s12">
+            <select name="cate" value="<%=std[0].cate%>">
+              <option value="<%=std[0].cate%>" selected><% if(std[0].cate==1){ %> 강의 </option>
+              <% }else if(std[0].cate==2){ %> 스터디 </option>
+              <% }else if(std[0].cate==3){ %> 독서클럽 </option>
+              <% }else {}%>
+              <option value="1">강의</option>
+              <option value="2">스터디</option>
+              <option value="3">독서클럽</option>
             </select>
             <label></label>
           </div>

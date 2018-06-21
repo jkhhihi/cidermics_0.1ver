@@ -170,15 +170,28 @@
 </style>
 
 <style type="text/css">
-@media only screen and (min-width: 601px){
-  .container1{
-    width:95%;
+@media(max-width: 600px){
+  #slidermobsize{
+    height: 150px !important;
   }
-}
-@media only screen and (min-width: 993px){
-  .container1{
-    width:50%;
+
+  .slider1{
+    background:url("<%=md[0].slimg1%>") no-repeat center top;
+    background-size:auto 40%;
   }
+  .slider2{
+    background:url("<%=md[0].slimg2%>") no-repeat center top;
+    background-size:auto 40%;
+  }
+  .slider3{
+    background:url("<%=md[0].slimg3%>") no-repeat center top;
+    background-size:auto 40%;
+  }
+  .slider4{
+    background:url("<%=md[0].slimg4%>") no-repeat center top;
+    background-size:auto 40%;
+  }
+
 }
 </style>
 
@@ -391,7 +404,10 @@ a.btn-review h5 span{margin-top:50px}
 		<h4>#3 스터디 리더소개</h4>
 		<div class="line1"></div>
 		<img class="responsive-img" src="<%=md[0].img3%>">
-      <div class="carousel carousel-slider center " data-indicators="true">
+
+    <!-- 스터디 슬라이더 -->
+     
+      <div class="carousel carousel-slider center " data-indicators="true" id="slidermobsize">
         <div class="carousel-fixed-item center middle-indicator" style="left: 5px; right:5px;">
          <div class="left">
           <a href="Previo" class="movePrevCarousel middle-indicator-text  content-indicator"><i class="material-icons left  middle-indicator-text">chevron_left</i></a>
@@ -400,9 +416,6 @@ a.btn-review h5 span{margin-top:50px}
          <a href="Siguiente" class=" moveNextCarousel middle-indicator-text content-indicator"><i class="material-icons right middle-indicator-text">chevron_right</i></a>
          </div>
         </div>
-
-    <!-- 스터디 슬라이더 -->
-
         <div class="carousel-item slider1 white-text" href="#one!">
         </div>
         <div class="carousel-item slider2 white-text" href="#two!">

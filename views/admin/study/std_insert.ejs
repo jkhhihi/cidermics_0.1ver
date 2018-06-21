@@ -21,7 +21,6 @@
   <body onload="rdate()">
   	<% var data= CP; %>
     <% include ../include/nav.ejs %>
-    
   <div class="container">
     <div class="row">
 			<h5>스터디 등록하기</h5>
@@ -46,8 +45,18 @@
 			</form>
 
 		<form class="col s12" action="/adm/study/insert" method="post">
-      <div class="container">			
+      <div class="container">
         <div class="row" style="margin-top:  2em;">
+
+          <div class="input-field col s12">
+            <select name="cate">
+              <option value="" disabled selected>카테고리(강의,스터디,독서클럽)</option>
+              <option value="1">강의</option>
+              <option value="2">스터디</option>
+              <option value="3">독서클럽</option>
+            </select>
+            <label></label>
+          </div>
 
 					<div class="input-field col l12">
 						<input id="title" type="text" class="validate" name="subject">
