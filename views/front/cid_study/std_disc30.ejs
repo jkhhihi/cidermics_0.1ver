@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>사이다경제 스터디</title>
+    
+    <!--CSS -->
+    <link rel='stylesheet' href='/css/materialize.css' />
+    <link href="/css/std_style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <!-- icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--JS-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!--script src="/js/materialize.js"></script-->
+
+    <!-- 메인 문구 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script>var ml = { timelines: {}};</script>
+
+    <!-- 네이버 -->
+    <meta name="naver-site-verification" content="083657cb98aa9a4a9c62dedeffddfb2490545da0"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- favicon -->
+    <link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+    <link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+
+ 
+
+  <script src="/js/gotoup.js"></script>
+  </head>
+  <body>
+
+  <div id="but_top"><a class="btn btn-floating blue-grey darken-4"><i class="material-icons">arrow_upward</i></a></div>
+  <% include std_top %>
+
+
+  <div class="parallax-container valign-wrapper" style="min-height: 200px;">
+    <div class="section no-pad-bot" style="padding-top:75px; top:5%;">
+      <div class="container" >
+        <div class="row center">
+          <h5 class="header col s12 light" style="font-weight: 500; font-size: 1.4rem;">한 달에 한 번 나는 경이롭게 달라진다</h5>
+          <h4 class="header col s12 light" style="font-weight: 500; font-size: 1.4rem;">경이로움 스터디</h4>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="/page_imgs/study_img/background6.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+
+  <script type="text/javascript">
+    var a = Math.floor(Math.random() * 3) + 1;
+  </script>
+      
+
+<div class="container" style="margin: 50px auto;">
+  
+  <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>STUDY GROUPS</h4>
+          <p class="center-align light">경제 지식을 물고 뜯고 맛보고 즐기며 내 것으로 만드는 놀이터! 경이로운 스터디 모임</p>
+          <h3>고객 30% 할인 페이지</h3>
+        </div>
+  </div>
+  
+  <div class="row">
+    <% for(var i=0; i < stdlist.length; i++) {  %> 
+    <div class="col s12 m4">
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light" >
+          <a href="/studymorenew/<%=stdlist[i].idx%>"><img src="<%=stdlist[i].thum%>"></a>
+          <span class="card-btn"><a class="waves-effect waves-light btn light-blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;"><%=stdlist[i].decate%></a></span>
+          <span class="card-title" style="bottom: 30px;"><a href="/studymorenew/<%=stdlist[i].idx%>" style="color: #fff;"><b><%=stdlist[i].subject%></b></a></span>
+          <span class="card-name">리더 <%=stdlist[i].leader%></span>
+        </div>
+        <div class="card-content">
+          <p><i class="material-icons left">today</i><%=stdlist[i].recentdate%></p>
+          <div class="divider"></div>
+          <p><%=stdlist[i].subject2%></p>
+          <p><a class="waves-effect waves-light btn light-blue darken-2" href="/studymorenew/<%=stdlist[i].idx%>">스터디 내용 자세히 보기</a></p>
+          <p><a class="waves-effect waves-light btn pink darken-2" href="/npay?subject=<%=stdlist[i].subject%>&cate=<%=stdlist[i].cate%>&idx=<%=stdlist[i].idx%>&price=349999">30% 할인으로 이 스터디 신청하기</a></p>
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+
+</div>
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light"><b>내 삶이 경이로워지는 순간</b></h5>
+          <h4 class="header col s12 light"><b>"경이로움"</b></h4>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="/page_imgs/study_img/background2.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+
+
+
+  <% include std_bottom %>
+
+</body>
+</html>
