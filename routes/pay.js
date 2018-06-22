@@ -50,9 +50,10 @@ router.get('/npay', function(req, res, next) {
 	var idx = req.query.idx;
 	var cate = req.query.cate;
 	var price = req.query.price;
+	var PRODUCTCODE = req.query.PRODUCTCODE;
 
 
-	res.render('front/pay/pay_go', {subject:subject, idx:idx, cate:cate, price:price});
+	res.render('front/pay/pay_go', {subject:subject, idx:idx, cate:cate, price:price, PRODUCTCODE:PRODUCTCODE});
 });
 
 

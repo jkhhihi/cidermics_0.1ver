@@ -159,7 +159,10 @@
                   <option value="입금확인">입금확인</option>
                 </select>
                 </td>
-                <td><%= non[i].state %></td>
+                <td><% if (non[i].state=='입금확인') { %><span style="color:blue; background-color:#00ff05;">입금확인</span>
+                  <%}else{%>입금대기</td>
+                  <%}%>
+                <td>
                 <td><button type="submit">수정</button></td>
                 <input type="hidden" name="idx" value="<%= non[i].idx%>">
               </form>

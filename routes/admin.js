@@ -427,14 +427,18 @@ router.get('/lecture', ensureAuthenticated, function(req, res, next) {
 	 
 	var _tot=_year+"-"+_mon+"-"+_date;
 
-	mysql.select("SELECT count(*) as inq FROM cider.std_ask where cate = '1' and stda_regdate like  \'%"+_tot+"%\' ", function (err, data){
-		mysql.select("SELECT count(*) as app FROM cider.pay_appform where cate = '1' and regdate like  \'%"+_tot+"%\' ", function (err, data2){
-			mysql.select("SELECT count(*) as nonac FROM cider.fin_nonaccount where cate = '1' and regDate like  \'%"+_tot+"%\' ", function (err, data3){
+	mysql.select("SELECT count(*) as inq FROM cider.std_ask where cate = '4' and stda_regdate like  \'%"+_tot+"%\' ", function (err, data){
+		mysql.select("SELECT count(*) as app FROM cider.pay_appform where cate = '4' and regdate like  \'%"+_tot+"%\' ", function (err, data2){
+			mysql.select("SELECT count(*) as nonac FROM cider.fin_nonaccount where cate = '4' and regDate like  \'%"+_tot+"%\' ", function (err, data3){
+				mysql.select("SELECT count(*) as mobcnt FROM cider.mobileOrder where PRODUCTCODE = '4' and date like  \'%"+_tot+"%\' ", function (err, data4){
+					mysql.select("SELECT count(*) as cardcnt FROM cider.cardOrder where PRODUCTCODE = '4' and date like  \'%"+_tot+"%\' ", function (err, data5){
 
-	res.render('admin/lecture/lecture_index', { CP : CP, inq:data, app:data2, nonac:data3});
+	res.render('admin/lecture/lecture_index', { CP : CP, inq:data, app:data2, nonac:data3, mobcnt:data4, cardcnt:data5});
 	  });
 	});
   });
+});
+});
 });
 
 
@@ -457,7 +461,7 @@ router.post('/lecture/insert', ensureAuthenticated, function(req, res, next) {
 	
 	var CP = 2;
 
-	var cate = '1'; // 세미나 코드
+	var cate = '4'; // 세미나 코드
 	var decate = '2018'; // 세미나 세부코드
 	var subject = req.body.subject;
 	var thum = req.body.thum;
@@ -515,7 +519,7 @@ router.get('/lecturelist', ensureAuthenticated, function(req, res, next) {
 	
 	var CP = 2;
 	var cate;
-	mysql.select('select * from cider.cid_semilist', function (err, data){
+	mysql.select('select * from cider.cid_semilist order by idx desc;', function (err, data){
 		if(err){
 			res.redirect('back');
 		}
@@ -582,10 +586,10 @@ router.post('/lecture/update', ensureAuthenticated, function(req, res, next) {
 
 router.get('/lecture/customer', ensureAuthenticated, function(req,res,next){
 	var CP = 2;
-	mysql.select("SELECT * FROM cider.mobileOrder where PRODUCTCODE = '2' order by date desc;", function (err, data){
-		mysql.select("SELECT * FROM cider.cardOrder where PRODUCTCODE = '2' order by date desc;", function (err, data2){
-			mysql.select("SELECT * FROM cider.pay_appform where cate ='1' order by idx desc;", function (err, data3){
-				mysql.select("SELECT * FROM cider.fin_nonaccount where cate='1' order by idx desc;", function (err, data4){
+	mysql.select("SELECT * FROM cider.mobileOrder where PRODUCTCODE = '4' order by date desc;", function (err, data){
+		mysql.select("SELECT * FROM cider.cardOrder where PRODUCTCODE = '4' order by date desc;", function (err, data2){
+			mysql.select("SELECT * FROM cider.pay_appform where cate ='4' order by idx desc;", function (err, data3){
+				mysql.select("SELECT * FROM cider.fin_nonaccount where cate='4' order by idx desc;", function (err, data4){
 		res.render('admin/lecture/customer', { CP : CP, mobile:data, card:data2, code:data3, non:data4 });
 	 });
 	});
@@ -618,8 +622,8 @@ router.get('/lecture/applist', ensureAuthenticated, function(req, res, next) {
 router.get('/lecture/applist/:idx', ensureAuthenticated, function(req, res, next) {
 	var CP = 2;
 	var idx = req.params.idx;
-	mysql.select('SELECT * FROM cider.pay_appform where cate = "1" and decate = '+idx+' order by idx desc;', function (err, data){
-		mysql.select("SELECT * FROM cider.fin_nonaccount where cate='1' and decate = "+idx+" and state='입금확인' order by idx desc;", function (err, data2){
+	mysql.select('SELECT * FROM cider.pay_appform where cate = "4" and decate = '+idx+' order by idx desc;', function (err, data){
+		mysql.select("SELECT * FROM cider.fin_nonaccount where cate='4' and decate = "+idx+" and state='입금확인' order by idx desc;", function (err, data2){
 		res.render('admin/lecture/applist_detail', { CP : CP, appfm : data , non:data2});
 	});
   });
@@ -630,7 +634,7 @@ router.get('/lecture/applist/:idx', ensureAuthenticated, function(req, res, next
 
 router.get('/lecture/inquiry', ensureAuthenticated, function(req, res, next) {
 	var CP = 2;
-	mysql.select("SELECT * FROM cider.std_ask where cate='1' order by stda_no desc", function (err, data){
+	mysql.select("SELECT * FROM cider.std_ask where cate='4' order by stda_no desc", function (err, data){
 	res.render('admin/lecture/lecture_inquiry', { CP : CP, inq:data});
 	});
 });
@@ -1541,10 +1545,13 @@ router.get('/study', ensureAuthenticated, function(req, res, next) {
 	var _tot=_year+"-"+_mon+"-"+_date;
 
 	mysql.select("SELECT count(*) as inq FROM cider.std_ask where cate = '2' and stda_regdate like  \'%"+_tot+"%\' ", function (err, data){
-		mysql.select("SELECT count(*) as app FROM cider.pay_appform where  regdate like  \'%"+_tot+"%\' ", function (err, data2){
-			mysql.select("SELECT count(*) as nonac FROM cider.fin_nonaccount where  regDate like  \'%"+_tot+"%\' ", function (err, data3){
-
-	res.render('admin/study/std_index', { CP : CP, inq:data, app:data2, nonac:data3});
+		mysql.select("SELECT count(*) as app FROM cider.pay_appform where cate='2' and regdate like  \'%"+_tot+"%\' ", function (err, data2){
+			mysql.select("SELECT count(*) as nonac FROM cider.fin_nonaccount where cate='2' and regDate like  \'%"+_tot+"%\' ", function (err, data3){
+				mysql.select("SELECT count(*) as mobcnt FROM cider.mobileOrder where PRODUCTCODE = '2' and date like  \'%"+_tot+"%\' ", function (err, data4){
+					mysql.select("SELECT count(*) as cardcnt FROM cider.cardOrder where PRODUCTCODE = '2' and date like  \'%"+_tot+"%\' ", function (err, data5){
+			res.render('admin/study/std_index', {CP : CP, inq:data, app:data2, nonac:data3, mobcnt:data4, cardcnt:data5});
+		  });
+		});
 	  });
 	});
   });
@@ -1822,7 +1829,7 @@ router.get('/study/memlist/:idx', ensureAuthenticated, function(req, res, next) 
 	var CP = 8;
 	var idx = req.params.idx;
 	mysql.select('SELECT * FROM cider.pay_appform where decate = '+idx+' order by idx desc;', function (err, data){
-		mysql.select("SELECT * FROM cider.fin_nonaccount where cate='182' and decate = "+idx+" and state='입금확인' order by idx desc;", function (err, data2){
+		mysql.select("SELECT * FROM cider.fin_nonaccount where cate='2' and decate = "+idx+" and state='입금확인' order by idx desc;", function (err, data2){
 
 		res.render('admin/study/std_memlist_detail', { CP : CP, appfm : data , non:data2});
 	});
@@ -1835,8 +1842,8 @@ router.get('/study/customer', ensureAuthenticated, function(req,res,next){
 	var CP = 8;
 	mysql.select("SELECT * FROM cider.mobileOrder where PRODUCTCODE = '2' order by date desc;", function (err, data){
 		mysql.select("SELECT * FROM cider.cardOrder where PRODUCTCODE = '2' order by date desc;", function (err, data2){
-			mysql.select("SELECT * FROM cider.pay_appform where cate ='182' order by idx desc;", function (err, data3){
-				mysql.select("SELECT * FROM cider.fin_nonaccount where cate='182' order by idx desc;", function (err, data4){
+			mysql.select("SELECT * FROM cider.pay_appform where cate ='2' order by idx desc;", function (err, data3){
+				mysql.select("SELECT * FROM cider.fin_nonaccount where cate='2' order by idx desc;", function (err, data4){
 		res.render('admin/study/std_customer', { CP : CP, mobile:data, card:data2, code:data3, non:data4 });
 	 });
 	});

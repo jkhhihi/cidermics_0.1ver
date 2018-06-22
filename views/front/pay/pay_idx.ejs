@@ -418,20 +418,20 @@ function fnNumCheck() {
 				<input type="hidden" name="PRODUCTCATE" size="30" value="<%= cate %>"><br>
 				<input type="hidden" name="PRODUCTDETAILCATE" size="30" value="<%= decate %>"><br>
 
-				<input type="hidden" name="PRODUCTCODE" size="10" value="2"><br>
+				<input type="hidden" name="PRODUCTCODE" size="10" value="<%= cate %>"><br>
 				<input type="hidden" name="RESERVEDINDEX1" size="20" value="RESERVEDATA1">
 				<input type="hidden" name="RESERVEDINDEX2" size="20" value="RESERVEDATA2">
 				<input type="hidden" name="RESERVEDSTRING" size="100" value="RESERVESTRING">
-				<input type="hidden" name=RETURNURL value="http://cidermics.com/study/list">
+				<input type="hidden" name=RETURNURL value="http://cidermics.com/">
 				<input type="hidden" name=HOMEURL value="">
 				<input type="hidden" name=DIRECTRESULTFLAG value="N">
 				<input type="hidden" name=CARDLIST value="">
 				<input type="hidden" name=HIDECARDLIST value="">
 				<input type="hidden" name=TAXFREECD value="00">
 				<input type="hidden" name=POPUPTYPE value="">
-				<input type="hidden" name=CLOSEURL value="http://cidermics.com/study/list">
-				<input type="hidden" name=FAILURL value="http://cidermics.com/study/list">
-				<input type="hidden" name=APPURL value="http://cidermics.com/study/list">
+				<input type="hidden" name=CLOSEURL value="http://cidermics.com/">
+				<input type="hidden" name=FAILURL value="http://cidermics.com/">
+				<input type="hidden" name=APPURL value="http://cidermics.com/">
 				</div>
 
 				<!--input name="btnSubmit" type="button" value="주문하기" onclick="fnSubmit()" ><br-->
@@ -488,14 +488,14 @@ function fnNumCheck() {
 				<input type="hidden" name=ORDERNO value="<%=ORDERNO%>">
 				<input type="hidden" name=PRODUCTTYPE value="2">
 				<input type="hidden" name=BILLTYPE value="1">
-				<input type="hidden" name=PRODUCTCODE value="2">
+				<input type="hidden" name=PRODUCTCODE value="<%= cate %>">
 				<input type="hidden" name=RESERVEDINDEX1 value="예약어1">
 				<input type="hidden" name=RESERVEDINDEX2 value="예약어2">
 				<input type="hidden" name=RESERVEDSTRING value="예약스트링">
 				<input type="hidden" name=HOMEURL value="">
-				<input type="hidden" name=DIRECTRESULTFLAG value="http://cidermics.com/study/list">
-				<input type="hidden" name=CLOSEURL value="http://cidermics.com/study/list">
-				<input type="hidden" name=FAILURL value="http://cidermics.com/study/list">
+				<input type="hidden" name=DIRECTRESULTFLAG value="http://cidermics.com/">
+				<input type="hidden" name=CLOSEURL value="http://cidermics.com/">
+				<input type="hidden" name=FAILURL value="http://cidermics.com/">
 				</div>
 				
 				<div class="check-amount row" align="center">

@@ -30,7 +30,7 @@
           <thead>
             <tr>
                 <th>주문 번호</th>
-                <th>시즌</th>
+                <th>카테고리</th>
                 <th>스터디</th>
                 <th>성명</th>
                 <th>이메일 주소</th>
@@ -161,7 +161,9 @@
                   <option value="입금확인">입금확인</option>
                 </select>
                 </td>
-                <td><%= non[i].state %></td>
+                <td><% if (non[i].state=='입금확인') { %><span style="color:blue; background-color:#00ff05;">입금확인</span>
+                  <%}else{%>입금대기</td>
+                  <%}%>
                 <td><button type="submit">수정</button></td>
                 <input type="hidden" name="idx" value="<%= non[i].idx%>">
               </form>

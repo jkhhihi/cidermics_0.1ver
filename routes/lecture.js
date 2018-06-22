@@ -297,7 +297,7 @@ router.get('/seminar/detail/:idx', function(req, res, next) {
 
 router.post('/seminar/ask', function(req, res, next) {
 	var scate = req.body.stda_cate;
-	var cate = "1";
+	var cate = "4";
 	var name = req.body.stda_name;
 	var email = req.body.stda_email;
 	var title = req.body.stda_title;
