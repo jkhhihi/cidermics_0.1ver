@@ -17,23 +17,56 @@
   <body>
   	<% var data= CP; %>
     <% include ../include/nav.ejs %>
+    <div class="container" style="margin: 50px auto;">
+      <div class="row">
+        <div class="col s12">
+          <a class="waves-effect waves-light btn grey darken-4" href="/adm/studyin">강의/스터디/독서클럽 등록</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" style="margin: 50px auto;">
+      <h4>강의</h4>
+      <div class="row">
+        <div class="col s4">
+          <a class="waves-effect waves-light btn  blue darken-2" href="/adm/study/list">강의 리스트</a>
+        </div>
+        <div class="col s6">
+          <a class="waves-effect waves-light btn  blue darken-2" href="/adm/study/inquiry">문의 현황</a>
+          <span class="z-depth-1 yellow"><%= inq[0].inq %> NEW</span>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <br>
+      <div class="row">
+        <div class="col s6">
+          <a class="waves-effect waves-light btn blue darken-2" href="/adm/study/customer">입금 현황</a>
+          <span class="z-depth-1 light-green accent-1">오늘 신청자<span class="z-depth-1 lime accent-1"> <%= app[0].app %> </span> NEW</span>
+          <span class="z-depth-1 light-blue lighten-3">카드<span class="z-depth-1 lime accent-1"> <%= cardcnt[0].cardcnt %> </span> NEW</span>
+          <span class="z-depth-1 light-blue lighten-3">휴대폰<span class="z-depth-1 lime accent-1"> <%= mobcnt[0].mobcnt %> </span> NEW</span>
+          <span class="z-depth-1 light-blue lighten-3">무통장<span class="z-depth-1 lime accent-1"> <%= nonac[0].nonac %> </span> NEW</span>
+        </div>
+        <div class="col s6">
+          <a class="waves-effect waves-light btn blue darken-2" href="/adm/study/memlist">멤버원 현황</a>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <br>
+    </div>
 
     <div class="container" style="margin: 50px auto;">
       <h4>스터디</h4>
       <div class="row">
-        <div class="col s12">
-          <a class="waves-effect waves-light btn" href="/adm/studyin">스터디 등록</a>
-        </div>
-      </div>
-      <div class="row">
         <div class="col s4">
           <a class="waves-effect waves-light btn" href="/adm/study/list">스터디 리스트</a>
         </div>
+        <div class="col s6">
+          <a class="waves-effect waves-light btn" href="/adm/study/inquiry">문의 현황</a>
+          <span class="z-depth-1 yellow"><%= inq[0].inq %> NEW</span>
+        </div>
       </div>
-
       <div class="divider"></div>
       <br>
-
       <div class="row">
         <div class="col s6">
           <a class="waves-effect waves-light btn" href="/adm/study/customer">입금 현황</a>
@@ -46,22 +79,9 @@
           <a class="waves-effect waves-light btn" href="/adm/study/memlist">멤버원 현황</a>
         </div>
       </div>
-
       <div class="divider"></div>
       <br>
-
-      <div class="row">
-        <div class="col s6">
-          <a class="waves-effect waves-light btn" href="/adm/study/inquiry">문의 현황</a>
-          <span class="z-depth-1 yellow"><%= inq[0].inq %> NEW</span>
-        </div>
-        <div class="col s6">
-        </div>
-      </div>
     </div>
 
-
-    
-      
   </body>
 </html>
