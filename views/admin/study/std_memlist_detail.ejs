@@ -14,7 +14,14 @@
     <% var data= CP; %>
     <% include ../include/nav.ejs %>
 
-    <a href="/adm/study/memlist" class="waves-effect waves-light btn modal-trigger">뒤로가기</a>
+
+
+    <button onclick="goBack()" class="waves-effect waves-light btn modal-trigger">뒤로가기</button>
+    <script>
+      function goBack() {
+          window.history.back();
+      }
+    </script>
 
   <h5 class="header center blue-text">스터디 총 확정 멤버원 현황</h5>
 

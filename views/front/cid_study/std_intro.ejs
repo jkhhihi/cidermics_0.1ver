@@ -29,13 +29,307 @@
  
 
   <script src="/js/gotoup.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.scrollspy');
+      var instances = M.ScrollSpy.init(elems, options);
+    });
+
+    // Or with jQuery
+
+    $(document).ready(function(){
+      $('.scrollspy').scrollSpy();
+    });
+        
+    </script>
+
   </head>
   <body>
 
   <div id="but_top"><a class="btn btn-floating  blue-grey darken-4"><i class="material-icons">arrow_upward</i></a></div>
   <% include std_top %>
 
-<style type="text/css">
+
+  <style type="text/css">
+  #scrollspy{
+    position: fixed;
+    z-index: 2;
+    right: -4%;
+  }
+  @media only screen and (max-width : 1024px) {
+   #scrollspy{
+    display:none
+  }
+  .process{width:100%}
+
+  @media(max-width: 992px){
+    #memshipweb{
+      display: none;
+    }
+  }
+  @media(min-width: 992px){
+    #memshipmob{
+      display: none;
+    }
+  }
+  </style>
+
+
+<script>
+$(document).ready(function(){
+    $('.modal-trigger').leanModal();
+});
+</script>
+
+<style>
+  .modal{width:400px;}
+  .modal .modal-footer{background-color:#0aa0f5; padding-top:12px; color:#fff}
+  .btn-more1, .btn-more2, .btn-more3{padding:0 20px; border-radius:40px; display:inline-block; margin-top:10px; color:#2b323f;}
+  .proimg1 img{margin-top:100px;}
+  @media(max-width: 760px){
+  .row{margin-bottom:0}
+  .modal{width:90%;}
+  .proimg1 img{margin-top:10px; width:150px;}
+  .proimg2 img{width:90%;}
+  }
+</style>
+
+
+
+  <div class="parallax-container valign-wrapper" style="min-height: 200px;">
+    <div class="section no-pad-bot" style="padding-top:65px; top:5%;">
+      <div class="container" >
+        <div class="row center">
+          <h5 class="header col s12 light" style="font-weight:500;">경이로워지는 순간</h5>
+          <h6 class="header col s12 light">다양한 경이로움을 한눈에 파악하고 <br class="web-n">스터디를 보다 흥미롭게 즐겨보세요</h6>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="/page_imgs/study_img/backgroundm6.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+<div class="container process">
+  <div class="row">
+    <div class="col s12 m9 l12">
+      <div id="introduction" class="section scrollspy">
+
+          <div class="row center">
+            <div class="col s12">
+                <img class="responsive-img" src="/page_imgs/study_img/n_web.png">
+            </div>
+          </div>
+
+        <div class="row" align="center">
+          <div class="col s12 m5 proimg1">
+            <img class="responsive-img" src="/page_imgs/study_img/process-icon-le.png"><br>
+            <a href="#modal1" class="modal-trigger"><span class="btn-more1"><b>자세히보기</b></span></a>
+          </div>
+          <div class="col s12 m7 proimg2">
+            <img class="responsive-img" src="/page_imgs/study_img/n_web1.png">
+          </div>
+        </div>
+
+      </div>
+
+      <div id="structure" class="section scrollspy" style="background: #f4f4f4;">
+        <div class="row" align="center">
+          <div class="col s12 m5 proimg1">
+            <img class="responsive-img" src="/page_imgs/study_img/process-icon-st.png"><br>
+            <a href="/study/list"><span class="btn-more2"><b>자세히보기</b></span></a>
+          </div>
+          <div class="col s12 m7 proimg2">
+            <img class="responsive-img" src="/page_imgs/study_img/n_web2.png">
+          </div>
+        </div>
+      </div>
+
+      <div id="initialization" class="section scrollspy">
+        <div class="row" align="center">
+          <div class="col s12 m5 proimg1">
+            <img class="responsive-img" src="/page_imgs/study_img/process-icon-bo.png"><br>
+            <a href="#modal1" class="modal-trigger"><span class="btn-more3"><b>자세히보기</b></span></a>
+          </div>
+          <div class="col s12 m7 proimg2">
+            <img class="responsive-img" src="/page_imgs/study_img/n_web3.png">
+          </div>
+        </div>
+      </div>
+
+      <div id="stdprocess" class="section scrollspy">
+
+          <div class="container" id="memshipweb">
+
+            <div class="row center">
+              <div class="col s12">
+                <img class="responsive-img" src="/page_imgs/study_img/n_web4.png">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col s6">
+                <img class="responsive-img" src="/page_imgs/study_img/memi_1.jpg">
+              </div>
+              <div class="col s6">
+                <img class="responsive-img" src="/page_imgs/study_img/memi_1_1.jpg">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col s6">
+                <img class="responsive-img" src="/page_imgs/study_img/memi_2_1.jpg">
+                <a href="http://cafe.naver.com/ciderstudy" target="_blank">http://cafe.naver.com/ciderstudy</a>
+              </div>
+              <div class="col s6">
+                <img class="responsive-img" src="/page_imgs/study_img/memi_2.jpg">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col s6">
+                <img class="responsive-img" src="/page_imgs/study_img/memi_3.jpg">
+              </div>
+              <div class="col s6">
+                <img class="responsive-img" src="/page_imgs/study_img/memi_3_1.jpg">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col s6">
+                <img class="responsive-img" src="/page_imgs/study_img/memi_4_1.jpg">
+                <a href="http://cafe.naver.com/ciderstudy" target="_blank">http://cafe.naver.com/ciderstudy</a>
+              </div>
+              <div class="col s6">
+                <img class="responsive-img" src="/page_imgs/study_img/memi_5.jpg">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col s6">
+                <img class="responsive-img" src="/page_imgs/study_img/memi_6.jpg">
+              </div>
+              <div class="col s6">
+                <img class="responsive-img" src="/page_imgs/study_img/memi_5_1.jpg">
+              </div>
+            </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+    <div id="scrollspy" class="col s11 m3 l2">
+      <ul class="section table-of-contents">
+        <li><a href="#introduction">스페셜 강의</a></li>
+        <li><a href="#structure">경이로움 스터디</a></li>
+        <li><a href="#initialization">독서클럽</a></li>
+        <li><a href="#stdprocess">스터디 프로세스</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+
+
+
+  <div id="memshipmob" align="center">
+
+    <div class="row center" style="margin-bottom:0">
+      <div class="col s12">
+        <img class="responsive-img" src="/page_imgs/study_img/n_web4.png">
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col s12">
+        <img class="responsive-img" src="/page_imgs/study_img/memi_1_1m.jpg">
+      </div>
+      <div class="col s12">
+        <img class="responsive-img" src="/page_imgs/study_img/memi_1.jpg">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12">
+        <img class="responsive-img" src="/page_imgs/study_img/memi_2_1m.jpg">
+        <a href="http://cafe.naver.com/ciderstudy" target="_blank">http://cafe.naver.com/ciderstudy</a>
+      </div>
+      <div class="col s12">
+        <img class="responsive-img" src="/page_imgs/study_img/memi_2.jpg">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12">
+        <img class="responsive-img" src="/page_imgs/study_img/memi_3_1m.jpg">
+      </div>
+      <div class="col s12">
+        <img class="responsive-img" src="/page_imgs/study_img/memi_3.jpg">
+      </div>
+    </div>
+
+    <!--div class="row">
+      <div class="col s12">
+        <img class="responsive-img" src="/page_imgs/study_img/memi_4_1m.jpg">
+      </div>
+      <div class="col s12">
+        <img class="responsive-img" src="/page_imgs/study_img/memi_2.jpg">
+      </div>
+    </div-->
+
+    <div class="row">
+      <div class="col s12">
+        <img class="responsive-img" src="/page_imgs/study_img/memi_5_1m.jpg">
+        <a href="http://cafe.naver.com/ciderstudy" target="_blank" style="display:inline-block; margin-top:20px">http://cafe.naver.com/ciderstudy</a>
+      </div>
+      <div class="col s12">
+        <img class="responsive-img" src="/page_imgs/study_img/memi_5.jpg">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12">
+        <img class="responsive-img" src="/page_imgs/study_img/memi_6_1m.jpg">
+      </div>
+      <div class="col s12">
+        <img class="responsive-img" src="/page_imgs/study_img/memi_6.jpg">
+      </div>
+    </div>
+
+    <!--div class="row">
+      <div class="col s12">
+        <img class="responsive-img" src="/page_imgs/study_img/memi_7_1m.jpg">
+      </div>
+      <div class="col s12">
+        <img class="responsive-img" src="/page_imgs/study_img/memi_7.jpg">
+      </div>
+    </div-->
+
+  </div>
+</div>
+
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light"><b>내 삶이 경이로워지는 순간</b></h5>
+          <h4 class="header col s12 light"><b>"경이로움"</b></h4>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="/page_imgs/study_img/backgroundm6.jpg" alt="Unsplashed background img 2"></div>
+  </div>\
+
+
+  <!--이전 process -->
+
+<!--style type="text/css">
     .screen-container4{background-color:#333; text-align:center; color: #fff; padding: 50px;}
     .section2{padding-top: 12rem; font-family:seoulhangangregular !important;}
   @media only screen and (max-width : 600px) {
@@ -93,46 +387,9 @@
       </div>
     </div>
     <div class="parallax"><img src="/page_imgs/study_img/introback4.jpg" alt="Unsplashed background img 2"></div>
-  </div>
+  </div-->
 
 
-
-<!--div class="screen-container4">
-  <div class="row">
-    <div class="col s12 m4">
-      <div><h4>핵심 가치</h4></div>
-      
-      <div class="icon-block">
-        <h2 class="center light-blue-text"><i class="material-icons">device_hub</i></h2>
-        <h5 class="center">실용</h5>
-
-        <p class="light">사이다경제는 경제를 이롭게하자는 이름 아래 재미있는 스터디를 하고자 노력하고 있습니다. 그냥 아무말이나 우선 적도록 하겠습니다. 사이다경제는 맛있다 배고프다.</p>
-      </div>
-    </div>
-
-    <div class="col s12 m4" style="margin: 30px auto;">
-      <div class="icon-block">
-        <div class="divider"></div>
-        <br>
-        <h2 class="center light-blue-text"><i class="material-icons">accessibility</i></h2>
-        <h5 class="center">만남</h5>
-
-        <p class="light">스터디는 처음에 몇개할지는 모르겠고 우선 적어야한다. 스터디 리스트 방식으로 할지 모임으로 할지 세미나로 할지 뭐 정해진게 없는데 우선 작성하자 빨리 만들어야한다.</p>
-      </div>
-    </div>
-
-    <div class="col s12 m4" style="margin: 30px auto;">
-      <div class="icon-block">
-        <div class="divider"></div>
-        <br>
-        <h2 class="center light-blue-text"><i class="material-icons">audiotrack</i></h2>
-        <h5 class="center">즐거움</h5>
-
-        <p class="light">사이다경제는 카테고리별로 스터디를 만들어서 각 전문가들과 같이 상담하면서 얘기하고 토론하고 밥도 먹고 번개도 하고 사모임도 하고 뭐 이것저것 하면서 친목도 다지고 경제적인 지식도 얻고 참 좋다아</p>
-      </div>
-    </div>
-  </div>
-</div-->
 
 
 

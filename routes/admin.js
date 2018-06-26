@@ -1786,16 +1786,17 @@ router.post('/study/update', ensureAuthenticated, function(req, res, next) {
 //mysql.update('update cider.std_more set subject = ?, subject2 = ?, bgimg1 = ?,thum=?,leader = ? ,period = ?,sche1 = ?, sche2 = ? ,sche3= ? where idx = ?', [subject,subject2,bgimg1,thum,leader,period,sche1,sche2,sche3,idx], function (err, data){
     
 	mysql.update('update cider.std_more set cate=?,state=?,flag=?,recentdate=?,decate=?,subject = ?, subject2 = ?, bgimg1 = ?, thum = ?, thum2=?, img1=?,img2=?,img3=?,leader = ?, period = ?, sche1 = ?, sche2 = ? ,sche3= ?,sche4= ?,sche5= ?,sche6= ? ,location= ?,price= ?, composition=?,people= ? ,linesub1=?,linesub2=?,linesub3=?, line1= ? ,line2= ? ,line3= ?, recommend1=?, recommend2=?, recommend3=?, changed1=?, changed2=?, changed3=?, value1= ? ,value2= ? ,value3= ? ,slimg1= ? ,slimg2= ? ,slimg3= ? ,slimg4= ? ,lepro1= ?,lepro2= ?,lepro3= ?  ,lepro4= ?  ,appt1= ?  ,appc1= ?  ,appt2= ?  ,appc2= ?  ,appt3= ?  ,appc3= ?  ,step1= ?  ,stepc1= ?,step2= ?  ,stepc2= ?,step3= ?  ,stepc3= ? , modate= ?, naverpay=? where idx = ?', [cate,state,flag,recentdate,decate,subject,subject2,bgimg1,thum,thum2,img1,img2,img3,leader,period,sche1,sche2,sche3,sche4,sche5,sche6,location,price,composition,people,linesub1,linesub2,linesub3,line1,line2,line3,recommend1,recommend2,recommend3,changed1,changed2,changed3,value1,value2,value3,slimg1,slimg2,slimg3,slimg4,lepro1,lepro2,lepro3,lepro4,appt1,appc1,appt2,appc2,appt3,appc3,step1,stepc1,step2,stepc2,step3,stepc3,modate,naverpay,idx], function (err, data){
-    	res.redirect('/adm/study/list');
+    	res.redirect('/adm/study/list/'+cate);
     	
     });
 });
 
 
-router.get('/study/list', ensureAuthenticated, function(req, res, next) {
+router.get('/study/list/:idx', ensureAuthenticated, function(req, res, next) {
 	var CP = 8;
+	var idx = req.params.idx;
 	var stdlist;
-	mysql.select('SELECT * from cider.std_more order by idx desc;', function (err, data){
+	mysql.select('SELECT * from cider.std_more where cate = '+idx+' order by idx desc;', function (err, data){
 		stdlist = data;
 		res.render('admin/study/std_list', { CP : CP, stdlist : data });
 	});
@@ -1816,20 +1817,21 @@ router.get('/study/detail/:idx', ensureAuthenticated, function(req, res, next) {
 	});
 });
 
-router.get('/study/memlist', ensureAuthenticated, function(req, res, next) {
+router.get('/study/memlist/:idx', ensureAuthenticated, function(req, res, next) {
 	var CP = 8;
+	var idx = req.params.idx;
 	var stdlist;
-	mysql.select('SELECT * from cider.std_more order by idx desc;', function (err, data){
+	mysql.select('SELECT * from cider.std_more where cate = '+idx+' order by idx desc;', function (err, data){
 		stdlist = data;
 		res.render('admin/study/std_memlist', { CP : CP, stdlist : data});
 	});
   });
 
-router.get('/study/memlist/:idx', ensureAuthenticated, function(req, res, next) {
+router.get('/study/memlistde/:idx', ensureAuthenticated, function(req, res, next) {
 	var CP = 8;
 	var idx = req.params.idx;
 	mysql.select('SELECT * FROM cider.pay_appform where decate = '+idx+' order by idx desc;', function (err, data){
-		mysql.select("SELECT * FROM cider.fin_nonaccount where cate='2' and decate = "+idx+" and state='입금확인' order by idx desc;", function (err, data2){
+		mysql.select("SELECT * FROM cider.fin_nonaccount where  decate = "+idx+" and state='입금확인' order by idx desc;", function (err, data2){
 
 		res.render('admin/study/std_memlist_detail', { CP : CP, appfm : data , non:data2});
 	});
@@ -1838,12 +1840,13 @@ router.get('/study/memlist/:idx', ensureAuthenticated, function(req, res, next) 
 
 //**************** 구매자 목록 **************
 
-router.get('/study/customer', ensureAuthenticated, function(req,res,next){
+router.get('/study/customer/:idx', ensureAuthenticated, function(req,res,next){
 	var CP = 8;
-	mysql.select("SELECT * FROM cider.mobileOrder where PRODUCTCODE = '2' order by date desc;", function (err, data){
-		mysql.select("SELECT * FROM cider.cardOrder where PRODUCTCODE = '2' order by date desc;", function (err, data2){
-			mysql.select("SELECT * FROM cider.pay_appform where cate ='2' order by idx desc;", function (err, data3){
-				mysql.select("SELECT * FROM cider.fin_nonaccount where cate='2' order by idx desc;", function (err, data4){
+	var idx = req.params.idx;
+	mysql.select("SELECT * FROM cider.mobileOrder where PRODUCTCODE = "+idx+" order by date desc;", function (err, data){
+		mysql.select("SELECT * FROM cider.cardOrder where PRODUCTCODE = "+idx+" order by date desc;", function (err, data2){
+			mysql.select("SELECT * FROM cider.pay_appform where cate ="+idx+" order by idx desc;", function (err, data3){
+				mysql.select("SELECT * FROM cider.fin_nonaccount where cate="+idx+" order by idx desc;", function (err, data4){
 		res.render('admin/study/std_customer', { CP : CP, mobile:data, card:data2, code:data3, non:data4 });
 	 });
 	});
