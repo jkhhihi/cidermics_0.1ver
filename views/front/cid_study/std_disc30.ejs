@@ -83,6 +83,17 @@
           <p><%=stdlist[i].subject2%></p>
           <p><a class="waves-effect waves-light btn light-blue darken-2" href="/studymorenew/<%=stdlist[i].idx%>">스터디 내용 자세히 보기</a></p>
           <p><a class="waves-effect waves-light btn pink darken-2" href="/npay?subject=<%=stdlist[i].subject%>&cate=<%=stdlist[i].cate%>&idx=<%=stdlist[i].idx%>&price=349999&PRODUCTCODE=2">30% 할인가격으로 이 스터디 신청하기</a></p>
+
+          <form name="apply" method="get" action="/npay">
+            <input type="hidden" name="subject" value="<%= stdlist[i].subject %>">
+            <input type="hidden" name="cate" value="<%= stdlist[i].cate %>">
+            <input type="hidden" name="detailCate" value="<%= stdlist[i].decate %>">
+            <input type="hidden" name="idx" value="<%=stdlist[i].idx%>">
+            <input type="hidden" name="price" value="349999">
+            <input type="hidden" name="PRODUCTCODE" value="2">
+            <div class="btn-apply"><button type="submit">신청하기</button></div>
+          </form>
+
         </div>
       </div>
     </div>
