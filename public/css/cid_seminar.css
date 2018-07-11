@@ -14,7 +14,7 @@
 
 /*디테일*/
 .contents-img img{width:800px; margin-top:72px;}
-.seminar-info{width:800px; border:2px solid #eee; padding:20px 80px; margin-top:50px; margin-bottom:100px;}
+.seminar-info{width:800px; border:2px solid #eee; padding:20px 80px; margin-top:50px; margin-bottom:45px;}
 .seminar-info .col-xs-4, .col-xs-8{margin:20px 0;}
 .seminar-info p.border-left{border-left:2px solid #666; padding-left:10px;}
 .btn-apply button{background-color:#1b87c9; border:2px solid #1b87c9; color:#fff; border-radius:50px; font-size:16px; width:220px; padding:16px 0; margin:50px 0 20px 0; font-weight:bold;}
