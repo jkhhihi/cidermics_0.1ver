@@ -165,7 +165,7 @@
   }
 
   .box1{
-  border:3px solid #fff; padding:20px 40px; display:inline-block; margin-top:50px; font-size:18px;}
+  border:3px solid #80afdb; padding:20px 40px; display:inline-block; margin-top:50px; font-size:18px;}
 
 </style>
 
@@ -196,12 +196,21 @@
 </style>
 
 <style type="text/css">
+.line2{
+	width: 350px;
+    height: 4px;
+    background-color: #80afdb;
+    margin-bottom: 30px;}
 a.btn-review h5 span{color:#0aa0f6 !important; border:2px solid #0aa0f6; border-radius:5px; padding:20px 40px; display:inline-block; margin-top:100px}
 a.btn-review h5 span:hover{background-color:#0aa0f6; color:#fff !important}
+a.btn-seminar h5 span{color:#0aa0f6!important; border:2px solid #0aa0f6; border-radius:5px; padding:20px 40px; display:inline-block; margin-top:20px; margin-bottom:50px}
+a.btn-seminar h5 span:hover{background-color:#0aa0f6; color:#fff !important}
 @media only screen and (max-width : 1024px) {
 a.btn-review h5 span{margin-top:50px}
+a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
 }
 </style>
+
 <script type="text/javascript">
   function commaNum(num) {
       var len, point, str;  
@@ -372,37 +381,71 @@ a.btn-review h5 span{margin-top:50px}
 <div class="section0">
 	<div class="container">
 		<h4>#1 강의 소개</h4>
-		<div class="line1"></div>
+		<div class="line2"></div>
 		<div class="info">
-			<h5 style="color:#73c7a6"><%=md[0].linesub1%></h5>
-			<p><span>1.</span> <%=md[0].line1%></p>
-			<div class="divider1"></div>
+			<h5 style="color:#80afdb"><%=md[0].linesub1%></h5>
+			<p><span style="color:#80afdb">1.</span> <%=md[0].line1%></p>
+			<div class="divider1" style="background-color: #80afdb;"></div>
 		</div>
 		<div class="info">
-			<h5 style="color:#73c7a6"><%=md[0].linesub2%></h5>
-			<p><span>2.</span> <%=md[0].line2%></p>
-			<div class="divider1"></div>
+			<h5 style="color:#80afdb"><%=md[0].linesub2%></h5>
+			<p><span style="color:#80afdb">2.</span> <%=md[0].line2%></p>
+			<div class="divider1" style="background-color: #80afdb;"></div>
 		</div>
 		<div class="info">
-			<h5 style="color:#73c7a6"><%=md[0].linesub3%></h5>
-			<p><span>3.</span> <%=md[0].line3%></p>
-			<div class="divider1"></div>
+			<h5 style="color:#80afdb"><%=md[0].linesub3%></h5>
+			<p><span style="color:#80afdb">3.</span> <%=md[0].line3%></p>
+			<div class="divider1" style="background-color: #80afdb;"></div>
 		</div>		
 	</div>
 </div>
-<div class="section1">
+<div class="section2">
 	<div class="container" >
 		<h4>#2 강의 커리큘럼</h4>
-		<div class="line1"></div>
+		<div class="line2"></div>
 		<div align="center">
 			<img class="responsive-img" src="<%=md[0].img2%>">
 		</div>
 	</div>
 </div>
-<div class="section2">
+<div class="section0">
 	<div class="container">
-		<h4>#3 강의 리더소개</h4>
-		<div class="line1"></div>
+		<h4>#3 경이로워지는 시간</h4>
+		<div class="line2"></div>
+			<div class="info1">
+				<h5 class="title1" style="color:#80afdb">"이런 분들께 추천합니다"</h5>
+				<p><span style="color:#80afdb">1.</span>&nbsp <%=md[0].recommend1%></p>
+				<div class="divider1" style="background-color: #80afdb;"></div>
+				<p><span style="color:#80afdb">2.</span>&nbsp <%=md[0].recommend2%></p>
+				<div class="divider1" style="background-color: #80afdb;"></div>
+				<p><span style="color:#80afdb">3.</span>&nbsp <%=md[0].recommend3%></p>
+				<div class="divider1" style="background-color: #80afdb;"></div>
+			</div>	
+			<div class="info2">
+				<h5 class="title1" style="color:#80afdb">"스터디를 하고 나면 이렇게 달라집니다"</h5>
+				<p><span style="color:#80afdb">1.</span>&nbsp <%=md[0].changed1%></p>
+				<div class="divider1" style="background-color: #80afdb;"></div>
+				<p><span style="color:#80afdb">2.</span>&nbsp <%=md[0].changed2%></p>
+				<div class="divider1" style="background-color: #80afdb;"></div>
+				<p><span style="color:#80afdb">3.</span>&nbsp <%=md[0].changed3%></p>
+				<div class="divider1" style="background-color: #80afdb;"></div>
+			</div>				
+	</div>
+</div>
+<div class="section2">
+	<div class="container" >
+		<h4>경이로움 스터디는 왜 다를까?</h4>
+		<div class="line2"></div>
+		<div align="center">
+			<img class="responsive-img" src="https://i.imgur.com/CsWGi2N.jpg" style="margin-top:20px">
+			<a href="/seminar" align="center" class="btn-seminar"><h5><span>☞ 세미나 보러가기</span></h5></a>
+		</div>
+	</div>
+</div>
+<div class="section0">
+	<div class="container">
+		<h4>#4 강의 리더소개</h4>
+		<div class="line2"></div>
 		<img class="responsive-img" src="<%=md[0].img3%>">
 
     <!-- 스터디 슬라이더 -->
@@ -450,62 +493,20 @@ a.btn-review h5 span{margin-top:50px}
    });
 </script>
 
-<div class="section0">
-	<div class="container">
-		<h4>#4 경이로워지는 시간</h4>
-		<div class="line1"></div>
-			<div class="info1">
-				<h5 class="title1" style="color:#73c7a6">"이런 분들께 추천합니다"</h5>
-				<p><span>1.</span>&nbsp <%=md[0].recommend1%></p>
-				<div class="divider1"></div>
-				<p><span>2.</span>&nbsp <%=md[0].recommend2%></p>
-				<div class="divider1"></div>
-				<p><span>3.</span>&nbsp <%=md[0].recommend3%></p>
-				<div class="divider1"></div>
-			</div>	
-			<div class="info2">
-				<h5 class="title1" style="color:#73c7a6">"스터디를 하고 나면 이렇게 달라집니다"</h5>
-				<p><span>1.</span>&nbsp <%=md[0].changed1%></p>
-				<div class="divider1"></div>
-				<p><span>2.</span>&nbsp <%=md[0].changed2%></p>
-				<div class="divider1"></div>
-				<p><span>3.</span>&nbsp <%=md[0].changed3%></p>
-				<div class="divider1"></div>
-			</div>				
-	</div>
-</div>
+
 
 <!-- 여기부터는 고정 -->
 <div class="divider"></div>
 <div class="section0">
 	<div class="container">
 		<h4>경이로움 멤버들의 진솔한 후기 인터뷰</h4>
-		<div class="line1"></div>
+		<div class="line2"></div>
 			<div class="row">
 				<a href="http://cidermics.com/stdreview/5"><div class="col s12 m6"><img class="responsive-img" src="/page_imgs/study_img/img-section9-thum1.jpg"></div></a>
 				<div class="web-n col s12" style="margin-bottom:30px;"></div>
 				<a href="http://cidermics.com/stdreview/4"><div class="col s12 m6"><img class="responsive-img" src="/page_imgs/study_img/img-section9-thum2.jpg"></div></a>
 			</div>	
 			<a href="/study/review" align="center" class="btn-review"><h5><span>☞ 더 많은 후기 보기</span></h5></a>		
-	</div>
-</div>
-<div class="section1">
-	<div class="container" >
-		<h4>경이로움 스터디는 왜 다를까?</h4>
-		<div class="line1"></div>
-		<div align="center">
-			<img class="responsive-img" src="https://i.imgur.com/aQai1ei.jpg" style="margin-top:20px">
-			<img class="responsive-img" src="https://i.imgur.com/APnLZGG.jpg" style="margin-top:20px">
-		</div>
-	</div>
-</div>
-<div class="section0">
-	<div class="container">
-		<h4>경이로움의 처음과 끝!</h4>
-		<div class="line1"></div>
-		<div align="center">
-			<img class="responsive-img" src="https://i.imgur.com/CChI9Mm.png" style="margin-top:20px">
-		</div>		
 	</div>
 </div>
 

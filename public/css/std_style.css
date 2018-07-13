@@ -62,7 +62,6 @@ p {
   .parallax-container .section {
     width: 100%;
   }
-
 /*----------스터디버젼2top----------*/
 ul.sub li{width:120px; background-color:#000;}
 ul.sub li:hover{background-color:#272d39;}
@@ -102,12 +101,12 @@ h4, h5, h6{line-height:1.5em}
 
 #section1 a{color:#fff}
 #section1 span{border-radius:40px; display:inline-block; padding:2px 20px; margin-top:20px}
-/*#menu-le, */#menu-st/*, #menu-bo*/{border:4px solid #fff; opacity:0.6; width:31%; padding:40px 0 40px 80px; margin:40px 10px 20px 10px}
-#menu-le, #menu-bo{border:4px solid #59657a; width:31%; padding:40px 0 40px 80px; margin:40px 10px 20px 10px}
-#menu-le:hover{border:4px solid /*#81afdc;*/ opacity:1.0}
+#menu-le, #menu-st/*, #menu-bo*/{border:4px solid #fff; opacity:0.6; width:31%; padding:40px 0 40px 80px; margin:40px 10px 20px 10px}
+#menu-bo{border:4px solid #59657a; width:31%; padding:40px 0 40px 80px; margin:40px 10px 20px 10px}
+#menu-le:hover{border:4px solid #81afdc; opacity:1.0}
 #menu-st:hover{border:4px solid #73c7a6; opacity:1.0}
 #menu-bo:hover{border:4px solid /*#f58f8e;*/ opacity:1.0}
-.btn-more1{border:2px solid #59657a /*#81afdc;*/; color:#59657a}
+.btn-more1{border:2px solid #59657a; color:#81afdc; /*color:#59657a;*/}
 .btn-more2{border:2px solid #73c7a6;}
 .btn-more3{border:2px solid #59657a /*#f58f8e;*/; color:#59657a}
 
