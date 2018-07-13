@@ -166,14 +166,14 @@ router.get('/study/map', function(req, res, next) {
 
 router.get('/study/disc3', function(req, res, next) {
 	var stdlist;
-	mysql.select('SELECT idx,subject,subject2,decate,recentdate,thum,leader,sche1,cate,state from cider.std_more where flag="Y" order by idx desc limit 0,8;', function (err, data){
+	mysql.select('SELECT idx,subject,subject2,decate,recentdate,thum,leader,sche1,cate,state from cider.std_more where cate="2" and flag="Y" order by idx desc limit 0,8;', function (err, data){
 		stdlist = data;
 	res.render('front/cid_study/std_disc30', {stdlist : data});
   });
 });
 router.get('/study/disc4', function(req, res, next) {
 	var stdlist;
-	mysql.select('SELECT idx,subject,subject2,decate,recentdate,thum,leader,sche1,cate,state from cider.std_more where flag="Y" order by idx desc limit 0,8;', function (err, data){
+	mysql.select('SELECT idx,subject,subject2,decate,recentdate,thum,leader,sche1,cate,state from cider.std_more where cate="2" and flag="Y" order by idx desc limit 0,8;', function (err, data){
 		stdlist = data;
 	res.render('front/cid_study/std_disc40', {stdlist : data});
   });

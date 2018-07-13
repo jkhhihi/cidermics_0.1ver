@@ -54,6 +54,7 @@ router.get('/npay', function(req, res, next) {
 
 
 	res.render('front/pay/pay_go', {subject:subject, idx:idx, cate:cate, price:price, PRODUCTCODE:PRODUCTCODE});
+
 });
 
 
@@ -81,7 +82,12 @@ router.post('/npayinsert', function(req,res,next){
 			res.redirect('back');
 		}
 
-	res.redirect('/pay/'+ORDERNO+'/'+cate+'/'+decate+'/'+price+'');
+		if(price == 0){
+			res.send('<script>alert("신청 완료");location.href="/";</script>');
+		}else{
+			res.redirect('/pay/'+ORDERNO+'/'+cate+'/'+decate+'/'+price);
+		}
+
 	});
 });
 
