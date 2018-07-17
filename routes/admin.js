@@ -1535,13 +1535,13 @@ router.get('/study', ensureAuthenticated, function(req, res, next) {
 	 {
 	    _mon="0"+_mon;
 	 }
-	  var _date=now.getDate();
-	  _date =""+_date;
-	  if (_date.length < 2 )
-		 {
-		    _date="0"+_date;
-		 }
-	 
+	var _date=now.getDate();
+	date =""+_date;
+	if (_date.length < 2 )
+	{
+	_date="0"+_date;
+	}
+	
 	var _tot=_year+"-"+_mon+"-"+_date;
 
 	mysql.select("SELECT count(*) as inq FROM cider.std_ask where cate = '2' and stda_regdate like  \'%"+_tot+"%\' ", function (err, data){

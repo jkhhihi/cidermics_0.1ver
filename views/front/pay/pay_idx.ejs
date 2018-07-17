@@ -90,27 +90,15 @@ $(document).ready(function(){
 var pf;
 var pm;
 
-function init() {
-	charset="EUC-KR";
-	document.charset ="EUC-KR";
-	pf = document.frmConfirm;
-	pm = document.payForm;
-	pf.ORDERNO.value;
-	pf.PRODUCTCATE.value;
-	pf.PRODUCTDETAILCATE.value;
-	pf.AMOUNT.value;
-
+//모바일 결제
+function pay() {
+	pm=document.payForm;
 	pm.ORDERNO.value;
 	pm.PRODUCTCATE.value;
 	pm.PRODUCTDETAILCATE.value;
 	pm.AMOUNT.value;
-	
-	pf.HOMEURL.value= 'http://cidermics.com/paydone/'+ pf.ORDERNO.value;
 	pm.HOMEURL.value= 'http://cidermics.com/paydone/'+ pm.ORDERNO.value;
-}
 
-//모바일 결제
-function pay() {
 	//var paytype = pm.paytype.value;
 	var fileName;
 
@@ -120,7 +108,6 @@ function pay() {
 		if ( filter.indexOf( navigator.platform.toLowerCase() ) < 0 ){
 		//mobile
 		fileName = "https://ssl.kiwoompay.co.kr/m/mobile/DaouMobileMng.jsp";
-		
 		} else {
 		//pc
 		fileName = "https://ssl.kiwoompay.co.kr/2.0/mobile/DaouMobileMng.jsp";
@@ -164,6 +151,13 @@ function pay() {
 
 //신용카드 결제
 function fnSubmit() {
+	pf = document.frmConfirm;
+	pf.ORDERNO.value;
+	pf.PRODUCTCATE.value;
+	pf.PRODUCTDETAILCATE.value;
+	pf.AMOUNT.value;	
+	pf.HOMEURL.value= 'http://cidermics.com/paydone/'+ pf.ORDERNO.value;
+
 	var fileName;
 
 	//test url
@@ -355,7 +349,7 @@ function fnNumCheck() {
 		
 </head>
 
-<body onLoad="init();">
+<body>
 
 <div id="select-pay">
 	<div class="title-box">

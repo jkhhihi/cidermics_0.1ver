@@ -960,7 +960,7 @@ router.get('/cardOrder',ipfilter(ips,ipss, {mode: 'allow'}), function(req, res) 
 
 	var sets = {CPID : CPID, ORDERNO : ORDERNO, PRODUCTTYPE : "2", BILLTYPE : "1", AMOUNT:AMOUNT, CPQUOTA : CPQUOTA, EMAIL : EMAIL, USERID : USERID, USERNAME : enUsernm.USERNAME,
 		PRODUCTCODE : PRODUCTCODE, PRODUCTNAME:enPdnm.PRODUCTNAME, RESERVEDINDEX1:RESERVEDINDEX1, RESERVEDINDEX2 : RESERVEDINDEX2, RESERVEDSTRING : RESERVEDSTRING, 
-		CLOSEURL : "http://cidermics.com/finbook_pur",FAILURL : "http://cidermics.com/finbook_pur", HOMEURL : "http://cidermics.com/finbook_ch", APPURL : "http://cidermics.com/finbook",
+		CLOSEURL : "http://cidermics.com/",FAILURL : "http://cidermics.com/", HOMEURL : "http://cidermics.com/", APPURL : "http://cidermics.com/",
 		DIRECTRESULTFLAG : DIRECTRESULTFLAG, CARDLIST : CARDLIST,HIDECARDLIST:HIDECARDLIST, TAXFREECD : "00", POPUPTYPE : POPUPTYPE, date:date
 		};
 	//, PAYMETHOD:PAYMETHOD, SETTDATE:SETTDATE, AUTHNO:AUTHNO,CARDCODE:CARDCODE, CARDNAME:CARDNAME, CARDNO:CARDNO, date:date
@@ -1013,11 +1013,12 @@ router.get('/mobileOrder',ipfilter(ips,ipss, {mode: 'allow'}), function(req, res
 	var enUsernm = urlencode.parse('USERNAME='+USERNAME+'', {charset: 'EUC-KR'}); // {nick: '苏千'}
 
 
-	var sets = {CPID : CPID, ORDERNO : ORDERNO, PRODUCTTYPE : "2", BILLTYPE : "1", AMOUNT:AMOUNT, PRODUCTNAME:enPdnm.PRODUCTNAME,CLOSEURL : CLOSEURL,FAILURL : FAILURL, HOMEURL : HOMEURL,
+	var sets = {CPID : CPID, ORDERNO : ORDERNO, PRODUCTTYPE : "2", BILLTYPE : "1", AMOUNT:AMOUNT, PRODUCTNAME:enPdnm.PRODUCTNAME,CLOSEURL : "http://cidermics.com/",FAILURL : "http://cidermics.com/", HOMEURL : "http://cidermics.com/",
 		EMAIL : EMAIL, USERID : USERID, USERNAME : enUsernm.USERNAME,
 		PRODUCTCODE : PRODUCTCODE, RESERVEDINDEX1:RESERVEDINDEX1, RESERVEDINDEX2 : RESERVEDINDEX2, RESERVEDSTRING : RESERVEDSTRING, 
 		DIRECTRESULTFLAG : DIRECTRESULTFLAG, MOBILECOMPANYLIST:MOBILECOMPANYLIST, date:date, MOBILENO:MOBILENO};
 	mysql.insert('insert into cider.mobileOrder set ?', sets, function (err, data){
+		console.log(data);
 		if(err){
 			res.redirect('back');
 		}
