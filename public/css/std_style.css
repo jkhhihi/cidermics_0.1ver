@@ -106,7 +106,7 @@ h4, h5, h6{line-height:1.5em}
 #menu-le:hover{border:4px solid #81afdc; opacity:1.0}
 #menu-st:hover{border:4px solid #73c7a6; opacity:1.0}
 #menu-bo:hover{border:4px solid /*#f58f8e;*/ opacity:1.0}
-.btn-more1{border:2px solid #59657a; color:#81afdc; /*color:#59657a;*/}
+.btn-more1{border:2px solid #81afdc; /*color:#59657a;*/}
 .btn-more2{border:2px solid #73c7a6;}
 .btn-more3{border:2px solid #59657a /*#f58f8e;*/; color:#59657a}
 
@@ -234,7 +234,7 @@ h5{font-size:18px}
 .bg-color3{padding:50px 0}
 
 #m-menu-le, #m-menu-st, #m-menu-bo{padding:10px 10px 25px 10px}
-#section1 #m-menu-le{/*background-color:#384556;*/ border-top:1px solid #fff; margin-top:40px}
+#section1 #m-menu-le{background-color:#384556; border-top:1px solid #fff; margin-top:40px}
 #section1 #m-menu-st{background-color:#36484e; border-top:1px solid #fff; border-bottom:1px solid #fff;}
 #section1 #m-menu-bo{/*background-color:#49404b;*/ border-bottom:1px solid #fff; margin-bottom:-70px}
 #section1 span{padding:0 20px}
