@@ -154,7 +154,10 @@ function openWinKA(){
 		</div>
 
 		<% var state = semi[0].state; %>
-		<% if(state == 0){%>
+		<% if(state == 1){%>
+		<div class="btn-apply"><button>신청마감</button></div>
+		<!--div class="btn-apply"><a href="<%= semi[0].orderurl %>"><button>신청하기</button></a></div-->
+		<% }else{ %>
 		<form name="apply" method="get" action="/npay">
 			<input type="hidden" name="subject" value="<%= semi[0].subject %>">
 			<input type="hidden" name="cate" value="<%= semi[0].cate %>">
@@ -164,9 +167,6 @@ function openWinKA(){
 			<input type="hidden" name="PRODUCTCODE" value="4">
 			<div class="btn-apply"><button type="submit">신청하기</button></div>
 		</form>
-		<!--div class="btn-apply"><a href="<%= semi[0].orderurl %>"><button>신청하기</button></a></div-->
-		<% }else{ %>
-		<div class="btn-apply"><button>신청마감</button></div>
 		<% } %>
 
 		<div class="col-xs-12 btn-kakao-plus"><a href="#" onClick="javascript:openWinKA();"><p>카톡문의<br><span>플러스친구:@사이다경제</span></p></a></div>
