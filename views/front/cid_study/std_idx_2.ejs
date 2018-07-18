@@ -265,8 +265,8 @@ function showDivs(n) {
                 $button.prepend('<i class="state-icon ' + settings[$button.data('state')].icon + '"></i> ');
             }
         }
-        init();
-    });
+        init();    });
+
 });
 </script>
 
@@ -274,21 +274,22 @@ function showDivs(n) {
 <div id="info-wrap">
     <div id="pop">
        <div>
-        <a href="/study/list"><img class="img-responsive" style="max-width:100%;" src="https://i.imgur.com/2f13SfK.jpg"></a>
+        <a href="/study/lecture"><img class="img-responsive" style="max-width:100%;" src="https://i.imgur.com/2f13SfK.jpg"></a>
        </div>
       <div class="close1" style="opacity:.98;">
           <form name="pop_form" id="pdtop">
-            <span class="button-checkbox">
+            <span class="button-checkbox" style="display:none">
                 <button type="button" class="btn">하루동안 보지 않기</button>
-                <input type="checkbox" name="chkbox" value="checkbox" class="filled-in" checked />
+                <input type="checkbox" name="chkbox" value="checkbox"/>
             </span>
             <span class="button-close">
-                <button type="button" class="btn" onclick="closePop();">닫기</button>
+                <button type="button" class="btn" onclick="closePop();" style="width:100%">닫기</button>
             </span>
           </form>
       </div>
     </div>
 </div>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.carousel');
