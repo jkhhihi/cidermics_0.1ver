@@ -21,12 +21,12 @@
 .title-mark{margin-left:20px;}
 .title-e p{font-size:24px; font-weight:600; margin:30px 0 0 20px; line-height:1.0em;}
 .title-k{margin:20px 0 10px 20px;}
-/*서비스라인*/
+/*서비스라인
 .line1{background-color:#1bafba; width:100%; height:6px;}
 .line2{background-color:#d4434e; width:100%; height:6px;}
 .line3{background-color:#63b72c; width:100%; height:6px;}
 .line4{background-color:#f0c525; width:100%; height:6px;}
-/*서비스:event,open,hit*/
+/*서비스:event,open,hit
 .con-hit{background-color:#1bafba; padding:6px 8px; border-radius:4px;}
 .sch-open{background-color:#d4434e; padding:6px 8px; border-radius:4px;}
 .finb-event{background-color:#63b72c; padding:6px 8px; border-radius:4px;}
@@ -37,7 +37,7 @@
 .menu-study{width:100%; height:300px; background-image: url("https://i.imgur.com/REmiuPJ.jpg"); background-size:cover;}
 .menu-study .d-day{font-size:60px; margin-top:10px;}
 .menu-finance{width:100%; height:300px; background-image: url("https://i.imgur.com/WqL2bH7.jpg"); background-size:cover;}*/
-
+/*
 .menu-contents{width:100%; height:320px;}
 .menu-school{width:100%; height:320px;}
 .menu-study{width:100%; height:320px;}
@@ -66,10 +66,19 @@
 #service-menu{margin-top:62px;}
 
 
+#ad-banner-mob{display:none}
+#ad-banner{margin-top:60px}
+
+
 @media all and (max-width:1024px) {
+
+#ad-banner-mob{margin-top:45px; display:block;}
+#ad-banner{display:none}
+
+
+	
 .ad-team-recruiting{margin-top:10px;}/*팀원모집배너*/
 .parallax{display:none;}
-
 .padding-5lr{padding-left:2px !important; padding-right:2px !important;}
 
 #service-menu{margin-top:45px;}
@@ -78,14 +87,14 @@
 .title-e {padding-left:5px !important;}
 .title-e p{font-size:12px;  margin:10px 0 10px 6px; font-weight:500;}
 .title-k{margin:0 0 0 6px; font-size:10px; padding-left:5px !important;}
-/*서비스라인*/
+/*서비스라인
 .line1, .line2, .line3, .line4{height:4px;}
-/*서비스:event,open,hit*/
+/*서비스:event,open,hit
 .con-hit{font-size:10px; padding:4px 6px; border-radius:2px;}
 .sch-open{font-size:10px; padding:4px 6px; border-radius:2px;}
 .finb-event{font-size:10px; padding:4px 6px; border-radius:2px;}
 .fin-event{font-size:10px; padding:4px 6px; border-radius:2px;}
-/*서비스 배경화면*/
+/*서비스 배경화면
 .menu-contents{height:110px;}
 .menu-school{height:110px;}
 .menu-study{height:110px;}
@@ -102,6 +111,7 @@
 #service-info .title-mark{margin:0 0 5px 0;}
 #service-info .info{font-size:12px; border-bottom:1px solid #ccc;}
 #service-info .title-mark .con-hit, .sch-open, .finb-event, .fin-event{margin:0 5px 0 6px}
+*/
 
 .new-contents{margin:10px 0 0 0;}
 .new-contents .title{font-size:12px; height:auto; padding-top:2px; padding-left:10px;}
