@@ -65,16 +65,26 @@
 .con-list .con-plus-btn{margin:50px 0;}
 #service-menu{margin-top:62px;}
 
-
-#ad-banner-mob{display:none}
-#ad-banner{margin-top:60px}
-
+.carousel-indicators .active{background-color:#fff !important}
+.carousel-indicators li{border:1px solid #fff !important}
+#carousel-example-generic{margin-top:70px}
+.bg1{background-color:#f4f4f4; width:100%; height:auto; padding:50px 0}
+.bg1 .container{width:60%}
+#service .col-xs-6{border-right:1px solid #eaeaea; text-align:center}
+#service .col-xs-6 img{width:100px; margin-bottom:10px}
+#service .col-xs-6:last-child{border-right:0px none}
+#service .col-xs-6 a{font-weight:bold}
+#service .col-xs-6 a:hover{color:#1b87c9 !important; text-decoration:underline;}
+#service .col-xs-6 a span:hover{text-decoration:underline;}
 
 @media all and (max-width:1024px) {
 
-#ad-banner-mob{margin-top:45px; display:block;}
-#ad-banner{display:none}
-
+#carousel-example-generic{margin-top:45px}
+.carousel-indicators{bottom:-10px !important}
+.bg1{padding:10px 0 20px 0}
+.bg1 .container{width:100%}
+#service .col-xs-6{border-right:0px none;}
+#service .col-xs-6 img{width:60px; margin-bottom:2px; margin-top:10px}
 
 	
 .ad-team-recruiting{margin-top:10px;}/*팀원모집배너*/
