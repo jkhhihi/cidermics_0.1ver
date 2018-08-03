@@ -164,7 +164,7 @@ function openWinKA(){
 <div id="info-wrap">
 	<div id="pop">
 		 <div>
-			<a href="/seminar"><img class="img-responsive" src="https://i.imgur.com/UgZdbB1.jpg"></a>
+			<a href="/seminar"><img class="img-responsive" src="https://i.imgur.com/u47gq58.jpg"></a>
 			 </div>
 		<div class="close1" style="opacity:.98;">
 				<form name="pop_form" id="pdtop">
@@ -210,6 +210,29 @@ function openWinKA(){
     document.all['info-wrap'].style.visibility = "hidden";
   }
 </script>
+
+<script language="Javascript">
+var currentSlide;
+var rand;
+$(document).ready(function() {
+  currentSlide = Math.floor((Math.random() * $('.item').length));
+  rand = currentSlide;
+  $('#carousel-example-generic').carousel(currentSlide);
+  $('#carousel-example-generic').fadeIn(1000);
+  setInterval(function(){ 
+    while(rand == currentSlide){
+      rand = Math.floor((Math.random() * $('.item').length));
+    }
+    currentSlide = rand;
+    $('#carousel-example-generic').carousel(rand);
+  },3000);
+});
+</script>
+<style>
+#myCarousel {
+    display:none;   
+}
+</style>
 
 <!-- 메인이미지 -->
 <!--div class="parallax" style="margin-bottom:0;">
@@ -328,19 +351,19 @@ function openWinKA(){
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" align="center">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="0"></li>
     <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2" class="active"></li>
   </ol>
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
-    <div class="item active" style="background-color:#05334b">
+    <div class="item" style="background-color:#05334b">
       <a href="/study/lecture"><img src="https://i.imgur.com/FdO8Ezk.jpg" alt="..."></a>
     </div>
     <div class="item" style="background-color:#ffae00">
        <a href="/seminar"><img src="https://i.imgur.com/boEDbi3.jpg" alt="..."></a>
     </div>
-    <div class="item" style="background-color:#0794be">
+    <div class="item active" style="background-color:#0794be">
        <a href="http://mybobby.co.kr/"><img src="https://i.imgur.com/SV3UVB0.jpg" alt="..."></a>
     </div>
   </div>
