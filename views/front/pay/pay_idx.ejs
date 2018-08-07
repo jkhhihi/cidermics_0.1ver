@@ -92,6 +92,8 @@ var pm;
 
 //모바일 결제
 function pay() {
+	charset="EUC-KR";
+	document.charset ="EUC-KR";
 	pm=document.payForm;
 	pm.ORDERNO.value;
 	pm.PRODUCTCATE.value;
@@ -151,6 +153,8 @@ function pay() {
 
 //신용카드 결제
 function fnSubmit() {
+	charset="EUC-KR";
+	document.charset ="EUC-KR";
 	pf = document.frmConfirm;
 	pf.ORDERNO.value;
 	pf.PRODUCTCATE.value;
