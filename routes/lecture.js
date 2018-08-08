@@ -313,4 +313,8 @@ router.post('/seminar/ask', function(req, res, next) {
 });
 
 
+router.get('/seminar/map', function(req, res, next) {
+	res.render('front/cid_seminar/seminarmap', {});
+  });
+
 module.exports = router;
