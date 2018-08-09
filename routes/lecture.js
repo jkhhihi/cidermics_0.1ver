@@ -317,4 +317,42 @@ router.get('/seminar/map', function(req, res, next) {
 	res.render('front/cid_seminar/seminarmap', {});
   });
 
+
+router.get('/seminar/s', function(req, res, next) {
+
+	res.render('front/cid_survey/cid_seminar_s', { });
+
+});
+
+
+router.post('/seminar/s', function(req, res, next) {
+
+	var group1 = req.body.group1; //만족도 
+	var group2 = req.body.group2; //평점
+
+	var g1 = req.body.g1; //재무상담년월
+	var g2 = req.body.g2; //멘토 성함
+
+	var g3 = req.body.g3; //만족 이유
+	var g4 = req.body.g4; //상담태도
+	var g5 = req.body.g5; //니즈
+	var g6 = req.body.g6; //하고싶은말
+
+	var date = getWorldTime(+9);
+
+
+	var name = req.body.name;
+
+	//var sets = {sry_cate:1,sry_group2:g2};
+
+	//mysql.insert('insert into cider.cid_survey (sry_group3) values('+g3+')', function (err, data){
+
+	var sets = {sry_cate: 5 , sry_name : name , sry_etc1 : g1, sry_etc2 : g2, sry_group1 : group1, sry_group2 : group2, sry_etc3 : g3, sry_etc4 : g4, sry_etc5 : g5, sry_group13 : g6,  date:date};
+	mysql.insert('insert into cider.cid_survey set ?', sets,  function (err, data){
+		res.redirect('/');
+		//res.send('<script>alert("참여해주셔서 감사합니다");location.href="/";</script>');
+	});
+});
+
+
 module.exports = router;
