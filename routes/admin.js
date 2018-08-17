@@ -718,6 +718,28 @@ router.get('/lecture/list/delete/:app_no', function(req, res, next) {
     });
 });
 
+router.get('/lecture/reviewList', ensureAuthenticated, function(req, res, next) {
+	var CP = 2;
+		mysql.select('SELECT * from cider.cid_survey where sry_cate ="6" order by sry_no desc;', function (err, data){
+			 res.render('admin/lecture/lecture_reviewList', { CP : CP, slist : data });	    	
+		});
+});
+
+router.get('/lecture/reviewDetail/:sry_no', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 2;
+	var sry_no = req.params.sry_no;
+	
+
+		mysql.select('select * from cider.cid_survey where sry_no = '+ sry_no +'', function (err, data){
+			if(err){
+				res.redirect('back');
+			}
+			res.render('admin/lecture/lecture_reviewDetail', {CP : CP, slist : data});
+		});
+    });
+
+
 
 
 

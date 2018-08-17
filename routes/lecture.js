@@ -347,7 +347,7 @@ router.post('/seminar/s', function(req, res, next) {
 
 	//mysql.insert('insert into cider.cid_survey (sry_group3) values('+g3+')', function (err, data){
 
-	var sets = {sry_cate: 5 , sry_name : name , sry_etc1 : g1, sry_etc2 : g2, sry_group1 : group1, sry_group2 : group2, sry_etc3 : g3, sry_etc4 : g4, sry_etc5 : g5, sry_group13 : g6,  date:date};
+	var sets = {sry_cate: 6 , sry_name : name , sry_etc1 : g1, sry_etc2 : g2, sry_group1 : group1, sry_group2 : group2, sry_etc3 : g3, sry_etc4 : g4, sry_etc5 : g5, sry_group13 : g6,  date:date};
 	mysql.insert('insert into cider.cid_survey set ?', sets,  function (err, data){
 		res.redirect('/');
 		//res.send('<script>alert("참여해주셔서 감사합니다");location.href="/";</script>');
