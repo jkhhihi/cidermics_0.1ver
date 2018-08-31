@@ -40,7 +40,6 @@ var board = require('./routes/board');
 var std = require('./routes/study');
 var pay = require('./routes/pay');
 
-var bobby = require('./routes/bobby');
 
 // all environments
 app.set('port', process.env.PORT || 80);
@@ -85,7 +84,6 @@ app.use('/cid_board',express.static(__dirname+'/views/cid_board'));
 app.use('/cid_study',express.static(__dirname+'/views/cid_study'));
 app.use('/pay',express.static(__dirname+'/views/pay'));
 
-app.use('/bobby',express.static(__dirname+'/views/bobby'));
 
 app.use(flash());
 
@@ -121,12 +119,11 @@ app.use('/',board);
 app.use('/',std);
 app.use('/',pay);
 
-app.use('/',bobby);
 
 //passportFB.use('fbLogin', new LocalStrategy({
 passportFB.use( new FacebookStrategy({
-        clientID: '116627908812749',
-        clientSecret: '38a1b7476831ada2468cc7e9fa054f3c',
+        clientID: '2364864330207062',
+        clientSecret: '4d470c8764179cf7c3cfc135ef4379fe',
         callbackURL: "http://cidermics.com/auth/facebook/callback",
         //callbackURL: "http://localhost/auth/facebook/callback",
         profileFields: ['id', 'displayName', 'photos']
