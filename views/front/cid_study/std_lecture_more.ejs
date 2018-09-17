@@ -329,8 +329,13 @@ a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
             <div class="row">
               <div class="col s4 m3">총 금액</div>
               <div class="col s8 m6" style="text-align: left;" ><b class="amount"  style="text-decoration: line-through;"><%=md[0].price%></b>원 <br><b class="amount"  style="color: red;"><%=md[0].disprice%></b>원<br>
-              <span style="color:red;">*<%=md[0].disevent%></span></div>
+              <span style="color:red;">*<%=md[0].disevent%></span>
+              </div>
               <div class="col s0 m3"></div>
+              
+              <!-- 카드할부내용 -->
+              <div class="col s12" style="background-color:#fafafa; border:1px #ddd solid; border-radius:10px; margin-top:10px; padding:10px 15px;">※ 카드결제시 ※<br>350,000원 -> <b>월 35,000원</b> (무이자 10개월 할부 적용시)</div>
+              
             </div>
 
           <% var state = md[0].state; %>
