@@ -451,6 +451,10 @@ router.get('/appdown3', function(req, res, next) {
 	res.render('front/cid_appdown3', { });
 });
 
+router.get('/bookslink', function(req, res, next) {
+	res.render('front/cid_bookslink', { });
+});
+
 router.get('/survey', function(req, res, next) {
 
 	res.render('front/cid_survey/cid_survey', { });
