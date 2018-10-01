@@ -186,7 +186,7 @@ passport.use('local', new LocalStrategy({
 
 function(req, email, pw, done) {
 
-	mysql.select('select * from cider.cid_user where user_email ="'+email+'" and user_password = "'+pw+'"', function (err, data){
+	mysql.select('select * from cider.cid_user where user_email ="'+email+'" and user_password = "'+pw+'" and user_inside ="Y"', function (err, data){
 		if(data.length < 1){
 			console.log('fail');
 			return done(null, false);
@@ -200,6 +200,28 @@ function(req, email, pw, done) {
 		
     });
 	
+}
+));
+
+//재무관리자
+passport.use('fin', new LocalStrategy({
+    usernameField : 'email',
+    passwordField : 'pw',
+    passReqToCallback : true
+},
+function(req, email, pw, done) {
+  mysql.select('select * from cider.cid_user where user_email ="'+email+'" and user_password = "'+pw+'"', function (err, data){
+    if(data.length < 1){
+      console.log('fail');
+      return done(null, false);
+    }else {
+      console.log('success');
+      return done(null, data);
+    }
+    if(err){
+      res.redirect('back');
+    }
+    });
 }
 ));
 //쿠폰

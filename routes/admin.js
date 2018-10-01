@@ -60,10 +60,8 @@ function leadingZeros(n, digits) {
 	  return zero + n;
 	}
 
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	
 	var CP = 0;
 	console.log(req.cookies);
 	if(req.cookies.auth){
@@ -99,6 +97,31 @@ router.post('/login', passport.authenticate('local', { failureRedirect: '/adm', 
 });
 
 
+/* 재무용 */
+
+router.get('/admfin', function(req, res, next) {
+	var CP = 3;
+	if(req.cookies.auth){
+		res.redirect('/adm/fin');
+	}else{
+		res.render('admin/admin_fin', {CP:CP});
+	}
+});
+
+router.post('/loginfin', passport.authenticate('fin', { failureRedirect: '/adm/admfin', failureFlash: true }), function(req, res, next) {
+	var CP = 3;
+	res.redirect('/adm/fin');
+});
+
+/* 재무용 끝 */
+
+router.get('/index', ensureAuthenticated, function(req, res, next) {
+	var CP = 0;
+		mysql.select('SELECT * from cider.cid_contents where con_pop = 1 order by con_release desc;', function (err, data){
+		res.render('admin/admin_index', { CP : CP, contents : data });
+	});
+});
+
 router.get('/contents', ensureAuthenticated, function(req, res, next) {
 	var CP = 1;
 		mysql.select('select * from cider.cid_contents order by con_no desc', function (err, data){
@@ -106,12 +129,6 @@ router.get('/contents', ensureAuthenticated, function(req, res, next) {
 		});
 });
 
-router.get('/index', ensureAuthenticated, function(req, res, next) {
-	var CP = 0;
-		mysql.select('SELECT * from cider.cid_contents where con_pop = 1 order by con_release desc;', function (err, data){
-			 res.render('admin/admin_index', { CP : CP, contents : data });
-		});
-});
 
 
 router.get('/contents/insert', function(req, res, next) {
@@ -799,14 +816,80 @@ router.get('/finance/detail2/:sry_no', ensureAuthenticated, function(req, res, n
 	var CP = 3;
 	var sry_no = req.params.sry_no;
 	
+	mysql.select('select * from cider.cid_survey where sry_no = '+ sry_no +'', function (err, data){
+		if(err){
+			res.redirect('back');
+		}
+		res.render('admin/finance/finance_detail2', {CP : CP, slist : data});
+	});
+});
 
-		mysql.select('select * from cider.cid_survey where sry_no = '+ sry_no +'', function (err, data){
+
+/* private finance page */
+
+
+router.get('/fin', ensureAuthenticated, function(req, res, next) {
+	console.log("d");
+	var CP = 3;
+		mysql.select('SELECT * from cider.cid_fi_applyform order by fi_app_no desc;', function (err, data){
+			 res.render('admin/finance/sfinance_index', { CP : CP, finance : data });	    	
+		});
+});
+
+router.get('/fin/detail/:fi_app_no', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 3;
+	var fi_app_no = req.params.fi_app_no;
+	
+	mysql.select('select * from cider.cid_fi_applyform', function (err, data2){
+		if(err){
+			res.redirect('back');
+		}
+		user = data2;
+		mysql.select('select * from cider.cid_fi_applyform where fi_app_no = '+ fi_app_no +'', function (err, data){
 			if(err){
 				res.redirect('back');
 			}
-			res.render('admin/finance/finance_detail2', {CP : CP, slist : data});
+			res.render('admin/finance/sfinance_detail', {CP : CP, finance : data});
 		});
     });
+});
+
+
+router.get('/fin/delete/:fi_app_no', function(req, res, next) {
+	
+	var CP = 3;
+	var fi_app_no = req.params.fi_app_no;
+	
+	mysql.del('delete from cider.cid_fi_applyform where fi_app_no = '+ fi_app_no +'', function (err, data){
+		if(err){
+			res.redirect('/adm/fin');
+		}else{
+			res.redirect('/adm/admfin');
+		}
+    });
+});
+
+
+router.get('/fin/slist', ensureAuthenticated, function(req, res, next) {
+	var CP = 3;
+		mysql.select('SELECT * from cider.cid_survey where sry_cate ="5" order by sry_no desc;', function (err, data){
+			 res.render('admin/finance/sfinance_slist', { CP : CP, slist : data });	    	
+		});
+});
+
+router.get('/fin/detail2/:sry_no', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 3;
+	var sry_no = req.params.sry_no;
+	
+	mysql.select('select * from cider.cid_survey where sry_no = '+ sry_no +'', function (err, data){
+		if(err){
+			res.redirect('back');
+		}
+		res.render('admin/finance/sfinance_detail2', {CP : CP, slist : data});
+	});
+});
 
 
 
