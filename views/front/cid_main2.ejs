@@ -277,14 +277,14 @@ $(document).ready(function() {
   currentSlide = Math.floor((Math.random() * $('.item').length));
   rand = currentSlide;
   $('#carousel-example-generic').carousel(currentSlide);
-  $('#carousel-example-generic').fadeIn(1000);
+  $('#carousel-example-generic').fadeIn(1500);
   setInterval(function(){ 
     while(rand == currentSlide){
       rand = Math.floor((Math.random() * $('.item').length));
     }
     currentSlide = rand;
     $('#carousel-example-generic').carousel(rand);
-  },3000);
+  },3500);
 });
 </script>
 <style>
@@ -412,22 +412,26 @@ $(document).ready(function() {
   <ol class="carousel-indicators">
     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
     <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
     <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
   </ol>
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
-  	<div class="item" style="background-color:#e7462a">
-      <a href="/bookslink"><img src="https://i.imgur.com/VWOkzbR.jpg" alt="..."></a>
+  	<div class="item active" style="background-color:#e7462a">
+      <a href="/bookslink"><img src="https://i.imgur.com/VWOkzbR.jpg" alt="책홍보"></a>
     </div>
+    <div class="item" style="background-color:#a9e000">
+      <a href="/study/lecture"><img src="https://i.imgur.com/3dvHp6c.jpg" alt="스터디"></a>
+    </div>    
     <div class="item" style="background-color:#05334b">
-      <a href="/study/lecture"><img src="https://i.imgur.com/NZu7AvO.jpg" alt="..."></a>
+      <a href="/study/lecture"><img src="https://i.imgur.com/NZu7AvO.jpg" alt="강의"></a>
     </div>
     <div class="item" style="background-color:#ffae00">
-       <a href="/seminar"><img src="https://i.imgur.com/boEDbi3.jpg" alt="..."></a>
+       <a href="/seminar"><img src="https://i.imgur.com/boEDbi3.jpg" alt="세미나"></a>
     </div>
-    <div class="item active" style="background-color:#0794be">
-       <a href="http://mybobby.co.kr/"><img src="https://i.imgur.com/SV3UVB0.jpg" alt="..."></a>
+    <div class="item" style="background-color:#0794be">
+       <a href="http://mybobby.co.kr/"><img src="https://i.imgur.com/SV3UVB0.jpg" alt="보비"></a>
     </div>
   </div>
   <!-- Controls >
