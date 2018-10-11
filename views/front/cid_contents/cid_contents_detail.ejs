@@ -116,9 +116,12 @@ finestra=window.open(img,"",stringa);
     background-image: url("<%= contents[0].con_photo %>");
 	}
 
-body { padding-right: 0px !important }
+body { padding-right: 0px !important}
 
 
+@media(max-width: 760px){
+.fb-comments span{width:320px !important}
+}
 </style>
 
 </head>
@@ -466,6 +469,7 @@ $(document).ready(function(){
 					<div class="fb-comments" data-href="http://www.cidermics.com/contents/detail/<%= contents[0].con_no %>" data-width="100%" data-numposts="5" data-mobile></div>
 				</div>
 		</div>
+		
 		<div class="row pre-next container">
 		
 		<% for(var i=0; i<contents.length; i++) { %>
