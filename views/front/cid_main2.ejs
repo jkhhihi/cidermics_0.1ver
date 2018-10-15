@@ -139,6 +139,26 @@ function openWinKA(){
 });
 </script>
 
+<!-- 스터디3기오픈홍보 --> 
+<div id="info-wrap">
+	<div id="pop">
+		 <div>
+			<a href="/study"><img class="img-responsive" src="/page_imgs/study_img/popup_study3.jpg"></a>
+			 </div>
+		<div class="close1" style="opacity:.98;">
+				<form name="pop_form" id="pdtop">
+					<span class="button-checkbox">
+    				<button type="button" class="btn">하루동안 보지 않기</button>
+    				<input type="checkbox" name="chkbox" value="/" class="hidden" checked />
+				</span>
+				<span class="button-close">
+    				<button type="button" class="btn" onclick="closePop();">닫기</button>
+				</span>
+				</form>
+			</div>
+	</div>
+</div>
+
 <!-- 책홍보 > 
 <div id="info-wrap">
 	<div id="pop">
@@ -159,11 +179,11 @@ function openWinKA(){
 	</div>
 </div -->
 
-<!-- 책구매인증이벤트 --> 
+<!-- 책구매인증이벤트> 
 <div id="info-wrap">
 	<div id="pop">
 		 <div>
-			<a href="/bookslink"><img class="img-responsive" src="https://i.imgur.com/tngnYup.jpg"></a>
+			<a href="/bookslink"><img class="img-responsive" src="https://i.imgur.com/zQmVtFo.jpg"></a>
 			 </div>
 		<div class="close1" style="opacity:.98;">
 				<form name="pop_form" id="pdtop">
@@ -177,13 +197,13 @@ function openWinKA(){
 				</form>
 			</div>
 	</div>
-</div>
+</div -->
 
-<!-- 책구매인증이벤트당첨자확인> 
+<!-- 책구매인증이벤트당첨자확인 > 
 <div id="info-wrap">
 	<div id="pop">
 		 <div>
-			<a href="https://www.facebook.com/cidermics/photos/a.1044225292297799/1885928784794108/?type=3&theater"><img class="img-responsive" src="https://i.imgur.com/HuPCcvv.jpg"></a>
+			<a href="https://www.facebook.com/cidermics/photos/a.1044225292297799/1894700213916965/?type=3&theater"><img class="img-responsive" src="https://i.imgur.com/UzAXLRd.jpg"></a>
 			 </div>
 		<div class="close1" style="opacity:.98;">
 				<form name="pop_form" id="pdtop">
@@ -277,14 +297,14 @@ $(document).ready(function() {
   currentSlide = Math.floor((Math.random() * $('.item').length));
   rand = currentSlide;
   $('#carousel-example-generic').carousel(currentSlide);
-  $('#carousel-example-generic').fadeIn(1500);
+  $('#carousel-example-generic').fadeIn(2000);
   setInterval(function(){ 
     while(rand == currentSlide){
       rand = Math.floor((Math.random() * $('.item').length));
     }
     currentSlide = rand;
     $('#carousel-example-generic').carousel(rand);
-  },3500);
+  },6000);
 });
 </script>
 <style>
@@ -419,10 +439,10 @@ $(document).ready(function() {
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
   	<div class="item active" style="background-color:#e7462a">
-      <a href="/bookslink"><img src="https://i.imgur.com/VWOkzbR.jpg" alt="책홍보"></a>
+      <a href="/bookslink"><img src="https://i.imgur.com/hHR1yJ6.jpg" alt="책홍보"></a>
     </div>
     <div class="item" style="background-color:#a9e000">
-      <a href="/study/lecture"><img src="https://i.imgur.com/3dvHp6c.jpg" alt="스터디"></a>
+      <a href="/study"><img src="https://i.imgur.com/3dvHp6c.jpg" alt="스터디"></a>
     </div>    
     <div class="item" style="background-color:#05334b">
       <a href="/study/lecture"><img src="https://i.imgur.com/NZu7AvO.jpg" alt="강의"></a>
@@ -497,12 +517,22 @@ $(document).ready(function() {
 				</div>
 			</div-->
 
-			<!-- 재무 오픈 시-->
+			<!-- 재무 오픈 시>
 			<div class="col-xs-4">
 				<div class="thumnail">
 				<a href="/finance">
 					<div class="con-img"><img class="img-responsive" src="https://i.imgur.com/BsQncvy.jpg"></div>
 					<div class="con-title">2018년 10월, 사이다재무상담 오픈!</div>
+				</a>
+				</div>
+			</div -->
+			
+			<!-- 에디터모집 -->
+			<div class="col-xs-4">
+				<div class="thumnail">
+				<a href="http://cidermics.com/contents/detail/1365">
+					<div class="con-img"><img class="img-responsive" src="https://i.imgur.com/22qSeNg.jpg"></div>
+					<div class="con-title">[팀원모집] 사이다경제와 함께 할 팀원을 모집합니다.</div>
 				</a>
 				</div>
 			</div>
