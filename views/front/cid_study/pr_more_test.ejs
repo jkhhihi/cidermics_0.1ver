@@ -206,7 +206,6 @@
     border-radius: 3px;
     color: white;
     min-width: 2.6rem;
-    font-size:23px;
 }
 </style>
 
@@ -341,6 +340,17 @@ $(document).ready(function () {
   <div class="parallax"><img src="<%=md[0].bgimg1%>"></div>
 </div>
 
+<div id="countdown">
+  <p class="days">00</p>
+  <p class="timeRefDays">일</p>
+  <p class="hours">00</p>
+  <p class="timeRefHours">시간</p>
+  <p class="minutes">00</p>
+  <p class="timeRefMinutes">분</p>
+  <p class="seconds">00</p>
+  <p class="timeRefSeconds">초</p>
+</div>
+
 <!-- 스터디 상세 정보 -->
 <% var state = md[0].state; %>
 
@@ -462,56 +472,40 @@ $(document).ready(function () {
 
 <div id="study-new">
 <div class="section0">
-  <div class="container">
-    <h4>#1 스터디 소개</h4>
-    <div class="line1"></div>
-    <div class="info">
-      <h5 style="color:#73c7a6"><%=md[0].linesub1%></h5>
-      <p><span>1.</span> <%=md[0].line1%></p>
-      <div class="divider1"></div>
-    </div>
-    <div class="info">
-      <h5 style="color:#73c7a6"><%=md[0].linesub2%></h5>
-      <p><span>2.</span> <%=md[0].line2%></p>
-      <div class="divider1"></div>
-    </div>
-    <div class="info">
-      <h5 style="color:#73c7a6"><%=md[0].linesub3%></h5>
-      <p><span>3.</span> <%=md[0].line3%></p>
-      <div class="divider1"></div>
-    </div>    
-  </div>
+	<div class="container">
+		<h4>#1 스터디 소개</h4>
+		<div class="line1"></div>
+		<div class="info">
+			<h5 style="color:#73c7a6"><%=md[0].linesub1%></h5>
+			<p><span>1.</span> <%=md[0].line1%></p>
+			<div class="divider1"></div>
+		</div>
+		<div class="info">
+			<h5 style="color:#73c7a6"><%=md[0].linesub2%></h5>
+			<p><span>2.</span> <%=md[0].line2%></p>
+			<div class="divider1"></div>
+		</div>
+		<div class="info">
+			<h5 style="color:#73c7a6"><%=md[0].linesub3%></h5>
+			<p><span>3.</span> <%=md[0].line3%></p>
+			<div class="divider1"></div>
+		</div>		
+	</div>
 </div>
-
-
-<div id="countdown">
-  <p style="color:#f9ff00;">마감임박까지</p>
-  <p class="days" style="color:#f9ff00;">00</p>
-  <p class="timeRefDays">일</p>
-  <p class="hours" style="color:#f9ff00;">00</p>
-  <p class="timeRefHours">시간</p>
-  <p class="minutes" style="color:#f9ff00;">00</p>
-  <p class="timeRefMinutes">분</p>
-  <p class="seconds" style="color:#f9ff00;">00</p>
-  <p class="timeRefSeconds">초</p>
-</div>
-
-
-
 <div class="section1">
-  <div class="container" >
-    <h4>#2 스터디 커리큘럼</h4>
-    <div class="line1"></div>
-    <div align="center">
-      <img class="responsive-img" src="<%=md[0].img2%>">
-    </div>
-  </div>
+	<div class="container" >
+		<h4>#2 스터디 커리큘럼</h4>
+		<div class="line1"></div>
+		<div align="center">
+			<img class="responsive-img" src="<%=md[0].img2%>">
+		</div>
+	</div>
 </div>
 <div class="section2">
-  <div class="container">
-    <h4>#3 스터디 리더소개</h4>
-    <div class="line1"></div>
-    <img class="responsive-img" src="<%=md[0].img3%>">
+	<div class="container">
+		<h4>#3 스터디 리더소개</h4>
+		<div class="line1"></div>
+		<img class="responsive-img" src="<%=md[0].img3%>">
 
     <!-- 스터디 슬라이더 -->
      
@@ -534,7 +528,7 @@ $(document).ready(function () {
         </div>
 
       </div>
-  </div>
+	</div>
 </div>
 
 
@@ -559,89 +553,89 @@ $(document).ready(function () {
 </script>
 
 <div class="section0">
-  <div class="container">
-    <h4>#4 경이로워지는 시간</h4>
-    <div class="line1"></div>
-      <div class="info1">
-        <h5 class="title1" style="color:#73c7a6">"이런 분들께 추천합니다"</h5>
-        <p><span>1.</span>&nbsp <%=md[0].recommend1%></p>
-        <div class="divider1"></div>
-        <p><span>2.</span>&nbsp <%=md[0].recommend2%></p>
-        <div class="divider1"></div>
-        <p><span>3.</span>&nbsp <%=md[0].recommend3%></p>
-        <div class="divider1"></div>
-      </div>  
-      <div class="info2">
-        <h5 class="title1" style="color:#73c7a6">"스터디를 하고 나면 이렇게 달라집니다"</h5>
-        <p><span>1.</span>&nbsp <%=md[0].changed1%></p>
-        <div class="divider1"></div>
-        <p><span>2.</span>&nbsp <%=md[0].changed2%></p>
-        <div class="divider1"></div>
-        <p><span>3.</span>&nbsp <%=md[0].changed3%></p>
-        <div class="divider1"></div>
-      </div>        
-  </div>
+	<div class="container">
+		<h4>#4 경이로워지는 시간</h4>
+		<div class="line1"></div>
+			<div class="info1">
+				<h5 class="title1" style="color:#73c7a6">"이런 분들께 추천합니다"</h5>
+				<p><span>1.</span>&nbsp <%=md[0].recommend1%></p>
+				<div class="divider1"></div>
+				<p><span>2.</span>&nbsp <%=md[0].recommend2%></p>
+				<div class="divider1"></div>
+				<p><span>3.</span>&nbsp <%=md[0].recommend3%></p>
+				<div class="divider1"></div>
+			</div>	
+			<div class="info2">
+				<h5 class="title1" style="color:#73c7a6">"스터디를 하고 나면 이렇게 달라집니다"</h5>
+				<p><span>1.</span>&nbsp <%=md[0].changed1%></p>
+				<div class="divider1"></div>
+				<p><span>2.</span>&nbsp <%=md[0].changed2%></p>
+				<div class="divider1"></div>
+				<p><span>3.</span>&nbsp <%=md[0].changed3%></p>
+				<div class="divider1"></div>
+			</div>				
+	</div>
 </div>
 
 <!-- 여기부터는 고정 -->
 <div class="divider"></div>
 <div class="section0">
-  <div class="container">
-    <h4>경이로움 멤버들의 진솔한 후기 인터뷰</h4>
-    <div class="line1"></div>
-      <div class="row">
-        <a href="http://cidermics.com/stdreview/5"><div class="col s12 m6"><img class="responsive-img" src="/page_imgs/study_img/img-section9-thum1.jpg"></div></a>
-        <div class="web-n col s12" style="margin-bottom:30px;"></div>
-        <a href="http://cidermics.com/stdreview/4"><div class="col s12 m6"><img class="responsive-img" src="/page_imgs/study_img/img-section9-thum2.jpg"></div></a>
-      </div>  
-      <a href="/study/review" align="center" class="btn-review"><h5><span>☞ 더 많은 후기 보기</span></h5></a>    
-  </div>
+	<div class="container">
+		<h4>경이로움 멤버들의 진솔한 후기 인터뷰</h4>
+		<div class="line1"></div>
+			<div class="row">
+				<a href="http://cidermics.com/stdreview/5"><div class="col s12 m6"><img class="responsive-img" src="/page_imgs/study_img/img-section9-thum1.jpg"></div></a>
+				<div class="web-n col s12" style="margin-bottom:30px;"></div>
+				<a href="http://cidermics.com/stdreview/4"><div class="col s12 m6"><img class="responsive-img" src="/page_imgs/study_img/img-section9-thum2.jpg"></div></a>
+			</div>	
+			<a href="/study/review" align="center" class="btn-review"><h5><span>☞ 더 많은 후기 보기</span></h5></a>		
+	</div>
 </div>
 <div class="section1">
-  <div class="container" >
-    <h4>경이로움 스터디는 왜 다를까?</h4>
-    <div class="line1"></div>
-    <div align="center">
-      <img class="responsive-img" src="https://i.imgur.com/BEnxns7.jpg" style="margin-top:20px">
-      <a href="/seminar" align="center" class="btn-seminar"><h5><span>☞ 세미나 보러가기</span></h5></a>
-      <img class="responsive-img" src="https://i.imgur.com/APnLZGG.jpg" style="margin-top:20px">
-    </div>
-  </div>
+	<div class="container" >
+		<h4>경이로움 스터디는 왜 다를까?</h4>
+		<div class="line1"></div>
+		<div align="center">
+			<img class="responsive-img" src="https://i.imgur.com/BEnxns7.jpg" style="margin-top:20px">
+			<a href="/seminar" align="center" class="btn-seminar"><h5><span>☞ 세미나 보러가기</span></h5></a>
+			<img class="responsive-img" src="https://i.imgur.com/APnLZGG.jpg" style="margin-top:20px">
+		</div>
+	</div>
 </div>
 <div class="section0">
-  <div class="container">
-    <h4>경이로움의 처음과 끝!</h4>
-    <div class="line1"></div>
-    <div align="center">
-      <img class="responsive-img" src="https://i.imgur.com/CChI9Mm.png" style="margin-top:20px">
-    </div>    
-  </div>
+	<div class="container">
+		<h4>경이로움의 처음과 끝!</h4>
+		<div class="line1"></div>
+		<div align="center">
+			<img class="responsive-img" src="https://i.imgur.com/CChI9Mm.png" style="margin-top:20px">
+		</div>		
+	</div>
 </div>
 
 <div class="section2">
-  <div class="container">
-    <div class="row">
-        <div class="col s12 center">
-          <h4>추천 스터디</h4>
-        </div>
-    </div>
-  
-    <div class="row">
-      <% var a = Math.floor(Math.random() * (4-0+1)) + 0; for(var i=a; i < a+3; i++) {  %>
-      <div class="col s12 m4">
-        <div class="card">
-          <div class="card-image  waves-effect waves-block waves-light">
-            <a href="/studymorenew/<%=stdlist[i].idx%>"><img src="<%=stdlist[i].thum%>"></a>
-            <span class="card-btn"><a class="waves-effect waves-light btn light-blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;"><%=stdlist[i].decate%></a></span>
-            <span class="card-title" style="bottom: 30px;"><a href="/studymorenew/<%=stdlist[i].idx%>" style="color: #fff;"><b><%=stdlist[i].subject%></b></a></span>
-            <span class="card-name">리더 <%=stdlist[i].leader%></span>
-          </div>
-        </div>
-      </div>
-      <% } %>
-    </div>
-  
-  </div>
+	<div class="container">
+	  <div class="row">
+	      <div class="col s12 center">
+	        <h4>추천 스터디</h4>
+	      </div>
+	  </div>
+	
+	  <div class="row">
+	    <% var a = Math.floor(Math.random() * (4-0+1)) + 0; for(var i=a; i < a+3; i++) {  %>
+	    <div class="col s12 m4">
+	      <div class="card">
+	        <div class="card-image  waves-effect waves-block waves-light">
+	          <a href="/studymorenew/<%=stdlist[i].idx%>"><img src="<%=stdlist[i].thum%>"></a>
+	          <span class="card-btn"><a class="waves-effect waves-light btn light-blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;"><%=stdlist[i].decate%></a></span>
+	          <span class="card-title" style="bottom: 30px;"><a href="/studymorenew/<%=stdlist[i].idx%>" style="color: #fff;"><b><%=stdlist[i].subject%></b></a></span>
+	          <span class="card-name">리더 <%=stdlist[i].leader%></span>
+	        </div>
+	      </div>
+	    </div>
+	    <% } %>
+	  </div>
+	
+	</div>
 </div>
 
 </div>

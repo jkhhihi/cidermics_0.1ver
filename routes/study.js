@@ -216,4 +216,14 @@ router.get('/pr/:idx', function(req, res, next) {
   });
 });
 
+router.get('/prtest/:idx', function(req, res, next) {
+	var idx = req.params.idx;
+	var stdlist;
+	mysql.select('SELECT * from cider.std_more where idx = '+idx+';', function (err, data){
+		mysql.select('SELECT idx,subject,subject2,decate,recentdate,thum,leader,sche1 from cider.std_more where flag="Y" order by idx desc;', function (err, data1){
+	res.render('front/cid_study/pr_more_test', {md:data, stdlist : data1});
+  	});
+  });
+});
+
 module.exports = router;
