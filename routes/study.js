@@ -226,4 +226,21 @@ router.get('/prtest/:idx', function(req, res, next) {
   });
 });
 
+router.post('/prinsert', function(req, res, next) {
+	var cate = req.body.cate;
+	var idx = req.body.idx;
+	var name = req.body.pname;
+	var email = req.body.email;
+	var num = req.body.num;
+
+	var date = getWorldTime(+9);
+
+	var sets = {tele_cate:cate, tele_idx:idx,tele_name : name , tele_num:num, tele_email : email , tele_date:date};
+	mysql.insert('insert into cider.cid_telemarket set ?', sets,  function (err, data){
+		res.send('<script>alert("참여해주셔서 감사합니다!");location.href="/study";</script>');
+		//res.redirect('/study');
+	});
+});
+
+
 module.exports = router;

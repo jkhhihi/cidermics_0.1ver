@@ -217,7 +217,7 @@ a.btn-seminar h5 span{color:#fff !important; border:2px solid #0aa0f6; border-ra
 a.btn-seminar h5 span:hover{background-color:#0aa0f6; color:#fff !important}
 #countdown{padding:80px 0 60px 0}
 .database{color:#fff; padding:80px 0; font-size:24px;}
-.database .container{width:500px}
+.database .container{}
 .database .container input{font-size:20px;}
 .database .container span.color1{color:#f9ff00}
 .database .container #btn1 span{background-color:#000; border:2px solid #f9ff00; border-radius:50px; padding:15px 50px;}
@@ -323,6 +323,56 @@ $(document).ready(function () {
 });
 </script>
 
+
+
+
+<script type="text/javascript">
+  function surveyGo()
+  {
+    if(document.prinsert.pname.value==""){
+     alert("이름을 입력해 주세요.");
+    document.prinsert.pname.focus();
+      return;
+    }
+    if(document.prinsert.phone.value==""){
+     alert("휴대폰 번호를 정확히 입력해 주세요.");
+    document.prinsert.phone.focus();
+      return;
+    }
+    
+    for (i=0; i<document.prinsert.phone.value.length; i++)
+       {
+         var ch = document.prinsert.phone.value.charAt(i);//문자를 반환(정수형), 범위 검사 가능
+      if ( ch < "0" || ch > "9" )
+         {
+              alert("휴대폰 번호는 숫자로만 입력 가능 합니다!");
+              document.prinsert.phone.focus();
+              return;
+           }
+        }
+    if(document.prinsert.email.value==""){
+     alert("이메일 주소를 입력해 주세요.");
+    document.prinsert.email.focus();
+      return;
+    }
+
+    if(!document.prinsert.check1.checked){
+                alert("서비스 이용약관에 동의하셔야 회원가입이 가능합니다."); 
+                return;
+         
+        }else if(document.prinsert.check1.checked){
+          if(!document.prinsert.check2.checked){
+                alert("개인정보 수집 및 이용 동의하셔야 회원가입이 가능합니다.");
+                return;
+        }
+      }
+
+    //alert("참여해 주셔서 감사합니다.")
+    document.prinsert.submit();
+  }
+  
+</script>
+
   
   <script src="/js/gotoup.js"></script>
   </head>
@@ -399,17 +449,27 @@ $(document).ready(function () {
   </div>
 </div>
 
-<div class="section2"><!-- 전 참여자 후기-->
+<div class="section0"><!-- 전 참여자 후기-->
   <div class="container">
       <div class="row">
-        <a href="http://cidermics.com/stdreview/7"><div class="col s12 m12"><img class="responsive-img" src="<%=md[0].postscript%>"></div></a>
+        <a href="http://cidermics.com/study/review"><div class="col s12 m12"><img class="responsive-img" src="<%=md[0].postscript%>"></div></a>
       </div> 
   </div>
 </div>
 
 
+
+
+<!-- pdf준다는 내용의 배너 -->
+<div align="center" style="margin-bottom:-10px">
+	<img class="responsive-img" src="https://i.imgur.com/G0XJSmu.jpg" style="width:100%">
+</div>
+
+
+
+
 <div id="countdown"><!-- 마감임박 -->
-  <p style="color:#f9ff00;">마감임박까지</p>
+  <p style="color:#f9ff00;">이벤트 마감시간까지</p>
   <p class="days" style="color:#f9ff00;">00</p>
   <p class="timeRefDays">일</p>
   <p class="hours" style="color:#f9ff00;">00</p>
@@ -419,42 +479,70 @@ $(document).ready(function () {
   <p class="seconds" style="color:#f9ff00;">00</p>
   <p class="timeRefSeconds">초</p>
 </div>
-
-<!-- pdf준다는 내용의 배너 -->
-<div align="center" style="margin-bottom:-10px">
-	<img class="responsive-img" src="https://i.imgur.com/G0XJSmu.jpg" style="width:100%">
-</div>
-
 <!-- DB 작성 칸 -->
 <div class="database" style="background-color:#000">
 	<div class="container">
 
-    <form action="#">
-  		<div id="name"><span class="color1">이름 :</span><input type="text" name="ddd"></div><br>
-  		<div id="phon"><span class="color1">전화번호 :</span><input type="text" name="ddd"></div><br>
-  		<div id="mail"><span class="color1">이메일 주소 :</span><input type="text" name="ddd"></div>
+    <div class="row">
 
-        <input type="checkbox" id="check1"/>
-        <label for="check1">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
+      <form action="/prinsert" method="post" name="prinsert" class="col s12">
+        <input type="hidden" name="cate" value="<%=md[0].cate%>">
+        <input type="hidden" name="idx" value="<%=md[0].idx%>">
+
+        <div class="row">
+          <div class="input-field col l2"></div>
+        	<div id="name" class="input-field col s12 l8">
+            <span class="color1">이름 : </span>
+            <input type="text" name="pname" length="4" >
+          </div>
+          <div class="input-field col l2"></div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col l2"></div>
+    		  <div id="phon" class="input-field col s12 l8">
+            <span class="color1">전화번호 : </span>
+            <input type="text" name="phone" maxlength="11" >
+          </div>
+          <div class="input-field col l2"></div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col l2"></div>
+    		  <div id="mail" class="input-field col s12 l8">
+            <span class="color1">이메일 주소 : </span>
+            <input type="text" name="email" maxlength="45" >
+          </div>
+          <div class="input-field col l2"></div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col l2"></div>
+          <div class="input-field col s12 l8">
+            <input type="checkbox" id="check1" name="check1" />
+            <label for="check1">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
+            <br>
+            <input type="checkbox" id="check2" name="check2"/>
+            <label for="check2">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
+            <br>
+            <br>
+          </div>
+          <div class="input-field col l2"></div>
+        </div>
 
 
-      <br>
-
-      <input type="checkbox" id="check2"/>
-      <label for="check2">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
 
 
- 
-        <br>
-        <br>
-        <br>
-
-  		<div id="btn1" align="center">
-  			<a style="cursor:pointer"><span>신청하기</span></a>
-  		</div>
-    </form>
+    		<div id="btn1" align="center">
+    			<a style="cursor:pointer" onclick="surveyGo()"><span>신청하기</span></a>
+    		</div>
+      </form>
+    </div>
 	</div>
 </div>
+
+
+
 
 <div class="section1">
   <div class="container" >
@@ -465,6 +553,7 @@ $(document).ready(function () {
     </div>
   </div>
 </div>
+
 
 <div class="section0">
   <div class="container">
