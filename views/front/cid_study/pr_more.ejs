@@ -215,9 +215,19 @@ a.btn-review h5 span{color:#0aa0f6 !important; border:2px solid #0aa0f6; border-
 a.btn-review h5 span:hover{background-color:#0aa0f6; color:#fff !important}
 a.btn-seminar h5 span{color:#fff !important; border:2px solid #0aa0f6; border-radius:5px; padding:20px 40px; display:inline-block; margin-top:20px; margin-bottom:50px}
 a.btn-seminar h5 span:hover{background-color:#0aa0f6; color:#fff !important}
+#countdown{padding:80px 0 60px 0}
+.database{color:#fff; padding:80px 0; font-size:24px;}
+.database .container{width:500px}
+.database .container input{font-size:20px;}
+.database .container span.color1{color:#f9ff00}
+.database .container #btn1 span{background-color:#000; border:2px solid #f9ff00; border-radius:50px; padding:15px 50px;}
+.database .container #btn1 span:hover{background-color:#f9ff00;}
+.database .container #btn1 a{color:#fff;}
+.database .container #btn1 a:hover{color:#000;}
 @media only screen and (max-width : 1024px) {
 a.btn-review h5 span{margin-top:50px}
 a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
+#countdown{padding:40px 0 20px 0}
 }
 </style>
 <script type="text/javascript">
@@ -320,7 +330,7 @@ $(document).ready(function () {
 
   <div id="but_top"><a class="btn btn-floating  blue-grey darken-4"><i class="material-icons">arrow_upward</i></a></div>
 
-  <% include std_top %>
+  <% include pr_top %>
 
 <!--맨위 -->
 <div class="parallax-container valign-wrapper" style="min-height: 500px;">
@@ -344,126 +354,32 @@ $(document).ready(function () {
 <!-- 스터디 상세 정보 -->
 <% var state = md[0].state; %>
 
-  <div class="container" style="margin: 50px auto;">
-    <div class="row">
-      <div class="col s12 m6">
-      </div>
-      <div class="col s12 m6">
-        <% if(state == 1){%><h4 style="color: red;"><b>*마감된 스터디입니다.</b></h4><% }else{} %>
-        <h4 class="textfont"><%=md[0].subject%></h4>
-        <div class="divider"></div>
-      </div>
-    </div>
-    <div class="row">
-          <div class="col s12 m5">
-            <div><img src="<%=md[0].thum2%>" width="100%"></div>
-          </div>
-          <div class="col s12 m1">
-          </div>
-          <div class="col s12 m6">
-            <br>
+<div class="container" align="center" style="margin: 50px auto;">
+  <div><img src="<%=md[0].thum2%>" width="100%"></div>
+</div>
 
-            <div class="row" style="margin-bottom: 5px;">
-              <div class="col s4 m3">리더</div>
-              <div class="col s8 m5" style="text-align: left;"><b><%=md[0].leader%></b></div>
-              <div class="col s0 m4"></div>
-            </div>
-
-            <div class="row" style="margin-bottom: 5px;">
-              <div class="col s4 m3">기간</div>
-              <div class="col s8 m5" style="text-align: left;"><b><%=md[0].period%></b></div>
-              <div class="col s0 m4"></div>
-            </div>
-
-            <div class="row" style="margin-bottom: 5px;">
-              <div class="col s4 m3">일정</div>
-              <div class="col s8 m6" style="text-align: left;"><b><%=md[0].sche1%><br><%=md[0].sche2%><br><%=md[0].sche3%><br><%=md[0].sche4%><br><%=md[0].sche5%><br><%=md[0].sche6%></b></div>
-              <div class="col s0 m3"></div>
-            </div>
-
-            <div class="row" style="margin-bottom: 5px;">
-              <div class="col s4 m3">장소</div>
-              <div class="col s8 m6" style="text-align: left;"><b><%=md[0].location%></b><br><span><a href="/study/map">약도 (클릭)</a></span></div>
-              <div class="col s0 m3"></div>
-            </div>
-
-            <div class="row" style="margin-bottom: 5px;">
-              <div class="col s4 m3">모집 인원</div>
-              <div class="col s8 m6" style="text-align: left;"><b><%=md[0].people%>명</b></div>
-              <div class="col s0 m3"></div>
-            </div>
-
-            <div class="row" style="margin-bottom: 5px;">
-              <div class="col s4 m3">준비사항</div>
-              <div class="col s8 m6" style="text-align: left;"><b>모임 전 과제</b></div>
-              <div class="col s0 m3"></div>
-            </div>
-
-            <div class="divider"></div>
-
-            <div class="row" style="margin-top: 20px;">
-              <div class="col s4 m3">스터디 구성</div>
-              <div class="col s8 m6" style="text-align: left;"><b><%=md[0].composition %></b></div>
-              <div class="col s0 m3"></div>
-            </div>
-
-            <!-- div class="row">
-              <div class="col s4 m3">총 금액</div>
-              <div class="col s8 m6" style="text-align: left;" ><b class="amount"  style="text-decoration: line-through;"><%=md[0].price%></b>원 <br><b style="color: red;">280,000원</b><br>
-              *얼리버드 20% 할인</div>
-              <div class="col s0 m3"></div>
-            </div -->
-            
-            <div class="row">
-              <div class="col s4 m3">총 금액</div>
-              <div class="col s8 m6" style="text-align: left;" ><b class="amount"  style="text-decoration: line-through;"><%=md[0].price%></b>원 <br><b style="color: red;">299,000원</b>
-             <span style="color:red">*할인 이벤트</span></div>
-              <div class="col s0 m3"></div>
-            </div>
-
-          <% var state = md[0].state; %>
-
-            <div class="row">
-              <div class="col s4 m3"></div>
-              <div class="col s8 m6" style="text-align: left;"><% if(state == 2){%><span style="background-color: #c12e2e; padding: 10px; color: #fff;">마감임박</span>
-                <%}else if(state == 1){%><span style="color: red;"><b>*마감된 스터디입니다.</b></span><% }else{} %></div>
-              <div class="col s0 m3"></div>
-            </div>
-
-          <div class="row center">
-            <div class="col s12 m12">
-              <div class="apply-form">
-                <% if(state == 1){%>
-                <button style="width: 280px;">신청마감</button>
-                <% }else{ %>
-                <div class="btn-apply"><a href="<%= md[0].naverpay %>"><button style="width: 280px;">신청하기</button></a></div>
-                <!--form action="/npay" name="apply" method="get">
-                  <input type="hidden" name="subject" value="<%=md[0].subject%>">
-                  <input type="hidden" name="cate" value="<%=md[0].cate%>">
-                  <input type="hidden" name="idx" value="<%=md[0].idx%>">
-                  <input type="hidden" name="price" value="<%=md[0].price%>">
-                  <button type="submit" style="width: 280px;">신청하기</button>
-                </form-->
-                <% } %>
-              </div>
-            </div>
-
-            <div class="col s12 m12">
-              <div class="apply-form2">
-                  <a href="/study/faq"><button  style="width: 280px;" type="button" onclick="location.href='/study/faq'">문의하기</button></a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-    </div>
-  </div>
   <div class="divider"></div>
 
 <div id="study-new">
-<div class="section0">
+
+<div class="section2"><!-- 리더 소개 -->
+	<div class="container">
+		<h4># 스터디 리더소개</h4>
+		<div class="line1"></div>
+		<img class="responsive-img" src="<%=md[0].img3%>">
+
+     <% if(md[0].youtube == ""){%><% }else{%>
+
+    <div class="youtubeWrap">
+      <iframe width="560" height="315" src="<%=md[0].youtube%>" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <% } %>      
+	</div>
+</div>
+
+<div class="section0"><!-- 스터디 소개 -->
   <div class="container">
-    <h4>#1 스터디 소개</h4>
+    <h4># 스터디 소개</h4>
     <div class="line1"></div>
     <div class="info">
       <h5 style="color:#73c7a6"><%=md[0].linesub1%></h5>
@@ -483,8 +399,16 @@ $(document).ready(function () {
   </div>
 </div>
 
+<div class="section2"><!-- 전 참여자 후기-->
+  <div class="container">
+      <div class="row">
+        <a href="http://cidermics.com/stdreview/7"><div class="col s12 m12"><img class="responsive-img" src="<%=md[0].postscript%>"></div></a>
+      </div> 
+  </div>
+</div>
 
-<div id="countdown">
+
+<div id="countdown"><!-- 마감임박 -->
   <p style="color:#f9ff00;">마감임박까지</p>
   <p class="days" style="color:#f9ff00;">00</p>
   <p class="timeRefDays">일</p>
@@ -496,71 +420,36 @@ $(document).ready(function () {
   <p class="timeRefSeconds">초</p>
 </div>
 
+<!-- pdf준다는 내용의 배너 -->
+<div align="center" style="margin-bottom:-10px">
+	<img class="responsive-img" src="https://i.imgur.com/G0XJSmu.jpg" style="width:100%">
+</div>
 
+<!-- DB 작성 칸 -->
+<div class="database" style="background-color:#000">
+	<div class="container">
+		<div id="name"><span class="color1">이름 :</span>    </div><br>
+		<div id="phon"><span class="color1">전화번호 :</span>    </div><br>
+		<div id="mail"><span class="color1">이메일 :</span>    </div><br><br>
+		<div id="btn1" align="center">
+			<a style="cursor:pointer"><span>신청하기</span></a>
+		</div>
+	</div>
+</div>
 
 <div class="section1">
   <div class="container" >
-    <h4>#2 스터디 커리큘럼</h4>
+    <h4># 스터디 커리큘럼</h4>
     <div class="line1"></div>
     <div align="center">
       <img class="responsive-img" src="<%=md[0].img2%>">
     </div>
   </div>
 </div>
-<div class="section2">
-  <div class="container">
-    <h4>#3 스터디 리더소개</h4>
-    <div class="line1"></div>
-    <img class="responsive-img" src="<%=md[0].img3%>">
-
-    <!-- 스터디 슬라이더 -->
-     
-      <div class="carousel carousel-slider center " data-indicators="true" id="slidermobsize">
-        <div class="carousel-fixed-item center middle-indicator" style="left: 5px; right:5px;">
-         <div class="left">
-          <a href="Previo" class="movePrevCarousel middle-indicator-text  content-indicator"><i class="material-icons left  middle-indicator-text">chevron_left</i></a>
-         </div>
-         <div class="right">
-         <a href="Siguiente" class=" moveNextCarousel middle-indicator-text content-indicator"><i class="material-icons right middle-indicator-text">chevron_right</i></a>
-         </div>
-        </div>
-        <div class="carousel-item slider1 white-text" href="#one!">
-        </div>
-        <div class="carousel-item slider2 white-text" href="#two!">
-        </div>
-        <div class="carousel-item slider3 white-text" href="#three!">
-        </div>
-        <div class="carousel-item slider4 white-text" href="#four!">
-        </div>
-
-      </div>
-  </div>
-</div>
-
-
-<!-- 슬라이더 스크립트 -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js'></script>
-
-<script type="text/javascript">
-    $(function(){ $('.carousel.carousel-slider').carousel({fullWidth: true,
-      indicators: false}); });
-   // move next carousel
-   $('.moveNextCarousel').click(function(e){
-      e.preventDefault();
-      e.stopPropagation();
-      $('.carousel').carousel('next');
-   });
-   // move prev carousel
-   $('.movePrevCarousel').click(function(e){
-      e.preventDefault();
-      e.stopPropagation();
-      $('.carousel').carousel('prev');
-   });
-</script>
 
 <div class="section0">
   <div class="container">
-    <h4>#4 경이로워지는 시간</h4>
+    <h4># 경이로워지는 시간</h4>
     <div class="line1"></div>
       <div class="info1">
         <h5 class="title1" style="color:#73c7a6">"이런 분들께 추천합니다"</h5>
@@ -583,39 +472,51 @@ $(document).ready(function () {
   </div>
 </div>
 
-<!-- 여기부터는 고정 -->
-<div class="divider"></div>
+	<div class="divider"></div>
+	
 <div class="section0">
-  <div class="container">
-    <h4>경이로움 멤버들의 진솔한 후기 인터뷰</h4>
-    <div class="line1"></div>
-      <div class="row">
-        <a href="http://cidermics.com/stdreview/5"><div class="col s12 m6"><img class="responsive-img" src="/page_imgs/study_img/img-section9-thum1.jpg"></div></a>
-        <div class="web-n col s12" style="margin-bottom:30px;"></div>
-        <a href="http://cidermics.com/stdreview/4"><div class="col s12 m6"><img class="responsive-img" src="/page_imgs/study_img/img-section9-thum2.jpg"></div></a>
-      </div>  
-      <a href="/study/review" align="center" class="btn-review"><h5><span>☞ 더 많은 후기 보기</span></h5></a>    
-  </div>
+	<div class="container">
+		<h4>경이로움 멤버들의 진솔한 후기 인터뷰</h4>
+		<div class="line1"></div>
+			<div class="row">
+				<a href="http://cidermics.com/stdreview/7"><div class="col s12 m6"><img class="responsive-img" src="/page_imgs/study_img/img-section9-thum3.jpg"></div></a>
+				<div class="web-n col s12" style="margin-bottom:30px;"></div>
+				<a href="http://cidermics.com/stdreview/6"><div class="col s12 m6"><img class="responsive-img" src="/page_imgs/study_img/img-section9-thum4.jpg"></div></a>
+			</div>	
+			<a href="/study/review" align="center" class="btn-review"><h5><span>☞ 더 많은 후기 보기</span></h5></a>		
+	</div>
 </div>
+
 <div class="section1">
-  <div class="container" >
-    <h4>경이로움 스터디는 왜 다를까?</h4>
-    <div class="line1"></div>
-    <div align="center">
-      <img class="responsive-img" src="https://i.imgur.com/BEnxns7.jpg" style="margin-top:20px">
-      <a href="/seminar" align="center" class="btn-seminar"><h5><span>☞ 세미나 보러가기</span></h5></a>
-      <img class="responsive-img" src="https://i.imgur.com/APnLZGG.jpg" style="margin-top:20px">
-    </div>
-  </div>
+	<div class="container" >
+		<h4>경이로움 스터디는 왜 다를까?</h4>
+		<div class="line1"></div>
+		<div align="center">
+			<img class="responsive-img" src="https://i.imgur.com/1ki4ceq.jpg" style="margin-top:20px">
+			<a href="/seminar" align="center" class="btn-seminar"><h5><span>☞ 세미나 보러가기</span></h5></a>
+			<img class="responsive-img" src="https://i.imgur.com/QjkIeKh.jpg" style="margin-top:20px">
+		</div>
+	</div>
 </div>
+
 <div class="section0">
-  <div class="container">
-    <h4>경이로움의 처음과 끝!</h4>
-    <div class="line1"></div>
-    <div align="center">
-      <img class="responsive-img" src="https://i.imgur.com/CChI9Mm.png" style="margin-top:20px">
-    </div>    
-  </div>
+	<div class="container">
+		<h4>경이로움 현장</h4>
+		<div class="line1"></div>
+		<div class="row">
+			<div class="col s12 m4 mob-margin1"><img class="responsive-img materialboxed z-depth-1" src="https://i.imgur.com/uFyT7lN.jpg"></div>
+			<div class="col s12 m4"><img class="responsive-img materialboxed z-depth-1" src="https://i.imgur.com/QVtSQJc.jpg"></div>
+			<div class="col s6 m4 mob-none"><img class="responsive-img materialboxed z-depth-1" src="https://i.imgur.com/tnDmlaP.jpg"></div>
+		</div>
+		<div class="row">
+			<div class="col s6 m4"><img class="responsive-img materialboxed z-depth-1" src="https://i.imgur.com/onD5fFQ.jpg"></div>
+			<div class="col s6 m4"><img class="responsive-img materialboxed z-depth-1" src="https://i.imgur.com/RD39NDP.jpg"></div>
+			<div class="col s6 m4 mob-none"><img class="responsive-img materialboxed z-depth-1" src="https://i.imgur.com/Hv3bGrc.jpg"></div>
+		</div>
+		<div align="center">
+			<!-- img class="responsive-img" src="https://i.imgur.com/CChI9Mm.png" style="margin-top:20px" -->
+		</div>		
+	</div>
 </div>
 
 <div class="section2">
@@ -662,7 +563,7 @@ $(document).ready(function () {
 </div>
 
 
-<% include std_bottom %>
+<% include pr_bottom %>
 
 
 

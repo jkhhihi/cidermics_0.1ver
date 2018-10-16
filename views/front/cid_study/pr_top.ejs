@@ -54,6 +54,36 @@ $('.community_menu').click(function(e){
       }
 });
 });
+
+$(document).ready(function(){
+	$('.community_menu1').click(function(e){
+	   e.preventDefault();
+	   if($(this).is('.on')){
+	      $(this).removeClass('on');
+	      $('.community_sub_menu1').slideDown();
+	      $('.community_menu1').attr("src","/page_imgs/fixed_img/mob-menu-icons/mob-menu-down.png");
+	   }else{
+	      $(this).addClass('on');
+	      $('.community_sub_menu1').slideUp();
+	      $('.community_menu1').attr("src","/page_imgs/fixed_img/mob-menu-icons/mob-menu-up.png");  
+	}
+});
+});
+
+$(document).ready(function(){
+	$('.community_menu2').click(function(e){
+	   e.preventDefault();
+	   if($(this).is('.on')){
+	      $(this).removeClass('on');
+	      $('.community_sub_menu2').slideDown();
+	      $('.community_menu2').attr("src","/page_imgs/fixed_img/mob-menu-icons/mob-menu-down.png");
+	   }else{
+	      $(this).addClass('on');
+	      $('.community_sub_menu2').slideUp();
+	      $('.community_menu2').attr("src","/page_imgs/fixed_img/mob-menu-icons/mob-menu-up.png");  
+	}
+});
+});
 </script>
 
 <!--구글 애널리틱스 -->
@@ -121,29 +151,34 @@ $(document).ready(function(){
 				  </div>
 				  
 				  	
-
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
       <a href="/" class="button-collapse-home" style="line-height:0px;"><i class="material-icons center" style="font-size: 1.8rem; height:37px; line-height:42px;">home</i><span style="font-size:11px;">사이다경제 홈</span></a>
       <a id="logo-container" href="/study" class="brand-logo"><img class="img-responsive" src="/page_imgs/study_img/logo-study.svg" width="80" style="padding-top:10px;"></a>
       <a id="logo-container" href="/study" class="brand-logo2"><img class="img-responsive" src="/page_imgs/study_img/logo-study.svg" width="70" style="padding-top:8px;"></a>
       <ul class="menu right hide-on-med-and-down">
-        <li><a href="/study/">경이로움이란?</a></li>
-        <!-- li><a href="/study/intro">경이로움이란?</a></li>
-        <li><a href="/study/memship">멤버십 신청방법</a></li -->    	
-        <li><a href="/study/process">경이로움 구성</a></li>
-        <li><a href="/study/lecture">강의</a></li>
-        <li><a href="/study/list">스터디</a></li>
-        <li><a href="#modal1" class="modal-trigger">독서클럽</a></li>
-        <li style="width:120px"><a class="menu">커뮤니티</a>
+		<li style="width:120px"><p><a href="/study">경매</a></p></li>
+        <li style="width:120px"><a class="menu">부동산</a>
         	<ul class="sub">
-             <li><p><a href="/study/review">후기 인터뷰</a></p></li>
-        	   <li><p><a href="/study/event">이벤트</a></p></li>
-    			   <li><p><a href="/study/cal">일정표</a></p></li>
-    			   <li><p><a href="/study/faq">QA문의</a></p></li>
-             <li><p><a href="/study/map">오시는길</a></p></li>
+             <li><p><a href="/study">행복주택</a></p></li>
+        	 <li><p><a href="/study">부동산투자</a></p></li>
         	</ul>
         </li>
+		<li style="width:120px"><p><a href="/study">회계</a></p></li>
+        <li style="width:120px"><a class="menu">암호화폐</a>
+        	<ul class="sub">
+             <li><p><a href="/study">스팀잇</a></p></li>
+        	 <li><p><a href="/study">블록체인</a></p></li>
+        	</ul>
+        </li>
+        <li style="width:120px"><a class="menu">주식</a>
+        	<ul class="sub">
+             <li><p><a href="/study">왕초보주식</a></p></li>
+        	 <li><p><a href="/study">중급</a></p></li>
+        	 <li><p><a href="/study">미국주식</a></p></li>
+        	</ul>
+        </li>
+        <!-- li><a href="#modal1" class="modal-trigger">모달 사용시</a></li -->
 	  </ul>
       
 
@@ -158,32 +193,40 @@ $(document).ready(function(){
         <a href="#" style="padding:0px 0px; height:75px; line-height:95px;"><span class="white-text site">프리미엄 스터디 <b>경이로움</b></span></a>
         </div>
         </div>
-        <!-- li><a href="/study/intro"><b>경이로움이란?</b></a></li>
+        <li><p><a href="/study">경매</a></p></li>
         <div class="divider"></div>
-        <li><a href="/study/memship"><b>멤버십 신청방법</b></a></li -->
-        <li><a href="/study/"><b>경이로움이란?</b></a></li>
-        <div class="divider"></div>
-        <li><a href="/study/process"><b>경이로움 구성</b></a></li>
-        <div class="divider"></div>
-        <li><a href="/study/lecture"><b>강의</b></a></li>
-        <div class="divider"></div>
-        <li><a href="/study/list"><b>스터디</b></a></li>
-        <div class="divider"></div>
-        <li><a href="#modal1" class="modal-trigger"><b>독서클럽</b></a></li>
-        <div class="divider"></div>
-        <li><a><b>커뮤니티</b>
+        <li><a><b>부동산</b>
         <img class="community_menu" style="cursor:pointer; margin-left:10px; width:12px; display:inline-block" src="/page_imgs/fixed_img/mob-menu-icons/mob-menu-down.png">
         </a></li>
-			<div class="community_sub_menu">
-				<ul>
-           <li><p><a href="/study/review">후기 인터뷰</a></p></li>
-	         <li><p><a href="/study/event">이벤트</a></p></li>
-				   <li><p><a href="/study/cal">일정표</a></p></li>
-				   <li><p><a href="/study/faq">QA문의</a></p></li>
-           <li><p><a href="/study/map">오시는길</a></p></li>
-				</ul>
-		   </div>
+		<div class="community_sub_menu">
+			<ul>
+	            <li><p><a href="/study">행복주택</a></p></li>
+	        	<li><p><a href="/study">부동산투자</a></p></li>
+			</ul>
+		</div>
         <div class="divider"></div>
+        <li><p><a href="/study">회계</a></p></li>
+        <div class="divider"></div>
+        <li><a><b>암호화폐</b>
+        <img class="community_menu1" style="cursor:pointer; margin-left:10px; width:12px; display:inline-block" src="/page_imgs/fixed_img/mob-menu-icons/mob-menu-down.png">
+        </a></li>
+		<div class="community_sub_menu1">
+			<ul>
+	            <li><p><a href="/study">스팀잇</a></p></li>
+	        	<li><p><a href="/study">블록체인</a></p></li>
+			</ul>
+		</div>
+        <div class="divider"></div>
+        <li><a><b>주식</b>
+        <img class="community_menu2" style="cursor:pointer; margin-left:10px; width:12px; display:inline-block" src="/page_imgs/fixed_img/mob-menu-icons/mob-menu-down.png">
+        </a></li>
+		<div class="community_sub_menu2">
+			<ul>
+	            <li><p><a href="/study">왕초보주식</a></p></li>
+	        	<li><p><a href="/study">중급</a></p></li>
+	        	<li><p><a href="/study">미국주식</a></p></li>
+			</ul>
+		</div>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse" style="margin:0px;"><i class="material-icons">menu</i></a>
       
