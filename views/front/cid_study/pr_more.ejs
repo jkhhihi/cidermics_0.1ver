@@ -220,7 +220,7 @@ a.btn-review h5 span:hover{background-color:#0aa0f6; color:#fff !important}
 a.btn-seminar h5 span{color:#fff !important; border:2px solid #0aa0f6; border-radius:5px; padding:20px 40px; display:inline-block; margin-top:20px; margin-bottom:50px}
 a.btn-seminar h5 span:hover{background-color:#0aa0f6; color:#fff !important}
 
-#countdown{padding:80px 0 60px 0}
+#countdown{padding:80px 0 40px 0}
 .database{color:#fff; padding:30px 0 80px 0; font-size:24px;}
 .database .container input{font-size:20px;}
 .database .container span.color1{color:#f9ff00}
@@ -660,11 +660,9 @@ $(document).ready(function () {
 
 <!-- pdf준다는 내용의 배너 -->
 <div align="center" style="margin-bottom:-10px">
-<<<<<<< HEAD
+
   <img class="responsive-img" src="https://i.imgur.com/v179Cde.jpg" style="width:100%">
-=======
-	<img class="responsive-img" src="https://i.imgur.com/8ExQR9g.jpg" style="width:100%">
->>>>>>> branch 'master' of https://github.com/jkhhihi/cidermics_0.1ver.git
+
 </div>
 
 
@@ -682,11 +680,14 @@ $(document).ready(function () {
   <p class="timeRefMinutes">분</p>
   <p class="seconds" style="color:#f9ff00;">00</p>
   <p class="timeRefSeconds">초</p>
+  
+  <div><span style="color:#9ddaff;">*</span> <a class="modal-trigger" style="color:#9ddaff;">스터디 담당 매니저가 스터디와 관련된 상담을 도와드릴 예정입니다.</a></div>
+  
 </div>
 <!-- DB 작성 칸 -->
 <div class="database" style="background-color:#000">
   <div class="container">
-
+         
     <div class="row">
 
       <form action="/prinsert" method="post" name="prinsert" class="col s12">
@@ -734,15 +735,6 @@ $(document).ready(function () {
           </div>
           <div class="input-field col l2"></div>
         </div>
-
-        <div class="row">
-          <div class="input-field col l2"></div>
-          <div class="input-field col s12 l8">
-            <label for="check1"><span style="color:#9ddaff;">*</span> <a class="modal-trigger" style="color:#9ddaff;">스터디 담당 매니저가 스터디와 관련된 상담을 도와드릴 예정입니다.</a></label>
-          </div>
-          <div class="input-field col l2"></div>
-        </div>
-        <br>
 
         <div id="btn1" align="center">
           <br><a style="cursor:pointer" onclick="surveyGo()"><span>신청하기</span></a>
