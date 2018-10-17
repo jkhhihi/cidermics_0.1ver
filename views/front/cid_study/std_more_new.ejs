@@ -198,10 +198,43 @@
 </style>
 
 <style type="text/css">
+  #countdown {
+      text-align: center;
+      background-color:#000;
+  }
+  #countdown p {
+      display: inline-block;
+      padding: 10px;
+      background: #212121;
+      margin: 0 0 20px;
+      border-radius: 3px;
+      color: white;
+      min-width: 2.6rem;
+      font-size:23px;
+  }
+</style>
+
+<style type="text/css">
 a.btn-review h5 span{color:#0aa0f6 !important; border:2px solid #0aa0f6; border-radius:5px; padding:20px 40px; display:inline-block; margin-top:100px}
 a.btn-review h5 span:hover{background-color:#0aa0f6; color:#fff !important}
 a.btn-seminar h5 span{color:#fff !important; border:2px solid #0aa0f6; border-radius:5px; padding:20px 40px; display:inline-block; margin-top:20px; margin-bottom:50px}
 a.btn-seminar h5 span:hover{background-color:#0aa0f6; color:#fff !important}
+
+#countdown{padding:80px 0 60px 0}
+.database{color:#fff; padding:30px 0 80px 0; font-size:24px;}
+.database .container input{font-size:20px;}
+.database .container span.color1{color:#f9ff00}
+.database .container #btn1 span{background-color:#000; border:2px solid #f9ff00; border-radius:50px; padding:15px 50px;}
+.database .container #btn1 span:hover{background-color:#f9ff00;}
+.database .container #btn1 a{color:#fff;}
+.database .container #btn1 a:hover{color:#000;}
+@media only screen and (max-width : 1024px) {
+a.btn-review h5 span{margin-top:50px}
+a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
+#countdown{padding:40px 0 0 0}
+}
+
+
 @media only screen and (max-width : 1024px) {
 a.btn-review h5 span{margin-top:50px}
 a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
@@ -242,6 +275,124 @@ a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
       }
   });
 
+</script>
+
+
+<script type="text/javascript">
+/*
+ * Basic Count Down to Date and Time
+ * Author: @guwii / guwii.com
+ */
+(function (e) {
+  e.fn.countdown = function (t, n) {
+    function i() {
+      eventDate = Date.parse(r.date) / 1e3;
+      currentDate = Math.floor(e.now() / 1e3);
+      if (eventDate <= currentDate) {
+        n.call(this);
+        clearInterval(interval)
+      }
+      seconds = eventDate - currentDate;
+      days = Math.floor(seconds / 86400);
+      seconds -= days * 60 * 60 * 24;
+      hours = Math.floor(seconds / 3600);
+      seconds -= hours * 60 * 60;
+      minutes = Math.floor(seconds / 60);
+      seconds -= minutes * 60;
+      days == 1 ? thisEl.find(".timeRefDays").text("day") : thisEl.find(".timeRefDays").text("일");
+      hours == 1 ? thisEl.find(".timeRefHours").text("hour") : thisEl.find(".timeRefHours").text("시간");
+      minutes == 1 ? thisEl.find(".timeRefMinutes").text("minute") : thisEl.find(".timeRefMinutes").text("분");
+      seconds == 1 ? thisEl.find(".timeRefSeconds").text("second") : thisEl.find(".timeRefSeconds").text("초");
+      if (r["format"] == "on") {
+        days = String(days).length >= 2 ? days : "0" + days;
+        hours = String(hours).length >= 2 ? hours : "0" + hours;
+        minutes = String(minutes).length >= 2 ? minutes : "0" + minutes;
+        seconds = String(seconds).length >= 2 ? seconds : "0" + seconds
+      }
+      if (!isNaN(eventDate)) {
+        thisEl.find(".days").text(days);
+        thisEl.find(".hours").text(hours);
+        thisEl.find(".minutes").text(minutes);
+        thisEl.find(".seconds").text(seconds)
+      } else {
+        alert("Invalid date. Example: 30 Tuesday 2013 15:50:00");
+        clearInterval(interval)
+      }
+    }
+    var thisEl = e(this);
+    var r = {
+      date: null,
+      format: null
+    };
+    t && e.extend(r, t);
+    i();
+    interval = setInterval(i, 1e3)
+  }
+})(jQuery);
+$(document).ready(function () {
+  function e() {
+    var e = new Date;
+    e.setDate(e.getDate() + 60);
+    dd = e.getDate();
+    mm = e.getMonth() + 1;
+    y = e.getFullYear();
+    futureFormattedDate = mm + "/" + dd + "/" + y;
+    return futureFormattedDate
+  }
+  $("#countdown").countdown({
+    date: "31 Oct 2018 00:00:00", // Change this to your desired date to countdown to
+    format: "on"
+  });
+});
+</script>
+
+
+
+
+<script type="text/javascript">
+  function surveyGo()
+  {
+    if(document.prinsert.pname.value==""){
+     alert("이름을 입력해 주세요.");
+    document.prinsert.pname.focus();
+      return;
+    }
+    if(document.prinsert.phone.value==""){
+     alert("휴대폰 번호를 정확히 입력해 주세요.");
+    document.prinsert.phone.focus();
+      return;
+    }
+    
+    for (i=0; i<document.prinsert.phone.value.length; i++)
+       {
+         var ch = document.prinsert.phone.value.charAt(i);//문자를 반환(정수형), 범위 검사 가능
+      if ( ch < "0" || ch > "9" )
+         {
+              alert("휴대폰 번호는 숫자로만 입력 가능 합니다!");
+              document.prinsert.phone.focus();
+              return;
+           }
+        }
+    if(document.prinsert.email.value==""){
+     alert("이메일 주소를 입력해 주세요.");
+    document.prinsert.email.focus();
+      return;
+    }
+
+    if(!document.prinsert.check1.checked){
+                alert("서비스 이용약관에 동의하셔야 신청이 가능합니다."); 
+                return;
+         
+        }else if(document.prinsert.check1.checked){
+          if(!document.prinsert.check2.checked){
+                alert("개인정보 수집 및 이용 동의하셔야 신청이 가능합니다.");
+                return;
+        }
+      }
+
+    //alert("참여해 주셔서 감사합니다.")
+    document.prinsert.submit();
+  }
 </script>
 
   
@@ -509,6 +660,98 @@ a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
 				<div class="divider1"></div>
 			</div>				
 	</div>
+</div>
+
+
+
+<!-- pdf준다는 내용의 배너 -->
+<div align="center" style="margin-bottom:-10px">
+  <img class="responsive-img" src="https://i.imgur.com/v179Cde.jpg" style="width:100%">
+</div>
+
+
+<!--div class="database" style="background-color:#000" align="center">
+  <span>선착순 100명 : 현재까지 <span class="days" style="color:#f9ff00;">68명</span> 신청</span>
+</div-->
+
+<div id="countdown"><!-- 마감임박 -->
+  <p style="color:#f9ff00;">선착순 웹진 신청 마감시간까지</p>
+  <p class="days" style="color:#f9ff00;">00</p>
+  <p class="timeRefDays">일</p>
+  <p class="hours" style="color:#f9ff00;">00</p>
+  <p class="timeRefHours">시간</p>
+  <p class="minutes" style="color:#f9ff00;">00</p>
+  <p class="timeRefMinutes">분</p>
+  <p class="seconds" style="color:#f9ff00;">00</p>
+  <p class="timeRefSeconds">초</p>
+</div>
+<!-- DB 작성 칸 -->
+<div class="database" style="background-color:#000">
+  <div class="container">
+
+    <div class="row">
+
+      <form action="/prinsert" method="post" name="prinsert" class="col s12">
+        <input type="hidden" name="cate" value="<%=md[0].cate%>">
+        <input type="hidden" name="idx" value="<%=md[0].idx%>">
+        <input type="hidden" name="tele_check" value="1">
+
+        <div class="row">
+          <div class="input-field col l2"></div>
+          <div id="name" class="input-field col s12 l8">
+            <span class="color1">이름 : </span>
+            <input type="text" name="pname" length="4" >
+          </div>
+          <div class="input-field col l2"></div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col l2"></div>
+          <div id="phon" class="input-field col s12 l8">
+            <span class="color1">전화번호 : </span>
+            <input type="text" name="phone" maxlength="11" >
+          </div>
+          <div class="input-field col l2"></div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col l2"></div>
+          <div id="mail" class="input-field col s12 l8">
+            <span class="color1">이메일 주소 : </span>
+            <input type="text" name="email" maxlength="45" >
+          </div>
+          <div class="input-field col l2"></div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col l2"></div>
+          <div class="input-field col s12 l8">
+            <input type="checkbox" id="check1" name="check1" />
+            <label for="check1">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
+            <br>
+            <input type="checkbox" id="check2" name="check2"/>
+            <label for="check2">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
+            <br>
+            <br>
+          </div>
+          <div class="input-field col l2"></div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col l2"></div>
+          <div class="input-field col s12 l8">
+            <label for="check1"><span style="color:#9ddaff;">*</span> <a class="modal-trigger" style="color:#9ddaff;">스터디 담당 매니저가 스터디와 관련된 상담을 도와드릴 예정입니다.</a></label>
+          </div>
+          <div class="input-field col l2"></div>
+        </div>
+        <br>
+
+        <div id="btn1" align="center">
+          <br><a style="cursor:pointer" onclick="surveyGo()"><span>신청하기</span></a>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
 
 <!-- 여기부터는 고정 -->
