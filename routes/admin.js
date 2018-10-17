@@ -1313,7 +1313,7 @@ router.get('/survey/delete/:sry_no', function(req, res, next) {
 
 
 router.get('/consulting', ensureAuthenticated, function(req, res, next) {
-	var CP = 9;
+	var CP = 8;
 	mysql.select('select * from cider.cid_consulting order by cons_no desc', function (err, data){
 		 res.render('admin/consulting/consulting', { CP : CP, consulting : data });
 	});
@@ -1321,7 +1321,7 @@ router.get('/consulting', ensureAuthenticated, function(req, res, next) {
 });
 
 router.post('/consulting/insert',  function(req, res, next) {
-	var CP = 9;
+	var CP = 8;
 	
 	var contents = req.body.contents;
 	var url = req.body.url;
@@ -1333,9 +1333,6 @@ router.post('/consulting/insert',  function(req, res, next) {
 	//console.log('insert into cider.cid_consulting set ? '+sets);
 	mysql.insert('insert into cider.cid_consulting set ?', sets,  function (err, data){
 		
-		console.log(err);
-		console.log(data);
-		
     	res.redirect('/adm/consulting');
     	if (err){
     		res.redirect('/adm/consulting');
@@ -1345,14 +1342,14 @@ router.post('/consulting/insert',  function(req, res, next) {
 
 router.get('/consulting/insert', ensureAuthenticated, function(req, res, next) {
 	
-	var CP = 9;
+	var CP = 8;
 	res.render('admin/consulting/insert', { CP : CP });
 	
 });
 
 router.get('/consulting/detail/:no', ensureAuthenticated, function(req, res, next) {
 	
-	var CP = 9;
+	var CP = 8;
 	var no = req.params.no;
 	var user;
 	
@@ -1372,7 +1369,7 @@ router.get('/consulting/detail/:no', ensureAuthenticated, function(req, res, nex
 
 router.post('/consulting/update', ensureAuthenticated, function(req, res, next) {
 	
-	var CP = 9;
+	var CP = 8;
 	
 	var no = req.body.no;
 	var name = req.body.name;
@@ -1392,7 +1389,7 @@ router.post('/consulting/update', ensureAuthenticated, function(req, res, next) 
 
 router.get('/consulting/delete/:no', ensureAuthenticated, function(req, res, next) {
 	
-	var CP = 9;
+	var CP = 8;
 	var no = req.params.no;
 	
 	mysql.del('delete from cider.cid_consulting where cons_no = '+ no +'', function (err, data){
@@ -1999,7 +1996,7 @@ router.get('/study/inquiry', ensureAuthenticated, function(req, res, next) {
 });
 
 router.get('/study/inquiryd/:idx', ensureAuthenticated, function(req, res, next) {
-	var CP = 8;
+	var CP = 9;
 	var idx = req.params.idx;
 	mysql.select('SELECT * FROM cider.std_ask where stda_no = '+idx+'', function (err, data){
 	res.render('admin/study/std_inquiry_detail', { CP : CP, inq:data});
@@ -2007,6 +2004,31 @@ router.get('/study/inquiryd/:idx', ensureAuthenticated, function(req, res, next)
 });
 
 
+
+
+router.get('/tele', ensureAuthenticated, function(req, res, next) {
+	var CP = 9;
+		mysql.select('SELECT * from cider.cid_telemarket order by tele_no desc;', function (err, data){
+			mysql.select('SELECT count(*) as sry FROM cider.cid_telemarket;', function (err, data1){
+			res.render('admin/telemarket/tele_index', { CP : CP, tele : data, teleAll:data1 });	    	
+		});
+	});
+});
+
+
+router.get('/tele/delete/:tele_no', function(req, res, next) {
+	
+	var CP = 9;
+	var tele_no = req.params.tele_no;
+	
+	mysql.del('delete from cider.cid_telemarket where tele_no = '+ tele_no +'', function (err, data){
+		if(err){
+			res.redirect('/adm/tele');
+		}else{
+			res.redirect('/adm/tele');
+		}
+    });
+});
 
 
 

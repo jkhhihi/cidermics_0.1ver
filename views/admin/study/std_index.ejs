@@ -19,12 +19,15 @@
     <% include ../include/nav.ejs %>
     <div class="container" style="margin: 50px auto;">
       <div class="row">
-        <div class="col s6">
+        <div class="col s4">
           <a class="waves-effect waves-light btn grey darken-4" href="/adm/studyin">강의/스터디/독서클럽 등록</a>
         </div>
-        <div class="col s6">
+        <div class="col s4">
           <a class="waves-effect waves-light btn grey darken-4" href="/adm/study/inquiry">문의 현황</a>
           <span class="z-depth-1 yellow"><%= inq[0].inq %> NEW</span>
+        </div>
+        <div class="col s4">
+          <a class="waves-effect waves-light btn grey darken-4" href="/adm/consulting">스터디 후기 및 등록</a>
         </div>
       </div>
     </div>

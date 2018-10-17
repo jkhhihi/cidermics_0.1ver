@@ -231,7 +231,7 @@ router.post('/prinsert', function(req, res, next) {
 	var idx = req.body.idx;
 	var name = req.body.pname;
 	var email = req.body.email;
-	var num = req.body.num;
+	var num = req.body.phone;
 
 	var date = getWorldTime(+9);
 
