@@ -1,0 +1,343 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+@font-face {
+    font-family: 'seoulhangangregular';
+    src: url('../font/SeoulHangang.eot');
+    src: url('../font/SeoulHangang.eot?#iefix') format('embedded-opentype'),
+         url('../font/SeoulHangang.woff2') format('woff2'),
+         url('../font/SeoulHangang.woff') format('woff'),
+         url('../font/SeoulHangang.ttf') format('truetype'),
+         url('../font/SeoulHangang.svg#seoulhangangregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+html{
+  font-family: "Noto Sans Japanese", sans-serif;
+  line-height:2.0em
+}
+.white{
+  background-color: #0e0e0e !important;
+  position: fixed;
+  z-index: 1000;
+}
+
+nav ul a,
+nav .brand-logo {
+  color: #ffffff;
+}
+
+.side-nav a{
+  padding: 0 30px;
+  height: 50px;
+  line-height:50px;
+}
+
+p {
+  line-height: 2.5rem;
+}
+
+.button-collapse {
+  color: #ffffff;
+}
+.button-collapse-home{float: right; position: relative; z-index: 1; color: #ffffff !important; }
+
+.parallax-container {
+  min-height: 500px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+/*----------스터디버젼2top----------*/
+ul.sub li{width:120px; background-color:#000;}
+ul.sub li:hover{background-color:#272d39;}
+nav ul a:hover{background-color:rgba(0,0,0,0)}
+
+/*----------스터디버젼2morenew----------*/
+.web-n{display:none}
+#study-new{font-family: 'seoulhangangregular';}
+#study-new .divider1{margin-top:3px; height:1px; overflow:hidden; background-color:#73c7a6}
+#study-new .line1{width:350px; height:4px; background-color:#73c7a6; margin-bottom:30px}
+#study-new .section0{padding:80px 0 100px 0}
+#study-new .section0 p{font-size:20px; line-height:1.8em}
+#study-new .section0 span{color:#73c7a6}
+#study-new .section0 .title{margin:40px 0 60px 0}
+#study-new .section0 .title1{margin:60px 0 0 0}
+#study-new .section0 .info{margin-bottom:50px}
+#study-new .section0 .info2{margin-top:80px}
+#study-new .section0 .info1 p, .info2 p {margin-top:50px; line-height:1.8em}
+#study-new .section1{background-color:#2b313f; padding:80px 0}
+#study-new .section1 h4{color:#fff}
+#study-new .section1 img{width:80%}
+#study-new .section2{background-color:#f4f4f4; padding:80px 0}
+
+
+
+@media only screen and (max-width : 1024px) {
+.mob-n{display:none}
+.web-n{display:block}
+h4{font-size:24px}
+h5{font-size:18px}
+
+/*----------스터디버젼2morenew----------*/
+#study-new .line1{width:250px; margin-bottom:20px}
+#study-new .section0{padding:20px 0 0 0}
+#study-new .section0 p{font-size:16px;}
+#study-new .section0 .title{margin:30px 0 40px 0}
+#study-new .section0 .title1{margin:40px 0 0 0;}
+#study-new .section0 .info2{margin-top:60px}
+#study-new .section0 .info1 p, .info2 p {margin-top:30px;}
+#study-new .section1{padding:20px 0}
+#study-new .section1 img{width:100%}
+#study-new .section2{padding:50px 0}
+
+}
+
+@media only screen and (max-width : 768px) {
+.mob-n{display:none}
+.web-n{display:block}
+
+#parallax0 .parallax-container{min-height:450px; padding-top:25px}
+#parallax0 .section0 h1{font-size:34px;}
+.bg-color1{padding:50px 0}
+.bg-color2{padding:50px 0 0 0}
+.bg-color3{padding:50px 0}
+}
+/*------스터디버젼2메인--------끝------*/
+
+
+	
+@media only screen and (max-width : 992px) {
+
+
+	.parallax-container .section {
+	  position: absolute;
+	}
+	#index-banner .section {
+	  top: 10%;
+	}
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+/* Main logo css */
+@media only screen and (max-width : 600px) {
+  nav .brand-logo {
+    display: none;
+  }
+}
+nav .brand-logo2{
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;;
+  font-size: 2.1rem;
+  padding: 0;
+  white-space: nowrap;
+}
+@media only screen and (min-width : 600px) {
+  nav .brand-logo2 {
+    display: none;
+  }
+}
+
+
+/* Main big text */
+
+.ml4 {
+  position: relative;
+  font-weight: 500;
+  font-size: 4.5em;
+}
+.ml4 .letters {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0.3em;
+  right: 0;
+  opacity: 0; 
+}
+
+/* main study list more btn center */
+div #cent { position:relative; }
+      #cm { position:absolute; }
+      .hc { width:200px; left:0; right:0; margin-left:auto; margin-right:auto; } /* 가로 중앙 정렬 */
+      .vc { height:40px; top: 0; bottom:130px; margin-top:auto; margin-bottom:auto; } /* 세로 중앙 정렬 */
+
+@media only screen and (max-width : 600px) {
+  .hc {left:40px;} /* 가로 중앙 정렬 */
+  .vc {bottom:50px;}
+}
+
+
+
+/* side menu css */
+.side-nav .user-view,.side-nav .userView{position:relative;padding:32px 32px 0;}
+.side-nav .user-view .background, .side-nav .userView .background
+{overflow:hidden;position:absolute;top:0;right:0;bottom:0;left:0;z-index:-1}
+.divider{ height: 1px; overflow: hidden; background-color: #ddd; }
+
+
+/*study list */
+.card-name{
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  left:0px;
+  padding: 20px;
+}
+
+.card-btn{
+  color: #fff;
+  position: absolute;
+  bottom: 10px;
+  right:10px;
+  padding: 10px;
+}
+
+.card-btn2{
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  left:10px;
+  padding: 10px;
+}
+
+/*study index page list */
+  .carousel{
+    height: 500px;
+  }
+  .carousel .carousel-item{
+      width: 500px;
+    }
+  @media only screen and (max-width : 600px) {
+    .carousel .carousel-item{
+      width: 300px;
+    }
+    .carousel{
+     height: 380px;
+    }
+  }
+  .carousel-content{
+    background-color: #fff;
+    padding: 20px;
+  }
+  .carousel-btn{
+    color: #fff;
+    position: absolute;
+    top: 15px;
+    right:10px;
+  }
+  .carousel-more{
+    color: #fff;
+    position: absolute;
+    bottom: 15px;
+    right:10px;
+  }
+  .carousel-title{
+    color: #fff;
+    position: absolute;
+    top: 25px;
+    left: 0px;
+    padding: 20px;
+    font-size: 22px;
+    font-weight: 300;
+  }
+  .carousel-name{
+    color: #fff;
+    position: absolute;
+    top: 95px;
+    left:0px;
+    padding: 20px;
+  }
+  .carousel-date{
+    color: #fff;
+    position: absolute;
+    top: 125px;
+    left:0px;
+    padding: 20px;
+  }
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+.teal{
+  background-color:#0e0e0e !important;
+}
+
+/* FAQ collapsible popout */
+.collapsible-body{
+  padding:20px;
+}
+   .input-field input[type=text]:focus + label {
+     color: #0288d1;
+   }
+      /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #0288d1;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* label focus color */
+   .input-field input[type=email]:focus + label {
+     color: #0288d1;
+   }
+      /* label underline focus color */
+   .input-field input[type=email]:focus {
+     border-bottom: 1px solid #0288d1;
+     box-shadow: 0 1px 0 0 #000;
+   }
+
+
+/* study intro */
+
+@media(max-width: 992px){
+  #memshipweb{
+    display: none;
+  }
+}
+@media(min-width: 992px){
+  #memshipmob{
+    display: none;
+  }
+}
+
+
+
+
+
+.gototop {
+  padding:3px;
+  display: block;
+  z-index: 2;
+  position: fixed;
+  bottom: 37px;
+  right: 5%;
+  height: 50px;
+  width: 50px;
+}
