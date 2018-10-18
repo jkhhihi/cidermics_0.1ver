@@ -29,6 +29,15 @@
 <script src="/js/gotoup.js"></script>
 
 
+<style type="text/css">
+.btn-seminar-list button{width:220px; padding:16px 0; border:2px solid #333; border-radius:50px; margin-bottom:50px; font-size:16px; background-color:#333; color:#fff}
+.btn-seminar-list button:hover{background-color:#fff; color:#000}
+.seminar-map img{width:100%; margin-top:20px; margin-bottom:20px}
+@media only screen and (max-width : 1024px) {
+.seminar-map{padding-left:0 !important; padding-right:0 !important; margin-bottom:0}
+}
+</style>
+
 
 
 <script language="javascript" type="text/javascript">  
@@ -103,6 +112,7 @@ function openWinKA(){
 </script>
 
 </head>
+
 <body onload="initialize()">
 <!--위로가기 버튼-->
 <div id="but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></div>
@@ -172,14 +182,14 @@ function openWinKA(){
 		<% } %>
 
 		<div class="col-xs-12 btn-kakao-plus"><a href="#" onClick="javascript:openWinKA();"><p>카톡문의<br><span>플러스친구:@사이다경제</span></p></a></div>
-	
+		<div class="col-xs-12 seminar-map"><img src="/semi/seminar-map.jpg"></div>
 	</div>
 </div>
 
 
 <div class="container" align="center">
 	<div class="row">
-		<div class="btn-apply"><a href="/seminar"><button style="width: 350px; margin: 0px 0 50px 0; border-radius: 12px;">세미나 목록보기</button></a></div>
+		<div class="btn-seminar-list"><a href="/seminar"><button><b>세미나 목록보기</b></button></a></div>
 	</div>
 </div>
 
