@@ -498,12 +498,13 @@ router.post('/lecture/insert', ensureAuthenticated, function(req, res, next) {
 	var state=''; // 0 신청중 1신청마감\
 	var flag='';
 	var orderurl = req.body.orderurl;
+	var mapdetail = req.body.mapdetail;
 
 	var date = getWorldTime(+9);
 	var rdate = req.body.rdate;
 
 	var sets = {cate:cate,decate:decate,subject : subject, thum : thum, img1 : img1, img2 : img2, leader:leader, stime : stime, sdate : sdate, sstdate : sstdate,
-		sendate : sendate, location : location, mapX : mapX, mapY : mapY, price : price, people : people, regdate:date, state:'0', flag:'N',orderurl:orderurl};
+		sendate : sendate, location : location, mapX : mapX, mapY : mapY, price : price, people : people, regdate:date, state:'0', flag:'N',orderurl:orderurl,mapdetail:mapdetail};
 	
 	mysql.insert('insert into cider.cid_semilist set ?', sets,  function (err, data){
     	res.redirect('/adm/lecture');
@@ -585,16 +586,16 @@ router.post('/lecture/update', ensureAuthenticated, function(req, res, next) {
 	var state=req.body.state; // 0 신청중 1신청마감\
 	var flag=req.body.flag;
 	var orderurl = req.body.orderurl;
-	console.log(orderurl);
+	var mapdetail = req.body.mapdetail;
 
 	var regdate = getWorldTime(+9);
 
 	var sets = {subject : subject, thum : thum, img1 : img1, img2 : img2, leader:leader, stime : stime, sdate : sdate, sstdate : sstdate,
-		sendate : sendate, location : location, mapX : mapX, mapY : mapY, price : price, people : people, regdate:regdate, state:state, flag:flag, orderurl:orderurl};
+		sendate : sendate, location : location, mapX : mapX, mapY : mapY, price : price, people : people, regdate:regdate, state:state, flag:flag, orderurl:orderurl,mapdetail:mapdetail};
 
 //mysql.update('update cider.std_more set subject = ?, subject2 = ?, bgimg1 = ?,thum=?,leader = ? ,period = ?,sche1 = ?, sche2 = ? ,sche3= ? where idx = ?', [subject,subject2,bgimg1,thum,leader,period,sche1,sche2,sche3,idx], function (err, data){
     
-	mysql.update('update cider.cid_semilist set subject = ?, thum = ?, img1 = ?, img2 =?, leader =?, stime =?, sdate =?, sstdate =?, sendate =?, location =?, mapX =?, mapY =?, price =?, people =?, regdate =?, state =?, flag =?, orderurl =?  where idx = ?', [subject,thum,img1,img2,leader,stime,sdate,sstdate,sendate,location,mapX,mapY,price,people,regdate,state,flag,orderurl,idx], function (err, data){
+	mysql.update('update cider.cid_semilist set subject = ?, thum = ?, img1 = ?, img2 =?, leader =?, stime =?, sdate =?, sstdate =?, sendate =?, location =?, mapX =?, mapY =?, price =?, people =?, regdate =?, state =?, flag =?, orderurl =?, mapdetail =?  where idx = ?', [subject,thum,img1,img2,leader,stime,sdate,sstdate,sendate,location,mapX,mapY,price,people,regdate,state,flag,orderurl,mapdetail,idx], function (err, data){
     	res.redirect('/adm/lecturelist');
     });
 });

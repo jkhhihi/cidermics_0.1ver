@@ -317,6 +317,10 @@ router.get('/seminar/map', function(req, res, next) {
 	res.render('front/cid_seminar/seminarmap', {});
   });
 
+router.get('/seminar/map2', function(req, res, next) {
+	res.render('front/cid_seminar/seminarmap2', {});
+ });
+
 
 router.get('/seminar/s', function(req, res, next) {
 
