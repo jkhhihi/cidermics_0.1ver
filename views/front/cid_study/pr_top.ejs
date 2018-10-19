@@ -138,6 +138,16 @@ $(document).ready(function(){
 	@media(max-width: 760px){
 	.modal{width:90%;}
 	}
+
+  .side-nav a{
+    padding:0 30px;
+    height:30px;
+    line-height:30px;
+  }
+
+  .side-nav .user-view, .side-nav .userView{
+    padding: 10px;
+  }
 </style>
 
 				  
@@ -148,76 +158,131 @@ $(document).ready(function(){
       <a id="logo-container" href="" class="brand-logo"><img class="img-responsive" src="/page_imgs/study_img/logo-study.svg" width="80" style="padding-top:10px;"></a>
       <a id="logo-container" href="" class="brand-logo2"><img class="img-responsive" src="/page_imgs/study_img/logo-study.svg" width="70" style="padding-top:8px;"></a>
       <ul class="menu right hide-on-med-and-down">
-		<li style="width:120px"><p><a href="/study">경매</a></p></li>
-        <li style="width:120px"><a class="menu">부동산</a>
+
+    <!--li style="width:120px"><a class="menu">주식</a>
+        <ul class="sub">
+          <li><p><a href="/studymorenew/34">왕초보주식</a></p></li>
+          <li><p><a href="/pr/32">중급</a></p></li>
+        </ul>
+    </li-->
+    <li style="width:100px"><p><a href="/pr/32">중급주식</a></p></li>
+    <li style="width:100px"><p><a href="/pr/30">미국주식</a></p></li>
+		<li style="width:110px"><p><a href="/pr/35">부동산 경매</a></p></li>
+    <li style="width:110px"><p><a href="/pr/31">부동산 투자</a></p></li>
+    <li style="width:110px"><p><a href="/pr/37">행복주택</a></p></li>
+    <li style="width:100px"><p><a href="/pr/33">스팀잇</a></p></li>
+    <li style="width:100px"><p><a href="/pr/36">블록체인</a></p></li>
+    <li style="width:100px"><p><a href="/prplan/38">회계</a></p></li>
+        <!--li style="width:120px"><a class="menu">부동산</a>
         	<ul class="sub">
              <li><p><a href="/study">행복주택</a></p></li>
-        	 <li><p><a href="/study">부동산투자</a></p></li>
+        	   <li><p><a href="/study">부동산투자</a></p></li>
+             <li><p><a href="/study">부동산경매</a></p></li>
         	</ul>
-        </li>
-		<li style="width:120px"><p><a href="/study">회계</a></p></li>
+        </li-->
+		    <!--li style="width:120px"><p><a href="/study">회계</a></p></li>
         <li style="width:120px"><a class="menu">암호화폐</a>
         	<ul class="sub">
              <li><p><a href="/study">스팀잇</a></p></li>
         	 <li><p><a href="/study">블록체인</a></p></li>
         	</ul>
-        </li>
-        <li style="width:120px"><a class="menu">주식</a>
-        	<ul class="sub">
-             <li><p><a href="/study">왕초보주식</a></p></li>
-        	 <li><p><a href="/study">중급</a></p></li>
-        	 <li><p><a href="/study">미국주식</a></p></li>
-        	</ul>
-        </li>
+        </li-->
+        
 	  </ul>
       
+<ul id="nav-mobile" class="side-nav">
+    <div class="user-view">
+      <div class="background">
+      <img src="/page_imgs/study_img/background9.jpg">
+      </div>
+      <div align="center">
+      <a href=""><img class="circle" src="/page_imgs/fixed_img/logo.svg" style="border-radius:10%;"></a>
+      <!--a href="#!name"><span class="white-text name">John Doe</span></a-->
+      <a href="#" style="padding:0px 0px; height:55px; line-height:100px;"><span class="white-text site">프리미엄스터디<b>경이로움</b></span></a>
+      </div>
+    </div>
 
-      <ul id="nav-mobile" class="side-nav">
-        <div class="user-view">
-        <div class="background">
-        <img src="/page_imgs/study_img/background9.jpg">
-        </div>
-        <div align="center">
-        <a href=""><img class="circle" src="/page_imgs/fixed_img/logo.svg" style="border-radius:10%;"></a>
-        <!--a href="#!name"><span class="white-text name">John Doe</span></a-->
-        <a href="#" style="padding:0px 0px; height:75px; line-height:95px;"><span class="white-text site">프리미엄스터디<b>경이로움</b></span></a>
-        </div>
-        </div>
-        <li><p><a href="/study">경매</a></p></li>
-        <div class="divider"></div>
-        <li><a><b>부동산</b>
-        <img class="community_menu" style="cursor:pointer; margin-left:10px; width:12px; display:inline-block" src="/page_imgs/fixed_img/mob-menu-icons/mob-menu-down.png">
-        </a></li>
+    <li>
+      <p><a href="/pr/32">중급 주식</a></p>
+    </li>
+    <div class="divider"></div>
+
+    <li>
+      <p><a href="/pr/30">미국 주식</a></p>
+    </li>
+    <div class="divider"></div>
+
+    <li>
+      <p><a href="/pr/35">부동산 경매</a></p>
+    </li>
+    <div class="divider"></div>
+
+    <li>
+      <p><a href="/pr/31">부동산 투자</a></p>
+    </li>
+    <div class="divider"></div>
+
+    <li>
+      <p><a href="/pr/37">행복주택</a></p>
+    </li>
+    <div class="divider"></div>
+
+    <li>
+      <p><a href="/pr/33">스팀잇</a></p>
+    </li>
+    <div class="divider"></div>
+
+    <li>
+      <p><a href="/pr/36">블록체인</a></p>
+    </li>
+    <div class="divider"></div>
+
+    <li>
+      <p><a href="/prplan/38">회계</a></p>
+    </li>
+    <div class="divider"></div>
+
+    <!--li>
+      <a><b>부동산</b><img class="community_menu" style="cursor:pointer; margin-left:10px; width:12px; display:inline-block" src="/page_imgs/fixed_img/mob-menu-icons/mob-menu-down.png"></a>
+    </li>
 		<div class="community_sub_menu">
 			<ul>
-	            <li><p><a href="/study">행복주택</a></p></li>
-	        	<li><p><a href="/study">부동산투자</a></p></li>
+	       <li><p><a href="/study">행복주택</a></p></li>
+	       <li><p><a href="/study">부동산투자</a></p></li>
 			</ul>
-		</div>
+		</div-->
+
+    <!--div class="divider"></div>
+        <li>
+          <p><a href="/study">회계</a></p>
+        </li>
         <div class="divider"></div>
-        <li><p><a href="/study">회계</a></p></li>
-        <div class="divider"></div>
-        <li><a><b>암호화폐</b>
-        <img class="community_menu1" style="cursor:pointer; margin-left:10px; width:12px; display:inline-block" src="/page_imgs/fixed_img/mob-menu-icons/mob-menu-down.png">
-        </a></li>
+        <li>
+          <a><b>암호화폐</b><img class="community_menu1" style="cursor:pointer; margin-left:10px; width:12px; display:inline-block" src="/page_imgs/fixed_img/mob-menu-icons/mob-menu-down.png"></a>
+        </li>
+
 		<div class="community_sub_menu1">
 			<ul>
 	            <li><p><a href="/study">스팀잇</a></p></li>
 	        	<li><p><a href="/study">블록체인</a></p></li>
 			</ul>
 		</div>
-        <div class="divider"></div>
-        <li><a><b>주식</b>
-        <img class="community_menu2" style="cursor:pointer; margin-left:10px; width:12px; display:inline-block" src="/page_imgs/fixed_img/mob-menu-icons/mob-menu-down.png">
-        </a></li>
-		<div class="community_sub_menu2">
+
+    <div class="divider"></div>
+      <li>
+        <a><b>주식</b><img class="community_menu2" style="cursor:pointer; margin-left:10px; width:12px; display:inline-block" src="/page_imgs/fixed_img/mob-menu-icons/mob-menu-down.png">
+        </a>
+      </li>
+		
+    <div class="community_sub_menu2">
 			<ul>
-	            <li><p><a href="/study">왕초보주식</a></p></li>
-	        	<li><p><a href="/study">중급</a></p></li>
-	        	<li><p><a href="/study">미국주식</a></p></li>
+	       <li><p><a href="/study">왕초보주식</a></p></li>
+	       <li><p><a href="/study">중급</a></p></li>
+	       <li><p><a href="/study">미국주식</a></p></li>
 			</ul>
-		</div>
-      </ul>
+		</div-->
+</ul>
+
       <a href="#" data-activates="nav-mobile" class="button-collapse" style="margin:0px;"><i class="material-icons">menu</i></a>
       
     </div>
