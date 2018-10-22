@@ -490,18 +490,18 @@ $(document).ready(function () {
               <div class="col s8 m6" style="text-align: left;"><b><%=md[0].composition %></b></div>
               <div class="col s0 m3"></div>
             </div>
-
+           
             <!-- div class="row">
               <div class="col s4 m3">총 금액</div>
-              <div class="col s8 m6" style="text-align: left;" ><b class="amount"  style="text-decoration: line-through;"><%=md[0].price%></b>원 <br><b style="color: red;">280,000원</b><br>
-              *얼리버드 20% 할인</div>
+              <div class="col s8 m6" style="text-align: left;" ><b class="amount"  style="text-decoration: line-through;"><%=md[0].price%></b>원 <br><b class="amount" style="color: red;"><%=md[0].disprice%></b>원
+             <span style="color:red">*<%=md[0].disevent%></span></div>
               <div class="col s0 m3"></div>
             </div -->
             
             <div class="row">
               <div class="col s4 m3">총 금액</div>
-              <div class="col s8 m6" style="text-align: left;" ><b class="amount"  style="text-decoration: line-through;"><%=md[0].price%></b>원 <br><b class="amount" style="color: red;"><%=md[0].disprice%></b>원
-             <span style="color:red">*<%=md[0].disevent%></span></div>
+              <div class="col s8 m6" style="text-align: left;" ><b class="amount"><%=md[0].price%></b>원
+              <span style="color:red"><b><%=md[0].disevent%></b></span></div>
               <div class="col s0 m3"></div>
             </div>
 
