@@ -115,6 +115,23 @@ router.post('/loginfin', passport.authenticate('fin', { failureRedirect: '/adm/a
 
 /* 재무용 끝 */
 
+/* 마케팅용 */
+
+router.get('/admplan', function(req, res, next) {
+	if(req.cookies.auth){
+		res.redirect('/adm/plan');
+	}else{
+		res.render('admin/admin_plan', {});
+	}
+});
+
+router.post('/loginplan', passport.authenticate('plan', { failureRedirect: '/adm/admplan', failureFlash: true }), function(req, res, next) {
+	var CP = 3;
+	res.redirect('/adm/plantele');
+});
+
+/* 마케팅용 끝 */
+
 router.get('/index', ensureAuthenticated, function(req, res, next) {
 	var CP = 0;
 		mysql.select('SELECT * from cider.cid_contents where con_pop = 1 order by con_release desc;', function (err, data){
@@ -830,7 +847,7 @@ router.get('/finance/detail2/:sry_no', ensureAuthenticated, function(req, res, n
 
 
 router.get('/fin', ensureAuthenticated, function(req, res, next) {
-	console.log("d");
+
 	var CP = 3;
 		mysql.select('SELECT * from cider.cid_fi_applyform order by fi_app_no desc;', function (err, data){
 			 res.render('admin/finance/sfinance_index', { CP : CP, finance : data });	    	
@@ -2031,6 +2048,34 @@ router.get('/tele/delete/:tele_no', function(req, res, next) {
     });
 });
 
+
+/*플랜어투즈 관리자 */
+
+
+
+router.get('/plantele', ensureAuthenticated, function(req, res, next) {
+
+		mysql.select('SELECT * from cider.cid_telemarket where not tele_check="1" order by tele_no desc;', function (err, data){
+			mysql.select('SELECT count(*) as sry FROM cider.cid_telemarket where not tele_check="1";', function (err, data1){
+			res.render('admin/telemarket/plantele_index', { tele : data, teleAll:data1 });	    	
+		});
+	});
+});
+
+
+router.get('/plantele/delete/:tele_no', function(req, res, next) {
+	
+	var tele_no = req.params.tele_no;
+	
+	mysql.del('delete from cider.cid_telemarket where tele_no = '+ tele_no +'', function (err, data){
+		if(err){
+			res.redirect('/adm/tele');
+		}else{
+			res.redirect('/adm/tele');
+		}
+    });
+});
+/* planatoz 끝 */
 
 
 

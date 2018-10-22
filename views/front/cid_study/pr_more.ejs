@@ -479,12 +479,32 @@ $(document).ready(function () {
 
   <% include pr_top %>
 
+<!--맨위 -->
+<div class="parallax-container valign-wrapper" style="min-height: 500px;">
+  <div class="section no-pad-bot" style="padding-top:0px;">
+    <div class="container">
+
+      <div class="row center">
+        <h4 class="header1 header col s12 light" style="font-weight: 500; ">"<%=md[0].subject%>"</h4>
+      </div>
+
+      <div class="row center">
+        <div class="divider"></div>
+        <span class="box1">경이로움 스터디</span>
+        <p>한 달에 두 번, 총 4회 리더와 함께하는 스터디</p>
+      </div>
+
+    </div>
+  </div>
+  <div class="parallax"><img src="<%=md[0].bgimg1%>"></div>
+</div>
+
 <div id="study-new">
 	<div id="study-info-w" align="center">
-		<img class="responsive-img mob-n" src="https://i.imgur.com/hgMq3wI.jpg" width="100%">
+		<img class="responsive-img mob-n" src="https://i.imgur.com/9n7DwGZ.jpg" width="100%">
 	</div>
 	<div id="study-info" align="center" style="margin:-10px 0">
-		<img class="responsive-img web-n" src="https://i.imgur.com/XBFxqrP.jpg" width="100%">
+		<img class="responsive-img web-n" src="https://i.imgur.com/ktKDp41.jpg" width="100%">
 	</div>
 	
 	<!-- 스터디개별이미지 -->
@@ -493,7 +513,7 @@ $(document).ready(function () {
 	
 	<!-- pdf준다는 내용의 배너 -->
 	<div align="center" style="margin:-10px 0">
-	  <img class="responsive-img" src="https://i.imgur.com/v179Cde.jpg">
+	  <img class="responsive-img" src="https://i.imgur.com/iytWNaU.jpg" width="100%">
 	</div>
 
 <!--div class="database" style="background-color:#000" align="center">
@@ -523,7 +543,7 @@ $(document).ready(function () {
       <form action="/prinsert" method="post" name="prinsert1" class="col s12">
         <input type="hidden" name="cate" value="<%=md[0].cate%>">
         <input type="hidden" name="idx" value="<%=md[0].idx%>">
-        <input type="hidden" name="tele_check" value="2">
+        <input type="hidden" name="tele_check" value="<%=num%>">
 
         <div class="row margin0">
           <div id="name" class="input-field col s6">
@@ -549,7 +569,7 @@ $(document).ready(function () {
         </div>
 
         <div id="btn1" align="center">
-          <br><a style="cursor:pointer" onclick="surveyGo1()"><span>신청하기</span></a>
+          <br><a style="cursor:pointer" onclick="surveyGo1()"><span>무료 웹진 신청하기</span></a>
         </div>
       </form>
     </div>
@@ -583,7 +603,7 @@ $(document).ready(function () {
       <form action="/prinsert" method="post" name="prinsert2" class="col s12">
         <input type="hidden" name="cate" value="<%=md[0].cate%>">
         <input type="hidden" name="idx" value="<%=md[0].idx%>">
-        <input type="hidden" name="tele_check" value="2">
+        <input type="hidden" name="tele_check" value="<%=num%>">
 
         <div class="row margin0">
           <div id="name" class="input-field col s6">
@@ -609,7 +629,7 @@ $(document).ready(function () {
         </div>
 
         <div id="btn1" align="center">
-          <br><a style="cursor:pointer" onclick="surveyGo2()"><span>신청하기</span></a>
+          <br><a style="cursor:pointer" onclick="surveyGo2()"><span>무료 웹진 신청하기</span></a>
         </div>
       </form>
     </div>
@@ -657,7 +677,7 @@ $(document).ready(function () {
       <form action="/prinsert" method="post" name="prinsert3" class="col s12">
         <input type="hidden" name="cate" value="<%=md[0].cate%>">
         <input type="hidden" name="idx" value="<%=md[0].idx%>">
-        <input type="hidden" name="tele_check" value="2">
+        <input type="hidden" name="tele_check" value="<%=num%>">
 
         <div class="row margin0">
           <div id="name" class="input-field col s6">
@@ -683,7 +703,7 @@ $(document).ready(function () {
         </div>
 
         <div id="btn1" align="center">
-          <br><a style="cursor:pointer" onclick="surveyGo3()"><span>신청하기</span></a>
+          <br><a style="cursor:pointer" onclick="surveyGo3()"><span>무료 웹진 신청하기</span></a>
         </div>
       </form>
     </div>
