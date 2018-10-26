@@ -217,6 +217,17 @@ router.get('/pr/:idx/:num', function(req, res, next) {
   });
 });
 
+router.get('/pr2/:idx/:num', function(req, res, next) {
+	var idx = req.params.idx;
+	var num = req.params.num;
+	var stdlist;
+	mysql.select('SELECT * from cider.std_more where idx = '+idx+';', function (err, data){
+		mysql.select('SELECT idx,subject,subject2,decate,recentdate,thum,leader,sche1 from cider.std_more where flag="Y" order by idx desc;', function (err, data1){
+	res.render('front/cid_study/pr_more', {md:data, stdlist : data1, num:num});
+  	});
+  });
+});
+
 router.get('/prplan/38', function(req, res, next) {
 	var idx = req.params.idx;
 	var stdlist;

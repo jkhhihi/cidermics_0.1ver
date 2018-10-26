@@ -2055,7 +2055,7 @@ router.get('/tele/delete/:tele_no', function(req, res, next) {
 
 router.get('/plantele', ensureAuthenticated, function(req, res, next) {
 
-		mysql.select('SELECT * from cider.cid_telemarket where not tele_check="1" order by tele_no desc;', function (err, data){
+		mysql.select('SELECT * from cider.cid_telemarket where not tele_check In("1","100","101","102","103") order by tele_no desc;', function (err, data){
 			mysql.select('SELECT count(*) as sry FROM cider.cid_telemarket where not tele_check="1";', function (err, data1){
 			res.render('admin/telemarket/plantele_index', { tele : data, teleAll:data1 });	    	
 		});

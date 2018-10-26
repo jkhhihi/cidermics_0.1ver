@@ -344,6 +344,10 @@ $(document).ready(function () {
     date: "31 Oct 2018 00:00:00", // Change this to your desired date to countdown to
     format: "on"
   });
+  $(".countdown1").countdown({
+    date: "31 Oct 2018 00:00:00", // Change this to your desired date to countdown to
+    format: "on"
+  });
 });
 </script>
 
@@ -591,13 +595,13 @@ $(document).ready(function () {
   <div class="divider"></div>
 
 <div id="study-new"><!-- 달라진점 -->
-<div class="section2">
+<!--div class="section2">
 	<div class="container" >
 		<div align="center">
 			<img class="responsive-img" src="https://i.imgur.com/Hi0oVt2.jpg">
 		</div>
 	</div>
-</div>
+</div-->
 <div class="section0">
 	<div class="container">
 		<h4>#1 스터디 소개</h4>
@@ -795,12 +799,28 @@ $(document).ready(function () {
 	</div>
 </div>
 
+<div id="countdown" class="countdown1"><!-- 마감임박 -->
+  <p style="color:#f9ff00;">선착순 웹진 신청 마감시간까지</p>
+  <p class="days" style="color:#f9ff00;">00</p>
+  <p class="timeRefDays">일</p>
+  <p class="hours" style="color:#f9ff00;">00</p>
+  <p class="timeRefHours">시간</p>
+  <p class="minutes" style="color:#f9ff00;">00</p>
+  <p class="timeRefMinutes">분</p>
+  <p class="seconds" style="color:#f9ff00;">00</p>
+  <p class="timeRefSeconds">초</p>
+  
+  <div><span style="color:#9ddaff;">*</span> <a class="" style="color:#9ddaff;">스터디 담당 매니저가 스터디와 관련된 상담을 도와드릴 예정입니다.</a></div>
+</div>
+
 
 <!-- DB 작성 칸 -->
 <div class="database" style="background-color:#000">
   <div class="container">
 
     <div class="row">
+
+
 
       <form action="/prinsert" method="post" name="prinsert1" class="col s12">
         <input type="hidden" name="cate" value="<%=md[0].cate%>">
@@ -837,11 +857,11 @@ $(document).ready(function () {
         <div class="row">
           <div class="input-field col l2"></div>
           <div class="input-field col s12 l8">
-            <input type="checkbox" id="check1" name="check1" />
-            <label for="check1">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal3" style="color:#1987c8;">내용보기</a></label>
+            <input type="checkbox" id="check3" name="check1" />
+            <label for="check3">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal3" style="color:#1987c8;">내용보기</a></label>
             <br>
-            <input type="checkbox" id="check2" name="check2"/>
-            <label for="check2">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
+            <input type="checkbox" id="check4" name="check2"/>
+            <label for="check4">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
             <br>
             <br>
           </div>
