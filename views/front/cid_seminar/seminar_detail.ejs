@@ -13,7 +13,7 @@
 <meta property="og:url"  content="http://cidermics.com/seminar/detail/<%=semi[0].idx%>" />
 <meta property="og:description" content="<%= semi[0].subject %>" />
 
-<title>사이다경제 | 세미나</title>
+<title>사이다경제 | 세미나 | <%=semi[0].subject%></title>
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/cid_seminar.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="/css/component.css" />
@@ -182,6 +182,7 @@ function openWinKA(){
 		<% } %>
 
 		<div class="col-xs-12 btn-kakao-plus"><a href="#" onClick="javascript:openWinKA();"><p>카톡문의<br><span>플러스친구:@사이다경제</span></p></a></div>
+		<div class="col-xs-12 seminar-map1"><img class="img-responsive" src="https://i.imgur.com/6veapBi.jpg"></div>
 		<div class="col-xs-12 seminar-map"><img src="<%= semi[0].mapdetail %>"></div>
 	</div>
 </div>
