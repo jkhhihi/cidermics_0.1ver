@@ -69,9 +69,15 @@ router.get('/study/lecture', function(req, res, next) {
 	var stdlist;
 	mysql.select('SELECT idx,subject,subject2,decate,recentdate,thum,leader,sche1,state from cider.std_more where cate="1" and flag="Y" order by idx desc;', function (err, data){
 		stdlist = data;
-	res.render('front/cid_study/std_lecture', {stdlist : data});
+
+		mysql.select('SELECT idx,subject,subject2,decate,recentdate,thum,leader,sche1,state from cider.std_more where cate="2" and flag="Y" order by idx desc;', function (err, data){
+		stdlist2 = data;
+
+	res.render('front/cid_study/std_lecture', {stdlist : data, stdlist2 : data});
   });
 });
+});
+
 
 router.get('/studymore/:idx', function(req, res, next) {
 	var idx = req.params.idx;
