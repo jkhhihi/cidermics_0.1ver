@@ -35,6 +35,11 @@
   <style>
   .light-blue.darken-1{background-color: #73c7a6 !important;}
   .light-blue.darken-2{background-color: #73c7a6 !important;}
+
+  .font_line { text-decoration:line-through }
+  .font_color_red { color: #cc2e2e; }
+
+  .card-btn{padding:40px;}
   </style>
   
   </head>
@@ -44,16 +49,16 @@
   <% include std_top %>
 
 
-  <div class="parallax-container valign-wrapper" style="min-height: 200px;">
+  <div class="parallax-container valign-wrapper" style="min-height: 300px;">
     <div class="section no-pad-bot" style="padding-top:65px; top:5%;">
       <div class="container" >
         <div class="row center">
-          <h5 class="header col s12 light" style="font-weight:500;">경이로움 스터디</h5>
-          <h6 class="header col s12 light">한 달에 한 번 나는 경이롭게 달라진다</h6>
+          <h5 class="header col s12 light" style="font-weight:500;">경이로움 세미나</h5>
+          <h6 class="header col s12 light">매주 다른 경제 교육 세미나를 경험하자!</h6>
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="/page_imgs/study_img/backgroundm5.jpg" alt="Unsplashed background img 1"></div>
+    <div class="parallax"><img src="/page_imgs/study_img/relayimg.jpg" alt="Unsplashed background img 1"></div>
   </div>
 
 
@@ -66,42 +71,40 @@
 <div class="container" style="margin: 50px auto;">
   
   <div class="row">
-        <div class="col s12 center">
-          <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4>STUDY GROUPS</h4>
-          <p class="center-align light">경제 지식을 물고 뜯고 맛보고 즐기며 내 것으로 만드는 놀이터! 경이로운 스터디 모임</p>
-        </div>
+    <div class="col s12 center">
+      <h3><i class="mdi-content-send brown-text"></i></h3>
+      <h4>Relay Seminar</h4>
+      <p class="center-align light">경이로움 멤버십 회원분들만을 위한 특별한 무료 릴레이 세미나 혜택!</p>
+    </div>
   </div>
   
   <div class="row">
-    <% for(var i=0; i < stdlist.length; i++) {  %> 
+    <% for(var i=0; i < semi.length; i++) {  %> 
     <div class="col s12 m6 l4">
       <div class="card">
-        <div class="card-image waves-effect waves-block waves-light" >
-          <a href="/studymorenew/<%=stdlist[i].idx%>"><img src="<%=stdlist[i].thum%>"></a>
-          <span class="card-btn"><a class="waves-effect waves-light btn light-blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;"><%=stdlist[i].decate%></a></span>
+          <div class="card-image waves-effect waves-block waves-light" >
+            <a href="/seminar/detail/<%=semi[i].idx%>"><img src="<%=semi[i].thum%>"></a>
 
-          <% if (stdlist[i].state== 1) { %>
-          <span class="card-btn2"><a class="waves-effect waves-light btn red darken-3" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;">마감</a></span>
-          <% } else if(stdlist[i].state == 2) { %>
-          <span class="card-btn2"><a class="waves-effect waves-light btn lime lighten-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;">마감 임박</a></span>
-          <% } else { %>
-          <span class="card-btn2"><a class="waves-effect waves-light btn blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;">신청 중</a></span>
-          <% } %>
+            <% if (semi[i].state== 0) { %>
+            <span class="card-btn2"><a class="waves-effect waves-light btn blue darken-3" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;">신청중</a></span>
+            <% } else if(semi[i].state == 2) { %>
+            <span class="card-btn2"><a class="waves-effect waves-light btn teal accent-3" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;">마감임박</a></span>
+            <% } else { %>
+            <span class="card-btn2"><a class="waves-effect waves-light btn red darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;">신청마감</a></span>
+            <% } %>
 
-          <span class="card-title" style="bottom: 30px;"><a href="/studymorenew/<%=stdlist[i].idx%>" style="color: #fff;"><b><%=stdlist[i].subject%></b></a></span>
-          <span class="card-name">리더 <%=stdlist[i].leader%></span>
-          
-        </div>
+            <span class="card-btn" style="left: 10px;"><a class="waves-effect waves-light btn teal accent-4">자세히 보기</a></span>
+            <span class="card-btn"><a class="waves-effect waves-light btn teal accent-4">신청하기</a></span>
 
-        <div class="card-content">
-          <p><i class="material-icons left">today</i><%=stdlist[i].recentdate%></p>
+          </div>
+
+          <div class="card-content">
+          <p><i class="material-icons left">today</i><%=semi[i].sdate%></p>
           <div class="divider"></div>
-          <p><%=stdlist[i].subject2%></p>
-          <p><a class="waves-effect waves-light btn light-blue darken-2" onclick="Materialize.toast('현재 '+a+'명의 구독자가 이 글을 확인 중입니다.', 1000,'',function(){window.location='/studymorenew/<%=stdlist[i].idx%>';})">스터디 내용 자세히 보기</a></p>
-        </div>
+          <p><i class="material-icons left">attach_money</i><span class="font_line"><%=semi[i].price%></span><span class="font_color_red">  경이로움 멤버십 회원 무료!</span></p>
+          </div>
+
       </div>
-      
     </div>
     <% } %>
   </div>

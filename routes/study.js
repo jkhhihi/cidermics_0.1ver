@@ -56,6 +56,9 @@ router.get('/study/process', function(req, res, next) {
 	res.render('front/cid_study/std_process', { });
 });
 
+router.get('/study/lecpro', function(req, res, next) {
+	res.render('front/cid_study/std_lecpro', { });
+});
 
 router.get('/study/list', function(req, res, next) {
 	var stdlist;
@@ -65,15 +68,30 @@ router.get('/study/list', function(req, res, next) {
   });
 });
 
+router.get('/study/seminar', function(req, res, next) {
+	mysql.select('select * from cider.cid_semilist where flag="Y" order by idx desc;', function (err, data){
+	res.render('front/cid_study/std_seminar', {semi:data});
+  });
+});
+
+router.get('/study/online', function(req, res, next) {
+	var stdlist;
+	mysql.select('SELECT idx,subject,subject2,decate,recentdate,thum,leader,sche1,state from cider.std_more where cate="6" and flag="Y" order by idx desc;', function (err, data){
+		stdlist = data;
+	res.render('front/cid_study/std_online', {stdlist : data});
+  });
+});
+
+
 router.get('/study/lecture', function(req, res, next) {
 	var stdlist;
 	mysql.select('SELECT idx,subject,subject2,decate,recentdate,thum,leader,sche1,state from cider.std_more where cate="1" and flag="Y" order by idx desc;', function (err, data){
 		stdlist = data;
 
-		mysql.select('SELECT idx,subject,subject2,decate,recentdate,thum,leader,sche1,state from cider.std_more where cate="2" and flag="Y" order by idx desc;', function (err, data){
+		mysql.select('SELECT idx,subject,subject2,decate,recentdate,thum,leader,sche1,state from cider.std_more where cate="2" and flag="Y" order by idx desc;', function (err, data2){
 		stdlist2 = data;
 
-	res.render('front/cid_study/std_lecture', {stdlist : data, stdlist2 : data});
+	res.render('front/cid_study/std_lecture', {stdlist : data, stdlist2 : data2});
   });
 });
 });

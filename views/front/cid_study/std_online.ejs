@@ -47,12 +47,12 @@
     <div class="section no-pad-bot" style="padding-top:65px; top:5%;">
       <div class="container" >
         <div class="row center">
-          <h5 class="header col s12 light" style="font-weight:500;">경이로움 강의</h5>
-          <h6 class="header col s12 light">나는 경이롭게 달라진다</h6>
+          <h5 class="header col s12 light" style="font-weight:500;">온라인 강의</h5>
+          <h6 class="header col s12 light">온라인으로 접하는 경이로움 강의</h6>
         </div>
       </div>
     </div>
-    <div class="parallax"><img src="/page_imgs/study_img/lectureimg.jpg" alt="Unsplashed background img 1"></div>
+    <div class="parallax"><img src="/page_imgs/study_img/onlineimg.jpg" alt="Unsplashed background img 1"></div>
   </div>
 
 
@@ -67,8 +67,8 @@
   <div class="row">
         <div class="col s12 center">
           <h3><i class="mdi-content-send brown-text"></i></h3>
-          <h4>SPECIAL LECTURE</h4>
-          <p class="center-align light">각 분야 경제 리더에게 배우는 실전 노하우</p>
+          <h4>Online Lecture</h4>
+          <p class="center-align light">시간과 공간 제약없이 언제 어디서나 즐기는 경제 강의!</p>
         </div>
   </div>
   
@@ -78,14 +78,13 @@
       <div class="card">
         <div class="card-image waves-effect waves-block waves-light" >
           <a href="/lecturemore/<%=stdlist[i].idx%>"><img src="<%=stdlist[i].thum%>"></a>
-          <span class="card-btn"><a class="waves-effect waves-light btn light-blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;"><%=stdlist[i].decate%></a></span>
 
           <% if (stdlist[i].state== 1) { %>
           <span class="card-btn2"><a class="waves-effect waves-light btn red darken-3" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;">마감</a></span>
           <% } else if(stdlist[i].state == 2) { %>
           <span class="card-btn2"><a class="waves-effect waves-light btn lime lighten-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;">마감 임박</a></span>
           <% } else { %>
-          <span class="card-btn2"><a class="waves-effect waves-light btn blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;">신청 중</a></span>
+          <span class="card-btn2"><a class="waves-effect waves-light btn deep-orange lighten-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;">신청 중</a></span>
           <% } %>
 
           <span class="card-title" style="bottom: 30px;"><a href="/lecturemore/<%=stdlist[i].idx%>" style="color: #fff;"><b><%=stdlist[i].subject%></b></a></span>
@@ -96,43 +95,14 @@
           <p><i class="material-icons left">today</i><%=stdlist[i].recentdate%></p>
           <div class="divider"></div>
           <p><%=stdlist[i].subject2%></p>
-          <p><a class="waves-effect waves-light btn light-blue darken-2" onclick="Materialize.toast('현재 '+a+'명의 구독자가 이 글을 확인 중입니다.', 1000,'',function(){window.location='/lecturemore/<%=stdlist[i].idx%>';})">스터디 내용 자세히 보기</a></p>
+          <p><a class="waves-effect waves-light btn deep-orange lighten-1" onclick="Materialize.toast('현재 '+a+'명의 구독자가 이 글을 확인 중입니다.', 1000,'',function(){window.location='/lecturemore/<%=stdlist[i].idx%>';})">스터디 내용 자세히 보기</a></p>
         </div>
       </div>
     </div>
     <% } %>
   </div>
 
-  <div class="row">
-    <% for(var i=0; i < stdlist2.length; i++) {  %> 
-    <div class="col s12 m6 l4">
-      <div class="card">
-        <div class="card-image waves-effect waves-block waves-light" >
-          <a href="/studymorenew/<%=stdlist2[i].idx%>"><img src="<%=stdlist2[i].thum%>"></a>
-          <span class="card-btn"><a class="waves-effect waves-light btn light-blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;"><%=stdlist2[i].decate%></a></span>
 
-          <% if (stdlist2[i].state== 1) { %>
-          <span class="card-btn2"><a class="waves-effect waves-light btn red darken-3" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;">마감</a></span>
-          <% } else if(stdlist2[i].state == 2) { %>
-          <span class="card-btn2"><a class="waves-effect waves-light btn lime lighten-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;">마감 임박</a></span>
-          <% } else { %>
-          <span class="card-btn2"><a class="waves-effect waves-light btn blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;">신청 중</a></span>
-          <% } %>
-
-          <span class="card-title" style="bottom: 30px;"><a href="/studymorenew/<%=stdlist2[i].idx%>" style="color: #fff;"><b><%=stdlist2[i].subject%></b></a></span>
-          <span class="card-name">리더 <%=stdlist2[i].leader%></span>
-          
-        </div>
-        <div class="card-content">
-          <p><i class="material-icons left">today</i><%=stdlist2[i].recentdate%></p>
-          <div class="divider"></div>
-          <p><%=stdlist2[i].subject2%></p>
-          <p><a class="waves-effect waves-light btn light-blue darken-2" onclick="Materialize.toast('현재 '+a+'명의 구독자가 이 글을 확인 중입니다.', 1000,'',function(){window.location='/studymorenew/<%=stdlist2[i].idx%>';})">스터디 내용 자세히 보기</a></p>
-        </div>
-      </div>
-    </div>
-    <% } %>
-  </div>
 
 </div>
 
