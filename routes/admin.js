@@ -2102,6 +2102,7 @@ router.post('/schInsert', function(req, res, next) {
     });
 
 });
+
 router.post('/schInsert', function(req, res, next) {
     var schCateNo = req.body.schCateNo;
     var schTitle = req.body.schTitle;
@@ -2118,5 +2119,7 @@ router.post('/schInsert', function(req, res, next) {
     });
 
 });
+
+//충돌이다!~~
 
 module.exports = router;
