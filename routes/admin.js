@@ -2086,7 +2086,6 @@ router.get('/schInsert', function(req, res, next) {
         res.render('admin/schedule/schInsert', {CP: CP, cateList:data});
     });
 });
-//테스트입니다.
 router.post('/schInsert', function(req, res, next) {
     var schCateNo = req.body.schCateNo;
     var schTitle = req.body.schTitle;
@@ -2103,7 +2102,7 @@ router.post('/schInsert', function(req, res, next) {
     });
 
 });
-
+//충돌 테스트2
 router.post('/schInsert', function(req, res, next) {
     var schCateNo = req.body.schCateNo;
     var schTitle = req.body.schTitle;
@@ -2120,7 +2119,5 @@ router.post('/schInsert', function(req, res, next) {
     });
 
 });
-
-//충돌이다!~~
 
 module.exports = router;
