@@ -2102,7 +2102,7 @@ router.post('/schInsert', function(req, res, next) {
     });
 
 });
-//충돌 테스트2
+//충돌 테스트3
 router.post('/schInsert', function(req, res, next) {
     var schCateNo = req.body.schCateNo;
     var schTitle = req.body.schTitle;
