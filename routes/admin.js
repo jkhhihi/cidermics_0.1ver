@@ -2086,6 +2086,7 @@ router.get('/schInsert', function(req, res, next) {
         res.render('admin/schedule/schInsert', {CP: CP, cateList:data});
     });
 });
+//테스트입니다.
 router.post('/schInsert', function(req, res, next) {
     var schCateNo = req.body.schCateNo;
     var schTitle = req.body.schTitle;
