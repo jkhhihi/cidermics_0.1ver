@@ -17,7 +17,6 @@ var multer = require('multer');
 });
 var upload = multer({ storage : storage});*/
 
-
 var formidable = require('formidable');
 var dir = require('node-dir');
 var mysql = require("./model/mysql");
@@ -2079,5 +2078,5 @@ router.get('/plantele/delete/:tele_no', function(req, res, next) {
 
 
 
-
+//충돌
 module.exports = router;
