@@ -2118,4 +2118,6 @@ router.post('/schInsert', function(req, res, next) {
     });
 });
 
+//충돌이다다다다다다다다다아아아다다다다
+
 module.exports = router;
