@@ -2100,7 +2100,6 @@ router.post('/schInsert', function(req, res, next) {
     mysql.insert('insert into cider.cid_schedule set ?', sets,  function (err, data){
         res.send({"msg":"success", "result":data});
     });
-
 });
 //충돌 테스트2
 router.post('/schInsert', function(req, res, next) {
@@ -2117,7 +2116,6 @@ router.post('/schInsert', function(req, res, next) {
     mysql.insert('insert into cider.cid_schedule set ?', sets,  function (err, data){
         res.send({"msg":"success", "result":data});
     });
-
 });
 
 module.exports = router;
