@@ -2077,9 +2077,7 @@ router.get('/plantele/delete/:tele_no', function(req, res, next) {
 /* planatoz 끝 */
 router.get('/schedule', function(req, res, next) {
     var CP = 10;
-    mysql.select('select cate_no as cateNo, cate_nm as cateNm from cider.cid_cate' ,  function (err, data) {
-    	res.render('admin/schedule/schedule', { CP : CP, cateList:data });
-    });
+    res.render('admin/schedule/schedule', { CP : CP });
 
 });
 router.get('/schInsert', function(req, res, next) {
@@ -2103,85 +2101,20 @@ router.post('/schInsert', function(req, res, next) {
         res.send({"msg":"success", "result":data});
     });
 });
-router.post('/getSchList', function(req, res, next) {
-    var schCateNo = req.body.schCateNo;
-    var CP = 10;
-
-    var querySql = "";
-
-    querySql += " select sch_no as schNo ";
-    querySql += "       ,sch_cate_no as schCateNo ";
-    querySql += "       ,sch_title as schTitle ";
-    querySql += "       ,start_time as startTime ";
-    querySql += "       ,end_time as endTime ";
-    querySql += "       ,sch_link as schLink ";
-    querySql += "       ,sch_content as schContent ";
-    querySql += "       from cider.cid_schedule ";
-    querySql += " where 1=1 ";
-    querySql += " and sch_cate_no = "+schCateNo;
-
-    mysql.select(querySql, function (err, data){
-        res.send({"schList":data});
-    });
-});
-router.get('/schUpdate/:schNo', function(req, res, next) {
-    var schNo = req.params.schNo;
-    var CP = 10;
-
-    var querySql = "";
-
-    querySql += " select sch_no as schNo ";
-    querySql += "       ,sch_cate_no as schCateNo ";
-    querySql += "       ,sch_title as schTitle ";
-    querySql += "       ,start_time as startTime ";
-    querySql += "       ,end_time as endTime ";
-    querySql += "       ,sch_link as schLink ";
-    querySql += "       ,sch_content as schContent ";
-    querySql += "       from cider.cid_schedule ";
-    querySql += " where 1=1 ";
-    querySql += " and sch_no = "+schNo;
-
-    mysql.select('select cate_no as cateNo, cate_nm as cateNm from cider.cid_cate' ,  function (err, data) {
-        mysql.select(querySql, function (err, data2){
-            res.render("admin/schedule/schUpdate", {CP:CP, cateList:data, schInfo:data2});
-        });
-    });
-});
-router.post('/schUpdate', function(req, res, next) {
-    var CP = 10;
-    var schNo = req.body.schNo;
+router.post('/schInsert', function(req, res, next) {
     var schCateNo = req.body.schCateNo;
     var schTitle = req.body.schTitle;
     var startTime = req.body.startTime;
     var endTime = req.body.endTime;
     var schLink = req.body.schLink;
     var schContent = req.body.schContent;
-
-    var querySql = "";
-
-    querySql += " update cider.cid_schedule set ";
-    querySql += "       sch_cate_no = ? ";
-    querySql += "       ,sch_title = ? ";
-    querySql += "       ,start_time = ? ";
-    querySql += "       ,end_time = ? ";
-    querySql += "       ,sch_link = ? ";
-    querySql += "       ,sch_content = ? ";
-    querySql += " where sch_no = "+schNo;
-
-    mysql.update(querySql, [schCateNo, schTitle, startTime, endTime, schLink, schContent], function (err, data) {
-        res.send({msg : "success", result : data});
-    });
-});
-router.post('/schDelete', function(req, res, next) {
     var CP = 10;
-    var schNo = req.body.schNo;
-    var querySql = "";
 
-    querySql += " delete from cider.cid_schedule ";
-    querySql += " where sch_no = "+schNo;
+    var sets = {sch_cate_no : schCateNo, sch_title : schTitle, start_time : startTime, end_time : endTime, sch_link : schLink, sch_content : schContent};
 
-    mysql.del(querySql, function (err, data) {
-        res.send({msg : "success", result : data});
+    mysql.insert('insert into cider.cid_schedule set ?', sets,  function (err, data){
+        res.send({"msg":"success", "result":data});
     });
+
 });
 module.exports = router;
