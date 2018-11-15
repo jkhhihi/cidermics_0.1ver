@@ -2117,8 +2117,6 @@ router.post('/schInsert', function(req, res, next) {
         res.send({"msg":"success", "result":data});
     });
 
-//충돌이다다다다다다다다다아아아다다다다
-
 });
 //555
 module.exports = router;
