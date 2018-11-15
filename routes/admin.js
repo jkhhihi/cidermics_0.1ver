@@ -2077,14 +2077,9 @@ router.get('/plantele/delete/:tele_no', function(req, res, next) {
 /* planatoz 끝 */
 router.get('/schedule', function(req, res, next) {
     var CP = 10;
-<<<<<<< Updated upstream
-    res.render('admin/schedule/schedule', { CP : CP });
-=======
     mysql.select('select cate_no as cateNo, cate_nm as cateNm from cider.cid_cate' ,  function (err, data) {
     	res.render('admin/schedule/schedule', { CP : CP, cateList:data });
     });
->>>>>>> Stashed changes
-
 });
 router.get('/schInsert', function(req, res, next) {
     var CP = 10;
@@ -2107,9 +2102,6 @@ router.post('/schInsert', function(req, res, next) {
         res.send({"msg":"success", "result":data});
     });
 });
-<<<<<<< Updated upstream
-router.post('/schInsert', function(req, res, next) {
-=======
 router.post('/getSchList', function(req, res, next) {
     var schCateNo = req.body.schCateNo;
     var CP = 10;
@@ -2157,23 +2149,15 @@ router.get('/schUpdate/:schNo', function(req, res, next) {
 router.post('/schUpdate', function(req, res, next) {
     var CP = 10;
     var schNo = req.body.schNo;
->>>>>>> Stashed changes
     var schCateNo = req.body.schCateNo;
     var schTitle = req.body.schTitle;
     var startTime = req.body.startTime;
     var endTime = req.body.endTime;
     var schLink = req.body.schLink;
     var schContent = req.body.schContent;
-<<<<<<< Updated upstream
     var CP = 10;
 
     var sets = {sch_cate_no : schCateNo, sch_title : schTitle, start_time : startTime, end_time : endTime, sch_link : schLink, sch_content : schContent};
-
-    mysql.insert('insert into cider.cid_schedule set ?', sets,  function (err, data){
-        res.send({"msg":"success", "result":data});
-    });
-
-=======
 
     var querySql = "";
 
@@ -2201,6 +2185,5 @@ router.post('/schDelete', function(req, res, next) {
     mysql.del(querySql, function (err, data) {
         res.send({msg : "success", result : data});
     });
->>>>>>> Stashed changes
 });
 module.exports = router;
