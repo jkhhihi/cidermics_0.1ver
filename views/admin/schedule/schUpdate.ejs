@@ -16,9 +16,6 @@
   <!--<script src='/js/calendar/fullcalendar.min.js'></script>-->
   <!--<script src='/js/calendar/locale-all.js'></script>-->
   <script src="/js/materialize.js"></script>
-  <!--color-picker-->
-  <script src="/js/colorpicker/piklor.js"></script>
-  <script src="/js/colorpicker/handlers.js"></script>
 
   <!--CSS -->
   <link rel='stylesheet' href='/css/materialize.css' />
@@ -27,55 +24,19 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
+
   <!-- favicon -->
   <link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
   <link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
-  <!--color-picker-->
-  <link rel="stylesheet" type="text/css" href="/css/colorpicker.css">
+
   <script>
 
   $(document).ready(function() {
     $(".button-collapse").sideNav();
-      window.addEventListener("load", function () {
-          var pk = new Piklor(".color-picker", [
-                  "#1abc9c"
-                  , "#2ecc71"
-                  , "#3498db"
-                  , "#9b59b6"
-                  , "#34495e"
-                  , "#16a085"
-                  , "#27ae60"
-                  , "#2980b9"
-                  , "#8e44ad"
-                  , "#2c3e50"
-                  , "#f1c40f"
-                  , "#e67e22"
-                  , "#e74c3c"
-                  , "#ecf0f1"
-                  , "#95a5a6"
-                  , "#f39c12"
-                  , "#d35400"
-                  , "#c0392b"
-                  , "#bdc3c7"
-                  , "#7f8c8d"
-              ], {
-                  open: ".picker-wrapper .btn"
-              })
-              , wrapperEl = pk.getElm(".picker-wrapper")
-              , header = pk.getElm("header")
-              , footer = pk.getElm("footer")
-          ;
-
-          pk.colorChosen(function (col) {
-              wrapperEl.style.backgroundColor = col;
-              header.style.backgroundColor = col;
-              footer.style.backgroundColor = col;
-          });
-      });
-
   });
 
-  function schInsert(){
+  function schUpdate(){
+    var schNo = $("#sch_no").val();
     var schCateNo = $("#sch_cate_no").val();
     var schTitle = $("#sch_title").val();
     var startDate = $("#start_date").val();
@@ -112,12 +73,11 @@
     startTime = startDate+'T'+startTime;
     endTime = endDate+'T'+endTime;
     $.ajax({
-        url: "/adm/schInsert",
+        url: "/adm/schUpdate",
         type: "POST",
-        data: JSON.stringify({"schCateNo":schCateNo, "schTitle":schTitle, "startTime":startTime, "endTime":endTime, "schLink":schLink, "schContent":schContent}),
+        data: JSON.stringify({"schNo":schNo, "schCateNo":schCateNo, "schTitle":schTitle, "startTime":startTime, "endTime":endTime, "schLink":schLink, "schContent":schContent}),
         contentType: "application/json",
         success: function(data){
-            console.log(data);
             if(data.msg == 'success'){
                 alert('저장되었습니다.');
                 location.href='/adm/schedule'
@@ -127,6 +87,24 @@
             console.log(e);
         }
     });
+  }
+  function schDelete(){
+      var schNo = $("#sch_no").val();
+      $.ajax({
+          url: "/adm/schDelete",
+          type: "POST",
+          data: JSON.stringify({"schNo":schNo}),
+          contentType: "application/json",
+          success: function(data){
+              if(data.msg == 'success'){
+                  alert('삭제되었습니다.');
+                  location.href='/adm/schedule'
+                  return;
+              }
+          },error:function (e){
+              console.log(e);
+          }
+      });
   }
   </script>
   <style>
@@ -151,60 +129,52 @@
         <form class="col s12">
           <div class="row">
             <div class="input-field col s12">
+              <input id="sch_no" type="hidden" value="<%= schInfo[0].schNo %>">
               <select id="sch_cate_no">
-                <option value="" disabled selected>일정 구분</option>
+                <option value="" disabled >일정 구분</option>
                 <% for(var i = 0; i < cateList.length; i++) { %>
-                  <option value="<%= cateList[i].cateNo %>"><%= cateList[i].cateNm %>%></option>
+                  <option value="<%= cateList[i].cateNo %>" <% if(cateList[i].cateNo == schInfo[0].schCateNo) { %> selected <% } %> ><%= cateList[i].cateNm %>%></option>
                 <% }%>
               </select>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input id="sch_title" type="text" class="validate">
+              <input id="sch_title" type="text" class="validate" value="<%= schInfo[0].schTitle %>">
               <label for="sch_title">* 일정명</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s3">
-              <input id="start_date" type="text" class="validate">
+              <input id="start_date" type="text" class="validate" value="<%= schInfo[0].startTime.split("T")[0] %>">
               <label for="start_date">* 시작일자</label>
               <span class="helper-text" data-error="wrong" data-success="right">ex) 2018-01-08</span>
             </div>
             <div class="input-field col s3">
-              <input id="start_time" type="text" class="validate">
+              <input id="start_time" type="text" class="validate" value="<%= schInfo[0].startTime.split("T")[1] %>">
               <label for="start_time">* 시작시간</label>
               <span class="helper-text" data-error="wrong" data-success="right">ex) 17:30</span>
             </div>
             <div class="input-field col s3">
-              <input id="end_date" type="text" class="validate">
+              <input id="end_date" type="text" class="validate" value="<%= schInfo[0].endTime.split("T")[0] %>">
               <label for="end_date">* 종료일자</label>
               <span class="helper-text" data-error="wrong" data-success="right">ex) 2018-01-08</span>
             </div>
             <div class="input-field col s3">
-              <input id="end_time" type="text" class="validate">
+              <input id="end_time" type="text" class="validate" value="<%= schInfo[0].endTime.split("T")[1] %>">
               <label for="end_time">* 종료시간</label>
               <span class="helper-text" data-error="wrong" data-success="right">ex) 19:30</span>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <label for="sch_color">색상</label>
-              <div class="col-lg-6 picker-wrapper">
-                <div class="btn btn-default">Select color</div>
-                <div class="color-picker"></div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="sch_link" type="text" class="validate">
+              <input id="sch_link" type="text" class="validate" value="<%= schInfo[0].schLink %>">
               <label for="sch_link">링크 URL</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <textarea id="sch_content" class="materialize-textarea"></textarea>
+              <textarea id="sch_content" class="materialize-textarea"><%= schInfo[0].schContent %></textarea>
               <label for="sch_content">내용</label>
             </div>
           </div>
@@ -212,7 +182,8 @@
       </div>
     </div>
     <div class="center-align">
-      <button class="btn light-blue darken-1" onclick="javascript:schInsert();">등록하기</button>
+      <button class="btn light-blue darken-1" onclick="javascript:schUpdate();">수정하기</button>
+      <button class="btn light-blue darken-1" onclick="javascript:schDelete();">삭제하기</button>
     </div>
   </div>
 
