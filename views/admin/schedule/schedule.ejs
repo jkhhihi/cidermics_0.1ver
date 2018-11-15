@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>경이로움 일정표</title>
+  <meta name="naver-site-verification" content="083657cb98aa9a4a9c62dedeffddfb2490545da0"/>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+  <link href='/css/calendar/fullcalendar.min.css' rel='stylesheet' />
+  <link href='/css/calendar/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+  <script src='/js/calendar/moment.min.js'></script>
+  <script src='/js/calendar/fullcalendar.min.js'></script>
+  <script src='/js/calendar/locale-all.js'></script>
+  <script src="/js/materialize.js"></script>
+
+      <!--CSS -->
+    <link rel='stylesheet' href='/css/materialize.css' />
+    <link href="/css/std_style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <!-- icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+    <link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+
+
+  <script>
+
+  $(document).ready(function() {
+    $(".button-collapse").sideNav();
+    var initialLocaleCode = 'ko';
+
+    var d = new Date(),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    var today = [year, month, day].join('-');
+    $('#calendar').fullCalendar({
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'listDay,listWeek,month'
+      },
+
+      // customize the button names,
+      // otherwise they'd all just say "list"
+      views: {
+        listDay: { buttonText: '일간' },
+        listWeek: { buttonText: '주간' },
+        month: { buttonText: '월간' }
+      },
+      locale: initialLocaleCode,
+
+      defaultView: 'month',
+      defaultDate: today,
+      navLinks: true, // can click day/week names to navigate views
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+      events: [
+        {
+          title: '스터디 기획 회의',
+          start: '2018-01-29T17:00:00',
+          end: '2018-01-29T19:00:00'
+        },
+        {
+          title: 'Long Event',
+          start: '2017-12-07',
+          end: '2017-12-10'
+        },
+        {
+          id: 999,
+          title: 'Repeating Event',
+          start: '2017-12-09T16:00:00'
+        },
+        {
+          id: 999,
+          title: 'Repeating Event',
+          start: '2017-12-16T16:00:00'
+        },
+        {
+          title: '회의',
+          start: '2017-12-11',
+          end: '2017-12-13'
+        },
+        {
+          title: '하하하하',
+          start: '2017-12-12T10:30:00',
+          end: '2017-12-12T12:30:00'
+        },
+        {
+          title: 'Lunch',
+          start: '2017-12-12T12:00:00'
+        },
+        {
+          title: 'Meeting',
+          start: '2017-12-12T14:30:00'
+        },
+        {
+          title: 'Happy Hour',
+          start: '2017-12-12T17:30:00'
+        },
+        {
+          title: 'Dinner',
+          start: '2017-12-12T20:00:00'
+        },
+        {
+          title: '행복한 파티1',
+          start: '2017-12-13T07:00'
+        },
+        {
+          title: 'Click for 사이다경제',
+          url: 'http://cidermics.com/',
+          start: '2017-12-28'
+        }
+      ]
+    });
+
+  });
+  function schInsert(){
+      location.href = "/adm/schInsert";
+  }
+</script>
+<style>
+  .container-calendar {
+    max-width: 1280px;
+    margin: 30px auto;
+  }
+  .fc-scroller{
+    height: auto !important;
+  }
+</style>
+
+<style>
+/*h5, h4{font-family: seoulhangangregular !important; border-bottom:2px solid #ecce6b; padding-bottom:5px;}*/
+</style>
+
+  <script src="/js/gotoup.js"></script>
+  </head>
+  <body>
+  <% var data= CP; %>
+  <% include ../include/nav.ejs %>
+
+  <div id="but_top"><a class="btn btn-floating  blue-grey darken-4"><i class="material-icons">arrow_upward</i></a></div>
+
+  <div class="container-calendar">
+    <div class="right-align">
+      <button class="btn light-blue darken-1" onclick="javascript:schInsert();">일정등록</button>
+    </div>
+    <div id="calendar" class="container-calendar"></div>
+    <div class="parallax-container valign-wrapper" style="min-height: 200px;">
+      <div class="section no-pad-bot" style="padding-top:65px; top:5%;">
+        <div class="container" >
+          <div class="row center">
+            <h5 class="header col s12 light" style="font-weight:500;">경이로움 스터디 일정</h5>
+            <h6 class="header col s12 light">스터디 일정이 나와있습니다:)<br class="web-n"></h6>
+          </div>
+        </div>
+      </div>
+      <div class="parallax"><img src="/page_imgs/study_img/backgroundm8.jpg" alt="Unsplashed background img 1"></div>
+    </div>
+  </div>
+
+
+<div id="cal" class="container" align="center">
+	<div class="row">
+		<div class="col s12" style="margin:20px 0;"><h4>11월</h4><img style="width:100%" class="materialboxed responsive-img" data-caption="2018년 11월" src="https://i.imgur.com/zo4J7pP.jpg"></div>
+		<div class="col s12" style="margin:20px 0;"><h4>12월</h4><img style="width:100%" class="materialboxed responsive-img" data-caption="2018년 12월" src="https://i.imgur.com/oNNMceS.jpg"></div>
+		<!-- div class="col s6"><h5>9월</h5><img class="materialboxed responsive-img" data-caption="2018년 9월" src="https://i.imgur.com/x82KRbz.jpg"></div>
+		<div class="col s6"><h5>7월</h5><img class="materialboxed responsive-img" data-caption="2018년 7월" src="https://i.imgur.com/fvBP8dW.jpg"></div -->
+	</div>
+</div>
+
+
+   <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light"><b>내 삶이 경이로워지는 순간</b></h5>
+          <h4 class="header col s12 light"><b>"경이로움"</b></h4>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="/page_imgs/study_img/backgroundm8.jpg" alt="Unsplashed background img 2"></div>
+  </div>  
+  
+</body>
+</html>
