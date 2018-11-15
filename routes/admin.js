@@ -2101,7 +2101,7 @@ router.post('/schInsert', function(req, res, next) {
         res.send({"msg":"success", "result":data});
     });
 });
-//충돌 테스트2
+//충돌 테스트4
 router.post('/schInsert', function(req, res, next) {
     var schCateNo = req.body.schCateNo;
     var schTitle = req.body.schTitle;
