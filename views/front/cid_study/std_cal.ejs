@@ -15,6 +15,7 @@
   <script src='/js/calendar/moment.min.js'></script>
   <script src='/js/calendar/fullcalendar.min.js'></script>
   <script src='/js/calendar/locale-all.js'></script>
+  <script src='/js/materialize.js'></script>
 
       <!--CSS -->
     <link rel='stylesheet' href='/css/materialize.css' />
@@ -39,7 +40,7 @@
               defaultView = 'listWeek';
           }
           getCalendar();
-          // getCalendar2();
+          getCalendar2();
       });
 
       function getCalendar(){
@@ -98,62 +99,62 @@
               }
           });
       }
-      // function getCalendar2(){
-      //     $('#calendar2').fullCalendar('destroy');
-      //     var initialLocaleCode = 'ko';
-      //     var d = new Date(),
-      //         month = '' + (d.getMonth() + 1),
-      //         day = '' + d.getDate(),
-      //         year = d.getFullYear();
-      //
-      //     if (month.length < 2) month = '0' + month;
-      //     if (day.length < 2) day = '0' + day;
-      //
-      //     var today = [year, month, day].join('-');
-      //
-      //     $('#calendar2').fullCalendar({
-      //         header: {
-      //             left: 'prev,next today',
-      //             center: 'title',
-      //             right: 'listDay,listWeek,month'
-      //         },
-      //         // customize the button names,
-      //         // otherwise they'd all just say "list"
-      //         views: {
-      //             listDay: { buttonText: '일간' },
-      //             listWeek: { buttonText: '주간' },
-      //             month: { buttonText: '월간' }
-      //         },
-      //         locale: initialLocaleCode,
-      //         defaultView: defaultView,
-      //         defaultDate: today,
-      //         navLinks: true, // can click day/week names to navigate views
-      //         editable: false,
-      //         eventLimit: true, // allow "more" link when too many events
-      //         events: function (start, end, timezone, callback){
-      //             $.ajax({
-      //                 url: '/adm/getSchList',
-      //                 type: "POST",
-      //                 async : false,
-      //                 contentType: "application/json",
-      //                 data: JSON.stringify({"schCateNo" : 2}),
-      //                 success: function(data) {
-      //                     var events = [];
-      //                     $(data.schList).each(function() {
-      //                         events.push({
-      //                             id: $(this).attr('schNo'),
-      //                             title: $(this).attr('schTitle'),
-      //                             start: $(this).attr('startTime'),
-      //                             end: $(this).attr('endTime'),
-      //                             url: $(this).attr('schLink')
-      //                         });
-      //                     });
-      //                     callback(events);
-      //                 }
-      //             })
-      //         }
-      //     });
-      // }
+      function getCalendar2(){
+          $('#calendar2').fullCalendar('destroy');
+          var initialLocaleCode = 'ko';
+          var d = new Date(),
+              month = '' + (d.getMonth() + 1),
+              day = '' + d.getDate(),
+              year = d.getFullYear();
+
+          if (month.length < 2) month = '0' + month;
+          if (day.length < 2) day = '0' + day;
+
+          var today = [year, month, day].join('-');
+
+          $('#calendar2').fullCalendar({
+              header: {
+                  left: 'prev,next today',
+                  center: 'title',
+                  right: 'listDay,listWeek,month'
+              },
+              // customize the button names,
+              // otherwise they'd all just say "list"
+              views: {
+                  listDay: { buttonText: '일간' },
+                  listWeek: { buttonText: '주간' },
+                  month: { buttonText: '월간' }
+              },
+              locale: initialLocaleCode,
+              defaultView: defaultView,
+              defaultDate: today,
+              navLinks: true, // can click day/week names to navigate views
+              editable: false,
+              eventLimit: true, // allow "more" link when too many events
+              events: function (start, end, timezone, callback){
+                  $.ajax({
+                      url: '/adm/getSchList',
+                      type: "POST",
+                      async : false,
+                      contentType: "application/json",
+                      data: JSON.stringify({"schCateNo" : 2}),
+                      success: function(data) {
+                          var events = [];
+                          $(data.schList).each(function() {
+                              events.push({
+                                  id: $(this).attr('schNo'),
+                                  title: $(this).attr('schTitle'),
+                                  start: $(this).attr('startTime'),
+                                  end: $(this).attr('endTime'),
+                                  url: $(this).attr('schLink')
+                              });
+                          });
+                          callback(events);
+                      }
+                  })
+              }
+          });
+      }
 
   </script>
 <style>
@@ -171,7 +172,12 @@
   .fc-scroller{
     height: auto !important;
   }
-
+  .tabs .tab a {
+    color: #3a87ad !important;
+  }
+  .tabs .indicator {
+    background-color: #3a87ad !important;
+  }
 </style>
 
 <style>
@@ -197,9 +203,20 @@
     </div>
     <div class="parallax"><img src="/page_imgs/study_img/backgroundm8.jpg" alt="Unsplashed background img 1"></div>
   </div>
+  <div class="container">
+    <ul id="tabs-swipe tabs-fixed-width" class="tabs">
+      <li class="tab col s3 text-light-blue darken-1"><a class="active" href="#test-swipe-1">강의</a></li>
+      <li class="tab col s3 text-light-blue darken-1"><a href="#test-swipe-2">세미나</a></li>
+    </ul>
+  </div>
 
-  <div id='calendar'></div>
-  <!--<div id='calendar2'></div>-->
+  <div id="test-swipe-1" class="col s12">
+    <div id='calendar'></div>
+  </div>
+  <div id="test-swipe-2" class="col s12">
+    <div id='calendar2'></div>
+  </div>
+
 
    <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
