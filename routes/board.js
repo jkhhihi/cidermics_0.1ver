@@ -402,17 +402,12 @@ router.get('/board/list/:page', function(req, res, next) {
     var sql  = 'SELECT a.idx, a.userid, a.title, a.ymd, count(b.idx) as cmt_count from cider.community_board a ';
     	sql += 'left outer join cider.communuty_comt b on a.idx=b.idx group by a.idx desc ';
     	sql += 'order by a.idx desc LIMIT '+start+' ,'+pageSize+' ';
-    console.log(sql);
-
-    console.log('확인');
 
     if(opt != 0) {
     	sql = 'SELECT a.idx, a.userid, a.title, a.ymd, count(b.idx) as cmt_count from cider.community_board a ';
     	sql += 'left outer join cider.communuty_comt b on a.idx=b.idx ';
     	sql += 'where '+opt+' like \'%'+seval+'%\'  group by a.idx desc order by idx desc LIMIT '+start+' ,'+pageSize+' ';
     }
-    console.log(sql);
-
     mysql.select( sql, function(err, data, fields) {
         if (err) throw err;
          res.render('front/cid_board/list', { data: data, pageSize: pageSize, pageCount: pageCount, currentPage: currentPage, opt:opt, seval:seval });

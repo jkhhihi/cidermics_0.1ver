@@ -40,6 +40,9 @@ var board = require('./routes/board');
 var std = require('./routes/study');
 var pay = require('./routes/pay');
 
+//재무 새로운 페이지
+var fin = require('./routes/fin');
+
 
 // all environments
 app.set('port', process.env.PORT || 80);
@@ -84,6 +87,8 @@ app.use('/cid_board',express.static(__dirname+'/views/cid_board'));
 app.use('/cid_study',express.static(__dirname+'/views/cid_study'));
 app.use('/pay',express.static(__dirname+'/views/pay'));
 
+app.use('/fin',express.static(__dirname+'/views/fin'));
+
 
 app.use(flash());
 
@@ -118,6 +123,8 @@ app.use('/',cid2_idx);
 app.use('/',board);
 app.use('/',std);
 app.use('/',pay);
+
+app.use('/',fin);
 
 
 //passportFB.use('fbLogin', new LocalStrategy({
