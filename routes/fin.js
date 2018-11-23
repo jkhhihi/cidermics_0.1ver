@@ -65,4 +65,32 @@ router.get('/fin/review', function(req, res, next) {
   });
 });
 
+router.get('/fin/atype', function(req, res, next) {
+
+	res.render('front/cid_fin/fin_atype', { });
+
+});
+
+router.get('/fin/atype/1', function(req, res, next) {
+
+	res.render('front/cid_fin/fin_atype_1', { });
+
+});
+
+router.get('/fin/atype/2', function(req, res, next) {
+
+	res.render('front/cid_fin/fin_atype_2', { });
+
+});
+
+router.get('/fin/atype/3', function(req, res, next) {
+
+	res.render('front/cid_fin/fin_atype_3', { });
+
+});
+
+router.get('/fin/atype/4', function(req, res, next) {
+
+	res.render('front/cid_fin/fin_atype_4', { });
+});
 module.exports = router;
