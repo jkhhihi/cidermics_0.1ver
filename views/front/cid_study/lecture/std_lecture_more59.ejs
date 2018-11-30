@@ -200,13 +200,27 @@ a.btn-seminar h5 span:hover{background-color:#0aa0f6; color:#fff !important}
 .database .container #btn1 span:hover{background-color:#f9ff00;}
 .database .container #btn1 a{color:#fff;}
 .database .container #btn1 a:hover{color:#000;}
+.width95{width:60%}
+.collapsible{box-shadow:none; border:none}
+.collapsible-header{border:none; background-color:#f6f6f6; border:1px #f6f6f6 solid; border-radius:10px; box-shadow:0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+height:auto; padding:20px 0 5px 0; margin-bottom:15px}
+.collapsible-body{border:none;}
+#lecture59 img{width:50%}
+#lecture59 .bg1{background-size: cover; height:auto; padding:50px 0 30px 0; background-image: url("/page_imgs/study_img/lecture-59/bg1.jpg"); background-color:#fdfdfd}
 @media only screen and (max-width : 1024px) {
+	.mob-none{display:none;}
+	.mob-margin1{margin-bottom:20px;}
+
 a.btn-review h5 span{margin-top:50px}
 a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
 #countdown{padding:20px 0 0 0}
 #countdown span{font-size:14px}
 .database{padding:0 0 20px 0; font-size:20px;}
 .database .container input{font-size:18px; padding:2px 4px; margin-top:0; height:30px}
+.width95{width:96%}
+.collapsible-header{padding:10px 0 0 0; margin-bottom:10px}
+.collapsible-body{padding:0px;}
+#lecture59 img{width:100%}
 }
 
 
@@ -250,9 +264,20 @@ a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
           $(".amount").eq(i).text(commaNum($(".amount").eq(i).html()));   
       }
   });
-
 </script>
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+	  var elem = document.querySelector('.collapsible.expandable');
+	  var instance = M.Collapsible.init(elem, {
+	    accordion: false
+	  });
 
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+</script>        
   
   <script src="/js/gotoup.js"></script>
   </head>
@@ -274,11 +299,12 @@ a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
       <div class="row center">
         <div class="divider"></div>
         <span class="box1">경이로움 강의</span>
-        <p>총 4회 스페셜 강의 그리고 4번의 릴레이 세미나</p>
+        <p>강의를 들으면 1년간 온라인 릴레이세미나가 무료!</p>
       </div>
 
     </div>
   </div>
+
   <div class="parallax"><img src="<%=md[0].bgimg1%>"></div>
 </div>
 
@@ -344,13 +370,12 @@ a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
 
             <div class="row">
               <div class="col s4 m3">총 금액</div>
-              <div class="col s8 m6" style="text-align: left;" ><b class="amount"  style="text-decoration: line-through;"><%=md[0].price%></b>원 <br><b class="amount"  style="color: red;"><%=md[0].disprice%></b>원<br>
-              <span style="color:red;">*<%=md[0].disevent%></span>
+              <div class="col s8 m6" style="text-align: left;" ><b>199,000</b>원 (착한강의)
               </div>
               <div class="col s0 m3"></div>
               
               <!-- 카드할부내용 -->
-              <div class="col s12" style="background-color:#fafafa; border:1px #ddd solid; border-radius:10px; margin-top:10px; padding:10px 15px;">※ 카드결제시 ※<br>350,000원 -> <b>월 35,000원</b> (무이자 10개월 할부 적용시)</div>
+              <div class="col s12" style="background-color:#fafafa; border:1px #ddd solid; border-radius:10px; margin-top:10px; padding:10px 15px;">※ 카드결제시 ※<br><b>월 34,000원</b> (무이자 6개월 할부 적용시)</div>
               
             </div>
 
@@ -395,22 +420,330 @@ a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
 
 <div id="study-new">
 
+<!-- 접이식 -->
+<div class="container width95" align="center">
+  <ul class="collapsible expandable">
+    <li class="active">
+      <div class="collapsible-header"><img class="responsive-img" src="/page_imgs/study_img/lecture-59/btn-con1.png"></div>
+      <div class="collapsible-body">
+		<img class="responsive-img" src="/page_imgs/study_img/lecture-59/con1-1.jpg">
+		<img class="responsive-img" style="margin-top:-10px" src="/page_imgs/study_img/lecture-59/con1-2.jpg">
+		<img class="responsive-img" style="margin-top:-10px" src="/page_imgs/study_img/lecture-59/con1-3.jpg">
+		<!-- 마감임박 -->
+		<div id="countdown" style="margin-top:-10px">
+		   <div><span style="color:#9ddaff;">*담당 매니저가 강의와 관련된 상담을 도와드릴 예정입니다.</span></a></div>
+		</div>
+		<!-- DB 작성 칸 -->
+		<div class="database" style="background-color:#000" align="left">
+		  <div class="container">
+		
+		    <div class="row">
+		
+		      <form action="/prinsert" method="post" name="prinsert" class="col s12">
+		        <input type="hidden" name="cate" value="<%=md[0].cate%>">
+		        <input type="hidden" name="idx" value="<%=md[0].idx%>">
+		        <input type="hidden" name="tele_check" value="1">
+		        
+		        <div class="row margin0">
+		          <div id="name" class="input-field col s6">
+		            <span class="color1">이름 : </span>
+		            <input type="text" name="pname" length="4" >
+		          </div>
+		          <div id="phon" class="input-field col s6">
+		            <span class="color1">전화번호 : </span>
+		            <input type="text" name="phone" maxlength="11" >
+		          </div>
+		        </div>
+		
+		        <div class="row margin0">
+		          <div class="input col s12 l8" style="height: 50px;">
+		            <input type="checkbox" id="check5" name="check1" />
+		            <label for="check5">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
+		            <br>
+		            <input type="checkbox" id="check6" name="check2"/>
+		            <label for="check6">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
+		            <br>
+		            <br>
+		          </div>
+		        </div>
+		
+		        <div id="btn1" align="center">
+		          <br><a style="cursor:pointer" onclick="surveyGo()"><span>상담 신청하기</span></a>
+		        </div>
+		      </form>
+		    </div>
+		  </div>
+		</div>
+		</div>
+    </li>
+    <li>
+      <div class="collapsible-header"><img class="responsive-img" src="/page_imgs/study_img/lecture-59/btn-con2.png"></div>
+      <div class="collapsible-body">
+		<img class="responsive-img" src="/page_imgs/study_img/lecture-59/con1-1.jpg">
+		<img class="responsive-img" style="margin-top:-10px" src="/page_imgs/study_img/lecture-59/con1-2.jpg">
+		<img class="responsive-img" style="margin-top:-10px" src="/page_imgs/study_img/lecture-59/con1-3.jpg">
+<!-- 마감임박 -->
+<div id="countdown" style="margin-top:-10px">
+   <div><span style="color:#9ddaff;">*담당 매니저가 강의와 관련된 상담을 도와드릴 예정입니다.</span></a></div>
+</div>
+<!-- DB 작성 칸 -->
+<div class="database" style="background-color:#000" align="left">
+  <div class="container">
+
+    <div class="row">
+
+      <form action="/prinsert" method="post" name="prinsert" class="col s12">
+        <input type="hidden" name="cate" value="<%=md[0].cate%>">
+        <input type="hidden" name="idx" value="<%=md[0].idx%>">
+        <input type="hidden" name="tele_check" value="1">
+        
+        <div class="row margin0">
+          <div id="name" class="input-field col s6">
+            <span class="color1">이름 : </span>
+            <input type="text" name="pname" length="4" >
+          </div>
+          <div id="phon" class="input-field col s6">
+            <span class="color1">전화번호 : </span>
+            <input type="text" name="phone" maxlength="11" >
+          </div>
+        </div>
+
+        <div class="row margin0">
+          <div class="input col s12 l8" style="height: 50px;">
+            <input type="checkbox" id="check5" name="check1" />
+            <label for="check5">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
+            <br>
+            <input type="checkbox" id="check6" name="check2"/>
+            <label for="check6">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
+            <br>
+            <br>
+          </div>
+        </div>
+
+        <div id="btn1" align="center">
+          <br><a style="cursor:pointer" onclick="surveyGo()"><span>상담 신청하기</span></a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+	  </div>
+    </li>
+    <li>
+      <div class="collapsible-header"><img class="responsive-img" src="/page_imgs/study_img/lecture-59/btn-con3.png"></div>
+      <div class="collapsible-body">
+		<img class="responsive-img" src="/page_imgs/study_img/lecture-59/con1-1.jpg">
+		<img class="responsive-img" style="margin-top:-10px" src="/page_imgs/study_img/lecture-59/con1-2.jpg">
+		<img class="responsive-img" style="margin-top:-10px" src="/page_imgs/study_img/lecture-59/con1-3.jpg">
+<!-- 마감임박 -->
+<div id="countdown" style="margin-top:-10px">
+   <div><span style="color:#9ddaff;">*담당 매니저가 강의와 관련된 상담을 도와드릴 예정입니다.</span></a></div>
+</div>
+<!-- DB 작성 칸 -->
+<div class="database" style="background-color:#000" align="left">
+  <div class="container">
+
+    <div class="row">
+
+      <form action="/prinsert" method="post" name="prinsert" class="col s12">
+        <input type="hidden" name="cate" value="<%=md[0].cate%>">
+        <input type="hidden" name="idx" value="<%=md[0].idx%>">
+        <input type="hidden" name="tele_check" value="1">
+        
+        <div class="row margin0">
+          <div id="name" class="input-field col s6">
+            <span class="color1">이름 : </span>
+            <input type="text" name="pname" length="4" >
+          </div>
+          <div id="phon" class="input-field col s6">
+            <span class="color1">전화번호 : </span>
+            <input type="text" name="phone" maxlength="11" >
+          </div>
+        </div>
+
+        <div class="row margin0">
+          <div class="input col s12 l8" style="height: 50px;">
+            <input type="checkbox" id="check5" name="check1" />
+            <label for="check5">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
+            <br>
+            <input type="checkbox" id="check6" name="check2"/>
+            <label for="check6">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
+            <br>
+            <br>
+          </div>
+        </div>
+
+        <div id="btn1" align="center">
+          <br><a style="cursor:pointer" onclick="surveyGo()"><span>상담 신청하기</span></a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+	  </div>
+    </li>
+    <li>
+      <div class="collapsible-header"><img class="responsive-img" src="/page_imgs/study_img/lecture-59/btn-con4.png"></div>
+      <div class="collapsible-body">
+		<img class="responsive-img" src="/page_imgs/study_img/lecture-59/con1-1.jpg">
+		<img class="responsive-img" style="margin-top:-10px" src="/page_imgs/study_img/lecture-59/con1-2.jpg">
+		<img class="responsive-img" style="margin-top:-10px" src="/page_imgs/study_img/lecture-59/con1-3.jpg">
+<!-- 마감임박 -->
+<div id="countdown" style="margin-top:-10px">
+   <div><span style="color:#9ddaff;">*담당 매니저가 강의와 관련된 상담을 도와드릴 예정입니다.</span></a></div>
+</div>
+<!-- DB 작성 칸 -->
+<div class="database" style="background-color:#000" align="left">
+  <div class="container">
+
+    <div class="row">
+
+      <form action="/prinsert" method="post" name="prinsert" class="col s12">
+        <input type="hidden" name="cate" value="<%=md[0].cate%>">
+        <input type="hidden" name="idx" value="<%=md[0].idx%>">
+        <input type="hidden" name="tele_check" value="1">
+        
+        <div class="row margin0">
+          <div id="name" class="input-field col s6">
+            <span class="color1">이름 : </span>
+            <input type="text" name="pname" length="4" >
+          </div>
+          <div id="phon" class="input-field col s6">
+            <span class="color1">전화번호 : </span>
+            <input type="text" name="phone" maxlength="11" >
+          </div>
+        </div>
+
+        <div class="row margin0">
+          <div class="input col s12 l8" style="height: 50px;">
+            <input type="checkbox" id="check5" name="check1" />
+            <label for="check5">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
+            <br> 
+            <input type="checkbox" id="check6" name="check2"/>
+            <label for="check6">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
+            <br>
+            <br>
+          </div>
+        </div>
+
+        <div id="btn1" align="center">
+          <br><a style="cursor:pointer" onclick="surveyGo()"><span>상담 신청하기</span></a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+	  </div>
+    </li>
+  </ul>
+</div>
+
+
 <!-- 작업한이미지 -->
-<div style="background-color:#fdfdfd">
-	<div class="container">
-	<img class="responsive-img" src="/page_imgs/study_img/lecture-57/web-detail-1.jpg">
-	<img class="responsive-img" src="/page_imgs/study_img/lecture-57/web-detail-2.jpg">
-	<img class="responsive-img" src="/page_imgs/study_img/lecture-57/web-detail-3.jpg">
-	<img class="responsive-img" src="/page_imgs/study_img/lecture-57/web-detail-4.jpg">
-	<img class="responsive-img" src="/page_imgs/study_img/lecture-57/web-detail-5.jpg">
-	<img class="responsive-img" src="/page_imgs/study_img/lecture-57/web-detail-6.jpg">
-	<img class="responsive-img" src="/page_imgs/study_img/lecture-57/web-detail-7.jpg">
-	<img class="responsive-img" src="/page_imgs/study_img/lecture-57/web-detail-8.jpg">
-	<img class="responsive-img" src="/page_imgs/study_img/lecture-57/web-detail-9.jpg">
-	</div>
+<div id="lecture59" align="center">
+	<div class="bg1"><img class="responsive-img" src="/page_imgs/study_img/lecture-59/1.png"></div>
+	<div style="background-color:#282828"><img class="responsive-img" src="/page_imgs/study_img/lecture-59/2.jpg"></div>
+<!-- 마감임박 -->
+<div id="countdown">
+   <div><span style="color:#9ddaff;">*담당 매니저가 강의와 관련된 상담을 도와드릴 예정입니다.</span></a></div>
+</div>
+<!-- DB 작성 칸 -->
+<div class="database" style="background-color:#000" align="left">
+  <div class="container">
+
+    <div class="row">
+
+      <form action="/prinsert" method="post" name="prinsert" class="col s12">
+        <input type="hidden" name="cate" value="<%=md[0].cate%>">
+        <input type="hidden" name="idx" value="<%=md[0].idx%>">
+        <input type="hidden" name="tele_check" value="1">
+        
+        <div class="row margin0">
+          <div id="name" class="input-field col s6">
+            <span class="color1">이름 : </span>
+            <input type="text" name="pname" length="4" >
+          </div>
+          <div id="phon" class="input-field col s6">
+            <span class="color1">전화번호 : </span>
+            <input type="text" name="phone" maxlength="11" >
+          </div>
+        </div>
+
+        <div class="row margin0">
+          <div class="input col s12 l8" style="height: 50px;">
+            <input type="checkbox" id="check5" name="check1" />
+            <label for="check5">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
+            <br>
+            <input type="checkbox" id="check6" name="check2"/>
+            <label for="check6">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
+            <br>
+            <br>
+          </div>
+        </div>
+
+        <div id="btn1" align="center">
+          <br><a style="cursor:pointer" onclick="surveyGo()"><span>상담 신청하기</span></a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>	
+	<div style="background-color:#ececec"><img class="responsive-img" src="/page_imgs/study_img/lecture-59/3.jpg"></div>
+<!-- 마감임박 -->
+<div id="countdown">
+   <div><span style="color:#9ddaff;">*담당 매니저가 강의와 관련된 상담을 도와드릴 예정입니다.</span></a></div>
+</div>
+<!-- DB 작성 칸 -->
+<div class="database" style="background-color:#000" align="left">
+  <div class="container">
+
+    <div class="row">
+
+      <form action="/prinsert" method="post" name="prinsert" class="col s12">
+        <input type="hidden" name="cate" value="<%=md[0].cate%>">
+        <input type="hidden" name="idx" value="<%=md[0].idx%>">
+        <input type="hidden" name="tele_check" value="1">
+        
+        <div class="row margin0">
+          <div id="name" class="input-field col s6">
+            <span class="color1">이름 : </span>
+            <input type="text" name="pname" length="4" >
+          </div>
+          <div id="phon" class="input-field col s6">
+            <span class="color1">전화번호 : </span>
+            <input type="text" name="phone" maxlength="11" >
+          </div>
+        </div>
+
+        <div class="row margin0">
+          <div class="input col s12 l8" style="height: 50px;">
+            <input type="checkbox" id="check5" name="check1" />
+            <label for="check5">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
+            <br>
+            <input type="checkbox" id="check6" name="check2"/>
+            <label for="check6">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
+            <br>
+            <br>
+          </div>
+        </div>
+
+        <div id="btn1" align="center">
+          <br><a style="cursor:pointer" onclick="surveyGo()"><span>상담 신청하기</span></a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>		
+	<div style="background-color:#fdfdfd"><img class="responsive-img" src="/page_imgs/study_img/lecture-59/4.jpg"></div>
+	<div style="background-color:#282828"><img class="responsive-img" src="/page_imgs/study_img/lecture-59/5.jpg"></div>
+	<div style="background-color:#ececec"><img class="responsive-img" src="/page_imgs/study_img/lecture-59/6.jpg"></div>
+	<div style="background-color:#5cb7ef"><img class="responsive-img" src="/page_imgs/study_img/lecture-59/7.jpg"></div>	
+	<div style="background-color:#ffffff"><img class="responsive-img" src="/page_imgs/study_img/lecture-59/8.jpg"></div>	
+	<div style="background-color:#5cb7ef"><img class="responsive-img" src="/page_imgs/study_img/lecture-59/9.jpg"></div>
+	<div style="background-color:#ffffff"><img class="responsive-img" src="/page_imgs/study_img/lecture-59/10.jpg"></div>
+	<div style="background-color:#ffffff"><a href="../study/seminar"><img class="responsive-img" src="/page_imgs/study_img/lecture-59/11.jpg"></a></div>			
 </div>
 <!-- 끝 -->
-
 
 <!-- 웹진 -->
 <!-- pdf준다는 내용의 배너 -->
@@ -461,7 +794,7 @@ a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
       </form>
     </div>
   </div>
-</div -->
+</div>
 
 <!-- 여기부터는 고정 -->
 <!-- div class="section2">
@@ -486,12 +819,32 @@ a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
 			<a href="/study/review" align="center" class="btn-review"><h5><span>☞ 더 많은 후기 보기</span></h5></a>		
 	</div>
 </div>
-
+<div class="divider"></div>
+<div class="section0">
+	<div class="container">
+		<h4>경이로움 현장</h4>
+		<div class="line2"></div>
+		<div class="row">
+			<div class="col s12 m4 mob-margin1"><img class="responsive-img materialboxed z-depth-1" src="https://i.imgur.com/uFyT7lN.jpg"></div>
+			<div class="col s12 m4"><img class="responsive-img materialboxed z-depth-1" src="https://i.imgur.com/QVtSQJc.jpg"></div>
+			<div class="col s6 m4 mob-none"><img class="responsive-img materialboxed z-depth-1" src="https://i.imgur.com/tnDmlaP.jpg"></div>
+		</div>
+		<div class="row">
+			<div class="col s6 m4"><img class="responsive-img materialboxed z-depth-1" src="https://i.imgur.com/onD5fFQ.jpg"></div>
+			<div class="col s6 m4"><img class="responsive-img materialboxed z-depth-1" src="https://i.imgur.com/RD39NDP.jpg"></div>
+			<div class="col s6 m4 mob-none"><img class="responsive-img materialboxed z-depth-1" src="https://i.imgur.com/Hv3bGrc.jpg"></div>
+		</div>
+		<div align="center">
+			<!-- img class="responsive-img" src="https://i.imgur.com/CChI9Mm.png" style="margin-top:20px" -->
+		</div>		
+	</div>
+</div>
 <div class="section2">
 	<div class="container">
 	  <div class="row">
-	      <div class="col s12 center">
+	      <div class="col s12">
 	        <h4>추천 강의</h4>
+	        <div class="line2"></div>
 	      </div>
 	  </div>
 	
@@ -697,151 +1050,6 @@ a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
           </div>
       </div>
 
-     <!-- 모달창 열림 >
-      <div id="modal2" class="modal modal-fixed-footer">
-          <div class="modal-content">
-            <h6><b>개인정보 수집 및 이용 동의</b></h6>
-            <textarea style="resize: none; width: 100%; height: 500px; padding:20px; line-height:1.5em; border:hidden;" readonly="readonly"><사이다경제>('http://www.cidermics.com'이하 '사이다경제')은(는) 개인정보보호법에 따라 이용자의 개인정보 보호 및 권익을 보호하고 개인정보와 관련한 이용자의 고충을 원활하게 처리할 수 있도록 다음과 같은 처리방침을 두고 있습니다.
-
-<사이다경제>('사이다경제') 은(는) 회사는 개인정보처리방침을 개정하는 경우 웹사이트 공지사항(또는 개별공지)을 통하여 공지할 것입니다.
-
-○ 본 방침은부터 2017년 5월 23일부터 시행됩니다.
-
-
-1. 개인정보의 처리 목적 <사이다경제>('http://www.cidermics.com'이하 '사이다경제')은(는) 개인정보를 다음의 목적을 위해 처리합니다. 처리한 개인정보는 다음의 목적이외의 용도로는 사용되지 않으며 이용 목적이 변경될 시에는 사전 동의를 구할 예정입니다.
-
-가. 홈페이지 회원가입 및 관리
-
-회원 가입의사 확인, 회원제 서비스 제공에 따른 본인 식별·인증, 회원자격 유지·관리, 서비스 부정이용 방지, 분쟁 조정을 위한 기록 보존 등을 목적으로 개인정보를 처리합니다.
-
-
-나. 재화 또는 서비스 제공
-
-콘텐츠 제공 등을 목적으로 개인정보를 처리합니다.
-
-
-다. 마케팅 및 광고의 활용
-
-신규 서비스(제품) 개발 및 맞춤 서비스 제공, 이벤트 및 광고성 정보 제공 및 참여기회 제공 , 인구통계학적 특성에 따른 서비스 제공 및 광고 게재 등을 목적으로 개인정보를 처리합니다.
-
-
-
-
-2. 개인정보 파일 현황
-
-1. 개인정보 파일명 : 사이다경제 개인정보처리방침
-- 개인정보 항목 : 이메일, 비밀번호, 로그인ID, 성별, 생년월일, 이름, 휴대전화번호
-- 수집방법 : 홈페이지
-- 보유근거 : 사이다경제
-- 보유기간 : 준영구
-
-
-
-
-3. 개인정보의 처리 및 보유 기간
-
-① <사이다경제>('사이다경제')은(는) 법령에 따른 개인정보 보유·이용기간 또는 정보주체로부터 개인정보를 수집시에 동의 받은 개인정보 보유,이용기간 내에서 개인정보를 처리, 보유합니다.
-
-② 각각의 개인정보 처리 및 보유 기간은 다음과 같습니다.
-
-1.<홈페이지 회원가입 및 관리>
-<홈페이지 회원가입 및 관리>와 관련한 개인정보는 수집,이용에 관한 동의일로부터<준영구>까지 위 이용목적을 위하여 보유.이용됩니다.
--보유근거 : 회사가 유지되는 시점
-
-
-
-4. 개인정보의 제3자 제공에 관한 사항
-
-① <사이다경제>('http://www.cidermics.com'이하 '사이다경제')은(는) 정보주체의 동의, 법률의 특별한 규정 등 개인정보 보호법 제17조 및 제18조에 해당하는 경우에만 개인정보를 제3자에게 제공합니다.
-
-② <사이다경제>('http://www.cidermics.com')은(는) 다음과 같이 개인정보를 제3자에게 제공하고 있습니다.
-
-
-1. <사이다경제>
-- 개인정보를 제공받는 자 : 사이다경제
-- 제공받는 자의 개인정보 이용목적 : 이메일, 성별, 생년월일, 이름, 휴대전화번호
-- 제공받는 자의 보유.이용기간: 1년
-
-
-
-5. 개인정보처리 위탁
-
-① <사이다경제>('사이다경제')은(는) 원활한 개인정보 업무처리를 위하여 다음과 같이 개인정보 처리업무를 위탁하고 있습니다.
-
-
-② <사이다경제>('http://www.cidermics.com'이하 '사이다경제')은(는) 위탁계약 체결시 개인정보 보호법 제25조에 따라 위탁업무 수행목적 외 개인정보 처리금지, 기술적․관리적 보호조치, 재위탁 제한, 수탁자에 대한 관리․감독, 손해배상 등 책임에 관한 사항을 계약서 등 문서에 명시하고, 수탁자가 개인정보를 안전하게 처리하는지를 감독하고 있습니다.
-
-③ 위탁업무의 내용이나 수탁자가 변경될 경우에는 지체 없이 본 개인정보 처리방침을 통하여 공개하도록 하겠습니다.
-
-
-6. 정보주체의 권리, 의무 및 그 행사방법 이용자는 개인정보주체로서 다음과 같은 권리를 행사할 수 있습니다.
-
-① 정보주체는 사이다경제(‘http://www.cidermics.com’이하 ‘사이다경제) 에 대해 언제든지 다음 각 호의 개인정보 보호 관련 권리를 행사할 수 있습니다.
-1. 개인정보 열람요구
-2. 오류 등이 있을 경우 정정 요구
-3. 삭제요구
-4. 처리정지 요구
-② 제1항에 따른 권리 행사는 사이다경제(‘http://www.cidermics.com’이하 ‘사이다경제) 에 대해 개인정보 보호법 시행규칙 별지 제8호 서식에 따라 서면, 전자우편, 모사전송(FAX) 등을 통하여 하실 수 있으며 <기관/회사명>은(는) 이에 대해 지체 없이 조치하겠습니다.
-③ 정보주체가 개인정보의 오류 등에 대한 정정 또는 삭제를 요구한 경우에는 <기관/회사명>은(는) 정정 또는 삭제를 완료할 때까지 당해 개인정보를 이용하거나 제공하지 않습니다.
-④ 제1항에 따른 권리 행사는 정보주체의 법정대리인이나 위임을 받은 자 등 대리인을 통하여 하실 수 있습니다. 이 경우 개인정보 보호법 시행규칙 별지 제11호 서식에 따른 위임장을 제출하셔야 합니다.
-
-
-
-7. 처리하는 개인정보의 항목 작성 
-
-① <사이다경제>('http://www.cidermics.com'이하 '사이다경제')은(는) 다음의 개인정보 항목을 처리하고 있습니다.
-
-1<홈페이지 회원가입 및 관리>
-- 필수항목 : 이메일, 비밀번호, 로그인ID, 성별, 생년월일, 이름
-
-
-8. 개인정보의 파기<사이다경제>('사이다경제')은(는) 원칙적으로 개인정보 처리목적이 달성된 경우에는 지체없이 해당 개인정보를 파기합니다. 파기의 절차, 기한 및 방법은 다음과 같습니다.
-
--파기절차이용자가 입력한 정보는 목적 달성 후 별도의 DB에 옮겨져(종이의 경우 별도의 서류) 내부 방침 및 기타 관련 법령에 따라 일정기간 저장된 후 혹은 즉시 파기됩니다. 이 때, DB로 옮겨진 개인정보는 법률에 의한 경우가 아니고서는 다른 목적으로 이용되지 않습니다.-파기기한이용자의 개인정보는 개인정보의 보유기간이 경과된 경우에는 보유기간의 종료일로부터 5일 이내에, 개인정보의 처리 목적 달성, 해당 서비스의 폐지, 사업의 종료 등 그 개인정보가 불필요하게 되었을 때에는 개인정보의 처리가 불필요한 것으로 인정되는 날로부터 5일 이내에 그 개인정보를 파기합니다.
-
-
-
-9. 개인정보의 안전성 확보 조치 <사이다경제>('사이다경제')은(는) 개인정보보호법 제29조에 따라 다음과 같이 안전성 확보에 필요한 기술적/관리적 및 물리적 조치를 하고 있습니다.
-
-1. 정기적인 자체 감사 실시
-개인정보 취급 관련 안정성 확보를 위해 정기적(분기 1회)으로 자체 감사를 실시하고 있습니다.
-
-2. 개인정보 취급 직원의 최소화 및 교육
-개인정보를 취급하는 직원을 지정하고 담당자에 한정시켜 최소화 하여 개인정보를 관리하는 대책을 시행하고 있습니다.
-
-3. 개인정보에 대한 접근 제한
-개인정보를 처리하는 데이터베이스시스템에 대한 접근권한의 부여,변경,말소를 통하여 개인정보에 대한 접근통제를 위하여 필요한 조치를 하고 있으며 침입차단시스템을 이용하여 외부로부터의 무단 접근을 통제하고 있습니다.
-
-4. 비인가자에 대한 출입 통제
-개인정보를 보관하고 있는 물리적 보관 장소를 별도로 두고 이에 대해 출입통제 절차를 수립, 운영하고 있습니다.
-
-
-
-
-10. 개인정보 보호책임자 작성
-
-
-① 사이다경제(‘http://www.cidermics.com’이하 ‘사이다경제) 은(는) 개인정보 처리에 관한 업무를 총괄해서 책임지고, 개인정보 처리와 관련한 정보주체의 불만처리 및 피해구제 등을 위하여 아래와 같이 개인정보 보호책임자를 지정하고 있습니다.
-
-▶ 개인정보 보호책임자 
-성명 :김의현
-직책 :대표이사
-직급 :대표이사
-연락처 :01088345754, contact@cidermics.com, 
-※ 개인정보 보호 담당부서로 연결됩니다.
-
-② 정보주체께서는 사이다경제(‘http://www.cidermics.com’이하 ‘사이다경제) 의 서비스(또는 사업)을 이용하시면서 발생한 모든 개인정보 보호 관련 문의, 불만처리, 피해구제 등에 관한 사항을 개인정보 보호책임자 및 담당부서로 문의하실 수 있습니다. 사이다경제(‘http://www.cidermics.com’이하 ‘사이다경제) 은(는) 정보주체의 문의에 대해 지체 없이 답변 및 처리해드릴 것입니다.
-
-
-
-11. 개인정보 처리방침 변경
-
-①이 개인정보처리방침은 시행일로부터 적용되며, 법령 및 방침에 따른 변경내용의 추가, 삭제 및 정정이 있는 경우에는 변경사항의 시행 7일 전부터 회원가입 창을 통하여 고지할 것입니다.</textarea>
-          </div>
-          <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close btn-flat blue lighten-4">확인</a>
-          </div>
-      </div>
-
+    
 </body>
 </html>
