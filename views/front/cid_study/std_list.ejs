@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <title>사이다경제 스터디</title>
+    <title>사이다경제 경이로움 스터디</title>
     
     <!--CSS -->
     <link rel='stylesheet' href='/css/materialize.css' />
@@ -44,8 +44,8 @@
   <% include std_top %>
 
 
-  <div class="parallax-container valign-wrapper" style="min-height: 200px;">
-    <div class="section no-pad-bot" style="padding-top:65px; top:5%;">
+  <div class="parallax-container valign-wrapper" style="min-height: 300px;">
+    <div class="section no-pad-bot" style="padding-top:65px; top:20%;">
       <div class="container" >
         <div class="row center">
           <h5 class="header col s12 light" style="font-weight:500;">경이로움 스터디</h5>
@@ -93,6 +93,7 @@
           <span class="card-name">리더 <%=stdlist[i].leader%></span>
           
         </div>
+
         <div class="card-content">
           <p><i class="material-icons left">today</i><%=stdlist[i].recentdate%></p>
           <div class="divider"></div>
@@ -100,6 +101,7 @@
           <p><a class="waves-effect waves-light btn light-blue darken-2" onclick="Materialize.toast('현재 '+a+'명의 구독자가 이 글을 확인 중입니다.', 1000,'',function(){window.location='/studymorenew/<%=stdlist[i].idx%>';})">스터디 내용 자세히 보기</a></p>
         </div>
       </div>
+      
     </div>
     <% } %>
   </div>

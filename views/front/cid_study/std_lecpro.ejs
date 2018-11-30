@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>경이로움 세미나 신청방법</title>
+    
+    <!--CSS -->
+    <link rel='stylesheet' href='/css/materialize.css' />
+    <link href="/css/std_style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <!-- icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--JS-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!--script src="/js/materialize.js"></script-->
+
+    <!-- 메인 문구 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+    <!-- 네이버 -->
+    <meta name="naver-site-verification" content="083657cb98aa9a4a9c62dedeffddfb2490545da0"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- favicon -->
+    <link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+    <link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+
+ 
+
+  <script src="/js/gotoup.js"></script>
+
+  <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.scrollspy');
+      var instances = M.ScrollSpy.init(elems, options);
+    });
+
+    // Or with jQuery
+
+    $(document).ready(function(){
+      $('.scrollspy').scrollSpy();
+    });
+        
+  </script>
+  </head>
+  <body>
+
+  <div id="but_top"><a class="btn btn-floating  blue-grey darken-4"><i class="material-icons">arrow_upward</i></a></div>
+  <% include std_top %>
+
+  <style type="text/css">
+  #scrollspy{
+    position: fixed;
+    z-index: 2;
+    right: -4%;
+  }
+  @media only screen and (max-width : 1024px) {
+   #scrollspy{
+    display:none
+  }
+  .process{width:100%}
+
+  @media(max-width: 992px){
+    #memshipweb{
+      display: none;
+    }
+  }
+  @media(min-width: 992px){
+    #memshipmob{
+      display: none;
+    }
+  }
+  </style>
+
+
+<script>
+$(document).ready(function(){
+    $('.modal-trigger').leanModal();
+});
+</script>
+
+<style>
+	.web-n{display:block;}
+	.mob-n{display:none;}
+	.btn1{width:300px}
+	@media(max-width:680px){
+	.web-n{display:none;}
+	.mob-n{display:block;}
+	.btn1{width:150px}
+	h5{font-size:18px}
+	}
+</style>
+
+
+
+  <div class="parallax-container valign-wrapper" style="min-height: 300px;">
+    <div class="section no-pad-bot" style="padding-top:65px; top:5%;">
+      <div class="container" >
+        <div class="row center">
+          <h5 class="header col s12 light" style="font-weight:500;">릴레이세미나 신청절차</h5>
+          <h6 class="header col s12 light">경이로움 멤버십 회원분들을 위한<br class="web-n">특별한 혜택!</h6>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="/page_imgs/study_img/backgroundimg-lecpro.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+<div class="process" align="center">
+  <div class="row" style="margin-left:0; margin-right:0">
+  	<div class="col s12 m9 l12" style="padding-left:0; padding-right:0">
+
+      <div id="seminar" class="section scrollspy">
+      	<div><a href="http://cafe.naver.com/ciderstudy"><img class="btn1 responsive-img" src="https://i.imgur.com/40nepfi.png"></a></div>
+	  	<img class="responsive-img web-n" src="/page_imgs/study_img/lecpro/lecpro-img1.jpg">
+	  	<img class="responsive-img mob-n" src="/page_imgs/study_img/lecpro/m-lecpro-img1.jpg">
+      </div>
+      
+	<div style="background-color:#f4f4f4;">
+      <div id="step1" class="section scrollspy">
+		<img class="responsive-img web-n" src="/page_imgs/study_img/lecpro/lecpro-step1.jpg">
+		<img class="responsive-img mob-n" src="/page_imgs/study_img/lecpro/m-lecpro-step1.jpg">
+		
+      </div>
+
+      <div id="step2" class="section scrollspy">
+		<img class="responsive-img web-n" src="/page_imgs/study_img/lecpro/lecpro-step2.jpg">
+		<img class="responsive-img mob-n" src="/page_imgs/study_img/lecpro/m-lecpro-step2.jpg">
+      </div>
+
+      <div id="step3" class="section scrollspy">
+		<img class="responsive-img web-n" src="/page_imgs/study_img/lecpro/lecpro-step3.jpg">
+		<img class="responsive-img mob-n" src="/page_imgs/study_img/lecpro/m-lecpro-step3.jpg">
+      </div>
+      
+      <div id="seminar-apply" class="section scrollspy" style="padding:40px 0 60px 0">
+		<a href="http://cafe.naver.com/ciderstudy"><img class="btn1 responsive-img" src="https://i.imgur.com/40nepfi.png"></a>
+		<h5><b>릴레이세미나 신청하러가기</b><br>
+		(경이로움 카페 바로가기)</h5>
+      </div>
+     </div>
+    </div>
+
+	
+    <div id="scrollspy" class="col s11 m3 l2" align="left">
+      <ul class="section table-of-contents">
+        <li><a href="#seminar">릴레이세미나</a></li>
+        <li><a href="#step1">STEP 1</a></li>
+        <li><a href="#step2">STEP 2</a></li>
+        <li><a href="#step3">STEP 3</a></li>
+        <li><a href="#seminar-apply">신청하기</a></li>
+      </ul>
+    </div>
+
+  </div>
+  
+</div>
+
+
+
+  <div class="parallax-container valign-wrapper" style="margin-top:-20px">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light"><b>내 삶이 경이로워지는 순간</b></h5>
+          <h4 class="header col s12 light"><b>"경이로움"</b></h4>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="/page_imgs/study_img/backgroundimg-lecpro.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+
+
+
+  <% include std_bottom %>
+</body>
+
+</html>

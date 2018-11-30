@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>경이로움 일정표</title>
+  <meta name="naver-site-verification" content="083657cb98aa9a4a9c62dedeffddfb2490545da0"/>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+  <!--<link href='/css/calendar/fullcalendar.min.css' rel='stylesheet' />-->
+  <!--<link href='/css/calendar/fullcalendar.print.min.css' rel='stylesheet' media='print' />-->
+  <!--<script src='/js/calendar/moment.min.js'></script>-->
+  <!--<script src='/js/calendar/fullcalendar.min.js'></script>-->
+  <!--<script src='/js/calendar/locale-all.js'></script>-->
+  <script src="/js/materialize.js"></script>
+
+  <!--CSS -->
+  <link rel='stylesheet' href='/css/materialize.css' />
+  <link href="/css/std_style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <!-- icon -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+  <link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
+
+  <script>
+
+  $(document).ready(function() {
+    $(".button-collapse").sideNav();
+  });
+
+  function schUpdate(){
+    var schNo = $("#sch_no").val();
+    var schCateNo = $("#sch_cate_no").val();
+    var schTitle = $("#sch_title").val();
+    var startDate = $("#start_date").val();
+    var startTime = $("#start_time").val();
+    var endDate = $("#end_date").val();
+    var endTime = $("#end_time").val();
+    var schLink = $("#sch_link").val();
+    var schContent = $("#sch_content").val();
+
+    if(schCateNo == "" || schCateNo == null){
+        alert("일정구분을 선택해주세요.");
+        return;
+    }
+    if(schTitle == ""){
+        alert("일정명을 입력해주세요.");
+        return;
+    }
+    if(startDate == ""){
+        alert("시작일자를 입력해주세요");
+        return;
+    }
+    if(startTime == ""){
+        alert("시작시간을 입력해주세요");
+        return;
+    }
+    if(endDate == ""){
+        alert("종료일자를 입력해주세요");
+        return;
+    }
+    if(endTime == ""){
+        alert("종료시간을 입력해주세요");
+        return;
+    }
+    startTime = startDate+'T'+startTime;
+    endTime = endDate+'T'+endTime;
+    $.ajax({
+        url: "/adm/schUpdate",
+        type: "POST",
+        data: JSON.stringify({"schNo":schNo, "schCateNo":schCateNo, "schTitle":schTitle, "startTime":startTime, "endTime":endTime, "schLink":schLink, "schContent":schContent}),
+        contentType: "application/json",
+        success: function(data){
+            if(data.msg == 'success'){
+                alert('저장되었습니다.');
+                location.href='/adm/schedule'
+                return;
+            }
+        },error:function (e){
+            console.log(e);
+        }
+    });
+  }
+  function schDelete(){
+      var schNo = $("#sch_no").val();
+      $.ajax({
+          url: "/adm/schDelete",
+          type: "POST",
+          data: JSON.stringify({"schNo":schNo}),
+          contentType: "application/json",
+          success: function(data){
+              if(data.msg == 'success'){
+                  alert('삭제되었습니다.');
+                  location.href='/adm/schedule'
+                  return;
+              }
+          },error:function (e){
+              console.log(e);
+          }
+      });
+  }
+  </script>
+  <style>
+    .input-field textarea:focus {
+      border-bottom: 1px solid #0288d1 !important;
+      box-shadow: 0 1px 0 0 #000 !important;
+    }
+    .input-field textarea:focus + label {
+      color: #0288d1 !important;
+    }
+  </style>
+
+  <script src="/js/gotoup.js"></script>
+  </head>
+  <body>
+  <% var data= CP; %>
+  <% include ../include/nav.ejs %>
+
+  <div class="container">
+    <div class="row">
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="sch_no" type="hidden" value="<%= schInfo[0].schNo %>">
+              <select id="sch_cate_no">
+                <option value="" disabled >일정 구분</option>
+                <% for(var i = 0; i < cateList.length; i++) { %>
+                  <option value="<%= cateList[i].cateNo %>" <% if(cateList[i].cateNo == schInfo[0].schCateNo) { %> selected <% } %> ><%= cateList[i].cateNm %>%></option>
+                <% }%>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="sch_title" type="text" class="validate" value="<%= schInfo[0].schTitle %>">
+              <label for="sch_title">* 일정명</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s3">
+              <input id="start_date" type="text" class="validate" value="<%= schInfo[0].startTime.split("T")[0] %>">
+              <label for="start_date">* 시작일자</label>
+              <span class="helper-text" data-error="wrong" data-success="right">ex) 2018-01-08</span>
+            </div>
+            <div class="input-field col s3">
+              <input id="start_time" type="text" class="validate" value="<%= schInfo[0].startTime.split("T")[1] %>">
+              <label for="start_time">* 시작시간</label>
+              <span class="helper-text" data-error="wrong" data-success="right">ex) 17:30</span>
+            </div>
+            <div class="input-field col s3">
+              <input id="end_date" type="text" class="validate" value="<%= schInfo[0].endTime.split("T")[0] %>">
+              <label for="end_date">* 종료일자</label>
+              <span class="helper-text" data-error="wrong" data-success="right">ex) 2018-01-08</span>
+            </div>
+            <div class="input-field col s3">
+              <input id="end_time" type="text" class="validate" value="<%= schInfo[0].endTime.split("T")[1] %>">
+              <label for="end_time">* 종료시간</label>
+              <span class="helper-text" data-error="wrong" data-success="right">ex) 19:30</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="sch_link" type="text" class="validate" value="<%= schInfo[0].schLink %>">
+              <label for="sch_link">링크 URL</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea id="sch_content" class="materialize-textarea"><%= schInfo[0].schContent %></textarea>
+              <label for="sch_content">내용</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="center-align">
+      <button class="btn light-blue darken-1" onclick="javascript:schUpdate();">수정하기</button>
+      <button class="btn light-blue darken-1" onclick="javascript:schDelete();">삭제하기</button>
+    </div>
+  </div>
+
+</body>
+</html>

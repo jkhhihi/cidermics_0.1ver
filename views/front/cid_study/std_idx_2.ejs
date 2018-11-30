@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <title>사이다경제 경이로움 스터디</title>
+    <title>사이다경제 경이로움</title>
     
     <!--CSS -->
     <link rel='stylesheet' href='/css/materialize.css' />
@@ -271,7 +271,7 @@ function showDivs(n) {
 </script>
 
 <!-- 메인 팝업 창 -->
-<div id="info-wrap">
+<!--div id="info-wrap">
     <div id="pop">
        <div>
         <a href="/study/list"><img class="img-responsive" style="max-width:100%;" src="https://i.imgur.com/IhfASb5.jpg"></a>
@@ -288,7 +288,7 @@ function showDivs(n) {
           </form>
       </div>
     </div>
-</div>
+</div-->
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -341,7 +341,9 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="parallax"><img src="/page_imgs/study_img/backgroundm1.jpg" alt="Unsplashed background img 1"></div>
   </div>
 </div>				  
-				  
+
+<!-- 강의, 스터디, 독서클럽 => 강의, 세미나, 온라인강의 -->
+			  
 <div class="bg-color1">
 	<div class="t-color2">
 		<div align="center">
@@ -354,12 +356,12 @@ document.addEventListener('DOMContentLoaded', function() {
   				<img class="responsive-img" src="/page_imgs/study_img/menuimg-le.jpg" alt=""><br>
   				<span class="btn-more1">자세히보기</span></a>
   			</div>
-  			<div id="menu-st" class="col l4"><a href="/study/list">
+  			<div id="menu-st" class="col l4"><a href="/study/seminar">
   				<img class="responsive-img" src="/page_imgs/study_img/menuimg-st.jpg" alt=""><br>
   				<span class="btn-more2">자세히보기</span></a>
   			</div>
-  			<div id="menu-bo" class="col l4"><a href="#modal1" class="modal-trigger">
-  				<img class="responsive-img" src="/page_imgs/study_img/menuimg-bo-out.jpg" alt=""><br>
+  			<div id="menu-bo" class="col l4"><a href="/study/online">
+  				<img class="responsive-img" src="/page_imgs/study_img/menuimg-bo.jpg" alt=""><br>
   				<span class="btn-more3">자세히보기</span></a>
   			</div>
   		</div>
@@ -369,12 +371,12 @@ document.addEventListener('DOMContentLoaded', function() {
 				<img class="responsive-img" src="/page_imgs/study_img/m-menuimg-le.jpg" alt=""><br>
 				<span class="btn-more1">자세히보기</span></a>
 			</div>
-			<div id="m-menu-st" class="col s12"><a href="/study/list">
+			<div id="m-menu-st" class="col s12"><a href="/study/seminar">
 				<img class="responsive-img" src="/page_imgs/study_img/m-menuimg-st.jpg" alt=""><br>
 				<span class="btn-more2">자세히보기</span></a>
 			</div>
-			<div id="m-menu-bo" class="col s12"><a href="#modal1" class="modal-trigger">
-				<img class="responsive-img" src="/page_imgs/study_img/m-menuimg-bo-out.jpg" alt=""><br>
+			<div id="m-menu-bo" class="col s12"><a href="/study/online">
+				<img class="responsive-img" src="/page_imgs/study_img/m-menuimg-bo.jpg" alt=""><br>
 				<span class="btn-more3">자세히보기</span></a>
 			</div>
 		</div>
@@ -389,7 +391,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			<p class="mob-n">사이다경제는 다가가기 어려웠던 기존 경제 뉴스의 방식에서 탈피하여<br>
 				누구든 쉽고 재미있게 경제 이야기를 즐길 수 있도록 색다른 콘텐츠를 만들어 왔습니다.<br><br>
 				젊은 감각으로 풀어낸 톡 쏘는 경제 콘텐츠를 제공하는 사이다경제와 함께<br>
-				경제 스터디, 강의, 독서클럽을 통해 재미있게  여러분 삶에 이로운 많은 것들을 배워보세요!</p>
+				강의, 세미나, 온라인 강의를 통해 재미있게  여러분 삶에 이로운 많은 것들을 배워보세요!</p>
 			<p class="web-n">사이다경제는 다가가기 어려웠던<br>
 				기존 경제 뉴스의 방식에서 탈피하여<br>
 				누구든 쉽고 재미있게<br>
@@ -397,7 +399,7 @@ document.addEventListener('DOMContentLoaded', function() {
 				색다른 콘텐츠를 만들어 왔습니다.<br><br>
 				젊은 감각으로 풀어낸 톡 쏘는 <br>
 				경제 콘텐츠를 제공하는 사이다경제와 함께<br>
-				경제 스터디, 강의, 독서클럽을 통해 재미있게 <br>
+				강의, 세미나, 온라인 강의를 통해 재미있게 <br>
 				여러분 삶에 이로운 많은 것들을 배워보세요!</p>
 		<a href="/"><span class="btn-cidermain">사이다경제 방문하기</span></a>
 		</div>
@@ -418,28 +420,27 @@ document.addEventListener('DOMContentLoaded', function() {
 					<div class="col s12 m4"><img class="responsive-img" src="/page_imgs/study_img/img-section3-le.jpg"></div>
 					<div class="col s12 m8" align="left">
 						<h5>경이로움 스폐셜 강의</h5>
-						<p class="point1">투자의 고수들은 어떻게 투자를 할까? 그들의 노하우를 전수 받는 시간!</p>
-						<h6>-   매주 진행되는 4 번의 강의를 통해 하나의 주제를 완벽히 이해할 수 있는 지식을 쌓을 수 있습니다.</h6>
+						<p class="point1">투자의 고수들은 어떻게 투자를 할까? 그들의 노하우를 현장에서 직접 전수받는 시간!</p>
+						<h6>>  매주 진행되는 4 번의 강의를 통해 하나의 주제를 완벽히 이해하고 지식을 쌓을 수 있습니다.</h6>
 						<a href="/study/lecture"><div><span class="btn-more4">자세히보기</span></div></a>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col s12 m4"><img class="responsive-img" src="/page_imgs/study_img/img-section3-st.jpg"></div>
 					<div class="col s12 m8" align="left">
-						<h5>경이로움 스터디 </h5>
-						<p class="point2">스터디 리더와 함께 직접 하나의 프로젝트를 완성시켜보자!</p>
-						<h6>-  2주에 한 번 2개월 동안 엄선된 리더와 함께 달성하는 하나의 프로젝트.<br>
-							-  조원들과 함께 직접 참여하여 모든 과정을 내 것으로 만들어보는 시간을 가질 수 있습니다.</h6>
-						<a href="/study/list"><div><span class="btn-more4">자세히보기</span></div></a>
+						<h5>경이로움 릴레이 세미나 </h5>
+						<p class="point2">매주 토요일, 매번 다른 주제로 진행되는 다체로운 경제 세미나!</p>
+						<h6>>  토요일마다 열리는 특별한 경제 세미나를 통해 다양한 영역의 경제 리더들을 만나면서 나와 맞는 경제 분야를을 찾을 수 있습니다.</h6>
+						<a href="/study/seminar"><div><span class="btn-more4">자세히보기</span></div></a>
 					</div>
 				</div>	
 				<div class="row">
 					<div class="col s12 m4"><img class="responsive-img" src="/page_imgs/study_img/img-section3-bo.jpg"></div>
 					<div class="col s12 m8" align="left">
-						<h5>경이로움 독서클럽</h5>
-						<p class="point3">책을 읽고 토론하며 함께 즐겨보자!</p>
-						<h6>>  좋은 책을 읽고 함께 이야기를 나눠보면서 토론하는 시간을 가질 수 있습니다.</h6>
-						<a href="#modal1" class="modal-trigger"><div><span class="btn-more4">자세히보기</span></div></a>
+						<h5>경이로움 온라인 강의</h5>
+						<p class="point3">내가 편한 시간, 내가 원하는 장소에서 경제를 공부하자!</p>
+						<h6>>  지방, 해외에서도 경이로움을 접할 수 있습니다. 본인이 원하는 시간과 장소에서 반복적으로 경제를 공부해봅시다.</h6>
+						<a href="/study/online" class="modal-trigger"><div><span class="btn-more4">자세히보기</span></div></a>
 					</div>
 				</div>							
 			</div>
@@ -459,6 +460,97 @@ document.addEventListener('DOMContentLoaded', function() {
 			<img class="responsive-img mob-n" src="/page_imgs/study_img/img-section4.jpg">
 			<img class="responsive-img web-n" src="/page_imgs/study_img/m-img-section4.jpg">
 		</div>	
+	</div>
+</div>
+<div class="bg-color1">
+	<div class="container">
+		<div id="section3" class="container t-color2" align="center">
+			<h4><b>경이로움 강의, 이래서 특별하다!</b></h4>
+			<img class="responsive-img" src="https://i.imgur.com/avwxwz7.jpg">
+		</div>	
+	</div>
+	<div class="container">
+		<div class="mob-n" id="section8" align="center">
+			<h5 class="t-color2">더 많이 공부하고 싶은 분들을 위해 무료 제공되는<br>사이다경제만의 <b style="border-bottom:4px solid #0aa0f6">
+				특별한 혜택!</b><br><br>사이다경제 <b>릴레이 세미나</b><br>매번 다른 주제로 다양하게 들을 수 있어서 좋다!</h5>
+		<a href="/study/event"><span align="center">☞ 세미나 들으러가기</span></a>
+		</div>
+		<div class="web-n" id="section8" align="center">
+			<h5 class="t-color2">더 많이 공부하고 싶은 분들께<br>무료 제공되는 사이다경제만의<br><b style="border-bottom:4px solid #0aa0f6">
+				특별한 혜택!</b><br><br>사이다경제 <b>릴레이 세미나!</b><br>매번 다른 주제로 다양하게!</h5>
+		<a href="/study/event"><span align="center">☞ 세미나 들으러가기</span></a>
+		</div>	
+		<div id="section8-1" align="center">
+			<div class="row">
+				<div class="col m4 s6"><img class="responsive-img" src="/page_imgs/study_img/img-section8-sp1.jpg"></div>
+				<div class="col m4 s6"><img class="responsive-img" src="/page_imgs/study_img/img-section8-sp2.jpg"></div>
+				<div class="col m4 s6"><img class="responsive-img" src="/page_imgs/study_img/img-section8-sp3.jpg"></div>
+				<div class="img-space4 col s6"><img class="responsive-img" src="/page_imgs/study_img/img-section8-sp4.jpg"></div>	
+			</div>
+			<h5 style="color:#fff">이렇게 <b>놀라운 혜택</b>을<br class="web-n"> 여러분께 제공합니다!</h5>
+		</div>			
+	</div>
+	<div class="container">
+		<div id="section3" class="container t-color2" align="center">
+			<img class="responsive-img" src="https://i.imgur.com/sKaAnXj.jpg">
+			<h5 style="color:#fff">리더가 상주하는 단톡방을 통해<br> <b>궁금한 부분을 실시간으로</b> 물어보고 <br> 유익한 정보를 <br class="web-n"> 공유받을 수 있습니다:)</h5>
+		</div>	
+	</div>
+</div>
+<div>
+	<div class="container">
+		<div id="section6" align="center">
+			<h4><b>경제, 배우려면<br class="web-n"> 너무 비싸요.</b></h4>
+			<img class="responsive-img mob-n" src="/page_imgs/study_img/img-section6.jpg">
+			<img class="responsive-img web-n" src="/page_imgs/study_img/m-img-section6.jpg">
+			<h4 class="text">내용은 <b>더욱 쉽고 재미</b>있게!<br>내용은 <b>알짜배기</b>로 가득하게!<br>리더와의 <b>지속적인 피드백</b>까지!</h4>
+			<img class="responsive-img mob-n" src="https://i.imgur.com/LnA7OK9.jpg">
+			<img class="responsive-img web-n" src="https://i.imgur.com/2poPsvJ.jpg">
+			<h4 class="text">강의를 <b>하나 더</b> 들으면<br>2번째 강의는 <b>20%할인</b></h4>
+		</div>
+	</div>
+</div>
+<!-- 얼리버드할인혜택이미지 -->
+<!-- div id="section7" align="center" style="margin-bottom:-9px">
+	<img class="responsive-img" src="https://i.imgur.com/G0XJSmu.jpg" style="width:100%">
+</div -->
+<!-- div class="bg-color1">
+	<div class="container">
+		<div class="mob-n" id="section8" align="center">
+			<h4 class="t-color2"><b>경제, 저는 더 배워보고 싶어요.</b></h4>
+			<h5 class="t-color2">더 많이 공부하고 싶은 분들을 위해 무료 제공되는<br>사이다경제만의 <b style="border-bottom:4px solid #0aa0f6">
+				특별한 혜택!</b><br><br>사이다경제 <b>릴레이 세미나</b><br>매번 다른 주제로 다양하게 들을 수 있어서 좋다!</h5>
+		<a href="/study/event"><span align="center">☞ 세미나 들으러가기</span></a>
+		</div>
+		<div class="web-n" id="section8" align="center">
+			<h4 class="t-color2"><b>경제,<br>더 배워보고 싶어요.</b></h4>
+			<h5 class="t-color2">더 많이 공부하고 싶은 분들께<br>무료 제공되는 사이다경제만의<br><b style="border-bottom:4px solid #0aa0f6">
+				특별한 혜택!</b><br><br>사이다경제 <b>릴레이 세미나!</b><br>매번 다른 주제로 다양하게!</h5>
+		<a href="/study/event"><span align="center">☞ 세미나 들으러가기</span></a>
+		</div>	
+		<div id="section8-1" align="center">
+			<div class="row">
+				<div class="col m4 s6"><img class="responsive-img" src="/page_imgs/study_img/img-section8-sp1.jpg"></div>
+				<div class="col m4 s6"><img class="responsive-img" src="/page_imgs/study_img/img-section8-sp2.jpg"></div>
+				<div class="col m4 s6"><img class="responsive-img" src="/page_imgs/study_img/img-section8-sp3.jpg"></div>
+				<div class="img-space4 col s6"><img class="responsive-img" src="/page_imgs/study_img/img-section8-sp4.jpg"></div>	
+			</div>
+			<h5 style="color:#fff">이렇게 <b>놀라운 혜택</b>을 여러분께 제공합니다!</h5>
+		</div>			
+	</div>
+</div -->
+<div class="divider"></div>
+<div>
+	<div class="container">
+		<div id="section9" align="center">
+			<h4><b>경이로움 멤버들의<br class="web-n">진솔한 후기 인터뷰</b></h4>
+			<div class="row">
+				<a href="http://cidermics.com/stdreview/7"><div class="col s12 m6"><img class="responsive-img" src="/page_imgs/study_img/img-section9-thum3.jpg"></div></a>
+				<div class="web-n col s12" style="margin-bottom:30px;"></div>
+				<a href="http://cidermics.com/stdreview/6"><div class="col s12 m6"><img class="responsive-img" src="/page_imgs/study_img/img-section9-thum4.jpg"></div></a>
+			</div>	
+			<a href="/study/review"><h5><span>☞ 더 많은 후기 보기</span></h5></a>
+		</div>
 	</div>
 </div>
 <div id="parallax1">
@@ -523,60 +615,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		</div>
 	</div>
 </div>
-<div>
-	<div class="container">
-		<div id="section6" align="center">
-			<h4><b>경제, 배우려면<br class="web-n"> 너무 비싸요.</b></h4>
-			<img class="responsive-img mob-n" src="/page_imgs/study_img/img-section6.jpg">
-			<img class="responsive-img web-n" src="/page_imgs/study_img/m-img-section6.jpg">
-			<h4 class="text">내용은 <b>더욱 쉽고 재미</b>있게!<br>내용은 <b>알짜배기</b>로 가득하게!<br>리더와의 <b>지속적인 피드백</b>까지!</h4>
-			<img class="responsive-img mob-n" src="https://i.imgur.com/E9Qcw63.jpg">
-			<img class="responsive-img web-n" src="https://i.imgur.com/4Vutky7.jpg">
-			<h4 class="text">스터디를 <b>하나 더</b> 들으면<br>2번째 스터디는 <b>20%할인</b></h4>
-		</div>
-	</div>
-</div>
-<div id="section7" align="center" style="margin-bottom:-9px">
-	<img class="responsive-img" src="https://i.imgur.com/G0XJSmu.jpg" style="width:100%">
-</div>
-<div class="bg-color1">
-	<div class="container">
-		<div class="mob-n" id="section8" align="center">
-			<h4 class="t-color2"><b>경제, 저는 더 배워보고 싶어요.</b></h4>
-			<h5 class="t-color2">더 많이 공부하고 싶은 분들을 위해 무료 제공되는<br>사이다경제만의 <b style="border-bottom:4px solid #0aa0f6">
-				특별한 혜택!</b><br><br>사이다경제 <b>릴레이 세미나</b><br>매번 다른 주제로 다양하게 들을수 있어서 좋다!</h5>
-		<a href="/study/event"><span align="center">☞ 세미나 들으러가기</span></a>
-		</div>
-		<div class="web-n" id="section8" align="center">
-			<h4 class="t-color2"><b>경제,<br>더 배워보고 싶어요.</b></h4>
-			<h5 class="t-color2">더 많이 공부하고 싶은 분들께<br>무료 제공되는 사이다경제만의<br><b style="border-bottom:4px solid #0aa0f6">
-				특별한 혜택!</b><br><br>사이다경제 <b>릴레이 세미나!</b><br>매번 다른 주제로 다양하게!</h5>
-		<a href="/study/event"><span align="center">☞ 세미나 들으러가기</span></a>
-		</div>	
-		<div id="section8-1" align="center">
-			<div class="row">
-				<div class="col m4 s6"><img class="responsive-img" src="/page_imgs/study_img/img-section8-sp1.jpg"></div>
-				<div class="col m4 s6"><img class="responsive-img" src="/page_imgs/study_img/img-section8-sp2.jpg"></div>
-				<div class="col m4 s6"><img class="responsive-img" src="/page_imgs/study_img/img-section8-sp3.jpg"></div>
-				<div class="img-space4 col s6"><img class="responsive-img" src="/page_imgs/study_img/img-section8-sp4.jpg"></div>	
-			</div>
-			<h5 style="color:#fff">이 <b>모든 혜택</b>을 여러분께 제공합니다!</h5>
-		</div>			
-	</div>
-</div>
-<div>
-	<div class="container">
-		<div id="section9" align="center">
-			<h4><b>경이로움 멤버들의<br class="web-n">진솔한 후기 인터뷰</b></h4>
-			<div class="row">
-				<a href="http://cidermics.com/stdreview/7"><div class="col s12 m6"><img class="responsive-img" src="/page_imgs/study_img/img-section9-thum3.jpg"></div></a>
-				<div class="web-n col s12" style="margin-bottom:30px;"></div>
-				<a href="http://cidermics.com/stdreview/6"><div class="col s12 m6"><img class="responsive-img" src="/page_imgs/study_img/img-section9-thum4.jpg"></div></a>
-			</div>	
-			<a href="/study/review"><h5><span>☞ 더 많은 후기 보기</span></h5></a>
-		</div>
-	</div>
-</div>
+
 <div class="bg-color3">
 	<div class="container">
 		<div id="section10" align="center">
