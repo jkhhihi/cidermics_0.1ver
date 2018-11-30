@@ -708,7 +708,7 @@ router.get('/personalinfo', function(req,res,next){
 
 
 // 핀북 랜딩 페이지
-/*router.get('/finbook', function(req,res,next){
+router.get('/finbook', function(req,res,next){
 	res.render('front/etc/finbook/finbook',{});
 });
 
@@ -873,7 +873,7 @@ router.post('/finbook_send_email', function(req, res, next) {
 	req.session.valid2 = email;
 	res.send('<script>alert("이메일 전송 완료");location.href="/finbook_ch_code/'+data[0].ORDERNO+'";</script>');
   });
-});*/
+});
 
 
 //특정 아이피만 allow
