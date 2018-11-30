@@ -202,7 +202,7 @@ a.btn-seminar h5 span:hover{background-color:#0aa0f6; color:#fff !important}
 .database .container #btn1 a:hover{color:#000;}
 .width95{width:60%}
 .collapsible{box-shadow:none; border:none}
-.collapsible-header{border:none; background-color:#f6f6f6; border:1px #f6f6f6 solid; border-radius:10px; box-shadow:0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+.collapsible-header{border:none; background-color:#eee; border:1px #f6f6f6 solid; border-radius:10px; box-shadow:0 2px 5px 0 rgba(0, 0, 0, 0.4), 2px 2px 10px 0 rgba(0, 0, 0, 0.4);
 height:auto; padding:20px 0 5px 0; margin-bottom:15px}
 .collapsible-body{border:none;}
 #lecture59 img{width:50%}
@@ -217,7 +217,7 @@ a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
 #countdown span{font-size:14px}
 .database{padding:0 0 20px 0; font-size:20px;}
 .database .container input{font-size:18px; padding:2px 4px; margin-top:0; height:30px}
-.width95{width:96%}
+.width95{width:100%}
 .collapsible-header{padding:10px 0 0 0; margin-bottom:10px}
 .collapsible-body{padding:0px;}
 #lecture59 img{width:100%}
@@ -264,20 +264,7 @@ a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
           $(".amount").eq(i).text(commaNum($(".amount").eq(i).html()));   
       }
   });
-</script>
-<script type="text/javascript">
-  document.addEventListener('DOMContentLoaded', function() {
-	  var elem = document.querySelector('.collapsible.expandable');
-	  var instance = M.Collapsible.init(elem, {
-	    accordion: false
-	  });
-
-  // Or with jQuery
-
-  $(document).ready(function(){
-    $('.collapsible').collapsible();
-  });
-</script>        
+</script> 
   
   <script src="/js/gotoup.js"></script>
   </head>
@@ -419,11 +406,11 @@ a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
   <div class="divider"></div>
 
 <div id="study-new">
-
+ 
 <!-- 접이식 -->
 <div class="container width95" align="center">
-  <ul class="collapsible expandable">
-    <li class="active">
+  <ul class="collapsible expandable" data-collapsible = "expandable">
+    <li>
       <div class="collapsible-header"><img class="responsive-img" src="/page_imgs/study_img/lecture-59/btn-con1.png"></div>
       <div class="collapsible-body">
 		<img class="responsive-img" src="/page_imgs/study_img/lecture-59/con1-1.jpg">
@@ -480,159 +467,159 @@ a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
       <div class="collapsible-header"><img class="responsive-img" src="/page_imgs/study_img/lecture-59/btn-con2.png"></div>
       <div class="collapsible-body">
 		<img class="responsive-img" src="/page_imgs/study_img/lecture-59/con1-1.jpg">
-		<img class="responsive-img" style="margin-top:-10px" src="/page_imgs/study_img/lecture-59/con1-2.jpg">
-		<img class="responsive-img" style="margin-top:-10px" src="/page_imgs/study_img/lecture-59/con1-3.jpg">
-<!-- 마감임박 -->
-<div id="countdown" style="margin-top:-10px">
-   <div><span style="color:#9ddaff;">*담당 매니저가 강의와 관련된 상담을 도와드릴 예정입니다.</span></a></div>
-</div>
-<!-- DB 작성 칸 -->
-<div class="database" style="background-color:#000" align="left">
-  <div class="container">
-
-    <div class="row">
-
-      <form action="/prinsert" method="post" name="prinsert" class="col s12">
-        <input type="hidden" name="cate" value="<%=md[0].cate%>">
-        <input type="hidden" name="idx" value="<%=md[0].idx%>">
-        <input type="hidden" name="tele_check" value="1">
-        
-        <div class="row margin0">
-          <div id="name" class="input-field col s6">
-            <span class="color1">이름 : </span>
-            <input type="text" name="pname" length="4" >
-          </div>
-          <div id="phon" class="input-field col s6">
-            <span class="color1">전화번호 : </span>
-            <input type="text" name="phone" maxlength="11" >
-          </div>
-        </div>
-
-        <div class="row margin0">
-          <div class="input col s12 l8" style="height: 50px;">
-            <input type="checkbox" id="check5" name="check1" />
-            <label for="check5">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
-            <br>
-            <input type="checkbox" id="check6" name="check2"/>
-            <label for="check6">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
-            <br>
-            <br>
-          </div>
-        </div>
-
-        <div id="btn1" align="center">
-          <br><a style="cursor:pointer" onclick="surveyGo()"><span>상담 신청하기</span></a>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
+		<img class="responsive-img" style="margin-top:-10px" src="/page_imgs/study_img/lecture-59/con2-2.jpg">
+		<img class="responsive-img" style="margin-top:-10px" src="/page_imgs/study_img/lecture-59/con2-3.jpg">
+		<!-- 마감임박 -->
+		<div id="countdown" style="margin-top:-10px">
+		   <div><span style="color:#9ddaff;">*담당 매니저가 강의와 관련된 상담을 도와드릴 예정입니다.</span></a></div>
+		</div>
+		<!-- DB 작성 칸 -->
+		<div class="database" style="background-color:#000" align="left">
+		  <div class="container">
+		
+		    <div class="row">
+		
+		      <form action="/prinsert" method="post" name="prinsert" class="col s12">
+		        <input type="hidden" name="cate" value="<%=md[0].cate%>">
+		        <input type="hidden" name="idx" value="<%=md[0].idx%>">
+		        <input type="hidden" name="tele_check" value="1">
+		        
+		        <div class="row margin0">
+		          <div id="name" class="input-field col s6">
+		            <span class="color1">이름 : </span>
+		            <input type="text" name="pname" length="4" >
+		          </div>
+		          <div id="phon" class="input-field col s6">
+		            <span class="color1">전화번호 : </span>
+		            <input type="text" name="phone" maxlength="11" >
+		          </div>
+		        </div>
+		
+		        <div class="row margin0">
+		          <div class="input col s12 l8" style="height: 50px;">
+		            <input type="checkbox" id="check5" name="check1" />
+		            <label for="check5">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
+		            <br>
+		            <input type="checkbox" id="check6" name="check2"/>
+		            <label for="check6">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
+		            <br>
+		            <br>
+		          </div>
+		        </div>
+		
+		        <div id="btn1" align="center">
+		          <br><a style="cursor:pointer" onclick="surveyGo()"><span>상담 신청하기</span></a>
+		        </div>
+		      </form>
+		    </div>
+		  </div>
+		</div>
 	  </div>
     </li>
     <li>
       <div class="collapsible-header"><img class="responsive-img" src="/page_imgs/study_img/lecture-59/btn-con3.png"></div>
       <div class="collapsible-body">
 		<img class="responsive-img" src="/page_imgs/study_img/lecture-59/con1-1.jpg">
-		<img class="responsive-img" style="margin-top:-10px" src="/page_imgs/study_img/lecture-59/con1-2.jpg">
-		<img class="responsive-img" style="margin-top:-10px" src="/page_imgs/study_img/lecture-59/con1-3.jpg">
-<!-- 마감임박 -->
-<div id="countdown" style="margin-top:-10px">
-   <div><span style="color:#9ddaff;">*담당 매니저가 강의와 관련된 상담을 도와드릴 예정입니다.</span></a></div>
-</div>
-<!-- DB 작성 칸 -->
-<div class="database" style="background-color:#000" align="left">
-  <div class="container">
-
-    <div class="row">
-
-      <form action="/prinsert" method="post" name="prinsert" class="col s12">
-        <input type="hidden" name="cate" value="<%=md[0].cate%>">
-        <input type="hidden" name="idx" value="<%=md[0].idx%>">
-        <input type="hidden" name="tele_check" value="1">
-        
-        <div class="row margin0">
-          <div id="name" class="input-field col s6">
-            <span class="color1">이름 : </span>
-            <input type="text" name="pname" length="4" >
-          </div>
-          <div id="phon" class="input-field col s6">
-            <span class="color1">전화번호 : </span>
-            <input type="text" name="phone" maxlength="11" >
-          </div>
-        </div>
-
-        <div class="row margin0">
-          <div class="input col s12 l8" style="height: 50px;">
-            <input type="checkbox" id="check5" name="check1" />
-            <label for="check5">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
-            <br>
-            <input type="checkbox" id="check6" name="check2"/>
-            <label for="check6">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
-            <br>
-            <br>
-          </div>
-        </div>
-
-        <div id="btn1" align="center">
-          <br><a style="cursor:pointer" onclick="surveyGo()"><span>상담 신청하기</span></a>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
+		<img class="responsive-img" style="margin-top:-10px" src="/page_imgs/study_img/lecture-59/con3-2.jpg">
+		<img class="responsive-img" style="margin-top:-10px" src="/page_imgs/study_img/lecture-59/con3-3.jpg">
+		<!-- 마감임박 -->
+		<div id="countdown" style="margin-top:-10px">
+		   <div><span style="color:#9ddaff;">*담당 매니저가 강의와 관련된 상담을 도와드릴 예정입니다.</span></a></div>
+		</div>
+		<!-- DB 작성 칸 -->
+		<div class="database" style="background-color:#000" align="left">
+		  <div class="container">
+		
+		    <div class="row">
+		
+		      <form action="/prinsert" method="post" name="prinsert" class="col s12">
+		        <input type="hidden" name="cate" value="<%=md[0].cate%>">
+		        <input type="hidden" name="idx" value="<%=md[0].idx%>">
+		        <input type="hidden" name="tele_check" value="1">
+		        
+		        <div class="row margin0">
+		          <div id="name" class="input-field col s6">
+		            <span class="color1">이름 : </span>
+		            <input type="text" name="pname" length="4" >
+		          </div>
+		          <div id="phon" class="input-field col s6">
+		            <span class="color1">전화번호 : </span>
+		            <input type="text" name="phone" maxlength="11" >
+		          </div>
+		        </div>
+		
+		        <div class="row margin0">
+		          <div class="input col s12 l8" style="height: 50px;">
+		            <input type="checkbox" id="check5" name="check1" />
+		            <label for="check5">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
+		            <br>
+		            <input type="checkbox" id="check6" name="check2"/>
+		            <label for="check6">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
+		            <br>
+		            <br>
+		          </div>
+		        </div>
+		
+		        <div id="btn1" align="center">
+		          <br><a style="cursor:pointer" onclick="surveyGo()"><span>상담 신청하기</span></a>
+		        </div>
+		      </form>
+		    </div>
+		  </div>
+		</div>
 	  </div>
     </li>
     <li>
       <div class="collapsible-header"><img class="responsive-img" src="/page_imgs/study_img/lecture-59/btn-con4.png"></div>
       <div class="collapsible-body">
 		<img class="responsive-img" src="/page_imgs/study_img/lecture-59/con1-1.jpg">
-		<img class="responsive-img" style="margin-top:-10px" src="/page_imgs/study_img/lecture-59/con1-2.jpg">
-		<img class="responsive-img" style="margin-top:-10px" src="/page_imgs/study_img/lecture-59/con1-3.jpg">
-<!-- 마감임박 -->
-<div id="countdown" style="margin-top:-10px">
-   <div><span style="color:#9ddaff;">*담당 매니저가 강의와 관련된 상담을 도와드릴 예정입니다.</span></a></div>
-</div>
-<!-- DB 작성 칸 -->
-<div class="database" style="background-color:#000" align="left">
-  <div class="container">
-
-    <div class="row">
-
-      <form action="/prinsert" method="post" name="prinsert" class="col s12">
-        <input type="hidden" name="cate" value="<%=md[0].cate%>">
-        <input type="hidden" name="idx" value="<%=md[0].idx%>">
-        <input type="hidden" name="tele_check" value="1">
-        
-        <div class="row margin0">
-          <div id="name" class="input-field col s6">
-            <span class="color1">이름 : </span>
-            <input type="text" name="pname" length="4" >
-          </div>
-          <div id="phon" class="input-field col s6">
-            <span class="color1">전화번호 : </span>
-            <input type="text" name="phone" maxlength="11" >
-          </div>
-        </div>
-
-        <div class="row margin0">
-          <div class="input col s12 l8" style="height: 50px;">
-            <input type="checkbox" id="check5" name="check1" />
-            <label for="check5">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
-            <br> 
-            <input type="checkbox" id="check6" name="check2"/>
-            <label for="check6">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
-            <br>
-            <br>
-          </div>
-        </div>
-
-        <div id="btn1" align="center">
-          <br><a style="cursor:pointer" onclick="surveyGo()"><span>상담 신청하기</span></a>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
+		<img class="responsive-img" style="margin-top:-10px" src="/page_imgs/study_img/lecture-59/con4-2.jpg">
+		<img class="responsive-img" style="margin-top:-10px" src="/page_imgs/study_img/lecture-59/con4-3.jpg">
+		<!-- 마감임박 -->
+		<div id="countdown" style="margin-top:-10px">
+		   <div><span style="color:#9ddaff;">*담당 매니저가 강의와 관련된 상담을 도와드릴 예정입니다.</span></a></div>
+		</div>
+		<!-- DB 작성 칸 -->
+		<div class="database" style="background-color:#000" align="left">
+		  <div class="container">
+		
+		    <div class="row">
+		
+		      <form action="/prinsert" method="post" name="prinsert" class="col s12">
+		        <input type="hidden" name="cate" value="<%=md[0].cate%>">
+		        <input type="hidden" name="idx" value="<%=md[0].idx%>">
+		        <input type="hidden" name="tele_check" value="1">
+		        
+		        <div class="row margin0">
+		          <div id="name" class="input-field col s6">
+		            <span class="color1">이름 : </span>
+		            <input type="text" name="pname" length="4" >
+		          </div>
+		          <div id="phon" class="input-field col s6">
+		            <span class="color1">전화번호 : </span>
+		            <input type="text" name="phone" maxlength="11" >
+		          </div>
+		        </div>
+		
+		        <div class="row margin0">
+		          <div class="input col s12 l8" style="height: 50px;">
+		            <input type="checkbox" id="check5" name="check1" />
+		            <label for="check5">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
+		            <br> 
+		            <input type="checkbox" id="check6" name="check2"/>
+		            <label for="check6">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
+		            <br>
+		            <br>
+		          </div>
+		        </div>
+		
+		        <div id="btn1" align="center">
+		          <br><a style="cursor:pointer" onclick="surveyGo()"><span>상담 신청하기</span></a>
+		        </div>
+		      </form>
+		    </div>
+		  </div>
+		</div>
 	  </div>
     </li>
   </ul>
