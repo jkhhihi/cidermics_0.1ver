@@ -137,7 +137,7 @@
 			<div class="black-box">
 				<div class="applying" align="left"><% if(semi[i].state == 0){%><span class="on">신청중</span><%}else if(semi[i].state == 2){%><span class="on" style="background-color: #ff6700">마감임박</span><%}else{%><span class="off">신청마감</span><% } %></div>
 				<div class="title" align="left"><p><b><%=semi[i].subject%></b></p></div>
-				<div class="date-price" align="right"><span class="date-price-in"><span><%=semi[i].sdate%></span> | <span>\<%=semi[i].price%></span></span></div>
+				<div class="date-price" align="right"><span class="date-price-in"><span><%=semi[i].sdate%></span> | <% if(semi[i].price == 0){%><span style="color: #35f4ff;">★무료★</span><%}else{%><span>\<%=semi[i].price%>원</span><% } %></span></div>
 			</div>
 		</div>
 		</a>
