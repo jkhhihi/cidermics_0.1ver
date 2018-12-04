@@ -327,6 +327,51 @@ router.get('/lecturemore2/60', function(req, res, next) {
   	});
   });
 });
+router.get('/lecturemore2/61', function(req, res, next) {
+	var idx = req.params.idx;
+	var stdlist;
+	mysql.select('SELECT idx,cate,subject,subject2,linesub1,linesub2,linesub3,line1,line2,line3,recommend1,recommend2,recommend3,changed1,changed2,changed3,bgimg1,thum2,leader,period,sche1,sche2,sche3,sche4,sche5,sche6,location,people,price,disprice,disevent,composition,img1,img2,img3,slimg1,slimg2,slimg3,slimg4,state, naverpay from cider.std_more where idx = "61";', function (err, data){
+		mysql.select('SELECT idx,subject,subject2,decate,recentdate,thum,leader,sche1 from cider.std_more where flag="Y" order by idx desc;', function (err, data1){
+	res.render('front/cid_study/lecture/std_lecture_more61', {md:data, stdlist : data1});
+  	});
+  });
+});
+router.get('/lecturemore2/62', function(req, res, next) {
+	var idx = req.params.idx;
+	var stdlist;
+	mysql.select('SELECT idx,cate,subject,subject2,linesub1,linesub2,linesub3,line1,line2,line3,recommend1,recommend2,recommend3,changed1,changed2,changed3,bgimg1,thum2,leader,period,sche1,sche2,sche3,sche4,sche5,sche6,location,people,price,disprice,disevent,composition,img1,img2,img3,slimg1,slimg2,slimg3,slimg4,state, naverpay from cider.std_more where idx = "62";', function (err, data){
+		mysql.select('SELECT idx,subject,subject2,decate,recentdate,thum,leader,sche1 from cider.std_more where flag="Y" order by idx desc;', function (err, data1){
+	res.render('front/cid_study/lecture/std_lecture_more62', {md:data, stdlist : data1});
+  	});
+  });
+});
+router.get('/lecturemore2/63', function(req, res, next) {
+	var idx = req.params.idx;
+	var stdlist;
+	mysql.select('SELECT idx,cate,subject,subject2,linesub1,linesub2,linesub3,line1,line2,line3,recommend1,recommend2,recommend3,changed1,changed2,changed3,bgimg1,thum2,leader,period,sche1,sche2,sche3,sche4,sche5,sche6,location,people,price,disprice,disevent,composition,img1,img2,img3,slimg1,slimg2,slimg3,slimg4,state, naverpay from cider.std_more where idx = "63";', function (err, data){
+		mysql.select('SELECT idx,subject,subject2,decate,recentdate,thum,leader,sche1 from cider.std_more where flag="Y" order by idx desc;', function (err, data1){
+	res.render('front/cid_study/lecture/std_lecture_more63', {md:data, stdlist : data1});
+  	});
+  });
+});
+router.get('/lecturemore2/64', function(req, res, next) {
+	var idx = req.params.idx;
+	var stdlist;
+	mysql.select('SELECT idx,cate,subject,subject2,linesub1,linesub2,linesub3,line1,line2,line3,recommend1,recommend2,recommend3,changed1,changed2,changed3,bgimg1,thum2,leader,period,sche1,sche2,sche3,sche4,sche5,sche6,location,people,price,disprice,disevent,composition,img1,img2,img3,slimg1,slimg2,slimg3,slimg4,state, naverpay from cider.std_more where idx = "64";', function (err, data){
+		mysql.select('SELECT idx,subject,subject2,decate,recentdate,thum,leader,sche1 from cider.std_more where flag="Y" order by idx desc;', function (err, data1){
+	res.render('front/cid_study/lecture/std_lecture_more64', {md:data, stdlist : data1});
+  	});
+  });
+});
+router.get('/lecturemore2/65', function(req, res, next) {
+	var idx = req.params.idx;
+	var stdlist;
+	mysql.select('SELECT idx,cate,subject,subject2,linesub1,linesub2,linesub3,line1,line2,line3,recommend1,recommend2,recommend3,changed1,changed2,changed3,bgimg1,thum2,leader,period,sche1,sche2,sche3,sche4,sche5,sche6,location,people,price,disprice,disevent,composition,img1,img2,img3,slimg1,slimg2,slimg3,slimg4,state, naverpay from cider.std_more where idx = "65";', function (err, data){
+		mysql.select('SELECT idx,subject,subject2,decate,recentdate,thum,leader,sche1 from cider.std_more where flag="Y" order by idx desc;', function (err, data1){
+	res.render('front/cid_study/lecture/std_lecture_more65', {md:data, stdlist : data1});
+  	});
+  });
+});
 
 
 module.exports = router;
