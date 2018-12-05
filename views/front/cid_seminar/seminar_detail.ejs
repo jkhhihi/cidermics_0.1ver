@@ -35,6 +35,7 @@
 .seminar-map img{width:100%; margin-top:20px; margin-bottom:20px}
 @media only screen and (max-width : 1024px) {
 .seminar-map{padding-left:0 !important; padding-right:0 !important; margin-bottom:0}
+.margin1{margin-bottom:10px}
 }
 </style>
 
@@ -132,27 +133,27 @@ function openWinKA(){
 <div class="container" align="center">
 	<div class="row seminar-info">
 
-		<div class="col-lg-3 col-xs-4" align="left"><p><b>강사</b></p></div>
-		<div class="col-lg-9 col-xs-8" align="left"><p class="border-left"><%= semi[0].leader %></p></div>
+		<div class="col-lg-3 col-xs-12" align="left"><p><b>강사</b></p></div>
+		<div class="col-lg-9 col-xs-12 margin1" align="left"><p class="border-left"><%= semi[0].leader %></p></div>
 
 
-		<div class="col-lg-3 col-xs-4" align="left"><p><b>일시</b></p></div>
-		<div class="col-lg-9 col-xs-8" align="left"><p class="border-left"><%= semi[0].sdate %></p></div>
+		<div class="col-lg-3 col-xs-12" align="left"><p><b>일시</b></p></div>
+		<div class="col-lg-9 col-xs-12 margin1" align="left"><p class="border-left"><%= semi[0].sdate %></p></div>
 
-		<div class="col-lg-3 col-xs-4" align="left"><p><b>강의 시간</b></p></div>
-		<div class="col-lg-9 col-xs-8" align="left"><p class="border-left"><%= semi[0].stime %></p></div>
+		<div class="col-lg-3 col-xs-12" align="left"><p><b>강의 시간</b></p></div>
+		<div class="col-lg-9 col-xs-12 margin1" align="left"><p class="border-left"><%= semi[0].stime %></p></div>
 		
-		<div class="col-lg-3 col-xs-4" align="left"><p><b>신청기간</b></p></div>
-		<div class="col-lg-9 col-xs-8" align="left"><p class="border-left"><%= semi[0].sstdate %> - <%= semi[0].sendate %></p></div>
+		<div class="col-lg-3 col-xs-12" align="left"><p><b>신청기간</b></p></div>
+		<div class="col-lg-9 col-xs-12 margin1" align="left"><p class="border-left"><%= semi[0].sstdate %> - <%= semi[0].sendate %></p></div>
 		
-		<div class="col-lg-3 col-xs-4" align="left"><p><b>인원</b></p></div>
-		<div class="col-lg-9 col-xs-8" align="left"><p class="border-left"><%= semi[0].people %>명</p></div>
+		<div class="col-lg-3 col-xs-12" align="left"><p><b>인원</b></p></div>
+		<div class="col-lg-9 col-xs-12 margin1" align="left"><p class="border-left"><%= semi[0].people %>명</p></div>
 		
-		<div class="col-lg-3 col-xs-4" align="left"><p><b>참가비</b></p></div>
-		<div class="col-lg-9 col-xs-8" align="left"><p class="border-left"><span class="amount"><%= semi[0].price %></span>원</p></div>
+		<div class="col-lg-3 col-xs-12" align="left"><p><b>참가비</b></p></div>
+		<div class="col-lg-9 col-xs-12 margin1" align="left"><p class="border-left"><span class="amount"><%= semi[0].price %></span>원</p></div>
 		
-		<div class="col-lg-3 col-xs-4" align="left"><p><b>장소</b></p></div>
-		<div class="col-lg-9 col-xs-8" align="left"><p class="border-left"><%= semi[0].location %></p></div>
+		<div class="col-lg-3 col-xs-12" align="left"><p><b>장소</b></p></div>
+		<div class="col-lg-9 col-xs-12 margin1" align="left"><p class="border-left"><%= semi[0].location %></p></div>
 
 		<div class="col-xs-12">
 		<div class="googleMap" align="center">
