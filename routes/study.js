@@ -284,7 +284,7 @@ router.post('/prinsert', function(req, res, next) {
 
 	var sets = {tele_cate:cate, tele_idx:idx,tele_name : name , tele_num:num, tele_email : email , tele_date:date, tele_check:tele_check};
 	mysql.insert('insert into cider.cid_telemarket set ?', sets,  function (err, data){
-		res.send('<script>alert("참여해주셔서 감사합니다!");location.href="/study";</script>');
+		res.send('<script>alert("참여해주셔서 감사합니다!");history.back(-1);</script>');
 		//res.redirect('/study');
 	});
 });
@@ -373,5 +373,14 @@ router.get('/lecturemore2/65', function(req, res, next) {
   });
 });
 
-
+router.get('/lecturemore2/59/:num', function(req, res, next) {
+	var idx = req.params.idx;
+	var num = req.params.num;
+	var stdlist;
+	mysql.select('SELECT idx,cate,subject,subject2,linesub1,linesub2,linesub3,line1,line2,line3,recommend1,recommend2,recommend3,changed1,changed2,changed3,bgimg1,thum2,leader,period,sche1,sche2,sche3,sche4,sche5,sche6,location,people,price,disprice,disevent,composition,img1,img2,img3,slimg1,slimg2,slimg3,slimg4,state, naverpay from cider.std_more where idx = "59";', function (err, data){
+		mysql.select('SELECT idx,subject,subject2,decate,recentdate,thum,leader,sche1 from cider.std_more where flag="Y" order by idx desc;', function (err, data1){
+	res.render('front/cid_study/lecture/std_lecture_more59_plan', {md:data, stdlist : data1, num:num});
+  	});
+  });
+});
 module.exports = router;

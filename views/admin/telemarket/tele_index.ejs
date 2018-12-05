@@ -60,32 +60,32 @@ input[type=submit] {
         </thead>
         <tbody>
 		<% for(var i = 0; i< tele.length; i++) { %>
-			<tr>
-				<input type="hidden" name="tele_no" value="<%= tele[i].tele_no %>" />
-  			<td><%= tele[i].tele_no %></td>
-          <% if(tele[i].tele_cate == 1){%>
-          <td>강의</td>
-          <% }else if(tele[i].tele_cate == 2){%>
-          <td>스터디</td>
-          <% }else if(tele[i].tele_cate == 4){ %>
-          <td>세미나</td>
-          <% }else{} %>
-        <td><%= tele[i].tele_idx %></td>
-        <td><%= tele[i].tele_name %></td>
-				<td><%= tele[i].tele_num %></td>
-        <td><%= tele[i].tele_email %></td>
-        <td><%= tele[i].tele_date %></td>
-          <% if(tele[i].tele_check == 1){%>
-          <td>경이로움</td>
-          <% }else if(tele[i].tele_check == 2){%>
-          <td>업체홍보</td>
-          <% }else if(tele[i].tele_check == 3){ %>
-          <td>업체홍보</td>
-          <% }else{ %>
-          <td>업체홍보</td>
-          <% } %>
-				<td><p class="acss"><a href="/adm/tele/delete/<%= tele[i].tele_no %>">삭제</a></p></td>
-			</tr>
+		  <tr>
+			<input type="hidden" name="tele_no" value="<%= tele[i].tele_no %>" />
+	  		<td><%= tele[i].tele_no %></td>
+	        <% if(tele[i].tele_cate == 1){%>
+	        <td>강의</td>
+	        <% }else if(tele[i].tele_cate == 2){%>
+	        <td>스터디</td>
+	        <% }else if(tele[i].tele_cate == 4){ %>
+	        <td>세미나</td>
+	        <% }else{} %>
+	        <td><%= tele[i].tele_idx %></td>
+	        <td><%= tele[i].tele_name %></td>
+			<td><%= tele[i].tele_num %></td>
+	        <td><%= tele[i].tele_email %></td>
+	        <td><%= tele[i].tele_date %></td>
+	        <% if(tele[i].tele_check == 1){%>
+	        <td>경이로움</td>
+	        <% }else if(tele[i].tele_check == 2){%>
+	        <td>업체홍보</td>
+	        <% }else if(tele[i].tele_check == 3){ %>
+	        <td>업체홍보</td>
+	        <% }else{ %>
+	        <td>업체홍보</td>
+	        <% } %>
+			<td><p class="acss"><a href="/adm/tele/delete/<%= tele[i].tele_no %>">삭제</a></p></td>
+		   </tr>
 		<% } %>
         </tbody>
       </table>
