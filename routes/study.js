@@ -284,7 +284,7 @@ router.post('/prinsert', function(req, res, next) {
 
 	var sets = {tele_cate:cate, tele_idx:idx,tele_name : name , tele_num:num, tele_email : email , tele_date:date, tele_check:tele_check};
 	mysql.insert('insert into cider.cid_telemarket set ?', sets,  function (err, data){
-		res.send('<script>alert("참여해주셔서 감사합니다!");history.back(-1);</script>');
+		res.send('<script>alert("문의 신청이 완료되었습니다.");history.back(-1);</script>');
 		//res.redirect('/study');
 	});
 });
