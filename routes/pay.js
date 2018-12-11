@@ -71,11 +71,12 @@ router.post('/npayinsert', function(req,res,next){
 	var optsex = req.body.optsex;
 	var path = req.body.path;
 	var gitar = req.body.gitar;
+	var location = req.body.location;
 
 
 	var date = getWorldTime(+9);
 
-	var sets = {orderno:ORDERNO, cate:cate, decate:decate, amount:price, name : USERNAME, email:EMAIL, phone:TELNO, birth:birth, sex:optsex, regDate:date, path:path, gitar:gitar};
+	var sets = {orderno:ORDERNO, cate:cate, decate:decate, amount:price, name : USERNAME, email:EMAIL, phone:TELNO, birth:birth, sex:optsex, regDate:date, path:path, gitar:gitar, location:location};
 
 	mysql.insert('insert into cider.pay_appform set ?', sets,  function (err, data){
 		if(err){
@@ -83,7 +84,7 @@ router.post('/npayinsert', function(req,res,next){
 		}
 
 		if(price == 0){
-			res.send('<script>alert("신청 완료");location.href="/";</script>');
+			res.send('<script>alert("신청이 완료되었습니다.");location.href="/";</script>');
 		}else{
 			res.redirect('/pay/'+ORDERNO+'/'+cate+'/'+decate+'/'+price);
 		}
