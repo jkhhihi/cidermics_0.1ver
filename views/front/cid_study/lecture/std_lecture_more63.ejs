@@ -157,7 +157,7 @@
 
 <style type="text/css">
 .line2{
-	width: 350px;
+  width: 350px;
     height: 4px;
     background-color: #80afdb;
     margin-bottom: 30px;}
@@ -201,13 +201,29 @@ a.btn-seminar h5 span:hover{background-color:#0aa0f6; color:#fff !important}
 .database .container #btn1 span:hover{background-color:#f9ff00;}
 .database .container #btn1 a{color:#fff;}
 .database .container #btn1 a:hover{color:#000;}
+.width95{width:60%}
+.collapsible{box-shadow:none; border:none}
+/*.collapsible-header{border:none; background-color:#f4f4f4; box-shadow:0 1px 2px 0 rgba(0, 0, 0, 0.2), 2px 0 8px 0 rgba(0, 0, 0, 0.2);
+height:auto; padding:20px 0 5px 0; margin-top:15px}*/
+.collapsible-header{padding:50px 0 0 0 }
+.collapsible-body{border:none; margin-bottom:-15px; padding:0;}
+#lecture63 img{width:50%}
+.bg1{background-size: cover; height:auto; padding:50px 0 30px 0; background-image: url("/page_imgs/study_img/lecture-61/m-bg1.jpg"); background-color:#000}
+
 @media only screen and (max-width : 1024px) {
+  .mob-none{display:none;}
+  .mob-margin1{margin-bottom:20px;}
+
 a.btn-review h5 span{margin-top:50px}
 a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
 #countdown{padding:20px 0 0 0}
 #countdown span{font-size:14px}
 .database{padding:0 0 20px 0; font-size:20px;}
 .database .container input{font-size:18px; padding:2px 4px; margin-top:0; height:30px}
+.width95{width:100%}
+.collapsible-header{padding:10px 0 0 0; margin-top:10px}
+.collapsible-body{padding:0px;}
+#lecture63 img{width:100%}
 }
 
 
@@ -251,9 +267,7 @@ a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
           $(".amount").eq(i).text(commaNum($(".amount").eq(i).html()));   
       }
   });
-
 </script>
-
 <script type="text/javascript">
   // JavaScript Document
 
@@ -424,7 +438,134 @@ function surveyGo4()
     //alert("참여해 주셔서 감사합니다.")
     p1.submit();
   }
+
+function surveyGo5()
+  {
+    var p1 = document.prinsert5;
+
+    if(p1.pname.value==""){
+     alert("이름을 입력해 주세요.");
+    p1.pname.focus();
+      return;
+    }
+    if(p1.phone.value==""){
+     alert("휴대폰 번호를 정확히 입력해 주세요.");
+    p1.phone.focus();
+      return;
+    }
+    
+    for (i=0; i<p1.phone.value.length; i++)
+       {
+         var ch = p1.phone.value.charAt(i);//문자를 반환(정수형), 범위 검사 가능
+      if ( ch < "0" || ch > "9" )
+         {
+              alert("휴대폰 번호는 숫자로만 입력 가능 합니다!");
+              p1.phone.focus();
+              return;
+           }
+        }
+
+
+    if(!p1.check1.checked){
+                alert("서비스 이용약관에 동의하셔야 신청이 가능합니다."); 
+                return;
+         
+        }else if(p1.check1.checked){
+          if(!p1.check2.checked){
+                alert("개인정보 수집 및 이용 동의하셔야 신청이 가능합니다.");
+                return;
+        }
+      }
+
+    //alert("참여해 주셔서 감사합니다.")
+    p1.submit();
+  }
+
+function surveyGo6()
+  {
+    var p1 = document.prinsert6;
+
+    if(p1.pname.value==""){
+     alert("이름을 입력해 주세요.");
+    p1.pname.focus();
+      return;
+    }
+    if(p1.phone.value==""){
+     alert("휴대폰 번호를 정확히 입력해 주세요.");
+    p1.phone.focus();
+      return;
+    }
+    
+    for (i=0; i<p1.phone.value.length; i++)
+       {
+         var ch = p1.phone.value.charAt(i);//문자를 반환(정수형), 범위 검사 가능
+      if ( ch < "0" || ch > "9" )
+         {
+              alert("휴대폰 번호는 숫자로만 입력 가능 합니다!");
+              p1.phone.focus();
+              return;
+           }
+        }
+
+
+    if(!p1.check1.checked){
+                alert("서비스 이용약관에 동의하셔야 신청이 가능합니다."); 
+                return;
+         
+        }else if(p1.check1.checked){
+          if(!p1.check2.checked){
+                alert("개인정보 수집 및 이용 동의하셔야 신청이 가능합니다.");
+                return;
+        }
+      }
+
+    //alert("참여해 주셔서 감사합니다.")
+    p1.submit();
+  }
+
+function surveyGo7()
+  {
+    var p1 = document.prinsert7;
+
+    if(p1.pname.value==""){
+     alert("이름을 입력해 주세요.");
+    p1.pname.focus();
+      return;
+    }
+    if(p1.phone.value==""){
+     alert("휴대폰 번호를 정확히 입력해 주세요.");
+    p1.phone.focus();
+      return;
+    }
+    
+    for (i=0; i<p1.phone.value.length; i++)
+       {
+         var ch = p1.phone.value.charAt(i);//문자를 반환(정수형), 범위 검사 가능
+      if ( ch < "0" || ch > "9" )
+         {
+              alert("휴대폰 번호는 숫자로만 입력 가능 합니다!");
+              p1.phone.focus();
+              return;
+           }
+        }
+
+
+    if(!p1.check1.checked){
+                alert("서비스 이용약관에 동의하셔야 신청이 가능합니다."); 
+                return;
+         
+        }else if(p1.check1.checked){
+          if(!p1.check2.checked){
+                alert("개인정보 수집 및 이용 동의하셔야 신청이 가능합니다.");
+                return;
+        }
+      }
+
+    //alert("참여해 주셔서 감사합니다.")
+    p1.submit();
+  }
 </script>
+  
   <script src="/js/gotoup.js"></script>
   </head>
   <body>
@@ -445,11 +586,12 @@ function surveyGo4()
       <div class="row center">
         <div class="divider"></div>
         <span class="box1">경이로움 강의</span>
-        <p>총 4회 스페셜 강의 그리고 4번의 릴레이 세미나</p>
+        <p>강의를 들으면 1년간 온라인 릴레이세미나가 무료!</p>
       </div>
 
     </div>
   </div>
+
   <div class="parallax"><img src="<%=md[0].bgimg1%>"></div>
 </div>
 
@@ -521,7 +663,7 @@ function surveyGo4()
               <div class="col s0 m3"></div>
               
               <!-- 카드할부내용 -->
-              <div class="col s12" style="background-color:#fafafa; border:1px #ddd solid; border-radius:10px; margin-top:10px; padding:10px 15px;">※ 카드결제시 ※<br>350,000원 -> <b>월 35,000원</b> (무이자 10개월 할부 적용시)</div>
+              <div class="col s12" style="background-color:#fafafa; border:1px #ddd solid; border-radius:10px; margin-top:10px; padding:10px 15px;">※ 카드결제시 ※<br><b>월 66,700원</b> (무이자 12개월 할부 적용시)</div>
               
             </div>
 
@@ -565,39 +707,43 @@ function surveyGo4()
   <div class="divider"></div>
 
 <div id="study-new">
-
-<!-- 작업한이미지 -->
-<div style="background-color:#fdfdfd">
-	<div class="container">
-	<img class="responsive-img" src="/page_imgs/study_img/lecture-57/web-detail-1.jpg">
-	<img class="responsive-img" src="/page_imgs/study_img/lecture-57/web-detail-2.jpg">
-	<img class="responsive-img" src="/page_imgs/study_img/lecture-57/web-detail-3.jpg">
-	<img class="responsive-img" src="/page_imgs/study_img/lecture-57/web-detail-4.jpg">
-	<img class="responsive-img" src="/page_imgs/study_img/lecture-57/web-detail-5.jpg">
-	<img class="responsive-img" src="/page_imgs/study_img/lecture-57/web-detail-6.jpg">
-	<img class="responsive-img" src="/page_imgs/study_img/lecture-57/web-detail-7.jpg">
-	<img class="responsive-img" src="/page_imgs/study_img/lecture-57/web-detail-8.jpg">
-	<img class="responsive-img" src="/page_imgs/study_img/lecture-57/web-detail-9.jpg">
-	</div>
-</div>
-<!-- 끝 -->
-
-
-<!-- 웹진 -->
-<!-- pdf준다는 내용의 배너 -->
-<div align="center" style="margin-bottom:-10px">
-  <img class="responsive-img" src="https://i.imgur.com/iytWNaU.jpg" style="width:100%">
-</div>
-<!-- 마감임박 -->
-<div id="countdown">
-   <div><span style="color:#9ddaff;">*담당 매니저가 강의와 관련된 상담을 도와드릴 예정입니다.</span></a></div>
-</div>
-<!-- DB 작성 칸 -->
-<div class="database" style="background-color:#000">
-  <div class="container">
-
-    <div class="row">
-
+   <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-63/1.jpg"></div>
+   <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-63/2.jpg"></div>
+   <div style="background-color:#006cff" align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-63/q1-t.jpg"></div>
+   <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-63/q1-1.jpg"></div>
+   <div style="background-color:#006cff" align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-63/q2-t.jpg"></div>
+   <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-63/q2-1.jpg"></div>   
+   <div style="background-color:#f6f6f6" align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-63/q2-2.jpg"></div>  
+   <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-63/q2-3.jpg"></div> 
+   <div style="background-color:#006cff" align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-63/q3-t.jpg"></div>
+   <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-63/q3-1.jpg"></div>   
+   <div style="background-color:#006cff" align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-63/q4-t.jpg"></div>
+   <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-63/q4-1.jpg"></div>
+   <div style="background-color:#006cff" align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-63/q5-t.jpg"></div>
+   <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-63/q5-1.jpg"></div>
+   <div style="background-color:#006cff" align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-63/q6-t.jpg"></div>
+   <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-63/q6-1.jpg"></div>    
+   <div style="background-color:#006cff" align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-63/q7-t.jpg"></div>
+   <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-63/q7-1.jpg"></div>   
+<!-- 접이식 -->
+<div class="container width95" align="center">
+  <ul class="collapsible expandable" data-collapsible = "expandable">
+    <li><!--  active -->
+      <div class="collapsible-header"><img class="responsive-img" src="/page_imgs/study_img/lecture-63/case1-btn.jpg"></div>
+      <div class="collapsible-body">
+    <img class="responsive-img" src="/page_imgs/study_img/lecture-63/case1-1.jpg">
+    <img class="responsive-img" src="/page_imgs/study_img/lecture-63/case1-2.jpg">
+    <img class="responsive-img" src="/page_imgs/study_img/lecture-63/case1-3.jpg">
+    <!-- 마감임박 -->
+    <div id="countdown" style="margin-top:-10px">
+       <div><span style="color:#9ddaff;">*담당 매니저가 강의와 관련된 상담을 도와드릴 예정입니다.</span></a></div>
+    </div>
+    <!-- DB 작성 칸 -->
+    <div class="database" style="background-color:#000" align="left">
+      <div class="container">
+    
+        <div class="row">
+    
           <form action="/prinsert" method="post" name="prinsert1" class="col s12">
             <input type="hidden" name="cate" value="<%=md[0].cate%>">
             <input type="hidden" name="idx" value="<%=md[0].idx%>">
@@ -625,63 +771,302 @@ function surveyGo4()
                 <br>
               </div>
             </div>
+    
+            <div id="btn1" align="center">
+              <br><a style="cursor:pointer" onclick="surveyGo1()"><span>상담 신청하기</span></a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+    </li>
+    <li>
+      <div class="collapsible-header"><img class="responsive-img" src="/page_imgs/study_img/lecture-63/case2-btn.jpg"></div>
+      <div class="collapsible-body">
+    <img class="responsive-img" src="/page_imgs/study_img/lecture-63/case2-1.jpg">
+    <img class="responsive-img" src="/page_imgs/study_img/lecture-63/case2-2.jpg">
+    <img class="responsive-img" src="/page_imgs/study_img/lecture-63/case2-3.jpg">
+    <!-- 마감임박 -->
+    <div id="countdown" style="margin-top:-10px">
+       <div><span style="color:#9ddaff;">*담당 매니저가 강의와 관련된 상담을 도와드릴 예정입니다.</span></a></div>
+    </div>
+    <!-- DB 작성 칸 -->
+    <div class="database" style="background-color:#000" align="left">
+      <div class="container">
+    
+        <div class="row">
+
+          <form action="/prinsert" method="post" name="prinsert2" class="col s12">
+            <input type="hidden" name="cate" value="<%=md[0].cate%>">
+            <input type="hidden" name="idx" value="<%=md[0].idx%>">
+            <input type="hidden" name="tele_check" value="1">
+            
+            <div class="row margin0">
+              <div id="name" class="input-field col s6">
+                <span class="color1">이름 : </span>
+                <input type="text" name="pname" length="4" >
+              </div>
+              <div id="phon" class="input-field col s6">
+                <span class="color1">전화번호 : </span>
+                <input type="text" name="phone" maxlength="11" >
+              </div>
+            </div>
+
+            <div class="row margin0">
+              <div class="input col s12 l8" style="height: 50px;">
+                <input type="checkbox" id="check3" name="check1" />
+                <label for="check3">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
+                <br>
+                <input type="checkbox" id="check4" name="check2"/>
+                <label for="check4">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
+                <br>
+                <br>
+              </div>
+            </div>
+    
+            <div id="btn1" align="center">
+              <br><a style="cursor:pointer" onclick="surveyGo2()"><span>상담 신청하기</span></a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+    </li>
+    <li><!--  active -->
+      <div class="collapsible-header"><img class="responsive-img" src="/page_imgs/study_img/lecture-63/case3-btn.jpg"></div>
+      <div class="collapsible-body">
+    <img class="responsive-img" src="/page_imgs/study_img/lecture-63/case3-1.jpg">
+    <img class="responsive-img" src="/page_imgs/study_img/lecture-63/case3-2.jpg">
+    <img class="responsive-img" src="/page_imgs/study_img/lecture-63/case3-3.jpg">
+    <!-- 마감임박 -->
+    <div id="countdown" style="margin-top:-10px">
+       <div><span style="color:#9ddaff;">*담당 매니저가 강의와 관련된 상담을 도와드릴 예정입니다.</span></a></div>
+    </div>
+    <!-- DB 작성 칸 -->
+    <div class="database" style="background-color:#000" align="left">
+      <div class="container">
+    
+        <div class="row">
+    
+          <form action="/prinsert" method="post" name="prinsert1" class="col s12">
+            <input type="hidden" name="cate" value="<%=md[0].cate%>">
+            <input type="hidden" name="idx" value="<%=md[0].idx%>">
+            <input type="hidden" name="tele_check" value="1">
+            
+            <div class="row margin0">
+              <div id="name" class="input-field col s6">
+                <span class="color1">이름 : </span>
+                <input type="text" name="pname" length="4" >
+              </div>
+              <div id="phon" class="input-field col s6">
+                <span class="color1">전화번호 : </span>
+                <input type="text" name="phone" maxlength="11" >
+              </div>
+            </div>
+
+            <div class="row margin0">
+              <div class="input col s12 l8" style="height: 50px;">
+                <input type="checkbox" id="check1" name="check1" />
+                <label for="check1">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
+                <br>
+                <input type="checkbox" id="check2" name="check2"/>
+                <label for="check2">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
+                <br>
+                <br>
+              </div>
+            </div>
+    
+            <div id="btn1" align="center">
+              <br><a style="cursor:pointer" onclick="surveyGo1()"><span>상담 신청하기</span></a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div>
+    </li>    
+  </ul>
+</div>
+
+
+<!-- 작업한이미지 -->
+<div id="lecture63" align="center">
+  <div><img class="responsive-img" src="/page_imgs/study_img/lecture-63/3.jpg"></div>
+  <div style="background-color:#006cff"><img class="responsive-img" src="/page_imgs/study_img/lecture-63/4.jpg"></div>
+  <div><img class="responsive-img" src="/page_imgs/study_img/lecture-63/5.jpg"></div>
+
+<!-- 마감임박 -->
+<div id="countdown">
+   <div><span style="color:#9ddaff;">*담당 매니저가 강의와 관련된 상담을 도와드릴 예정입니다.</span></a></div>
+</div>
+<!-- DB 작성 칸 -->
+<div class="database" style="background-color:#000" align="left">
+  <div class="container">
+
+    <div class="row">
+
+      <form action="/prinsert" method="post" name="prinsert5" class="col s12">
+        <input type="hidden" name="cate" value="<%=md[0].cate%>">
+        <input type="hidden" name="idx" value="<%=md[0].idx%>">
+        <input type="hidden" name="tele_check" value="1">
+        
+        <div class="row margin0">
+          <div id="name" class="input-field col s6">
+            <span class="color1">이름 : </span>
+            <input type="text" name="pname" length="4" >
+          </div>
+          <div id="phon" class="input-field col s6">
+            <span class="color1">전화번호 : </span>
+            <input type="text" name="phone" maxlength="11" >
+          </div>
+        </div>
+
+        <div class="row margin0">
+          <div class="input col s12 l8" style="height: 50px;">
+            <input type="checkbox" id="check9" name="check1" />
+            <label for="check9">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
+            <br>
+            <input type="checkbox" id="check10" name="check2"/>
+            <label for="check10">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
+            <br>
+            <br>
+          </div>
+        </div>
 
         <div id="btn1" align="center">
-          <br><a style="cursor:pointer" onclick="surveyGo1()"><span>상담 신청하기</span></a>
+          <br><a style="cursor:pointer" onclick="surveyGo5()"><span>상담 신청하기</span></a>
         </div>
       </form>
     </div>
   </div>
-</div -->
+</div>  
+  <div style="background-color:#ff2524"><img class="responsive-img" src="/page_imgs/study_img/lecture-61/10.jpg"></div>
+  <div style="background-color:#fff"><img class="responsive-img" src="/page_imgs/study_img/lecture-61/11.jpg"></div>
+  <div style="background-color:#fff"><a href="../study/seminar"><img class="responsive-img" src="/page_imgs/study_img/lecture-61/12.jpg"></a></div>
+</div>
+<!-- 끝 -->
+
+<!-- 웹진 -->
+<!-- pdf준다는 내용의 배너 -->
+<div align="center" style="margin-bottom:-10px">
+  <img class="responsive-img" src="https://i.imgur.com/iytWNaU.jpg" style="width:100%">
+</div>
+<!-- 마감임박 -->
+<div id="countdown">
+   <div><span style="color:#9ddaff;">*담당 매니저가 강의와 관련된 상담을 도와드릴 예정입니다.</span></a></div>
+</div>
+<!-- DB 작성 칸 -->
+<div class="database" style="background-color:#000">
+  <div class="container">
+
+    <div class="row">
+
+      <form action="/prinsert" method="post" name="prinsert7" class="col s12">
+        <input type="hidden" name="cate" value="<%=md[0].cate%>">
+        <input type="hidden" name="idx" value="<%=md[0].idx%>">
+        <input type="hidden" name="tele_check" value="1">
+        
+        <div class="row margin0">
+          <div id="name" class="input-field col s6">
+            <span class="color1">이름 : </span>
+            <input type="text" name="pname" length="4" >
+          </div>
+          <div id="phon" class="input-field col s6">
+            <span class="color1">전화번호 : </span>
+            <input type="text" name="phone" maxlength="11" >
+          </div>
+        </div>
+
+        <div class="row margin0">
+          <div class="input col s12 l8" style="height: 50px;">
+            <input type="checkbox" id="check13" name="check1" />
+            <label for="check13">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
+            <br>
+            <input type="checkbox" id="check14" name="check2"/>
+            <label for="check14">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
+            <br>
+            <br>
+          </div>
+        </div>
+
+        <div id="btn1" align="center">
+          <br><a style="cursor:pointer" onclick="surveyGo7()"><span>상담 신청하기</span></a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
 
 <!-- 여기부터는 고정 -->
 <!-- div class="section2">
-	<div class="container" >
-		<h4>경이로움 강의는 왜 다를까?</h4>
-		<div class="line2"></div>
-		<div align="center">
-			<img class="responsive-img" src="https://i.imgur.com/63iU5e9.jpg" style="margin-top:20px">
-			<a href="/seminar" align="center" class="btn-seminar"><h5><span>☞ 세미나 보러가기</span></h5></a>
-		</div>
-	</div>
+  <div class="container" >
+    <h4>경이로움 강의는 왜 다를까?</h4>
+    <div class="line2"></div>
+    <div align="center">
+      <img class="responsive-img" src="https://i.imgur.com/63iU5e9.jpg" style="margin-top:20px">
+      <a href="/seminar" align="center" class="btn-seminar"><h5><span>☞ 세미나 보러가기</span></h5></a>
+    </div>
+  </div>
 </div -->
 <div class="section0">
-	<div class="container">
-		<h4>경이로움 멤버들의 진솔한 후기 인터뷰</h4>
-		<div class="line2"></div>
-			<div class="row">
-				<a href="http://cidermics.com/stdreview/7"><div class="col s12 m6"><img class="responsive-img" src="/page_imgs/study_img/img-section9-thum3.jpg"></div></a>
-				<div class="web-n col s12" style="margin-bottom:30px;"></div>
-				<a href="http://cidermics.com/stdreview/6"><div class="col s12 m6"><img class="responsive-img" src="/page_imgs/study_img/img-section9-thum4.jpg"></div></a>
-			</div>	
-			<a href="/study/review" align="center" class="btn-review"><h5><span>☞ 더 많은 후기 보기</span></h5></a>		
-	</div>
+  <div class="container">
+    <h4>경이로움 멤버들의 진솔한 후기 인터뷰</h4>
+    <div class="line2"></div>
+      <div class="row">
+        <a href="http://cidermics.com/stdreview/7"><div class="col s12 m6"><img class="responsive-img" src="/page_imgs/study_img/img-section9-thum3.jpg"></div></a>
+        <div class="web-n col s12" style="margin-bottom:30px;"></div>
+        <a href="http://cidermics.com/stdreview/6"><div class="col s12 m6"><img class="responsive-img" src="/page_imgs/study_img/img-section9-thum4.jpg"></div></a>
+      </div>  
+      <a href="/study/review" align="center" class="btn-review"><h5><span>☞ 더 많은 후기 보기</span></h5></a>    
+  </div>
 </div>
-
+<div class="divider"></div>
+<div class="section0">
+  <div class="container">
+    <h4>경이로움 현장</h4>
+    <div class="line2"></div>
+    <div class="row">
+      <div class="col s12 m4 mob-margin1"><img class="responsive-img materialboxed z-depth-1" src="https://i.imgur.com/uFyT7lN.jpg"></div>
+      <div class="col s12 m4"><img class="responsive-img materialboxed z-depth-1" src="https://i.imgur.com/QVtSQJc.jpg"></div>
+      <div class="col s6 m4 mob-none"><img class="responsive-img materialboxed z-depth-1" src="https://i.imgur.com/tnDmlaP.jpg"></div>
+    </div>
+    <div class="row">
+      <div class="col s6 m4"><img class="responsive-img materialboxed z-depth-1" src="https://i.imgur.com/onD5fFQ.jpg"></div>
+      <div class="col s6 m4"><img class="responsive-img materialboxed z-depth-1" src="https://i.imgur.com/RD39NDP.jpg"></div>
+      <div class="col s6 m4 mob-none"><img class="responsive-img materialboxed z-depth-1" src="https://i.imgur.com/Hv3bGrc.jpg"></div>
+    </div>
+    <div align="center">
+      <!-- img class="responsive-img" src="https://i.imgur.com/CChI9Mm.png" style="margin-top:20px" -->
+    </div>
+  </div>
+</div>
 <div class="section2">
-	<div class="container">
-	  <div class="row">
-	      <div class="col s12 center">
-	        <h4>추천 강의</h4>
-	      </div>
-	  </div>
-	
-	  <div class="row">
-	    <% var a = Math.floor(Math.random() * (4-0+1)) + 0; for(var i=a; i < a+3; i++) {  %>
-	    <div class="col s12 m4">
-	      <div class="card">
-	        <div class="card-image  waves-effect waves-block waves-light">
-	          <a href="/studymorenew/<%=stdlist[i].idx%>"><img src="<%=stdlist[i].thum%>"></a>
-	          <span class="card-btn"><a class="waves-effect waves-light btn light-blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;"><%=stdlist[i].decate%></a></span>
-	          <span class="card-title" style="bottom: 30px;"><a href="/studymorenew/<%=stdlist[i].idx%>" style="color: #fff;"><b><%=stdlist[i].subject%></b></a></span>
-	          <span class="card-name">리더 <%=stdlist[i].leader%></span>
-	        </div>
-	      </div>
-	    </div>
-	    <% } %>
-	  </div>
-	
-	</div>
+  <div class="container">
+    <div class="row">
+        <div class="col s12">
+          <h4>추천 강의</h4>
+          <div class="line2"></div>
+        </div>
+    </div>
+  
+    <div class="row">
+      <% var a = Math.floor(Math.random() * (4-0+1)) + 0; for(var i=a; i < a+3; i++) {  %>
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-image  waves-effect waves-block waves-light">
+            <a href="/studymorenew/<%=stdlist[i].idx%>"><img src="<%=stdlist[i].thum%>"></a>
+            <span class="card-btn"><a class="waves-effect waves-light btn light-blue darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;"><%=stdlist[i].decate%></a></span>
+            <span class="card-title" style="bottom: 30px;"><a href="/studymorenew/<%=stdlist[i].idx%>" style="color: #fff;"><b><%=stdlist[i].subject%></b></a></span>
+            <span class="card-name">리더 <%=stdlist[i].leader%></span>
+          </div>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  
+  </div>
 </div>
 
 </div>
@@ -703,6 +1088,9 @@ function surveyGo4()
 
 
 <% include ../std_bottom %>
+
+<!-- cpc광고적용 스크립트 >
+<iframe width="0" height="0" src="https://dinojob.com/u/act/cpc.php"></iframe -->
 
 
       <!-- 모달창 열림 -->
@@ -1009,6 +1397,6 @@ function surveyGo4()
             <a href="#!" class="modal-action modal-close btn-flat blue lighten-4">확인</a>
           </div>
       </div>
-
+    
 </body>
 </html>
