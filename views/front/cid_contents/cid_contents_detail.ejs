@@ -405,7 +405,7 @@ $(document).ready(function(){
 								
 								<% } else if ( contents[0].user_profile_img == 62 ) { %>
 								<div class="col-xs-12 editor-sns" align="left">
-								<img src="/page_imgs/contents_img/wadizicon.png">
+								<a href="<%= contents[0].user_sns_url%>"><img src="/page_imgs/contents_img/wadizicon.png"></a>
 								</div>
 
 								<% } else { %>
@@ -452,7 +452,7 @@ $(document).ready(function(){
 								
 								<% } else if ( contents[0].user_profile_img == 62 ) { %>
 								<div class="col-xs-4 editor-sns" align="right">
-								<img src="/page_imgs/contents_img/wadizicon.png">
+								<a href="<%= contents[0].user_sns_url%>"><img src="/page_imgs/contents_img/wadizicon.png"></a>
 								</div>
 
 								<% } else { %>
