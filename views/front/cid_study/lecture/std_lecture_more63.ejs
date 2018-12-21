@@ -207,6 +207,8 @@ a.btn-seminar h5 span:hover{background-color:#0aa0f6; color:#fff !important}
 height:auto; padding:20px 0 5px 0; margin-top:15px}*/
 .collapsible-header{padding:50px 0 0 0; border-bottom:none}
 .collapsible-body{border:none; margin-bottom:-15px; padding:0;}
+.collapsible-body p{font-size:24px; line-height:1.5em}
+.collapsible-body p .color1{color:#0c6eff}
 #lecture63 img{width:50%}
 .bg1{background-size: cover; height:auto; padding:50px 0 30px 0; background-image: url("/page_imgs/study_img/lecture-61/m-bg1.jpg"); background-color:#000}
 
@@ -214,7 +216,7 @@ height:auto; padding:20px 0 5px 0; margin-top:15px}*/
   .mob-none{display:none;}
   .mob-margin1{margin-bottom:20px;}
 
-a.btn-review h5 span{margin-top:50px}
+a.btn-review  h5 span{margin-top:50px}
 a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
 #countdown{padding:20px 0 0 0}
 #countdown span{font-size:14px}
@@ -222,6 +224,7 @@ a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
 .database .container input{font-size:18px; padding:2px 4px; margin-top:0; height:30px}
 .collapsible-header{padding:10px 0 0 0; margin-top:10px;}
 .collapsible-body{padding:0px;}
+.collapsible-body p{font-size:19px;}
 #lecture63 img{width:100%}
 }
 
@@ -579,7 +582,7 @@ function surveyGo7()
     <div class="container">
 
       <div class="row center">
-        <h4 class="header1 header col s12 light" style="font-weight: 500; ">"<%=md[0].subject%>"</h4>
+        <h4 class="header1 header col s12 light" style="font-weight: 500; "><%=md[0].subject%></h4>
       </div>
 
       <div class="row center">
@@ -662,7 +665,7 @@ function surveyGo7()
               <div class="col s0 m3"></div>
               
               <!-- 카드할부내용 -->
-              <div class="col s12" style="background-color:#fafafa; border:1px #ddd solid; border-radius:10px; margin-top:10px; padding:10px 15px;">※ 카드결제시 ※<br><b>월 66,700원</b> (무이자 12개월 할부 적용시)</div>
+              <div class="col s12" style="background-color:#fafafa; border:1px #ddd solid; border-radius:10px; margin-top:10px; padding:10px 15px;">※ 카드결제시 ※<br><b>월58,400원</b> (무이자 할부 6개월 적용시)</div>
               
             </div>
 
@@ -778,52 +781,20 @@ function surveyGo7()
     <div style="width:100%; height:1px; background-color:#eee"></div>
     <img class="responsive-img" src="/page_imgs/study_img/lecture-63/case1-1.jpg">
     <img class="responsive-img" src="/page_imgs/study_img/lecture-63/case1-2.jpg">
-    <img class="responsive-img" src="/page_imgs/study_img/lecture-63/case1-3.jpg">
-    <!-- 마감임박 -->
-    <div id="countdown" style="margin-top:-10px">
-       <div><span style="color:#9ddaff;">*담당 매니저가 강의와 관련된 상담을 도와드릴 예정입니다.</span></a></div>
-    </div>
-    <!-- DB 작성 칸 -->
-    <div class="database" style="background-color:#000" align="left">
-      <div class="container">
-    
-        <div class="row">
-    
-          <form action="/prinsert" method="post" name="prinsert1" class="col s12">
-            <input type="hidden" name="cate" value="<%=md[0].cate%>">
-            <input type="hidden" name="idx" value="<%=md[0].idx%>">
-            <input type="hidden" name="tele_check" value="1">
-            
-            <div class="row margin0">
-              <div id="name" class="input-field col s6">
-                <span class="color1">이름 : </span>
-                <input type="text" name="pname" length="4" >
-              </div>
-              <div id="phon" class="input-field col s6">
-                <span class="color1">전화번호 : </span>
-                <input type="text" name="phone" maxlength="11" >
-              </div>
-            </div>
+    <p align="left"><span class="color1">사실 쉐어하우스에는 1인실이 많지 않습니다.</span> 수익성 때문입니다. 1인실만으로 운영하면 수용할 수 있는 입주자가 적어지므로 자연히 수익이 줄어듭니다.<br><br>
 
-            <div class="row margin0">
-              <div class="input col s12 l8" style="height: 50px;">
-                <input type="checkbox" id="check1" name="check1" />
-                <label for="check1">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
-                <br>
-                <input type="checkbox" id="check2" name="check2"/>
-                <label for="check2">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
-                <br>
-                <br>
-              </div>
-            </div>
+하지만 직장 생활 등을 병행하는 투잡 운영자라면 수익성보다<span class="color1"> 자신의 상황을 고려하여 운영해야 합니다.</span> 수익률이 상대적으로 높지 않은 점 빼고는 장점이 많습니다. 우선 1인실에 대한 고객 수요가 상당히 많은 반면 공급이 현저히 모자란 상황입니다. <span class="color1">1인실은 방을 내놓으면 바로 나가며 한번 들어 온 입주자는 웬만해서 잘 나가지 않습니다.</span><br><br>
+
+관리가 쉽다는 점도 1인실의 큰 장점입니다. <span class="color1">사람이 적은 만큼 수월하게 운영할 수 있으며,</span> 화장실 숫자도 3명에 1개 정도면 충분히 쾌적하므로 화장실이 하나인 집이라도 무리가 없습니다.<br><br>
+
+제 직장은 매우 보수적인 분위기인데다 업무도 매우 바빠 입주자 모집, 견학 상담 등의 <span class="color1">쉐어하우스 운영 업무를 최대한 줄일 필요가 있었습니다.</span> 문의가 오는 것을 줄이기 위해 리플렛 등 설명 자료를 만들어 집안 곳곳에 두기도 했죠.<br><br>
+
+간혹 왜 1인실로만 운영하냐는 분도 있습니다. <span class="color1">그러나 욕심 내지 않고 제가 할 수 있는 선에서 잘 관리하고 운영하는 것이 중요</span>하다고 생각합니다. 만약 수익을 욕심 낸 다인실로 구성했더라면 아무래도 손이 많이 가고, 입주자 모집도 수시로 필요했을 것입니다. <span class="color1">하지만 1인실로만 구성한 결과 관리 부담이 적어 적은 시간과 노력으로도 원활히 운영하고 있어서 만족합니다.</span><br><br> 
+
+직장인이라면 초기에는 수익보다는 경험에 초점을 맞추고, 운영 노하우를 쌓은 다음 차츰 수익성을 높여나가는 것도 방법입니다.
     
-            <div id="btn1" align="center">
-              <br><a style="cursor:pointer" onclick="surveyGo1()"><span>상담 신청하기</span></a>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
+    </p>
+    <img class="responsive-img" src="/page_imgs/study_img/lecture-63/case1-3.jpg">
     </div>
     </li>
     <li>
@@ -832,52 +803,16 @@ function surveyGo7()
       <div style="width:100%; height:1px; background-color:#eee"></div>
     <img class="responsive-img" src="/page_imgs/study_img/lecture-63/case2-1.jpg">
     <img class="responsive-img" src="/page_imgs/study_img/lecture-63/case2-2.jpg">
+    <p align="left"><span class="color1">입주자 모집 홍보를 학교 커뮤니티 사이트와 블로그를 활용했습니다.</span> 특히 블로그의 경우 쉐어하우스 오픈하기 전에 다양한 포스팅을 하며 검색어 상단에 뜰 수 있게 미리 관리했고, 하우스 준비 과정을 사진과 함께 블로그에 순차적으로 공개했습니다.<br><br>
+
+1호점이 될 집을 소개해준 <span class="color1">부동산 중개사 역시 젊은 분이어서 SNS를 통해</span> 부동산 정보를 많이 게시하고 있었습니다. 그 분에게도 쉐어하우스 홍보를 부탁했고, 사진을 최대한 많이 찍어서 보냈습니다. <br><br>
+
+솔직히 큰 기대를 한 것은 아니었는데 결과는 기대 이상이었습니다. <span class="color1">댓글 수가 300개가 넘어가고,</span> 남성 전용 하우스가 없다고 분노하는 남학생들의 반응도 간간히 보였습니다. <br><br>
+
+<span class="color1">결국 모집 4주 만에 8명 전원 모집하고 만실을 기록했습니다.</span> "역시 쉐어하우스 입주자 모집은 온라인 홍보가 제일 중요한 것 같습니다. 이제는 4호점까지 오픈한 상태이기 때문에, 전용 홈페이지도 제작하여, 홍보 및 운영할 계획입니다."
+
+    </p>
     <img class="responsive-img" src="/page_imgs/study_img/lecture-63/case2-3.jpg">
-    <!-- 마감임박 -->
-    <div id="countdown" style="margin-top:-10px">
-       <div><span style="color:#9ddaff;">*담당 매니저가 강의와 관련된 상담을 도와드릴 예정입니다.</span></a></div>
-    </div>
-    <!-- DB 작성 칸 -->
-    <div class="database" style="background-color:#000" align="left">
-      <div class="container">
-    
-        <div class="row">
-
-          <form action="/prinsert" method="post" name="prinsert2" class="col s12">
-            <input type="hidden" name="cate" value="<%=md[0].cate%>">
-            <input type="hidden" name="idx" value="<%=md[0].idx%>">
-            <input type="hidden" name="tele_check" value="1">
-            
-            <div class="row margin0">
-              <div id="name" class="input-field col s6">
-                <span class="color1">이름 : </span>
-                <input type="text" name="pname" length="4" >
-              </div>
-              <div id="phon" class="input-field col s6">
-                <span class="color1">전화번호 : </span>
-                <input type="text" name="phone" maxlength="11" >
-              </div>
-            </div>
-
-            <div class="row margin0">
-              <div class="input col s12 l8" style="height: 50px;">
-                <input type="checkbox" id="check3" name="check1" />
-                <label for="check3">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
-                <br>
-                <input type="checkbox" id="check4" name="check2"/>
-                <label for="check4">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
-                <br>
-                <br>
-              </div>
-            </div>
-    
-            <div id="btn1" align="center">
-              <br><a style="cursor:pointer" onclick="surveyGo2()"><span>상담 신청하기</span></a>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
     </div>
     </li>
     <li><!--  active -->
@@ -886,53 +821,18 @@ function surveyGo7()
       <div style="width:100%; height:1px; background-color:#eee"></div>
     <img class="responsive-img" src="/page_imgs/study_img/lecture-63/case3-1.jpg">
     <img class="responsive-img" src="/page_imgs/study_img/lecture-63/case3-2.jpg">
-    <img class="responsive-img" src="/page_imgs/study_img/lecture-63/case3-3.jpg">
-    <!-- 마감임박 -->
-    <div id="countdown" style="margin-top:-10px">
-       <div><span style="color:#9ddaff;">*담당 매니저가 강의와 관련된 상담을 도와드릴 예정입니다.</span></a></div>
-    </div>
-    <!-- DB 작성 칸 -->
-    <div class="database" style="background-color:#000" align="left">
-      <div class="container">
-    
-        <div class="row">
-    
-          <form action="/prinsert" method="post" name="prinsert1" class="col s12">
-            <input type="hidden" name="cate" value="<%=md[0].cate%>">
-            <input type="hidden" name="idx" value="<%=md[0].idx%>">
-            <input type="hidden" name="tele_check" value="1">
-            
-            <div class="row margin0">
-              <div id="name" class="input-field col s6">
-                <span class="color1">이름 : </span>
-                <input type="text" name="pname" length="4" >
-              </div>
-              <div id="phon" class="input-field col s6">
-                <span class="color1">전화번호 : </span>
-                <input type="text" name="phone" maxlength="11" >
-              </div>
-            </div>
+    <p align="left">자기 소유의 집이 아니라 전대차로 쉐어하우스를 운영하기 위해서는 <span class="color1">임대주를 설득하는 작업이 필요합니다.</span><br><br>
 
-            <div class="row margin0">
-              <div class="input col s12 l8" style="height: 50px;">
-                <input type="checkbox" id="check1" name="check1" />
-                <label for="check1">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
-                <br>
-                <input type="checkbox" id="check2" name="check2"/>
-                <label for="check2">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
-                <br>
-                <br>
-              </div>
-            </div>
-    
-            <div id="btn1" align="center">
-              <br><a style="cursor:pointer" onclick="surveyGo1()"><span>상담 신청하기</span></a>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-    </div>
+"정말 마음에 드는 집을 찾았으나 집주인이 전대차를 허락하지 않아 포기했어요. 그런데 한 달 후에 그 집이 쉐어하우스로 오픈하는 걸 보고 놀랐습니다. 황당하기도 하고 아쉽기도 해서 부동산에 다시 알아보니, <span class="color1">다른 분이 집주인을 여러 번 찾아가 설득하여 전대차로 계약하여 오픈한 것이었어요."</span><br><br>
+
+그 일에서 강하게 동기 부여를 받아서 이왕이면 적극적으로 해봐야겠다고 생각하게 됐고, 회사에서 하듯 <span class="color1">집주인을 설득하기 위한 브리핑 자료를 만들었습니다.</span><br><br>
+
+이후 정말 마음에 드는 매물을 발견했는데 매매로 내놓은 집주인을 처음엔 "쉐어하우스가 무엇인지 잘 모르겠다, 학생들이 많이 살면 집이 낡게 되므로 솔직히 내키지 않는다"라며 반대했습니다. 그래서 미리 준비한 브리핑 자료를 꺼내 들고 차근차근 설명했습니다. <br><br>
+
+<<span class="color1">제일 강조한 것은 어지간한 가정집보다 더 관리가 잘 되리란 점이었습니다.</span> 그러면서 실제로 계획하고 있던 하우스 운영 및 관리 방안을 말하고, 일부 시설 인테리어는 세입자인 본인이 직접 투자할 계획도 가지고 있음을 알렸습니다. 그 결과 임대주도 긍정적으로 반응하여, 쉐어하우스로 사용할 수 있도록 계약서에 특약까지 넣어주었습니다. 
+    </p>
+    <img class="responsive-img" src="/page_imgs/study_img/lecture-63/case3-3.jpg">
+   	 </div>
     </li>    
   </ul>
 </div>
@@ -1032,7 +932,7 @@ function surveyGo7()
     </div>
   </div>
 </div>  
-  <div><img class="responsive-img" src="/page_imgs/study_img/lecture-63/6.jpg"></div>
+  <!-- div><img class="responsive-img" src="/page_imgs/study_img/lecture-63/6.jpg"></div -->
   <div><img class="responsive-img" src="/page_imgs/study_img/lecture-63/7.jpg"></div>
   <div style="background-color:#006cff"><img class="responsive-img" src="/page_imgs/study_img/lecture-63/8.jpg"></div>
 
