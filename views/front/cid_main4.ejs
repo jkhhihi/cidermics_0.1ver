@@ -60,7 +60,7 @@ function openWinKA(){
 
 #pick-contents{margin-top:70px}
 #pick-contents .thum1{
-  background-image: url("https://i.imgur.com/RD39NDP.jpg");
+  background-image: url("<%= maincon[0].img1%>");
   background-color: #cccccc;
   height: 400px;
   background-position: center;
@@ -69,7 +69,7 @@ function openWinKA(){
   position: relative;
 }
 #pick-contents .thum2{
-  background-image: url("https://i.imgur.com/QVtSQJc.jpg");
+  background-image: url("<%= maincon[0].img2%>");
   background-color: #cccccc;
   height: 400px;
   background-position: center;
@@ -267,16 +267,17 @@ function openWinKA(){
 		<div class="thum1 col-lg-6 col-xs-12 padding-lr0">
 		<div class="black-box">
 			<div class="text">
-				<span class="category" align="center">카테고리</span>
-				<p class="title" align="center">제목이 들어가는 자리</p>
+				<span class="category" align="center"><%= maincon[0].cate1 %></span>
+				<p class="title" align="center"><%= maincon[0].title1 %></p>
 			</div>
 		</div>
 		</div>
 		<div class="thum2 col-lg-6 col-xs-12 padding-lr0">
+
 		<div class="black-box">
 			<div class="text">
-				<span class="category" align="center">카테고리</span>
-				<p class="title" align="center">제목이 들어가는 자리</p>
+				<span class="category" align="center"><%= maincon[0].cate2 %></span>
+				<p class="title" align="center"><%= maincon[0].title2 %></p>
 			</div>
 		</div>
 		</div>

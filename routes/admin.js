@@ -141,8 +141,79 @@ router.get('/index', ensureAuthenticated, function(req, res, next) {
 router.get('/contents', ensureAuthenticated, function(req, res, next) {
 	var CP = 1;
 		mysql.select('select * from cider.cid_contents order by con_no desc', function (err, data){
-			 res.render('admin/contents/contents', { CP : CP, contents : data });	    	
+		res.render('admin/contents/contents', { CP : CP, contents : data });	    	
+	});
+});
+
+router.get('/contents/maincontents/list', ensureAuthenticated, function(req, res, next) {
+	var CP = 1;
+	var mainlist;
+	mysql.select('SELECT * from cider.cid_contentsmain order by idx desc;', function (err, data){
+		stdlist = data;
+		res.render('admin/contents/main_list', { CP : CP, mainlist : data });
+	});
+});
+
+router.get('/contents/maincontents/insert', function(req, res, next) {
+	var CP = 1;
+	res.render('admin/contents/main_insert', {CP : CP});
+});
+router.post('/contents/maincontents/insert', ensureAuthenticated, function(req, res, next) {
+	var CP = 1;
+	var cate1 = req.body.cate1
+	var img1 = req.body.img1;
+	var title1 = req.body.title1;
+	var url1 = req.body.url1;
+	var cate2 = req.body.cate2;
+	var img2 = req.body.img2;
+	var title2 = req.body.title2;
+	var url2 = req.body.url2;
+	var date = getWorldTime(+9);
+	var sets = {cate1 : cate1, img1:img1, title1 :title1 , url1 : url1, cate2 : cate2,img2:img2, title2 : title2, url2 : url2, publicing: 0 , regdate : date};
+	
+	mysql.insert('insert into cider.cid_contentsmain set ?', sets,  function (err, data){
+    res.redirect('/adm/contents/maincontents/list');
+    });
+});
+router.get('/contents/maincontents/update/:no', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 1;
+	var no = req.params.no;
+	var cate;
+	var user;
+
+	mysql.select('select * from cider.cid_contentsmain where idx = '+no+'', function (err, data){
+	res.render('admin/contents/main_update', {CP : CP, maincon : data});
+	});
+});
+router.post('/contents/maincontents/update', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 1;
+	var idx = req.body.idx;
+	var cate1 = req.body.cate1
+	var img1 = req.body.img1;
+	var title1 = req.body.title1;
+	var url1 = req.body.url1;
+	var cate2 = req.body.cate2;
+	var img2 = req.body.img2;
+	var title2 = req.body.title2;
+	var url2 = req.body.url2;
+	var date = getWorldTime(+9);
+	mysql.update('update cider.cid_contentsmain set cate1 = ?, img1=?, title1 = ?, url1 = ?, cate2 = ?, img2=?, title2 = ?, url2 = ? where idx = ?', [cate1,img1,title1,url1,cate2,img2,title2,url2,idx], function (err, data){                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                	
+    res.redirect('/adm/contents/maincontents/list');
+    });
+});
+
+router.get('/contents/maincontents/publicing/:idx', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 1;
+	var idx = req.params.idx;
+	var date = getWorldTime(+9);
+	mysql.update('update cider.cid_contentsmain set publicing = "0"', function (err, data){
+		mysql.update('update cider.cid_contentsmain set publicing = "1", publicingdate=? where idx=?',[date, idx], function (err, data2){
+			 res.redirect('/adm/contents/maincontents/list');
 		});
+	});
 });
 
 
@@ -169,6 +240,8 @@ router.get('/contents/insert', function(req, res, next) {
 			});
 		});
     });
+
+
 
 router.get('/contents/insertMore', function(req, res, next) {
 	
@@ -346,12 +419,10 @@ router.post('/contents/update', ensureAuthenticated, function(req, res, next) {
 	var writer = req.body.writer;
 	var userText = req.body.userText;
 	var rdate   = req.body.rdate;
-	var date = getWorldTime(+9);
+	var date = getWorldTime(+9);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 	var sets = {con_no : no, con_category : category, con_title : title, con_content : contents, con_photo : photo, con_upDate : date, user_no : userNo, user_comment : userText, con_writer : writer,con_release : rdate   };
 	mysql.update('update cider.cid_contents set con_category = ?,  con_title = ?, con_content = ?, con_photo = ?,  con_upDate = ?, user_no = ?, user_comment = ?, con_writer = ? ,con_release= ?  where con_no = ?', [category,title,contents,photo,date,userNo,userText,writer,rdate,no], function (err, data){
-		
-    	res.redirect('/adm/contents');
-    	
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 	
     });
 });
 

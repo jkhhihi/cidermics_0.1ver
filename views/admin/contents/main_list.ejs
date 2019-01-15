@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1"-->
+  	
+    <title>Cidermics Admin</title>
+    <link rel='stylesheet' href='/css/materialize.css' />
+    <link rel='stylesheet' href='/css/style.css' />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	  <script src="/js/materialize.js"></script>
+    <script type="text/javascript" src="/smart_editor/js/HuskyEZCreator.js" charset="utf-8"></script>
+    <script>
+    $( document ).ready(function(){
+    	$(".button-collapse").sideNav();
+    })
+    </script>
+  </head>
+  <body onload="rdate()">
+  	<% var data= CP; %>
+    <% include ../include/nav.ejs %>
+
+    <a href="/adm/contents/" class="waves-effect waves-light btn modal-trigger">뒤로가기</a>
+    
+  <div class="container">
+    <div class="row">
+      <a href="/adm/contents/maincontents/insert" class="waves-effect waves-light btn modal-trigger">등록하기</a>
+			<table>
+        <thead>
+          <tr>
+              <th>idx</th>
+              <th>title1</th>
+              <th>title2</th>
+              <th>등록일</th>
+              <th>퍼블리싱날짜</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% for(var i = 0; i< mainlist.length; i++) { %>
+            <tr>
+              <input type="hidden" name="idx" value="<%= mainlist[i].idx %>" />
+              <td><a href="/adm/contents/maincontents/update/<%= mainlist[i].idx %>"><%= mainlist[i].idx %></a></td>
+
+              <td><%= mainlist[i].title1 %></td>
+
+              <td><%= mainlist[i].title2 %></td>
+              <td><%= mainlist[i].regdate %></td>
+              <td><%= mainlist[i].publicingdate %></td>
+              <td><input type="button" value="퍼블리싱" onclick="window.location.href='/adm/contents/maincontents/publicing/<%= mainlist[i].idx %>'"></button></td>
+              <!--td><p class="acss"><a href="/adm/stdlist/delete/<%= stdlist[i].idx %>">삭제</a></p></td-->
+            </tr>
+          <% } %>
+
+        </tbody>
+      </table>
+		</div>
+  </div>
+</body>
+</html>
