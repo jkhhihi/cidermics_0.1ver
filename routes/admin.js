@@ -141,79 +141,8 @@ router.get('/index', ensureAuthenticated, function(req, res, next) {
 router.get('/contents', ensureAuthenticated, function(req, res, next) {
 	var CP = 1;
 		mysql.select('select * from cider.cid_contents order by con_no desc', function (err, data){
-		res.render('admin/contents/contents', { CP : CP, contents : data });	    	
-	});
-});
-
-router.get('/contents/maincontents/list', ensureAuthenticated, function(req, res, next) {
-	var CP = 1;
-	var mainlist;
-	mysql.select('SELECT * from cider.cid_contentsmain order by idx desc;', function (err, data){
-		stdlist = data;
-		res.render('admin/contents/main_list', { CP : CP, mainlist : data });
-	});
-});
-
-router.get('/contents/maincontents/insert', function(req, res, next) {
-	var CP = 1;
-	res.render('admin/contents/main_insert', {CP : CP});
-});
-router.post('/contents/maincontents/insert', ensureAuthenticated, function(req, res, next) {
-	var CP = 1;
-	var cate1 = req.body.cate1
-	var img1 = req.body.img1;
-	var title1 = req.body.title1;
-	var url1 = req.body.url1;
-	var cate2 = req.body.cate2;
-	var img2 = req.body.img2;
-	var title2 = req.body.title2;
-	var url2 = req.body.url2;
-	var date = getWorldTime(+9);
-	var sets = {cate1 : cate1, img1:img1, title1 :title1 , url1 : url1, cate2 : cate2,img2:img2, title2 : title2, url2 : url2, publicing: 0 , regdate : date};
-	
-	mysql.insert('insert into cider.cid_contentsmain set ?', sets,  function (err, data){
-    res.redirect('/adm/contents/maincontents/list');
-    });
-});
-router.get('/contents/maincontents/update/:no', ensureAuthenticated, function(req, res, next) {
-	
-	var CP = 1;
-	var no = req.params.no;
-	var cate;
-	var user;
-
-	mysql.select('select * from cider.cid_contentsmain where idx = '+no+'', function (err, data){
-	res.render('admin/contents/main_update', {CP : CP, maincon : data});
-	});
-});
-router.post('/contents/maincontents/update', ensureAuthenticated, function(req, res, next) {
-	
-	var CP = 1;
-	var idx = req.body.idx;
-	var cate1 = req.body.cate1
-	var img1 = req.body.img1;
-	var title1 = req.body.title1;
-	var url1 = req.body.url1;
-	var cate2 = req.body.cate2;
-	var img2 = req.body.img2;
-	var title2 = req.body.title2;
-	var url2 = req.body.url2;
-	var date = getWorldTime(+9);
-	mysql.update('update cider.cid_contentsmain set cate1 = ?, img1=?, title1 = ?, url1 = ?, cate2 = ?, img2=?, title2 = ?, url2 = ? where idx = ?', [cate1,img1,title1,url1,cate2,img2,title2,url2,idx], function (err, data){                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                	
-    res.redirect('/adm/contents/maincontents/list');
-    });
-});
-
-router.get('/contents/maincontents/publicing/:idx', ensureAuthenticated, function(req, res, next) {
-	
-	var CP = 1;
-	var idx = req.params.idx;
-	var date = getWorldTime(+9);
-	mysql.update('update cider.cid_contentsmain set publicing = "0"', function (err, data){
-		mysql.update('update cider.cid_contentsmain set publicing = "1", publicingdate=? where idx=?',[date, idx], function (err, data2){
-			 res.redirect('/adm/contents/maincontents/list');
+			 res.render('admin/contents/contents', { CP : CP, contents : data });	    	
 		});
-	});
 });
 
 
@@ -240,8 +169,6 @@ router.get('/contents/insert', function(req, res, next) {
 			});
 		});
     });
-
-
 
 router.get('/contents/insertMore', function(req, res, next) {
 	
@@ -419,10 +346,12 @@ router.post('/contents/update', ensureAuthenticated, function(req, res, next) {
 	var writer = req.body.writer;
 	var userText = req.body.userText;
 	var rdate   = req.body.rdate;
-	var date = getWorldTime(+9);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+	var date = getWorldTime(+9);
 	var sets = {con_no : no, con_category : category, con_title : title, con_content : contents, con_photo : photo, con_upDate : date, user_no : userNo, user_comment : userText, con_writer : writer,con_release : rdate   };
 	mysql.update('update cider.cid_contents set con_category = ?,  con_title = ?, con_content = ?, con_photo = ?,  con_upDate = ?, user_no = ?, user_comment = ?, con_writer = ? ,con_release= ?  where con_no = ?', [category,title,contents,photo,date,userNo,userText,writer,rdate,no], function (err, data){
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 	
+		
+    	res.redirect('/adm/contents');
+    	
     });
 });
 
@@ -566,7 +495,7 @@ router.post('/lecture/insert', ensureAuthenticated, function(req, res, next) {
 	var CP = 2;
 
 	var cate = '4'; // 세미나 코드
-	var decate = '2018'; // 세미나 세부코드
+	var decate = '2019'; // 세미나 세부코드
 	var subject = req.body.subject;
 	var thum = req.body.thum;
 	var img1 = req.body.img1;
@@ -1851,8 +1780,6 @@ router.post('/study/insert', ensureAuthenticated, function(req, res, next) {
 	var sche4 = req.body.sche4;
 	var sche5 = req.body.sche5;
 	var sche6 = req.body.sche6;
-	var sche7 = req.body.sche7;
-	var sche8 = req.body.sche8;
 	var location = req.body.location;
 	var price = req.body.price;
 	var disprice = req.body.disprice;
@@ -1904,7 +1831,7 @@ router.post('/study/insert', ensureAuthenticated, function(req, res, next) {
 	var rdate = req.body.rdate;
 
 	var sets = {cate:cate,recentdate:recentdate,decate:decate,subject : subject, subject2 : subject2, bgimg1 : bgimg1, thum : thum, thum2 : thum2,img1:img1,img2:img2,img3:img3, leader:leader, period : period, sche1 : sche1, sche2 : sche2,
-		sche3 : sche3,sche4 : sche4,sche5 : sche5,sche6 : sche6,sche7 : sche7,sche8 : sche8, location : location, price : price, disprice:disprice, disevent:disevent, composition:composition, people : people,linesub1:linesub1,linesub2:linesub2,linesub3:linesub3, line1 : line1, line2 : line2, line3 : line3, recommend1:recommend1, recommend2:recommend2, recommend3:recommend3, changed1:changed1, changed2:changed2, changed3:changed3, value1 : value1,
+		sche3 : sche3,sche4 : sche4,sche5 : sche5,sche6 : sche6, location : location, price : price, disprice:disprice, disevent:disevent, composition:composition, people : people,linesub1:linesub1,linesub2:linesub2,linesub3:linesub3, line1 : line1, line2 : line2, line3 : line3, recommend1:recommend1, recommend2:recommend2, recommend3:recommend3, changed1:changed1, changed2:changed2, changed3:changed3, value1 : value1,
 	 value2 : value2, value3 : value3, slimg1 : slimg1, slimg2 : slimg2, slimg3 : slimg3, slimg4 : slimg4, lepro1 : lepro1,
 	 lepro2 : lepro2, lepro3 : lepro3, lepro4 : lepro4, appt1 : appt1, appc1 : appc1, appt2 : appt2, appc2 : appc2, appt3 : appt3, appc3 : appc3,
 	 step1 : step1, stepc1 : stepc1, step2:step2,stepc2:stepc2,step3:step3,stepc3:stepc3, regdate:date, flag:'N', state:state, naverpay:naverpay,youtube:youtube,postscript:postscript};
@@ -1937,8 +1864,6 @@ router.post('/study/update', ensureAuthenticated, function(req, res, next) {
 	var sche4 = req.body.sche4;
 	var sche5 = req.body.sche5;
 	var sche6 = req.body.sche6;
-	var sche7 = req.body.sche7;
-	var sche8 = req.body.sche8;
 	var location = req.body.location;
 	var price = req.body.price;
 	var disprice = req.body.disprice;
@@ -1990,14 +1915,14 @@ router.post('/study/update', ensureAuthenticated, function(req, res, next) {
 	var modate = getWorldTime(+9);
 	
 	var sets = {cate:cate,state:state,flag:flag,recentdate:recentdate,decate:decate,subject : subject, subject2 : subject2, bgimg1 : bgimg1, thum : thum, thum2 : thum2,img1:img1,img2:img2,img3:img3, leader:leader, period : period, sche1 : sche1, sche2 : sche2,
-		sche3 : sche3, sche4 : sche4,sche5 : sche5,sche6 : sche6,sche7 : sche7,sche8 : sche8, location : location, price : price, disprice:disprice, disevent:disevent, composition:composition, people : people,linesub1,linesub2,linesub3, line1 : line1, line2 : line2, line3 : line3,  recommend1:recommend1, recommend2:recommend2, recommend3:recommend3, changed1:changed1, changed2:changed2, changed3:changed3, value1 : value1,
+		sche3 : sche3, sche4 : sche4,sche5 : sche5,sche6 : sche6, location : location, price : price, disprice:disprice, disevent:disevent, composition:composition, people : people,linesub1,linesub2,linesub3, line1 : line1, line2 : line2, line3 : line3,  recommend1:recommend1, recommend2:recommend2, recommend3:recommend3, changed1:changed1, changed2:changed2, changed3:changed3, value1 : value1,
 	 value2 : value2, value3 : value3, slimg1 : slimg1, slimg2 : slimg2, slimg3 : slimg3, slimg4 : slimg4, lepro1 : lepro1,
 	 lepro2 : lepro2, lepro3 : lepro3, lepro4 : lepro4, appt1 : appt1, appc1 : appc1, appt2 : appt2, appc2 : appc2, appt3 : appt3, appc3 : appc3,
 	 step1 : step1, stepc1 : stepc1, step2:step2,stepc2:stepc2,step3:step3,stepc3:stepc3,modate:modate, naverpay:naverpay,youtube:youtube,postscript:postscript};
 
 //mysql.update('update cider.std_more set subject = ?, subject2 = ?, bgimg1 = ?,thum=?,leader = ? ,period = ?,sche1 = ?, sche2 = ? ,sche3= ? where idx = ?', [subject,subject2,bgimg1,thum,leader,period,sche1,sche2,sche3,idx], function (err, data){
     
-	mysql.update('update cider.std_more set cate=?,state=?,flag=?,recentdate=?,decate=?,subject = ?, subject2 = ?, bgimg1 = ?, thum = ?, thum2=?, img1=?,img2=?,img3=?,leader = ?, period = ?, sche1 = ?, sche2 = ? ,sche3= ?,sche4= ?,sche5= ?,sche6= ?,sche7= ?,sche8= ? ,location= ?, price = ?, disprice =? , disevent = ?, composition=?,people= ? ,linesub1=?,linesub2=?,linesub3=?, line1= ? ,line2= ? ,line3= ?, recommend1=?, recommend2=?, recommend3=?, changed1=?, changed2=?, changed3=?, value1= ? ,value2= ? ,value3= ? ,slimg1= ? ,slimg2= ? ,slimg3= ? ,slimg4= ? ,lepro1= ?,lepro2= ?,lepro3= ?  ,lepro4= ?  ,appt1= ?  ,appc1= ?  ,appt2= ?  ,appc2= ?  ,appt3= ?  ,appc3= ?  ,step1= ?  ,stepc1= ?,step2= ?  ,stepc2= ?,step3= ?  ,stepc3= ? , modate= ?, naverpay=?, youtube=?, postscript=? where idx = ?', [cate,state,flag,recentdate,decate,subject,subject2,bgimg1,thum,thum2,img1,img2,img3,leader,period,sche1,sche2,sche3,sche4,sche5,sche6,sche7,sche8,location, price, disprice, disevent, composition,people,linesub1,linesub2,linesub3,line1,line2,line3,recommend1,recommend2,recommend3,changed1,changed2,changed3,value1,value2,value3,slimg1,slimg2,slimg3,slimg4,lepro1,lepro2,lepro3,lepro4,appt1,appc1,appt2,appc2,appt3,appc3,step1,stepc1,step2,stepc2,step3,stepc3,modate,naverpay,youtube,postscript,idx], function (err, data){
+	mysql.update('update cider.std_more set cate=?,state=?,flag=?,recentdate=?,decate=?,subject = ?, subject2 = ?, bgimg1 = ?, thum = ?, thum2=?, img1=?,img2=?,img3=?,leader = ?, period = ?, sche1 = ?, sche2 = ? ,sche3= ?,sche4= ?,sche5= ?,sche6= ? ,location= ?, price = ?, disprice =? , disevent = ?, composition=?,people= ? ,linesub1=?,linesub2=?,linesub3=?, line1= ? ,line2= ? ,line3= ?, recommend1=?, recommend2=?, recommend3=?, changed1=?, changed2=?, changed3=?, value1= ? ,value2= ? ,value3= ? ,slimg1= ? ,slimg2= ? ,slimg3= ? ,slimg4= ? ,lepro1= ?,lepro2= ?,lepro3= ?  ,lepro4= ?  ,appt1= ?  ,appc1= ?  ,appt2= ?  ,appc2= ?  ,appt3= ?  ,appc3= ?  ,step1= ?  ,stepc1= ?,step2= ?  ,stepc2= ?,step3= ?  ,stepc3= ? , modate= ?, naverpay=?, youtube=?, postscript=? where idx = ?', [cate,state,flag,recentdate,decate,subject,subject2,bgimg1,thum,thum2,img1,img2,img3,leader,period,sche1,sche2,sche3,sche4,sche5,sche6,location, price, disprice, disevent, composition,people,linesub1,linesub2,linesub3,line1,line2,line3,recommend1,recommend2,recommend3,changed1,changed2,changed3,value1,value2,value3,slimg1,slimg2,slimg3,slimg4,lepro1,lepro2,lepro3,lepro4,appt1,appc1,appt2,appc2,appt3,appc3,step1,stepc1,step2,stepc2,step3,stepc3,modate,naverpay,youtube,postscript,idx], function (err, data){
     	res.redirect('/adm/study/list/'+cate);
     	
     });
@@ -2261,4 +2186,80 @@ router.post('/schDelete', function(req, res, next) {
         res.send({msg : "success", result : data});
     });
 });
+
+
+router.get('/contents/maincontents/list', ensureAuthenticated, function(req, res, next) {
+	var CP = 1;
+	var mainlist;
+	mysql.select('SELECT * from cider.cid_contentsmain order by idx desc;', function (err, data){
+		stdlist = data;
+		res.render('admin/contents/main_list', { CP : CP, mainlist : data });
+	});
+});
+
+
+// 콘텐츠 메인페이지 최상단 노출 2019.01.22
+router.post('/contents/maincontents/insert', ensureAuthenticated, function(req, res, next) {
+	var CP = 1;
+	var cate1 = req.body.cate1
+	var img1 = req.body.img1;
+	var title1 = req.body.title1;
+	var url1 = req.body.url1;
+	var cate2 = req.body.cate2;
+	var img2 = req.body.img2;
+	var title2 = req.body.title2;
+	var url2 = req.body.url2;
+	var date = getWorldTime(+9);
+	var sets = {cate1 : cate1, img1:img1, title1 :title1 , url1 : url1, cate2 : cate2,img2:img2, title2 : title2, url2 : url2, publicing: 0 , regdate : date};
+	
+	mysql.insert('insert into cider.cid_contentsmain set ?', sets,  function (err, data){
+    res.redirect('/adm/contents/maincontents/list');
+    });
+});
+
+router.get('/contents/maincontents/update/:no', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 1;
+	var no = req.params.no;
+	var cate;
+	var user;
+
+	mysql.select('select * from cider.cid_contentsmain where idx = '+no+'', function (err, data){
+	res.render('admin/contents/main_update', {CP : CP, maincon : data});
+	});
+});
+
+
+router.post('/contents/maincontents/update', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 1;
+	var idx = req.body.idx;
+	var cate1 = req.body.cate1
+	var img1 = req.body.img1;
+	var title1 = req.body.title1;
+	var url1 = req.body.url1;
+	var cate2 = req.body.cate2;
+	var img2 = req.body.img2;
+	var title2 = req.body.title2;
+	var url2 = req.body.url2;
+	var date = getWorldTime(+9);
+	mysql.update('update cider.cid_contentsmain set cate1 = ?, img1=?, title1 = ?, url1 = ?, cate2 = ?, img2=?, title2 = ?, url2 = ? where idx = ?', [cate1,img1,title1,url1,cate2,img2,title2,url2,idx], function (err, data){                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                	
+    res.redirect('/adm/contents/maincontents/list');
+    });
+});
+
+
+router.get('/contents/maincontents/publicing/:idx', ensureAuthenticated, function(req, res, next) {
+	
+	var CP = 1;
+	var idx = req.params.idx;
+	var date = getWorldTime(+9);
+	mysql.update('update cider.cid_contentsmain set publicing = "0"', function (err, data){
+		mysql.update('update cider.cid_contentsmain set publicing = "1", publicingdate=? where idx=?',[date, idx], function (err, data2){
+			 res.redirect('/adm/contents/maincontents/list');
+		});
+	});
+});
+
+
 module.exports = router;
