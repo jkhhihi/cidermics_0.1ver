@@ -27,6 +27,11 @@
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/cid_contents.css" rel="stylesheet">
 <link href="/css/swiper.css" rel="stylesheet">
+
+<!-- fab add -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="/css/materialize2.css"  media="screen,projection"/>
+
 <!--link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"-->
 <!--Import exentriq-bootstrap-material-ui.min.css-->
 <!--19-01-24 00-->
@@ -53,7 +58,10 @@
   width: 100%;
   height: 100%;
 }
-
+.btn-floating:hover {
+	color : #e4dddd;
+	text-decoration:none !important
+}
 </style>
 
 <script type="text/javascript">
@@ -220,6 +228,33 @@ body { padding-right: 0px !important}
 	}
 
 </script>
+<script type="text/javascript" src="/js/materialize2.min.js"></script>
+
+	<div class="fixed-action-btn">
+		<a class="btn-floating btn-large blue">
+			<i class="large material-icons">add</i>
+		</a>
+		<ul>
+			<li><a class="btn-floating blue" href="https://finance.cidermics.com/finance">컨설팅</a></li>
+			<li><a class="btn-floating blue" href="/study">강의</a></li>
+			<li><a class="btn-floating blue" href="/seminar">세미나</a></li>
+		</ul>
+	</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.fixed-action-btn');
+        var instances = M.FloatingActionButton.init(elems, {
+            hoverEnabled: false,
+            direction:'top'
+        });
+
+        $('.fixed-action-btn').floatingActionButton('open');
+
+    });
+
+</script>
 <div class="mob-bg-gray">
 <div class="mob-bg-white container">		
 	<div class="contents container">
@@ -324,56 +359,6 @@ $(document).ready(function(){
 });
 </script>
 
-	<!--script type="text/javascript" src="/js/exentriq-bootstrap-material-ui.min.js"></script-->
-
-	<!--style>
-		.btn.eq-ui-btn-fab.eq-ui-btn-mini-fab {
-			padding-top: 14px;
-			font-size: 13px;
-			width: 48px;
-			min-width: 48px;
-			height: 48px;
-			color:#fff;
-			box-shadow:0 6px 6px 0 rgba(0,0,0,0.2);
-		}
-		.eq-ui-btn-fab-action ul li {
-			margin-bottom: 10px;
-		}
-		.eq-ui-btn-fab-action {
-	    right: 32px;
-	    bottom: 90px;
-	    }
-	    a.teal-A700:hover{background-color:#00897b !important}
-		a.deep-orange-500:hover{background-color:#e64a19 !important}
-		a.amber-A700:hover{background-color:#ff8f00 !important}
-		#service-btn:hover{color:#fff !important; background-color:#222 !important}
-	</style>
-
-	<div class="eq-ui-btn-fab-action">
-		<a id="service-btn" class="btn eq-ui-btn-fab eq-ui-waves-light white"><i id="icon"
-			class="glyphicon glyphicon-remove" style="line-height:52px;"></i></a>
-		<ul>
-			<li><a href="https://finance.cidermics.com/finance"
-				class="btn eq-ui-btn-fab eq-ui-btn-mini-fab teal-A700" style="border:1px solid #00897b">컨설팅</a>
-			</li>
-			<li><a href="/study"
-				class="btn eq-ui-btn-fab eq-ui-btn-mini-fab deep-orange-500" style="border:1px solid #e64a19">강의</a>
-			</li>
-			<li><a href="/seminar"
-				class="btn eq-ui-btn-fab eq-ui-btn-mini-fab amber-A700" style="border:1px solid #ff8f00">세미나</a>
-			</li>
-		</ul>
-	</div>
-
-
-
-	<script type="text/javascript">
-		$('#service-btn').click(function(){
-			$('#service-btn ul').toggle('1000');
-			icon = $(this).find("i");
-			icon.toggleClass("glyphicon-remove glyphicon-plus")
-		})
-	</script-->
 		
 		<div class="contents container">
 				<p>&nbsp;</p>
@@ -595,13 +580,6 @@ $(document).ready(function(){
 
 		</div>		
 		</div>
-		
-		<script type="text/javascript">
-			$(document).ready(function (){
-				$('.eq-ui-btn-fab-action').openFAB();
-			})
-		</script>
-		
 		
 		<script src="/js/contents_js/masonry.pkgd.min.js"></script>
 		<script src="/js/contents_js/imagesloaded.js"></script>

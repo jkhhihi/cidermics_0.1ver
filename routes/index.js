@@ -296,7 +296,7 @@ router.get('/', function(req, res, next) {
 			 row3 = data;
 
 
-		res.render('front/cid_main2', { contents : row, allcontents:row2, maincon:row3});
+		res.render('front/cid_main4', { contents : row, allcontents:row2, maincon:row3});
 			});
 		});
 	});

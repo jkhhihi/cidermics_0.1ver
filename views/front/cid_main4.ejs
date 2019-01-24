@@ -35,6 +35,10 @@
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
+<!-- fab add -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="/css/materialize2.css"  media="screen,projection"/>
+
 <script src="/js/modernizr.custom.js"></script>
 <script language="javascript" type="text/javascript">
 function openWinFB(){
@@ -163,6 +167,10 @@ function openWinKA(){
 		height: 200px;
 	}
 }
+.btn-floating:hover {
+	color : #e4dddd;
+	text-decoration:none !important
+}
 </style>
 
 </head>
@@ -249,53 +257,33 @@ function openWinKA(){
     });
 });
 </script>
+<script type="text/javascript" src="/js/materialize2.min.js"></script>
 
-<style>
-	.btn.eq-ui-btn-fab.eq-ui-btn-mini-fab {
-		padding-top: 14px;
-		font-size: 13px;
-		width: 48px;
-		min-width: 48px;
-		height: 48px;
-		color:#fff;
-		box-shadow:0 6px 6px 0 rgba(0,0,0,0.2);
-	}
-	.eq-ui-btn-fab-action ul li {
-		margin-bottom: 10px;
-	}
-	a.teal-A700:hover{background-color:#00897b !important}
-	a.deep-orange-500:hover{background-color:#e64a19 !important}
-	a.amber-A700:hover{background-color:#ff8f00 !important}
-	.eq-ui-btn-fab-action {
-    right: 32px;
-    }
-    
-</style>
+<div class="fixed-action-btn">
+	<a class="btn-floating btn-large blue">
+		<i class="large material-icons">add</i>
+	</a>
+	<ul>
+		<li><a class="btn-floating blue" href="https://finance.cidermics.com/finance">컨설팅</a></li>
+		<li><a class="btn-floating blue" href="/study">강의</a></li>
+		<li><a class="btn-floating blue" href="/seminar">세미나</a></li>
+	</ul>
+</div>
 
-	<div class="eq-ui-btn-fab-action">
-		<a id="service-btn" class="btn eq-ui-btn-fab eq-ui-waves-light white"><i id="icon"
-			class="glyphicon glyphicon-remove" style="line-height:52px;"></i></a>
-		<ul>
-			<li><a href="https://finance.cidermics.com/finance"
-				class="btn eq-ui-btn-fab eq-ui-btn-mini-fab teal-A700" style="border:1px solid #00897b">컨설팅</a>
-			</li>
-			<li><a href="/study"
-				class="btn eq-ui-btn-fab eq-ui-btn-mini-fab deep-orange-500" style="border:1px solid #e64a19">강의</a>
-			</li>
-			<li><a href="/seminar"
-				class="btn eq-ui-btn-fab eq-ui-btn-mini-fab amber-A700" style="border:1px solid #ff8f00">세미나</a>
-			</li>
-		</ul>
-	</div>
 
-	<script type="text/javascript">
-		$('#service-btn').click(function(){
-			$('#service-btn ul').toggle('1000');
-			icon = $(this).find("i");
-			icon.toggleClass("glyphicon-remove glyphicon-plus")
-		})
-	</script>	
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		var elems = document.querySelectorAll('.fixed-action-btn');
+		var instances = M.FloatingActionButton.init(elems, {
+            hoverEnabled: false,
+            direction:'top'
+		});
 
+		$('.fixed-action-btn').floatingActionButton('open');
+
+	});
+
+</script>
 	<!-- 강의 홍보 팝업 창 > 
 <div id="info-wrap">
 	<div id="pop">
@@ -504,16 +492,9 @@ function openWinKA(){
 			</div>
 		</div>
 	</div>
-	
-	
-	<script type="text/javascript">
-		$(document).ready(function (){
-			$('.eq-ui-btn-fab-action').openFAB();			
-		})
-	</script>
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
 	<script type="text/javascript" src="/js/exentriq-bootstrap-material-ui.js"></script>
-	
+
 	<script type="text/javascript">
 				
 		var idx = 2;
