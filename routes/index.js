@@ -283,6 +283,7 @@ router.get('/', function(req, res, next) {
 	//최신 콘텐츠 qry
 	var qry="select con_no, con_photo, con_title, if (a.con_upDate > DATE_ADD(now(),INTERVAL -5 DAY) ,'/page_imgs/main_img/new_mark4.svg','/page_imgs/main_img/new_mark1px.png') as chkDat from cider.cid_contents a where a.con_release <= '"+_tot+"' order by a.con_release desc limit 0,2"; //첫줄에 갯수
 	var qry2="select con_no, con_photo, con_title, if (a.con_upDate > DATE_ADD(now(),INTERVAL -1 DAY) ,'/page_imgs/main_img/new_mark4.svg','/page_imgs/main_img/new_mark1px.png') as chkDat from cider.cid_contents a where a.con_release <= '"+_tot+"' order by a.con_release desc limit 2,12";
+	var qry3 = "select * from cider.cid_contentsmain where publicing='1';"
 	mysql.select(qry, function (err, data){
 		if (err) throw err;
 		 row = data;
@@ -290,9 +291,13 @@ router.get('/', function(req, res, next) {
 		 mysql.select(qry2, function (err, data){
 		if (err) throw err;
 		 row2 = data;
+		 	mysql.select(qry3, function (err, data){
+			if (err) throw err;
+			 row3 = data;
 
 
-		res.render('front/cid_main2', { contents : row, allcontents:row2});
+		res.render('front/cid_main2', { contents : row, allcontents:row2, maincon:row3});
+			});
 		});
 	});
 });
