@@ -204,7 +204,7 @@ a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
 .width96{width:98%}
 .collapsible{width:100%}
 .collapsible.popout > li{margin:0}
-.collapsible-header{font-size:20px; padding:16px 10px; line-height:1.5em;}
+.collapsible-header{font-size:18px; padding:16px 10px; line-height:1.5em;}
 .collapsible-body{font-size:16px; padding:10px}
 
 a.btn-review h5 span{margin-top:50px}
@@ -423,7 +423,17 @@ function surveyGo4()
     p1.submit();
   }
 </script>
-  
+
+<script>
+	var instance = M.Tabs.init(el, options);
+		
+	// Or with jQuery
+		
+	$(document).ready(function(){
+		$('.tabs').tabs();
+	});
+</script> 
+ 
 <script src="/js/gotoup.js"></script>
   
 </head>
@@ -638,7 +648,18 @@ function surveyGo4()
     </li>    
   </ul>
 </div>
-
+			 <div><img class="responsive-img" src="/page_imgs/study_img/lecture-68/10-16.jpg"></div>
+			 <div><img class="responsive-img" src="/page_imgs/study_img/lecture-68/17-20.jpg"></div>
+			 <div><img class="responsive-img" src="/page_imgs/study_img/lecture-68/21.jpg"></div>
+<!-- 탭메뉴 -->
+  <ul id="tabs-swipe-demo" class="tabs" style="height:100%">
+    <li class="tab col s3" style="height:100%"><a class="active" href="#test-swipe-1"><img class="responsive-img" src="/page_imgs/study_img/lecture-68/btn1.png"></a></li>
+    <li class="tab col s3" style="height:100%"><a href="#test-swipe-2"><img class="responsive-img" src="/page_imgs/study_img/lecture-68/btn2.png"></a></li>
+    <li class="tab col s3" style="height:100%"><a href="#test-swipe-3"><img class="responsive-img" src="/page_imgs/study_img/lecture-68/btn3.png"></a></li>
+  </ul>
+  <div id="test-swipe-1" class="col s12"><img class="responsive-img" src="/page_imgs/study_img/lecture-68/22.jpg"></div>
+  <div id="test-swipe-2" class="col s12"><img class="responsive-img" src="/page_imgs/study_img/lecture-68/23.jpg"></div>
+  <div id="test-swipe-3" class="col s12"><img class="responsive-img" src="/page_imgs/study_img/lecture-68/24.jpg"></div>			 
 
 <!-- 끝 -->
 		</div>
