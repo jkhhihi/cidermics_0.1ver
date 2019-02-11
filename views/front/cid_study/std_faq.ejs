@@ -25,6 +25,13 @@
     <link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
     <link rel="icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico"/>
 
+    <script type="text/javascript"> function numkeyCheck(e)
+    { 
+      var keyValue = event.keyCode; if( ((keyValue >= 48) && (keyValue <= 57)) )
+      return true;
+      else return false;
+    }
+    </script>
  
 
   <script src="/js/gotoup.js"></script>
@@ -33,7 +40,6 @@
 
   <div id="but_top"><a class="btn btn-floating  blue-grey darken-4"><i class="material-icons">arrow_upward</i></a></div>
   <% include std_top %>
-
 
   <div class="parallax-container valign-wrapper" style="min-height: 300px;">
     <div class="section no-pad-bot" style="padding-top:65px; top:20%;">
@@ -46,7 +52,6 @@
     </div>
     <div class="parallax"><img src="/page_imgs/study_img/backgroundm9.jpg" alt="Unsplashed background img 1"></div>
   </div>
-
 <div class="container" style="margin: 50px auto;">
   <div class="row">
      <div class="col s12 center">
@@ -81,8 +86,8 @@
           <label for="name">이름</label>
         </div>
         <div class="input-field col s6">
-          <input id="email" type="email" class="validate" name="stda_email">
-          <label for="email">연락처</label>
+          <input type="text" name="stda_email" onKeyPress="return numkeyCheck(event)" placeholder="(-)하이픈 없이 숫자만 입력해주세요.">
+          <label for="phone">전화번호</label>
         </div>
       </div>
       <div class="row">

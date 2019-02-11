@@ -95,7 +95,14 @@
          
       }
 </script>
- 
+
+  <script type="text/javascript"> function numkeyCheck(e)
+    { 
+      var keyValue = event.keyCode; if( ((keyValue >= 48) && (keyValue <= 57)) )
+      return true;
+      else return false;
+    }
+    </script>
 
   <script src="/js/gotoup.js"></script>
   </head>
@@ -254,8 +261,8 @@
           <label for="name">이름</label>
         </div>
         <div class="input-field col s6">
-          <input id="email" type="email" class="validate" name="stda_email">
-          <label for="email">연락처</label>
+          <input type="text" name="stda_email" onKeyPress="return numkeyCheck(event)" placeholder="(-)하이픈 없이 숫자만 입력해주세요.">
+          <label for="phone">전화번호</label>
         </div>
       </div>
       <div class="row">
