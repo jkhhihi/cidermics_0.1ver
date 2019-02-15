@@ -173,6 +173,11 @@ a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
 </style>
 
 <style type="text/css">
+a.btn-review h5 span{color:#0aa0f6 !important; border:2px solid #0aa0f6; border-radius:5px; padding:20px 40px; display:inline-block; margin-top:100px}
+a.btn-review h5 span:hover{background-color:#0aa0f6; color:#fff !important}
+a.btn-seminar h5 span{color:#0aa0f6 !important; border:2px solid #0aa0f6; border-radius:5px; padding:20px 40px; display:inline-block; margin-top:20px; margin-bottom:50px}
+a.btn-seminar h5 span:hover{background-color:#0aa0f6; color:#fff !important}
+
   #countdown {
       text-align: center;
       background-color:#000;
@@ -196,13 +201,27 @@ a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
 .database .container #btn1 span:hover{background-color:#f9ff00;}
 .database .container #btn1 a{color:#fff;}
 .database .container #btn1 a:hover{color:#000;}
+#lecture57 img{width:50%}
+#lecture57 .bg9{background-size: cover; height:500px; background-image: url("/page_imgs/study_img/lecture-57/9.jpg"); background-color:#fdfdfd}
 @media only screen and (max-width : 1024px) {
+	.mob-none{display:none;}
+	.mob-margin1{margin-bottom:20px;}
+
 a.btn-review h5 span{margin-top:50px}
 a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
 #countdown{padding:20px 0 0 0}
 #countdown span{font-size:14px}
 .database{padding:0 0 20px 0; font-size:20px;}
 .database .container input{font-size:18px; padding:2px 4px; margin-top:0; height:30px}
+#lecture57 img{width:100%}
+#lecture57 .bg9{height:200px;}
+}
+
+
+@media only screen and (max-width : 1024px) {
+a.btn-review h5 span{margin-top:50px}
+a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
+}
 
 .youtubeWrap {
   position: relative;
@@ -243,8 +262,7 @@ a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
 </script>
 
 <script type="text/javascript">
-  // JavaScript Document
-
+  
 function surveyGo1()
   {
     var p1 = document.prinsert1;
@@ -413,18 +431,9 @@ function surveyGo4()
     p1.submit();
   }
 </script>
-  <script src="/js/gotoup.js"></script>
 
-<style type="text/css">
-.lecture-65{font-family: 'Nanum Myeongjo';}
-.lecture-65 p.column{font-size:20px; line-height:1.8em}
-.lecture-65 p.column .textstyle1{color:#0375a4;}
-@media only screen and (max-width : 1024px) {
-.lecture-65 p{padding:0 6px}
-.lecture-65 p.column{font-size:16px; line-height:1.6em}
-}
-</style>  
   
+  <script src="/js/gotoup.js"></script>
   </head>
   <body>
 
@@ -449,6 +458,7 @@ function surveyGo4()
 
     </div>
   </div>
+
   <div class="parallax"><img src="<%=md[0].bgimg1%>"></div>
 </div>
 
@@ -488,7 +498,7 @@ function surveyGo4()
 
             <div class="row" style="margin-bottom: 5px;">
               <div class="col s4 m3">일정</div>
-              <div class="col s8 m6" style="text-align: left;"><b><%=md[0].sche1%><br><%=md[0].sche2%><br><%=md[0].sche3%><br><%=md[0].sche4%><br><%=md[0].sche5%></b></div>
+              <div class="col s8 m6" style="text-align: left;"><b><%=md[0].sche1%><br><%=md[0].sche2%><br><%=md[0].sche3%><br><%=md[0].sche4%><br><%=md[0].sche5%><br><%=md[0].sche6%></b></div>
               <div class="col s0 m3"></div>
             </div>
 
@@ -514,12 +524,12 @@ function surveyGo4()
 
             <div class="row">
               <div class="col s4 m3">총 금액</div>
-              <div class="col s8 m6" style="text-align: left;" ><b class="amount"><%=md[0].price%></b>원</span>
+              <div class="col s8 m6" style="text-align: left;" ><b>199,000</b>원 (착한강의)
               </div>
               <div class="col s0 m3"></div>
               
               <!-- 카드할부내용 -->
-              <div class="col s12" style="background-color:#fafafa; border:1px #ddd solid; border-radius:10px; margin-top:10px; padding:10px 15px;">※ 카드결제시 ※<br>199,000원 -> <b>월 33,000원</b> (무이자 6개월 할부 적용시)</div>
+              <div class="col s12" style="background-color:#fafafa; border:1px #ddd solid; border-radius:10px; margin-top:10px; padding:10px 15px;">※ 카드결제시 ※<br><b>월 34,000원</b> (무이자 6개월 할부 적용시)</div>
               
             </div>
 
@@ -563,340 +573,45 @@ function surveyGo4()
   <div class="divider"></div>
 
 <div id="study-new">
-	<div class="lecture-65">
-	<!-- 작업한이미지 -->
-	<div>
-		<div align="center">
-			 <img class="responsive-img" src="/page_imgs/study_img/lecture-65/column-img1.jpg">
-			 <br><br>
-			 <h4>갈팡질팡 살다가 내 이럴 줄 알았지.</h4>
-			 <h5><i>I knew if I stayed around long enough,<br>something like this would happen.<br>- George Bernard Shaw -</i></h5>
-			 <p class="column">
-			 	<br>
-				사람들은 많은 돈을 원합니다.<br>
-				그래서 사람들은 복권 당첨을 원합니다.<br> 
-				그렇게 되면 자신이 행복해질 것이라 착각합니다.
-				<br><br>
-				복권에 당첨된 사람 대다수가<br>
-				패가망신하는 이유는 무엇일까요?
-				<br><br>
-				그것은 돈의 산술적 수치 뒤에 숨겨진<br>
-				능력 수치를 간과하기 때문입니다.
-				<br><br>
-				전 세계 각 부호와 빈자 할 것 없이<br>
-				사람들의 모든 돈을 몰수한 뒤에<br>
-				모두에게 500만 원씩 공평하게 나눈다고 가정해보죠.
-				<br><br>
-				일정 시간이 지난 뒤,<br>
-				부의 재분배 혹은 경제 계급의 변혁은 일어날까요?
-				<br><br>
-				전혀 그렇지 않을 것입니다.
-				<br><br>
-				<span class="textstyle1">
-				빈자는 다시 빈자가 될 것이며<br>
-				부자는 다시 부자가 될 것입니다.
-				<br><br>
-				​명령하던 사람은 다시 명령을<br>
-				따르던 사람은 다시 명령을 따를 것입니다.
-				</span>
-				<br><br>
-				그들이 가지고 있는 돈은 그 수치 자체가 아닌<br>
-				그만큼의 돈을 취할 수 있는 능력이기 때문이고<br>
-				그만큼의 돈을 취할 수 있는 권리이기 때문입니다.
-				<br><br>
-				때문에 사람들은 타고난 것 그 자체를 수치로 여길 때도 있습니다.<br>
-				가난을, 노동에 묶인 신분을, 능력을 그 자체의 수치로 여깁니다.
-				<br><br>
-				세상은 우리에게 이런 것들을 가르쳐주지 않았습니다.<br>
-				세상이라는 거대한 시스템은 순리자들을 원하기 때문입니다.
-				<br><br>
-				우리는 시스템을 따르길 학습 받아왔고,<br>
-				이제껏 자본가로서의 인생을 결정할 권리를 허락받지 못했습니다.
-				<br><br>
-				세상은 우리에게 그 어떤 위험도 도망치라 했고,<br>
-				그 어떤 도전해도 해선 안된다고 말했습니다.
-				<br><br>
-				적금을 가입하라고 했고, 연금을 부으라고 했으며,<br>
-				조금이라도 낯선 것은 쳐다도 보지 말라며 손사래 쳤습니다.
-				<br><br>
-				<span class="textstyle1">
-				우리는 순응했고, 문득 현실의 먼 발치에서<br>
-				순리에 위반한 자본가들을 마주할 기회를 갖게 됩니다.
-				</span>
-				<br><br>
-				그들은 노동이란 족쇄에 메어있지 않았으며<br>
-				그들의 돈은 그들이 잠든 사이에도 일하고 있었습니다.
-				<br><br>
-				그들은 돈을 벌기 위해 살지 않았고<br>
-				살면서 돈을 벌고 있었습니다.
-				<br><br>
-				우리가 월급을 모을수록<br>
-				우리가 살 집값은 기하급수적으로 올라갔으며<br>
-				우리의 월급이 오를수록<br>
-				우리가 지불하는 물가도 끔찍이 올라갔습니다.
-				<br><br>
-				자본가들이 순리를 위반하면서 끊임없이 배를 불리는 동안<br>
-				우리는 자본가로 살아볼 기회조차 꿈꿀 수 없게 되었습니다.
-				<br><br>
-				저희는 무언가 단단히 잘못되었다는 생각이 들었습니다.<br>
-				물이 위험하다고 평생 수영을 하지 말아야 하는 것은 아닙니다.<br>
-				교통사고가 두려워 평생 자동차를 갖지 않음도 그렇습니다.
-				<br><br>
-				<span class="textstyle1">
-				우리는 투자가 무작정 위험하다고 할 것이 아니라<br>
-				우리가 통제 가능한 RISK와 통제할 수 없는 DANGER를<br>
-				구분 지을 필요성이 있다고 생각했습니다.
-				</span>
-				<br><br>
-				나이프에 베일까 두려워, 스푼으로 음식을 썰고 있는<br>
-				우리의 모습이 무언가 크게 잘못돼있다고 생각했습니다.
-				<br><br>
-				때문에 저희는 객관적인 전문성과 경력을 가진<br>
-				국내 최고 주식 투자 전문가 4인을 모셨고
-				<br><br>
-				가장 필요한 지식만을 가장 많은 사람들에게<br>
-				밀도 있게 전달하기 위해 열심히 노력했습니다.
-				<br><br>
-				<span class="textstyle1">
-				저희는 이 강의를 통해 보다 많은 사람들이<br>
-				족쇄 같은 순응으로부터<br>
-				벗어날 기회를 얻을 수 있다고 믿습니다.
-				</span>
-				<br><br>
-				본 강의를 통해 보다 많은 사람들이<br>
-				자본가라는 꿈에 용기를 갖길 바랍니다.
-			 	<br>
-			 	<br><br><br>
-			 </p>
-			 <div class="divider"></div>
-			 <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/0.jpg"></div>
-			 <div class="divider"></div>
-			 <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/graph1.jpg"></div>
-			 <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/1-1.jpg"></div>
-			 <div style="background-color:#fcfcfc" align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/1-2.jpg"></div>
-			 <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/1-4.jpg"></div>			 
-			 <div style="background-color:#e5e80a" align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/1-3.jpg"></div>
-			 <div style="background-color:#0375a4" align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/1-5.jpg"></div>
-			 <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/1-6.jpg"></div>
-				<!-- 마감임박 -->
-				<div id="countdown">
-				   <div><span style="color:#9ddaff;">*담당 매니저가 강의와 관련된 상담을 도와드릴 예정입니다.</span></a></div>
-				</div>
-				<div class="database" style="background-color:#000">
-  <div class="container">
 
-    <div class="row">
-
-          <form action="/prinsert" method="post" name="prinsert1" class="col s12">
-            <input type="hidden" name="cate" value="<%=md[0].cate%>">
-            <input type="hidden" name="idx" value="<%=md[0].idx%>">
-            <input type="hidden" name="tele_check" value="1">
-            
-            <div class="row margin0">
-              <div id="name" class="input-field col s6">
-                <span class="color1">이름 : </span>
-                <input type="text" name="pname" length="4" >
-              </div>
-              <div id="phon" class="input-field col s6">
-                <span class="color1">전화번호 : </span>
-                <input type="text" name="phone" maxlength="11" >
-              </div>
-            </div>
-
-            <div class="row margin0">
-              <div class="input col s12 l8" style="height: 50px;">
-                <input type="checkbox" id="check1" name="check1" />
-                <label for="check1">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
-                <br>
-                <input type="checkbox" id="check2" name="check2"/>
-                <label for="check2">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
-                <br>
-                <br>
-              </div>
-            </div>
-
-        <div id="btn1" align="center">
-          <br><a style="cursor:pointer" onclick="surveyGo1()"><span>상담 신청하기</span></a>
-        </div>
-      </form>
-    </div>
-  </div>
+<!-- 작업한이미지 -->
+<div id="lecture57" style="background-color:#fdfdfd" align="center"> 
+	<div style="background-color:#fdfdfd"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/1.jpg"></div>
+	<div style="background-color:#ececec"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/2.jpg"></div>
+	<div style="background-color:#ffe826"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/3.jpg"></div>	
+	<div style="background-color:#fdfdfd"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/4.jpg"></div>
+	<div style="background-color:#fdfdfd"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/5.jpg"></div>
+	<div style="background-color:#ececec"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/6.jpg"></div>
+	<div style="background-color:#ececec"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/7.jpg"></div>
+	<div class="divider"></div>
+	<div style="background-color:#fdfdfd"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/8.jpg"></div>
+	<!-- div class="bg9"></div>
+	<div style="background-color:#fdfdfd"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/10.jpg"></div -->
+	<div style="background-color:#0092b7"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/11.jpg"></div>
+	<div style="background-color:#fdfdfd"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/12.jpg"></div>
+	<div class="divider"></div>
+	<div style="background-color:#fdfdfd"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/13.jpg"></div>	
+	<div style="background-color:#323232"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/14.jpg"></div>
+	<div style="background-color:#fdfdfd"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/15.jpg"></div>
+	<div style="background-color:#f6e1e0"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/16.jpg"></div>
+	<div style="background-color:#fdfdfd"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/17.jpg"></div>
+	<div style="background-color:#f6e1e0"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/18.jpg"></div>
+	<div style="background-color:#0092b7"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/19.jpg"></div>
+	<div style="background-color:#fdfdfd"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/20.jpg"></div>
+	<div style="background-color:#0092b7"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/21.jpg"></div>
+	<div style="background-color:#fdfdfd"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/22.jpg"></div>
+	<div class="divider"></div>
+	<div style="background-color:#fdfdfd"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/23.jpg"></div>
+	<div style="background-color:#ffe826"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/24.jpg"></div>
+	<div style="background-color:#ffffff"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/25.jpg"></div>
+	<div style="background-color:#ffffff"><a href="../study/seminar"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/26.jpg"></a></div>
+	<div style="background-color:#ffe826"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/27.jpg"></div>
+	<div style="background-color:#323232"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/review.jpg"></div>
+	<div style="background-color:#fdfdfd"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/28.jpg"></div>
+	
 </div>
-			 <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/graph4.jpg"></div>	
-			 <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/4-1.jpg"></div>
-			 <div style="background-color:#fcfcfc" align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/4-2.jpg"></div>
-			 <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/4-4.jpg"></div>			 
-			 <div style="background-color:#e5e80a" align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/4-3.jpg"></div>
-			 <div style="background-color:#0375a4" align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/4-5.jpg"></div>
-			 <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/4-6.jpg"></div>
-				<!-- 마감임박 -->
-				<div id="countdown">
-				   <div><span style="color:#9ddaff;">*담당 매니저가 강의와 관련된 상담을 도와드릴 예정입니다.</span></a></div>
-				</div>
-				<!-- DB 작성 칸 -->
-				<div class="database" style="background-color:#000">
-  <div class="container">
+<!-- 끝 -->
 
-    <div class="row">
-
-          <form action="/prinsert" method="post" name="prinsert2" class="col s12">
-            <input type="hidden" name="cate" value="<%=md[0].cate%>">
-            <input type="hidden" name="idx" value="<%=md[0].idx%>">
-            <input type="hidden" name="tele_check" value="1">
-            
-            <div class="row margin0">
-              <div id="name" class="input-field col s6">
-                <span class="color1">이름 : </span>
-                <input type="text" name="pname" length="4" >
-              </div>
-              <div id="phon" class="input-field col s6">
-                <span class="color1">전화번호 : </span>
-                <input type="text" name="phone" maxlength="11" >
-              </div>
-            </div>
-
-            <div class="row margin0">
-              <div class="input col s12 l8" style="height: 50px;">
-                <input type="checkbox" id="check1" name="check1" />
-                <label for="check1">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
-                <br>
-                <input type="checkbox" id="check2" name="check2"/>
-                <label for="check2">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
-                <br>
-                <br>
-              </div>
-            </div>
-
-        <div id="btn1" align="center">
-          <br><a style="cursor:pointer" onclick="surveyGo2()"><span>상담 신청하기</span></a>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
-			 <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/graph2.jpg"></div>				
-			 <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/2-1.jpg"></div>
-			 <div style="background-color:#fcfcfc" align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/2-2.jpg"></div>
-			 <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/2-4.jpg"></div>
-			 <div style="background-color:#e5e80a" align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/2-3.jpg"></div>
-			 <div style="background-color:#0375a4" align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/2-5.jpg"></div>
-			 <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/2-6.jpg"></div>
-				<!-- 마감임박 -->
-				<div id="countdown">
-				   <div><span style="color:#9ddaff;">*담당 매니저가 강의와 관련된 상담을 도와드릴 예정입니다.</span></a></div>
-				</div>
-				<!-- DB 작성 칸 -->
-				<div class="database" style="background-color:#000">
-				  <div class="container">
-				
-				    <div class="row">
-				
-				      <form action="/prinsert" method="post" name="prinsert3" class="col s12">
-				        <input type="hidden" name="cate" value="<%=md[0].cate%>">
-				        <input type="hidden" name="idx" value="<%=md[0].idx%>">
-				        <input type="hidden" name="tele_check" value="1">
-				        
-				        <div class="row margin0">
-				          <div id="name" class="input-field col s6">
-				            <span class="color1">이름 : </span>
-				            <input type="text" name="pname" length="4" >
-				          </div>
-				          <div id="phon" class="input-field col s6">
-				            <span class="color1">전화번호 : </span>
-				            <input type="text" name="phone" maxlength="11" >
-				          </div>
-				        </div>
-				
-				        <div class="row margin0">
-				          <div class="input col s12 l8" style="height: 50px;">
-				            <input type="checkbox" id="check13" name="check1" />
-				            <label for="check13">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
-				            <br>
-				            <input type="checkbox" id="check14" name="check2"/>
-				            <label for="check14">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
-				            <br>
-				            <br>
-				          </div>
-				        </div>
-				
-				        <div id="btn1" align="center">
-				          <br><a style="cursor:pointer" onclick="surveyGo3()"><span>상담 신청하기</span></a>
-				        </div>
-				      </form>
-				    </div>
-				  </div>
-				</div>
-			 <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/graph3.jpg"></div>				
-			 <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/3-1.jpg"></div>
-			 <div style="background-color:#fcfcfc" align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/3-2.jpg"></div>
-			 <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/3-4.jpg"></div>
-			 <div style="background-color:#e5e80a" align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/3-3.jpg"></div>
-			 <div style="background-color:#0375a4" align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/3-5.jpg"></div>
-			 <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/3-6.jpg"></div>
-			 <div class="divider"></div>
-			 <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/5.jpg"></div>
-			 <div class="divider"></div>
-			 <br><br>
-			 <p class="column">
-			 	<br>
-			 	<span class="textstyle1">
-				경제를 공부한다는 것은 무척 가치 있는 일입니다.<br>
-				</span>
-				하물며 현대 사회의 필수 교양과도 다름없는 주식이라면<br>
-				더욱더 가치 있는 일이라고 할 수 있을 것입니다.
-				<br><br>
-				하지만 주식 투자에 관심을 갖거나<br>
-				혹은 하고 있거나
-				<br><br>
-				​​경제와 금융에 관심을 가진 사람들이<br>
-				서로에게 긍정적인 영향을 줄 수 있는<br>
-				사람들을 만나기란 쉽지 않습니다.
-				<br><br>
-				경제에 관심이 있다고 하면 보통은<br>
-				성실히 직장생활이나 하라는 말을 듣게 될 것이고
-				<br><br>
-				주식에 관심이 있다고 하면 보통은<br>
-				얌전히 남들처럼 살라는 조언을 듣게 됩니다.
-				<br><br>
-				일반적인 사람들이 자신의 삶에 순응하고<br>
-				더 이상 자본가로서 자신의 삶에 도전할 수 없는 것에는<br>
-				이런 환경적 요인도 무시할 수만은 없을 것입니다.
-				<br><br>
-				때문에 우리는 관계를 섣불리 회피하거나<br>
-				직접 불필요한 시행착오를 겪어가며<br>
-				시장에 값비싼 수업료를 지불하곤 합니다.
-				<br><br>
-				많은 자본가들이 입을 모아 하는 말이 있습니다.<br>
-				바로 시간과 선택의 중요성입니다.
-				<br><br>
-				실제로 자본주의 사회에서 시간의 가치는 천문학적입니다.<br>
-				또한 어떤 선택을 하느냐에 따라<br>
-				미래가 크게 바뀌는 일도 우리에겐 익숙한 일입니다.
-				<br><br>
-				사실 여러분이 현재 주식을 하고 있건, 하고 있지 않건<br>
-				이제껏 어떤 경험과 지식을 갖고 있건<br>
-				그것은 저희에게 중요한 일이 아닙니다.
-				<br><br>
-				<span class="textstyle1">
-				그보다 정말 중요한 것은<br>
-				저금리, 저성장 사회에서 우리 모두는
-				<br><br>
-				언젠가 투자자로서 제2의 인생을<br>
-				반드시 마주할 수 밖에 없다는 것과
-				</span>
-				<br><br>
-				한발 앞서, 미래를 준비하는 우리의 선택이<br>
-				우릴 더 가치있게 만든다는​ 사실일 것입니다.
-			 	<br><br><br>
-			 </p>
-			 <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/column-img2.jpg" style="margin-bottom:-10px"></div>
-			 <div class="divider"></div>
-			 <div align="center"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/6.jpg"></div>
-			 <div align="center"><a href="../study/seminar"><img class="responsive-img" src="/page_imgs/study_img/lecture-65/7.jpg"></a></div> 		 		 
-		</div>
-	</div>
-	<!-- 끝 -->
-	</div>
 
 <!-- 웹진 -->
 <!-- pdf준다는 내용의 배너 -->
@@ -913,33 +628,33 @@ function surveyGo4()
 
     <div class="row">
 
-          <form action="/prinsert" method="post" name="prinsert4" class="col s12">
-            <input type="hidden" name="cate" value="<%=md[0].cate%>">
-            <input type="hidden" name="idx" value="<%=md[0].idx%>">
-            <input type="hidden" name="tele_check" value="1">
-            
-            <div class="row margin0">
-              <div id="name" class="input-field col s6">
-                <span class="color1">이름 : </span>
-                <input type="text" name="pname" length="4" >
-              </div>
-              <div id="phon" class="input-field col s6">
-                <span class="color1">전화번호 : </span>
-                <input type="text" name="phone" maxlength="11" >
-              </div>
-            </div>
+      <form action="/prinsert" method="post" name="prinsert4" class="col s12">
+        <input type="hidden" name="cate" value="<%=md[0].cate%>">
+        <input type="hidden" name="idx" value="<%=md[0].idx%>">
+        <input type="hidden" name="tele_check" value="1">
+        
+        <div class="row margin0">
+          <div id="name" class="input-field col s6">
+            <span class="color1">이름 : </span>
+            <input type="text" name="pname" length="4" >
+          </div>
+          <div id="phon" class="input-field col s6">
+            <span class="color1">전화번호 : </span>
+            <input type="text" name="phone" maxlength="11" >
+          </div>
+        </div>
 
-            <div class="row margin0">
-              <div class="input col s12 l8" style="height: 50px;">
-                <input type="checkbox" id="check1" name="check1" />
-                <label for="check1">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
-                <br>
-                <input type="checkbox" id="check2" name="check2"/>
-                <label for="check2">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
-                <br>
-                <br>
-              </div>
-            </div>
+        <div class="row margin0">
+          <div class="input col s12 l8" style="height: 50px;">
+            <input type="checkbox" id="check7" name="check1" />
+            <label for="check7">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
+            <br>
+            <input type="checkbox" id="check8" name="check2"/>
+            <label for="check8">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
+            <br>
+            <br>
+          </div>
+        </div>
 
         <div id="btn1" align="center">
           <br><a style="cursor:pointer" onclick="surveyGo4()"><span>상담 신청하기</span></a>
@@ -972,12 +687,32 @@ function surveyGo4()
 			<a href="/study/review" align="center" class="btn-review"><h5><span>☞ 더 많은 후기 보기</span></h5></a>		
 	</div>
 </div>
-
+<div class="divider"></div>
+<div class="section0">
+	<div class="container">
+		<h4>경이로움 현장</h4>
+		<div class="line2"></div>
+		<div class="row">
+			<div class="col s12 m4 mob-margin1"><img class="responsive-img materialboxed z-depth-1" src="https://i.imgur.com/uFyT7lN.jpg"></div>
+			<div class="col s12 m4"><img class="responsive-img materialboxed z-depth-1" src="https://i.imgur.com/QVtSQJc.jpg"></div>
+			<div class="col s6 m4 mob-none"><img class="responsive-img materialboxed z-depth-1" src="https://i.imgur.com/tnDmlaP.jpg"></div>
+		</div>
+		<div class="row">
+			<div class="col s6 m4"><img class="responsive-img materialboxed z-depth-1" src="https://i.imgur.com/onD5fFQ.jpg"></div>
+			<div class="col s6 m4"><img class="responsive-img materialboxed z-depth-1" src="https://i.imgur.com/RD39NDP.jpg"></div>
+			<div class="col s6 m4 mob-none"><img class="responsive-img materialboxed z-depth-1" src="https://i.imgur.com/Hv3bGrc.jpg"></div>
+		</div>
+		<div align="center">
+			<!-- img class="responsive-img" src="https://i.imgur.com/CChI9Mm.png" style="margin-top:20px" -->
+		</div>		
+	</div>
+</div>
 <div class="section2">
 	<div class="container">
 	  <div class="row">
-	      <div class="col s12 center">
+	      <div class="col s12">
 	        <h4>추천 강의</h4>
+	        <div class="line2"></div>
 	      </div>
 	  </div>
 	
@@ -1018,7 +753,6 @@ function surveyGo4()
 
 
 <% include ../std_bottom %>
-
 
       <!-- 모달창 열림 -->
       <div id="modal1" class="modal modal-fixed-footer">
