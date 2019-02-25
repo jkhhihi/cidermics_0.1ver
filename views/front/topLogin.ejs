@@ -1,8 +1,9 @@
-	<% if (proPhoto == null){ %>
+	<% if (proPhoto == null){  console.log("프로필없음-비로그인");%>
 	<div id="login1">
 		<a href="/mem_login" style="color:#666;"><b>로그인 | 회원가입</b></a>
+
 	</div>
-		<% } else {%>
+		<% } else { console.log("프로필있음-로그인성공");%>
 		<div class='menu-bar' >
 		  <ul class="menu" style="font-size: 14px; font-weight:400;">
 		  	<li><a href='/mypage' style="padding:1px;">스크랩보기<img src="<%= proPhoto %>" width='35' height='35' style="border-radius:100px;"></a></li>

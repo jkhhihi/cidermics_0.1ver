@@ -117,7 +117,8 @@ router.post('/mem_login', function(req, res, next) {
       if(err){
         return next(err);
       }
-      return res.redirect('/');        
+      console.log('memlogin');
+      return res.redirect('/');
     });
   })(req, res, next);
 });
@@ -450,6 +451,8 @@ router.get('/passup', function(req, res, next) {
 
 router.post('/mypage/passup', function(req, res, next) {
 	var sePass = req.session.passport;
+
+	console.log(sePass);
 	if(sePass != null){
 		var mem_id ='';
 		if(sePass.user.length == 1){
@@ -459,7 +462,7 @@ router.post('/mypage/passup', function(req, res, next) {
 		}
 	}
 
-	var mem_id = sessionPass();
+	var mem_id = sePass.user[0].mem_id;
 
 	var mem_pw = req.body.mem_re_pw;
 	var date = getWorldTime(+9);

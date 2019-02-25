@@ -707,6 +707,7 @@ router.get('/topLogin', function(req, res, next) {
 	var sePass = req.session.passport;
 	if(sePass != null){
 		var proPhoto ='';
+		console.log("로그인 프로필 여부");
 		if(sePass.user.length == 1){
 			proPhoto = sePass.user[0].mem_profile;
 		}else{
