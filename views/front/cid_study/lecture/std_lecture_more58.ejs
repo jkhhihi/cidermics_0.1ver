@@ -260,6 +260,7 @@ a.btn-seminar h5 span{margin-top:10px; margin-bottom:20px}
   });
 
 </script>
+
 <script type="text/javascript">
   
 function surveyGo1()
@@ -430,6 +431,8 @@ function surveyGo4()
     p1.submit();
   }
 </script>
+
+  
   <script src="/js/gotoup.js"></script>
   </head>
   <body>
@@ -574,54 +577,10 @@ function surveyGo4()
 <!-- 작업한이미지 -->
 <div id="lecture57" style="background-color:#fdfdfd" align="center"> 
 	<div style="background-color:#fdfdfd"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/1.jpg"></div>
+	<div style="background-color:#323232"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/review.jpg"></div>
 	<div style="background-color:#ececec"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/2.jpg"></div>
 	<div style="background-color:#ffe826"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/3.jpg"></div>	
 	<div style="background-color:#fdfdfd"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/4.jpg"></div>
-<!-- 마감임박 -->
-<div id="countdown">
-   <div><span style="color:#9ddaff;">*담당 매니저가 강의와 관련된 상담을 도와드릴 예정입니다.</span></a></div>
-</div>
-<!-- DB 작성 칸 -->
-<div class="database" style="background-color:#000" align="left">
-  <div class="container">
-
-    <div class="row">
-
-      <form action="/prinsert" method="post" name="prinsert1" class="col s12">
-        <input type="hidden" name="cate" value="<%=md[0].cate%>">
-        <input type="hidden" name="idx" value="<%=md[0].idx%>">
-        <input type="hidden" name="tele_check" value="1">
-        
-        <div class="row margin0">
-          <div id="name" class="input-field col s6">
-            <span class="color1">이름 : </span>
-            <input type="text" name="pname" length="4" >
-          </div>
-          <div id="phon" class="input-field col s6">
-            <span class="color1">전화번호 : </span>
-            <input type="text" name="phone" maxlength="11" >
-          </div>
-        </div>
-
-        <div class="row margin0">
-          <div class="input col s12 l8" style="height: 50px;">
-            <input type="checkbox" id="check1" name="check1" />
-            <label for="check1">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
-            <br>
-            <input type="checkbox" id="check2" name="check2"/>
-            <label for="check2">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
-            <br>
-            <br>
-          </div>
-        </div>
-
-        <div id="btn1" align="center">
-          <br><a style="cursor:pointer" onclick="surveyGo1()"><span>상담 신청하기</span></a>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
 	<div style="background-color:#fdfdfd"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/5.jpg"></div>
 	<div style="background-color:#ececec"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/6.jpg"></div>
 	<div style="background-color:#ececec"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/7.jpg"></div>
@@ -634,51 +593,6 @@ function surveyGo4()
 	<div class="divider"></div>
 	<div style="background-color:#fdfdfd"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/13.jpg"></div>	
 	<div style="background-color:#323232"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/14.jpg"></div>
-<!-- 마감임박 -->
-<div id="countdown">
-   <div><span style="color:#9ddaff;">*담당 매니저가 강의와 관련된 상담을 도와드릴 예정입니다.</span></a></div>
-</div>
-<!-- DB 작성 칸 -->
-<div class="database" style="background-color:#000" align="left">
-  <div class="container">
-
-    <div class="row">
-
-      <form action="/prinsert" method="post" name="prinsert2" class="col s12">
-        <input type="hidden" name="cate" value="<%=md[0].cate%>">
-        <input type="hidden" name="idx" value="<%=md[0].idx%>">
-        <input type="hidden" name="tele_check" value="1">
-        
-        <div class="row margin0">
-          <div id="name" class="input-field col s6">
-            <span class="color1">이름 : </span>
-            <input type="text" name="pname" length="4" >
-          </div>
-          <div id="phon" class="input-field col s6">
-            <span class="color1">전화번호 : </span>
-            <input type="text" name="phone" maxlength="11" >
-          </div>
-        </div>
-
-        <div class="row margin0">
-          <div class="input col s12 l8" style="height: 50px;">
-            <input type="checkbox" id="check3" name="check1" />
-            <label for="check3">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
-            <br>
-            <input type="checkbox" id="check4" name="check2"/>
-            <label for="check4">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
-            <br>
-            <br>
-          </div>
-        </div>
-
-        <div id="btn1" align="center">
-          <br><a style="cursor:pointer" onclick="surveyGo2()"><span>상담 신청하기</span></a>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>	
 	<div style="background-color:#fdfdfd"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/15.jpg"></div>
 	<div style="background-color:#f6e1e0"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/16.jpg"></div>
 	<div style="background-color:#fdfdfd"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/17.jpg"></div>
@@ -689,56 +603,12 @@ function surveyGo4()
 	<div style="background-color:#fdfdfd"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/22.jpg"></div>
 	<div class="divider"></div>
 	<div style="background-color:#fdfdfd"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/23.jpg"></div>
-<!-- 마감임박 -->
-<div id="countdown">
-   <div><span style="color:#9ddaff;">*담당 매니저가 강의와 관련된 상담을 도와드릴 예정입니다.</span></a></div>
-</div>
-<!-- DB 작성 칸 -->
-<div class="database" style="background-color:#000" align="left">
-  <div class="container">
-
-    <div class="row">
-
-      <form action="/prinsert" method="post" name="prinsert3" class="col s12">
-        <input type="hidden" name="cate" value="<%=md[0].cate%>">
-        <input type="hidden" name="idx" value="<%=md[0].idx%>">
-        <input type="hidden" name="tele_check" value="1">
-        
-        <div class="row margin0">
-          <div id="name" class="input-field col s6">
-            <span class="color1">이름 : </span>
-            <input type="text" name="pname" length="4" >
-          </div>
-          <div id="phon" class="input-field col s6">
-            <span class="color1">전화번호 : </span>
-            <input type="text" name="phone" maxlength="11" >
-          </div>
-        </div>
-
-        <div class="row margin0">
-          <div class="input col s12 l8" style="height: 50px;">
-            <input type="checkbox" id="check5" name="check1" />
-            <label for="check5">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
-            <br>
-            <input type="checkbox" id="check6" name="check2"/>
-            <label for="check6">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
-            <br>
-            <br>
-          </div>
-        </div>
-
-        <div id="btn1" align="center">
-          <br><a style="cursor:pointer" onclick="surveyGo3()"><span>상담 신청하기</span></a>
-        </div>
-      </form>
-    </div>
-  </div>
-</div>	
 	<div style="background-color:#ffe826"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/24.jpg"></div>
 	<div style="background-color:#ffffff"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/25.jpg"></div>
 	<div style="background-color:#ffffff"><a href="../study/seminar"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/26.jpg"></a></div>
 	<div style="background-color:#ffe826"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/27.jpg"></div>
 	<div style="background-color:#fdfdfd"><img class="responsive-img" src="/page_imgs/study_img/lecture-57/28.jpg"></div>
+	
 </div>
 <!-- 끝 -->
 
@@ -1188,7 +1058,6 @@ function surveyGo4()
             <a href="#!" class="modal-action modal-close btn-flat blue lighten-4">확인</a>
           </div>
       </div>
-
 
 </body>
 </html>

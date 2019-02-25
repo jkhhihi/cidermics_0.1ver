@@ -39,7 +39,7 @@
   .font_line { text-decoration:line-through }
   .font_color_red { color: #cc2e2e; }
 
-  .card-btn{padding:40px;}
+  /*.card-btn{padding:40px;}*/
   </style>
   
   </head>
@@ -74,7 +74,7 @@
     <div class="col s12 center">
       <h3><i class="mdi-content-send brown-text"></i></h3>
       <h4>Relay Seminar</h4>
-      <p class="center-align light">경이로움 멤버십 회원분들만을 위한 특별한 무료 릴레이 세미나 혜택!</p>
+      <!-- p class="center-align light">경이로움 멤버십 회원분들만을 위한 특별한 무료 릴레이 세미나 혜택!</p -->
     </div>
   </div>
   
@@ -93,15 +93,15 @@
             <span class="card-btn2"><a class="waves-effect waves-light btn red darken-1" style="border-radius: 20px; height: 25px; line-height: 25px; padding: 0 1rem; font-size: 10px;">신청마감</a></span>
             <% } %>
 
-            <span class="card-btn" style="left: 10px;"><a href="/seminar/detail/<%=semi[i].idx%>" class="waves-effect waves-light btn teal accent-4">자세히 보기</a></span>
-            <span class="card-btn"><a href="/study/lecpro" class="waves-effect waves-light btn teal accent-4">신청하기</a></span>
+            <!-- span class="card-btn"><a href="/seminar/detail/<%=semi[i].idx%>" class="waves-effect waves-light btn teal accent-4">자세히 보기</a></span -->
+            <!-- span class="card-btn"><a href="/study/lecpro" class="waves-effect waves-light btn teal accent-4">신청하기</a></span -->
 
           </div>
 
-          <div class="card-content">
-          <p><i class="material-icons left">today</i><%=semi[i].sdate%></p>
-          <div class="divider"></div>
-          <p><i class="material-icons left">attach_money</i><span class="font_line"><%=semi[i].price%></span><span class="font_color_red">  경이로움 멤버십 회원 무료!</span></p>
+          <div class="card-content" style="position: relative; z-index: 1;">
+          <p><i class="material-icons left" style="margin:5px">today</i><%=semi[i].sdate%></p>
+          <!-- >div class="divider"></div>
+          <p><i class="material-icons left">attach_money</i><span class="font_line"><%=semi[i].price%></span><span class="font_color_red">  경이로움 멤버십 회원 무료!</span></p -->
           </div>
 
       </div>
