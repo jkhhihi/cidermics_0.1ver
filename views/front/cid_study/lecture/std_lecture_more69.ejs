@@ -548,7 +548,7 @@ function surveyGo4()
                 <% if(state == 1){%>
                 <button style="width: 280px;">신청마감</button>
                 <% }else{ %>
-                <div class="btn-apply"><a href="<%= md[0].naverpay %>"><button style="width: 280px;">신청하기</button></a></div>
+                <div class="btn-apply"><a href="<%= md[0].naverpay %>"><button style="width: 280px;" onclick="fbq('track','InitiateCheckout');">신청하기</button></a></div>
                 <!--form action="/npay" name="apply" method="get">
                   <input type="hidden" name="subject" value="<%=md[0].subject%>">
                   <input type="hidden" name="cate" value="<%=md[0].cate%>">
@@ -628,7 +628,7 @@ function surveyGo4()
 
     <div class="row">
 
-      <form action="/prinsert" method="post" name="prinsert4" class="col s12">
+      <form action="/prinsert" method="post" name="prinsert1" class="col s12">
         <input type="hidden" name="cate" value="<%=md[0].cate%>">
         <input type="hidden" name="idx" value="<%=md[0].idx%>">
         <input type="hidden" name="tele_check" value="1">
@@ -646,18 +646,18 @@ function surveyGo4()
 
         <div class="row margin0">
           <div class="input col s12 l8" style="height: 50px;">
-            <input type="checkbox" id="check7" name="check1" />
-            <label for="check7">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
+            <input type="checkbox" id="check1" name="check1" />
+            <label for="check1">서비스 이용약관 동의 <span style="color:#1987c8;">*</span> <a class="modal-trigger" href="#modal1" style="color:#1987c8;">내용보기</a></label>
             <br>
-            <input type="checkbox" id="check8" name="check2"/>
-            <label for="check8">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
+            <input type="checkbox" id="check2" name="check2"/>
+            <label for="check2">개인정보 수집 및 이용 동의 <span style="color:#1987c8;">*</span><a class="modal-trigger" href="#modal2" style="color:#1987c8;">내용보기</a></label>
             <br>
             <br>
           </div>
         </div>
 
         <div id="btn1" align="center">
-          <br><a style="cursor:pointer" onclick="surveyGo4()"><span>상담 신청하기</span></a>
+          <br><a style="cursor:pointer" onclick="surveyGo1()"><span>상담 신청하기</span></a>
         </div>
       </form>
     </div>
