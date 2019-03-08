@@ -8,12 +8,12 @@
 	"buffers":
 	[
 		{
-			"file": "front/cid_main4.ejs",
+			"file": "/D/cider19/views/front/main/index.ejs",
 			"settings":
 			{
-				"buffer_size": 14818,
+				"buffer_size": 215,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -49,9 +49,10 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/user/git/cidermics_0.1ver",
-		"/C/Users/user/git/cidermics_0.1ver/views",
-		"/C/Users/user/git/cidermics_0.1ver/views/front"
+		"/D/cider19",
+		"/D/cider19/views",
+		"/D/cider19/views/front",
+		"/D/cider19/views/front/main"
 	],
 	"file_history":
 	[
@@ -94,19 +95,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "front/cid_main4.ejs",
-					"semi_transient": true,
+					"file": "/D/cider19/views/front/main/index.ejs",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 14818,
+						"buffer_size": 215,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								83,
-								83
+								215,
+								215
 							]
 						],
 						"settings":
