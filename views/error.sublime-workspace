@@ -3,17 +3,55 @@
 	{
 		"selected_items":
 		[
+			[
+				"box",
+				"box-shadow\tproperty"
+			],
+			[
+				"wi",
+				"width\tproperty"
+			],
+			[
+				"hea",
+				"header-row"
+			],
+			[
+				"padding",
+				"padding-left\tproperty"
+			],
+			[
+				"list",
+				"list-icons"
+			]
 		]
 	},
 	"buffers":
 	[
 		{
+			"file": "/D/cider19/views/front/main/index2.ejs",
+			"settings":
+			{
+				"buffer_size": 120341,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "/D/cider19/views/front/main/index.ejs",
 			"settings":
 			{
-				"buffer_size": 215,
+				"buffer_size": 125818,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/index-classic-light.html",
+			"settings":
+			{
+				"buffer_size": 95459,
+				"encoding": "UTF-8",
+				"line_ending": "CR"
 			}
 		}
 	],
@@ -56,14 +94,29 @@
 	],
 	"file_history":
 	[
+		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/index-corporate.html",
+		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/index-corporate-5.html",
+		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/feature-headers-sign-in-sign-up.html",
+		"/D/cider19/public/css/theme-elements.css",
+		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/feature-navigations-hamburguer-sidebar.html",
+		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/index-blog.html",
+		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/index-classic-video.html",
+		"/D/cider19/views/front/main/index2.ejs",
+		"/F/사이다경제/웹개편/아이콘/follow us/4.png",
+		"/F/사이다경제/웹개편/아이콘/follow us/2.png",
+		"/F/사이다경제/웹개편/아이콘/follow us/1.png",
+		"/F/사이다경제/웹개편/아이콘/follow us/3.png",
+		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/feature-footers-classic-colors-quaternary.html",
+		"/D/cider19/public/admin/css/style.blue.css",
+		"/D/cider19/views/front/main/index.ejs"
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 41.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 105.0,
 		"where_history":
 		[
 		]
@@ -73,6 +126,26 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"row py-4 my-5",
+			"header-nav-features",
+			"header-nav-features header-nav-features-no-border header-nav-features-lg-show-border order-1 order-lg-2",
+			"SIGN IN",
+			"><i class=\"far fa-user\"></i>",
+			"FOLLOW US",
+			"shop",
+			"back-button d-none d-lg-block",
+			"back",
+			"ㅠback",
+			"콘텐츠",
+			"footer",
+			"header-nav-features header-nav-features-no-border p-static",
+			"header-nav-features header-nav-features-light header-nav-features-no-border header-nav-features-lg-show-border order-1 order-lg-2",
+			"header-nav-features",
+			"role=\"search\"",
+			"hamburguer-btn hamburguer-btn-light hamburguer-btn-sticky-dark",
+			"fas fa-search header-nav-top-icon",
+			"footer-copyright",
+			"footer"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -90,35 +163,94 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/D/cider19/views/front/main/index.ejs",
+					"file": "/D/cider19/views/front/main/index2.ejs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 215,
+						"buffer_size": 120341,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								215,
-								215
+								105834,
+								104566
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 35625.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/D/cider19/views/front/main/index.ejs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 125818,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								119117,
+								119117
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 40110.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/index-classic-light.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 95459,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								82879,
+								81627
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 24645.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -126,7 +258,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 27.0
 	},
 	"input":
 	{
@@ -163,7 +295,7 @@
 	"project": "error.sublime-project",
 	"replace":
 	{
-		"height": 0.0
+		"height": 50.0
 	},
 	"save_all_on_build": true,
 	"select_file":
