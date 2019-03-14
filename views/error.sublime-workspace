@@ -4,6 +4,62 @@
 		"selected_items":
 		[
 			[
+				"ma",
+				"max-height\tproperty"
+			],
+			[
+				"p",
+				"padding-bottom\tproperty"
+			],
+			[
+				"mb",
+				"mb-2"
+			],
+			[
+				"marin",
+				"margin-bottom\tproperty"
+			],
+			[
+				"in",
+				"inline-block\tdisplay"
+			],
+			[
+				"di",
+				"display\tproperty"
+			],
+			[
+				"py",
+				"py-2"
+			],
+			[
+				"h",
+				"height\tproperty"
+			],
+			[
+				"margin",
+				"margin-bottom\tproperty"
+			],
+			[
+				"mar",
+				"margin-bottom\tproperty"
+			],
+			[
+				"icon",
+				"icons"
+			],
+			[
+				"col",
+				"col-12"
+			],
+			[
+				"te",
+				"text-decoration\tproperty"
+			],
+			[
+				"PB",
+				"pb-2"
+			],
+			[
 				"box",
 				"box-shadow\tproperty"
 			],
@@ -40,18 +96,9 @@
 			"file": "/D/cider19/views/front/main/index.ejs",
 			"settings":
 			{
-				"buffer_size": 125818,
+				"buffer_size": 130489,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/index-classic-light.html",
-			"settings":
-			{
-				"buffer_size": 95459,
-				"encoding": "UTF-8",
-				"line_ending": "CR"
 			}
 		}
 	],
@@ -94,6 +141,9 @@
 	],
 	"file_history":
 	[
+		"/C/Users/user/git/cidermics_0.1ver/node_modules/css-select/lib/pseudos.js",
+		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/index.html",
+		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/index-classic-light.html",
 		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/index-corporate.html",
 		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/index-corporate-5.html",
 		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/feature-headers-sign-in-sign-up.html",
@@ -112,7 +162,7 @@
 	],
 	"find":
 	{
-		"height": 41.0
+		"height": 27.0
 	},
 	"find_in_files":
 	{
@@ -126,6 +176,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"html.side-header-hamburguer-sidebar #header.side-header .header-nav nav",
+			"side-header side-header-lg side-header-hide d-flex",
+			"section section-height-3 bg-color-light border-0 my-0",
 			"row py-4 my-5",
 			"header-nav-features",
 			"header-nav-features header-nav-features-no-border header-nav-features-lg-show-border order-1 order-lg-2",
@@ -179,8 +232,8 @@
 						"selection":
 						[
 							[
-								105834,
-								104566
+								3942,
+								3938
 							]
 						],
 						"settings":
@@ -189,10 +242,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 35625.0,
+						"translation.y": 1263.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -201,15 +254,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 125818,
+						"buffer_size": 130489,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								119117,
-								119117
+								102064,
+								102064
 							]
 						],
 						"settings":
@@ -218,39 +271,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 40110.0,
+						"translation.y": 33951.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/index-classic-light.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 95459,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								82879,
-								81627
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 24645.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
