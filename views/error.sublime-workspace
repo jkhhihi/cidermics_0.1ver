@@ -4,16 +4,44 @@
 		"selected_items":
 		[
 			[
+				"mb",
+				"mb-1"
+			],
+			[
+				"text",
+				"text-muted"
+			],
+			[
+				"col",
+				"col-lg-5"
+			],
+			[
+				"li",
+				"line-height\tproperty"
+			],
+			[
+				"ba",
+				"background-color\tproperty"
+			],
+			[
+				"pa",
+				"padding-top\tproperty"
+			],
+			[
+				"ri",
+				"right"
+			],
+			[
+				"con",
+				"container-fluid"
+			],
+			[
 				"ma",
 				"max-height\tproperty"
 			],
 			[
 				"p",
 				"padding-bottom\tproperty"
-			],
-			[
-				"mb",
-				"mb-2"
 			],
 			[
 				"marin",
@@ -48,10 +76,6 @@
 				"icons"
 			],
 			[
-				"col",
-				"col-12"
-			],
-			[
 				"te",
 				"text-decoration\tproperty"
 			],
@@ -84,19 +108,10 @@
 	"buffers":
 	[
 		{
-			"file": "/D/cider19/views/front/main/index2.ejs",
+			"file": "/D/cider19/views/front/main/con_detail.ejs",
 			"settings":
 			{
-				"buffer_size": 120341,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/D/cider19/views/front/main/index.ejs",
-			"settings":
-			{
-				"buffer_size": 130489,
+				"buffer_size": 36238,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -135,12 +150,18 @@
 	"expanded_folders":
 	[
 		"/D/cider19",
+		"/D/cider19/public",
+		"/D/cider19/public/img",
 		"/D/cider19/views",
 		"/D/cider19/views/front",
 		"/D/cider19/views/front/main"
 	],
 	"file_history":
 	[
+		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/blog-post.html",
+		"/F/사이다경제/웹개편/예시이미지/con-img1.png",
+		"/D/cider19/views/front/main/index2.ejs",
+		"/D/cider19/views/front/main/index.ejs",
 		"/C/Users/user/git/cidermics_0.1ver/node_modules/css-select/lib/pseudos.js",
 		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/index.html",
 		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/index-classic-light.html",
@@ -151,18 +172,16 @@
 		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/feature-navigations-hamburguer-sidebar.html",
 		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/index-blog.html",
 		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/index-classic-video.html",
-		"/D/cider19/views/front/main/index2.ejs",
 		"/F/사이다경제/웹개편/아이콘/follow us/4.png",
 		"/F/사이다경제/웹개편/아이콘/follow us/2.png",
 		"/F/사이다경제/웹개편/아이콘/follow us/1.png",
 		"/F/사이다경제/웹개편/아이콘/follow us/3.png",
 		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/feature-footers-classic-colors-quaternary.html",
-		"/D/cider19/public/admin/css/style.blue.css",
-		"/D/cider19/views/front/main/index.ejs"
+		"/D/cider19/public/admin/css/style.blue.css"
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 41.0
 	},
 	"find_in_files":
 	{
@@ -176,6 +195,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"더 많은 콘텐츠 보러가기",
+			"Comments (3)",
+			"commets",
 			"html.side-header-hamburguer-sidebar #header.side-header .header-nav nav",
 			"side-header side-header-lg side-header-hide d-flex",
 			"section section-height-3 bg-color-light border-0 my-0",
@@ -216,24 +238,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/D/cider19/views/front/main/index2.ejs",
+					"file": "/D/cider19/views/front/main/con_detail.ejs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 120341,
+						"buffer_size": 36238,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3942,
-								3938
+								18245,
+								18245
 							]
 						],
 						"settings":
@@ -242,36 +264,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1263.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/D/cider19/views/front/main/index.ejs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 130489,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								102064,
-								102064
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 33951.0,
+						"translation.y": 7992.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -282,7 +275,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 27.0
+		"height": 28.0
 	},
 	"input":
 	{
@@ -319,7 +312,7 @@
 	"project": "error.sublime-project",
 	"replace":
 	{
-		"height": 50.0
+		"height": 52.0
 	},
 	"save_all_on_build": true,
 	"select_file":
