@@ -4,6 +4,46 @@
 		"selected_items":
 		[
 			[
+				"mar",
+				"margin-top\tproperty"
+			],
+			[
+				"bac",
+				"background-image\tproperty"
+			],
+			[
+				"ta",
+				"table-cell\tdisplay"
+			],
+			[
+				"pa",
+				"padding-bottom\tproperty"
+			],
+			[
+				"ma",
+				"max-height\tproperty"
+			],
+			[
+				"t",
+				"text-muted"
+			],
+			[
+				"pad",
+				"padding-left\tproperty"
+			],
+			[
+				"border",
+				"border-radius\tproperty"
+			],
+			[
+				"te",
+				"text-center"
+			],
+			[
+				"mob-",
+				"mob-p0"
+			],
+			[
 				"mb",
 				"mb-1"
 			],
@@ -24,20 +64,12 @@
 				"background-color\tproperty"
 			],
 			[
-				"pa",
-				"padding-top\tproperty"
-			],
-			[
 				"ri",
 				"right"
 			],
 			[
 				"con",
 				"container-fluid"
-			],
-			[
-				"ma",
-				"max-height\tproperty"
 			],
 			[
 				"p",
@@ -68,16 +100,8 @@
 				"margin-bottom\tproperty"
 			],
 			[
-				"mar",
-				"margin-bottom\tproperty"
-			],
-			[
 				"icon",
 				"icons"
-			],
-			[
-				"te",
-				"text-decoration\tproperty"
 			],
 			[
 				"PB",
@@ -111,7 +135,16 @@
 			"file": "/D/cider19/views/front/main/con_detail.ejs",
 			"settings":
 			{
-				"buffer_size": 36238,
+				"buffer_size": 36376,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/D/cider19/views/front/main/login_form.ejs",
+			"settings":
+			{
+				"buffer_size": 18085,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -149,18 +182,14 @@
 	},
 	"expanded_folders":
 	[
-		"/D/cider19",
-		"/D/cider19/public",
-		"/D/cider19/public/img",
-		"/D/cider19/views",
-		"/D/cider19/views/front",
-		"/D/cider19/views/front/main"
+		"/C/Users/user/git/cidermics_0.1ver"
 	],
 	"file_history":
 	[
+		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/index-corporate-13.html",
+		"/D/cider19/views/front/main/index2.ejs",
 		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/blog-post.html",
 		"/F/사이다경제/웹개편/예시이미지/con-img1.png",
-		"/D/cider19/views/front/main/index2.ejs",
 		"/D/cider19/views/front/main/index.ejs",
 		"/C/Users/user/git/cidermics_0.1ver/node_modules/css-select/lib/pseudos.js",
 		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/index.html",
@@ -181,7 +210,7 @@
 	],
 	"find":
 	{
-		"height": 41.0
+		"height": 42.0
 	},
 	"find_in_files":
 	{
@@ -195,6 +224,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"더 다양한 콘텐츠 보러가기",
+			"더 다양한 콘텐츠 보럭가기",
+			"글쓴이의 다른글",
+			"style",
+			"오혜미",
+			"mob-100",
+			"contents-title-cate",
+			"index-tabs-container",
+			"읽기",
 			"더 많은 콘텐츠 보러가기",
 			"Comments (3)",
 			"commets",
@@ -238,7 +276,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -247,15 +285,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 36238,
+						"buffer_size": 36376,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								18245,
-								18245
+								3304,
+								3304
 							]
 						],
 						"settings":
@@ -264,7 +302,36 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 7992.0,
+						"translation.y": 2060.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/D/cider19/views/front/main/login_form.ejs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 18085,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10666,
+								10666
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 5020.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -275,7 +342,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 28.0
+		"height": 29.0
 	},
 	"input":
 	{
@@ -312,7 +379,7 @@
 	"project": "error.sublime-project",
 	"replace":
 	{
-		"height": 52.0
+		"height": 54.0
 	},
 	"save_all_on_build": true,
 	"select_file":
