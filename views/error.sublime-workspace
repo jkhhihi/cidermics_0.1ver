@@ -4,20 +4,72 @@
 		"selected_items":
 		[
 			[
+				"we",
+				"web-p0"
+			],
+			[
+				"web-",
+				"web-m0"
+			],
+			[
+				"web",
+				"web-m0"
+			],
+			[
+				"backgr",
+				"background-color\tproperty"
+			],
+			[
+				"back",
+				"background-color\tproperty"
+			],
+			[
+				"pa",
+				"padding-top\tproperty"
+			],
+			[
+				"l",
+				"line-height"
+			],
+			[
+				"pt",
+				"pt-3"
+			],
+			[
+				"im",
+				"important"
+			],
+			[
+				"c",
+				"color\tproperty"
+			],
+			[
+				"col",
+				"color\tproperty"
+			],
+			[
+				"co",
+				"cover\tbackground-size"
+			],
+			[
+				"ba",
+				"background-size\tproperty"
+			],
+			[
+				"u",
+				"url()\tbackground-image"
+			],
+			[
+				"bac",
+				"background-color\tproperty"
+			],
+			[
 				"mar",
 				"margin-top\tproperty"
 			],
 			[
-				"bac",
-				"background-image\tproperty"
-			],
-			[
 				"ta",
 				"table-cell\tdisplay"
-			],
-			[
-				"pa",
-				"padding-bottom\tproperty"
 			],
 			[
 				"ma",
@@ -52,16 +104,8 @@
 				"text-muted"
 			],
 			[
-				"col",
-				"col-lg-5"
-			],
-			[
 				"li",
 				"line-height\tproperty"
-			],
-			[
-				"ba",
-				"background-color\tproperty"
 			],
 			[
 				"ri",
@@ -132,19 +176,10 @@
 	"buffers":
 	[
 		{
-			"file": "/D/cider19/views/front/main/con_detail.ejs",
+			"file": "/D/cider19/views/front/seminar/detail.ejs",
 			"settings":
 			{
-				"buffer_size": 36376,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/D/cider19/views/front/main/login_form.ejs",
-			"settings":
-			{
-				"buffer_size": 18085,
+				"buffer_size": 32497,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -182,10 +217,23 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/user/git/cidermics_0.1ver"
+		"/D/cider19",
+		"/D/cider19/views",
+		"/D/cider19/views/front",
+		"/D/cider19/views/front/contents",
+		"/D/cider19/views/front/lecture",
+		"/D/cider19/views/front/main",
+		"/D/cider19/views/front/seminar"
 	],
 	"file_history":
 	[
+		"/D/cider19/views/front/contents/detail.ejs",
+		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/elements-testimonials.html",
+		"/D/cider19/views/front/main/index3.ejs",
+		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/elements-sticky-elements.html",
+		"/D/cider19/public/admin/vendor/chart.js/Chart.js",
+		"/D/cider19/views/front/main/login_form.ejs",
+		"/D/cider19/views/front/main/con_detail.ejs",
 		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/index-corporate-13.html",
 		"/D/cider19/views/front/main/index2.ejs",
 		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/blog-post.html",
@@ -224,6 +272,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Carousels",
+			"더 다양한 강의 보기",
+			"primary",
+			"index-tabs-container",
+			"#footer",
+			"html.side-header-hamburguer-sidebar .main .container, html.side-header-hamburguer-sidebar #footer .container",
+			"owl-dots",
+			"4주",
+			"rgb(250, 250, 250)",
+			"rgb(250, 250, 250);",
+			"background-color: rgb(250, 250, 250);",
+			"height: 890px; background-color: rgb(250, 250, 250);",
+			"890px",
+			"fp-tableCell",
+			"359bbb",
 			"더 다양한 콘텐츠 보러가기",
 			"더 다양한 콘텐츠 보럭가기",
 			"글쓴이의 다른글",
@@ -276,24 +339,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/D/cider19/views/front/main/con_detail.ejs",
+					"file": "/D/cider19/views/front/seminar/detail.ejs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 36376,
+						"buffer_size": 32497,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3304,
-								3304
+								19656,
+								19656
 							]
 						],
 						"settings":
@@ -302,36 +365,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2060.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/D/cider19/views/front/main/login_form.ejs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 18085,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								10666,
-								10666
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 5020.0,
+						"translation.y": 4300.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -342,7 +376,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 29.0
+		"height": 31.0
 	},
 	"input":
 	{
@@ -379,7 +413,7 @@
 	"project": "error.sublime-project",
 	"replace":
 	{
-		"height": 54.0
+		"height": 58.0
 	},
 	"save_all_on_build": true,
 	"select_file":
