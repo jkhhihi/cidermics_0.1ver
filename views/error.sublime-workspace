@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"conte",
+				"contents"
+			],
+			[
+				"mar",
+				"margin-bottom\tproperty"
+			],
+			[
+				"margin",
+				"margin-top\tproperty"
+			],
+			[
+				"padding",
+				"padding-top\tproperty"
+			],
+			[
+				"pad",
+				"padding-right\tproperty"
+			],
+			[
+				"font",
+				"font-size\tproperty"
+			],
+			[
+				"w",
+				"width"
+			],
+			[
+				"bg",
+				"bg-white"
+			],
+			[
 				"fon",
 				"font-size\tproperty"
 			],
@@ -80,20 +112,12 @@
 				"background-color\tproperty"
 			],
 			[
-				"mar",
-				"margin-top\tproperty"
-			],
-			[
 				"ta",
 				"table-cell\tdisplay"
 			],
 			[
 				"ma",
 				"max-height\tproperty"
-			],
-			[
-				"pad",
-				"padding-left\tproperty"
 			],
 			[
 				"border",
@@ -148,10 +172,6 @@
 				"height\tproperty"
 			],
 			[
-				"margin",
-				"margin-bottom\tproperty"
-			],
-			[
 				"icon",
 				"icons"
 			],
@@ -172,10 +192,6 @@
 				"header-row"
 			],
 			[
-				"padding",
-				"padding-left\tproperty"
-			],
-			[
 				"list",
 				"list-icons"
 			]
@@ -184,10 +200,37 @@
 	"buffers":
 	[
 		{
+			"file": "/D/cider19/views/front/lecture/detail.ejs",
+			"settings":
+			{
+				"buffer_size": 22210,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/D/cider19/views/front/seminar/detail.ejs",
+			"settings":
+			{
+				"buffer_size": 21487,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "/D/cider19/views/front/user/mypage.ejs",
 			"settings":
 			{
-				"buffer_size": 5976,
+				"buffer_size": 28894,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/D/cider19/views/front/main/index3.ejs",
+			"settings":
+			{
+				"buffer_size": 44811,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -229,14 +272,20 @@
 		"/D/cider19/public",
 		"/D/cider19/public/img",
 		"/D/cider19/public/img/front",
+		"/D/cider19/public/img/front/contents",
+		"/D/cider19/public/img/front/lecture",
 		"/D/cider19/routes",
 		"/D/cider19/routes/front",
 		"/D/cider19/views",
 		"/D/cider19/views/front",
+		"/D/cider19/views/front/lecture",
+		"/D/cider19/views/front/main",
+		"/D/cider19/views/front/seminar",
 		"/D/cider19/views/front/user"
 	],
 	"file_history":
 	[
+		"/D/cider19/bower_components/jquery/dist/jquery.js",
 		"/D/cider19/views/front/main/index2.ejs",
 		"/D/cider19/views/front/main/index.ejs",
 		"/D/cider19/views/front/lecture/detail.ejs",
@@ -272,7 +321,7 @@
 	],
 	"find":
 	{
-		"height": 29.0
+		"height": 42.0
 	},
 	"find_in_files":
 	{
@@ -286,6 +335,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"콘텐츠",
 			"seminar",
 			"강의",
 			"세미나",
@@ -358,24 +408,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/D/cider19/views/front/user/mypage.ejs",
+					"file": "/D/cider19/views/front/lecture/detail.ejs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5976,
+						"buffer_size": 22210,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3697,
-								3697
+								8821,
+								8037
 							]
 						],
 						"settings":
@@ -384,10 +434,97 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1320.0,
+						"translation.y": 4140.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/D/cider19/views/front/seminar/detail.ejs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 21487,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10550,
+								6974
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3740.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/D/cider19/views/front/user/mypage.ejs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 28894,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								18930,
+								18930
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 8560.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/D/cider19/views/front/main/index3.ejs",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 44811,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9662,
+								13034
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 7521.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
