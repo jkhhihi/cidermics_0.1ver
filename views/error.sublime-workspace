@@ -4,8 +4,16 @@
 		"selected_items":
 		[
 			[
+				"fon",
+				"font-size\tproperty"
+			],
+			[
 				"ba",
 				"background-color\tproperty"
+			],
+			[
+				"t",
+				"text-white"
 			],
 			[
 				"di",
@@ -82,10 +90,6 @@
 			[
 				"ma",
 				"max-height\tproperty"
-			],
-			[
-				"t",
-				"text-muted"
 			],
 			[
 				"pad",
@@ -180,37 +184,10 @@
 	"buffers":
 	[
 		{
-			"file": "/D/cider19/views/front/seminar/detail.ejs",
+			"file": "/D/cider19/views/front/user/mypage.ejs",
 			"settings":
 			{
-				"buffer_size": 33357,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/D/cider19/views/front/lecture/detail.ejs",
-			"settings":
-			{
-				"buffer_size": 33958,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/D/cider19/views/front/main/index.ejs",
-			"settings":
-			{
-				"buffer_size": 40269,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/D/cider19/views/front/main/index2.ejs",
-			"settings":
-			{
-				"buffer_size": 59754,
+				"buffer_size": 5976,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -252,12 +229,18 @@
 		"/D/cider19/public",
 		"/D/cider19/public/img",
 		"/D/cider19/public/img/front",
-		"/D/cider19/public/img/front/common",
-		"/D/cider19/public/img/front/lecture",
-		"/D/cider19/public/img/test"
+		"/D/cider19/routes",
+		"/D/cider19/routes/front",
+		"/D/cider19/views",
+		"/D/cider19/views/front",
+		"/D/cider19/views/front/user"
 	],
 	"file_history":
 	[
+		"/D/cider19/views/front/main/index2.ejs",
+		"/D/cider19/views/front/main/index.ejs",
+		"/D/cider19/views/front/lecture/detail.ejs",
+		"/D/cider19/views/front/seminar/detail.ejs",
 		"/D/cider19/views/front/main/index3.ejs",
 		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/blog-large-image-sidebar-left.html",
 		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/elements-maps.html",
@@ -268,10 +251,8 @@
 		"/D/cider19/views/front/main/login_form.ejs",
 		"/D/cider19/views/front/main/con_detail.ejs",
 		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/index-corporate-13.html",
-		"/D/cider19/views/front/main/index2.ejs",
 		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/blog-post.html",
 		"/F/사이다경제/웹개편/예시이미지/con-img1.png",
-		"/D/cider19/views/front/main/index.ejs",
 		"/C/Users/user/git/cidermics_0.1ver/node_modules/css-select/lib/pseudos.js",
 		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/index.html",
 		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/index-classic-light.html",
@@ -377,24 +358,24 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/D/cider19/views/front/seminar/detail.ejs",
+					"file": "/D/cider19/views/front/user/mypage.ejs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 33357,
+						"buffer_size": 5976,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								21079,
-								17978
+								3697,
+								3697
 							]
 						],
 						"settings":
@@ -403,94 +384,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 9180.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/D/cider19/views/front/lecture/detail.ejs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 33958,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								11796,
-								11791
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 5400.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/D/cider19/views/front/main/index.ejs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 40269,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								22895,
-								22879
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 11620.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/D/cider19/views/front/main/index2.ejs",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 59754,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								43283,
-								43283
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 19740.0,
+						"translation.y": 1320.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
