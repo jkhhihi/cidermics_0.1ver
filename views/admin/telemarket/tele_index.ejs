@@ -55,6 +55,7 @@ input[type=submit] {
               <th data-field="tele_email">이메일</th>
               <th data-field="tele_email">날짜</th>
               <th data-field="tele_email">경로</th>
+              <th data-field="tele_confirm">확인</th>
               <th data-field=""></th>
           </tr>
         </thead>
@@ -84,12 +85,62 @@ input[type=submit] {
 	        <% }else{ %>
 	        <td>업체홍보</td>
 	        <% } %>
+            <td>
+                <% if(tele[i].tele_confirm == 'Y') { %>
+                    <a class="waves-effect waves-light btn confirm" data-confirm="Y" data-idx="<%= tele[i].tele_no %>">확인</a>
+                <% } else { %>
+                    <a class="waves-effect waves-light teal confirm lighten-4 btn" data-confirm="N" data-idx="<%= tele[i].tele_no %>">미확인</a>
+                <% } %>
+            </td>
 			<td><p class="acss"><a href="/adm/tele/delete/<%= tele[i].tele_no %>">삭제</a></p></td>
 		   </tr>
 		<% } %>
         </tbody>
       </table>
     </div>
-      
+    <script>
+        $(document).ready(function (){
+            $('.confirm').on('click', function (e){
+
+                var ele = $(this);
+                var val = ele.attr('data-confirm');
+                var idx = ele.attr('data-idx');
+                if(val == 'Y'){
+
+                    $.ajax({
+                        url: "/adm/teleConfirm",
+                        type: "POST",
+                        dataType: 'json',
+                        data: { idx : idx, val : 'N' },
+                        success: function (data) {
+                            ele.html('미확인');
+                            ele.addClass('lighten-4');
+                            ele.addClass('teal');
+                            ele.addClass('unconfirm');
+                            ele.removeClass('confirm');
+                            ele.attr('data-confirm', 'N');
+                        }
+                    });
+                }else {
+
+                    $.ajax({
+                        url: "/adm/teleConfirm",
+                        type: "POST",
+                        dataType: 'json',
+                        data: { idx : idx, val : 'Y' },
+                        success: function (data) {
+                            ele.text('확인');
+                            ele.removeClass('lighten-4');
+                            ele.removeClass('teal');
+                            ele.addClass('confirm');
+                            ele.removeClass('unconfirm');
+                            ele.attr('data-confirm', 'Y');
+                        }
+                    });
+                }
+            });
+        });
+
+    </script>
   </body>
 </html>

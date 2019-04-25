@@ -2031,6 +2031,16 @@ router.get('/tele', ensureAuthenticated, function(req, res, next) {
 		});
 	});
 });
+router.post('/teleConfirm', ensureAuthenticated, function(req, res, next) {
+	var idx = req.body.idx;
+	var val = req.body.val;
+	mysql.update('update cider.cid_telemarket set tele_confirm = ? where tele_no = ?',[val, idx] , function (err, data){
+		if(err){
+			throw e;
+		}
+		res.send({msg:'success'});
+	});
+});
 
 
 router.get('/tele/delete/:tele_no', function(req, res, next) {
