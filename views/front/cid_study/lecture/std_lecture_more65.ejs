@@ -538,7 +538,7 @@ function surveyGo4()
                 <% if(state == 1){%>
                 <button style="width: 280px;">신청마감</button>
                 <% }else{ %>
-                <div class="btn-apply"><a href="<%= md[0].naverpay %>"><button style="width: 280px;">신청하기</button></a></div>
+                <div class="btn-apply"><a href="<%= md[0].naverpay %>"><button style="width: 280px;" onclick="fbq('track','InitiateCheckout');">신청하기</button></a></div>
                 <!--form action="/npay" name="apply" method="get">
                   <input type="hidden" name="subject" value="<%=md[0].subject%>">
                   <input type="hidden" name="cate" value="<%=md[0].cate%>">

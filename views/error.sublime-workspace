@@ -3,17 +3,236 @@
 	{
 		"selected_items":
 		[
+			[
+				"conte",
+				"contents"
+			],
+			[
+				"mar",
+				"margin-bottom\tproperty"
+			],
+			[
+				"margin",
+				"margin-top\tproperty"
+			],
+			[
+				"padding",
+				"padding-top\tproperty"
+			],
+			[
+				"pad",
+				"padding-right\tproperty"
+			],
+			[
+				"font",
+				"font-size\tproperty"
+			],
+			[
+				"w",
+				"width"
+			],
+			[
+				"bg",
+				"bg-white"
+			],
+			[
+				"fon",
+				"font-size\tproperty"
+			],
+			[
+				"ba",
+				"background-color\tproperty"
+			],
+			[
+				"t",
+				"text-white"
+			],
+			[
+				"di",
+				"divider"
+			],
+			[
+				"img",
+				"img-fluid"
+			],
+			[
+				"web",
+				"web-p0"
+			],
+			[
+				"we",
+				"web-p0"
+			],
+			[
+				"web-",
+				"web-m0"
+			],
+			[
+				"backgr",
+				"background-color\tproperty"
+			],
+			[
+				"back",
+				"background-color\tproperty"
+			],
+			[
+				"pa",
+				"padding-top\tproperty"
+			],
+			[
+				"l",
+				"line-height"
+			],
+			[
+				"pt",
+				"pt-3"
+			],
+			[
+				"im",
+				"important"
+			],
+			[
+				"c",
+				"color\tproperty"
+			],
+			[
+				"col",
+				"color\tproperty"
+			],
+			[
+				"co",
+				"cover\tbackground-size"
+			],
+			[
+				"u",
+				"url()\tbackground-image"
+			],
+			[
+				"bac",
+				"background-color\tproperty"
+			],
+			[
+				"ta",
+				"table-cell\tdisplay"
+			],
+			[
+				"ma",
+				"max-height\tproperty"
+			],
+			[
+				"border",
+				"border-radius\tproperty"
+			],
+			[
+				"te",
+				"text-center"
+			],
+			[
+				"mob-",
+				"mob-p0"
+			],
+			[
+				"mb",
+				"mb-1"
+			],
+			[
+				"text",
+				"text-muted"
+			],
+			[
+				"li",
+				"line-height\tproperty"
+			],
+			[
+				"ri",
+				"right"
+			],
+			[
+				"con",
+				"container-fluid"
+			],
+			[
+				"p",
+				"padding-bottom\tproperty"
+			],
+			[
+				"marin",
+				"margin-bottom\tproperty"
+			],
+			[
+				"in",
+				"inline-block\tdisplay"
+			],
+			[
+				"py",
+				"py-2"
+			],
+			[
+				"h",
+				"height\tproperty"
+			],
+			[
+				"icon",
+				"icons"
+			],
+			[
+				"PB",
+				"pb-2"
+			],
+			[
+				"box",
+				"box-shadow\tproperty"
+			],
+			[
+				"wi",
+				"width\tproperty"
+			],
+			[
+				"hea",
+				"header-row"
+			],
+			[
+				"list",
+				"list-icons"
+			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "front/cid_main4.ejs",
+			"file": "/D/cider19/views/front/lecture/detail.ejs",
 			"settings":
 			{
-				"buffer_size": 14818,
+				"buffer_size": 22210,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/D/cider19/views/front/seminar/detail.ejs",
+			"settings":
+			{
+				"buffer_size": 21487,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/D/cider19/views/front/user/mypage.ejs",
+			"settings":
+			{
+				"buffer_size": 28894,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/D/cider19/views/front/main/index3.ejs",
+			"settings":
+			{
+				"buffer_size": 44811,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -49,20 +268,64 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/user/git/cidermics_0.1ver",
-		"/C/Users/user/git/cidermics_0.1ver/views",
-		"/C/Users/user/git/cidermics_0.1ver/views/front"
+		"/D/cider19",
+		"/D/cider19/public",
+		"/D/cider19/public/img",
+		"/D/cider19/public/img/front",
+		"/D/cider19/public/img/front/contents",
+		"/D/cider19/public/img/front/lecture",
+		"/D/cider19/routes",
+		"/D/cider19/routes/front",
+		"/D/cider19/views",
+		"/D/cider19/views/front",
+		"/D/cider19/views/front/lecture",
+		"/D/cider19/views/front/main",
+		"/D/cider19/views/front/seminar",
+		"/D/cider19/views/front/user"
 	],
 	"file_history":
 	[
+		"/D/cider19/bower_components/jquery/dist/jquery.js",
+		"/D/cider19/views/front/main/index2.ejs",
+		"/D/cider19/views/front/main/index.ejs",
+		"/D/cider19/views/front/lecture/detail.ejs",
+		"/D/cider19/views/front/seminar/detail.ejs",
+		"/D/cider19/views/front/main/index3.ejs",
+		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/blog-large-image-sidebar-left.html",
+		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/elements-maps.html",
+		"/D/cider19/views/front/contents/detail.ejs",
+		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/elements-testimonials.html",
+		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/elements-sticky-elements.html",
+		"/D/cider19/public/admin/vendor/chart.js/Chart.js",
+		"/D/cider19/views/front/main/login_form.ejs",
+		"/D/cider19/views/front/main/con_detail.ejs",
+		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/index-corporate-13.html",
+		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/blog-post.html",
+		"/F/사이다경제/웹개편/예시이미지/con-img1.png",
+		"/C/Users/user/git/cidermics_0.1ver/node_modules/css-select/lib/pseudos.js",
+		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/index.html",
+		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/index-classic-light.html",
+		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/index-corporate.html",
+		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/index-corporate-5.html",
+		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/feature-headers-sign-in-sign-up.html",
+		"/D/cider19/public/css/theme-elements.css",
+		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/feature-navigations-hamburguer-sidebar.html",
+		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/index-blog.html",
+		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/index-classic-video.html",
+		"/F/사이다경제/웹개편/아이콘/follow us/4.png",
+		"/F/사이다경제/웹개편/아이콘/follow us/2.png",
+		"/F/사이다경제/웹개편/아이콘/follow us/1.png",
+		"/F/사이다경제/웹개편/아이콘/follow us/3.png",
+		"/C/Users/user/Downloads/Telegram Desktop/themeforest-4106987-porto-responsive-html5-template/HTML/feature-footers-classic-colors-quaternary.html",
+		"/D/cider19/public/admin/css/style.blue.css"
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 42.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 105.0,
 		"where_history":
 		[
 		]
@@ -72,6 +335,62 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"콘텐츠",
+			"seminar",
+			"강의",
+			"세미나",
+			"강의",
+			"src=",
+			"Carousels",
+			"더 다양한 강의 보기",
+			"primary",
+			"index-tabs-container",
+			"#footer",
+			"html.side-header-hamburguer-sidebar .main .container, html.side-header-hamburguer-sidebar #footer .container",
+			"owl-dots",
+			"4주",
+			"rgb(250, 250, 250)",
+			"rgb(250, 250, 250);",
+			"background-color: rgb(250, 250, 250);",
+			"height: 890px; background-color: rgb(250, 250, 250);",
+			"890px",
+			"fp-tableCell",
+			"359bbb",
+			"더 다양한 콘텐츠 보러가기",
+			"더 다양한 콘텐츠 보럭가기",
+			"글쓴이의 다른글",
+			"style",
+			"오혜미",
+			"mob-100",
+			"contents-title-cate",
+			"index-tabs-container",
+			"읽기",
+			"더 많은 콘텐츠 보러가기",
+			"Comments (3)",
+			"commets",
+			"html.side-header-hamburguer-sidebar #header.side-header .header-nav nav",
+			"side-header side-header-lg side-header-hide d-flex",
+			"section section-height-3 bg-color-light border-0 my-0",
+			"row py-4 my-5",
+			"header-nav-features",
+			"header-nav-features header-nav-features-no-border header-nav-features-lg-show-border order-1 order-lg-2",
+			"SIGN IN",
+			"><i class=\"far fa-user\"></i>",
+			"FOLLOW US",
+			"shop",
+			"back-button d-none d-lg-block",
+			"back",
+			"ㅠback",
+			"콘텐츠",
+			"footer",
+			"header-nav-features header-nav-features-no-border p-static",
+			"header-nav-features header-nav-features-light header-nav-features-no-border header-nav-features-lg-show-border order-1 order-lg-2",
+			"header-nav-features",
+			"role=\"search\"",
+			"hamburguer-btn hamburguer-btn-light hamburguer-btn-sticky-dark",
+			"fas fa-search header-nav-top-icon",
+			"footer-copyright",
+			"footer"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -89,35 +408,123 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "front/cid_main4.ejs",
-					"semi_transient": true,
+					"file": "/D/cider19/views/front/lecture/detail.ejs",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 14818,
+						"buffer_size": 22210,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								83,
-								83
+								8821,
+								8037
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax"
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 4140.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/D/cider19/views/front/seminar/detail.ejs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 21487,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10550,
+								6974
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3740.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/D/cider19/views/front/user/mypage.ejs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 28894,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								18930,
+								18930
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 8560.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/D/cider19/views/front/main/index3.ejs",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 44811,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9662,
+								13034
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 7521.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -125,7 +532,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 29.0
 	},
 	"input":
 	{
@@ -162,7 +569,7 @@
 	"project": "error.sublime-project",
 	"replace":
 	{
-		"height": 0.0
+		"height": 54.0
 	},
 	"save_all_on_build": true,
 	"select_file":
