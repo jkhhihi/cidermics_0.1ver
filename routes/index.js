@@ -754,7 +754,8 @@ router.get('/personalinfo', function(req,res,next){
 
 // 핀북 랜딩 페이지
 router.get('/finbook', function(req,res,next){
-	res.render('front/etc/finbook/finbook',{});
+	//res.render('front/etc/finbook/finbook',{});
+	res.redirect('https://finance.cidermics.com/finance/finbook');
 });
 
 router.get('/finbook_pur', function(req,res,next){
