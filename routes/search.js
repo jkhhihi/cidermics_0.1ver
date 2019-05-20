@@ -6,7 +6,7 @@ var mysql = require("./model/mysql");
 router.post('/search/process', function(req, res, next) {
 	var keyword = req.body.keyword;
 	
-	mysql.select('SELECT * from cider.cid_contents where con_content like \'%'+ keyword +'%\' order by con_no desc;',
+	mysql.select('SELECT * from cider.cid_contents where con_title or con_content like \'%'+ keyword +'%\' order by con_no desc;',
 			 
 			
 			function (err, data){
