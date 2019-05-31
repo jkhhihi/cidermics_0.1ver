@@ -46,6 +46,12 @@ function openWinKA(){
     window.open("http://plus.kakao.com/home/@%EC%82%AC%EC%9D%B4%EB%8B%A4%EA%B2%BD%EC%A0%9C");  
 }
 </script>
+<script type="text/javascript">
+$('.carousel').carousel({
+	interval: 5000;
+})	
+</script>
+
 
 <style>
 .menu-wrap::-webkit-scrollbar {
@@ -135,18 +141,24 @@ function openWinKA(){
 	height: 400px;
 	background-color: rgba(0, 0, 0, 0.4);
 }
-.ad{background-color:#282828; height:auto; margin-top:50px}/*2196f3*/
+
+#carousel-example-generic{margin-top: 50px !important}
+.carousel-indicators li{width:6px !important; height:6px !important;}
+.carousel-indicators .active{width:8px !important; height:8px !important;}
+/*.ad .carousel-inner .item{padding-bottom:20px;}*/
 @media only screen and (max-width : 1024px) {
-.ad{margin-top:25px; padding:8px 0}
-	/*#pick-contents {
-		margin-top: 45px;
-	}*/
-	#pick-contents .thum1 {
-		height: 200px;
-	}
-	#pick-contents .thum2 {
-		height: 200px;
-	}
+#carousel-example-generic{margin-top: 25px !important}
+/*.ad .carousel-inner .item{padding-bottom:15px;}*/
+
+/*#pick-contents {
+	margin-top: 45px;
+}*/
+#pick-contents .thum1 {
+	height: 200px;
+}
+#pick-contents .thum2 {
+	height: 200px;
+}
 #pick-contents .thum1 .text .category {
 	font-size: 10px;
 	padding: 2px 6px;
@@ -156,15 +168,15 @@ function openWinKA(){
 	font-size: 10px;
 	padding: 2px 6px;
 }
-	#pick-contents .text .title {
-		font-size: 26px;
-		margin-top: 10px;
-		line-height: 1.3em;
-		width:250px;
-	}
-	#pick-contents .black-box {
-		height: 200px;
-	}
+#pick-contents .text .title {
+	font-size: 26px;
+	margin-top: 10px;
+	line-height: 1.3em;
+	width:250px;
+}
+#pick-contents .black-box {
+	height: 200px;
+}
 }
 .btn-floating:hover {
 	color : #e4dddd;
@@ -442,13 +454,39 @@ function openWinKA(){
 </script>
 
 <!-- 메인페이지 배너 홍보-->
-<div class="ad" align="center">
-	<!--a href="https://cafe.naver.com/yubitown">
-		<img class="img-responsive" src="https://i.imgur.com/33RI4jc.jpg">
-	</a-->
-	<a href="http://bit.ly/2JK1TQI">
-		<img class="img-responsive" src="https://i.imgur.com/2rctMuq.jpg">
-	</a>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" align="center">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+  	<!--cgv-->
+    <div class="item active" style="background-image: linear-gradient(#545250 , #43403b);">
+      <a href="http://bit.ly/2JK1TQI"><img class="img-responsive" src="https://i.imgur.com/fsM5NX1.jpg"></a>
+    </div>
+    <!--모바일한경-->
+    <div class="item" style="background-image: linear-gradient(#47b5a2 , #2db7d2);">
+      <a href="http://bit.ly/2wuockI"><img class="img-responsive" src="https://i.imgur.com/7FxVMIe.jpg"></a>
+    </div>
+    <!--유비카페-->
+    <div class="item" style="background-image: linear-gradient(#83bae4 , #6dafed);">
+      <a href="http://bit.ly/2D4YUxe"><img class="img-responsive" src="https://i.imgur.com/aGX96O6.jpg"></a>
+    </div>
+  </div>
+
+  <!-- Controls >
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a -->
 </div>
 
 	<!-- 픽한 콘텐츠 -->
