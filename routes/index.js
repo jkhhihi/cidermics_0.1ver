@@ -1082,6 +1082,13 @@ router.get('/finbook_done', function(req,res,next){
 });
 
 
+
+//CGV 페이지
+router.get('/cgv', function(req,res,next){
+	res.render('front/etc/cgv',{});
+});
+
+
 //하나 페이지
 router.get('/signature', function(req,res,next){
 	res.render('front/etc/hana/hana',{});
