@@ -7,6 +7,7 @@
 <meta name="naver-site-verification" content="083657cb98aa9a4a9c62dedeffddfb2490545da0" />
 <!--페이스북 관련 -->
 <meta property="fb:admins" content="{jkhhihi@naver.com}" /><!--페이스북 슈퍼아이디-->
+<meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <!--공유 meta tags-->
 <meta name="title" content="사이다경제" />
 <meta property="og:image" content="http://www.cidermics.com/page_imgs/fixed_img/thum_img.jpg" />
@@ -20,9 +21,6 @@
 
 <title>사이다경제 X CGV</title>
 
-
-
-
 <link href="/css/cid_main2.css" rel="stylesheet">
 <link rel="shortcut icon" href="http://cidermics.com/page_imgs/fixed_img/favicon.ico" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
@@ -30,6 +28,7 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <script src="/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 
 
 </head>
@@ -83,14 +82,52 @@
     /*fab end*/
 </style>
 
-<script type="text/javascript">
- 
-</script>
+
+<style type="text/css">
+
+		#cgvmain{margin-top: 50px}
+		#cgvmain img{width: 800px}
+		.bg1{background-image:url(page_imgs/cgv_img/bg1.jpg); background-size: cover;}
+		#leader{padding: 80px 0}
+		#leader img{margin-top: 20px}
+		#leader-info img{width: 800px}
+		#leader-info div.h{height: 80px}
+		.line{width: 100%; height: 1px; background-color: #ccc}
+		#event img{width: 600px}
+		.gototop {
+		    padding: 5px;
+		    display: block;
+		    z-index: 2;
+		    position: fixed;
+		    bottom: 30px;
+		    right: 35px;
+		    height: 50px;
+		    width: 45px;
+		    border-radius: 0.25em;
+		    background: rgba(255, 255, 255, 0.9);
+		}
+
+
+	@media all and (max-width:1024px) {
+		#cgvmain{margin-top: 45px}
+		#cgvmain img{width: 100%}
+		#leader{padding: 40px 5px}
+		#leader-info img{width: 100%}
+		#leader-info div.h{height: 50px}
+		#event img{width: 100%}
+	}
+
+</style>
+
 
 <body>	
-	<% include ../top %>
 
-    <!--fab-->
+	<!--위로가기 버튼-->
+	<div id="but_top"><a href="#but_top"><img class="gototop" src="/page_imgs/fixed_img/btn_gotoup.svg"></a></div>
+	<a name="but_top">
+	<% include ../top %>
+	
+    <!--fab>
     <div class="backdrop" id="backdrop"></div>
     <div class="fab child" data-subitem="1"><span><a class="" href="/seminar" onclick="ga('send','event','세미나','버튼클릭','detail페이지' );">세미나</a></span></div>
     <div class="fab child" data-subitem="2"><span><a class="" href="/study" onclick="ga('send','event','강의','버튼클릭','detail페이지' );">강의</a></span></div>
@@ -136,14 +173,105 @@
 	        });
 	    });
 
-	</script>
+	</script-->
 
-	<div class="container">
-		<div class="row">
+	<div id="cgvmain" align="center">
+		<div class="row" style="margin-right: 0; margin-left: 0;">
 			<div class="col-12">
-				<img src="https://i.imgur.com/Tnw8uM1.jpg">
+				<div class="bg1"><img class="img-responsive" src="/page_imgs/cgv_img/1.png"></div>
+				<div><img class="img-responsive" src="/page_imgs/cgv_img/2.png"></div>
+				<div style="background-color: #13dbff"><img class="img-responsive" src="/page_imgs/cgv_img/3.png"></div>
 			</div>
 		</div>
+	</div>
+
+	<div style="background-color: #f9f9f9;">
+		<div id="leader" class="container" align="center">
+			<div class="row" style="margin-right: 0; margin-left: 0;">
+				<div class="col-lg-3 col-xs-6"><a href="#01"> <img class="img-responsive" src="/page_imgs/cgv_img/01.png"></a></div>
+				<div class="col-lg-3 col-xs-6"><a href="#02"> <img class="img-responsive" src="/page_imgs/cgv_img/02.png"></a></div>
+				<div class="col-lg-3 col-xs-6"><a href="#03"> <img class="img-responsive" src="/page_imgs/cgv_img/03.png"></a></div>
+				<div class="col-lg-3 col-xs-6"><a href="#04"> <img class="img-responsive" src="/page_imgs/cgv_img/04.png"></a></div>
+				<div class="col-lg-3 col-xs-6"><a href="#05"> <img class="img-responsive" src="/page_imgs/cgv_img/05.png"></a></div>
+				<div class="col-lg-3 col-xs-6"><a href="#06"> <img class="img-responsive" src="/page_imgs/cgv_img/06.png"></a></div>
+				<div class="col-lg-3 col-xs-6"><a href="#07"> <img class="img-responsive" src="/page_imgs/cgv_img/07.png"></a></div>
+				<div class="col-lg-3 col-xs-6"><a href="#08"> <img class="img-responsive" src="/page_imgs/cgv_img/08.png"></a></div>
+				<div class="col-lg-3 col-xs-6"><a href="#09"> <img class="img-responsive" src="/page_imgs/cgv_img/09.png"></a></div>
+				<div class="col-lg-3 col-xs-6"><a href="#10"> <img class="img-responsive" src="/page_imgs/cgv_img/10.png"></a></div>
+			</div>
+		</div>
+	</div>
+
+	<div id="leader-info" class="container" align="center">
+		<div class="row" style="margin-right: 0; margin-left: 0;">
+			<div class="col-12">
+				<div id="01" class="h"></div>
+				<img class="img-responsive" src="/page_imgs/cgv_img/01-1.jpg">
+				<a href="http://bit.ly/2N9dMCv"><img class="img-responsive" src="/page_imgs/cgv_img/01-2.jpg"></a>
+				<a href="http://bit.ly/2RiyA8K"><img class="img-responsive" src="/page_imgs/cgv_img/01-3.jpg"></a>
+			</div>
+			<div class="line"></div>
+			<div class="col-12">
+				<div id="02" class="h"></div>
+				<img class="img-responsive" src="/page_imgs/cgv_img/02-1.jpg">
+				<a href="http://bit.ly/2XUamnN"><img class="img-responsive" src="/page_imgs/cgv_img/02-2.jpg"></a>
+			</div>
+			<div class="line"></div>
+			<div class="col-12">
+				<div id="03" class="h"></div>
+				<img class="img-responsive" src="/page_imgs/cgv_img/03-1.jpg">
+				<a href="http://bit.ly/2KpNdq8"><img class="img-responsive" src="/page_imgs/cgv_img/03-2.jpg"></a>
+			</div>
+			<div class="line"></div>
+			<div class="col-12">
+				<div id="04" class="h"></div>
+				<img class="img-responsive" src="/page_imgs/cgv_img/04-1.jpg">
+				<a href="http://bit.ly/31FqnQU"><img class="img-responsive" src="/page_imgs/cgv_img/04-2.jpg"></a>
+			</div>
+			<div class="line"></div>
+			<div class="col-12">
+				<div id="05" class="h"></div>
+				<img class="img-responsive" src="/page_imgs/cgv_img/05-1.jpg">
+				<a href="http://bit.ly/31DFEBJ"><img class="img-responsive" src="/page_imgs/cgv_img/05-2.jpg"></a>
+			</div>
+			<div class="line"></div>
+			<div class="col-12">
+				<div id="06" class="h"></div>
+				<img class="img-responsive" src="/page_imgs/cgv_img/06-1.jpg">
+				<a href="http://bit.ly/2KV0BlG"><img class="img-responsive" src="/page_imgs/cgv_img/06-2.jpg"></a>
+			</div>
+			<div class="line"></div>
+			<div class="col-12">
+				<div id="07" class="h"></div>
+				<img class="img-responsive" src="/page_imgs/cgv_img/07-1.jpg">
+				<a href="http://bit.ly/2FdNmsv"><img class="img-responsive" src="/page_imgs/cgv_img/07-2.jpg"></a>
+			</div>
+			<div class="line"></div>
+			<div class="col-12">
+				<div id="08" class="h"></div>
+				<img class="img-responsive" src="/page_imgs/cgv_img/08-1.jpg">
+				<a href="http://bit.ly/31EPRhj"><img class="img-responsive" src="/page_imgs/cgv_img/08-2.jpg"></a>
+				<a href="http://bit.ly/2MS1D4z"><img class="img-responsive" src="/page_imgs/cgv_img/08-3.jpg"></a>
+				<a href="http://bit.ly/2XYGiYq"><img class="img-responsive" src="/page_imgs/cgv_img/08-4.jpg"></a>
+			</div>
+			<div class="line"></div>
+			<div class="col-12">
+				<div id="09" class="h"></div>
+				<img class="img-responsive" src="/page_imgs/cgv_img/09-1.jpg">
+				<a href="http://bit.ly/31Pymem"><img class="img-responsive" src="/page_imgs/cgv_img/09-2.jpg"></a>
+				<a href="http://bit.ly/2ZvLNhm"><img class="img-responsive" src="/page_imgs/cgv_img/09-3.jpg"></a>
+			</div>
+			<div class="line"></div>
+			<div class="col-12">
+				<div id="10" class="h"></div>
+				<img class="img-responsive" src="/page_imgs/cgv_img/10-1.jpg">
+				<a href="http://bit.ly/2ZxzW2y"><img class="img-responsive" src="/page_imgs/cgv_img/10-2.jpg"></a>
+			</div>
+		</div>
+	</div>
+
+	<div id="event" align="center" style="background-image: linear-gradient(#fbe902 , #ffc000);">
+		<a href="http://bit.ly/2rhUsI7"><img class="img-responsive" src="/page_imgs/cgv_img/event.jpg"></a>
 	</div>
 
 
@@ -153,5 +281,64 @@
 
 
 	<% include ../bottom %>
+	<script type="text/javascript">
+
+		/*var url = location.href;
+		var hrefArr = url.split('#');
+		var seq = hrefArr[1];
+		/!*location.href = "#"+seq;
+		history.replaceState(null,null,url);*!/
+		self.location.hash=seq;*/
+
+
+		$(document).ready(function(){
+
+            setTimeout(function() {
+                var url = location.href;
+                var hrefArr = url.split('?');
+                var seq = hrefArr[1];
+                location.href = "#"+seq;
+            }, 1000);
+
+            /*var url = location.href;
+            var hrefArr = url.split('#');
+            var seq = hrefArr[1];
+            location.href = "#"+seq;
+            history.replaceState(null,null,url);*/
+            //self.location.hash = seq;
+            //history.replaceState(null,null,url);
+		});
+        function jump(h){
+            var url = location.href;               //Save down the URL without hash.
+            location.href = "#"+h;                 //Go to the target element.
+            history.replaceState(null,null,url);   //Don't like hashes. Changing it back.
+        }
+        //self.location.hash='pos_top';
+
+
+
+
+
+
+
+        /*$(window).ready(function (){
+            var href = location.href;
+            var hrefArr = href.split('?');
+            var seq = hrefArr[1];
+
+            //fnMove(seq);
+            fnMove(seq);
+        })
+        function fnMove(seq){
+            var offset = $("#div"+seq).offset();
+            $(window).scrollTop(offset.top);
+            //$('html, body').animate({scrollTop : offset.top}, 400);
+        }
+        function fnMove2(seq){
+            var offset = $("#div3").offset();
+            $(document).scrollTop(offset.top);
+            //$('html, body').animate({scrollTop : offset.top}, 400);
+        }*/
+	</script>
 </body>
 </html>
